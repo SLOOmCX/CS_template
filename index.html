@@ -27,20 +27,34 @@
   body{
     font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
     background:var(--bg);color:var(--ink);
-    display:flex;height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased;
+    display:flex;flex-direction:column;height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased;
   }
+
+  /* ── 0) 상단 가로 헤더 ── */
+  .appbar{
+    height:58px;flex-shrink:0;background:#fff;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;padding:0 22px;gap:16px;
+    z-index:20;box-shadow:0 1px 3px rgba(0,36,84,.04);
+  }
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand .logo-txt{font-size:23px;font-weight:800;color:var(--trust-blue);letter-spacing:-.5px;}
+  .brand .app-title{font-size:15px;font-weight:700;color:var(--ink);padding-left:14px;border-left:1px solid var(--line);}
+  .brand .beta{font-size:10px;font-weight:800;color:var(--trust-blue);background:var(--skyblue-soft);
+    border:1px solid #cddcf0;padding:2px 9px;border-radius:20px;letter-spacing:.5px;}
+  .appbar-search{
+    display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);
+    border-radius:24px;padding:9px 16px;width:400px;max-width:42vw;flex-shrink:0;transition:.15s;
+  }
+  .appbar-search:focus-within{border-color:var(--skyblue);box-shadow:0 0 0 3px var(--skyblue-soft);background:#fff;}
+  .appbar-search input{border:none;outline:none;background:transparent;width:100%;font-size:13px;color:var(--ink);}
+  .body-row{flex:1;display:flex;overflow:hidden;}
 
   /* ── 1) 아이콘 레일 ── */
   .rail{
-    width:72px;background:var(--trust-blue);
+    width:68px;background:var(--trust-blue);
     display:flex;flex-direction:column;align-items:center;
-    padding:14px 0;gap:6px;flex-shrink:0;
+    padding:16px 0;gap:8px;flex-shrink:0;
   }
-  .rail .logo{
-    color:#fff;font-weight:800;font-size:13px;letter-spacing:.5px;
-    text-align:center;line-height:1.1;margin-bottom:14px;
-  }
-  .rail .logo small{display:block;font-weight:400;font-size:9px;color:var(--skyblue);}
   .rail-btn{
     width:52px;height:52px;border-radius:14px;border:none;cursor:pointer;
     background:transparent;color:#9fb3cf;font-size:25px;
@@ -83,7 +97,7 @@
   .node-toggle:hover{background:var(--skyblue-soft);}
   .node-toggle .arrow{font-size:10px;color:var(--ink-soft);transition:.2s;width:10px;}
   .node.open>.node-toggle .arrow{transform:rotate(90deg);}
-  .node-children{display:none;padding-left:12px;}
+  .node-children{display:none;margin-left:15px;padding-left:6px;border-left:1px solid #e9ecf1;}
   .node.open>.node-children{display:block;}
   .leaf{
     display:flex;align-items:center;gap:7px;padding:8px 12px 8px 20px;border-radius:9px;
@@ -238,36 +252,40 @@
 </head>
 <body>
 
-  <!-- 1) 아이콘 레일 -->
-  <nav class="rail">
-    <div class="logo">OLIT<small>CX team</small></div>
-    <div class="rail-cap">채팅</div>
-    <button class="rail-btn active" data-rail="home" title="채팅 (공통 IB/OB + 브랜드별 템플릿)">💬</button>
-    <div class="rail-div"></div>
-    <div class="rail-cap">기타</div>
-    <button class="rail-btn" data-rail="call" title="유선 응대">📞</button>
-    <button class="rail-btn" data-rail="board" title="게시판">📝</button>
-  </nav>
-
-  <!-- 2) 2차 트리 메뉴 -->
-  <aside class="sidebar">
-    <div class="sidebar-head">
-      <h2 id="sbTitle">홈 · 브랜드</h2>
-      <p id="sbDesc">브랜드별 채팅 응대 템플릿</p>
+  <!-- 0) 상단 가로 헤더 -->
+  <header class="appbar">
+    <div class="brand">
+      <span class="logo-txt">Olit</span>
+      <span class="app-title">CS 템플릿</span>
+      <span class="beta">BETA</span>
     </div>
-    <div class="tree" id="tree"></div>
-  </aside>
+    <div class="appbar-search">
+      🔍<input type="text" placeholder="전체 검색 (브랜드·유형·템플릿·매크로)" id="searchInput" autocomplete="off">
+    </div>
+  </header>
 
-  <!-- 3) 콘텐츠 -->
-  <main class="content">
-    <div class="topbar">
-      <span class="crumb" id="crumb"><b>홈 · 브랜드</b> › 슬룸 › 반품</span>
-      <div class="topbar-search">
-        🔍<input type="text" placeholder="템플릿·키워드 검색" id="searchInput" autocomplete="off">
+  <div class="body-row">
+    <!-- 1) 아이콘 레일 -->
+    <nav class="rail">
+      <button class="rail-btn active" data-rail="home" title="채팅 (공통 IB/OB + 브랜드별 템플릿)">💬</button>
+      <div class="rail-div"></div>
+      <button class="rail-btn" data-rail="call" title="유선 응대">📞</button>
+      <button class="rail-btn" data-rail="board" title="게시판">📝</button>
+    </nav>
+
+    <!-- 2) 2차 트리 메뉴 -->
+    <aside class="sidebar">
+      <div class="tree" id="tree"></div>
+    </aside>
+
+    <!-- 3) 콘텐츠 -->
+    <main class="content">
+      <div class="topbar">
+        <span class="crumb" id="crumb"><b>채팅</b> › 공통 IB/OB</span>
       </div>
-    </div>
-    <div class="page" id="page"></div>
-  </main>
+      <div class="page" id="page"></div>
+    </main>
+  </div>
 
 <script>
 /* =========================================================
@@ -593,8 +611,8 @@ function buildTree(obj, prefix){
 
 function renderTree(){
   const cfg=RAIL[curRail];
-  document.getElementById("sbTitle").textContent=cfg.title;
-  document.getElementById("sbDesc").textContent=cfg.desc;
+  const _t=document.getElementById("sbTitle"); if(_t)_t.textContent=cfg.title;
+  const _d=document.getElementById("sbDesc"); if(_d)_d.textContent=cfg.desc;
   const tree=document.getElementById("tree");
   if(cfg.type==="brand"){
     tree.innerHTML=buildTree(COMMON_TREE,"")
