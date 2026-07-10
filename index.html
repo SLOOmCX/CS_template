@@ -94,6 +94,7 @@
   .leaf .dot{width:5px;height:5px;border-radius:50%;background:var(--peanut);flex-shrink:0;}
   .leaf.active .dot{background:var(--trust-blue);}
   .divider{height:1px;background:var(--line);margin:10px 14px;}
+  .tree-divider{border-top:1px dashed #c3cad4;margin:10px 16px 6px;}
 
   /* ── 3) 콘텐츠 ── */
   .content{flex:1;overflow-y:auto;padding:0;}
@@ -241,8 +242,7 @@
   <nav class="rail">
     <div class="logo">OLIT<small>CX team</small></div>
     <div class="rail-cap">채팅</div>
-    <button class="rail-btn active" data-rail="home" title="홈 · 브랜드 (브랜드별 채팅 템플릿)">🏠</button>
-    <button class="rail-btn" data-rail="common" title="공통 IB/OB (채팅 템플릿)">💬</button>
+    <button class="rail-btn active" data-rail="home" title="채팅 (공통 IB/OB + 브랜드별 템플릿)">💬</button>
     <div class="rail-div"></div>
     <div class="rail-cap">기타</div>
     <button class="rail-btn" data-rail="call" title="유선 응대">📞</button>
@@ -274,8 +274,8 @@
    데이터 (이미지 ④⑤ 기반 샘플 + 문구 다듬음)
    실제 전체 문구는 [공통] IB/OB/CS 엑셀로 교체 예정
 ========================================================= */
-const BRANDS = ["슬룸","심플리케어","얼라인랩","빌바","셀올로지","코코다움","12 o'clock","닥터맨즈","와이브닝","마넬","닥터아망"];
-const BRAND_SUB = ["반품","교환","환불","배송","A/S","제품 문의"];
+const BRAND_LIST = ["슬룸","심플리케어","얼라인랩","빌바","셀올로지","코코다움","12 o'clock","닥터맨즈","와이브닝","마넬","닥터아망"];
+const INQUIRY_TYPES = ["단순변심 교환","단순변심 반품","100%환불이벤트","A/S 및 불량","유상 A/S","부작용"];
 
 /* 콘텐츠 렌더 함수들 -------------------------------------- */
 function macro(name, tag, body){
@@ -508,9 +508,7 @@ const BOARD_MAIN = `
    메뉴 구성
 ========================================================= */
 const RAIL = {
-  home:{title:"홈 · 브랜드", desc:"💬 브랜드별 채팅 템플릿 · 매크로 등록용", type:"brand"},
-  common:{title:"공통 IB/OB", desc:"💬 채팅 공통 템플릿 · 매크로 등록용", type:"list",
-    items:[{label:"인바운드 (IB)",key:"ib"},{label:"아웃바운드 (OB)",key:"ob"}]},
+  home:{title:"채팅", desc:"💬 공통 IB/OB + 브랜드별 템플릿 · 매크로 등록용", type:"brand"},
   call:{title:"유선", desc:"전화 응대 스크립트", type:"list",
     items:[{label:"유선 표준 응대",key:"call"}]},
   board:{title:"게시판", desc:"공지·FAQ·이벤트", type:"list",
@@ -522,40 +520,45 @@ const CONTENT = {
   "ib":COMMON_IB, "ob":COMMON_OB, "call":CALL_MAIN, "board":BOARD_MAIN
 };
 
-/* 홈·브랜드 중첩 트리 (브랜드 > 유형 > 케이스 > 단계) */
-const HOME_TREE = {
-  "슬룸":{
-    "반품":{
-      "[단순변심] 반품":{
-        "1️⃣ 반품 가능 여부":{__content:"slm_ref_1"},
-        "2️⃣ 반품 유형 (전체/부분)":{__content:"slm_ref_2"},
-        "3️⃣ 배송비 안내·입금 확인":{__content:"slm_ref_3"}
-      },
-      "[불량] 반품":{}
-    },
-    "교환":{}, "환불":{}, "배송":{}, "A/S":{}
-  },
-  "심플리케어":{}, "얼라인랩":{}, "빌바":{}, "셀올로지":{}, "코코다움":{},
-  "12 o'clock":{}, "닥터맨즈":{}, "와이브닝":{}, "마넬":{}, "닥터아망":{}
+/* 공통 IB/OB (대분류 맨 위) */
+const COMMON_TREE = {
+  "공통 IB/OB":{
+    "인바운드 (IB)":{__content:"ib"},
+    "아웃바운드 (OB)":{__content:"ob"}
+  }
+};
+
+/* 브랜드 트리 (11개 × 동일 중분류 6종) — 자동 생성 */
+const BRAND_TREE = {};
+BRAND_LIST.forEach(b=>{
+  const sub={};
+  INQUIRY_TYPES.forEach(t=>{ sub[t]={}; });   // 기본은 빈 leaf(등록 전)
+  BRAND_TREE[b]=sub;
+});
+/* 슬룸 › 단순변심 반품 = 단계별 콘텐츠 연결 (데모) */
+BRAND_TREE["슬룸"]["단순변심 반품"]={
+  "1️⃣ 반품 가능 여부":{__content:"slm_ref_1"},
+  "2️⃣ 반품 유형 (전체/부분)":{__content:"slm_ref_2"},
+  "3️⃣ 배송비 안내·입금 확인":{__content:"slm_ref_3"}
 };
 
 /* 검색 인덱스 (데모: 슬룸 단순변심 반품 + 공통) */
 const SEARCH_INDEX = [
-  {cid:"slm_ref_2", path:"슬룸 › [단순변심] 반품 › 2️⃣ 반품 유형 · 전체 반품",
+  {cid:"slm_ref_2", path:"슬룸 › 단순변심 반품 › 2️⃣ 반품 유형 · 전체 반품",
    snippet:"예시: 구매 제품 전체 미사용 (미개봉, 또는 개봉했으나 미사용 — ex. 박스만 열어보고 미사용) · 반품배송비 6,000원 · 제품 전체 회수"},
-  {cid:"slm_ref_2", path:"슬룸 › [단순변심] 반품 › 2️⃣ 반품 유형 · 부분 반품",
+  {cid:"slm_ref_2", path:"슬룸 › 단순변심 반품 › 2️⃣ 반품 유형 · 부분 반품",
    snippet:"예시: 1개 이상 구매 후 일부 개봉 (ex. 허리+목 케어 구매 후 허리 케어만 사용 → 목 케어만 부분 반품) · 반품배송비 3,000원 · 증정품 함께 회수"},
-  {cid:"slm_ref_3", path:"슬룸 › [단순변심] 반품 › 3️⃣ 배송비 안내 · 전체 반품", tag:"반품_배송비_전체_네이버",
+  {cid:"slm_ref_3", path:"슬룸 › 단순변심 반품 › 3️⃣ 배송비 안내 · 전체 반품", tag:"반품_배송비_전체_네이버",
    snippet:"네이버페이 결제는 부분 취소가 어려워 반품 배송비 6,000원 입금 후 반품이 가능합니다. 반품배송비 : 6,000원 ▶ 기업은행 075-095980-04-017"},
-  {cid:"slm_ref_3", path:"슬룸 › [단순변심] 반품 › 3️⃣ 배송비 안내 · 부분 반품", tag:"반품_배송비_부분",
+  {cid:"slm_ref_3", path:"슬룸 › 단순변심 반품 › 3️⃣ 배송비 안내 · 부분 반품", tag:"반품_배송비_부분",
    snippet:"부분 반품은 반품 배송비 3,000원 입금 후 진행이 가능합니다. 반품배송비 : 3,000원 ▶ 기업은행 075-095980-04-017"},
-  {cid:"slm_ref_3", path:"슬룸 › [단순변심] 반품 › 3️⃣ 배송비 안내 · 응대지침",
+  {cid:"slm_ref_3", path:"슬룸 › 단순변심 반품 › 3️⃣ 배송비 안내 · 응대지침",
    snippet:"네이버페이·스마트스토어는 상담사가 반품 배송비 차감 설정 불가. 입금자명·입금금액 확인 후 IBK기업은행 계좌 조회."},
-  {cid:"slm_ref_1", path:"슬룸 › [단순변심] 반품 › 1️⃣ 반품 가능 여부", tag:"반품_사유확인",
+  {cid:"slm_ref_1", path:"슬룸 › 단순변심 반품 › 1️⃣ 반품 가능 여부", tag:"반품_사유확인",
    snippet:"반품을 원하시는 사유가 어떻게 되실까요? :) 개봉 후 사용하지 않으신 제품은 반품이 가능하지만 사용하신 제품은 반품이 어려운 점 참고 부탁드립니다."},
-  {cid:"slm_ref_1", path:"슬룸 › [단순변심] 반품 › 1️⃣ 반품 가능 여부", tag:"반품_7일경과",
+  {cid:"slm_ref_1", path:"슬룸 › 단순변심 반품 › 1️⃣ 반품 가능 여부", tag:"반품_7일경과",
    snippet:"단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다. 현재는 신청 가능 기간이 지나 도움드리기 어려운 점 양해 부탁드립니다."},
-  {cid:"slm_ref_1", path:"슬룸 › [단순변심] 반품 › 1️⃣ 반품 가능 여부",
+  {cid:"slm_ref_1", path:"슬룸 › 단순변심 반품 › 1️⃣ 반품 가능 여부",
    snippet:"제품 수령일로부터 7일 이내 · 미개봉 또는 개봉 후 미사용 · 전자제품은 작동 이력 있으면 미사용 불인정"},
   {cid:"ib", path:"공통 IB/OB › 인바운드(IB)", tag:"IB_첫인사",
    snippet:"안녕하세요, 고객님. 슬룸입니다. :) 무엇을 도와드릴까요?"},
@@ -594,7 +597,10 @@ function renderTree(){
   document.getElementById("sbDesc").textContent=cfg.desc;
   const tree=document.getElementById("tree");
   if(cfg.type==="brand"){
-    tree.innerHTML=`<div class="group-label">브랜드</div>`+buildTree(HOME_TREE,"");
+    tree.innerHTML=buildTree(COMMON_TREE,"")
+      +`<div class="tree-divider"></div>`
+      +`<div class="group-label">브랜드</div>`
+      +buildTree(BRAND_TREE,"");
   }else{
     tree.innerHTML=cfg.items.map((it,i)=>
       `<div class="leaf ${i===0?'active':''}" data-key="${it.key}" onclick="pickList(this,'${it.key}','${it.label}')"><span class="dot"></span>${it.label}</div>`).join("");
@@ -644,8 +650,7 @@ function renderSearch(query){
 }
 function goResult(cid){
   document.getElementById("searchInput").value="";
-  const rail = ["slm_ref_1","slm_ref_2","slm_ref_3"].includes(cid) ? "home"
-             : (cid==="ib"||cid==="ob") ? "common" : (cid==="call") ? "call" : "board";
+  const rail = ["call"].includes(cid) ? "call" : (cid==="board") ? "board" : "home";
   const btn=document.querySelector(`.rail-btn[data-rail="${rail}"]`);
   document.querySelectorAll(".rail-btn").forEach(x=>x.classList.remove("active"));
   btn.classList.add("active"); curRail=rail; renderTree();
