@@ -3,46 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>올릿 CX 응대 템플릿</title>
 <style>
   :root{
-    /* 슬룸 팔레트 */
-    --trust-blue:#002454;
-    --trust-blue-2:#0a3468;
-    --vanilla:#ECDDCD;
-    --beige:#E5CDB5;
-    --skyblue:#ADC8E8;
-    --peanut:#B69A81;
-    /* 파생 톤 (밝게) */
-    --skyblue-soft:#E8F0FA;
-    --vanilla-soft:#FAF4EC;
-    --beige-soft:#F5EBDF;
-    --line:#E6E8EC;
-    --ink:#1e2a3a;
-    --ink-soft:#5a6675;
+    --primary:#234A86; --primary-bg:#F4F8FD;
+    --secondary:#C89A5B; --secondary-bg:#FCF9F5;
+    --info:#DCE8F7;
+    --title:#374151; --text:#4B5563; --subtext:#6B7280;
+    /* 기존 변수명 → 신규 팔레트 매핑 */
+    --trust-blue:#234A86;
+    --trust-blue-2:#1B3A68;
+    --vanilla:#EADFCB;
+    --beige:#E1CFB0;
+    --skyblue:#C7DAF2;
+    --peanut:#C89A5B;
+    --skyblue-soft:#F4F8FD;
+    --vanilla-soft:#FCF9F5;
+    --beige-soft:#FCF9F5;
+    --line:#E5E7EB;
+    --ink:#374151;
+    --ink-soft:#6B7280;
     --white:#ffffff;
-    --bg:#F7F8FA;
+    --bg:#ffffff;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
     font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
     background:var(--bg);color:var(--ink);
-    display:flex;flex-direction:column;height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased;
+    display:flex;flex-direction:column;height:calc(100vh / 1.1);overflow:hidden;-webkit-font-smoothing:antialiased;zoom:1.1;
   }
 
   /* ── 0) 상단 가로 헤더 ── */
   .appbar{
     height:58px;flex-shrink:0;background:#fff;border-bottom:1px solid var(--line);
     display:flex;align-items:center;justify-content:space-between;padding:0 22px;gap:16px;
-    z-index:20;box-shadow:0 1px 3px rgba(0,36,84,.04);
+    z-index:20;box-shadow:0 1px 0 rgba(0,36,84,.04), 0 2px 10px rgba(0,36,84,.03);
   }
   .brand{display:flex;align-items:center;gap:14px;}
   .brand .logo-txt{font-size:23px;font-weight:800;color:var(--trust-blue);letter-spacing:-.5px;}
   .brand .app-title{font-size:15px;font-weight:700;color:var(--ink);padding-left:14px;border-left:1px solid var(--line);}
   .brand .beta{font-size:10px;font-weight:800;color:var(--trust-blue);background:var(--skyblue-soft);
-    border:1px solid #cddcf0;padding:2px 9px;border-radius:20px;letter-spacing:.5px;}
+    border:1px solid #CBDBF1;padding:2px 9px;border-radius:20px;letter-spacing:.5px;}
   .appbar-search{
-    display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);
+    display:flex;align-items:center;gap:8px;background:#F3F5F7;border:1px solid var(--line);
     border-radius:24px;padding:9px 16px;width:400px;max-width:42vw;flex-shrink:0;transition:.15s;
   }
   .appbar-search:focus-within{border-color:var(--skyblue);box-shadow:0 0 0 3px var(--skyblue-soft);background:#fff;}
@@ -68,20 +72,20 @@
 
   /* ── 1) 아이콘 레일 ── */
   .rail{
-    width:54px;background:var(--trust-blue);
+    width:54px;background:#F7FAFB;border-right:1px solid var(--line);
     display:flex;flex-direction:column;align-items:center;
     padding:14px 0;gap:6px;flex-shrink:0;
   }
   .rail-btn{
     width:42px;height:42px;border-radius:12px;border:none;cursor:pointer;
-    background:transparent;color:#9fb3cf;font-size:20px;
+    background:transparent;color:#6B7280;font-size:20px;
     display:flex;align-items:center;justify-content:center;
     transition:.15s;position:relative;
   }
-  .rail-btn:hover{background:var(--trust-blue-2);color:#fff;}
-  .rail-btn.active{background:var(--skyblue);color:var(--trust-blue);}
-  .rail-div{width:26px;height:1px;background:rgba(255,255,255,.18);margin:8px 0;}
-  .rail-cap{font-size:8px;color:#6f86a8;font-weight:700;letter-spacing:.3px;margin:2px 0;}
+  .rail-btn:hover{background:#EDF1F8;color:var(--primary);}
+  .rail-btn.active{background:var(--primary);color:#fff;}
+  .rail-div{width:26px;height:1px;background:rgba(0,0,0,.08);margin:8px 0;}
+  .rail-cap{font-size:8px;color:#9aa2ad;font-weight:700;letter-spacing:.3px;margin:2px 0;}
 
   /* ── 2) 2차 트리 메뉴 ── */
   .sidebar{
@@ -143,14 +147,14 @@
   .content::-webkit-scrollbar{width:9px;}
   .content::-webkit-scrollbar-thumb{background:#d5dae2;border-radius:4px;}
   .topbar{
-    position:sticky;top:0;z-index:5;background:rgba(247,248,250,.92);backdrop-filter:blur(6px);
+    position:sticky;top:0;z-index:5;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);
     padding:14px 28px;border-bottom:1px solid var(--line);
     display:flex;align-items:center;justify-content:space-between;gap:14px;
   }
   .back-btn{border:1px solid var(--line);background:#fff;color:var(--trust-blue);font-size:12px;font-weight:700;padding:5px 12px;border-radius:8px;cursor:pointer;transition:.12s;flex-shrink:0;}
   .back-btn:hover{background:var(--skyblue);}
   .crumb{font-size:12px;color:var(--ink-soft);}
-  .crumb b{color:var(--trust-blue);}
+  .crumb b{color:var(--title);}
   /* 우측 상단 검색 */
   .topbar-search{
     display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
@@ -160,7 +164,7 @@
   .topbar-search:focus-within{border-color:var(--skyblue);box-shadow:0 0 0 3px var(--skyblue-soft);}
   .topbar-search input{border:none;outline:none;background:transparent;width:100%;font-size:13px;color:var(--ink);}
   /* 검색 결과 */
-  .sr-title{font-size:23px;font-weight:800;color:var(--trust-blue);margin-bottom:3px;}
+  .sr-title{font-size:23px;font-weight:800;color:var(--title);margin-bottom:3px;}
   .sr-title span{font-size:14px;color:var(--ink-soft);font-weight:600;}
   .sr-sub{font-size:12.5px;color:var(--ink-soft);margin-bottom:22px;}
   .sr-item{
@@ -174,9 +178,9 @@
   .sr-tag{color:var(--trust-blue);font-weight:800;}
   .sr-snip mark{background:var(--skyblue);color:var(--trust-blue);padding:0 3px;border-radius:3px;}
   .sr-none{text-align:center;padding:70px 20px;color:var(--ink-soft);font-size:14px;}
-  .page{padding:24px 28px 60px;max-width:1080px;}
+  .page{padding:32px 32px 88px;max-width:1080px;}
   .page h1{
-    font-size:26px;color:var(--trust-blue);font-weight:800;margin-bottom:4px;
+    font-size:26px;color:var(--title);font-weight:800;margin-bottom:4px;
     display:flex;align-items:center;gap:10px;
   }
   .page .sub{font-size:13px;color:var(--ink-soft);margin-bottom:22px;}
@@ -184,31 +188,34 @@
   /* 챕터(단계 내 구간) */
   .chapter{margin:0 0 34px;}
   .section-title{
-    font-size:20px;font-weight:800;color:var(--trust-blue);margin:0 0 16px;
+    font-size:20px;font-weight:800;color:var(--title);margin:0 0 16px;
     display:flex;align-items:center;gap:9px;
-    padding-bottom:10px;border-bottom:2px solid var(--vanilla);
+    padding-bottom:10px;border-bottom:1px solid var(--line);
   }
   .section-title .ic{font-size:20px;}
 
   /* 📌 참고사항 (내부용) — 연회색 틴트로 템플릿(화이트)과 구분 */
   .guide-card{
     background:var(--vanilla-soft);border:1px solid #ecdcc6;
-    border-radius:12px;padding:12px 16px;margin:12px 0 6px;
+    border-radius:14px;padding:16px 20px;margin:10px 0 22px;box-shadow:none;
   }
   .guide-head{
     font-weight:800;color:var(--ink);font-size:14px;margin-bottom:9px;
     display:flex;align-items:center;gap:8px;
   }
   .badge-int{font-size:10px;background:var(--ink-soft);color:#fff;padding:2px 8px;border-radius:20px;font-weight:700;letter-spacing:.3px;}
-  .guide-body{font-size:13px;line-height:1.75;color:#5c4a38;white-space:pre-line;}
-  .sub-ex{font-size:12px;color:#c0623a;margin:2px 0 12px;line-height:1.5;}
+  .guide-body{font-size:13px;line-height:1.8;color:#5c4a38;white-space:pre-line;}
+  .sub-ex{font-size:12px;color:#C89A5B;margin:2px 0 12px;line-height:1.5;}
   .flow-diagram{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:16px 0;}
   .fd-box{flex:1 1 130px;min-width:118px;background:#fff;border:1.5px solid var(--trust-blue);border-radius:10px;padding:12px 10px;font-size:12.5px;font-weight:700;color:var(--ink);text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.4;}
   .fd-arrow{display:flex;align-items:center;justify-content:center;color:var(--trust-blue);font-weight:800;flex:0 0 auto;font-size:14px;}
   .fork{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:6px 0 16px;padding:12px 0 4px 18px;border-left:3px dashed var(--trust-blue);}
   @media(max-width:820px){.fork{grid-template-columns:1fr;}}
   .fork-label{display:inline-block;font-size:11.5px;font-weight:800;color:#fff;background:var(--trust-blue);padding:3px 12px;border-radius:20px;margin-bottom:8px;}
-  .fork-branch.b2 .fork-label{background:#c0623a;}
+  .fork-branch.b2 .fork-label{background:#C89A5B;}
+  .fork.fork-split{border-left:none;padding:12px 0 4px 0;gap:0;}
+  .fork.fork-split .fork-branch{padding:0 20px;}
+  .fork.fork-split .fork-branch:first-child{border-right:2px dashed var(--trust-blue);}
   .fork .flow-diagram{margin:0;}
   .quote-box{border-left:4px solid var(--trust-blue);background:#f5f8fc;padding:12px 16px 12px 18px;margin:12px 0 16px;font-size:12.5px;line-height:1.75;color:var(--ink);border-radius:0 10px 10px 0;white-space:pre-line;}
   .quote-box b{color:var(--trust-blue);font-weight:800;}
@@ -234,7 +241,7 @@
   .b-amber{background:#fff2cc;color:#8a5a00;}
   .b-pink{background:#ffe3ea;color:#b3234b;}
   .branch-note{margin-top:11px;font-size:12px;color:#8a5a00;background:#fff8e6;border:1px solid #f0e2b8;border-radius:8px;padding:8px 11px;line-height:1.5;}
-  .alert-red{background:#ffe3ea;border:1px solid #f3b4c2;border-left:4px solid #d92d20;border-radius:10px;padding:11px 16px;margin:12px 0;font-size:13px;font-weight:800;color:#b3234b;line-height:1.6;}
+  .alert-red{background:#ffe3ea;border:1px solid #f3b4c2;border-left:4px solid #C89A5B;border-radius:10px;padding:11px 16px;margin:12px 0;font-size:13px;font-weight:800;color:#b3234b;line-height:1.6;}
   .guide-body ul{list-style:none;}
   .guide-body li{position:relative;padding-left:18px;margin:5px 0;}
   .guide-body li:before{content:"→";position:absolute;left:0;color:var(--ink-soft);font-weight:700;}
@@ -242,10 +249,17 @@
   .leaf-secgrp{font-weight:800;color:var(--ink);padding:7px 10px 3px;margin-top:6px;}
   .leaf-sec{padding-left:24px;}
   .leaf-sub{padding-left:42px;font-size:12px;color:var(--ink-soft);}
-  .grp-h{font-weight:800;color:var(--ink);font-size:15px;margin:30px 0 12px;}
+  .sec-children{display:none;}
+  .sec-parent.open>.sec-children{display:block;}
+  .sec-parent-h{cursor:pointer;}
+  .sec-caret{display:inline-block;width:12px;font-size:9px;color:var(--ink-soft);transition:transform .15s;margin-right:1px;}
+  .sec-parent.open>.sec-parent-h .sec-caret{transform:rotate(90deg);}
+  .grp-h{font-weight:800;color:var(--ink);font-size:15px;margin:30px 0 12px;scroll-margin-top:70px;}
+  .grp-h.grp-major{font-size:16.5px;color:var(--title);margin:36px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+  .grp-h.grp-sub{font-size:13.5px;color:var(--peanut);margin:26px 0 10px;}
 
   /* 카드 그리드 */
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
   .stack{display:flex;flex-direction:column;gap:12px;margin-bottom:14px;}
   @media(max-width:820px){.grid2{grid-template-columns:1fr;}}
 
@@ -281,15 +295,17 @@
   /* 템플릿(매크로) 카드 */
   .macro{
     background:var(--white);border:1px solid var(--line);border-radius:14px;
-    margin:12px 0;overflow:hidden;
+    margin:18px 0;overflow:hidden;box-shadow:0 1px 2px rgba(0,36,84,.03);
+    transition:box-shadow .16s ease, border-color .16s ease;
   }
+  .macro:hover{box-shadow:0 8px 22px rgba(0,36,84,.07);border-color:#dbe3ef;}
   .macro-head{
-    display:flex;align-items:center;gap:8px;padding:12px 14px;background:#fff;
+    display:flex;align-items:center;gap:8px;padding:14px 20px;background:#fff;
     border-bottom:1px solid var(--line);
   }
   .macro-head.plain{background:#F2F5F9;}
   .macro-head.plain .mname{color:var(--trust-blue);font-weight:800;}
-  .macro-head .gdot{width:10px;height:10px;border-radius:50%;background:#3ac06a;flex-shrink:0;}
+  .macro-head .gdot{width:10px;height:10px;border-radius:50%;background:#234A86;flex-shrink:0;}
   .macro-head .mname{font-weight:700;font-size:13px;color:var(--ink);}
   .macro-head .tag{
     font-size:11px;color:var(--trust-blue);background:var(--skyblue-soft);
@@ -302,7 +318,7 @@
     transition:.12s;display:flex;align-items:center;justify-content:center;opacity:.7;
   }
   .copy-btn:hover{opacity:1;background:rgba(0,0,0,.06);}
-  .copy-btn.done{opacity:1;color:#2fa85a;font-weight:800;}
+  .copy-btn.done{opacity:1;color:#234A86;font-weight:800;}
   .no-copy .copy-btn{display:none !important;}
   .macro-head .mname:empty{display:none;}
   .macro:has(.mname:empty){position:relative;}
@@ -315,11 +331,11 @@
   .cmp-ment .copy-btn{position:absolute;top:8px;right:46px;color:var(--ink-soft);}
   .cmp-ment .bm-star{position:absolute;top:8px;right:12px;padding:0;margin:0;}
   .macro-body{
-    padding:14px 16px;font-size:13px;line-height:1.75;color:var(--ink);white-space:pre-wrap;
+    padding:20px;font-size:13.5px;line-height:1.8;color:var(--ink);white-space:pre-wrap;
   }
 
   .hint{
-    background:var(--skyblue-soft);border:1px solid #cddcf0;border-radius:12px;
+    background:var(--skyblue-soft);border:1px solid #CBDBF1;border-radius:12px;
     padding:12px 16px;font-size:12.5px;color:var(--trust-blue);line-height:1.6;margin:16px 0;
   }
   .hint b{font-weight:800;}
@@ -335,61 +351,63 @@
   .flow-ol>li{font-weight:700;}
   .flow-sub{padding-left:18px;color:var(--ink-soft);font-weight:400;font-size:12.5px;line-height:1.6;}
   /* 유의사항 (색상 없이 테두리로만 구분) */
-  .notice-box{background:#fff8ee;border:1px solid #f0e2c8;border-left:3px solid var(--peanut);border-radius:14px;padding:15px 20px;margin-bottom:0;}
-  .notice-h{font-weight:800;color:var(--ink);font-size:14px;margin-bottom:8px;}
+  .notice-box{background:#ffffff;border:1px solid var(--line);border-left:3px solid var(--secondary);border-radius:14px;padding:18px 22px;margin:6px 0 24px;}
+  .notice-h{font-weight:800;color:var(--secondary);font-size:14px;margin-bottom:10px;}
   .notice-box ul{list-style:none;}
-  .notice-box li{position:relative;padding-left:15px;margin:5px 0;font-size:12.5px;color:var(--ink);line-height:1.65;}
+  .notice-box li{position:relative;padding-left:15px;margin:7px 0;font-size:12.5px;color:var(--ink);line-height:1.7;}
   .notice-box li:before{content:"•";position:absolute;left:2px;color:var(--ink-soft);}
   .notice-box b{color:var(--ink);}
   .notice-box a{color:var(--trust-blue);font-weight:700;text-decoration:underline;}
   .pre{white-space:pre-wrap;font-size:13px;line-height:1.7;color:var(--ink);}
   /* 번호 섹션 */
-  .sec-title{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--trust-blue);margin:30px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--vanilla);scroll-margin-top:58px;}
-  .sec-title.sec-major{border-bottom:none;padding-bottom:0;font-size:22px;margin-top:46px;}
+  .sec-title{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:800;color:var(--title);margin:40px 0 20px;padding-bottom:11px;border-bottom:1px solid var(--line);scroll-margin-top:70px;}
+  .sec-title.sec-major{border-bottom:none;padding-bottom:0;font-size:22px;margin:48px 0 20px;}
   .sec-n{width:26px;height:26px;border-radius:8px;background:var(--trust-blue);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   /* 전체/부분 2열 카드 */
-  .col-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
-  .col-h{display:flex;align-items:center;gap:8px;padding:11px 16px;font-weight:800;font-size:14px;}
+  .col-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,36,84,.04);transition:box-shadow .16s ease;}
+  .col-card:hover{box-shadow:0 8px 22px rgba(0,36,84,.06);}
+  .col-h{display:flex;align-items:center;gap:8px;padding:13px 18px;font-weight:800;font-size:14px;}
   .col-h .spacer{flex:1;}
   .col-h .ct-tag{font-size:11px;font-weight:700;background:rgba(255,255,255,.6);padding:2px 9px;border-radius:20px;}
-  .col-body-plain{padding:14px 16px;font-size:13px;line-height:1.75;color:var(--ink);white-space:pre-wrap;}
+  .col-body-plain{padding:20px;font-size:13.5px;line-height:1.8;color:var(--ink);white-space:pre-wrap;}
   .col-h.blue{background:var(--skyblue-soft);color:var(--trust-blue);}
-  .col-h.pink{background:#fce8ef;color:#c04f80;}
+  .col-h.pink{background:#FCF9F5;color:#C89A5B;}
   .col-h.gray{background:#eef1f5;color:#3a4657;}
   .sec-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
-  .sec-badge.common{background:#eef1f5;color:#5a6675;border:1px solid #dde2e8;}
-  .col-body{padding:13px 14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:11px;align-items:start;}
+  .sec-badge.common{background:#eef1f5;color:#6B7280;border:1px solid #dde2e8;}
+  .col-body{padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start;}
   /* 전체/부분 비교표 */
   .cmp-table-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:18px;}
   .cmp-table{width:100%;border-collapse:collapse;table-layout:fixed;}
-  .cmp-table th,.cmp-table td{padding:11px 14px;font-size:13px;line-height:1.6;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
-  .cmp-table th:not(:last-child),.cmp-table td:not(:last-child){border-right:1px solid #ccd2da;}
+  .cmp-table th,.cmp-table td{padding:14px 16px;font-size:13px;line-height:1.7;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+  .cmp-table th:not(:last-child),.cmp-table td:not(:last-child){border-right:1px solid #EDEFF3;}
   .cmp-table tr:last-child td{border-bottom:none;}
   .cmp-table th{font-weight:800;font-size:13.5px;}
-  .cmp-table .cmp-corner{width:110px;background:#f6f8fc;}
+  .cmp-table .cmp-corner{width:110px;background:#FAFBFC;}
   .cmp-table th.cmp-blue{background:var(--skyblue-soft);color:var(--trust-blue);}
-  .cmp-table th.cmp-pink{background:#fce8ef;color:#c04f80;}
+  .cmp-table th.cmp-pink{background:#FCF9F5;color:#C89A5B;}
   .cmp-table.policy-tb td,.cmp-table.policy-tb th{vertical-align:middle;}
   .cmp-table.policy-tb th:nth-child(2),.cmp-table.policy-tb th:nth-child(3),.cmp-table.policy-tb td:nth-child(2),.cmp-table.policy-tb td:nth-child(3){text-align:center;}
-  .cmp-table td.cmp-row-label{background:#f6f8fc;font-weight:700;color:var(--ink-soft);}
+  .cmp-table td.cmp-row-label{background:#FAFBFC;font-weight:700;color:var(--ink-soft);}
   .cmp-table td{color:var(--ink);}
   /* a·b·c 서브카드 */
-  .subcard{border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-  .subcard-h{display:flex;align-items:center;gap:8px;padding:8px 11px;background:#fff;border-bottom:1px solid var(--line);}
+  .subcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,36,84,.03);transition:box-shadow .16s ease;}
+  .subcard:hover{box-shadow:0 6px 16px rgba(0,36,84,.06);}
+  .subcard-h{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-bottom:1px solid var(--line);}
   .sc-label{font-weight:700;font-size:12.5px;color:var(--ink);}
   .sc-desc{margin:9px 14px 2px;padding:7px 12px;background:#fff6da;border:1px solid #f0e2b8;border-radius:8px;font-size:12px;color:#2f3a6b;line-height:1.6;white-space:pre-line;}
   .sc-desc:before{content:"💡 ";color:#c98a00;font-weight:800;}
   .subcard-h .tag{font-size:10.5px;color:var(--trust-blue);background:var(--skyblue-soft);padding:2px 7px;border-radius:20px;font-weight:600;}
   .subcard-h .spacer{flex:1;}
-  .subcard-body{padding:11px 13px;font-size:12.5px;line-height:1.7;color:var(--ink);white-space:pre-wrap;}
+  .subcard-body{padding:16px;font-size:13px;line-height:1.75;color:var(--ink);white-space:pre-wrap;}
   /* 노트 박스 */
-  .star-note{background:var(--vanilla-soft);border:1px solid #ecdcc6;border-radius:10px;padding:11px 14px;font-size:12px;color:#5c4a38;line-height:1.7;margin-bottom:12px;}
+  .star-note{background:var(--vanilla-soft);border:1px solid #ecdcc6;border-radius:12px;padding:14px 18px;font-size:12.5px;color:#5c4a38;line-height:1.75;margin:16px 0;}
   .star-note b{color:#8a5a3c;}
   .star-note a{color:var(--trust-blue);font-weight:700;text-decoration:underline;}
   .star-h{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
   .star-h .spacer{flex:1;}
   .star-body{white-space:pre-wrap;}
-  .blue-note{background:var(--skyblue-soft);border:1px solid #cddcf0;border-radius:12px;padding:12px 16px;font-size:12.5px;color:var(--trust-blue);line-height:1.65;margin:14px 0;}
+  .blue-note{background:var(--skyblue-soft);border:1px solid #CBDBF1;border-radius:14px;padding:16px 20px;font-size:12.5px;color:var(--trust-blue);line-height:1.75;margin:16px 0;box-shadow:0 1px 2px rgba(0,36,84,.03);}
   .blue-note b{font-weight:800;}
   .bn-h{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
   .bn-h .spacer{flex:1;}
@@ -2740,33 +2758,30 @@ const REF_AS = `
   <h1>🛠️ A/S 및 불량</h1>
     <div class="sub">A/S 및 불량으로 인한 교환·반품 (자사몰/외부몰)</div>
 
-  ${secTitle("📋","A/S 기준 · 품질 보증","자사몰/외부몰","asBase")}
+  ${secTitle("💡","A/S 정책 및 기준","자사몰/외부몰","asBase")}
   ${blueNote("🛠️ 슬룸 전자제품 품질 보증 기간 1년",
-`유상·무상 서비스 기간을 포함한 전체 기간입니다. (👉🏻 슬룸 자사몰 A/S 전자제품 공지사항 참고)`)}
+`유상·무상 서비스 기간을 포함한 전체 기간입니다. (👉🏻 <a href="https://sleeplab.co.kr/notice/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=18663258&t=board" target="_blank">슬룸 자사몰 A/S 전자제품 공지사항</a> 참고)`)}
   <div class="grid2">
-<div style="border:1px solid #E6E8EC;border-radius:12px;overflow:hidden;margin-bottom:0"><div style="background:#E8F0FA;padding:11px 15px;font-weight:800;color:#002454;border-bottom:1px solid #E6E8EC">✅ 정상 사용 환경 <span style="font-weight:500;color:#66748c;font-size:13px">· 제품 자체의 자연적 고장</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#f6f8fc;text-align:center;font-weight:800;color:#002454;padding:14px 8px;white-space:nowrap">📅 0~3개월</td><td style="padding:13px 16px;background:#E8F0FA;vertical-align:top"><span style="font-weight:800;color:#002454;font-size:15px">🛠️ 무상 A/S</span><div style="color:#5a6675;margin-top:4px;font-size:13px;line-height:1.6">무상 교환 / 무상 반품</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#f6f8fc;text-align:center;font-weight:800;color:#002454;padding:14px 8px;white-space:nowrap">📅 3~6개월</td><td style="padding:13px 16px;background:#E8F0FA;vertical-align:top"><span style="font-weight:800;color:#002454;font-size:15px">🛠️ 무상 A/S</span><div style="color:#5a6675;margin-top:4px;font-size:13px;line-height:1.6">무상 교환</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#f6f8fc;text-align:center;font-weight:800;color:#002454;padding:14px 8px;white-space:nowrap">📅 6개월~1년</td><td style="padding:13px 16px;background:#FBEAF1;vertical-align:top"><span style="font-weight:800;color:#c04f80;font-size:15px">유상 A/S</span><div style="color:#5a6675;margin-top:4px;font-size:13px;line-height:1.6">원인 분석 후 유상 서비스만 제공</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#f6f8fc;text-align:center;font-weight:800;color:#002454;padding:14px 8px;white-space:nowrap">📅 1년 경과</td><td style="padding:13px 16px;background:#FBEAF1;vertical-align:top"><span style="font-weight:800;color:#c04f80;font-size:15px">유상 A/S</span><div style="color:#5a6675;margin-top:4px;font-size:13px;line-height:1.6">유상 서비스 제공 (기간·신청 횟수 무관 지속 가능)</div></td></tr></tbody></table></div>
-  <div style="display:flex;flex-direction:column;gap:12px"><div style="border:1px solid #E6E8EC;border-radius:12px;overflow:hidden;margin-bottom:0"><div style="background:#fce8ef;padding:11px 15px;font-weight:800;color:#c04f80;border-bottom:1px solid #E6E8EC">⚠️ 고객 과실 <span style="font-weight:500;color:#66748c;font-size:13px">· 파손·분실·사용 부주의 등</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#f6f8fc;text-align:center;font-weight:800;color:#002454;padding:14px 8px;white-space:nowrap">📅 전 기간 동일</td><td style="padding:13px 16px;background:#FBEAF1;vertical-align:top"><span style="font-weight:800;color:#c04f80;font-size:15px">유상 A/S</span><div style="color:#5a6675;margin-top:4px;font-size:13px;line-height:1.6">유상 교환 · 수령일~경과 무관 동일 적용<br>제품별 유상 금액 상이 · <b>1년 이내와 1년 경과 유상 금액도 상이</b> (상담 시 안내)</div></td></tr></tbody></table></div><div class="warn-note" style="margin:0">💡 무상 보증 기간은 수령일로부터 <b>6개월까지</b>이며, 이후에는 정상 사용 중 고장이라도 <b>유상 전환</b>됩니다. 고객 과실은 기간과 무관하게 항상 유상입니다.</div></div>
+<div style="border:1px solid #E6E8EC;border-radius:12px;overflow:hidden;margin-bottom:0"><div style="background:#F4F8FD;padding:11px 15px;font-weight:800;color:#234A86;border-bottom:1px solid #E6E8EC">✅ 정상 사용 환경 <span style="font-weight:500;color:#6B7280;font-size:13px">· 제품 자체의 자연적 고장</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 0~3개월</td><td style="padding:13px 16px;background:#F4F8FD;vertical-align:top"><span style="font-weight:800;color:#234A86;font-size:15px">🛠️ 무상 A/S</span><div style="color:#C89A5B;font-weight:700;margin-top:4px;font-size:13px;line-height:1.6">무상 교환 / 무상 반품 중 택1</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 3~6개월</td><td style="padding:13px 16px;background:#F4F8FD;vertical-align:top"><span style="font-weight:800;color:#234A86;font-size:15px">🛠️ 무상 A/S</span><div style="color:#C89A5B;font-weight:700;margin-top:4px;font-size:13px;line-height:1.6">무상 교환</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 6개월~1년</td><td style="padding:13px 16px;background:#FCF9F5;vertical-align:top"><span style="font-weight:800;color:#C89A5B;font-size:15px">유상 A/S</span><div style="color:#6B7280;margin-top:4px;font-size:13px;line-height:1.6">원인 분석 후 유상 서비스만 제공</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 1년 경과</td><td style="padding:13px 16px;background:#FCF9F5;vertical-align:top"><span style="font-weight:800;color:#C89A5B;font-size:15px">유상 A/S</span><div style="color:#6B7280;margin-top:4px;font-size:13px;line-height:1.6">유상 서비스 제공 (기간·신청 횟수 무관 지속 가능)</div></td></tr></tbody></table></div>
+  <div style="display:flex;flex-direction:column;gap:12px"><div style="border:1px solid #E6E8EC;border-radius:12px;overflow:hidden;margin-bottom:0"><div style="background:#FCF9F5;padding:11px 15px;font-weight:800;color:#C89A5B;border-bottom:1px solid #E6E8EC">⚠️ 고객 과실 <span style="font-weight:500;color:#6B7280;font-size:13px">· 파손·분실·사용 부주의 등</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 전 기간 동일</td><td style="padding:13px 16px;background:#FCF9F5;vertical-align:top"><span style="font-weight:800;color:#C89A5B;font-size:15px">유상 A/S</span><div style="color:#6B7280;margin-top:4px;font-size:12.5px;line-height:1.7">· 무통장 입금으로만 가능<br>· 제품별 상이 · <b>1년 이내와 1년 경과 유상교환 가격이 다름</b> (상담 시 안내)</div></td></tr></tbody></table></div><div class="guide-card" style="margin:0"><div class="guide-body"><b>💡 유의사항</b><br>· 무상 A/S (교환·반품)은 배송비 고객 부담 X<br>· 유상 A/S (유상 교환)은 기존 제품 자체 폐기 안내<br>&nbsp;&nbsp;┗ 수긍 시 편도 배송비 3,000원 / 미수긍 시 왕복 배송비 6,000원 고객 부담</div></div></div>
   </div>
-  <div class="grid2"><div style="background:#FFF9E6;border:1px solid #F0D264;border-radius:12px;padding:14px 16px"><div style="font-weight:800;color:#2563eb;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) 이내 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 이내 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 구입가를 자사몰 포인트로 대체 환급</div></div><div style="background:#FFF9E6;border:1px solid #F0D264;border-radius:12px;padding:14px 16px"><div style="font-weight:800;color:#dc2626;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) 경과 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 경과 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 정액 감가상각한 잔여 금액에 구입가의 10%를 가산 후 자사몰 포인트로 대체 환급</div></div></div>
-  <div class="grid2">${col("blue","🔷 무상 서비스 (무상 A/S)",
-subcard("기준 요약","AS_기준_무상",
-`· 조건 : 정상적인 사용 상태에서 제품 자체의 자연적 고장
-· 기간 : 구입일로부터 6개월 이내
-· 조치 : 불량 유형별 프로세스에 따라 진행
-   ① 0~3개월 → 무상 교환 또는 무상 반품 (고객 선택)
-   ② 3~6개월 → 무상 교환만 가능 (반품 불가)`)
-)}${col("pink","🔶 유상 서비스 (유상 교환)",
-subcard("기준 요약","AS_기준_유상",
-`· 조건 : 고객 과실에 의한 고장(파손·분실·부주의 등) · 6개월~1년은 원인 불문 유상
-· 기간 : 무상 보증(6개월) 이후~1년 유상 / 1년 경과 후에도 기간·횟수 무관 유상 지속 가능
-· 조치 : 전자제품에 한해 유상 교환(동일 상품 새 제품) / 무통장 입금만 가능
-· 비용 : 제품별 상이 · 1년 이내와 1년 경과 유상교환 가격이 다름 (상담 시 안내)`)
-)}</div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">구분</th><th class="cmp-blue">A. 반품</th><th class="cmp-pink">B. 교환</th></tr></thead><tbody><tr><td class="cmp-row-label">배송비</td><td>X</td><td>X</td></tr><tr><td class="cmp-row-label">회수 품목</td><td>불량 접수 제품 회수</td><td>불량 접수 제품 회수</td></tr><tr><td class="cmp-row-label">재출고 시점</td><td>X</td><td>① 불량 확정 시 : 회수와 동시에 재출고<br>② 검수 필요 시 : 회수·검수 완료 후 결과에 따라 진행</td></tr><tr><td class="cmp-row-label">반품(환불) 시점</td><td>① 불량 확정 시 : 회수·검수 완료 후 환불<br>② 검수 필요 시 : 회수·검수 완료 후 결과에 따라 진행</td><td>X</td></tr></tbody></table></div>
-  ${caution(`👉 상담 중 영상/사진으로 증상 확인이 가능하여 [불량 확정 – 교환]인 경우에 한해 회수 접수와 동시에 재출고 진행`)}
+  <div style="background:#FAFAFA;border:1px solid #E5E7EB;border-left:3px solid #D1D5DB;border-radius:12px;padding:16px 6px;display:grid;grid-template-columns:1fr 1fr"><div style="padding:0 20px"><div style="font-weight:800;color:#4B5563;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) 이내 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 이내 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 구입가를 자사몰 포인트로 대체 환급</div></div><div style="padding:0 20px;border-left:2px dashed #D1D5DB"><div style="font-weight:800;color:#4B5563;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) 경과 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 경과 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 정액 감가상각한 잔여 금액에 구입가의 10%를 가산 후 자사몰 포인트로 대체 환급</div></div></div>
+
+
   
   
-  ${secTitle("1️⃣","불량 유형 확인",null,"step1")}
+  <div class="grp-h grp-major">🧭 상담 플로우</div>
+  <div class="flow-diagram"><div class="fd-box">① 보증기간 확인</div><div class="fd-arrow">▶</div><div class="fd-box">② 불량 유형 확인</div><div class="fd-arrow">▶</div><div class="fd-box">③ 증빙 확인</div><div class="fd-arrow">▶</div><div class="fd-box">④ A/S 접수 (무상 / 유상)</div></div>
+  <div class="fork fork-split"><div class="fork-branch"><span class="fork-label">🛠️ 무상 A/S</span><div class="flow-diagram"><div class="fd-box">① 증빙 추가 확인</div><div class="fd-arrow">▶</div><div class="fd-box">② 교환/반품 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">④ 환불/재출고 안내</div></div></div><div class="fork-branch b2"><span class="fork-label">🔧 유상 A/S</span><div class="flow-diagram"><div class="fd-box">① 유상 비용 안내</div><div class="fd-arrow">▶</div><div class="fd-box">② 자체 폐기 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 비용 입금 안내</div><div class="fd-arrow">▶</div><div class="fd-box">④ 재출고 안내</div></div></div></div>
+  <div class="blue-note"><div class="bn-h"><b>✨ [참고] 채널톡 A/S 상담 인입 flow</b></div><div class="bn-body"><div style="display:grid;grid-template-columns:1.7fr 1fr;gap:16px;align-items:start"><div style="white-space:pre-line">① 고객 인입 : 불량·A/S 관련 문의 접수
+② AI챗봇 안내 : A/S 직통 워크플로우 제공 → <a href="https://sloom.channel.io/workflows/789993" target="_blank">[IVR/ALF] 불량 A/S 접수 직통 ver.</a>
+③ [IVR/ALF] 불량 A/S 접수 직통 ver. : 워크플로우 내 정보 수집·사전 안내
+   (제품명 · 불량 증상 · 올바른 사용법 확인 · 처리 방식 선택[교환/반품] · 주소지 입력[회수/배송] · 사진/영상 첨부)
+④ CX담당자 연결 : 최종 상담·처리 (무상/유상 판단 포함)</div><div style="border-left:1px solid #CBDBF1;padding-left:14px;white-space:pre-line">💡 상담 연결 전, 고객이 선택한 항목·이전 답변 내역 반드시 확인
+   (채널톡 워크플로우 진행 내용 · 우측 상담정보 메모리값 확인)</div></div></div></div>
+  ${secTitle("1️⃣","보증기간 확인",null,"guar")}
+  ${guide(`(임시) 주문번호·수령일 확인 후 보증기간(수령일 기준 1년)을 산정합니다. · 주문건·채널 확인 등 실제 가이드 멘트는 추후 삽입 예정`)}
+  ${secTitle("2️⃣","불량 유형 확인",null,"step1")}
   ${guide(`고객 증상을 아래 유형으로 분류하는 단계입니다. 사진·영상 요청/방어 멘트/회수·검수 등 처리 로직은 2️⃣ 단계에서 진행합니다.`)}
   ${caution(`※ 상품 수령일로부터 6개월 이내 — 정상적인 사용 상태에서 제품 자체의 자연적 고장일 경우만 해당`)}
   ${macro("① 사과·양해 멘트","AS_사과양해",
@@ -2803,8 +2818,11 @@ subcard("기준 요약","AS_기준_유상",
 `안내드린 방식으로도 동일 증상이 지속되신다니 불편하셨겠습니다.
 정확한 확인을 위해 해당 불량 유형에 맞춰 안내 도와드리겠습니다.`,
 `→ 각 불량 유형으로 이동하여 상담 진행`)}</div>
-  <div class="grp-h" id="groupA">🅰 그룹 · 사용법 안내 필요 (충전·작동·체감강도)</div>
-  ${secTitle("1","충전/전원 증상",null,"t1")}
+  <div class="grp-h grp-major" id="groupA">a. 사용법 안내 필요</div>
+  ${guide(`▶ 올바른 사용법 안내 후, 결과에 따라 진행
+→ 해결 시 : 상담 종료
+→ 미해결 시 : 유·무상 구분 후 3️⃣ A/S 접수 진행`)}
+  ${secTitle("①","충전/전원",null,"t1")}
   ${caution(`⚠️ 슬룸 전자제품은 유선 / 무선 제품으로 구분되며, 이에 따라 필수 안내·체크 포인트가 상이합니다.`)}
   <div class="grid2">${col("gray","🟡 유선 제품",
 subcard("유선 제품 안내 & 종결","AS_유선안내",
@@ -2840,15 +2858,15 @@ subcard("무선 제품 SKU 구분","AS_무선SKU",
 번거로우시겠지만, 위 안내 방식대로 충전·사용해 주셨는지 확인 부탁드립니다. 🙂`)}</div>
   ${guide(`👉🏻 전용 케이블 & 정격전압 어댑터 미사용으로 확인 시 → 각 멘트 안내 후 종결
 👉🏻 올바른 사용 주장 시 → 증빙 확인을 위한 ③ 사진/영상 확인 단계 진행`)}
-  ${secTitle("2","작동 관련 증상","증빙 자료로 판단 가능한 유형 전체","t2")}
+  ${secTitle("②","작동 관련 증상","증빙 자료로 판단 가능한 유형 전체","t2")}
   ${caution(`✨ 불량 증상별 올바른 사용법 안내 후, 고객이 정상 사용을 주장할 경우 → 증빙 확인을 위한 ① 사진/영상 확인 단계 진행`)}
-  ${secTitle("3","소음/EMS 강도","쿠팡·스마트스토어 자동수거","t3")}
+  ${secTitle("③","소음·온열·EMS 강도","쿠팡·스마트스토어 자동수거","t3")}
   ${guide(`🚨 사용자 '체감 강도' 관련 문의에만 해당
 적용 예시 : 소리가 너무 커요 / 너무 뜨거워요 / 전기가 느껴지지 않아요
 미적용 예시(작동 관련 증상으로 진행) : 온도·강도 조절 버튼 불량 / EMS 단계 조절 기능 자체 불량
 → 육안 확인이 어려운 유형으로 사진/영상 요청은 진행하지 않음`)}
-  <div class="grp-h" id="groupB">🅱 그룹 · 사용법 무관 (구성품·이염/오염)</div>
-  ${secTitle("4","구성품 누락","예: 케이블·어댑터","t5")}
+  <div class="grp-h grp-major" id="groupB">b. 사용법 안내 불필요</div>
+  ${secTitle("④","구성품 누락","예: 케이블·어댑터","t5")}
   ${caution(`⚠️ 제품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능`)}
   <div class="grp-h">1️⃣ 배송 완료일자 확인</div>
   <div class="grid2">${subcard("① 수령일로부터 영업일 7일 이내 — 사진 요청","AS_구성품_7일이내",
@@ -2878,7 +2896,7 @@ subcard("무선 제품 SKU 구분","AS_무선SKU",
   ${starNote("🔔 [예외] 구성품 누락으로 전체 반품 희망 시",
 `상품 개봉 여부와 무관하게 전액 환불 처리 · 증정품 회수 O · 배송비 미차감
 포장/회수는 아래 [무상 반품/교환 처리]의 전체 반품과 동일하게 진행`)}
-  ${secTitle("5","이염/오염",null,"t6")}
+  ${secTitle("⑤","이염/오염",null,"t6")}
   ${caution(`⚠️ 제품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능`)}
   <div class="grid2">${subcard("① 수령일로부터 영업일 7일 이내 — 사진 요청","AS_이염_7일이내",
 `고객님, 번거로우시겠지만 수령하신 제품의 (이염·오염·파손) 상태가 확인되도록 사진을 보내주시면 빠르게 확인 후 안내드리겠습니다. 🙏🏻`)}${subcard("② 영업일 7일 경과 — 처리 불가 안내","AS_이염_7일경과",
@@ -2901,9 +2919,11 @@ subcard("무선 제품 SKU 구분","AS_무선SKU",
 다시 한 번 불편을 드리게 된 점 진심으로 사과드립니다. 🥲`)}
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">재인입</th><th class="cmp-blue">고객 반품 희망</th><th class="cmp-pink">고객 교환 희망</th></tr></thead><tbody><tr><td class="cmp-row-label">1차 재인입</td><td>각 불량 유형 기본 flow대로 진행</td><td>각 불량 유형 기본 flow대로 진행</td></tr><tr><td class="cmp-row-label">2차 재인입</td><td>회수 후 검수 결과에 따라 처리</td><td>① 정격전압 확인(어댑터 사진 필수)<br>② 사진 확인 후 기존 flow대로 진행</td></tr><tr><td class="cmp-row-label">3차 재인입~</td><td>회수 후 검수 결과에 따라 처리</td><td>회수 후 검수 결과에 따라 처리</td></tr></tbody></table></div>
   ${guide(`✨ 1. 충전/전원 증상, 2. 작동 관련 증상 유형인 경우만 위와 같이 진행 · 재인입 건으로 기본 템플릿 멘트는 상황에 맞게 수정하여 사용`)}
-  ${secTitle("2️⃣","A/S 처리 방법 (무상·유상)",null,"step2")}
-  <div class="grp-h" id="freeFlow">🛠️ 무상 A/S</div>
-  <div class="grp-h" id="freeEvidence">① 증빙(사진/영상) 수령</div>
+  ${secTitle("3️⃣","A/S 접수",null,"step2")}
+  ${caution(`👉 상담 중 영상/사진으로 증상 확인이 가능하여 [불량 확정 – 교환]인 경우에 한해 회수 접수와 동시에 재출고 진행`)}
+  <div class="grp-h grp-major" id="freeFlow">🛠️ 무상 A/S</div>
+  <div class="grp-h grp-sub" id="freeEvidence">① 증빙 추가 확인</div>
+  <div style="font-size:11.5px;color:var(--ink-soft);margin:-4px 0 10px">워크플로우에서 받은 증빙이 미흡한 경우에만 추가 요청 (충분하면 생략)</div>
   ${caution(`봇에서 사용법 안내가 아예 안 됐거나, 안내는 됐지만 (a) 고객이 제대로 확인하지 않은 정황이 있거나 (b) 접수 시 유형을 잘못 선택해 본인 케이스에 맞지 않는 안내를 받은 경우에만 매니저가 수동으로 증빙 요청 (중복 안내 방지 체크포인트)`)}
   <div class="grp-h">③ 사진/영상 확인</div>
   <div class="grid2">${subcard("🔌 충전 불량","AS_사진_충전불량",
@@ -2999,7 +3019,7 @@ subcard("무선 제품 SKU 구분","AS_무선SKU",
 2️⃣ 충전기(어댑터) 정격전압 5V 2A 표시
 ※ 정격전압이 아닌 충전기 사용 시 제품 오작동·고장의 원인이 될 수 있어 확인이 필요한 점 양해 부탁드립니다.`)}
   ${guide(`👉🏻 이후 flow는 [1. 충전/전원 증상 — ④ 촬영 수긍 여부에 따른 대응]과 동일하게 진행`)}
-  <div class="grp-h" id="freeBranch">② 반품/교환 분기 · 수거 안내</div>
+  <div class="grp-h grp-sub" id="freeBranch">② 교환/반품 안내</div>
   ${macro("⑤ 고객 처리 방향 확인","AS_처리방향",
 `불편을 드려 죄송합니다. 🥲
 제품 불량 시 새 제품으로의 교환 또는 반품 중 원하시는 방식으로 도움드리고 있습니다.
@@ -3007,7 +3027,36 @@ subcard("무선 제품 SKU 구분","AS_무선SKU",
 `제품별 불량 라벨링 기준에 따라 첨부 사진/영상으로 불량 확인된 경우에 한해 진행 · 이후 아래 [무상 반품/교환 처리] 참고`)}
   ${caution(`⚠️ 쿠팡·스마트스토어 등 폐쇄몰 주문은 폐쇄몰 자동수거 프로세스로 리턴하여 진행`)}
   ${guide(`💡 반품/교환 접수 시 <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트 리스트업 필수 (→ 후처리 관리 시트 통합 가이드 참고)`)}
-  <div class="grp-h">🏬 자사몰 — 수거 안내</div>
+  <div class="grp-h">📦 쿠팡·네이버 스마트스토어 — 자동수거 안내</div>
+  <div class="grp-h">■ [쿠팡 / 네이버 스마트스토어] 자동수거건 — 고객 반품 요청</div>
+  ${macro("① 자동수거로 제품 회수 중","AS_쿠팡_회수중",
+`네, 고객님. 회수 진행 중인 점 확인되었습니다.
+다만 상품이 물류센터에 입고된 뒤 검수 절차를 거쳐야 하므로 즉시 처리는 어려운 점 양해 부탁드립니다.
+
+회수 완료 후 영업일 기준 2~3일 정도 소요될 수 있으니 참고 부탁드립니다. :)`,
+`쿠팡·스마트스토어 주문내역 조회 → 자동 수거 여부 확인 · 자동수거건은 입고 완료 후에만 <a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 조회 가능`)}
+  <div class="grid2">${subcard("② 불량 증상 추가 확인","AS_쿠팡_증상확인",
+`고객님께서 말씀해 주신 증상을 기준으로 검수 도와드릴 예정입니다.
+혹시 어떤 불량 증상이 있었는지 조금 더 구체적으로 말씀해 주실 수 있을까요?
+
+예: 충전했는데 전원이 켜지지 않음 / 버튼 눌러도 반응 없음 등`)}${subcard("③ 시간 양해 후 종료","AS_쿠팡_시간양해",
+`물류센터로 상품이 입고되면 남겨주신 증상을 토대로 검수를 진행하여 최종 불량 여부를 확인하게 됩니다. 이 점 양해 부탁드립니다.
+
+검수는 평균 회수 완료 후 영업일 기준 2~3일 소요되며, 불량으로 확인될 경우 문자 안내 후 결제 수단으로 환불 처리 도와드릴 예정입니다.
+
+※ 검수 결과는 문자로 별도 안내드립니다.
+※ 정상 제품으로 확인될 경우 제품은 반송 처리됩니다.`)}</div>
+  <div class="grp-h">■ 자동수거건 — 고객 교환 요청</div>
+  <div class="grid2">${subcard("① 자동수거로 제품 회수 중","AS_쿠팡_교환_회수중",
+`네, 고객님. 회수 진행 중인 점 확인되었습니다.
+상품이 물류센터에 입고되면 말씀해 주신 증상을 기준으로 검수를 진행할 예정입니다.
+
+번거로우시겠지만, 어떤 증상이 있었는지 조금 더 자세히 알려주시면 감사하겠습니다. :)`)}${subcard("② 불량 교환 요청 시","AS_쿠팡_교환요청",
+`고객님께서 말씀해 주신 불량 증상을 바탕으로 교환 처리 도와드리겠습니다.
+이용에 불편을 드려 대단히 죄송합니다.`,
+`불량 증상 확인 후 즉시 교환 처리 진행`)}</div>
+  <div class="grp-h grp-sub" id="freePack">③ 포장 및 회수 안내</div>
+  ${caution(`무상 처리 방식은 수령 후 기간에 따라 다릅니다 · 0~3개월 : 반품·교환 모두 가능 · 3~6개월 : 교환만 가능(반품 불가)`)}
   <div class="grp-h">A. 고객 반품 요청 — 무상 반품</div>
   <div class="grid2">${col("blue","전체 반품",
 subcard("포장 · 회수 안내","AS_반품_전체",
@@ -3067,36 +3116,8 @@ subcard("포장 · 회수 안내","AS_반품_부분",
 `불량 교환은 전체/부분 모두 증정품 회수 X · 주소 동일/변경에 따라 재발송`)}
   ${macro("회수/재출고지 확인","AS_교환_회수지",
 `🙋‍♀️ 마지막으로, 제품 회수 및 재출고는 기존 주소지로 접수해 드려도 괜찮으실까요?`)}
-  <div class="grp-h">📦 쿠팡·네이버 스마트스토어 — 자동수거 안내</div>
-  <div class="grp-h">■ [쿠팡 / 네이버 스마트스토어] 자동수거건 — 고객 반품 요청</div>
-  ${macro("① 자동수거로 제품 회수 중","AS_쿠팡_회수중",
-`네, 고객님. 회수 진행 중인 점 확인되었습니다.
-다만 상품이 물류센터에 입고된 뒤 검수 절차를 거쳐야 하므로 즉시 처리는 어려운 점 양해 부탁드립니다.
-
-회수 완료 후 영업일 기준 2~3일 정도 소요될 수 있으니 참고 부탁드립니다. :)`,
-`쿠팡·스마트스토어 주문내역 조회 → 자동 수거 여부 확인 · 자동수거건은 입고 완료 후에만 <a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 조회 가능`)}
-  <div class="grid2">${subcard("② 불량 증상 추가 확인","AS_쿠팡_증상확인",
-`고객님께서 말씀해 주신 증상을 기준으로 검수 도와드릴 예정입니다.
-혹시 어떤 불량 증상이 있었는지 조금 더 구체적으로 말씀해 주실 수 있을까요?
-
-예: 충전했는데 전원이 켜지지 않음 / 버튼 눌러도 반응 없음 등`)}${subcard("③ 시간 양해 후 종료","AS_쿠팡_시간양해",
-`물류센터로 상품이 입고되면 남겨주신 증상을 토대로 검수를 진행하여 최종 불량 여부를 확인하게 됩니다. 이 점 양해 부탁드립니다.
-
-검수는 평균 회수 완료 후 영업일 기준 2~3일 소요되며, 불량으로 확인될 경우 문자 안내 후 결제 수단으로 환불 처리 도와드릴 예정입니다.
-
-※ 검수 결과는 문자로 별도 안내드립니다.
-※ 정상 제품으로 확인될 경우 제품은 반송 처리됩니다.`)}</div>
-  <div class="grp-h">■ 자동수거건 — 고객 교환 요청</div>
-  <div class="grid2">${subcard("① 자동수거로 제품 회수 중","AS_쿠팡_교환_회수중",
-`네, 고객님. 회수 진행 중인 점 확인되었습니다.
-상품이 물류센터에 입고되면 말씀해 주신 증상을 기준으로 검수를 진행할 예정입니다.
-
-번거로우시겠지만, 어떤 증상이 있었는지 조금 더 자세히 알려주시면 감사하겠습니다. :)`)}${subcard("② 불량 교환 요청 시","AS_쿠팡_교환요청",
-`고객님께서 말씀해 주신 불량 증상을 바탕으로 교환 처리 도와드리겠습니다.
-이용에 불편을 드려 대단히 죄송합니다.`,
-`불량 증상 확인 후 즉시 교환 처리 진행`)}</div>
-  <div class="grp-h" id="freeResult">③ 환불/출고 안내</div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">구분</th><th class="cmp-blue">A. 반품</th><th class="cmp-pink">B. 교환</th></tr></thead><tbody><tr><td class="cmp-row-label">수거</td><td colspan="2">위 ② 반품/교환 분기 · 수거 안내 참고 (반품·교환 공통)</td></tr><tr><td class="cmp-row-label">환불 · 출고</td><td>환불 안내 (카드 · 계좌)</td><td>재출고 안내 (시점별)</td></tr></tbody></table></div>
+  <div class="grp-h grp-sub" id="freeResult">④ 환불/재출고 안내</div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">구분</th><th class="cmp-blue">A. 반품</th><th class="cmp-pink">B. 교환</th></tr></thead><tbody><tr><td class="cmp-row-label">수거</td><td colspan="2">위 ② 교환/반품 안내 · ③ 포장 및 회수 안내 참고</td></tr><tr><td class="cmp-row-label">환불 · 출고</td><td>환불 안내 (카드 · 계좌)</td><td>재출고 안내 (시점별)</td></tr></tbody></table></div>
   <div class="grid2">${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
 subcard("환불 절차 안내","AS_환불_카드",
 `환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
@@ -3151,19 +3172,33 @@ b. 계좌 환불 : flex - 워크플로우 - 지출결의서 사업자별 등록`
 ✅ 주소·연락처 변경 요청 시 → 시트 내 정보 반드시 수정
 ✅ 시트 CS RT 번호 생성 후 → <a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 상태값 '요청'으로 변경 필수
 📌 상세 절차 → 후처리 관리 시트 통합 가이드 참고`)}
-  <div class="grp-h" id="paidFlow">🔶 유상 A/S</div>
-  ${caution(`🚧 초안 — 유상 A/S 비용표·입금 계좌 등 실제 값 검수 필요`)}
-  ${macro("① 유상 교환 비용 · 회수 없음 안내","AS_유상_비용안내",
+  <div class="grp-h grp-major" id="paidFlow">🔧 유상 A/S</div>
+  ${caution(`🚧 초안 — 유상 A/S 비용표·입금 계좌·자체 폐기 기준 등 실제 값 검수 필요`)}
+  <div class="grp-h grp-sub" id="paidCost">① 유상 비용 안내</div>
+  ${macro("유상 교환 비용 · 회수 없음 안내","AS_유상_비용안내",
 `유상 교환은 기존 제품 회수 없이 동일 상품의 새 제품으로 발송해 드리는 방식입니다.
 
 · 대상 : 무상 보증기간(6개월) 경과 또는 고객 과실로 인한 고장
 · 비용 : 제품별·기간별 상이 — 1년 이내 유상교환 가격과 1년 경과 유상교환 가격이 다름 (상담 시 개별 안내)
 · 결제 : 무통장 입금만 가능
 
-🏦 (입금 계좌 안내)
-입금 확인 후 새 제품 출고를 진행해 드립니다.`)}
-  <div class="grp-h" id="paidBranch">② 입금 확인에 따른 처리</div>
-  ${macro("입금 확인 → 출고 안내","AS_유상_출고",
+🏦 (입금 계좌 안내)`)}
+  <div class="grp-h grp-sub" id="paidDiscard">② 자체 폐기 안내</div>
+  ${macro("자체 폐기 안내","AS_유상_자체폐기",
+`유상 교환은 기존 제품을 회수하지 않으므로, 사용하시던 제품은 고객님께서 직접 폐기해 주시면 됩니다.
+(초안 — 폐기 방식·주의사항 문구 확정 필요)`)}
+  <div class="grp-h grp-sub" id="paidDeposit">③ 비용 입금 안내</div>
+  ${macro("입금 계좌 안내 & 입금 확인","AS_유상_입금",
+`아래 계좌로 유상 비용 입금 부탁드립니다.
+
+🏦 (입금 계좌 / 예금주)
+※ 입금자명이 접수자명과 다를 경우 확인이 어려우니 참고 부탁드립니다.
+(초안 — 실제 계좌·비용 확정 필요)`)}
+  ${macro("미입금 → 상담 종료","AS_유상_미입금",
+`안내드린 계좌로 입금이 확인되지 않아 이번 유상 교환 접수는 종료됩니다.
+추후 다시 진행을 원하시면 언제든 편하게 문의해 주세요.`)}
+  <div class="grp-h grp-sub" id="paidReship">④ 재출고 안내</div>
+  ${macro("입금 확인 → 재출고 안내","AS_유상_출고",
 `입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
 
 · 출고 : 영업일 기준 1~2일 이내
@@ -3171,10 +3206,21 @@ b. 계좌 환불 : flex - 워크플로우 - 지출결의서 사업자별 등록`
 · 택배사 : CJ대한통운
 
 ※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터(전용 케이블) 사용을 꼭 안내드립니다.`)}
-  ${macro("미입금 → 상담 종료","AS_유상_미입금",
-`안내드린 계좌로 입금이 확인되지 않아 이번 유상 교환 접수는 종료됩니다.
-추후 다시 진행을 원하시면 언제든 편하게 문의해 주세요.`)}
-  ${secTitle("📱","회수/검수 후 절차","촬영 미수긍 → 회수 검수 동의 건","asInspect")}
+  <div class="grp-h grp-major" id="edgeDiscon">🚨 [단종] EDGE CASE</div>
+  ${caution(`🚧 초안 — 단종(수리 부품 미보유) 응대 · 판정 기준은 📋 A/S 기준·품질 보증 참고`)}
+  <div class="grp-h grp-sub" id="edgeIn">① 품질보증기간(1년) 이내 단종</div>
+  ${macro("단종 안내 · 1년 이내","AS_단종_이내",
+`문의 주신 제품이 단종되어 동일 제품으로의 교환이 어려운 점 양해 부탁드립니다. 🥲
+
+① 유사 모델을 '1년 이내 유상교환 가격'으로 구매하실 수 있도록 안내드립니다.
+② 원치 않으실 경우, 구입가를 자사몰 포인트로 대체 환급해 드립니다.`,`초안`)}
+  <div class="grp-h grp-sub" id="edgeOut">② 품질보증기간(1년) 경과 단종</div>
+  ${macro("단종 안내 · 1년 경과","AS_단종_경과",
+`문의 주신 제품이 단종되어 동일 제품으로의 교환이 어려운 점 양해 부탁드립니다. 🥲
+
+① 유사 모델을 '1년 경과 유상교환 가격'으로 구매하실 수 있도록 안내드립니다.
+② 원치 않으실 경우, 정액 감가상각한 잔여 금액에 구입가의 10%를 가산하여 자사몰 포인트로 대체 환급해 드립니다.`,`초안`)}
+  ${secTitle("✨","[예외] 증빙 미제출","촬영 미수긍 → 회수 검수 동의 건","exNoEvid")}
   ${caution(`⚠️ 아래 flow는 사진/영상 촬영 지속 미수긍으로 회수 후 검수 진행에 동의한 경우에만 진행 · 이전 상담 내역에서 교환/반품 처리 방안 확인`)}
   <div class="grp-h">❌ 검수 결과 — 불량 확인</div>
   <div class="grid2">${subcard("A. 반품 — 카드/삼성페이/네이버페이","AS_검수_반품_카드",
@@ -5668,7 +5714,7 @@ Be Live and Better — 더 나은 나의 라이프, 빌바입니다.
 
   ${secTitle("📦","[슬룸] 외부몰 유형별 템플릿",null,"b_ext")}
   <div class="quote-box"><b>📌 이 템플릿은 외부몰 고객문의 답변 기준입니다</b>
-<span style="color:#d92d20;font-weight:800">고객센터 문의(외부몰 상담사) 답변 시에는 템플릿을 그대로 복사하지 말고, 인사말·문장·톤을 상황에 맞게 수정하여 사용해 주세요.</span></div>
+<span style="color:#C89A5B;font-weight:800">고객센터 문의(외부몰 상담사) 답변 시에는 템플릿을 그대로 복사하지 말고, 인사말·문장·톤을 상황에 맞게 수정하여 사용해 주세요.</span></div>
   <div class="grp-h" id="b_ext_1">1. 일반 문의</div>
   <div class="grid2">${macro("중국 알리와 같은 상품 여부 (허리편한케어)","외부몰_알리",
 `안녕하세요 고객님,
@@ -7288,8 +7334,8 @@ const DASH_HOME = `
     <div class="dash-card" onclick="goRail('board')"><div class="dash-ico">📝</div><h3>게시판 (비실시간)</h3><p>· 1:1 문의·FAQ·댓글 등 비실시간 상담에 사용하는 응대 모음입니다.<br>· 첫인사/끝인사, FAQ 공통 양식, 문의 유형별 템플릿, 제품별 사용법을 확인할 수 있습니다.</p><div class="dash-go">바로가기 →</div></div>
   </div>
   <div class="grp-h">🎨 브랜드별 정책 · 톤앤매너 (내부 참고)</div>
-  <div style="font-size:12px;color:var(--ink-soft);margin:-4px 0 10px"><span style="color:#2563eb;font-weight:800">O</span> 제공 · <span style="color:#dc2626;font-weight:800">X</span> 미제공</div>
-  <div class="cmp-table-wrap"><table class="cmp-table policy-tb" style="table-layout:fixed"><colgroup><col style="width:120px"><col style="width:150px"><col style="width:150px"><col></colgroup><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue" style="text-align:center">A/S</th><th class="cmp-blue" style="text-align:center">100% 환불</th><th class="cmp-blue">톤앤매너</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">쉬운 말·짧게·두괄식, 고령 배려·공감 필수</td></tr><tr><td class="cmp-row-label">심플리케어</td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">쉬운 말·짧게, 두괄식+친절</td></tr><tr><td class="cmp-row-label">얼라인랩</td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span><div style="font-size:11px;color:#8a94a6;margin-top:3px">(전자제품/디바이스)</div></td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·공감, 하트 이모지</td></tr><tr><td class="cmp-row-label">빌바</td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">고령 배려·쉬운 말, 공감 필수</td></tr><tr><td class="cmp-row-label">셀올로지</td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span><div style="font-size:11px;color:#8a94a6;margin-top:3px">(디바이스)</div></td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">젊은 톤·이모지</td></tr><tr><td class="cmp-row-label">코코다움</td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">다정·이모지, 호칭 ‘보호자님’</td></tr><tr><td class="cmp-row-label">12 o'clock</td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·이모지·젊은 톤</td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">젊은 톤·간결</td></tr><tr><td class="cmp-row-label">와이브닝</td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">공감 필수·이모지</td></tr><tr><td class="cmp-row-label">마넬</td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·공감 (얼라인랩과 동일)</td></tr><tr><td class="cmp-row-label">닥터아망</td><td style="text-align:center"><span style="color:#dc2626;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#2563eb;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">다정·공감·이모지</td></tr></tbody></table></div>
+  <div style="font-size:12px;color:var(--ink-soft);margin:-4px 0 10px"><span style="color:#234A86;font-weight:800">O</span> 제공 · <span style="color:#C89A5B;font-weight:800">X</span> 미제공</div>
+  <div class="cmp-table-wrap"><table class="cmp-table policy-tb" style="table-layout:fixed"><colgroup><col style="width:120px"><col style="width:150px"><col style="width:150px"><col></colgroup><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue" style="text-align:center">A/S</th><th class="cmp-blue" style="text-align:center">100% 환불</th><th class="cmp-blue">톤앤매너</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">쉬운 말·짧게·두괄식, 고령 배려·공감 필수</td></tr><tr><td class="cmp-row-label">심플리케어</td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">쉬운 말·짧게, 두괄식+친절</td></tr><tr><td class="cmp-row-label">얼라인랩</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span><div style="font-size:11px;color:#8a94a6;margin-top:3px">(전자제품/디바이스)</div></td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·공감, 하트 이모지</td></tr><tr><td class="cmp-row-label">빌바</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">고령 배려·쉬운 말, 공감 필수</td></tr><tr><td class="cmp-row-label">셀올로지</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span><div style="font-size:11px;color:#8a94a6;margin-top:3px">(디바이스)</div></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">젊은 톤·이모지</td></tr><tr><td class="cmp-row-label">코코다움</td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">다정·이모지, 호칭 ‘보호자님’</td></tr><tr><td class="cmp-row-label">12 o'clock</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·이모지·젊은 톤</td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">젊은 톤·간결</td></tr><tr><td class="cmp-row-label">와이브닝</td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">공감 필수·이모지</td></tr><tr><td class="cmp-row-label">마넬</td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·공감 (얼라인랩과 동일)</td></tr><tr><td class="cmp-row-label">닥터아망</td><td style="text-align:center"><span style="color:#C89A5B;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">다정·공감·이모지</td></tr></tbody></table></div>
 `;
 
 const RAIL = {
@@ -7420,23 +7466,32 @@ delete BRAND_TREE["슬룸"]["유상 A/S"];
 BRAND_TREE["슬룸"]["A/S 및 불량"]={
   __content:"slm_as",
   __sections:[
-    {group:true, label:"📋 A/S 기준·품질 보증", anchor:"asBase"},
-    {group:true, label:"1️⃣ 불량 유형 확인", anchor:"step1"},
-    {label:"🅰 사용법 안내 필요", anchor:"groupA"},
-    {sub:true, label:"1. 충전/전원 증상", anchor:"t1"},
-    {sub:true, label:"2. 작동 관련 증상", anchor:"t2"},
-    {sub:true, label:"3. 소음/EMS 강도", anchor:"t3"},
-    {label:"🅱 사용법 무관", anchor:"groupB"},
-    {sub:true, label:"4. 구성품 누락", anchor:"t5"},
-    {sub:true, label:"5. 이염/오염", anchor:"t6"},
+    {group:true, label:"💡 A/S 정책 및 기준", anchor:"asBase"},
+    {group:true, label:"1️⃣ 보증기간 확인", anchor:"guar"},
+    {group:true, label:"2️⃣ 불량 유형 확인", anchor:"step1"},
+    {label:"a. 사용법 안내 필요", anchor:"groupA"},
+    {sub:true, label:"① 충전/전원", anchor:"t1"},
+    {sub:true, label:"② 작동 관련 증상", anchor:"t2"},
+    {sub:true, label:"③ 소음·온열·EMS 강도", anchor:"t3"},
+    {label:"b. 사용법 안내 불필요", anchor:"groupB"},
+    {sub:true, label:"④ 구성품 누락", anchor:"t5"},
+    {sub:true, label:"⑤ 이염/오염", anchor:"t6"},
     {label:"🔁 재불량", anchor:"t4"},
-    {group:true, label:"2️⃣ A/S 처리 방법", anchor:"step2"},
+    {group:true, label:"3️⃣ A/S 접수", anchor:"step2"},
     {label:"🛠️ 무상 A/S", anchor:"freeFlow"},
-    {sub:true, label:"① 증빙 수령", anchor:"freeEvidence"},
-    {sub:true, label:"② 반품/교환·수거", anchor:"freeBranch"},
-    {sub:true, label:"③ 환불/출고", anchor:"freeResult"},
-    {label:"🔶 유상 A/S", anchor:"paidFlow"},
-    {group:true, label:"📱 회수/검수 후 절차", anchor:"asInspect"}
+    {sub:true, label:"① 증빙 추가 확인", anchor:"freeEvidence"},
+    {sub:true, label:"② 교환/반품 안내", anchor:"freeBranch"},
+    {sub:true, label:"③ 포장 및 회수 안내", anchor:"freePack"},
+    {sub:true, label:"④ 환불/재출고 안내", anchor:"freeResult"},
+    {label:"🔧 유상 A/S", anchor:"paidFlow"},
+    {sub:true, label:"① 유상 비용 안내", anchor:"paidCost"},
+    {sub:true, label:"② 자체 폐기 안내", anchor:"paidDiscard"},
+    {sub:true, label:"③ 비용 입금 안내", anchor:"paidDeposit"},
+    {sub:true, label:"④ 재출고 안내", anchor:"paidReship"},
+    {label:"🚨 [단종] EDGE CASE", anchor:"edgeDiscon"},
+    {sub:true, label:"① 품질보증기간(1년) 이내", anchor:"edgeIn"},
+    {sub:true, label:"② 품질보증기간(1년) 경과", anchor:"edgeOut"},
+    {label:"✨ [예외] 증빙 미제출", anchor:"exNoEvid"}
   ]
 };
 
@@ -7771,10 +7826,24 @@ function buildTree(obj, prefix){
     const sections=val.__sections;
     const childKeys=Object.keys(val).filter(k=>!k.startsWith("__"));
     if(hasContent && sections && sections.length){
-      // 문의유형 페이지 + 섹션(소제목) 하위 목록
-      const secLeaves=sections.map(s=>
-        `<div class="leaf ${s.group?'leaf-secgrp':'leaf-sec'}${s.sub?' leaf-sub':''}" data-content="${val.__content}" data-anchor="${s.anchor}" data-path="${path} › ${s.label}" onclick="pickLeaf(this)">${s.label}</div>`).join("");
-      html+=`<div class="node"><div class="node-toggle" data-content="${val.__content}" data-path="${path}" onclick="nodeOpenContent(this)"><span class="arrow">▶</span>${key}</div><div class="node-children">${secLeaves}</div></div>`;
+      // 문의유형 페이지 + 섹션(소제목) 하위 목록 · sub 항목은 부모 아래 접기
+      const cid=val.__content; let secHtml="", si=0;
+      while(si<sections.length){
+        const sMk=sections[si];
+        const attrs=`data-content="${cid}" data-anchor="${sMk.anchor}" data-path="${path} › ${sMk.label}"`;
+        if(sMk.group){ secHtml+=`<div class="leaf leaf-secgrp" ${attrs} onclick="pickLeaf(this)">${sMk.label}</div>`; si++; }
+        else if(!sMk.sub){
+          let sj=si+1; const kids=[];
+          while(sj<sections.length && sections[sj].sub){ kids.push(sections[sj]); sj++; }
+          if(kids.length){
+            const kidHtml=kids.map(k=>`<div class="leaf leaf-sub" data-content="${cid}" data-anchor="${k.anchor}" data-path="${path} › ${k.label}" onclick="pickLeaf(this)">${k.label}</div>`).join("");
+            secHtml+=`<div class="sec-parent"><div class="leaf leaf-sec sec-parent-h" ${attrs} onclick="toggleSecParent(this)"><span class="sec-caret">▸</span>${sMk.label}</div><div class="sec-children">${kidHtml}</div></div>`;
+            si=sj;
+          }else{ secHtml+=`<div class="leaf leaf-sec" ${attrs} onclick="pickLeaf(this)">${sMk.label}</div>`; si++; }
+        }
+        else{ secHtml+=`<div class="leaf leaf-sub" ${attrs} onclick="pickLeaf(this)">${sMk.label}</div>`; si++; }
+      }
+      html+=`<div class="node"><div class="node-toggle" data-content="${cid}" data-path="${path}" onclick="nodeOpenContent(this)"><span class="arrow">▶</span>${key}</div><div class="node-children">${secHtml}</div></div>`;
     }else if(childKeys.length){
       html+=`<div class="node"><div class="node-toggle" onclick="toggleNode(this)"><span class="arrow">▶</span>${key}</div><div class="node-children">${buildTree(val,path)}</div></div>`;
     }else{
@@ -7809,6 +7878,13 @@ function renderTree(){
 
 function closeSiblings(node){var pr=node.parentElement; if(!pr)return; for(var i=0;i<pr.children.length;i++){var ch=pr.children[i]; if(ch!==node&&ch.classList&&ch.classList.contains("node")) ch.classList.remove("open");}}
 function toggleNode(el){var node=el.parentElement; var willOpen=!node.classList.contains("open"); if(willOpen) closeSiblings(node); node.classList.toggle("open");}
+function toggleSecParent(el){
+  const parent=el.closest(".sec-parent"); if(!parent) return;
+  const willOpen=!parent.classList.contains("open");
+  pickLeaf(el);
+  if(willOpen){ parent.parentElement.querySelectorAll(".sec-parent.open").forEach(x=>{ if(x!==parent) x.classList.remove("open"); }); }
+  parent.classList.toggle("open");
+}
 
 /* 문의유형 라벨 클릭 = 펼치기 + 페이지 로드(맨 위) */
 function nodeOpenContent(el){
@@ -7988,12 +8064,12 @@ function renderBookmarks(){
   const pages=loadBM("pages"), ments=loadBM("ments");
   let html=`<h1>🔖 북마크</h1><div class="sub">내 브라우저에 저장된 북마크 · 각자 계정/PC별로 관리됩니다</div>`;
   html+=`<div class="grp-h" style="margin-top:18px">⭐ 북마크 페이지 <span style="font-weight:500;color:var(--ink-soft);font-size:12px">(${pages.length})</span></div>`;
-  html+= pages.length ? pages.map(p=>
-    `<div class="bm-page" onclick="openBM('${esc(p.cid)}')"><span class="bm-star on">★</span><span>${esc(p.path||p.cid)}</span>`
-    +`<button class="bm-del" onclick="event.stopPropagation();delBMPage('${esc(p.cid)}')" title="삭제">✕</button></div>`).join("")
+  html+= pages.length ? `<div class="grid2" style="align-items:start;margin-bottom:0">`+pages.map(p=>
+    `<div class="bm-page" style="margin-bottom:0" onclick="openBM('${esc(p.cid)}')"><span class="bm-star on">★</span><span>${esc(p.path||p.cid)}</span>`
+    +`<button class="bm-del" onclick="event.stopPropagation();delBMPage('${esc(p.cid)}')" title="삭제">✕</button></div>`).join("")+`</div>`
     : `<div class="bm-empty">아직 없습니다. 페이지 우측 상단의 <b>☆ 북마크</b> 버튼으로 추가하세요.</div>`;
   html+=`<div class="grp-h" style="margin-top:24px">🔖 북마크 멘트 <span style="font-weight:500;color:var(--ink-soft);font-size:12px">(${ments.length})</span></div>`;
-  html+= ments.length ? ments.map(bmMentCard).join("")
+  html+= ments.length ? `<div class="grid2" style="align-items:start">`+ments.map(bmMentCard).join("")+`</div>`
     : `<div class="bm-empty">아직 없습니다. 각 카드 복사버튼(📋) 옆 <b style="color:#e0a800">☆</b> 를 눌러 추가하세요.</div>`;
   render(html);
   setCrumb("북마크");
@@ -8119,6 +8195,13 @@ function updateScrollSpy(){
   if(best.classList.contains("active")) return;
   document.querySelectorAll(".leaf.active").forEach(l=>l.classList.remove("active"));
   best.classList.add("active");
+  if(best.classList.contains("leaf-sub")){
+    const sp=best.closest(".sec-parent");
+    if(sp && !sp.classList.contains("open")){
+      sp.parentElement.querySelectorAll(".sec-parent.open").forEach(x=>x.classList.remove("open"));
+      sp.classList.add("open");
+    }
+  }
 }
 (function(){
   const c=document.querySelector(".content"); if(!c) return;
