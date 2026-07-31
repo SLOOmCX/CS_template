@@ -413,9 +413,50 @@
   .bn-h{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
   .bn-h .spacer{flex:1;}
   .bn-body{white-space:pre-wrap;}
+  /* 💰 환급금 자동 계산기 */
+  .refund-calc{margin-top:14px;background:#fff;border:1px solid #CBDBF1;border-radius:12px;padding:14px 16px;}
+  .refund-calc-h{font-weight:800;color:var(--trust-blue);font-size:12.5px;margin-bottom:10px;}
+  .refund-calc-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+  .refund-calc-row label{font-size:12.5px;font-weight:700;color:var(--ink);min-width:60px;flex-shrink:0;}
+  .refund-calc-row input{flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;color:var(--ink);background:#fff;}
+  .refund-calc-row input:focus{outline:none;border-color:var(--skyblue);box-shadow:0 0 0 3px var(--skyblue-soft);}
+  .refund-calc-row .unit{font-size:12px;color:var(--ink-soft);flex-shrink:0;}
+  .refund-calc-err{font-size:11px;color:#b3234b;margin:-2px 0 6px;display:none;}
+  .refund-calc-out{border-top:1px dashed #CBDBF1;padding-top:10px;display:flex;flex-direction:column;gap:6px;}
+  .refund-calc-out div{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink);}
+  .refund-calc-out span{color:var(--ink-soft);}
+  .refund-calc-out b{color:var(--trust-blue);font-weight:700;}
+  .refund-calc-out .final{border-top:1px solid #CBDBF1;padding-top:8px;margin-top:2px;}
+  .refund-calc-out .final span{color:var(--trust-blue);font-weight:800;font-size:13px;}
+  .refund-calc-out .final b{font-size:15px;font-weight:800;}
+  /* ※ 법적 근거 접기/펼치기 */
+  .legal-fold{margin-top:12px;font-size:11px;color:var(--ink-soft);}
+  .legal-fold summary{cursor:pointer;font-weight:700;list-style:none;}
+  .legal-fold summary::-webkit-details-marker{display:none;}
+  .legal-fold summary:before{content:"▸ ";}
+  .legal-fold[open] summary:before{content:"▾ ";}
+  .legal-fold p{margin:6px 0 0;line-height:1.6;}
   .hidden{display:none;}
   /* 매크로명(#태그) 일괄 숨김 — 추후 정리 후 재노출 */
   .macro-head .tag,.subcard-h .tag,.col-h .ct-tag{display:none;}
+  .astbl{border-collapse:collapse;width:100%;margin:6px 0 16px;font-size:13px;}
+  .astbl th{background:#9BBB59;color:#fff;font-weight:700;padding:9px 12px;text-align:left;border:1px solid #d9d9d9;}
+  .astbl td{padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top;line-height:1.7;color:var(--ink);}
+  .astbl td:first-child{width:170px;font-weight:600;background:#fafafa;}
+  .h1lvl{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;color:var(--title);margin:38px 0 14px;padding-bottom:10px;border-bottom:2px solid #234A86;}
+  .h1lvl .num{width:26px;height:26px;border-radius:50%;background:#234A86;color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;}
+  .h2lvl{font-size:15px;font-weight:800;color:#234A86;margin:24px 0 12px;padding-left:12px;border-left:4px solid #234A86;line-height:1.35;}
+  .lvl2-body{margin:0 0 8px 13px;padding-left:18px;border-left:1.5px solid #E5E7EB;}
+  .h3lvl{font-size:15px;font-weight:700;color:#374151;margin:18px 0 9px;}
+  .h3lvl::before{content:"\2022 ";color:#234A86;font-size:10px;vertical-align:2px;}
+  .lvl3-body{margin:0 0 8px 4px;padding-left:16px;border-left:1.5px dashed #D9DEE7;}
+  .ph{font-size:12.5px;color:#9CA3AF;background:#FAFAFA;border:1px dashed #E5E7EB;border-radius:8px;padding:10px 14px;margin:4px 0 12px;}
+  .typ{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:800;color:#234A86;margin:24px 0 13px;}
+  .typ .tnum{width:28px;height:28px;border-radius:9px;background:#234A86;color:#fff;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;}
+  .flowgroup{background:#F4F8FD;border:1px solid #DCE8F7;border-radius:12px;padding:11px;display:flex;flex-direction:column;gap:9px;}
+  .h1lvl,.h2lvl,.h3lvl,.typ{scroll-margin-top:70px;}
+  .grp-h{scroll-margin-top:70px;}
+  .h2lvl.as-major{font-size:18px;color:#fff;background:#234A86;border-left:none;border-radius:10px;padding:11px 18px;margin:28px 0 14px;}
 </style>
 </head>
 <body>
@@ -556,7 +597,7 @@ const STEP_REF_1 = `
       <div class="card">
         <div class="card-head ok">⭕ 신청 가능</div>
         <div class="card-body"><ul>
-          <li>제품 수령일로부터 <b>7일 이내</b></li>
+          <li>상품 수령일로부터 <b>7일 이내</b></li>
           <li>미개봉 또는 개봉 후 미사용 상태</li>
           <li>구성 확인 목적으로 <b>포장만</b> 개봉한 경우 (개봉 후 미사용)</li>
           <li class="warn">⚠️ 전자제품은 어댑터 연결·작동 이력이 1회라도 있으면 '미사용'에 해당하지 않습니다.</li>
@@ -785,8 +826,8 @@ const REF_SIMPLE = `
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 🚚 <b>회수 안내</b>
@@ -825,8 +866,8 @@ const REF_SIMPLE = `
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 불량 제품은 박스 윗면에만 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -914,7 +955,7 @@ const REF_100REFUND = `
 다만 앞서 안내드린 것처럼, 개봉 후 사용하신 제품은 원칙적으로 단순 변심에 의한 반품이 어렵습니다.
 
 다만, 공식몰에서 구매하신 첫 구매 고객님께는 <b>[100% 환불 이벤트]</b>를 운영하고 있어요.
-제품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
+상품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
 
 또한 (제품명)은 인체공학적으로 설계된 제품으로, 개인에 따라 1~2주 정도의 적응 기간이 필요할 수 있습니다.
 
@@ -1028,8 +1069,8 @@ subcard("포장 · 회수 안내","100환불_단품_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1095,8 +1136,8 @@ subcard("🔴 일부 상품 차감 안내","100환불_2b_차감안내",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1136,8 +1177,8 @@ subcard("포장 · 회수 안내","100환불_세트_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1234,7 +1275,7 @@ const CELLOLOGY_100 = `
 다만 앞서 안내드린 것처럼, 개봉 후 사용하신 제품은 원칙적으로 단순 변심에 의한 반품이 어렵습니다.
 
 다만, 공식몰에서 구매하신 첫 구매 고객님께는 <b>[100% 환불 이벤트]</b>를 운영하고 있어요.
-제품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
+상품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
 
 조금 더 사용해 보신 후에도 만족스럽지 않으시다면, 기간 내 채팅 상담으로 환불 신청 부탁드립니다. 😊`)}
   ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(정석)·배송 택배사(CJ대한통운) 등을 통해 배송완료일자 확인`)}
@@ -1350,8 +1391,8 @@ subcard("포장 · 회수 안내","100환불_단품_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1364,7 +1405,9 @@ subcard("포장 · 회수 안내","100환불_단품_포장회수",
 💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
 ⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
 )}
-  ${guide(`⚠️ 증정품 회수 O`)}
+  ${guide(`⚠️ 증정품 회수 O
+
+📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내`)}
   ${secTitle("2","동일 상품 2개 이상 (1+1 포함)",null,"secMulti")}
   ${macro("체험 상품 외 개봉 여부 확인","100환불_2개_개봉확인",
 `고객님, 동일한 상품을 1개 이상 구매하신 경우에는 체험용 1개 외 나머지 상품은 개봉 또는 손상 없이 보관된 경우에만 전액 환불이 가능합니다.
@@ -1396,7 +1439,9 @@ subcard("a. 네이버페이","100환불_2a_배송비_네이버",
 방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
 
 💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + guide(`⚠️ 증정품 회수 X`)
+⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + guide(`⚠️ 증정품 회수 X
+
+📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내`)
 )}${col("blue","b. 체험 1개 외 추가 사용",
 subcard("🔴 일부 상품 차감 안내","100환불_2b_차감안내",
 `확인 감사합니다 :)
@@ -1417,8 +1462,8 @@ subcard("🔴 일부 상품 차감 안내","100환불_2b_차감안내",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1434,7 +1479,9 @@ subcard("🔴 일부 상품 차감 안내","100환불_2b_차감안내",
 
 체험 상품 외 나머지 제품은 정상 구매로 처리되며, 반품 시에는 해당 제품들의 정가 차감 후 환불되는 점 양해 부탁드립니다.`) + guide(`- 체험 1개 외 1개 추가 개봉 → 개봉 제품 2개 중 1개는 고객 부담, 반품 배송비 6,000원 부담
 - n개 추가 개봉 → n개-1 (1개는 100% 환불 적용) 만큼 차감
-※ 상품 차감 기준 : 자사몰 1개 정가 기준`) + guide(`⚠️ 증정품 회수 X`)
+※ 상품 차감 기준 : 자사몰 1개 정가 기준`) + guide(`⚠️ 증정품 회수 X
+
+📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내`)
 )}</div>
   ${guide(`💡 반품/교환 접수 시 <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트 리스트업 필수 (→ 후처리 관리 시트 통합 가이드 참고)
 
@@ -1458,8 +1505,8 @@ subcard("포장 · 회수 안내","100환불_세트_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1472,7 +1519,9 @@ subcard("포장 · 회수 안내","100환불_세트_포장회수",
 💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
 ⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
 )}
-  ${guide(`⚠️ 증정품 회수 O`)}
+  ${guide(`⚠️ 증정품 회수 O
+
+📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내`)}
   ${secTitle("4","기타 유형",null,"secExc")}
   <div class="grp-h">⚠️ 전액 환불 불가 안내</div>
   <div class="grid2">${col("blue","a. 여러 주문번호로 각각 구매",
@@ -1557,7 +1606,7 @@ const DRAMANG_100 = `
 다만 앞서 안내드린 것처럼, 개봉 후 섭취하신 제품은 원칙적으로 단순 변심에 의한 반품이 어렵습니다.
 
 다만, 공식몰에서 구매하신 첫 구매 고객님께는 <b>[100% 환불 이벤트]</b>를 운영하고 있어요.
-제품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
+상품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
 
 조금 더 사용해 보신 후에도 만족스럽지 않으시다면, 기간 내 채팅 상담으로 환불 신청 부탁드립니다. 😊
 
@@ -1674,7 +1723,6 @@ subcard("포장 · 회수 안내","100환불_단품_포장회수",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1708,7 +1756,6 @@ subcard("a. 네이버페이","100환불_2a_배송비_네이버",
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
 ■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1741,7 +1788,6 @@ subcard("🔴 일부 상품 차감 안내","100환불_2b_차감안내",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1782,7 +1828,6 @@ subcard("포장 · 회수 안내","100환불_세트_포장회수",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -1880,7 +1925,7 @@ const YVENING_100 = `
 다만 앞서 안내드린 것처럼, 개봉 후 사용하신 제품은 원칙적으로 단순 변심에 의한 반품이 어렵습니다.
 
 다만, 공식몰에서 구매하신 첫 구매 고객님께는 <b>[100% 환불 이벤트]</b>를 운영하고 있어요.
-제품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
+상품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
 
 조금 더 사용해 보신 후에도 만족스럽지 않으시다면, 기간 내 채팅 상담으로 환불 신청 부탁드립니다. 😊
 
@@ -1997,7 +2042,6 @@ subcard("포장 · 회수 안내","100환불_단품_포장회수",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -2031,7 +2075,6 @@ subcard("a. 네이버페이","100환불_2a_배송비_네이버",
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
 ■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -2064,7 +2107,6 @@ subcard("🔴 일부 상품 차감 안내","100환불_2b_차감안내",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -2105,7 +2147,6 @@ subcard("포장 · 회수 안내","100환불_세트_포장회수",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -2204,7 +2245,7 @@ const COCODAUM_100 = `
 다만 앞서 안내드린 것처럼, 개봉 후 급여하신 제품은 원칙적으로 단순 변심에 의한 반품이 어려워요. 😿
 
 다만, 공식몰에서 구매하신 첫 구매 보호자님께는 <b>[100% 환불 이벤트]</b>를 운영하고 있어요.
-제품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
+상품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
 
 조금 더 사용해 보신 후에도 만족스럽지 않으시다면, 기간 내 채팅 상담으로 환불 신청 부탁드려요. 😊
 
@@ -2315,8 +2356,7 @@ subcard("포장 · 회수 안내","100환불_단품_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 박스 전체 (남은 포·스틱 포함)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드려요.
@@ -2349,8 +2389,7 @@ subcard("a. 네이버페이","100환불_2a_배송비_네이버",
 
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
-■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
+■ 반품 제품 박스 전체 (남은 포·스틱 포함)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드려요.
@@ -2382,8 +2421,7 @@ subcard("🔴 일부 상품 차감 안내","100환불_2b_차감안내",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 박스 전체 (남은 포·스틱 포함)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드려요.
@@ -2423,8 +2461,7 @@ subcard("포장 · 회수 안내","100환불_세트_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 박스 전체 (남은 포·스틱 포함)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드려요.
@@ -2522,7 +2559,7 @@ const SIMPLICARE_100 = `
 다만 앞서 안내드린 것처럼, 개봉 후 섭취하신 제품은 원칙적으로 단순 변심에 의한 반품이 어렵습니다.
 
 다만, 공식몰에서 구매하신 첫 구매 고객님께는 <b>[100% 환불 이벤트]</b>를 운영하고 있어요.
-제품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
+상품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
 
 조금 더 사용해 보신 후에도 만족스럽지 않으시다면, 기간 내 채팅 상담으로 환불 신청 부탁드립니다. 😊
 
@@ -2638,8 +2675,7 @@ subcard("포장 · 회수 안내","100환불_단품_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체 (남은 내용물 포함)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -2672,8 +2708,7 @@ subcard("a. 네이버페이","100환불_2a_배송비_네이버",
 
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
-■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
+■ 반품 제품 전체 (남은 내용물 포함)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -2705,8 +2740,7 @@ subcard("🔴 일부 상품 차감 안내","100환불_2b_차감안내",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체 (남은 내용물 포함)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -2746,8 +2780,7 @@ subcard("포장 · 회수 안내","100환불_세트_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체 (남은 내용물 포함)
 ■ 사은품·증정품(받으신 경우)
 
 ✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
@@ -2813,539 +2846,271 @@ b. 계좌 환불 : flex - 워크플로우 - 지출결의서 사업자별 등록`
 
 
 const REF_AS = `
+  
 
   <h1>🛠️ A/S 및 불량</h1>
     <div class="sub">A/S 및 불량으로 인한 교환·반품 (자사몰/외부몰)</div>
 
-  ${secTitle("","💡 A/S 정책 및 기준","자사몰/외부몰","asBase")}
-  <div class="blue-note" style="margin:14px 0"><div class="bn-body"><div style="display:grid;grid-template-columns:1fr 1fr;gap:0"><div style="padding-right:18px"><b>🛠️ 슬룸 전자제품 품질 보증 기간 1년</b><br>유상·무상 서비스 기간을 포함한 전체 기간입니다.<br>(👉🏻 <a href="https://sleeplab.co.kr/notice/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=18663258&t=board" target="_blank">슬룸 자사몰 A/S 전자제품 공지사항</a> 참고)</div><div style="padding-left:18px;border-left:2px dashed #C7DAF2"><b>💡 배송비 유의사항</b><br>🛠️ <b>무상 A/S</b> (교환·반품) 배송비 고객 부담 <b>X</b><br>🔧 <b>유상 A/S</b> (유상 교환) 기존 제품 자체 폐기 안내<br>&nbsp;&nbsp;┗ 수긍 시 편도 3,000원 / 미수긍 시 왕복 6,000원 고객 부담</div></div></div></div>
-  <div class="grid2">
-<div style="border:1px solid #E6E8EC;border-radius:12px;overflow:hidden;margin-bottom:0"><div style="background:#F4F8FD;padding:11px 15px;font-weight:800;color:#234A86;border-bottom:1px solid #E6E8EC">✅ 정상 사용 환경 <span style="font-weight:500;color:#6B7280;font-size:13px">· 제품 자체의 자연적 고장</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 0~3개월</td><td style="padding:13px 16px;background:#F4F8FD;vertical-align:top"><span style="font-weight:800;color:#234A86;font-size:15px">🛠️ 무상 A/S</span><div style="color:#C89A5B;font-weight:700;margin-top:4px;font-size:13px;line-height:1.6">무상 교환 / 무상 반품 중 택1</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 3~6개월</td><td style="padding:13px 16px;background:#F4F8FD;vertical-align:top"><span style="font-weight:800;color:#234A86;font-size:15px">🛠️ 무상 A/S</span><div style="color:#C89A5B;font-weight:700;margin-top:4px;font-size:13px;line-height:1.6">무상 교환</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 6개월~1년</td><td style="padding:13px 16px;background:#FCF9F5;vertical-align:top"><span style="font-weight:800;color:#C89A5B;font-size:15px">유상 A/S</span><div style="color:#6B7280;margin-top:4px;font-size:13px;line-height:1.6">원인 분석 후 유상 서비스만 제공</div></td></tr><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 1년 경과</td><td style="padding:13px 16px;background:#FCF9F5;vertical-align:top"><span style="font-weight:800;color:#C89A5B;font-size:15px">유상 A/S</span><div style="color:#6B7280;margin-top:4px;font-size:13px;line-height:1.6">유상 서비스 제공 (기간·신청 횟수 무관 지속 가능)</div></td></tr></tbody></table></div>
-  <div style="display:flex;flex-direction:column;gap:12px"><div style="border:1px solid #E6E8EC;border-radius:12px;overflow:hidden;margin-bottom:0"><div style="background:#FCF9F5;padding:11px 15px;font-weight:800;color:#C89A5B;border-bottom:1px solid #E6E8EC">⚠️ 고객 과실 <span style="font-weight:500;color:#6B7280;font-size:13px">· 파손·분실·사용 부주의 등</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 전 기간 동일</td><td style="padding:13px 16px;background:#FCF9F5;vertical-align:top"><span style="font-weight:800;color:#C89A5B;font-size:15px">유상 A/S</span><div style="color:#6B7280;margin-top:4px;font-size:12.5px;line-height:1.7">· 무통장 입금으로만 가능<br>· 제품별 상이 · <b>1년 이내와 1년 경과 유상교환 가격이 다름</b> (상담 시 안내)</div></td></tr></tbody></table></div><div style="border:1px solid #E6E8EC;border-radius:12px;overflow:hidden;margin-bottom:0"><div style="background:#EAF4F0;padding:11px 15px;font-weight:800;color:#3E8B7B;border-bottom:1px solid #E6E8EC">💡 무상 접수 기간 제한 <span style="font-weight:500;color:#6B7280;font-size:13px">· 구성품 누락 / 초도 파손 / 이염·오염</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 수령일 7일 이내</td><td style="padding:13px 16px;vertical-align:top;color:#6B7280;font-size:12.5px;line-height:1.7">✔️ 구성품 누락<br>✔️ 초도 파손 / 이염 / 오염<br>→ 제품 수령일로부터 <b>7일 이내 문의 시에만 무상 접수 가능</b></td></tr></tbody></table></div></div>
-  </div>
-  <div style="background:#FAFAFA;border:1px solid #E5E7EB;border-left:3px solid #D1D5DB;border-radius:12px;padding:16px 6px;display:grid;grid-template-columns:1fr 1fr"><div style="padding:0 20px"><div style="font-weight:800;color:#4B5563;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) 이내 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 이내 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 구입가를 자사몰 포인트로 대체 환급</div></div><div style="padding:0 20px;border-left:2px dashed #D1D5DB"><div style="font-weight:800;color:#4B5563;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) 경과 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 경과 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 정액 감가상각한 잔여 금액에 구입가의 10%를 가산 후 자사몰 포인트로 대체 환급</div></div></div>
+  
+  <div class="h1lvl" id="asBase">💡 A/S 정책 및 기준</div>
+  
+  <div class="blue-note" style="margin:14px 0"><div class="bn-body"><div style="display:grid;grid-template-columns:1fr 1fr;gap:0"><div style="padding-right:18px"><b>🛠️ 슬룸 전자제품 품질 보증 기간 1년</b><br><b>상품 수령일 기준</b>이며, 유상·무상 서비스 기간을 포함한 전체 기간입니다.<br>(👉🏻 <a href="https://sleeplab.co.kr/notice/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=18663258&t=board" target="_blank">슬룸 자사몰 A/S 전자제품 공지사항</a> 참고)</div><div style="padding-left:18px;border-left:2px dashed #C7DAF2"><b>💡 배송비 유의사항</b><br>🛠️ <b>무상 A/S</b> (교환·반품) 배송비 고객 부담 <b>X</b><br>🔧 <b>유상 A/S</b> (유상 교환) 기존 제품 자체 폐기 안내<br>&nbsp;&nbsp;┗ 수긍 시 편도 3,000원 / 미수긍 시 왕복 6,000원 고객 부담</div></div></div></div>
+  <div class="cmp-table-wrap"><table class="cmp-table">
+  <colgroup><col style="width:12%"><col style="width:20%"><col style="width:46%"><col style="width:22%"></colgroup>
+  <thead><tr>
+  <th class="cmp-corner">유/무상</th>
+  <th>날짜 기준</th>
+  <th>제품 사용 환경</th>
+  <th>A/S 방법</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td class="cmp-row-label" style="color:#234A86;font-weight:800">무상 A/S</td>
+  <td>상품 수령일로부터 6개월 이내</td>
+  <td>정상적 사용 환경·제품 자체의 자연적 고장</td>
+  <td>무상 교환<div style="color:#7030A0;font-weight:700;margin-top:6px;font-size:12px;line-height:1.6">⚠️ 단, 고객이 상품 수령 후 <b>3개월 이내</b> 반품을 요청한 경우에만 <b>무상 반품 가능</b></div></td>
+  </tr>
+  <tr>
+  <td class="cmp-row-label" style="color:#AC2424;font-weight:800">유상 A/S</td>
+  <td>상품 수령일로부터 6개월 경과 ~ 1년</td>
+  <td>제품 이상이 아닌, 고객 과실에 의한 제품 파손, 분실, 사용 부주의 등으로 인한 고장</td>
+  <td>유상 교환</td>
+  </tr>
+  <tr>
+  <td class="cmp-row-label" style="color:#AC2424;font-weight:800">유상 A/S</td>
+  <td>상품 수령일로부터 6개월 경과 ~ 1년</td>
+  <td>원인 불문 유상 서비스만 제공 (무상 A/S 불가)</td>
+  <td>유상 교환</td>
+  </tr>
+  <tr>
+  <td class="cmp-row-label" style="color:#AC2424;font-weight:800">유상 A/S</td>
+  <td>상품 수령일로부터 1년 경과</td>
+  <td>기간 및 신청 횟수 무관 유상 A/S 제공</td>
+  <td>유상 교환</td>
+  </tr>
+  </tbody></table></div>
+  <div style="border:1px solid #E6E8EC;border-radius:12px;overflow:hidden;margin-top:12px"><div style="background:#EAF4F0;padding:11px 15px;font-weight:800;color:#3E8B7B;border-bottom:1px solid #E6E8EC">💡 무상 접수 기간 제한 <span style="font-weight:500;color:#FF0000;font-size:13px">· 구성품 누락 / 초도 파손 / 이염·오염 case</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #E6E8EC"><td style="width:140px;background:#FAFBFC;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 수령일 7일 이내</td><td style="padding:13px 16px;vertical-align:top;color:#6B7280;font-size:12.5px;line-height:1.7">✔️ 구성품 누락<br>✔️ 초도 파손 / 이염 / 오염<br>→ 상품 수령일로부터 <b>7일 이내 문의 시에만 무상 접수 가능</b></td></tr></tbody></table></div>
+  <div style="background:#FAFAFA;border:1px solid #E5E7EB;border-left:3px solid #D1D5DB;border-radius:12px;padding:16px 6px;display:grid;grid-template-columns:1fr 1fr"><div style="padding:0 20px"><div style="font-weight:800;color:#4B5563;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) '<span style="color:#0070C0">이내</span>' 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 이내 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 구입가를 자사몰 포인트로 대체 환급</div></div><div style="padding:0 20px;border-left:2px dashed #D1D5DB"><div style="font-weight:800;color:#4B5563;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) '<span style="color:#0070C0">경과</span>' 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 경과 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 정액 감가상각한 잔여 금액에 구입가의 10%를 가산 후 자사몰 포인트로 대체 환급</div></div></div>
 
 
   
   
-  <div class="grp-h grp-major">🧭 상담 플로우</div>
-  <div class="flow-diagram"><div class="fd-box">① 보증기간 확인</div><div class="fd-arrow">▶</div><div class="fd-box">② 불량 유형 확인</div><div class="fd-arrow">▶</div><div class="fd-box">③ 증빙 확인</div><div class="fd-arrow">▶</div><div class="fd-box">④ A/S 접수 (무상 / 유상)</div></div>
-  <div class="fork fork-split"><div class="fork-branch"><span class="fork-label">🛠️ 무상 A/S</span><div class="flow-diagram"><div class="fd-box">① 증빙 추가 확인</div><div class="fd-arrow">▶</div><div class="fd-box">② 교환/반품 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">④ 환불/재출고 안내</div></div></div><div class="fork-branch b2"><span class="fork-label">🔧 유상 A/S</span><div class="flow-diagram"><div class="fd-box">① 유상 비용 안내</div><div class="fd-arrow">▶</div><div class="fd-box">② 자체 폐기 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 비용 입금 안내</div><div class="fd-arrow">▶</div><div class="fd-box">④ 재출고 안내</div></div></div></div>
+  
+  <div class="h1lvl">🧭 상담 플로우</div>
+  
+  <div class="flow-diagram"><div class="fd-box">① 보증기간 확인</div><div class="fd-arrow">▶</div><div class="fd-box">② 불량 유형 확인</div><div class="fd-arrow">▶</div><div class="fd-box">③ 증빙(사진·영상) 확인</div><div class="fd-arrow">▶</div><div class="fd-box">④ A/S 접수 (무상 / 유상)</div></div>
+  <div class="fork fork-split"><div class="fork-branch"><span class="fork-label">🛠️ 무상 A/S</span><div style="display:flex;flex-direction:column;gap:8px;margin:16px 0"><div class="fd-box" style="flex:none;width:100%">① 무상 교환 안내</div><div><div class="fd-box" style="flex:none;width:100%">② 무상 반품 안내</div><div style="color:#7030A0;font-weight:700;font-size:11.5px;margin-top:6px;line-height:1.5;text-align:center">⚠️ 3개월 이내 고객이 요청한 경우에만 가능</div></div></div></div><div class="fork-branch b2"><span class="fork-label">🔧 유상 A/S</span><div class="flow-diagram"><div class="fd-box">① 유상 비용 안내</div><div class="fd-arrow">▶</div><div class="fd-box">② 자체 폐기 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 상담 종료</div><div class="fd-arrow">▶</div><div class="fd-box">④ 재출고 안내</div></div></div></div>
   <div class="blue-note"><div class="bn-h"><b>✨ [참고] 채널톡 A/S 상담 인입 flow</b></div><div class="bn-body"><div style="display:grid;grid-template-columns:1.7fr 1fr;gap:16px;align-items:start"><div style="white-space:pre-line">① 고객 인입 : 불량·A/S 관련 문의 접수
 ② AI챗봇 안내 : A/S 직통 워크플로우 제공 → <a href="https://sloom.channel.io/workflows/789993" target="_blank">[IVR/ALF] 불량 A/S 접수 직통 ver.</a>
-③ [IVR/ALF] 불량 A/S 접수 직통 ver. : 워크플로우 내 정보 수집·사전 안내
+③ <a href="https://sloom.channel.io/workflows/789993" target="_blank">[IVR/ALF] 불량 A/S 접수 직통 ver.</a> : 워크플로우 내 정보 수집·사전 안내
    (제품명 · 불량 증상 · 올바른 사용법 확인 · 처리 방식 선택[교환/반품] · 주소지 입력[회수/배송] · 사진/영상 첨부)
-④ CX담당자 연결 : 최종 상담·처리 (무상/유상 판단 포함)</div><div style="border-left:1px solid #CBDBF1;padding-left:14px;white-space:pre-line">💡 상담 연결 전, 고객이 선택한 항목·이전 답변 내역 반드시 확인
+④ CX담당자 연결 : 최종 상담·처리 (무상/유상 판단 포함)</div><div style="border-left:1px solid #CBDBF1;padding-left:14px;white-space:pre-line;color:#7030A0;font-weight:700">💡 상담 연결 전, 고객이 선택한 항목·이전 답변 내역 반드시 확인
    (채널톡 워크플로우 진행 내용 · 우측 상담정보 메모리값 확인)</div></div></div></div>
-  ${secTitle("","1. 보증기간 확인",null,"guar")}
-  ${guide(`(임시) 주문번호·수령일 확인 후 보증기간(수령일 기준 1년)을 산정합니다. · 주문건·채널 확인 등 실제 가이드 멘트는 추후 삽입 예정`)}
-  ${secTitle("","2. 불량 유형 확인",null,"step1")}
-  ${guide(`고객 증상을 아래 유형으로 분류하는 단계입니다. 사진·영상 요청/방어 멘트/회수·검수 등 처리 로직은 2️⃣ 단계에서 진행합니다.`)}
-  ${caution(`※ 상품 수령일로부터 6개월 이내 — 정상적인 사용 상태에서 제품 자체의 자연적 고장일 경우만 해당`)}
-  ${macro("① 사과·양해 멘트","AS_사과양해",
-`제품 사용 후 만족스러운 경험을 드리지 못해 대단히 죄송합니다. 🥲`)}
-  ${guide(`👉 A/S·불량은 사과·양해 멘트 선행 필수`)}
-  <div class="grp-h">② 불량 증상 확인</div>
-  <div class="grid2">${subcard("불량 증상 설명 요청","AS_증상확인",
-`번거로우시겠지만, 불량으로 의심되는 증상에 대해 조금 더 자세히 말씀해 주실 수 있을까요?
+    
+  <div class="h1lvl" id="guar"><span class="num">1</span>보증기간 확인</div>
+  <div class="lvl2-body">${guide(`어드민 또는 물류 전산에서 주문정보 조회 후 <b>상품 수령일 기준으로 경과 기간을 확인</b>한 뒤,
+보증기간 정책에 따라 무상/유상 A/S 여부를 판단합니다.`)}${guide(`💡 고객이 변경된 기간별 정책에 대해 이의나 불만을 제기하는 경우 무상 A/S·유상 A/S의 관련 템플릿을 참고하여 응대해 주세요.`)}</div>
+  <div class="h1lvl" id="step1"><span class="num">2</span>불량 유형 확인</div>
+  ${guide(`💡 A/S·불량은 사과·양해 멘트 선행 필수. 고객 상황에 맞는 공감 멘트 추가하여 케어 진행`)}
+  <div class="grid2">${subcard(`① 사과·양해 멘트`,"AS_1",`제품 사용 후 만족스러운 경험을 드리지 못해 대단히 죄송합니다. 🥲`)}${subcard(`② 불량 증상 확인`,"AS_2",`고객님, 번거로우시겠지만
+불량으로 의심되는 증상에 대해 조금 더 자세히 말씀해주실 수 있을까요?
 
-말씀해 주신 내용을 기반으로 정확한 안내 도와드리겠습니다.`,
-`고객 증상을 아래 불량 유형별로 분류 · 5~6 유형은 사용법 안내 없이 해당 유형으로 이동`)}${subcard("④ 제품별 유의사항 안내","AS_제품별유의사항",
-`고객님, 문의주신 (제품명)의 올바른 사용법 먼저 안내드립니다.
+말씀해주신 내용을 기반으로 정확한 안내 도와드리겠습니다.🙏🏻`,`CX매니저 연결 전, 취합된 정보나 증빙 자료만으로 증상 확인이 불가할 경우 사용`)}</div>
+  ${guide(`👉🏻 증상에 해당하는 유형으로 이어서 상담 진행 (표 참고)`)}
+  <div class="h2lvl">💡 사용법 안내 필요 여부에 따른 유형 구분</div>
+  <div class="lvl2-body"><table class="astbl"><thead><tr><th>사용법 안내 여부</th><th>증상</th></tr></thead><tbody><tr><td>A. 사용법 안내 필요</td><td>1. 충전/전원<br>2. 작동 관련 증상 (증빙 자료로 판단 가능한 유형 전체)<br>3. 소음·온열·EMS 강도</td></tr><tr><td>B. 사용법 안내 불필요</td><td>4. 구성품 누락<br>5. 이염/오염/초도파손/스크래치</td></tr></tbody></table></div>
+  <div class="h2lvl" id="groupA">A. 사용법 안내 필요</div>
+  <div class="lvl2-body">${guide(`📌 해당 증상 CS건은 <b>사용법 오인으로 인한 불량 문의가 많으므로 제품별 유의사항 또는 사용법 안내가 선행</b>되어야 합니다.\n⚠️ 단, <span style="color:#7030A0">ALF·워크플로우에서 관련 안내가 완료된 경우에는아래 제품별 유의사항 중복 안내를 생략</span>하고, Flow 및 고객 증빙을 확인하여 미확인 사항만 추가 확인합니다. \n ※ 5V2A 정격전압 확인은 필수입니다.`)}${macro(``,"AS_3",`고객님, 문의주신 (제품명)의 올바른 사용법 먼저 안내드립니다.
 
-사용법과 다르게 사용하실 경우 정상 작동이 어려울 수 있어, 안내드린 방식대로 사용해 보셨는지 확인 부탁드립니다.
-혹시 사용법대로 진행하셨음에도 문제가 지속되었을까요?`,
-`불량 유형 1~4번만 해당 · 제품별 유의사항은 [슬룸] 제품별 사용법&유의사항 템플릿 시트/채널톡 매크로 이용`)}</div>
-  <div class="guide-card"><div class="guide-body"><b>◎ 불량 유형 분류</b>
-  <div style="display:flex;gap:28px;margin-top:8px">
-    <div style="flex:1;display:flex;flex-direction:column;gap:7px;font-weight:700">
-      <div>1. 충전/전원 증상</div>
-      <div>2. 작동 관련 증상 <span style="font-weight:500;color:#666">(증빙 자료로 판단 가능한 유형 전체)</span></div>
-      <div>3. 소음/EMS 강도</div>
-    </div>
-    <div style="flex:1;display:flex;flex-direction:column;gap:7px;font-weight:700">
-      <div>4. 구성품 누락</div>
-      <div>5. 이염/오염</div>
-    </div>
-  </div></div></div>
-  <div class="grp-h">⑤ 경과에 따른 진행</div>
-  <div class="grid2">${subcard("a. 정상 작동 확인 / 상담 종료 의사","AS_정상종료",
-`안내드린 사용법으로 정상 작동이 확인되어 다행입니다. :)
-이용에 불편을 드려 죄송하며, 추가로 궁금하신 점 있으시면 언제든 말씀 주세요.`,
-`→ 상담 종료 유도`)}${subcard("b. 지속 불량 증상 주장","AS_지속불량",
-`안내드린 방식으로도 동일 증상이 지속되신다니 불편하셨겠습니다.
-정확한 확인을 위해 해당 불량 유형에 맞춰 안내 도와드리겠습니다.`,
-`→ 각 불량 유형으로 이동하여 상담 진행`)}</div>
-  <div class="grp-h grp-major" id="groupA">a. 사용법 안내 필요</div>
-  ${guide(`▶ 올바른 사용법 안내 후, 결과에 따라 진행
-→ 해결 시 : 상담 종료
-→ 미해결 시 : 유·무상 구분 후 3️⃣ A/S 접수 진행`)}
-  ${secTitle("①","충전/전원",null,"t1")}
-  ${caution(`⚠️ 슬룸 전자제품은 유선 / 무선 제품으로 구분되며, 이에 따라 필수 안내·체크 포인트가 상이합니다.`)}
-  <div class="grid2">${col("gray","🟡 유선 제품",
-subcard("유선 제품 안내 & 종결","AS_유선안내",
-`고객님, 문의주신 (제품명)은 충전식이 아닌, 전원이 연결된 상태로 사용하는 유선 케이블 제품입니다.
+사용법과 다르게 사용하실 경우 정상 작동이 어려울 수 있어, 안내드린 방식대로 사용해 보셨는지 확인 부탁드립니다.🙏🏻
+혹시 사용법대로 진행하셨음에도 문제가 지속되었을까요?`,`제품별 유의사항은 [슬룸] 제품별 사용법&amp;유의사항 템플릿 시트 또는 채널톡 매크로 이용`)}${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함)\n✔️ 사용법대로 사용했으나 불량 증상 지속 의사 표현 시\n → 1. 충전/전원 작동 관련 증상 3. 소음·온열·EMS 강도 중 알맞은 유형으로 이동하여 안내 진행`)}<div class="typ" id="t1"><span class="tnum">1</span>충전/전원</div><div class="lvl3-body">${caution(`<b>⚠️ 유의사항</b>\n① 슬룸 전자제품은 유선 / 무선 제품으로 구분되며, 이에 따라 필수 안내 및 체크 포인트가 상이.\n② 정격전압 미사용으로 인한 고객 과실 불량이나 오인 VOC가 많은 편으로 정격전압 사용 여부는 필수 확인 필요`)}<table class="astbl"><thead><tr><th>구분</th><th>제품</th></tr></thead><tbody><tr><td>🟡 유선 제품</td><td>목베개프로, 목베개플러스, 허리베개프로, 멀티 릴렉스 체어</td></tr><tr><td>🔴 무선 제품<br>(5V 2A)</td><td>등·허리 : 허리편한케어V1·V2, 골반마사지기, 등허리 힐링케어 / 목·어깨 : 목마사지베개V2, 넥숄더 힐링케어V1·V2, 목편한케어 플라잉, 넥숄더프로, 목편한케어 / 발·종아리·손 : 발편한케어V1·V2, 종아리편한케어, 손편한케어</td></tr><tr><td>🔴 무선 제품<br>(5V 1A)</td><td>등·허리 : 복부순환마스터(허리편한케어마스터) / 눈 : 눈편한케어 / 카카오 단독 : 넥프레쉬, 물멍가습기 / 전신 : 바디풀고컷</td></tr></tbody></table><div class="h3lvl">🟡 유선 제품</div><div class="lvl3-body"><div class="grid2">${macro(`② 유선 제품 안내`,"AS_4",`고객님, 문의주신 (제품명)은 충전식이 아닌,
+전원이 연결된 상태로 사용하는 유선 케이블 제품입니다.
 
-해당 내용은 상세페이지에도 기재되어 있으며, 제품 사용 시에는 케이블을 제거하지 마시고 연결된 상태로 사용 부탁드립니다.`,
-`SKU : 목베개프로 / 목베개 플러스 / 허리베개프로 / 멀티 릴렉스 체어 · 유선 연결 상태 사용 주장 시 ③ 사진/영상 확인 진행`)
-)}${col("gray","🔴 무선 제품 (SKU)",
-subcard("무선 제품 SKU 구분","AS_무선SKU",
-`[5V 2A]
-· 등·허리 : 허리편한케어 V1·V2, 등허리 힐링케어
-· 목·어깨 : 목마사지베개 V2, 넥숄더 힐링케어·V2, 목편한케어 플라잉, 넥숄더 프로, 목편한케어
-· 발·종아리·손 : 발편한케어 V1·V2, 종아리편한케어, 손편한케어
+해당 내용은 상세페이지에도 기재되어 있으며,
+제품 사용 시에는 케이블을 제거하지 마시고 연결된 상태로 사용 부탁드립니다.🙏🏻`)}${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함) 
+✔️ 체결된 상태로 사용 주장 + 증빙(사진·영상) 미흡 시 ③ 증빙 확인 단계로 이동`)}</div></div><div class="h3lvl">🔴 무선 제품</div>
+  <div class="lvl3-body"><div class="grid2"><div class="flowgroup">${subcard(`② 정격전압 사용 여부 확인_5V 2A`,"AS_정격_5V2A",`(제품명)은 정격 전압이 5V 2A인 제품으로, 고속 충전기 사용 시 기기가 고장 날 수 있습니다.
 
-[5V 1A]
-· 등·허리 : 허리편한케어 마스터
-· 눈 : 눈편한케어
-· 카카오선물하기 단독 : 넥프레쉬, 물멍가습기`)
-)}</div>
-  <div class="grp-h">② 정격 전압 사용 여부 확인 (무선)</div>
-  <div class="grid2">${subcard("5V 2A 제품","AS_정격_5V2A",
-`(제품명)은 정격 전압이 5V 2A인 제품으로, 고속 충전기 사용 시 기기가 고장 날 수 있습니다.
+동봉된 전용 케이블과 함께 5V 2A 어댑터 (슬룸 전용 어댑터 사용 가능) 또는 PC/노트북의 USB 포트를 이용해 충전해 주세요.
 
-동봉된 전용 케이블과 함께 5V 2A 어댑터(슬룸 전용 어댑터 사용 가능) 또는 PC/노트북 USB 포트를 이용해 충전해 주세요.
+또한 해당 제품은 무선 제품으로, 충전 중에는 작동되지 않습니다. 
+번거로우시겠지만, 위 안내 방식대로 충전 및 사용해주셨는지 확인 부탁드립니다. 🙂`)}${subcard(`👉🏻 전용케이블& 정격전압 어댑터 미사용으로 확인 시`,"AS_미사용_5V2A",`휴대폰 충전용 고속 충전기를 사용하실 경우, 기기 고장의 원인이 될 수 있습니다.
 
-또한 해당 제품은 무선 제품으로 충전 중에는 작동되지 않습니다.
-번거로우시겠지만, 위 안내 방식대로 충전·사용해 주셨는지 확인 부탁드립니다. 🙂`)}${subcard("5V 1A 제품","AS_정격_5V1A",
-`(제품명)은 정격 전압이 5V 1A인 제품으로, 고속 충전기 사용 시 기기가 고장 날 수 있습니다.
+번거로우시겠지만,
+동봉된 전용 케이블과 함께 5V 2A 어댑터 (슬룸 전용 어댑터 사용 가능) 또는 PC/노트북의 USB 포트를 이용해 충전해 주세요.`)}${caution(`→ 안내 후 종결`)}</div><div class="flowgroup">${subcard(`② 정격전압 사용 여부 확인_5V 1A`,"AS_정격_5V1A",`(제품명)은 정격 전압이 5V 1A인 제품으로, 고속 충전기 사용 시 기기가 고장 날 수 있습니다.
 
-동봉된 전용 케이블과 함께 5V 1A 어댑터 또는 PC/노트북 USB 포트를 이용해 충전해 주세요.
+동봉된 전용 케이블과 함께 5V 1A 어댑터 또는 PC/노트북의 USB 포트를 이용해 충전해 주세요.
 
-또한 해당 제품은 무선 제품으로 충전 중에는 작동되지 않습니다.
-번거로우시겠지만, 위 안내 방식대로 충전·사용해 주셨는지 확인 부탁드립니다. 🙂`)}</div>
-  ${guide(`👉🏻 전용 케이블 & 정격전압 어댑터 미사용으로 확인 시 → 각 멘트 안내 후 종결
-👉🏻 올바른 사용 주장 시 → 증빙 확인을 위한 ③ 사진/영상 확인 단계 진행`)}
-  ${secTitle("②","작동 관련 증상","증빙 자료로 판단 가능한 유형 전체","t2")}
-  ${caution(`✨ 불량 증상별 올바른 사용법 안내 후, 고객이 정상 사용을 주장할 경우 → 증빙 확인을 위한 ① 사진/영상 확인 단계 진행`)}
-  ${secTitle("③","소음·온열·EMS 강도","쿠팡·스마트스토어 자동수거","t3")}
-  ${guide(`🚨 사용자 '체감 강도' 관련 문의에만 해당
-적용 예시 : 소리가 너무 커요 / 너무 뜨거워요 / 전기가 느껴지지 않아요
-미적용 예시(작동 관련 증상으로 진행) : 온도·강도 조절 버튼 불량 / EMS 단계 조절 기능 자체 불량
-→ 육안 확인이 어려운 유형으로 사진/영상 요청은 진행하지 않음`)}
-  <div class="grp-h grp-major" id="groupB">b. 사용법 안내 불필요</div>
-  ${secTitle("④","구성품 누락","예: 케이블·어댑터","t5")}
-  ${caution(`⚠️ 제품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능`)}
-  <div class="grp-h">1️⃣ 배송 완료일자 확인</div>
-  <div class="grid2">${subcard("① 수령일로부터 영업일 7일 이내 — 사진 요청","AS_구성품_7일이내",
-`고객님, 번거로우시겠지만 수령하신 제품의 구성품 전체가 확인되도록 사진을 보내주시면 빠르게 확인 후 안내드리겠습니다. 🙏🏻`)}${subcard("② 영업일 7일 경과 — 처리 불가 안내","AS_구성품_7일경과",
-`구성품 누락의 경우 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.
-고객님 주문 건은 접수 가능 기간이 경과되어 처리가 어려운 점 양해 부탁드립니다. 🥲`)}</div>
-  ${macro("예외 처리 안내 & 사진 요청 (강하게 미수긍 시)","AS_구성품_예외",
-`고객님, 앞서 안내드린 것처럼 구성품 누락은 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.
-다만 불편하셨던 상황 충분히 이해되어 이번 건은 예외적으로 도움드리겠습니다.
+또한 해당 제품은 무선 제품으로, 충전 중에는 작동되지 않습니다. 
+번거로우시겠지만, 위 안내 방식대로 충전 및 사용해주셨는지 확인 부탁드립니다. 🙂`)}${subcard(`👉🏻 전용케이블& 정격전압 어댑터 미사용으로 확인 시`,"AS_미사용_5V1A",`(제품명)은 정격 전압이 5V 1A인 제품으로, 고속 충전기 사용 시 기기가 고장 날 수 있습니다.
 
-번거로우시겠지만, 수령하신 제품의 구성품 전체가 확인되도록 사진 전송 부탁드립니다. 확인 후 안내드리겠습니다. 🙏🏻`)}
-  <div class="grp-h">2️⃣ 별도 재출고 안내</div>
-  <div class="grid2">${subcard("① 별도 재출고 안내","AS_구성품_재출고",
-`확인 감사합니다.
-이용에 불편을 드려 정말 죄송합니다.
-누락된 (구성품명)은 재출고로 진행해 드리겠습니다.`,
-`주소 동일/변경에 따라 재발송 · 부자재 별도 출고 불가 건은 교환 재출고 템플릿 사용`)}${subcard("③ 출고 시일 소요 안내","AS_구성품_출고소요",
-`확인 감사합니다.
+동봉된 전용 케이블과 함께 5V 1A 어댑터 또는 PC/노트북의 USB 포트를 이용해 충전해 주세요.
 
-🚚 재출고 일정 안내드리겠습니다.
-· 출고 : 영업일 2일 이내
-· 배송 : 접수일로부터 영업일 5~6일 소요
-· 택배사 : CJ대한통운
+또한 해당 제품은 무선 제품으로, 충전 중에는 작동되지 않습니다. 
+번거로우시겠지만, 위 안내 방식대로 충전 및 사용해주셨는지 확인 부탁드립니다. 🙂`)}${caution(`→ 안내 후 종결`)}</div></div>${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함)\n✔️ 올바르게 사용 주장 + 증빙(사진·영상) 미흡 시 ③ 증빙 확인 단계로 이동\n✔️ 올바르게 사용 주장 + 증빙(사진·영상) 확인 완료 시 ④ A/S 접수 (무상 / 유상) 로 이동`)}</div>
+  <div class="h3lvl">③ 증빙 확인 (사진/영상)</div><div class="lvl3-body">${caution(`⚠️  단, 추가 증빙 자료 요청은 고객이 선첨부한 자료(사진/영상)가 미흡할 경우에만  진행`)}<div class="grid2">${subcard(`🔌충전 불량`,"AS_9",` (ex. 충전이 안 돼요. 충전하는데 빨간불이 안들어와요 등)
 
-※ 구성품만 별도 출고되는 경우 다소 시간이 소요될 수 있는 점 양해 부탁드립니다.`,
-`상담 종료 후 수기출고 통합 시트 - 자사 제품 신청 탭 · 본품 전체 출고 시 ※문구 삭제`)}</div>
-  ${starNote("🔔 [예외] 구성품 누락으로 전체 반품 희망 시",
-`상품 개봉 여부와 무관하게 전액 환불 처리 · 증정품 회수 O · 배송비 미차감
-포장/회수는 아래 [무상 반품/교환 처리]의 전체 반품과 동일하게 진행`)}
-  ${secTitle("⑤","이염/오염",null,"t6")}
-  ${caution(`⚠️ 제품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능`)}
-  <div class="grid2">${subcard("① 수령일로부터 영업일 7일 이내 — 사진 요청","AS_이염_7일이내",
-`고객님, 번거로우시겠지만 수령하신 제품의 (이염·오염·파손) 상태가 확인되도록 사진을 보내주시면 빠르게 확인 후 안내드리겠습니다. 🙏🏻`)}${subcard("② 영업일 7일 경과 — 처리 불가 안내","AS_이염_7일경과",
-`제품 (이염·오염·파손)의 경우 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.
-고객님 주문 건은 접수 가능 기간이 경과되어 처리가 어려운 점 양해 부탁드립니다. 🥲`)}</div>
-  ${macro("예외 처리 안내 & 사진 요청 (강하게 미수긍 시)","AS_이염_예외",
-`고객님, 앞서 안내드린 것처럼 제품 (이염·오염·파손)은 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.
-다만 불편하셨던 상황 충분히 이해되어 이번 건은 예외적으로 도움드리겠습니다.
-
-번거로우시겠지만, 수령하신 제품의 이염·오염 상태가 확인되도록 사진 전송 부탁드립니다. 확인 후 안내드리겠습니다. 🙏🏻`)}
-  ${macro("② 고객 처리 방향 확인","AS_이염_처리방향",
-`불편을 드려 죄송합니다. 🥲
-새 제품으로 교환 또는 반품 중 원하시는 방식으로 도움드리고 있습니다.
-어느 쪽으로 진행해 드릴까요?`,
-`→ 아래 [무상 반품/교환 처리] 참고`)}
-  ${secTitle("🔁","재불량 (교환품 동일 증상)",null,"t4")}
-  ${caution(`👉 [예시] 2026.01.01 허리편한케어 V1 충전 불량으로 무상 교환 → 2026.03.02 교환 제품에서 동일 증상(충전 불량) 재문의`)}
-  ${macro("① 사과·양해 멘트","AS_재불량_사과",
-`교환 받으신 제품에서도 동일한 증상이 발생하여 많이 당황스러우셨을 것 같습니다.
-다시 한 번 불편을 드리게 된 점 진심으로 사과드립니다. 🥲`)}
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">재인입</th><th class="cmp-blue">고객 반품 희망</th><th class="cmp-pink">고객 교환 희망</th></tr></thead><tbody><tr><td class="cmp-row-label">1차 재인입</td><td>각 불량 유형 기본 flow대로 진행</td><td>각 불량 유형 기본 flow대로 진행</td></tr><tr><td class="cmp-row-label">2차 재인입</td><td>회수 후 검수 결과에 따라 처리</td><td>① 정격전압 확인(어댑터 사진 필수)<br>② 사진 확인 후 기존 flow대로 진행</td></tr><tr><td class="cmp-row-label">3차 재인입~</td><td>회수 후 검수 결과에 따라 처리</td><td>회수 후 검수 결과에 따라 처리</td></tr></tbody></table></div>
-  ${guide(`✨ 1. 충전/전원 증상, 2. 작동 관련 증상 유형인 경우만 위와 같이 진행 · 재인입 건으로 기본 템플릿 멘트는 상황에 맞게 수정하여 사용`)}
-  ${secTitle("","3. A/S 접수",null,"step2")}
-  ${caution(`👉 상담 중 영상/사진으로 증상 확인이 가능하여 [불량 확정 – 교환]인 경우에 한해 회수 접수와 동시에 재출고 진행`)}
-  <div class="grp-h grp-major" id="freeFlow">🛠️ 무상 A/S</div>
-  <div class="grp-h grp-sub" id="freeEvidence">① 증빙 추가 확인</div>
-  <div style="font-size:11.5px;color:var(--ink-soft);margin:-4px 0 10px">워크플로우에서 받은 증빙이 미흡한 경우에만 추가 요청 (충분하면 생략)</div>
-  ${caution(`봇에서 사용법 안내가 아예 안 됐거나, 안내는 됐지만 (a) 고객이 제대로 확인하지 않은 정황이 있거나 (b) 접수 시 유형을 잘못 선택해 본인 케이스에 맞지 않는 안내를 받은 경우에만 매니저가 수동으로 증빙 요청 (중복 안내 방지 체크포인트)`)}
-  <div class="grp-h">③ 사진/영상 확인</div>
-  <div class="grid2">${subcard("🔌 충전 불량","AS_사진_충전불량",
-`📷 고객님, 정확한 불량 증상 확인을 위해 번거로우시겠지만 아래 4가지가 모두 확인되도록 촬영 부탁드립니다.
+📷 고객님, 정확한 불량 증상 확인을 위해 
+번거로우시겠지만 <b>아래 4가지가 모두 확인되도록</b> 촬영 부탁드립니다.
 
 1️⃣ 충전 중인 제품 상태
-2️⃣ 충전기(어댑터) 정격전압 5V 2A 표시
+2️⃣ 충전기(어댑터) 정격전압의 5V 2A 표시
 3️⃣ 전용 케이블 연결 상태 (케이블선이 연결된 모습 포함)
-4️⃣ 충전 시 LED 표시등 작동 여부`)}${subcard("🔌 무선 – 완충 후 미작동","AS_사진_완충미작동",
-`📷 고객님, 정확한 불량 증상 확인을 위해 번거로우시겠지만 아래 3가지가 모두 확인되도록 촬영 부탁드립니다.
+4️⃣ 충전 시 LED 표시등 작동 여부`)}${subcard(`🔌무선 제품 – 완충 후 미작동`,"AS_10",`(ex. 충전 후 전원을 눌러도 작동이 안 돼요 등)
 
-1️⃣ 충전기(어댑터) 정격전압 5V 2A 표시
-2️⃣ 충전 시 사용된 케이블
-3️⃣ 케이블선 제거 후 제품 버튼을 눌러도 작동하지 않는 장면`)}</div>
-  <div class="grid2">${subcard("🔌 유선 – 미작동","AS_사진_유선미작동",
-`📷 고객님, 정확한 불량 증상 확인을 위해 번거로우시겠지만 아래 3가지가 모두 확인되도록 촬영 부탁드립니다.
+📷 고객님, 정확한 불량 증상 확인을 위해 
+번거로우시겠지만 <b>아래 3가지가 모두 확인되도록</b> 촬영 부탁드립니다.
 
-1️⃣ 충전기(어댑터) 정격전압 5V 2A 표시
+1️⃣ 충전기(어댑터) 정격전압의 5V 2A 표시
+2️⃣ 충전 시 사용된 케이블 
+3️⃣ 케이블선 제거 후 제품 버튼을 눌러도 작동하지 않는 장면`)}</div><div class="grid2">${subcard(`🔌유선 제품 – 미작동`,"AS_11",`(ex. 충전선 연결했는데도 작동이 안 돼요. 등)
+
+📷 고객님, 정확한 불량 증상 확인을 위해 
+번거로우시겠지만 <b>아래 3가지가 모두 확인되도록</b> 촬영 부탁드립니다.
+
+1️⃣ 충전기(어댑터) 정격전압의 5V 2A 표시
 2️⃣ 전용 케이블 연결 상태 (케이블선이 연결된 모습 포함)
-3️⃣ 케이블선 연결 상태에서 제품 버튼을 눌러도 작동하지 않는 장면`)}${subcard("🔌 어댑터 정격전압 추가 확인","AS_사진_어댑터추가",
-`고객님, 첨부해 주신 사진/영상은 확인되었습니다. 🙂
-다만 정격전압 확인이 어려워 어댑터의 5V 2A 표기가 보이도록 추가 촬영 부탁드립니다. 🙏🏽
+3️⃣ 케이블선 연결 상태에서 제품 버튼을 눌러도 작동하지 않는 장면`)}${subcard(`🔌어댑터 정격전압 추가 확인 요청`,"AS_12",`고객님, 첨부해주신 사진/영상은 확인되었습니다 🙂
+다만, 정격전압 확인이 어려워 어댑터의 5V 2A 표기가 보이도록 추가 촬영 부탁드립니다 🙏🏽
 
-※ 적정 정격전압이 아닌 충전기 사용 시 제품 작동 이상·고장의 원인이 될 수 있어 확인이 필요한 점 양해 부탁드립니다.
-※ 숫자·표기가 선명하게 보이도록 가까이서 촬영 부탁드립니다.`)}</div>
-  <div class="grp-h">④ 촬영 수긍 여부에 따른 대응</div>
-  <div class="grid2">${subcard("ⓐ 방어 멘트 1차 (1번)","AS_방어1_1",
-`고객님, 촬영 항목이 많아 번거로우신 점 충분히 이해합니다. 🥲
+※ 적정 정격전압이 아닌 충전기 사용 시 제품 작동 이상이나 고장의 원인이 될 수 있어 확인이 필요한 점 양해 부탁드립니다.
+※ 숫자와 표기가 선명하게 보이도록 가까이서 촬영 부탁드립니다.`)}</div>${guide(`<b>⭕ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함)</b>\n<b>❌ 올바르게 사용 주장 + 증빙(사진·영상) 미흡 시 ③ 증빙 확인 단계로 이동</b>`)}</div></div><div class="typ" id="t2"><span class="tnum">2</span>작동 관련 증상</div><div class="lvl3-body">${caution(`⚠️ 제품별 작동 관련 증상은 상이 (마사지볼 작동 불량, 에어백 불량 등) 하며 충전/전원 불량이 아닌 사진/영상으로 확인 가능한 모든 작동 불량을 포함함.`)}${macro(`① 사진/영상 확인`,"AS_작동_증빙",`📷 고객님, 정확한 불량 증상 확인을 위해\n번거로우시겠지만 아래 2가지가 모두 확인되도록 촬영 부탁드립니다.\n\n1️⃣ 불량 증상이 나타나는 장면 (작동 시도 영상)\n2️⃣ 충전기(어댑터) 정격전압의 5V 2A 표시\n※ 정격전압이 아닌 충전기 사용 시 제품 오작동 및 고장의 원인이 될 수 있어 확인이 필요한 점 양해 부탁드립니다.`)}</div><div class="typ" id="t3"><span class="tnum">3</span>소음·온열·EMS 강도</div><div class="lvl3-body">${caution(`🚨 사용자의 ‘체감 강도’ 관련 문의만 해당함\n→ 육안으로 확인이 어려운 유형으로, 사진/영상 요청은 진행하지 않음`)}<table style="border-collapse:collapse;width:100%;margin:6px 0 14px;font-size:13px"><thead><tr><th style="background:#9BBB59;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">👉 적용 예시</th><th style="background:#9BBB59;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">👉 미적용 예시 (작동 불량 등으로 진행)</th></tr></thead><tbody><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">소리가 너무 커요 / 너무 뜨거워요 / 전기가 느껴지지 않아요 등</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">온도·강도 조절 버튼 불량 / EMS 단계 조절 기능 자체 불량 등</td></tr></tbody></table></div></div>
+  <div class="h2lvl" id="groupB">B. 사용법 안내 불필요</div>
+  <div class="lvl2-body"><div class="typ" id="t5"><span class="tnum">4</span>구성품 누락</div><div class="lvl3-body"><div class="quote-box">⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</div><div class="grp-h">1️⃣ 배송 완료일자 확인</div><div class="grid2">${macro(`① 수령일로부터 영업일 7일 이내 · 사진 전송 요청`,"AS_구성품_사진요청",`고객님, 번거로우시겠지만 수령하신 제품의 구성품 전체가 확인되도록 사진을 보내주시면 \n빠르게 확인 후 안내드리겠습니다. 🙏🏻`)}${macro(`② 수령일로부터 영업일 7일 경과 · 처리 불가 안내`,"AS_구성품_처리불가",`구성품 누락의 경우, 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.\n고객님 주문 건의 경우 접수 가능 기간이 경과되어 처리가 어려운 점 양해 부탁드립니다. 🥲`)}</div>${guide(`▶ 고객 강하게 미수긍 시 예외 처리 진행`)}${macro(`예외 처리 안내 & 사진 전송 요청`,"AS_구성품_예외",`고객님, 앞서 안내드린 것처럼 구성품 누락의 경우, 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.\n다만, 불편하셨던 상황 충분히 이해되어 이번 건은 예외적으로 도움드리겠습니다.\n\n번거로우시겠지만, 수령하신 제품의 구성품 전체가 확인되도록 사진 전송 부탁드립니다.\n확인 후 안내드리겠습니다. 🙏🏻`)}<div class="grp-h">2️⃣ 별도 재출고 안내</div>${macro(`① 별도 재출고 안내`,"AS_구성품_재출고",`확인 감사합니다.\n이용에 불편을 드려 정말 죄송합니다.\n누락된 (구성품명)은 재출고로 진행해 드리겠습니다.`)}${macro(`회수지 확인 필요 시`,"AS_구성품_회수지",`🙋‍♀️ 마지막으로, 제품 회수와 배송은 기존 주소지로 접수해 드려도 괜찮을까요?`,`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}${macro(`③ 출고 시일 소요 안내`,"AS_구성품_출고시일",`확인 감사합니다.\n\n🚚 재출고 일정 안내드리겠습니다.\n\n· 출고 : 영업일 2일 이내\n· 배송 : 접수일로부터 영업일 5~6일 소요\n· 택배사 : CJ대한통운\n\n※ 구성품만 별도 출고되는 경우에는 다소 시간이 소요될 수 있는 점 양해 부탁드립니다.`,`▶ 상담 종료 후 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">수기출고 통합 시트</a> - 자사 제품 신청 탭\n\n⚠️ 본품 전체 출고일 경우, ※문구 삭제 필요`)}<div class="grp-h">🔔 [예외케이스] 구성품 누락으로 전체 반품 희망</div><div class="quote-box">상품 개봉 여부와 무관하게 제품 회수 및 전액 환불 처리로 진행</div>${macro(`① 포장 및 회수 안내`,"AS_구성품_전액환불",`<b>전액 환불 접수 도와드리겠습니다.</b>\n\n\n<b>📦 제품 포장 안내</b>\n아래 항목을 모두 함께 보내주세요.\n■ 제품 전체\n■ 구성품 전체 (케이블·설명서 등)\n■ 사은품·증정품(받으신 경우)\n\n✍🏽 택배 박스 윗면에 <b>[불량]</b> 표기 부탁드립니다.\n\n\n<b>🚚 회수 안내</b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)}${caution(`🎁 전체 불량 반품 : 증정품 회수 O`)}<div class="grp-h">· 결제수단별 환불 안내</div><div class="grid2">${col("blue","◆ 카드결제",subcard(`a. 카드결제 취소`,"AS_구성품_환불카드",`환불은 아래 절차를 거쳐 진행되며,\n영업일 기준 약 6~8일 정도 소요됩니다.\n\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n\n결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는\n반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.\n\n이용에 불편을 드려 다시 한 번 죄송합니다.`))}${col("pink","◆ 계좌 환불",`<div class="stack">`+subcard(`b-1. 계좌 환불 (무통장·가상계좌)`,"AS_구성품_환불계좌1",`환불은 아래 절차를 거쳐 진행되며,\n영업일 기준 약 6~8일 정도 소요됩니다.\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n\n다만, (결제 수단 안내 - 무통장 입금 or 가상계좌 결제) 로 결제해주신 점 확인되어,\n환불을 위해 아래 계좌 정보 전달 부탁드립니다.\n\n🏦 은행 / 계좌번호 / 예금주\n\n이용에 불편을 드려 다시 한 번 죄송합니다.`)+subcard(`b-2. 이후 계좌 정보 확인`,"AS_구성품_환불계좌2",`소중한 정보 확인 감사합니다.\n해당 계좌로 환불 계좌 등록이 완료되었습니다.\n\n<b>💸 입금 안내</b>\n실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정\n\n※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)+`</div>`)}</div></div><div class="typ" id="t6"><span class="tnum">5</span>이염/오염/초도파손</div><div class="lvl3-body"><div class="quote-box">⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</div><div class="grp-h">1️⃣ 배송 완료일자 확인</div><div class="grid2">${macro(`① 수령일로부터 영업일 7일 이내 · 사진 전송 요청`,"AS_이염_사진요청",`고객님, 번거로우시겠지만 수령하신 제품의 (이염·오염·파손) 상태가 확인되도록 사진을 보내주시면 빠르게 확인 후 안내드리겠습니다. 🙏🏻`)}${macro(`② 수령일로부터 영업일 7일 경과 · 처리 불가 안내`,"AS_이염_처리불가",`제품 (이염·오염·파손) 의 경우, 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.\n고객님 주문 건의 경우 접수 가능 기간이 경과되어 처리가 어려운 점 양해 부탁드립니다. 🥲`)}</div>${guide(`▶ 고객 강하게 미수긍 시 예외 처리 진행`)}${macro(`예외 처리 안내 & 사진 전송 요청`,"AS_이염_예외",`고객님, 앞서 안내드린 것처럼 제품 (이염·오염·파손) 의 경우, 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.\n다만, 불편하셨던 상황 충분히 이해되어 이번 건은 예외적으로 도움드리겠습니다.\n\n번거로우시겠지만, 수령하신 제품의 이염·오염 상태가 확인되도록 사진 전송 부탁드립니다.\n확인 후 안내드리겠습니다. 🙏🏻`)}<div class="grp-h">② 고객 처리 방향 확인</div>${macro(`고객 처리 방향 확인`,"AS_이염_방향",`불편을 드려 죄송합니다.🥲\n새 제품으로 교환 또는 반품 중 원하시는 방식으로 도움드리고 있습니다.\n어느 쪽으로 진행해 드릴까요?`,`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}${guide(`⚠️ 상품수령일로부터 7일 이내 이염/오염/초도파손은 고객이 원하는 처리 방안(교환 또는 반품) 확인 후 진행 (단, 기간별 정책에 따라만 진행 가능)\n👉🏻 교환 요청 시 ① 무상 교환 안내 로 이동\n👉🏻 반품 요청 시 ② 무상 반품 안내 로 이동`)}</div></div>
+  <div class="h2lvl" id="t4">🔁 재불량 (교환품 동일 증상)</div>
+  <div class="lvl2-body">${caution(`👉 [예시] 2026.01.01 허리편한케어 V1 충전 불량으로 무상 교환 진행 → 2026.03.02 교환 제품에서 동일 증상(충전 불량)으로 재문의`)}<div class="grp-h">💡 공통 안내</div>${macro(`① 사과·양해 멘트`,"AS_재불량_사과",`교환 받으신 제품에서도 동일한 증상이 발생하여 많이 당황스러우셨을 것 같습니다.\n다시 한 번 불편을 드리게 된 점 진심으로 사과드립니다. 🥲`)}<div class="grp-h">✨ 재인입 처리 기준</div>${guide(`1. 충전/전원 불량, 2. 작동 관련 증상(증빙 자료로 판단 가능한 유형 전체)만 아래와 같이 진행`)}<table class="astbl"><thead><tr><th>재인입</th><th>고객 반품 희망</th><th>고객 교환 희망</th></tr></thead><tbody><tr><td>1차 재인입</td><td>각 불량 유형 기본 flow 대로 진행</td><td>각 불량 유형 기본 flow 대로 진행</td></tr><tr><td>2차 재인입</td><td>회수 후 검수 결과에 따라 처리</td><td>① 정격전압 확인 ㅡ 어댑터 사진 필수<br>② 사진 확인 후 기존 flow 대로 진행</td></tr><tr><td>3차 재인입~</td><td>회수 후 검수 결과에 따라 처리</td><td>회수 후 검수 결과에 따라 처리</td></tr></tbody></table></div>
+  <div class="h1lvl" id="step2"><span class="num">3</span>A/S 접수</div>
+  <div class="h2lvl as-major" id="freeFlow">🛠️ 무상 A/S</div><div class="lvl2-body"><div class="h3lvl" id="freeBranch">① 무상 교환 안내</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 상품 수령일로부터 6개월 이내 제품 자체 고장은 원칙적으로 무상 교환으로 안내</b>
 
-다만 사진만으로는 정확한 불량 원인을 파악하기 어려워, 위 항목 모두 확인이 필요한 점 양해 부탁드립니다.
-항목별로 나눠 찍어 보내주셔도 괜찮습니다.
+✔️ 만약 고객이 반품을 요청할 경우, 아래 기간에 따라 응대
+· 상품 수령일 3개월 이내 → ② 무상 반품 접수
+· 상품 수령일 3개월 경과 → ⚠️ [예외] 3개월 경과 건이나 무상 반품 요청 (아래 템플릿 안내)</div><table class="astbl"><thead><tr><th style="width:210px">구분</th><th>안내</th></tr></thead><tbody><tr><td>수령일로부터 3개월 경과건<br>👉🏻 무상 반품 요청할 경우</td><td class="cmp-ment"><span class="tag">#AS_3개월경과_반품요청</span><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 이용에 불편을 드려 죄송합니다.🙏🏻\n확인 결과, 고객님의 제품은 수령일로부터 3개월이 경과한 것으로 확인되었습니다.\n\n슬룸은 공정거래위원회 소비자분쟁해결기준을 토대로, 품질보증기간 내 정상 사용 중 발생한 하자에 대해 기간별 A/S 정책을 운영하고 있습니다.\n이에 따라 수령 후 3개월 이후에는 무상 반품이 아닌 무상 교환으로 진행되며, 고객님의 제품도 해당 기준에 따라 동일 제품으로 무상 교환을 도와드리는 점 양해 부탁드립니다.</div></td></tr><tr><td>수령일로부터 3개월 이내<br>👉🏻 무상 반품 요청할 경우</td><td>② 무상 반품 안내 로 이동하여 안내</td></tr></tbody></table><div class="grp-h">· 포장 및 회수 안내</div>${col("gray",`🔹 전체·부분 동일`,subcard(`포장 · 회수 안내`,"AS_무상교환_포장",`불량 증상 확인되어 교환 접수 도와드리겠습니다.\n\n\n<b>📦 제품 포장 안내</b>\n불량 제품만 아래와 같이 포장해 주세요.\n■ 불량 제품\n■ 해당 제품 구성품(케이블·설명서 등)\n※ 사은품·증정품은 보내지 않으셔도 됩니다.\n\n✍🏽 택배 박스 윗면에 <b>[불량]</b> 표기 부탁드립니다.\n\n\n<b>🚚 회수 안내</b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`))}${caution(`🎁 불량 교환 : 전체/부분 모두 증정품 회수 X`)}${macro(`회수지 확인 필요 시`,"AS_무상교환_회수지",`🙋‍♀️ 마지막으로, 제품 회수와 배송은 기존 주소지로 접수해 드려도 괜찮을까요?`,`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}<div class="grp-h">· 검수 및 재출고 안내</div><div class="grid2">${guide(`⚠️ 유의사항\n① 접수 시간 기준으로 안내 필요\n② 불량으로 인한 재출고는 회수 접수와 동시에 재출고 접수`)}${guide(`🔗 <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 리스트업 필수!\n👉🏻 회수·재출고 자동 등록`)}</div><div class="grid2">${subcard(`a. 월-금 오후 2시 이전 상담`,"AS_무상교환_재출고A",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 예정 \n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}${subcard(`b. 월-목 오후 2시 이후 상담`,"AS_무상교환_재출고B",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 마감으로 익일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}</div>${macro(`c. 금요일 오후 2시 이후 상담`,"AS_무상교환_재출고C",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 마감으로 차주 월요일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운\n\n※ 주말/공휴일 출고 및 배송 미진행`)}</div><div class="h3lvl" id="freePack">② 무상 반품 안내</div><div class="lvl3-body"><div class="grp-h">· 포장 및 회수 안내</div><div class="grid2">${col("blue",`🔹 전체 반품`,subcard(`포장 · 회수 안내`,"AS_무상반품_포장전체",`<b>불량 증상 확인되어 전액 환불 접수 도와드리겠습니다.</b>\n\n\n<b>📦 제품 포장 안내</b>\n아래 항목을 모두 함께 보내주세요.\n■ 제품 전체\n■ 구성품 전체 (케이블·설명서 등)\n■ 사은품·증정품(받으신 경우)\n\n✍🏽 택배 박스 윗면에 <b>[불량]</b> 표기 부탁드립니다.\n\n\n<b>🚚 회수 안내</b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + caution(`🎁 전체 불량 반품 : 증정품 회수 O`))}${col("pink",`🔹 부분 반품`,subcard(`포장 · 회수 안내`,"AS_무상반품_포장부분",`불량 증상 확인되어 부분 환불 접수 도와드리겠습니다.\n\n\n<b>📦 제품 포장 안내</b>\n불량 제품만 아래와 같이 포장해 주세요.\n■ 불량 제품\n■ 해당 제품 구성품(케이블·설명서 등)\n※ 사은품·증정품은 보내지 않으셔도 됩니다.\n\n✍🏽 택배 박스 윗면에 <b>[불량]</b> 표기 부탁드립니다.\n\n\n<b>🚚 회수 안내</b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + caution(`🎁 부분 불량 반품 : 증정품 회수 X`))}</div>${col("gray",`💡 복합 유형 (불량 반품 + 단순변심 반품)`,subcard(`포장 · 회수 안내`,"AS_무상반품_포장복합",`<b>전액 환불 접수 도와드리겠습니다.</b>\n\n<b>📦 제품 포장 안내</b>\n아래 항목을 모두 함께 보내주세요.\n■ 제품 전체\n■ 구성품 전체 (케이블·설명서 등)\n■ 사은품·증정품(받으신 경우)\n✍🏽 불량 제품은 박스 윗면에만 <b>[불량]</b>이라고 기재해 주세요.\n\n<b>🚚 회수 안내</b>\n· 택배사 : CJ대한통운\n· 영업일 기준 2~3일 내 방문\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.\n⚠️ 박스 포장이 아닐 경우 수거가 거부됩니다.`))}<div class="grid2">${macro(`회수지 확인 필요 시`,"AS_무상반품_회수지",`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 진행해드려도 괜찮으실까요?`,`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}${macro(`네이버 스마트스토어 직접 반품 신청 시`,"AS_무상반품_네이버",`네이버를 통해 반품 기사님 신청해 주신 점 확인되었습니다. :)\n미개봉 제품은 전체 다시 택배 박스에 포장해 주시고, 기사님 방문 시 전달해 주시면 수거가 진행될 예정입니다.`)}</div><div class="grp-h">· 결제수단별 환불 안내</div><div class="grid2">${col("blue","◆ 카드결제",subcard(`a. 카드결제 취소`,"AS_무상반품_환불카드",`환불은 아래 절차를 거쳐 진행되며,\n영업일 기준 약 6~8일 정도 소요됩니다.\n\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n\n결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는\n반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.\n\n이용에 불편을 드려 다시 한 번 죄송합니다.`))}${col("pink","◆ 계좌 환불",`<div class="stack">`+subcard(`b-1. 계좌 환불 (무통장·가상계좌)`,"AS_무상반품_환불계좌1",`환불은 아래 절차를 거쳐 진행되며,\n영업일 기준 약 6~8일 정도 소요됩니다.\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n\n다만, (결제 수단 안내 - 무통장 입금 or 가상계좌 결제) 로 결제해주신 점 확인되어,\n환불을 위해 아래 계좌 정보 전달 부탁드립니다.\n\n🏦 은행 / 계좌번호 / 예금주\n\n이용에 불편을 드려 다시 한 번 죄송합니다.`)+subcard(`b-2. 이후 계좌 정보 확인`,"AS_무상반품_환불계좌2",`소중한 정보 확인 감사합니다.\n해당 계좌로 환불 계좌 등록이 완료되었습니다.\n\n<b>💸 입금 안내</b>\n실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정\n\n※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)+`</div>`)}</div></div></div><div class="h2lvl as-major" id="paidFlow">🔧 유상 A/S</div>
+  <div class="lvl2-body">
+  <div class="h3lvl" id="paidCost">① 유상 비용 안내</div>
+  <div class="lvl3-body">${macro(`무상 보증기간 경과 · 유상 A/S 안내`,"무상AS경과_유상AS안내",`슬룸 전자제품의 A/S 품질 보증 기간은 상품 수령일 기준 1년이며, 이는 무상·유상 A/S를 모두 포함한 전체 기간입니다.
 
-확인 후 최대한 빠르게 안내드리겠습니다. 🙏`,
-`1번·2번 중 선택하여 사용`)}${subcard("ⓐ 방어 멘트 1차 (2번)","AS_방어1_2",
-`고객님, 번거로우신 점 충분히 이해합니다. 🥲
+상세 A/S 기준은 아래와 같습니다.
 
-다만 채팅으로는 제품 상태를 직접 확인하기 어려워, 정확한 안내를 위해 사진·영상 확인이 필요한 점 양해 부탁드립니다.
+<b>■ 상품 수령 후 6개월 이내</b>
+ • 제품 자체 고장 → 무상 A/S
+ • 소비자 과실 → 유상 A/S (유상 교환)
 
-위에 안내드린 항목대로 촬영 후 보내주시면 빠르게 확인해 드리겠습니다. 🙏`)}</div>
-  ${macro("ⓑ 방어 멘트 2차","AS_방어2",
-`영상 촬영이 어려우시다면, 제품을 회수하여 불량 여부를 확인하는 방법도 가능합니다.
-다만 회수 후 검수까지는 아래 절차로 진행되어 영업일 기준 약 1주 소요됩니다.
+<b>■ 상품 수령 후 6개월 ~ 1년 이내</b>
+ • 원인 불문 → 유상 A/S (유상 교환)
 
-① 택배 기사 방문 수거
-② 물류센터 입고
-③ 검수 부서 불량 확인
+슬룸의 유상 A/S는 동일한 새 제품 교환으로 진행됩니다.
 
-검수 결과 불량이 확인되면 교환·반품 중 원하시는 방향으로 처리해 드리며, 정상 제품은 즉시 반송 처리됩니다.
-시간이 다소 소요되는 만큼, 채팅으로 영상을 보내주시는 것이 가능하실까요? 🙏`,
-`ⓐ 진행 시에도 미수긍할 경우`)}
-  ${macro("ⓒ 채팅 상담 유지 안내 (지금 촬영 불가)","AS_보류안내",
-`고객님, 지금 바로 첨부가 어려우시다면 앞서 안내드린 항목을 참고하여 촬영 후 편하신 시간에 전송 부탁드립니다.
+✅ 기존 제품은 별도 회수 없이,
+고객님께서 자체 폐기해 주시면 감사하겠습니다.`,`정확한 금액은 아래 [제품별 유상교환 가격표] 참고 · 표에 없는 제품·최신 여부는 CX팀 확인 후 안내`)}
+  <div class="h3lvl">💰 제품별 유상교환 가격표 (내부 참고용)</div>
+  ${caution(`⚠️ 2026.08.03 기준 가격표 · 가격 산정 : CX팀 · 배송비(자체폐기 3,000원 / 회수 6,000원)는 별도\n※ 판단 기준은 '단종여부'가 아닌 <b>교환재고 유무</b> — 단종확정이어도 재고가 남아있으면(*표시) 정상 유상교환 진행`)}
+  <table class="astbl"><thead><tr><th>제품명</th><th>6개월~1년 이내</th><th>1년 경과</th></tr></thead><tbody>
+<tr><td>허리편한케어 V2</td><td>37,250원</td><td>59,600원</td></tr>
+<tr><td>허리편한케어 V1</td><td>32,250원</td><td>51,600원</td></tr>
+<tr><td>허리베개 프로</td><td>22,250원</td><td>35,600원</td></tr>
+<tr><td>목편한케어 플라잉</td><td>37,250원</td><td>59,600원</td></tr>
+<tr><td>목편한케어</td><td>22,250원</td><td>35,600원</td></tr>
+<tr><td>목베개 플러스</td><td>24,750원</td><td>39,600원</td></tr>
+<tr><td>넥숄더 프로</td><td>27,250원</td><td>43,600원</td></tr>
+<tr><td>손편한케어</td><td>27,250원</td><td>43,600원</td></tr>
+<tr><td>종아리편한케어</td><td>37,250원</td><td>59,600원</td></tr>
+<tr><td>눈편한케어</td><td>17,480원</td><td>27,960원</td></tr>
+<tr><td>목 마사지 베게 V2</td><td>29,750원</td><td>47,600원</td></tr>
+<tr><td>골반 마사지기</td><td>49,750원</td><td>79,600원</td></tr>
+<tr><td>팔꿈치 마사지기</td><td>39,750원</td><td>63,600원</td></tr>
+<tr><td>바디 풀고컷</td><td>24,750원</td><td>39,600원</td></tr>
+<tr><td>발편한케어V1 *</td><td>24,750원</td><td>39,600원</td></tr>
+<tr><td>냉각형 에어컨 선풍기 *</td><td>12,300원</td><td>12,300원</td></tr>
+<tr><td>허리편한케어 마스터 *</td><td>44,750원</td><td>71,600원</td></tr>
+<tr><td>넥숄더힐링케어V1 *</td><td>24,750원</td><td>39,600원</td></tr>
+<tr><td>넥숄더힐링케어V2 *</td><td>29,750원</td><td>47,600원</td></tr>
+</tbody></table>
+  ${caution(`* 단종확정이지만 현재 교환재고 O — 재고 소진 시점부터 EDGE CASE로 전환되므로 상담 시 재고 재확인 권장`)}
+  ${caution(`❌ <b>유상 교환 불가 제품</b> (교환재고 소진) — 아래 제품은 가격 안내 없이 🚨 [단종] EDGE CASE로 이동\n넥프레쉬 · 물멍 가습기 · 등허리 힐링케어 · 목베개 프로 · 멀티 릴렉스 체어 · 발편한케어V2_M사이즈 · 발편한케어V2_L사이즈`)}
+  </div>
+  <div class="h3lvl" id="paidDiscard">② 자체 폐기 안내</div>
+  <div class="lvl3-body">
+  <div class="h3lvl">자체 폐기 안내 (수긍 시)</div>
+  <div class="grid2">${col("blue","6개월 경과 ~ 1년 이내",subcard(`자체 폐기 수긍 안내`,"유상AS_{제품명}_폐기수긍_6개월경과1년이내",`우선 {주문일시} 주문 건으로 무상 보증기간이 경과하여,
+제품 불량 확인 후 유상AS로만 접수 가능한 점 양해 부탁드립니다.
 
-💡 채팅창은 유지되며, 닫으신 후 다시 열어도 이어서 상담 가능합니다.`,
-`보류 기준 : 익일 오전까지 · 무응답 시 장시간 무응답 매크로로 종료 · 새 채팅 재문의 시 중복 상담 매크로 활용 (멘트 상황 맞게 수정)`)}
-  ${macro("ⓓ 회수 후 검수로 진행 (ⓐⓑⓒ 미수긍 시)","AS_회수검수진행",
-`네 고객님, 불편을 드려 죄송합니다. 🙏🏻
+결제는 무통장 입금으로만 가능하며,
+배송비 3,000원을 포함해 총 ({제품별 유상금액}+3000)원입니다.
 
-번거로우시겠지만 회수 후 검수 절차로 진행해 드리겠습니다.
-아래 순서로 진행되며 불량 확인까지 영업일 기준 약 1주 소요됩니다.
+이 부분 진행 의사가 있다 하시면
 
-① 택배 기사 방문 수거
-② 물류센터 입고
-③ 검수 부서 불량 확인
+▶ 기업은행 075-09598004-017 (예금주: 올릿리테일)
 
-검수 결과 불량 확인 시 교환/반품 중 원하시는 방향으로 처리해 드리며, 정상 제품일 경우 즉시 고객님 주소로 반송 처리됩니다.
-최대한 빠르게 진행되도록 담당 부서에 요청해 두겠으며, 검수 결과 확인되는 대로 연락드리겠습니다.`,
-`[<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a>/올릿] 별도반출&불량 검수 시트 취합 → 정상: 반송 / 불량: 고객 희망 방향(교환·반품) 처리`)}
-  <div class="grid2">${subcard("🔴 수거 미수긍/불만 (1번)","AS_수거미수긍1",
-`최대한 빠르게 도움드리고 싶으나, 수거 후 물류센터 입고 및 검수 절차로 진행되어 시간이 다소 소요되는 점 양해 부탁드립니다.
+위 계좌로 송금해 주신 다음
+[입금자 성함, 수령인 성함, 주소, 핸드폰번호]를 답장으로 말씀 부탁드립니다.`,`{제품별 유상금액} = 위 가격표의 '6개월~1년 이내' 열 값`))}${col("pink","1년 경과",subcard(`자체 폐기 수긍 안내`,"유상AS_{제품명}_폐기수긍_1년경과",`우선 {주문일시} 주문 건으로 무상 보증기간이 경과하여,
+제품 불량 확인 후 유상AS로만 접수 가능한 점 양해 부탁드립니다.
 
-안내드린 기간보다 지연될 경우 별도로 연락드리겠습니다. 🙏🏻`)}${subcard("🔴 수거 미수긍/불만 (2번)","AS_수거미수긍2",
-`전자제품 특성상 정확한 불량 확인을 위해 수거 후 검수 절차를 거치고 있어 시간이 다소 소요되는 점 양해 부탁드립니다.
+결제는 무통장 입금으로만 가능하며,
+배송비 3,000원을 포함해 총 ({제품별 유상금액}+3000)원입니다.
 
-최대한 빠르게 처리되도록 담당 부서에 요청해 두겠으며, 안내드린 기간보다 지연될 경우 별도로 연락드리겠습니다. 🙏🏻`)}</div>
-  ${macro("💸 환불 계좌 선탐색 (무통장/가상계좌 반품 시)","AS_환불계좌선탐색",
-`(결제 수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해 주신 점 확인되어, 불량으로 확정 시 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
+이 부분 진행 의사가 있다 하시면
 
-🏦 <b>은행 / 계좌번호 / 예금주</b>`,
-`이후 📱 회수/검수 후 절차로 이동`)}
-  ${macro("ⓔ 예외 처리","AS_예외처리",
-`네, 고객님. 영상 촬영이 번거로우실 수 있다는 점 충분히 이해합니다.
-촬영·전송이 어려우시다면, 말씀해 주신 증상을 기준으로 불량 접수 도와드리겠습니다.
+▶ 기업은행 075-09598004-017 (예금주: 올릿리테일)
 
-다만 영상 없이 접수될 경우 고객님 설명만으로 처리가 진행되기 때문에, 조금 더 정확한 확인을 위해 불량 증상을 최대한 자세히 알려주시면 감사하겠습니다. 🙏🏻
+위 계좌로 송금해 주신 다음
+[입금자 성함, 수령인 성함, 주소, 핸드폰번호]를 답장으로 말씀 부탁드립니다.`,`{제품별 유상금액} = 위 가격표의 '1년 경과' 열 값`))}</div>
+  ${guide(`👉🏻 고객 수긍 시 → 입금 확인 후 [입금자 성함·수령인 성함·주소·핸드폰번호] 회신 받고 ③ 비용 입금 안내로 진행\n👉🏻 미수긍(회수 희망) 시 → 아래 ② 회수 진행 안내로 전환`)}
+  <div class="h3lvl">회수 진행 안내 (미수긍 시)</div>
+  <div class="grid2">${col("blue","6개월 경과 ~ 1년 이내",subcard(`자체 폐기 미수긍 · 회수 안내`,"유상AS_{제품명}_폐기미수긍_6개월경과1년이내",`고객님, 기존 제품 회수도 가능하나,
+회수 진행 시 수거비 3,000원이 추가됩니다.
 
-⚠️ 추후 A/S·불량 접수 시에는 사진 또는 영상 첨부가 필요한 점 참고 부탁드립니다.`,
-`전 flow 진행 후 지속 강성 불만·이슈 건 등 별도 예외 처리 필요 시에 한해 · 이후 ⑤ 처리 방향 확인`)}
-  ${macro("① 사진/영상 확인","AS_작동_사진",
-`📷 고객님, 정확한 불량 증상 확인을 위해 번거로우시겠지만 아래 2가지가 모두 확인되도록 촬영 부탁드립니다.
+이 경우 왕복 배송비 6,000원(수거+배송)을 포함해 총 {(제품별 유상금액) + 6000}원입니다.
 
-1️⃣ 불량 증상이 나타나는 장면 (작동 시도 영상)
-2️⃣ 충전기(어댑터) 정격전압 5V 2A 표시
-※ 정격전압이 아닌 충전기 사용 시 제품 오작동·고장의 원인이 될 수 있어 확인이 필요한 점 양해 부탁드립니다.`)}
-  ${guide(`👉🏻 이후 flow는 [1. 충전/전원 증상 — ④ 촬영 수긍 여부에 따른 대응]과 동일하게 진행`)}
-  <div class="grp-h grp-sub" id="freeBranch">② 교환/반품 안내</div>
-  ${macro("⑤ 고객 처리 방향 확인","AS_처리방향",
-`불편을 드려 죄송합니다. 🥲
-제품 불량 시 새 제품으로의 교환 또는 반품 중 원하시는 방식으로 도움드리고 있습니다.
-어떻게 도와드릴까요?`,
-`제품별 불량 라벨링 기준에 따라 첨부 사진/영상으로 불량 확인된 경우에 한해 진행 · 이후 아래 [무상 반품/교환 처리] 참고`)}
-  ${caution(`⚠️ 쿠팡·스마트스토어 등 폐쇄몰 주문은 폐쇄몰 자동수거 프로세스로 리턴하여 진행`)}
-  ${guide(`💡 반품/교환 접수 시 <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트 리스트업 필수 (→ 후처리 관리 시트 통합 가이드 참고)`)}
-  <div class="grp-h">📦 쿠팡·네이버 스마트스토어 — 자동수거 안내</div>
-  <div class="grp-h">■ [쿠팡 / 네이버 스마트스토어] 자동수거건 — 고객 반품 요청</div>
-  ${macro("① 자동수거로 제품 회수 중","AS_쿠팡_회수중",
-`네, 고객님. 회수 진행 중인 점 확인되었습니다.
-다만 상품이 물류센터에 입고된 뒤 검수 절차를 거쳐야 하므로 즉시 처리는 어려운 점 양해 부탁드립니다.
+기존 제품 회수까지 함께 진행해 드릴까요?`))}${col("pink","1년 경과",subcard(`자체 폐기 미수긍 · 회수 안내`,"유상AS_{제품명}_폐기미수긍_1년경과",`고객님, 기존 제품 회수도 가능하나,
+회수 진행 시 수거비 3,000원이 추가됩니다.
 
-회수 완료 후 영업일 기준 2~3일 정도 소요될 수 있으니 참고 부탁드립니다. :)`,
-`쿠팡·스마트스토어 주문내역 조회 → 자동 수거 여부 확인 · 자동수거건은 입고 완료 후에만 <a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 조회 가능`)}
-  <div class="grid2">${subcard("② 불량 증상 추가 확인","AS_쿠팡_증상확인",
-`고객님께서 말씀해 주신 증상을 기준으로 검수 도와드릴 예정입니다.
-혹시 어떤 불량 증상이 있었는지 조금 더 구체적으로 말씀해 주실 수 있을까요?
+이 경우 왕복 배송비 6,000원(수거+배송)을 포함해 총 {(제품별 유상금액) + 6000}원입니다.
 
-예: 충전했는데 전원이 켜지지 않음 / 버튼 눌러도 반응 없음 등`)}${subcard("③ 시간 양해 후 종료","AS_쿠팡_시간양해",
-`물류센터로 상품이 입고되면 남겨주신 증상을 토대로 검수를 진행하여 최종 불량 여부를 확인하게 됩니다. 이 점 양해 부탁드립니다.
+기존 제품 회수까지 함께 진행해 드릴까요?`))}</div>
+  ${guide(`👉🏻 미수긍 매크로 발송 후 고객이 회수까지 수긍하면 → 왕복 배송비 6,000원 기준으로 ③ 비용 입금 안내 진행 (포장·회수 안내는 위 ④ 재출고 안내 상단 절차 준용)`)}
+  <div class="h3lvl">1년 경과 유상 비용 불만 대응</div>
+  ${macro(`상품수령일로부터 1년 경과 · 유상 비용 불만`,"유상AS_1년경과_비용불만",`고객님, 비용 안내로 불편을 드려 죄송합니다. 🙏🏻
+슬룸은 품질보증기간이 1년이지만, 기간이 경과한 이후에도 고객님께서 제품을 계속 사용하실 수 있도록 유상 A/S 서비스를 제공하고 있습니다.
 
-검수는 평균 회수 완료 후 영업일 기준 2~3일 소요되며, 불량으로 확인될 경우 문자 안내 후 결제 수단으로 환불 처리 도와드릴 예정입니다.
+다만, 품질보증기간 이내와 이후에는 적용 기준이 달라 유상 교환 비용에 차이가 발생할 수 있습니다.
 
-※ 검수 결과는 문자로 별도 안내드립니다.
-※ 정상 제품으로 확인될 경우 제품은 반송 처리됩니다.`)}</div>
-  <div class="grp-h">■ 자동수거건 — 고객 교환 요청</div>
-  <div class="grid2">${subcard("① 자동수거로 제품 회수 중","AS_쿠팡_교환_회수중",
-`네, 고객님. 회수 진행 중인 점 확인되었습니다.
-상품이 물류센터에 입고되면 말씀해 주신 증상을 기준으로 검수를 진행할 예정입니다.
-
-번거로우시겠지만, 어떤 증상이 있었는지 조금 더 자세히 알려주시면 감사하겠습니다. :)`)}${subcard("② 불량 교환 요청 시","AS_쿠팡_교환요청",
-`고객님께서 말씀해 주신 불량 증상을 바탕으로 교환 처리 도와드리겠습니다.
-이용에 불편을 드려 대단히 죄송합니다.`,
-`불량 증상 확인 후 즉시 교환 처리 진행`)}</div>
-  <div class="grp-h grp-sub" id="freePack">③ 포장 및 회수 안내</div>
-  ${caution(`무상 처리 방식은 수령 후 기간에 따라 다릅니다 · 0~3개월 : 반품·교환 모두 가능 · 3~6개월 : 교환만 가능(반품 불가)`)}
-  <div class="grp-h">A. 고객 반품 요청 — 무상 반품</div>
-  <div class="grid2">${col("blue","전체 반품",
-subcard("포장 · 회수 안내","AS_반품_전체",
-`불량 증상 확인되어 전액 환불 접수 도와드리겠습니다.
-
-📦 <b>제품 포장 안내</b>
-아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
-■ 사은품·증정품(받으신 경우)
-
-✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + caution(`🎁 전체 불량 반품은 증정품도 회수 진행`)
-)}${col("pink","부분 반품",
-subcard("포장 · 회수 안내","AS_반품_부분",
-`불량 증상 확인되어 부분 환불 접수 도와드리겠습니다.
-
-📦 <b>제품 포장 안내</b>
-아래 항목만 포장해 주세요.
-■ 불량 제품
-■ 해당 제품 구성품(케이블·설명서 등)
-※ 사은품·증정품은 보내지 않으셔도 됩니다.
-
-✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + caution(`🎁 부분 불량 반품은 증정품 회수하지 않음`)
-)}</div>
-  ${macro("회수지 확인","AS_반품_회수지",
-`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 진행해 드려도 괜찮으실까요?`,
-`채널톡 정상 flow 인입 시 회수지 정보가 사전 저장되어 생략 · <a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 수동 등록 필요 시 주소 동일/변경에 따라 접수`)}
-  <div class="grp-h">B. 고객 교환 요청 — 무상 교환</div>
-  ${macro("무상 교환 포장·회수 안내 (전체/부분 동일)","AS_교환_포장",
-`불량 증상 확인되어 교환 접수 도와드리겠습니다.
-
-📦 <b>제품 포장 안내</b>
-아래 항목만 포장해 주세요.
-■ 불량 제품
-■ 해당 제품 구성품(케이블·설명서 등)
-※ 사은품·증정품은 보내지 않으셔도 됩니다.
-
-✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`,
-`불량 교환은 전체/부분 모두 증정품 회수 X · 주소 동일/변경에 따라 재발송`)}
-  ${macro("회수/재출고지 확인","AS_교환_회수지",
-`🙋‍♀️ 마지막으로, 제품 회수 및 재출고는 기존 주소지로 접수해 드려도 괜찮으실까요?`)}
-  <div class="grp-h grp-sub" id="freeResult">④ 환불/재출고 안내</div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">구분</th><th class="cmp-blue">A. 반품</th><th class="cmp-pink">B. 교환</th></tr></thead><tbody><tr><td class="cmp-row-label">수거</td><td colspan="2">위 ② 교환/반품 안내 · ③ 포장 및 회수 안내 참고</td></tr><tr><td class="cmp-row-label">환불 · 출고</td><td>환불 안내 (카드 · 계좌)</td><td>재출고 안내 (시점별)</td></tr></tbody></table></div>
-  <div class="grid2">${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard("환불 절차 안내","AS_환불_카드",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`)
-)}${col("blue","환불 안내 (계좌·무통장/가상계좌)",
-subcard("계좌 정보 요청","AS_환불_계좌",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-다만, (결제 수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`) + subcard("▶ 계좌 정보 확인","AS_환불_계좌확인",
-`소중한 정보 확인 감사합니다.
-해당 계좌로 환불 계좌 등록이 완료되었습니다.
-
-💸 <b>입금 안내</b>
-실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
-
-※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
-)}</div>
-  ${guide(`※ '네이버페이-구매확정' 건은 아임웹에서 반품 접수로 변경 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a>·관리자메모 확인 후 처리
-b. 계좌 환불 : flex - 워크플로우 - 지출결의서 사업자별 등록`)}
-  <div class="grp-h">재출고 안내 (상담 시점별)</div>
-  <div class="grid2">${subcard("a. 월-금 오후 2시 이전","AS_재출고_a",
-`🚚 교환 제품 재출고 일정 안내드리겠습니다.
+고객님께 안내드린 금액은 품질보증기간(1년) 경과 후 적용되는 유상 교환 비용으로, 해당 기준에 따라 안내드리고 있는 점 양해 부탁드립니다.`,`1년 경과 건에서 비용 문의·불만 제기 시에만 사용`)}
+  </div>
+  <div class="h3lvl" id="paidDeposit">③ 상담 종료</div>
+  <div class="lvl3-body">${macro(`미입금 → 상담 종료`,"AS_유상_미입금",`고객님, 안내드린 계좌로 입금이 확인되지 않아 이번 유상 교환 접수는 종료됩니다.\n\n편하게 고민해 보시고 의사가 있다 하시면, 위 안내드린 계좌에 입금해 주신 후\n\n입금확인 상담 링크 : https://sloom.channel.io/workflows/800803\n해당 링크로 문의해 주시면 됩니다. :)`)}</div>
+  <div class="h3lvl" id="paidReship">④ 재출고 안내</div>
+  <div class="lvl3-body">${guide(`💡 입금 확인 후 상담 시점 기준으로 재출고 진행`)}
+  <div class="grid2">${subcard("a. 월-금 오후 2시 이전","AS_유상_재출고_a",`🚚 입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
 
 · 출고 : 금일 출고 예정
 · 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운`)}${subcard("b. 월-목 오후 2시 이후","AS_재출고_b",
-`🚚 교환 제품 재출고 일정 안내드리겠습니다.
+· 택배사 : CJ대한통운
+
+※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터(전용 케이블) 사용을 꼭 안내드립니다.`)}${subcard("b. 월-목 오후 2시 이후","AS_유상_재출고_b",`🚚 입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
 
 · 출고 : 금일 출고 마감으로 익일 출고 예정
 · 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운`)}</div>
-  ${macro("c. 금요일 오후 2시 이후","AS_재출고_c",
-`🚚 교환 제품 재출고 일정 안내드리겠습니다.
+· 택배사 : CJ대한통운
+
+※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터(전용 케이블) 사용을 꼭 안내드립니다.`)}</div>
+  ${macro("c. 금요일 오후 2시 이후","AS_유상_재출고_c",`🚚 입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
 
 · 출고 : 금일 출고 마감으로 차주 월요일 출고 예정
 · 배송 : 출고일로부터 영업일 기준 2~3일 소요
 · 택배사 : CJ대한통운
 
-※ 주말/공휴일 출고 및 배송 미진행`)}
-  ${guide(`💡 반품/교환 접수 시 [자사몰/외부몰] 통합 교환·반품 관리 시트에 리스트업하면 회수·재출고 자동 접수됩니다.
-✅ 주소·연락처 변경 요청 시 → 시트 내 정보 반드시 수정
-✅ 시트 CS RT 번호 생성 후 → <a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 상태값 '요청'으로 변경 필수
-📌 상세 절차 → 후처리 관리 시트 통합 가이드 참고`)}
-  <div class="grp-h grp-major" id="paidFlow">🔧 유상 A/S</div>
-  ${caution(`🚧 초안 — 유상 A/S 비용표·입금 계좌·자체 폐기 기준 등 실제 값 검수 필요`)}
-  <div class="grp-h grp-sub" id="paidCost">① 유상 비용 안내</div>
-  ${macro("유상 교환 비용 · 회수 없음 안내","AS_유상_비용안내",
-`유상 교환은 기존 제품 회수 없이 동일 상품의 새 제품으로 발송해 드리는 방식입니다.
-
-· 대상 : 무상 보증기간(6개월) 경과 또는 고객 과실로 인한 고장
-· 비용 : 제품별·기간별 상이 — 1년 이내 유상교환 가격과 1년 경과 유상교환 가격이 다름 (상담 시 개별 안내)
-· 결제 : 무통장 입금만 가능
-
-🏦 <b>(입금 계좌 안내)</b>`)}
-  <div class="grp-h grp-sub" id="paidDiscard">② 자체 폐기 안내</div>
-  ${macro("자체 폐기 안내","AS_유상_자체폐기",
-`유상 교환은 기존 제품을 회수하지 않으므로, 사용하시던 제품은 고객님께서 직접 폐기해 주시면 됩니다.
-(초안 — 폐기 방식·주의사항 문구 확정 필요)`)}
-  <div class="grp-h grp-sub" id="paidDeposit">③ 비용 입금 안내</div>
-  ${macro("입금 계좌 안내 & 입금 확인","AS_유상_입금",
-`아래 계좌로 유상 비용 입금 부탁드립니다.
-
-🏦 <b>(입금 계좌 / 예금주)</b>
-※ 입금자명이 접수자명과 다를 경우 확인이 어려우니 참고 부탁드립니다.
-(초안 — 실제 계좌·비용 확정 필요)`)}
-  ${macro("미입금 → 상담 종료","AS_유상_미입금",
-`안내드린 계좌로 입금이 확인되지 않아 이번 유상 교환 접수는 종료됩니다.
-추후 다시 진행을 원하시면 언제든 편하게 문의해 주세요.`)}
-  <div class="grp-h grp-sub" id="paidReship">④ 재출고 안내</div>
-  ${macro("입금 확인 → 재출고 안내","AS_유상_출고",
-`입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
-
-· 출고 : 영업일 기준 1~2일 이내
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
+※ 주말/공휴일 출고 및 배송 미진행
 ※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터(전용 케이블) 사용을 꼭 안내드립니다.`)}
-  <div class="grp-h grp-major" id="edgeDiscon">🚨 [단종] EDGE CASE</div>
-  ${caution(`🚧 초안 — 단종(수리 부품 미보유) 응대 · 판정 기준은 📋 A/S 기준·품질 보증 참고`)}
-  <div class="grp-h grp-sub" id="edgeIn">① 품질보증기간(1년) 이내 단종</div>
-  ${macro("단종 안내 · 1년 이내","AS_단종_이내",
-`문의 주신 제품이 단종되어 동일 제품으로의 교환이 어려운 점 양해 부탁드립니다. 🥲
+  </div>
+  </div>
+  <div class="h2lvl" id="edgeDiscon">🚨 [단종] EDGE CASE</div>
+  <div class="lvl2-body"><div class="h3lvl" id="edgeIn">① 품질보증기간(1년) 이내 단종</div><div class="lvl3-body">${guide(`<b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용합니다.\n① 유사 모델을 '유상교환 가격' 으로 구매 안내\n② 고객이 구매를 원하지 않는 경우 단종 보상 기준에 따라 <b>구입가를 자사몰 포인트로 대체 환급</b>`)}${macro(`1. 단종 안내 및 유사 제품 추천`,"AS_단종이내_안내",`고객님, 슬룸 제품을 믿고 이용해 주셨는데 동일 제품을 더 이상 제공해 드리지 못하게 되어 죄송합니다.🙏🏻\n확인 결과, 해당 제품은 현재 단종되어 동일 제품으로 교환(재출고)이 어려운 것으로 확인되었습니다.\n\n(사용했던 제품명)을 만족스럽게 사용하셨다면, 동일 부위 및 유사 기능의 제품인 (추천 제품명)은 어떠실까요?\n해당 제품은 실판매가가 아닌 품질보증기간(1년) 이내 유상 교환 금액인 (추천 제품의 유상금액)원으로 제공해 드리고 있습니다.\n\n아래에 주요 기능과 판매페이지를 함께 안내드립니다.\n(추천 제품 주요 기능)\n(판매페이지 링크)\n\n추가로 제품에 대해 궁금하신 점이 있으시면 편하게 말씀해 주세요.🙂`)}<div class="grid2"><div class="flowgroup">${subcard(`a-1. 유사 제품 구매 동의`,"AS_단종이내_입금",`네 고객님, 이해해 주셔서 감사합니다.🙂\n구매를 원하시는 제품 금액과 배송비를 아래 계좌로 입금해 주시면 확인 후 출고를 도와드리겠습니다.\n\n<b>💳 입금 금액</b>\n• 배송비 : 3,000원\n• (제품명) : (품질보증기간 1년 이내 유상 교환 금액)\n🏦 기업은행 075-095980-04-017 (예금주 : 올릿리테일)\n\n입금 후 입금자명을 말씀해 주시면 확인 후 접수 도와드리겠습니다.`)}${subcard(`a-2. 기존 제품 자체폐기 안내`,"AS_단종이내_폐기",`기존 제품은 별도 회수 없이, 고객님께서 자체 폐기해 주시면 감사하겠습니다.`)}</div>${subcard(`b-1. 유사 제품 구매 미동의`,"AS_단종이내_미동의",`네 고객님, 다시 한번 불편을 드려 죄송합니다.\n유사 제품 구매를 원하지 않으시는 경우에는 단종 보상 정책에 따라 구입가를 자사몰 포인트로 환급해 드리고 있습니다.\n포인트 환급을 원하시는 경우 절차를 안내해 드리겠습니다.`)}</div>${guide(`👉🏻 a-1. 유사 제품 구매 동의 시 접수 시점에 따라 출고 안내`)}<div class="grid2">${subcard(`a. 월-금 오후 2시 이전 상담`,"AS_단종이내_출고A",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 예정 \n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}${subcard(`b. 월-목 오후 2시 이후 상담`,"AS_단종이내_출고B",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 마감으로 익일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}</div>${macro(`c. 금요일 오후 2시 이후 상담`,"AS_단종이내_출고C",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 마감으로 차주 월요일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운\n\n※ 주말/공휴일 출고 및 배송 미진행`)}</div><div class="h3lvl" id="edgeOut">② 품질보증기간(1년) 경과 단종</div><div class="lvl3-body">${guide(`<b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용합니다.\n① 동일 부위·동일 용도의 유사 제품이 있는지 확인합니다.\n<span class="sub-ex">(예: 넥숄더프로 → 넥숄더힐링케어 V2)</span>\n② 유사 제품을 품질보증기간(1년) 경과 유상 교환 비용으로 구매할 수 있도록 안내합니다.\n③ 고객이 유사 제품 구매를 원하지 않는 경우, <b>감가상각을 반영한 잔여 금액에 구입가의 10%를 가산</b>하여 자사몰 포인트로 환급합니다.`)}${blueNote(`💰 환급금 계산 가이드`,`① 구입가를 확인합니다.\n② 사용개월을 확인합니다.\n③ 아래 계산식을 적용합니다.\n\n<b>감가상각비</b> = (사용개월 ÷ 60개월) × 구입가\n<b>잔여금</b> = 구입가 - 감가상각비\n<b>최종 환급금</b> = 잔여금 + 구입가의 10%\n\n※ 슬룸 제품의 내용연수는 60개월로 적용합니다.<div class="quote-box"><b>예시)</b> 목베개플러스 · 구입가 99,000원 · 구입일 2024년 7월 · A/S 문의일 2026년 7월 · 사용기간 24개월\n\n· 감가상각비 = (24개월 ÷ 60개월) × 99,000원 = 39,600원\n· 잔여금 = 99,000원 - 39,600원 = 59,400원\n· 구입가의 10% = 99,000원 × 10% = 9,900원\n· <b>최종 환급금</b> = 59,400원 + 9,900원 = <b>69,300원</b></div><div class="refund-calc"><div class="refund-calc-h">🧮 자동 계산기 (숫자만 입력)</div><div class="refund-calc-row"><label>구입가</label><input type="text" inputmode="numeric" data-role="price" placeholder="예: 99000" oninput="this.value=this.value.replace(/[^0-9]/g,'');calcRefund(this)"><span class="unit">원</span></div><div class="refund-calc-row"><label>사용개월</label><input type="text" inputmode="numeric" data-role="months" placeholder="예: 24" oninput="this.value=this.value.replace(/[^0-9]/g,'');calcRefund(this)"><span class="unit">개월</span></div><div class="refund-calc-err"></div><div class="refund-calc-out"><div><span>감가상각비</span><b data-out="dep">0원</b></div><div><span>잔여금</span><b data-out="rem">0원</b></div><div><span>구입가의 10%</span><b data-out="add">0원</b></div><div class="final"><span>최종 환급금</span><b data-out="final">0원</b></div></div></div><details class="legal-fold"><summary>※ 관련 기준 보기</summary><p>공정거래위원회 소비자분쟁해결기준에 따라 품질보증기간이 경과한 후 부품보유기간 내 수리가 불가능한 경우, 정액 감가상각한 잔여 금액에 구입가의 10%를 가산하여 환급합니다.</p></details>`)}${macro(`1. 단종 안내 및 유사 제품 추천`,"AS_단종경과_안내",`고객님, 슬룸 제품을 믿고 이용해 주셨는데 동일 제품을 더 이상 제공해 드리지 못하게 되어 죄송합니다.🙏🏻\n확인 결과, 해당 제품은 현재 단종되어 동일 제품으로 교환(재출고)이 어려운 것으로 확인되었습니다.\n\n(사용했던 제품명)을 만족스럽게 사용하셨다면, 동일 부위 및 유사 기능의 제품인 (추천 제품명)은 어떠실까요?\n해당 제품은 실판매가가 아닌 품질보증기간(1년) 경과 유상 교환 금액인 (추천 제품의 유상금액)원으로 제공해 드리고 있습니다.\n\n아래에 주요 기능과 판매페이지를 함께 안내드립니다.\n(추천 제품 주요 기능)\n(판매페이지 링크)\n\n추가로 제품에 대해 궁금하신 점이 있으시면 편하게 말씀해 주세요.🙂`)}<div class="grid2"><div class="flowgroup">${subcard(`a-1. 유사 제품 구매 동의`,"AS_단종경과_입금",`네 고객님, 이해해 주셔서 감사합니다.🙂\n구매를 원하시는 제품 금액과 배송비를 아래 계좌로 입금해 주시면 확인 후 출고를 도와드리겠습니다.\n\n<b>💳 입금 금액</b>\n• 배송비 : 3,000원\n• (제품명) : (품질보증기간 1년 경과 유상 교환 금액)\n🏦 기업은행 075-095980-04-017 (예금주 : 올릿리테일)\n\n입금 후 입금자명을 말씀해 주시면 확인 후 접수 도와드리겠습니다.`)}${subcard(`a-2. 기존 제품 자체폐기 안내`,"AS_단종경과_폐기",`기존 제품은 별도 회수 없이, 고객님께서 자체 폐기해 주시면 감사하겠습니다.`)}</div>${subcard(`b-1. 유사 제품 구매 미동의`,"AS_단종경과_미동의",`네 고객님, 다시 한번 불편을 드려 죄송합니다.\n유사 제품 구매를 원하지 않으시는 경우에는 단종 보상 정책에 따라 산정된 금액을 자사몰 포인트로 환급해 드리고 있습니다.\n포인트 환급을 원하시는 경우 절차를 안내해 드리겠습니다.`)}</div></div></div>
+  <div class="h2lvl" id="exNoEvid">✨ [예외] 증빙 미제출</div>
+  <div class="lvl2-body">${guide(`✔️ 사진/영상 확인 시, 정상 제품으로 확인되거나 사용법 문제로 확인될 경우 → 증상별 올바른 사용법 재안내 후 재사용 시도 유도\n⚠️ 아래 flow는 사진/영상 촬영 지속 미수긍으로 회수 후 검수 예외 처리 진행에 동의한 경우에만 이어서 안내`)}<div class="h3lvl">❌ 검수 결과 — 불량 확인</div><div class="lvl3-body">${guide(`※ 채널톡 이전 상담 내역에 교환/반품 처리 방안 확인`)}<div class="grp-h">A. 고객 반품 요청 · 반품 안내 유저챗 발송</div><div class="grid2">${macro(`a. 카드 / 삼성페이 / 네이버페이`,"AS_증빙불량_반품카드",`안녕하세요 고객님, 슬룸 고객센터입니다.\n\n요청하신 제품의 검수 결과 안내드립니다.\n\n■ 제품명 :\n■ 확인 결과 : 불량\n\n전액 환불로 처리해 드리겠습니다.\n\n카드 승인 취소(환불 완료)까지 영업일 기준 3~5일 소요될 수 있습니다.\n\n추가 문의 사항이 있으실 경우 아래 채널을 통해 문의 부탁드립니다.\n\n👉🏻 슬룸 채팅상담 \n(※ 월-목 09:30-17:00, 금 09:30-16:00, 주말 및 공휴일 휴무)\n\n다시 한번 이용에 불편을 드려 대단히 죄송합니다.`)}${macro(`b. 계좌 환불 (무통장/가상계좌)`,"AS_증빙불량_반품계좌",`안녕하세요 고객님, 슬룸 고객센터입니다.\n\n요청하신 제품의 '검수 결과'를 안내드립니다.\n\n■ 제품명 :\n■ 확인 결과 : 불량\n\n전액 환불로 처리해 드리겠습니다.\n\n접수 시 말씀해주신 고객님 명의 계좌로 환불 등록해 드렸으며,\n입금까지 영업일 기준 1~2일 소요될 수 있는 점 참고 부탁드립니다.\n\n추가 문의 사항이 있으실 경우 아래 채널을 통해 문의 부탁드립니다.\n\n👉🏻 슬룸 채팅상담 \n(※ 월-목 09:30-17:00, 금 09:30-16:00, 주말 및 공휴일 휴무)\n\n다시 한번 이용에 불편을 드려 대단히 죄송합니다.`)}</div><div class="grp-h">B. 고객 교환 요청 · 재출고 안내 유저챗 발송</div>${macro(`재출고 안내`,"AS_증빙불량_교환재출고",`안녕하세요 고객님, 슬룸 고객센터입니다.\n\n요청하신 제품의 검수 결과 안내드립니다.\n\n■ 제품명 :\n■ 확인 결과 : 불량\n\n교환 제품은 접수 시 요청하신 주소로 발송 예정입니다.\n\n🚚 재출고 일정\n· 출고 : 익일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운\n\n추가 문의 사항이 있으실 경우 아래 채널을 통해 문의 부탁드립니다.\n\n👉🏻 슬룸 채팅상담 \n(※ 월-목 09:30-17:00, 금 09:30-16:00, 주말 및 공휴일 휴무)\n\n다시 한번 이용에 불편을 드려 대단히 죄송합니다.`,`👉 최초 A/S 문의 flow 인입 시 회수지 정보가 사전 저장되므로 이전 상담 내역 확인\n\n\n💡 회수/검수 후 재발송 건의 경우, 품고 전산에서 별도 등록`)}</div><div class="h3lvl">⭕ 검수 결과 — 정상 제품</div><div class="lvl3-body">${macro(`알림톡 / 유저챗 발송`,"AS_증빙정상_발송",`안녕하세요 고객님, 슬룸 고객센터입니다.\n\n요청하신 제품의 검수 결과 안내드립니다.\n\n■ 제품명 :\n■ 확인 결과 : 정상\n\n※ 정상 제품은 수거 시 등록된 주소로 재발송 진행 예정이며, \n시간이 다소 소요되어 불편을 드린 점 대단히 죄송합니다.\n\n\n추가 문의 사항이 있으실 경우 아래 채널을 통해 문의 부탁드립니다.\n\n👉🏻 슬룸 채팅상담 \n(※ 월-목 09:30-17:00, 금 09:30-16:00, 주말 및 공휴일 휴무)\n\n다시 한번 이용에 불편을 드려 대단히 죄송합니다.`,`✔️ 필요 시, 알리고 템플릿 등록 예정`)}</div></div>
 
-① 유사 모델을 '1년 이내 유상교환 가격'으로 구매하실 수 있도록 안내드립니다.
-② 원치 않으실 경우, 구입가를 자사몰 포인트로 대체 환급해 드립니다.`,`초안`)}
-  <div class="grp-h grp-sub" id="edgeOut">② 품질보증기간(1년) 경과 단종</div>
-  ${macro("단종 안내 · 1년 경과","AS_단종_경과",
-`문의 주신 제품이 단종되어 동일 제품으로의 교환이 어려운 점 양해 부탁드립니다. 🥲
-
-① 유사 모델을 '1년 경과 유상교환 가격'으로 구매하실 수 있도록 안내드립니다.
-② 원치 않으실 경우, 정액 감가상각한 잔여 금액에 구입가의 10%를 가산하여 자사몰 포인트로 대체 환급해 드립니다.`,`초안`)}
-  ${secTitle("✨","[예외] 증빙 미제출","촬영 미수긍 → 회수 검수 동의 건","exNoEvid")}
-  ${caution(`⚠️ 아래 flow는 사진/영상 촬영 지속 미수긍으로 회수 후 검수 진행에 동의한 경우에만 진행 · 이전 상담 내역에서 교환/반품 처리 방안 확인`)}
-  <div class="grp-h">❌ 검수 결과 — 불량 확인</div>
-  <div class="grid2">${subcard("A. 반품 — 카드/삼성페이/네이버페이","AS_검수_반품_카드",
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-요청하신 제품의 검수 결과 안내드립니다.
-■ 제품명 :
-■ 확인 결과 : 불량
-
-전액 환불로 처리해 드리겠습니다.
-카드 승인 취소(환불 완료)까지 영업일 기준 3~5일 소요될 수 있습니다.
-
-추가 문의 사항이 있으실 경우 아래 채널로 문의 부탁드립니다.
-👉🏻 슬룸 채팅상담 (월-목 09:30-17:00, 금 09:30-16:00, 주말·공휴일 휴무)
-
-다시 한번 이용에 불편을 드려 대단히 죄송합니다.`)}${subcard("A. 반품 — 계좌(무통장/가상계좌)","AS_검수_반품_계좌",
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-요청하신 제품의 검수 결과를 안내드립니다.
-■ 제품명 :
-■ 확인 결과 : 불량
-
-전액 환불로 처리해 드리겠습니다.
-접수 시 말씀해 주신 고객님 명의 계좌로 환불 등록해 드렸으며, 입금까지 영업일 기준 1~2일 소요될 수 있는 점 참고 부탁드립니다.
-
-추가 문의 사항이 있으실 경우 아래 채널로 문의 부탁드립니다.
-👉🏻 슬룸 채팅상담 (월-목 09:30-17:00, 금 09:30-16:00, 주말·공휴일 휴무)
-
-다시 한번 이용에 불편을 드려 대단히 죄송합니다.`)}</div>
-  ${macro("B. 교환 — 재출고 안내 유저챗","AS_검수_교환",
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-요청하신 제품의 검수 결과 안내드립니다.
-■ 제품명 :
-■ 확인 결과 : 불량
-
-교환 제품은 접수 시 요청하신 주소로 발송 예정입니다.
-
-🚚 재출고 일정
-· 출고 : 익일 출고 예정
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-추가 문의 사항이 있으실 경우 아래 채널로 문의 부탁드립니다.
-👉🏻 슬룸 채팅상담 (월-목 09:30-17:00, 금 09:30-16:00, 주말·공휴일 휴무)
-
-다시 한번 이용에 불편을 드려 대단히 죄송합니다.`)}
-  ${macro("⭕ 검수 결과 — 정상 제품","AS_검수_정상",
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-요청하신 제품의 검수 결과 안내드립니다.
-■ 제품명 :
-■ 확인 결과 : 정상
-
-※ 정상 제품은 수거 시 등록된 주소로 재발송 진행 예정이며, 시간이 다소 소요되어 불편을 드린 점 대단히 죄송합니다.
-
-추가 문의 사항이 있으실 경우 아래 채널로 문의 부탁드립니다.
-👉🏻 슬룸 채팅상담 (월-목 09:30-17:00, 금 09:30-16:00, 주말·공휴일 휴무)
-
-다시 한번 이용에 불편을 드려 대단히 죄송합니다.`)}
-`;
+  <div class="h2lvl" id="autoPickup">🍏 [쿠팡/네이버스스]자동수거</div>
+  <div class="lvl2-body"><div class="quote-box">⚠️ 고객이 처리방안(교환 또는 반품)을 선택 후, 자동수거 진행되고 있는 건이므로 아래 flow 대로 진행</div><div class="grp-h">A. 고객 반품 요청</div><div class="grid2">${macro(`① 자동수거로 제품 회수 중`,"AS_자동수거_반품회수",`네, 고객님. (쿠팡 또는 네이버) 통해 회수 진행 중인 점 확인되었습니다.\n다만, 상품이 물류센터에 입고된 뒤 검수 절차를 거쳐야 하므로 즉시 처리는 어려운 점 양해 부탁드립니다.🙏🏻\n\n회수 완료 후 영업일 기준 2~3일 정도 소요될 수 있으니 참고 부탁드립니다.`)}${guide(`▶ 쿠팡 or 네이버 스마트스토어 주문내역 조회 \n→ 반품/교환 자동 수거 여부 확인\n\n단, 자동수거 물류센터 회수 내역 조회는 입고 완료 후에만 조회됨 \n회수중 상태에서는 품고에서 조회되지 않음`)}</div>${macro(`② 불량 증상 추가 확인 필요 시`,"AS_자동수거_반품증상",`고객님께서 말씀해주신 증상을 기준으로 검수 도와드릴 예정입니다.\n\n번거로우시겠지만\n불량 증상에 대해 조금 더 자세히 말씀해주실 수 있을까요?\n\n말씀해주신 내용을 기반으로 정확한 접수 도와드리겠습니다.🙏🏻\n\n예: 충전했는데 전원이 켜지지 않음 / 버튼 눌러도 반응 없음 등`)}<div class="grid2">${macro(`③ 시간 양해 후 종료`,"AS_자동수거_반품종료",`물류센터로 고객님의 제품이 입고되면,\n접수해 주신 증상을 바탕으로 검수를 진행하여 최종 불량 여부를 확인하게 됩니다.\n\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n검수는 회수 완료 후 영업일 기준 2~3일 정도 소요되며,\n불량으로 확인될 경우 문자 안내 후 결제하신 수단으로 환불을 도와드리겠습니다.\n\n최대한 빠르게 처리될 수 있도록 노력하겠습니다.🙂\n\n※ 검수 결과는 문자로 별도 안내드립니다.\n※ 정상 제품으로 확인될 경우에는 제품이 고객님께 반송될 수 있습니다.`)}${guide(`[품고/올릿] 별도반출&불량 검수 시트에 취합 후 검수 결과에 따라 \n✔️ '정상'일 경우 → 고객 주소로 반송\n✔️ '불량'일 경우 → '반품' 처리 \n\n※ 쿠팡 건은 검수 결과 확인 전 쿠팡 자체적으로 기한 내 반품 완료 처리되는 경우가 대부분\n→ 고객 별도 안내 불필요, 시스템만 인지하고 이해하기!`)}</div><div class="grp-h">B. 고객 교환 요청</div><div class="grid2">${macro(`① 자동수거로 제품 회수 중`,"AS_자동수거_교환회수",`네, 고객님. (쿠팡 또는 네이버) 통해 회수 진행 중인 점 확인되었습니다.\n상품이 물류센터에 입고되면, 말씀해주신 증상을 기준으로 검수를 진행할 예정입니다.\n\n번거로우시겠지만, 어떤 증상이 있었는지 조금 더 자세히 알려주시면 감사하겠습니다 :)`)}${guide(`▶ 쿠팡 or 네이버 스마트스토어 주문내역 조회 \n→ 반품/교환 자동 수거 여부 확인\n\n단, 자동수거건 물류센터 회수 내역 조회는 입고 완료 후에만 조회됨 \n회수중 상태에서는 조회되지 않음`)}</div><div class="grid2">${macro(`② 불량 교환 요청 시`,"AS_자동수거_교환요청",`고객님께서 말씀해 주신 불량 증상을 바탕으로 교환 처리 도와드리겠습니다.\n이용에 불편을 드려 대단히 죄송합니다.🙏🏻`)}${guide(`※ 교환은 고객께 불량 증상 확인되면 즉시 재출고 접수 진행`)}</div><div class="grp-h">■ 그 외 CS 인입 건</div><div class="quote-box">무상 A/S 의 ① 무상 교환 안내로 이동하여 고객 요청 처리방안대로 진행 (⚠️ 단, 기간별 정책에 따라만 진행 가능)</div></div>
+  `;
 
 
 
@@ -3433,8 +3198,8 @@ subcard("포장 · 회수 안내","교환_전체_포장회수",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 
 🚚 <b>회수 안내</b>
@@ -3521,8 +3286,8 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -3705,8 +3470,7 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체 (남은 내용물 포함)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -3727,8 +3491,7 @@ subcard("포장 · 회수 안내","부작용_포장회수_부분",
 
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
-■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
+■ 반품 제품 전체 (남은 내용물 포함)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -3892,7 +3655,7 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 구성품(아이크림·패치 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -3914,7 +3677,7 @@ subcard("포장 · 회수 안내","부작용_포장회수_부분",
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
 ■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
+■ 해당 제품 구성품(아이크림·패치 등)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4081,7 +3844,7 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 구성품(계량컵·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4103,7 +3866,7 @@ subcard("포장 · 회수 안내","부작용_포장회수_부분",
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
 ■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
+■ 해당 제품 구성품(계량컵·설명서 등)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4266,8 +4029,8 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4279,7 +4042,9 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
 ⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.
 
-🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드려도 괜찮을까요?`) + caution(`🎁 전체 반품은 증정품도 회수 진행`)
+🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드려도 괜찮을까요?`) + caution(`🎁 전체 반품은 증정품도 회수 진행
+
+📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내`)
 )}
 ${col("pink","🔹 부분 반품",
 subcard("포장 · 회수 안내","부작용_포장회수_부분",
@@ -4301,7 +4066,9 @@ subcard("포장 · 회수 안내","부작용_포장회수_부분",
 💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
 ⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.
 
-🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드려도 괜찮을까요?`) + caution(`🎁 부분 반품은 증정품 회수 진행하지 않음`)
+🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드려도 괜찮을까요?`) + caution(`🎁 부분 반품은 증정품 회수 진행하지 않음
+
+📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내`)
 )}
 </div>
   ${secTitle("4","병원 내원 및 치료 안내",null,"sec_hospital")}
@@ -4482,8 +4249,7 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 박스 전체 (남은 포·스틱 포함)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4504,8 +4270,7 @@ subcard("포장 · 회수 안내","부작용_포장회수_부분",
 
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
-■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
+■ 반품 제품 박스 전체 (남은 포·스틱 포함)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4651,8 +4416,8 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4826,7 +4591,6 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4848,7 +4612,6 @@ subcard("포장 · 회수 안내","부작용_포장회수_부분",
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
 ■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -4998,7 +4761,6 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -5020,7 +4782,6 @@ subcard("포장 · 회수 안내","부작용_포장회수_부분",
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
 ■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -5169,8 +4930,8 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
-■ 제품
-■ 제품 구성품(케이블·설명서 등)
+■ 제품 전체
+■ 구성품 전체 (케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -5350,7 +5111,6 @@ subcard("포장 · 회수 안내","부작용_포장회수_전체",
 📦 <b>제품 포장 안내</b>
 아래 항목을 모두 함께 보내주세요.
 ■ 제품
-■ 제품 구성품(케이블·설명서 등)
 ■ 사은품·증정품(받으신 경우)
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -5372,7 +5132,6 @@ subcard("포장 · 회수 안내","부작용_포장회수_부분",
 📦 <b>제품 포장 안내</b>
 반품하시는 제품만 아래와 같이 포장해 주세요.
 ■ 반품 제품
-■ 해당 제품 구성품(케이블·설명서 등)
 ※ 사은품·증정품은 보내지 않으셔도 됩니다.
 ✍🏽 택배 박스 윗면에 <b>[불량]</b>이라고 기재해 주세요.
 
@@ -5655,7 +5414,7 @@ Be Live and Better — 더 나은 나의 라이프, 빌바입니다.</div></td><
 ■ 불량 접수하기 : https://sloom.channel.io/workflows/789993
 ☞ 불량 증상 선택 → 제품 선택 → 상세 증상 선택 → 구매하신 쇼핑몰 선택 → 원하시는 처리 방안 선택 후 간편 접수
 ■ A/S 접수 전 유의사항도 꼭 확인 부탁드립니다.
-1. A/S는 구매 후 6개월 이내는 무상, 6개월부터 최대 1년까지는 유상으로 진행되며, 1년 이후에는 보증 기간 만료로 접수할 수 없습니다.
+1. A/S는 상품 수령 후 6개월 이내는 무상, 6개월부터 최대 1년까지는 유상으로 진행되며, 1년 이후에는 보증 기간 만료로 접수할 수 없습니다.
 2. 채팅 접수가 어려우시다면 아래 링크에서 간편 접수 방법을 확인해 주세요.
 ☞ 채팅 상담 방법 확인하기 : https://buly.kr/8ph9bNJ
 3. 제품 회수 전에는 직접 확인이 어려운 온라인 판매 특성상, 사용 미숙으로 인한 작동 어려움이 있을 수 있습니다. 정상품은 다시 반송되어 번거로움이 발생할 수 있으니, 정확한 안내를 위해 불량 증상 영상이나 사진을 꼭 함께 전달 부탁드립니다.
@@ -6730,7 +6489,7 @@ EMS 단계는 모두 리모컨 디스플레이에서 표시되지 않습니다. 
 ☞ 불량 증상 선택 → 제품 선택 → 상세 증상 선택 → 구매하신 쇼핑몰 선택 → 원하시는 처리 방안 선택 후 간편 접수
 ■ 아래의 A/S 접수 전 유의 사항도 꼭 확인 부탁드립니다.
 
-1. A/S는 구매 후 6개월 이내는 무상, 6개월부터 최대 1년까지는 유상으로 진행되며, 1년 이후에는 보증 기간 만료로 인해 접수할 수 없습니다.
+1. A/S는 상품 수령 후 6개월 이내는 무상, 6개월부터 최대 1년까지는 유상으로 진행되며, 1년 이후에는 보증 기간 만료로 인해 접수할 수 없습니다.
 2. 채팅 접수에 어려움이 있으시다면, 아래 링크를 통해 간편 접수 방법을 확인해주세요.
 ☞ 채팅 상담 방법 확인하기 : https://buly.kr/8ph9bNJ
 3. 제품 회수 전에는 직접 확인이 어려운 온라인 판매 특성 상, 사용 미숙으로 인한 작동의 어려움이 있을 수 있습니다. 특히, 정상품의 경우 다시 반송되기에 불필요하게 제품을 사용하지 못하는 번거로움이 발생할 수 있기에 정확한 안내를 위해 불량 증상 영상이나 사진을 꼭 함께 전달 부탁드립니다.
@@ -7580,28 +7339,27 @@ BRAND_TREE["슬룸"]["A/S 및 불량"]={
     {group:true, label:"1. 보증기간 확인", anchor:"guar"},
     {group:true, label:"2. 불량 유형 확인", anchor:"step1"},
     {label:"a. 사용법 안내 필요", anchor:"groupA"},
-    {sub:true, label:"① 충전/전원", anchor:"t1"},
-    {sub:true, label:"② 작동 관련 증상", anchor:"t2"},
-    {sub:true, label:"③ 소음·온열·EMS 강도", anchor:"t3"},
+    {sub:true, label:"1. 충전/전원", anchor:"t1"},
+    {sub:true, label:"2. 작동 관련 증상", anchor:"t2"},
+    {sub:true, label:"3. 소음·온열·EMS 강도", anchor:"t3"},
     {label:"b. 사용법 안내 불필요", anchor:"groupB"},
-    {sub:true, label:"④ 구성품 누락", anchor:"t5"},
-    {sub:true, label:"⑤ 이염/오염", anchor:"t6"},
+    {sub:true, label:"4. 구성품 누락", anchor:"t5"},
+    {sub:true, label:"5. 이염/오염/초도파손", anchor:"t6"},
     {label:"🔁 재불량", anchor:"t4"},
     {group:true, label:"3. A/S 접수", anchor:"step2"},
     {label:"🛠️ 무상 A/S", anchor:"freeFlow"},
-    {sub:true, label:"① 증빙 추가 확인", anchor:"freeEvidence"},
-    {sub:true, label:"② 교환/반품 안내", anchor:"freeBranch"},
-    {sub:true, label:"③ 포장 및 회수 안내", anchor:"freePack"},
-    {sub:true, label:"④ 환불/재출고 안내", anchor:"freeResult"},
+    {sub:true, label:"① 무상 교환 안내", anchor:"freeBranch"},
+    {sub:true, label:"② 무상 반품 안내", anchor:"freePack"},
     {label:"🔧 유상 A/S", anchor:"paidFlow"},
     {sub:true, label:"① 유상 비용 안내", anchor:"paidCost"},
     {sub:true, label:"② 자체 폐기 안내", anchor:"paidDiscard"},
-    {sub:true, label:"③ 비용 입금 안내", anchor:"paidDeposit"},
+    {sub:true, label:"③ 상담 종료", anchor:"paidDeposit"},
     {sub:true, label:"④ 재출고 안내", anchor:"paidReship"},
     {label:"🚨 [단종] EDGE CASE", anchor:"edgeDiscon"},
     {sub:true, label:"① 품질보증기간(1년) 이내", anchor:"edgeIn"},
     {sub:true, label:"② 품질보증기간(1년) 경과", anchor:"edgeOut"},
-    {label:"✨ [예외] 증빙 미제출", anchor:"exNoEvid"}
+    {label:"✨ [예외] 증빙 미제출", anchor:"exNoEvid"},
+    {group:true, label:"🍏 [쿠팡/네이버스스]자동수거", anchor:"autoPickup"}
   ]
 };
 
@@ -7870,7 +7628,14 @@ BRAND_TREE["심플리케어"]["100%환불이벤트"]={
     var t=tpl.split(ACC).join(b.acct+" (예금주: "+b.holder+")");
     t=t.split(NOTE).join(b.note);
     t=t.split(EX).join("(예: 2개 구매 후 1개만 개봉·"+b.use+" 시, 미개봉 제품만 부분 반품)");
-    if(!b.device) t=t.split("(케이블·설명서 등)").join("(구성품)");
+    // 브랜드별 회수 구성품 문구 (슬룸외_회수상세 반영)
+    if(b.k==="alignlab") t=t.split("(케이블·설명서 등)").join("(아이크림·패치 등)");
+    else if(b.k==="bilba") t=t.split("(케이블·설명서 등)").join("(계량컵·설명서 등)");
+    else if(["drmans","yvening","dramang"].indexOf(b.k)>=0){ t=t.split("■ 제품 구성품(케이블·설명서 등)\n").join(""); t=t.split("■ 해당 제품 구성품(케이블·설명서 등)\n").join(""); }
+    else if(b.k==="cocodaum"){ t=t.split("■ 제품 구성품(케이블·설명서 등)\n").join(""); t=t.split("■ 해당 제품 구성품(케이블·설명서 등)\n").join(""); t=t.split("■ 제품\n").join("■ 제품 박스 전체 (남은 포·스틱 포함)\n"); t=t.split("■ 미개봉 반품 제품\n").join("■ 반품 제품 박스 전체 (남은 포·스틱 포함)\n"); t=t.split("■ 미개봉 교환 제품\n").join("■ 교환 제품 박스 전체 (남은 포·스틱 포함)\n"); }
+    else if(b.k==="simplicare"){ t=t.split("■ 제품 구성품(케이블·설명서 등)\n").join(""); t=t.split("■ 해당 제품 구성품(케이블·설명서 등)\n").join(""); t=t.split("■ 제품\n").join("■ 제품 전체 (남은 내용물 포함)\n"); t=t.split("■ 미개봉 반품 제품\n").join("■ 반품 제품 전체 (남은 내용물 포함)\n"); t=t.split("■ 미개봉 교환 제품\n").join("■ 교환 제품 전체 (남은 내용물 포함)\n"); }
+    // 셀올로지·12 o'clock: (케이블·설명서 등) 유지
+    if(b.k==="cellology"){ t=t.replace(/(<div class="star-body">[^<]*증정품[^<]*)<\/div><\/div>/g, '$1\n\n📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내</div></div>'); }
     // 슬룸 외: 채널톡 사전취합 미고도화 → 회수지 질문을 포장·회수 안내 하단에 포함하고 별도 회수지 카드는 제거
     t=t.split("수거가 거부됩니다.</div>").join("수거가 거부됩니다.\n\n🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드려도 괜찮을까요?</div>");
     t=t.split("수거 거부됩니다.</div>").join("수거 거부됩니다.\n\n🙋‍♀️ 마지막으로, 제품 회수와 배송은 기존 주소지로 접수해 드려도 괜찮을까요?</div>");
@@ -8247,6 +8012,34 @@ function goBack(){
   curView=sn; updateBackBtn();
 }
 function updateBackBtn(){const bb=document.getElementById("backBtn"); if(bb) bb.style.visibility=navHist.length?"visible":"hidden";}
+
+/* 💰 단종 환급금 자동 계산기 (구입가/사용개월 입력 → 감가상각비·잔여금·최종 환급금 자동 산출) */
+function calcRefund(el){
+  const wrap = el.closest(".refund-calc");
+  if(!wrap) return;
+  const priceEl = wrap.querySelector('[data-role="price"]');
+  const monthEl = wrap.querySelector('[data-role="months"]');
+  const errEl = wrap.querySelector(".refund-calc-err");
+  let price = parseInt((priceEl.value||"").replace(/[^0-9]/g,""), 10);
+  let months = parseInt((monthEl.value||"").replace(/[^0-9]/g,""), 10);
+  if(isNaN(price) || price<0) price = 0;
+  if(isNaN(months) || months<0) months = 0;
+  if(months > 60){
+    months = 60;
+    errEl.textContent = "※ 사용개월은 내용연수(60개월)까지만 반영됩니다.";
+    errEl.style.display = "block";
+  } else {
+    errEl.style.display = "none";
+  }
+  const dep = Math.round((months/60) * price);
+  const rem = Math.max(price - dep, 0);
+  const add = Math.round(price * 0.1);
+  const total = rem + add;
+  wrap.querySelector('[data-out="dep"]').textContent = dep.toLocaleString()+"원";
+  wrap.querySelector('[data-out="rem"]').textContent = rem.toLocaleString()+"원";
+  wrap.querySelector('[data-out="add"]').textContent = add.toLocaleString()+"원";
+  wrap.querySelector('[data-out="final"]').textContent = total.toLocaleString()+"원";
+}
 
 /* 복사 버튼 */
 function copyMacro(btn){
