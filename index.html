@@ -227,6 +227,18 @@
   .fork.fork-split .fork-branch{padding:0 20px;}
   .fork.fork-split .fork-branch:first-child{border-right:2px dashed var(--trust-blue);}
   .fork .flow-diagram{margin:0;}
+  .fork-label-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .fork-label-row .fork-label{margin-bottom:0;flex:none;}
+  .fork-label-line{flex:1;border-top:2px dashed var(--trust-blue);height:0;margin-top:1px;}
+  .fork-branch.b2 .fork-label-line{border-top-color:#9b6829;}
+  .fork-label-desc{flex:none;font-size:12px;font-weight:700;color:var(--trust-blue);white-space:nowrap;}
+  .fork-branch.b2 .fork-label-desc{color:#9b6829;}
+  .free-flow-tag{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:var(--radius-pill);margin-bottom:6px;}
+  .free-flow-tag.principle{background:var(--trust-blue);color:#fff;}
+  .free-flow-tag.exception{background:#f1f5f9;color:#64748b;border:1px solid var(--line);}
+  .free-flow-box{background:var(--skyblue-soft);border:1.5px solid var(--trust-blue);border-radius:var(--radius-md);padding:12px 10px;font-size:12.5px;font-weight:800;text-align:center;color:var(--trust-blue);}
+  .free-flow-box.exception{background:#fff;border:1.5px dashed #94a3b8;color:#475569;font-weight:700;}
+  .free-flow-connector{text-align:center;font-size:11px;color:#8a94a6;margin:8px 0;}
   .quote-box{border-left:4px solid var(--trust-blue);background:#f5f8fc;padding:12px 16px 12px 18px;margin:12px 0 16px;font-size:12.5px;line-height:1.75;color:var(--ink);border-radius:0 10px 10px 0;white-space:pre-line;}
   .quote-box b{color:var(--trust-blue);font-weight:800;}
   .quote-box a.jump-link,.astbl a.jump-link,.guide-body a.jump-link,.star-body a.jump-link{color:var(--trust-blue);font-weight:700;text-decoration:underline;cursor:pointer;}
@@ -2887,7 +2899,7 @@ const REF_AS = `
   <div class="h1lvl">🧭 상담 플로우</div>
   
   <div class="flow-diagram"><div class="fd-box">① 보증기간 확인</div><div class="fd-arrow">▶</div><div class="fd-box">② 불량 유형 확인</div><div class="fd-arrow">▶</div><div class="fd-box">③ 증빙(사진·영상) 확인</div><div class="fd-arrow">▶</div><div class="fd-box">④ A/S 접수 (무상 / 유상)</div></div>
-  <div class="fork fork-split"><div class="fork-branch"><span class="fork-label">🛠️ 무상 A/S</span><div style="display:flex;flex-direction:column;gap:8px;margin:16px 0"><div class="fd-box" style="flex:none;width:100%">① 무상 교환 안내</div><div><div class="fd-box" style="flex:none;width:100%">② 무상 반품 안내</div><div style="color:#1B3A68;font-weight:700;font-size:11.5px;margin-top:6px;line-height:1.5;text-align:center">⚠️ 3개월 이내 고객이 요청한 경우에만 가능</div></div></div></div><div class="fork-branch b2"><span class="fork-label">🔧 유상 A/S</span><div class="flow-diagram"><div class="fd-box">① 유상 비용 안내</div><div class="fd-arrow">▶</div><div class="fd-box">② 자체 폐기 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 상담 종료</div><div class="fd-arrow">▶</div><div class="fd-box">④ 재출고 안내</div></div></div></div>
+  <div class="fork fork-split"><div class="fork-branch"><div class="fork-label-row"><span class="fork-label">🛠️ 무상 A/S</span><span class="fork-label-line"></span><span class="fork-label-desc">제품 자체 자연적 고장</span></div><div style="margin:16px 0"><span class="free-flow-tag principle">원칙</span><div class="free-flow-box">① 무상 교환 안내</div><div class="free-flow-connector">↓ 고객이 반품 요청 시</div><span class="free-flow-tag exception">예외 · 제품수령일로부터 3개월 이내만</span><div class="free-flow-box exception">② 무상 반품 안내</div></div></div><div class="fork-branch b2"><div class="fork-label-row"><span class="fork-label">🔧 유상 A/S</span><span class="fork-label-line"></span><span class="fork-label-desc">고객 과실에 의한 제품 파손</span></div><div class="flow-diagram"><div class="fd-box">① 유상 비용 안내</div><div class="fd-arrow">▶</div><div class="fd-box">② 자체 폐기 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 재출고 안내</div><div class="fd-arrow">▶</div><div class="fd-box">✔️ [유상비용 미입금 시] 상담 종료 유도</div></div></div></div>
   <div class="blue-note"><div class="bn-h"><b>✨ [참고] 채널톡 A/S 상담 인입 flow</b></div><div class="bn-body"><div style="display:grid;grid-template-columns:1.7fr 1fr;gap:16px;align-items:start"><div style="white-space:pre-line">① 고객 인입 : 불량·A/S 관련 문의 접수
 ② AI챗봇 안내 : A/S 직통 워크플로우 제공 → <a href="https://sloom.channel.io/workflows/789993" target="_blank">[IVR/ALF] 불량 A/S 접수 직통 ver.</a>
 ③ <a href="https://sloom.channel.io/workflows/789993" target="_blank">[IVR/ALF] 불량 A/S 접수 직통 ver.</a> : 워크플로우 내 정보 수집·사전 안내
@@ -3060,7 +3072,7 @@ const REF_AS = `
 이 경우 왕복 배송비 6,000원(수거+배송)을 포함해 총 {(제품별 유상금액) + 6000}원입니다.
 
 기존 제품 회수까지 함께 진행해 드릴까요?`))}</div>
-  ${guide(`👉🏻 미수긍 매크로 발송 후 고객이 회수까지 수긍하면 → 왕복 배송비 6,000원 기준으로 ③ 비용 입금 안내 진행 (포장·회수 안내는 위 ④ 재출고 안내 상단 절차 준용)`)}
+  ${guide(`👉🏻 미수긍 매크로 발송 후 고객이 회수까지 수긍하면 → 왕복 배송비 6,000원 기준으로 ③ 비용 입금 안내 진행 (포장·회수 안내는 위 ③ 재출고 안내 상단 절차 준용)`)}
   <div class="h3lvl">1년 경과 유상 비용 불만 대응</div>
   ${macro(`상품수령일로부터 1년 경과 · 유상 비용 불만`,"유상AS_1년경과_비용불만",`고객님, 유상 교환 비용이 부담스럽게 느껴지실 수 있는 점 충분히 이해합니다.
 
@@ -3070,9 +3082,7 @@ const REF_AS = `
 현재 안내드린 금액은 품질보증기간 경과 후 유상 교환 서비스를 이용하실 때 적용되는 비용인 점 양해 부탁드립니다.`,`1년 경과 건에서 비용 문의·불만 제기 시에만 사용`)}
   ${caution(`💡 공감·양해 멘트나 문구 등은 고객이 언급한 불만 내용에 따라 변형하여 유연하게 응대`)}
   </div>
-  <div class="h3lvl" id="paidDeposit">③ 상담 종료</div>
-  <div class="lvl3-body">${macro(`미입금 → 상담 종료`,"AS_유상_미입금",`고객님, 안내드린 계좌로 입금이 확인되지 않아 이번 유상 교환 접수는 종료됩니다.\n\n편하게 고민해 보시고 의사가 있다 하시면, 위 안내드린 계좌에 입금해 주신 후\n\n입금확인 상담 링크 : https://sloom.channel.io/workflows/800803\n해당 링크로 문의해 주시면 됩니다. :)`)}</div>
-  <div class="h3lvl" id="paidReship">④ 재출고 안내</div>
+  <div class="h3lvl" id="paidReship">③ 재출고 안내</div>
   <div class="lvl3-body">${guide(`💡 입금 확인 후 상담 시점 기준으로 재출고 진행`)}
   <div class="grid2">${subcard("a. 월-금 오후 2시 이전","AS_유상_재출고_a",`🚚 입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
 
@@ -3096,6 +3106,8 @@ const REF_AS = `
 ※ 주말/공휴일 출고 및 배송 미진행
 ※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터(전용 케이블) 사용을 꼭 안내드립니다.`)}
   </div>
+  <div class="h3lvl" id="paidDeposit">✔️ [유상비용 미입금 시] 상담 종료 유도</div>
+  <div class="lvl3-body">${macro(`미입금 → 상담 종료`,"AS_유상_미입금",`고객님, 안내드린 계좌로 입금이 확인되지 않아 이번 유상 교환 접수는 종료됩니다.\n\n편하게 고민해 보시고 의사가 있다 하시면, 위 안내드린 계좌에 입금해 주신 후\n\n입금확인 상담 링크 : https://sloom.channel.io/workflows/800803\n해당 링크로 문의해 주시면 됩니다. :)`)}</div>
   </div>
   <div class="h2lvl" id="edgeDiscon">🚨 [단종] EDGE CASE</div>
   <div class="lvl2-body"><div class="h3lvl" id="edgeIn">① 품질보증기간(1년) 이내 단종</div><div class="lvl3-body">${guide(`<b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용합니다.\n① 유사 모델을 '유상교환 가격' 으로 구매 안내\n② 고객이 구매를 원하지 않는 경우 단종 보상 기준에 따라 <b>구입가를 자사몰 포인트로 대체 환급</b>`)}${macro(`1. 단종 안내 및 유사 제품 추천`,"AS_단종이내_안내",`고객님, 현재 해당 제품은 단종되어 동일 제품으로는 교환이 어려운 점 양해 부탁드립니다.\n\n다만 현재 판매 중인 제품 가운데 사용하시던 제품의 기능과 사용 목적을 종합적으로 고려하여 가장 유사한 (추천 제품명)을 추천드립니다.\n\n사용을 원하신다면, (추천 제품명)을 품질보증기간(1년) 이내 유상 교환 기준을 적용한 ({1년 이내 기준 유상금액}+3000)원으로 접수 도와드리겠습니다.\n\n아래 주요 기능과 슬룸 공식몰 판매 페이지를 확인해 보시고, 편하게 말씀해 주세요.\n\n(슬룸 자사몰 추천 제품 판매 페이지 바로가기 첨부)\n(채널톡 내 부위별 제품 주요 차이점 이미지 첨부)`)}${guide(`💡 1년 이내 유상 비용 금액으로 반영`)}<div class="grid2"><div class="flowgroup">${subcard(`a-1. 유사 제품 구매 동의_입금 안내`,"AS_단종이내_입금",`네 고객님, 이해해 주셔서 감사합니다.🙂\n구매를 원하시는 제품 금액과 배송비를 아래 계좌로 입금해 주시면 확인 후 출고를 도와드리겠습니다.\n\n<b>💳 입금 금액</b>\n• 배송비 : 3,000원\n• (제품명) : (품질보증기간 1년 이내 유상 교환 금액)\n🏦 기업은행 075-095980-04-017 (예금주 : 올릿리테일)\n\n입금 후 입금자명을 말씀해 주시면 확인 후 접수 도와드리겠습니다.`)}${subcard(`a-2. 기존 제품 자체폐기 안내`,"AS_단종이내_폐기",`기존 제품은 별도 회수 없이, 고객님께서 자체 폐기해 주시면 감사하겠습니다.`)}</div>${subcard(`b-1. 유사 제품 구매 미동의_포인트 환급 안내`,"AS_단종이내_미동의",`고객님, 다시 한번 불편을 드려 죄송합니다.\n다른 제품으로 교환을 원치 않으시다면, 구입가를 공식몰 포인트로 환급해 드리겠습니다.\n포인트는 주문하신 계정과 동일한 계정으로 지급되며, 지급까지는 영업일 기준 1~2일 정도 소요됩니다.`)}</div>${guide(`👉🏻 a-1. 유사 제품 구매 동의_입금 안내 시 접수 시점에 따라 출고 안내`)}<div class="grid2">${subcard(`a. 월-금 오후 2시 이전 상담`,"AS_단종이내_출고A",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 예정 \n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}${subcard(`b. 월-목 오후 2시 이후 상담`,"AS_단종이내_출고B",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 마감으로 익일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}</div>${macro(`c. 금요일 오후 2시 이후 상담`,"AS_단종이내_출고C",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 금일 출고 마감으로 차주 월요일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운\n\n※ 주말/공휴일 출고 및 배송 미진행`)}</div><div class="h3lvl" id="edgeOut">② 품질보증기간(1년) 경과 단종</div><div class="lvl3-body">${guide(`<b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용합니다.\n① 동일 부위·동일 용도의 유사 제품이 있는지 확인합니다.\n<span class="sub-ex">(예: 넥숄더프로 → 넥숄더힐링케어 V2)</span>\n② 유사 제품을 품질보증기간(1년) 경과 유상 교환 비용으로 구매할 수 있도록 안내합니다.\n③ 고객이 유사 제품 구매를 원하지 않는 경우, <b>감가상각을 반영한 잔여 금액에 구입가의 10%를 가산</b>하여 자사몰 포인트로 환급합니다.`)}${macro(`1. 단종 안내 및 유사 제품 추천`,"AS_단종경과_안내",`고객님, 현재 해당 제품은 단종되어 동일 제품으로는 교환이 어려운 점 양해 부탁드립니다.\n\n다만 현재 판매 중인 제품 가운데 사용하시던 제품의 기능과 사용 목적을 종합적으로 고려하여 가장 유사한 (추천 제품명)을 추천드립니다.\n\n사용을 원하신다면, (추천 제품명)을 품질보증기간(1년) 경과 유상 교환 기준을 적용한 ({1년 경과 기준 유상금액}+3000)원으로 접수 도와드리겠습니다.\n\n아래 주요 기능과 슬룸 공식몰 판매 페이지를 확인해 보시고, 편하게 말씀해 주세요.\n\n(슬룸 자사몰 추천 제품 판매 페이지 바로가기 첨부)\n(채널톡 내 부위별 제품 주요 차이점 이미지 첨부)`)}${guide(`💡 1년 경과 유상 비용 금액으로 반영`)}<div class="grid2"><div class="flowgroup">${subcard(`a-1. 유사 제품 구매 동의_입금 안내`,"AS_단종경과_입금",`네 고객님, 이해해 주셔서 감사합니다.🙂\n구매를 원하시는 제품 금액과 배송비를 아래 계좌로 입금해 주시면 확인 후 출고를 도와드리겠습니다.\n\n<b>💳 입금 금액</b>\n• 배송비 : 3,000원\n• (제품명) : (품질보증기간 1년 경과 유상 교환 금액)\n🏦 기업은행 075-095980-04-017 (예금주 : 올릿리테일)\n\n입금 후 입금자명을 말씀해 주시면 확인 후 접수 도와드리겠습니다.`)}${subcard(`a-2. 기존 제품 자체폐기 안내`,"AS_단종경과_폐기",`기존 제품은 별도 회수 없이, 고객님께서 자체 폐기해 주시면 감사하겠습니다.`)}</div><div class="flowgroup">${subcard(`b-1. 유사 제품 구매 미동의_감가상각`,"AS_단종경과_미동의",`고객님, 다시 한번 불편을 드려 죄송합니다.\n문의주신 주문 건은 현재 품질보증기간 1년이 경과한 상태로, 구매 당시 결제 금액과 사용 기간을 반영한 기준에 따라 환급을 도와드리겠습니다.\n고객님께 적용되는 환불 예정 금액은 (환불예정금액)원이며, 영업일 기준 1~2일 정도 소요됩니다.\n환불을 위해 아래 계좌 정보 전달 부탁드립니다.\n\n🏦 은행 / 계좌번호 / 예금주`)}${subcard(`b-2. 이후 계좌 정보 확인`,"AS_단종경과_계좌확인",`소중한 정보 확인 감사합니다.\n해당 계좌로 환불 계좌 등록이 완료되었습니다.\n\n💸 입금 안내\n영업일 기준 1~2일 내 입금 예정\n\n※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)}</div></div></div></div>
@@ -7319,8 +7331,8 @@ BRAND_TREE["슬룸"]["A/S 및 불량"]={
     {label:"🔧 유상 A/S", anchor:"paidFlow"},
     {sub:true, label:"① 유상 비용 안내", anchor:"paidCost"},
     {sub:true, label:"② 자체 폐기 안내", anchor:"paidDiscard"},
-    {sub:true, label:"③ 상담 종료", anchor:"paidDeposit"},
-    {sub:true, label:"④ 재출고 안내", anchor:"paidReship"},
+    {sub:true, label:"③ 재출고 안내", anchor:"paidReship"},
+    {sub:true, label:"✔️ [유상비용 미입금 시] 상담 종료 유도", anchor:"paidDeposit"},
     {label:"🚨 [단종] EDGE CASE", anchor:"edgeDiscon"},
     {sub:true, label:"① 품질보증기간(1년) 이내", anchor:"edgeIn"},
     {sub:true, label:"② 품질보증기간(1년) 경과", anchor:"edgeOut"},
