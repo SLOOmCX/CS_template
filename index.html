@@ -2855,7 +2855,7 @@ const REF_AS = `
   
   <div class="h1lvl" id="secFlow">🧭 상담 플로우</div>
   
-  <div class="flow-diagram"><div class="fd-box">① 보증기간 확인</div><div class="fd-arrow">▶</div><div class="fd-box">② 불량 유형 확인</div><div class="fd-arrow">▶</div><div class="fd-box">③ 증빙(사진·영상) 확인</div><div class="fd-arrow">▶</div><div class="fd-box">④ AS 접수 (무상 / 유상)</div></div>
+  <div class="flow-diagram"><div class="fd-box">1. 보증기간 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 불량 유형 확인</div><div class="fd-arrow">▶</div><div class="fd-box">3. 증빙(사진·영상) 확인</div><div class="fd-arrow">▶</div><div class="fd-box">4. AS 접수 (무상 / 유상)</div></div>
   <div class="fork fork-split"><div class="fork-branch"><div class="fork-label-row"><span class="fork-label">🛠️ 무상 AS</span><span class="fork-label-line"></span><span class="fork-label-desc">제품 자체 자연적 고장</span></div><div style="margin:16px 0"><span class="free-flow-tag principle">원칙</span><div class="free-flow-box">🔷 무상 교환 안내</div><div class="free-flow-connector">↓ 고객이 반품 요청 시</div><span class="free-flow-tag exception">제품수령일로부터 3개월 이내 건만</span><div class="free-flow-box exception">🔷 무상 반품 안내</div></div></div><div class="fork-branch b2"><div class="fork-label-row"><span class="fork-label">🔧 유상 AS</span><span class="fork-label-line"></span><span class="fork-label-desc">고객 과실에 의한 제품 파손</span></div><div class="flow-diagram"><div class="fd-box">① 유상 비용 안내</div><div class="fd-arrow">▶</div><div class="fd-box">② 자체 폐기 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 재출고 안내</div><div class="fd-box">✔️ [유상비용 미입금 시] 상담 종료 유도</div></div></div></div>
   <div class="blue-note"><div class="bn-h"><b>✨ [참고] 채널톡 AS 상담 인입 flow</b></div><div class="bn-body"><div style="display:grid;grid-template-columns:1.7fr 1fr;gap:16px;align-items:start"><div style="white-space:pre-line">① 고객 인입 : 불량·AS 관련 문의 접수
 ② AI챗봇 안내 : AS 직통 워크플로우 제공 → <a href="https://sloom.channel.io/workflows/789993" target="_blank">[IVR/ALF] 불량 AS 접수 직통 ver.</a>
@@ -4104,6 +4104,260 @@ subcard("포장 · 회수 안내","교환_부분_포장회수",
 
 
 
+/* === 단순변심 통합 시안 (2026-08-13) — 슬룸 한정 병합 템플릿, 기존 REF_SIMPLE/REF_EXCHANGE 원문 재배치 === */
+const SLM_MERGE_TEMPLATE = `
+  <h1>🔄 단순변심 교환/반품</h1>
+    <div class="sub">고객 변심에 의한 교환·반품 · 유형별 응대 (자사몰/외부몰)</div>
+
+  ${notice([
+    "<b>전자제품은 어댑터 연결·작동을 한 번이라도 했다면 '사용 제품'으로 간주되어 단순변심 반품 불가.</b>",
+    "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
+    `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`,
+    "미개봉 또는 개봉했으나 미사용한 경우에만 교환 가능",
+    "교환 제품 금액이 더 높은 경우 <b>차액 결제</b> 필요",
+    "교환은 회수 → 입고 → 검수 → 재출고 방식으로 <b>영업일 기준 6~8일</b> 소요"
+  ])}
+
+  <div class="grp-h" id="secFlow">🧭 상담 플로우</div>
+  <div class="flow-diagram"><div class="fd-box">1. 교환/반품 의사 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 전체/부분 방식 안내</div><div class="fd-arrow">▶</div><div class="fd-box">3. 교환/반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">5. 교환 : 재출고 일정 안내<br>반품 : 환불 일정 안내</div></div>
+
+  ${secTitle("","1. 교환/반품 의사 확인","전체·부분 공통","sec1")}
+  ${col("blue","🔄 교환 희망 시 (수령일로부터 7일 이내)",
+    subcard("반품 및 재주문 권유","교환_전체_안내",
+`단순변심 사유의 다른 옵션 교환은 차액과 주문서 옵션 불일치 등의 사유로 진행이 어렵습니다.
+
+또한 진행 시 수거 → 검수 → 희망 옵션 발송 등의 순서로 반품과 재주문을 직접 동시에 진행하시는 것보다 오랜 시일이 소요되며 차액 결제는 무통장입금으로만 가능합니다.
+
+이에 교환 배송비와 반품 배송비는 동일하므로,
+더욱 빠르게 새 제품을 받아보실 수 있는 반품으로 접수하시길 권장드립니다.`)
+    + caution(`▶ 고객 수긍 시 → 반품으로 이동해 진행
+▶ 미수긍 시(교환 진행 희망) → 하단 플로우(2. 전체/부분 방식 안내~) 그대로 진행`)
+  )}
+  <div style="margin-top:12px">${col("pink","💰 반품 희망 시",
+    colTag("gray","수령일로부터 7일 이내","반품교환_7일이내_사유확인",
+`반품을 원하시는 사유가 어떻게 되실까요? :)
+개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
+제품 사용 여부도 함께 확인 부탁드립니다.`)
+    + colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+`단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
+현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
+  )}</div>
+  <div class="branch-box" style="margin-top:12px">
+    <div class="branch-h">💡 고객이 말씀하신 사유·증상에 따라 알맞은 유형으로 이동하여 응대</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">수령일 7일 이내 · <b>미사용</b></td><td class="ar">→</td><td><span class="bdg b-blue">단순변심</span></td></tr>
+    <tr><td class="cond">수령일 7일 이내 · <b>사용</b></td><td class="ar">→</td><td><span class="bdg b-amber">100% 환불 이벤트</span></td></tr>
+    <tr><td class="cond">수령일 7일 경과 · <b>미사용</b></td><td class="ar">→</td><td><span class="bdg b-amber">100% 환불 이벤트</span></td></tr>
+    <tr><td class="cond">제품 <b>불량</b> (사용·수령일 무관)</td><td class="ar">→</td><td><span class="bdg b-pink">불량 AS 교환/반품</span></td></tr>
+    </tbody></table>
+    <div class="branch-note">※ 100% 환불 이벤트는 신청 이력이 없는 경우에만 가능합니다.</div>
+    <div class="branch-note">※ 다품목 주문 시 사유 확인은 품목별 개별 적용. 불량 품목이 섞여 있는 경우 → <a class="jump-link" href="#">불량 AS 교환/반품 – 복합 유형</a>으로 이동 (배송비는 업체귀책 기준 적용)</div>
+  </div>
+  <div style="margin-top:12px">${caution(`▶ 교환/반품 의사 확인 후 → 2. 전체/부분 방식 안내부터 진행`)}</div>
+
+  ${secTitle("","2. 전체/부분 방식 안내",null,"sec2")}
+  <div class="quote-box"><b>🔹 반품</b></div>
+  ${cmpTable(
+    [{cls:"blue",label:"🔹 전체 반품"},{cls:"pink",label:"🔹 부분 반품"}],
+    [
+      {label:"조건", values:[
+        "구매 제품 전체 미사용<br>미개봉 또는 개봉했으나 미사용<br>(예: 박스만 열어보고 다시 닫음)",
+        "2개 이상 구매 후 일부만 개봉(사용)<br>(예: 허리편한케어 + 목편한케어 구매 → 허리편한케어만 사용 시, 목편한케어만 부분 반품)"
+      ]},
+      {label:"반품 배송비", values:["6,000원","3,000원"]},
+      {label:"회수 품목", values:[
+        "모든 구성품 + 증정품 포함",
+        "사용(개봉) 제품 제외, 미사용(미개봉) 제품과 그 구성품만 회수"
+      ]}
+    ]
+  )}
+  <div class="quote-box" style="margin-top:18px"><b>🔄 교환</b></div>
+  ${cmpTable(
+    [{cls:"blue",label:"🔹 전체 교환"},{cls:"pink",label:"🔹 부분 교환"}],
+    [
+      {label:"대상", values:["구매 상품 전체 교환 희망<br>(2개 이상 구매 후 전체 교환 포함)","2개 이상 구매 후 일부만 개봉 → 개봉 제품만 교환"]},
+      {label:"교환 배송비", values:["왕복 6,000원","왕복 배송비 + 사용 제품 금액 차감"]},
+      {label:"증정품 회수", values:["회수 O","회수 X"]}
+    ]
+  )}
+
+  ${secTitle("","3. 교환/반품 배송비 안내",null,"sec3")}
+  <div class="quote-box"><b>🔹 반품 배송비</b></div>
+  <div class="grid2">
+    ${col("blue","🔹 전체 반품",
+      subcard("i. 공식몰 · 네이버페이 / 스마트스토어","단순반품_전체_배송비_네이버",
+`네이버페이 결제는 시스템상 반품 배송비 차감 처리가 어려워, 반품 배송비 6,000원 입금 후 반품 접수가 가능합니다. 🥹
+
+✅ 반품 배송비 : 6,000원
+🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
+
+입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+      + subcard("ii. 공식몰 결제 (신용카드 · 무통장 · 가상계좌)","단순반품_전체_배송비",
+`반품 배송비 6,000원 제외 후 반품 진행됩니다.`)
+      + subcard("iii. 쿠팡","단순반품_전체_배송비_쿠팡",
+`쿠팡 주문은 시스템상 반품 배송비 차감 처리가 어려워, 반품 배송비 6,000원 입금 후 반품 접수가 가능합니다. 🥹
+
+✅ 반품 배송비 : 6,000원
+🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
+
+입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+    )}
+    ${col("pink","🔹 부분 반품",
+      subcard("i. 공식몰 · 네이버페이 / 스마트스토어","단순반품_부분_배송비_네이버",
+`네이버페이 결제는 시스템상 부분 취소가 어려워, 반품 배송비 3,000원과 계속 사용하실 제품의 금액을 먼저 입금해 주신 후 반품 접수가 가능합니다. 🥹
+
+✅ 반품 배송비 : 3,000원
+✅ (제품명) : (가격)
+🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
+
+입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+      + subcard("ii. 공식몰 결제 (신용카드 · 무통장 · 가상계좌)","단순반품_부분_배송비",
+`반품 배송비 3,000원과 개봉하여 반품이 어려운 (제품명) (가격) 제외 후 반품 진행돼요.`)
+      + subcard("iii. 쿠팡","단순반품_부분_배송비_쿠팡",
+`쿠팡 주문은 시스템상 부분 취소가 어려워, 반품 배송비 3,000원과 계속 사용하실 제품의 금액을 먼저 입금해 주신 후 반품 접수가 가능합니다. 🥹
+수거 및 검수 완료 후 주문 금액은 전액 환불 처리됩니다.
+
+💳 입금 금액
+• 반품 배송비 : 3,000원
+• (제품명) : (가격)
+🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
+
+입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+      + starNote("고객이 정가 차감에 미동의할 경우",
+`구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
+부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
+반품 전 꼭 확인 부탁드립니다.`)
+    )}
+  </div>
+  <div class="quote-box" style="margin-top:18px"><b>🔄 교환 배송비</b></div>
+  <div class="grid2">
+    ${col("blue","🔹 전체 교환",
+      subcard("교환 왕복 배송비","교환_전체_배송비",
+`교환 시 왕복 배송비 6,000원이 발생하며, 입금 확인 후 교환 접수를 도와드립니다.
+
+✅ 교환 왕복 배송비 : 6,000원
+🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
+
+입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+    )}
+    ${col("pink","🔹 부분 교환",
+      subcard("i. 공식몰 · 네이버페이 / 스마트스토어","교환_부분_배송비_네이버",
+`부분 교환 시 사용하실 제품은 회수하지 않으며, 해당 제품 금액은 최종 결제 금액에서 차감됩니다.
+
+네이버페이 결제 건은 시스템상 부분 결제 처리가 어려워, 사용하실 제품 금액과 교환 왕복 배송비를 함께 입금해 주셔야 합니다.
+
+💳 입금 금액
+• 교환 왕복 배송비 : 3,000원
+• (제품명) : (가격)
+🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
+
+입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+      + subcard("ii. 공식몰 결제 (신용카드 · 무통장 · 가상계좌)","교환_부분_배송비_카드",
+`부분 교환 시 사용하실 제품은 회수하지 않으며, 해당 제품 금액은 최종 결제 금액에서 차감됩니다.
+
+교환을 원하시는 제품에 대해서는 왕복 배송비 6,000원이 발생하며, 입금 확인 후 교환 접수를 도와드립니다.
+
+✅ 교환 왕복 배송비 : 6,000원
+🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
+
+입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+    )}
+  </div>
+  ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
+🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
+
+  ${secTitle("","4. 포장 및 회수 안내",null,"sec4")}
+  <div class="grid2">
+    ${col("blue","🔹 전체",
+      subcard("포장 · 회수 안내","포장회수_전체",
+`📦 <b>제품 포장 안내</b>
+■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
+※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
+
+🚚 <b>회수 안내</b>
+· 택배사 : CJ대한통운
+· 영업일 기준 2~3일 내 방문
+방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
+
+💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
+⚠️ 박스 포장이 아닐 경우 수거가 거부됩니다.`)
+      + caution(`🎁 증정품 회수 O`)
+    )}
+    ${col("pink","🔹 부분",
+      subcard("포장 · 회수 안내","포장회수_부분",
+`📦 <b>제품 포장 안내</b>
+■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
+※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
+※ 사은품·증정품 및 그 외 구매한 부속품과 제품은 보내지 않으셔도 됩니다.
+
+🚚 <b>회수 안내</b>
+· 택배사 : CJ대한통운
+· 영업일 기준 2~3일 내 방문
+방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
+
+💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
+⚠️ 박스 포장이 아닐 경우 수거가 거부됩니다.`)
+      + caution(`🎁 증정품 회수 X`)
+    )}
+  </div>
+  <div class="grid2">
+    ${subcard("회수지 확인 필요 시","포장회수_회수지확인",
+`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
+"워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용")}
+    ${subcard("[외부몰] 자동수거 신청 시","단순_포장회수_외부몰",
+`(쿠팡 또는 네이버)를 통해 반품 기사님을 신청해 주신 점 확인되었습니다. :)
+미개봉 제품은 전체 다시 택배 박스에 포장해 주시고, 기사님 방문 시 전달해 주시면 수거가 진행될 예정입니다.`)}
+  </div>
+
+  <div class="quote-box" style="margin-top:18px"><b>🔄 교환 시 추가 확인</b></div>
+  ${subcard("회수지 확인 필요 시","포장회수_회수지확인_교환",
+`🙋‍♀️ 마지막으로, 제품 회수와 배송은 기존 주소지로 접수해 드리면 될까요?`,
+`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}
+  <div class="warn-note" style="margin-top:12px">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
+
+  ${secTitle("","5. 교환/반품 안내",null,"step5")}
+  ${secTitle("🔄","교환 시","재출고 안내","exchangeFlow")}
+  ${macro("검수 및 재출고 안내","교환_검수재출고",
+`📦 교환 진행 일정 안내드리겠습니다.
+
+· 검수 및 재출고 : 제품 입고 후 영업일 기준 6~8일 소요
+· 배송 : 재출고일로부터 영업일 기준 2~3일 소요
+· 택배사 : CJ대한통운
+
+※ 주말 및 공휴일에는 검수·출고가 진행되지 않습니다.`)}
+  ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
+
+  ${secTitle("💰","반품 시","환불 안내","refundFlow")}
+  <div class="grid2">
+    ${col("blue","🔹 카드결제",
+      subcard("i. 카드결제 취소","환불안내_카드취소",
+`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
+
+📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
+
+결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.`)
+    )}
+    ${col("blue","🔹 계좌 환불",
+      subcard("i. 계좌 환불 (무통장 · 가상계좌)","환불안내_계좌환불",
+`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
+
+📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
+
+다만 (무통장 입금 / 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
+
+🏦 <b>은행 / 계좌번호 / 예금주</b>`)
+      + subcard("ii. 이후 계좌 정보 확인","환불안내_계좌확인",
+`소중한 정보 확인 감사합니다.
+해당 계좌로 환불 계좌 등록이 완료되었습니다.
+
+💸 <b>입금 안내</b>
+실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
+
+※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
+    )}
+  </div>
+`;
+
 const REF_SIDE = `
 
   <h1>🚨 부작용·상해 VOC</h1>
@@ -4113,7 +4367,7 @@ const REF_SIDE = `
   ${secTitle("🧭","상담 플로우",null,"secFlow")}
   ${caution(`🚨 보상금 요구 여부에 따라 Edge Case로 분류되므로, [📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>]를 참고하여 진행`)}
   <div class="grp-h">공통 플로우 (보상금 요구 여부 무관)</div>
-  <div class="flow-diagram"><div class="fd-box">① 선제적 사과 멘트</div><div class="fd-arrow">▶</div><div class="fd-box">② 사용 환경 확인</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">④ 결제수단별 환불 안내</div><div class="fd-arrow">▶</div><div class="fd-box">⑤ 병원 내원 및 치료 안내_증빙 서류<br>+ 🔗 채팅 링크 안내</div><div class="fd-arrow">▶</div><div class="fd-box">👉🏻 증빙 서류 기반으로 건보 급여 항목 전액 보상</div></div>
+  <div class="flow-diagram"><div class="fd-box">1. 선제적 사과 멘트</div><div class="fd-arrow">▶</div><div class="fd-box">2. 사용 환경 확인</div><div class="fd-arrow">▶</div><div class="fd-box">3. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 결제수단별 환불 안내</div><div class="fd-arrow">▶</div><div class="fd-box">5. 병원 내원 및 치료 안내_증빙 서류<br>+ 🔗 채팅 링크 안내</div><div class="fd-arrow">▶</div><div class="fd-box">👉🏻 증빙 서류 기반으로 건보 급여 항목 전액 보상</div></div>
   <div class="fork"><div class="fork-branch"><span class="fork-label">보상금 요구 없을 경우</span><div class="flow-diagram"><div class="fd-box">상담 종료 유도</div><div class="fd-arrow">▶</div><div class="fd-box">VOC 종결</div></div></div><div class="fork-branch b2"><span class="fork-label">보상금 요청할 경우</span><div class="flow-diagram"><div class="fd-box">고객 치료비 + 보상금 추가 요구</div><div class="fd-arrow">▶</div><div class="fd-box">👉🏻 내부 VOC·Issue 프로세스 확인·컨펌</div><div class="fd-arrow">▶</div><div class="fd-box">VOC 종결</div></div></div></div>
   
   ${secTitle("1","선제적 사과 멘트",null,"sec_apology")}
@@ -9282,6 +9536,7 @@ const CONTENT = {
   "bilba_as":REF_BILBA,
   "oclock_as":REF_OCLOCK,
   "slm_exchange":REF_EXCHANGE,
+  "slm_simplemerge":SLM_MERGE_TEMPLATE,
   "slm_side":REF_SIDE, "simplicare_side":SIMPLICARE_SIDE, "alignlab_side":ALIGNLAB_SIDE, "bilba_side":BILBA_SIDE, "cellology_side":CELLOLOGY_SIDE, "cocodaum_side":COCODAUM_SIDE, "oclock_side":OCLOCK_SIDE, "drmans_side":DRMANS_SIDE, "yvening_side":YVENING_SIDE, "marnell_side":MARNELL_SIDE, "dramang_side":DRAMANG_SIDE,
   "cmn_all":COMMON_ALL, "ib":COMMON_IB, "ob":COMMON_OB, "call":COMMON_CALL_ALL, "board":BOARD_ALL
 };
@@ -9406,12 +9661,12 @@ BRAND_TREE["슬룸"]["불량 AS 교환/반품"]={
     {group:true, label:"1. 보증기간 확인", anchor:"guar"},
     {group:true, label:"2. 불량 유형 확인", anchor:"step1"},
     {label:"A. 사용법 안내 필요", anchor:"groupA"},
-    {sub:true, label:"1. 충전/전원", anchor:"t1"},
-    {sub:true, label:"2. 작동 관련 증상", anchor:"t2"},
-    {sub:true, label:"3. 소음·온열·EMS 강도", anchor:"t3"},
+    {sub:true, label:"① 충전/전원", anchor:"t1"},
+    {sub:true, label:"② 작동 관련 증상", anchor:"t2"},
+    {sub:true, label:"③ 소음·온열·EMS 강도", anchor:"t3"},
     {label:"B. 사용법 안내 불필요", anchor:"groupB"},
-    {sub:true, label:"4. 구성품 누락", anchor:"t5"},
-    {sub:true, label:"5. 이염/오염/초도파손", anchor:"t6"},
+    {sub:true, label:"④ 구성품 누락", anchor:"t5"},
+    {sub:true, label:"⑤ 이염/오염/초도파손", anchor:"t6"},
     {label:"🔁 재불량", anchor:"t4"},
     {group:true, label:"3. AS 접수", anchor:"step2"},
     {label:"🛠️ 무상 AS", anchor:"freeFlow"},
@@ -9904,6 +10159,32 @@ BRAND_TREE["심플리케어"]["100%환불이벤트"]={
       BRAND_TREE[b.n]["단순변심 교환"]={__content:b.k+"_exchange",__sections:XS};
     }
   });
+})();
+
+/* === 단순변심 통합 시안 (2026-08-13) — 슬룸에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합 (사이드바 위치 유지, 5번은 1~4번과 동일 레벨의 단독 항목·하위메뉴 없음) === */
+(function(){
+  var old = BRAND_TREE["슬룸"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "slm_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["슬룸"] = merged;
 })();
 
 /* 슬룸(slm_refund)은 B.forEach(mk()) 대상이 아니라 REF_SIMPLE 원문을 그대로 사용 → "[불량]" 단독 표기 브랜드명 보정 별도 처리 */
