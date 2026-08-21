@@ -4377,21 +4377,23 @@ const REF_SIDE = `
 
   ${secTitle("🧭","상담 플로우",null,"secFlow")}
   ${caution(`🚨 보상금 요구 여부에 따라 Edge Case로 분류되므로, [📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>]를 참고하여 진행
-✔️ Normal Case(일반) : ex. 간단한 상처, 멍, 그 외 Normal Case
-✔️ EDGE Case(Critical) : ex. 화상, 혈흔 등 Critical keyword 언급이나 증상 사진 확인 시`)}
+☑️ <a href="#secNormal"><b>Nomal Case(일반)</b></a> : ex. 간단한 상처, 멍, 그 외 Normal Case
+🚨 <a href="#secEdge"><b>EDGE Case(Critical)</b></a> : ex. 화상, 혈흔 등 Critical keyword 언급이나 증상 사진 확인 시`)}
   <div class="grp-h">공통 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 선제적 사과 멘트</div><div class="fd-arrow">▶</div><div class="fd-box">2. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">3. 결제수단별 환불 안내</div><div class="fd-arrow">▶</div><div class="fd-box" style="border-style:dashed;border-color:#94a3b8;color:#475569">4. 병원 내원 및 치료 안내_증빙 서류<br>+ 🔗 채팅 링크 안내</div><div class="fd-arrow">▶</div><div class="fd-box" style="border-style:dashed;border-color:#94a3b8;color:#475569">👉🏻 증빙 서류 기반으로 건보 급여 항목 전액 보상</div></div>
   <div style="margin:8px 0 10px 2px;font-size:12px;color:#8a6d1a;line-height:1.7">💡 1 이후 필요 시 사용 환경 확인 진행<br>🔹 2부터는 일반/크리티컬 여부에 따라 해당 템플릿 사용 (점선 단계는 조건부 진행: 4는 일반=진료비 보상 요청 시만, 크리티컬=기본 진행)</div>
   <div class="fork"><div class="fork-branch"><span class="fork-label">보상금 요구 없을 경우</span><div class="flow-diagram"><div class="fd-box">상담 종료 유도</div><div class="fd-arrow">▶</div><div class="fd-box">VOC 종결</div></div></div><div class="fork-branch b2"><span class="fork-label">보상금 요청할 경우</span><div class="flow-diagram"><div class="fd-box">고객 치료비 + 보상금 추가 요구</div><div class="fd-arrow">▶</div><div class="fd-box">👉🏻 내부 VOC·Issue 프로세스 확인·컨펌</div><div class="fd-arrow">▶</div><div class="fd-box">VOC 종결</div></div></div></div>
   
-  ${secTitle("1","선제적 사과 멘트",null,"sec_apology")}
+  
+  <div class="sec-title" id="secNormal" style="font-size:22px;margin-top:72px;scroll-margin-top:72px"><span class="sec-n">☑️</span>Nomal Case (일반)</div>
+  <div class="quote-box">ex. 간단한 상처, 멍, 그 외 Normal Case</div>
+  ${secTitle("1","선제적 사과 멘트",null,null)}
   ${macro("선제적 사과 멘트","부작용상해_일반_선제사과",
 `먼저, 제품 사용 중 불편을 겪으셨다는 말씀에 진심으로 죄송한 마음입니다.🥲
 예상치 못한 불편과 걱정을 드리게 되어 깊이 사과드립니다.`)}
-  ${secTitle("💡","사용 환경 확인",null,"sec_env")}
-  <div class="macro">
-    <div class="macro-head"><span class="gdot"></span><span class="mname">사용 환경 확인</span><span class="tag">#부작용_환경확인</span><span class="spacer"></span><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button></div>
-    <div class="macro-body">해당 사안에 대해 저희가 신속하고 정확하게 파악하여 도움을 드리고자 합니다.
+  ${secTitle("💡","사용 환경 확인",null,null)}
+  ${macro("사용 환경 확인","부작용_환경확인",
+`해당 사안에 대해 저희가 신속하고 정확하게 파악하여 도움을 드리고자 합니다.
 
 번거로우시겠지만, 상세한 확인을 위해 아래 몇 가지 사항에 대해 답변을 부탁드려도 될까요?
 
@@ -4399,12 +4401,11 @@ const REF_SIDE = `
 사용 당시의 구체적인 상황(사용 시간, 착용 방식 등)을 자세히 공유해 주시면 감사하겠습니다.
 혹시 상해 부위와 제품 사용 상황을 확인할 수 있는 사진이 있다면 함께 첨부해 주세요.
 
-고객님의 소중한 답변을 바탕으로 안전하고 신속하게 조치를 취할 수 있도록 최선을 다하겠습니다. 🙏🏻</div>
-    <div class="sc-desc" style="margin-top:10px">상황이나 증상에 따라 사용 환경 등은 생략<br>단, 부작용·상해 부위 증빙 사진은 탐색 필수</div>
-  </div>
-  ${secTitle("2","포장 및 회수 안내",null,"sec_pack")}
+고객님의 소중한 답변을 바탕으로 안전하고 신속하게 조치를 취할 수 있도록 최선을 다하겠습니다. 🙏🏻`,
+`상황이나 증상에 따라 사용 환경 등은 생략<br>단, 부작용·상해 부위 증빙 사진은 탐색 필수`)}
+  ${secTitle("2","포장 및 회수 안내",null,null)}
   <div class="grid2">
-${col("blue","🔹 일반",
+${col("blue","🔹 포장 · 회수 안내",
 subcard("포장 · 회수 안내","부작용상해_포장회수_일반",
 `불편을 드린 점 다시 한 번 진심으로 죄송합니다. 😥
 전액 환불 처리 도와드리겠습니다.
@@ -4427,32 +4428,13 @@ subcard("포장 · 회수 안내","부작용상해_포장회수_일반",
 💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
 ⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
 )}
-${col("pink","🔹 크리티컬",
-subcard("포장 · 회수 안내","부작용상해_포장회수_Critical",
-`먼저, 제품 사용 중 불편을 겪으셨다는 말씀에 진심으로 죄송한 마음입니다.
-예상치 못한 불편과 걱정을 드리게 되어 깊이 사과드립니다.
-
-우선 제품에 대해서는 전액 환불 도와드리고자 합니다.
-
-📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-
-✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
+${col("gray","회수지 확인 필요 시",
+subcard("회수지 확인 필요 시","공통_반품_회수지확인",
+`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
+`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)
 )}
 </div>
-  ${subcard("회수지 확인 필요 시","공통_반품_회수지확인",
-`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
-`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}
-  ${secTitle("3","결제수단별 환불 안내",null,"sec_refund")}
+  ${secTitle("3","결제수단별 환불 안내",null,null)}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
 subcard("환불 절차 안내","검수환불안내_카드_클레임O",
@@ -4484,9 +4466,9 @@ subcard("계좌 정보 요청","부작용상해_환불_계좌",
 ※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
 )}
 </div>
-  ${secTitle("4","병원 내원 및 치료 안내_증빙 서류",null,"sec_hospital")}
+  ${secTitle("4","병원 내원 및 치료 안내_증빙 서류",null,null)}
   <div class="grid2">
-${col("blue","🔹 일반",
+${col("blue","🔹 병원 내원 및 치료 안내_증빙 서류",
 subcard("병원 내원 및 치료 안내_증빙 서류","부작용상해_일반_병원서류안내",
 `네, 고객님. 양해해 주셔서 감사합니다.
 진료비 보상과 관련해 필요한 서류 안내 도와드리겠습니다.
@@ -4510,7 +4492,111 @@ subcard("병원 내원 및 치료 안내_증빙 서류","부작용상해_일반_
 불편을 드리게 되어 다시 한번 진심으로 사과드리며, 고객님의 빠른 회복을 진심으로 바랍니다. 🙏`,
 `고객이 병원 방문 예정, 진료비 보상 요구 시 안내`)
 )}
-${col("pink","🔹 크리티컬",
+${col("gray","🔗 채팅 링크 안내",
+subcard("🔗 채팅 링크 안내","부작용상해_채팅링크",
+`문자로 회신해 주시는 경우에는 확인이 어려우므로, 채팅 상담으로 서류를 전달 부탁드립니다.
+동일한 상담으로 이어서 문의하실 수 있도록 아래 채팅 링크를 함께 안내드립니다.
+
+🔗 (현재 상담 중인 채팅창 링크 기재)`,
+`서류 제출을 위해 고객 재문의가 필요한 경우에만 안내 / 증빙 자료를 이미 제출한 경우나 nomal case로 무상 반품 외 내원 등 진행 예정 없을 경우 사용하지 않음`)
+)}
+</div>
+  ${guide(`💡 병원 내원 및 치료 안내 진행 시 팀 리드 공유 필수`)}
+  ${secTitle("5","보상금 요구 여부에 따른 응대",null,null)}
+  <div class="grid2">
+${col("blue","🔹 보상금 요구 없을 경우",
+subcard("상담 종료 유도","부작용상해_상담종료",
+`네 고객님, 슬룸에서는 무엇보다도 고객님의 건강 회복을 최우선으로 하고 있습니다.
+치료 후 문의 주시면 최대한 신속히 도움드리겠습니다. 🙏`)
+)}
+${col("pink","🔹 보상금 요청할 경우",
+`<div class="subcard"><div class="subcard-h"><span class="sc-label">🚨 고객 치료비 + 보상금 추가 요구 시</span></div><div class="subcard-body">👉🏻 내부 VOC·Issue 프로세스 기준에 따라 내부 확인 및 컨펌 진행
+📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>, 올릿 Risk ISSUE 관리 Process(2026) PDF 6P 참고</div></div>`
+)}
+</div>
+
+  <div class="sec-title" id="secEdge" style="font-size:22px;margin-top:72px;scroll-margin-top:72px"><span class="sec-n">🚨</span>EDGE Case (Critical)</div>
+  <div class="quote-box">ex. 화상, 혈흔 등 Critical keyword 언급이나 증상 사진 확인 시</div>
+  ${secTitle("1","선제적 사과 멘트",null,null)}
+  ${macro("선제적 사과 멘트","부작용상해_일반_선제사과",
+`먼저, 제품 사용 중 불편을 겪으셨다는 말씀에 진심으로 죄송한 마음입니다.🥲
+예상치 못한 불편과 걱정을 드리게 되어 깊이 사과드립니다.`)}
+  ${secTitle("💡","사용 환경 확인",null,null)}
+  ${macro("사용 환경 확인","부작용_환경확인",
+`해당 사안에 대해 저희가 신속하고 정확하게 파악하여 도움을 드리고자 합니다.
+
+번거로우시겠지만, 상세한 확인을 위해 아래 몇 가지 사항에 대해 답변을 부탁드려도 될까요?
+
+💡 제품 사용 환경 및 상황
+사용 당시의 구체적인 상황(사용 시간, 착용 방식 등)을 자세히 공유해 주시면 감사하겠습니다.
+혹시 상해 부위와 제품 사용 상황을 확인할 수 있는 사진이 있다면 함께 첨부해 주세요.
+
+고객님의 소중한 답변을 바탕으로 안전하고 신속하게 조치를 취할 수 있도록 최선을 다하겠습니다. 🙏🏻`,
+`상황이나 증상에 따라 사용 환경 등은 생략<br>단, 부작용·상해 부위 증빙 사진은 탐색 필수`)}
+  ${secTitle("2","포장 및 회수 안내",null,null)}
+  <div class="grid2">
+${col("pink","🔹 포장 · 회수 안내",
+subcard("포장 · 회수 안내","부작용상해_포장회수_Critical",
+`먼저, 제품 사용 중 불편을 겪으셨다는 말씀에 진심으로 죄송한 마음입니다.
+예상치 못한 불편과 걱정을 드리게 되어 깊이 사과드립니다.
+
+우선 제품에 대해서는 전액 환불 도와드리고자 합니다.
+
+📦 <b>제품 포장 안내</b>
+■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
+※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
+
+✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.
+
+🚚 <b>회수 안내</b>
+· 택배사 : CJ대한통운
+· 영업일 기준 2~3일 내 방문
+방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
+
+💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
+⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
+)}
+${col("gray","회수지 확인 필요 시",
+subcard("회수지 확인 필요 시","공통_반품_회수지확인",
+`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
+`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)
+)}
+</div>
+  ${secTitle("3","결제수단별 환불 안내",null,null)}
+  <div class="grid2">
+${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+subcard("환불 절차 안내","검수환불안내_카드_클레임O",
+`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
+
+📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
+
+결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.
+
+이용에 불편을 드려 다시 한 번 죄송합니다.`)
+)}
+${col("blue","환불 안내 (계좌·무통장/가상계좌)",
+subcard("계좌 정보 요청","부작용상해_환불_계좌",
+`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
+
+📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
+
+다만, (결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
+
+🏦 <b>은행 / 계좌번호 / 예금주</b>
+
+이용에 불편을 드려 다시 한 번 죄송합니다.`) + subcard("▶ 계좌 정보 확인","검수환불안내_계좌등록",
+`소중한 정보 확인 감사합니다.
+해당 계좌로 환불 계좌 등록이 완료되었습니다.
+
+💸 <b>입금 안내</b>
+실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
+
+※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
+)}
+</div>
+  ${secTitle("4","병원 내원 및 치료 안내_증빙 서류",null,null)}
+  <div class="grid2">
+${col("pink","🔹 병원 내원 및 치료 안내_증빙 서류",
 subcard("i. 병원 내원 안내","부작용상해_Critical_병원내원",
 `또한 고객님, 무엇보다도 고객님의 건강 회복이 최우선인데요, 혹시 병원에는 방문해 보셨을까요?
 현재 겪고 계신 증상과 관련하여 병원 진료를 받으셨거나, 혹은 방문 예정이신 경우
@@ -4536,16 +4622,17 @@ subcard("i. 병원 내원 안내","부작용상해_Critical_병원내원",
 
 불편을 드리게 되어 다시 한번 진심으로 사과드리며, 고객님의 빠른 회복을 진심으로 바랍니다. 🙏`)
 )}
-</div>
-  ${macro("🔗 채팅 링크 안내","부작용상해_채팅링크",
+${col("gray","🔗 채팅 링크 안내",
+subcard("🔗 채팅 링크 안내","부작용상해_채팅링크",
 `문자로 회신해 주시는 경우에는 확인이 어려우므로, 채팅 상담으로 서류를 전달 부탁드립니다.
 동일한 상담으로 이어서 문의하실 수 있도록 아래 채팅 링크를 함께 안내드립니다.
 
 🔗 (현재 상담 중인 채팅창 링크 기재)`,
-`서류 제출을 위해 고객 재문의가 필요한 경우에만 안내 / 증빙 자료를 이미 제출한 경우에는 사용하지 않음`)}
-  
+`서류 제출을 위해 고객 재문의가 필요한 경우에만 안내 / 증빙 자료를 이미 제출한 경우나 nomal case로 무상 반품 외 내원 등 진행 예정 없을 경우 사용하지 않음`)
+)}
+</div>
   ${guide(`💡 병원 내원 및 치료 안내 진행 시 팀 리드 공유 필수`)}
-  ${secTitle("5","보상금 요구 여부에 따른 응대",null,"sec_branch")}
+  ${secTitle("5","보상금 요구 여부에 따른 응대",null,null)}
   <div class="grid2">
 ${col("blue","🔹 보상금 요구 없을 경우",
 subcard("상담 종료 유도","부작용상해_상담종료",
@@ -4573,6 +4660,8 @@ ${col("pink","🔹 보상금 요청할 경우",
 📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>의 Critical Issue(EDGE Case) 보상금 flex 워크플로우 작성법 참고하여 등록`)}
   
 `;
+
+
 
 const SIMPLICARE_SIDE = `
 
@@ -9647,12 +9736,8 @@ BRAND_TREE["슬룸"]["부작용·상해 VOC"]={
   __content:"slm_side",
   __sections:[
     {label:"🧭 상담 플로우", anchor:"secFlow"},
-    {label:"1. 선제적 사과 멘트", anchor:"sec_apology"},
-    {label:"💡 사용 환경 확인", anchor:"sec_env"},
-    {label:"2. 포장 및 회수 안내", anchor:"sec_pack"},
-    {label:"3. 결제수단별 환불 안내", anchor:"sec_refund"},
-    {label:"4. 병원 내원 및 치료 안내_증빙 서류", anchor:"sec_hospital"},
-    {label:"5. 보상금 요구 여부에 따른 응대", anchor:"sec_branch"},
+    {group:true, label:"☑️ Nomal Case (일반)", anchor:"secNormal"},
+    {group:true, label:"🚨 EDGE Case (Critical)", anchor:"secEdge"},
     {label:"💠 [공통] 서류 제출 후", anchor:"sec_submit"}
   ]
 };
