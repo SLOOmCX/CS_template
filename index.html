@@ -501,7 +501,7 @@
 .brand-chip:hover{background:var(--trust-blue,#234A86);color:#fff;border-color:var(--trust-blue,#234A86);}
 
 /* ===== 웹 편집기 (수정하기) ===== */
-.edit-target{outline:1.5px dashed #9fb6db;outline-offset:2px;cursor:text;border-radius:6px;transition:background .12s,outline-color .12s;}
+.edit-target{outline:1.5px dashed #9fb6db;outline-offset:2px;cursor:text;border-radius:6px;transition:background .12s,outline-color .12s;white-space:pre-wrap;}
 .edit-target:hover{outline-color:#5b84c4;background:#f7faff;}
 .edit-target:focus{outline:2px solid #234A86;background:#fbfdff;}
 .edit-target.ed-changed{background:#fff8e1;outline-color:#e0a800;}
@@ -10817,7 +10817,7 @@ commitView();
      반영하고, 못 찾으면 절대 추측하지 않고 실패로 표시함 (안전 우선)
 ========================================================= */
 const GH_OWNER="SLOOmCX", GH_REPO="CS_template", GH_BRANCH="main", GH_PATH="index.html";
-const EDITABLE_SEL=".macro-body,.subcard-body,.guide-body,.col-body,.col-body-plain,.star-body,.bn-body,.cmp-ment-body,.quote-box,h1,h2,h3,.mname,.sc-label,.sub";
+const EDITABLE_SEL=".macro-body,.subcard-body,.guide-body,.col-body,.col-body-plain,.star-body,.bn-body,.cmp-ment-body,.quote-box,h1,h2,h3,.mname,.sc-label,.sub,.cmp-table td,.cmp-table th";
 let EDIT_MODE=false;
 let EDIT_ORIG=new Map(); // el -> 편집 시작 시점 innerHTML 스냅샷
 
@@ -10918,7 +10918,6 @@ function edEnter(){
   // 편집 영역이 겹치면 브라우저가 텍스트를 미묘하게 재구성해 저장 시 불필요한 "실패" 항목이 생김
   const targets=all.filter(el=>!all.some(other=>other!==el && el.contains(other)));
   targets.forEach(el=>{
-    if(el.closest(".cmp-table-wrap")) return; // 표는 구조가 복잡해 이번 버전에서는 제외
     EDIT_ORIG.set(el, el.innerHTML);
     el.setAttribute("contenteditable","true");
     el.classList.add("edit-target");
