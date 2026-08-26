@@ -499,6 +499,30 @@
 .chat-brand-grid{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 4px;}
 .brand-chip{font:inherit;font-size:13px;font-weight:600;color:var(--trust-blue,#234A86);background:var(--primary-bg,#F4F8FD);border:1px solid #cddcf1;border-radius:999px;padding:7px 15px;cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
 .brand-chip:hover{background:var(--trust-blue,#234A86);color:#fff;border-color:var(--trust-blue,#234A86);}
+
+/* ===== 웹 편집기 (수정하기) ===== */
+.edit-target{outline:1.5px dashed #9fb6db;outline-offset:2px;cursor:text;border-radius:6px;transition:background .12s,outline-color .12s;}
+.edit-target:hover{outline-color:#5b84c4;background:#f7faff;}
+.edit-target:focus{outline:2px solid #234A86;background:#fbfdff;}
+.edit-target.ed-changed{background:#fff8e1;outline-color:#e0a800;}
+#editSaveBar{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;display:none;align-items:center;gap:12px;background:#1B2A44;color:#fff;padding:12px 18px;border-radius:14px;box-shadow:0 8px 28px rgba(0,0,0,.28);font-size:13.5px;}
+#editSaveBar button{font:inherit;font-weight:800;border:none;border-radius:10px;padding:9px 16px;cursor:pointer;}
+#editSaveBar .es-save{background:#3E8B7B;color:#fff;}
+#editSaveBar .es-save:disabled{opacity:.55;cursor:default;}
+#editSaveBar .es-cancel{background:rgba(255,255,255,.14);color:#fff;}
+.ed-modal-bg{position:fixed;inset:0;background:rgba(20,26,38,.55);z-index:10000;display:flex;align-items:center;justify-content:center;}
+.ed-modal{background:#fff;border-radius:16px;padding:26px 28px;width:420px;max-width:90vw;max-height:80vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.ed-modal h3{margin:0 0 6px;font-size:16px;color:#1B2A44;}
+.ed-modal p{margin:0 0 14px;font-size:12.5px;color:#5b6472;line-height:1.6;}
+.ed-modal input[type=password],.ed-modal input[type=text]{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #d7dce4;border-radius:10px;font-size:13px;margin-bottom:10px;}
+.ed-modal label.ed-chk{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#5b6472;margin-bottom:16px;}
+.ed-modal .ed-btnrow{display:flex;align-items:center;justify-content:flex-end;gap:8px;}
+.ed-modal .ed-btnrow button{font:inherit;font-weight:800;border:none;border-radius:10px;padding:9px 16px;cursor:pointer;}
+.ed-modal .ed-ok{background:#234A86;color:#fff;}
+.ed-modal .ed-no{background:#eef1f5;color:#333;}
+.ed-report ul{margin:0;padding-left:18px;font-size:12.5px;line-height:1.8;list-style:none;}
+.ed-report li.ed-ok-item{color:#2f7a52;}
+.ed-report li.ed-fail-item{color:#c0392b;}
 </style>
 </head>
 <body>
@@ -549,6 +573,7 @@
         <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
           <button id="pageStar" class="page-star" onclick="togglePageBookmark()" title="이 페이지 북마크" style="display:none">☆ 북마크</button>
           <button id="backBtn" class="back-btn" onclick="goBack()" title="이전 페이지로" style="visibility:hidden;">← 이전 페이지</button>
+          <button id="editModeBtn" class="back-btn" onclick="toggleEditMode()" title="이 페이지 본문·제목 바로 수정">✏️ 수정하기</button>
         </div>
       </div>
       <div class="page" id="page"></div>
@@ -10782,6 +10807,250 @@ commitView();
     reps.forEach(function(rep){var it=list[rep.i];var end=closeOf(s,it.open);s=s.slice(0,it.innerStart)+rep.html+s.slice(end-6);});
     CONTENT[key]=s;
   });
+})();
+
+/* =========================================================
+   ✏️ 웹 편집기 : "수정하기" → 본문/제목 직접 수정 → GitHub 자동 반영
+   - 실제 저장 권한은 이 코드가 아니라 "GitHub 저장소 Write 권한"이 결정함
+     (권한 없는 계정 토큰으로는 저장 API 자체가 거부됨)
+   - 소스 원문에서 수정 전 텍스트를 정확히(그리고 유일하게) 찾은 경우에만
+     반영하고, 못 찾으면 절대 추측하지 않고 실패로 표시함 (안전 우선)
+========================================================= */
+const GH_OWNER="SLOOmCX", GH_REPO="CS_template", GH_BRANCH="main", GH_PATH="index.html";
+const EDITABLE_SEL=".macro-body,.subcard-body,.guide-body,.col-body,.col-body-plain,.star-body,.bn-body,.cmp-ment-body,.quote-box,h1,h2,h3,.mname,.sc-label,.sub";
+let EDIT_MODE=false;
+let EDIT_ORIG=new Map(); // el -> 편집 시작 시점 innerHTML 스냅샷
+
+function edUtf8ToB64(str){
+  const bytes=new TextEncoder().encode(str);
+  let bin=""; bytes.forEach(b=>{ bin+=String.fromCharCode(b); });
+  return btoa(bin);
+}
+function edB64ToUtf8(b64){
+  const bin=atob(b64.replace(/\n/g,""));
+  const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));
+  return new TextDecoder("utf-8").decode(bytes);
+}
+function edEsc(s){ const d=document.createElement("div"); d.textContent=s; return d.innerHTML; }
+
+function edGetToken(){ try{ return sessionStorage.getItem("gh_pat")||localStorage.getItem("gh_pat")||""; }catch(e){ return ""; } }
+function edSetToken(tok,remember){
+  try{
+    sessionStorage.setItem("gh_pat",tok);
+    if(remember) localStorage.setItem("gh_pat",tok); else localStorage.removeItem("gh_pat");
+  }catch(e){}
+}
+
+function edShowTokenModal(){
+  return new Promise((resolve)=>{
+    const bg=document.createElement("div"); bg.className="ed-modal-bg";
+    bg.innerHTML=`<div class="ed-modal">
+      <h3>🔑 GitHub 개인 토큰 입력</h3>
+      <p>수정 내용을 저장소에 바로 반영하려면 이 저장소 쓰기(write) 권한이 있는 GitHub 개인 액세스 토큰(PAT)이 필요해요. 토큰은 이 브라우저에서 GitHub로만 직접 전송되고, 다른 서버에는 저장되지 않아요.</p>
+      <input type="password" id="edTokenInput" placeholder="ghp_ 로 시작하는 토큰 붙여넣기" autocomplete="off">
+      <label class="ed-chk"><input type="checkbox" id="edTokenRemember"> 이 기기에 저장 (다음부터 안 물어봄)</label>
+      <div class="ed-btnrow">
+        <button class="ed-no" type="button">취소</button>
+        <button class="ed-ok" type="button">확인</button>
+      </div>
+    </div>`;
+    document.body.appendChild(bg);
+    const input=bg.querySelector("#edTokenInput");
+    const remember=bg.querySelector("#edTokenRemember");
+    setTimeout(()=>input.focus(),0);
+    const finishCancel=()=>{ bg.remove(); resolve(null); };
+    const finishOk=()=>{
+      const v=input.value.trim();
+      if(!v){ input.focus(); return; }
+      edSetToken(v, remember.checked);
+      bg.remove(); resolve(v);
+    };
+    bg.querySelector(".ed-no").onclick=finishCancel;
+    bg.querySelector(".ed-ok").onclick=finishOk;
+    bg.addEventListener("keydown",e=>{
+      if(e.key==="Enter"){ e.preventDefault(); finishOk(); }
+      if(e.key==="Escape"){ e.preventDefault(); finishCancel(); }
+    });
+  });
+}
+
+function edShowReportModal(applied,failed,commitUrl){
+  const bg=document.createElement("div"); bg.className="ed-modal-bg";
+  const okList=applied.map(a=>`<li class="ed-ok-item">✅ ${edEsc(a)}</li>`).join("");
+  const failList=failed.map(f=>`<li class="ed-fail-item">⚠️ ${edEsc(f)}</li>`).join("");
+  let msg="";
+  if(applied.length>0) msg+=`${applied.length}건 GitHub에 반영했어요. 1분 정도 후 새로고침하면 사이트에 보여요.`;
+  if(failed.length>0) msg+=(msg?" ":"")+`${failed.length}건은 소스 원문을 정확히 찾지 못해 자동 반영에 실패했어요 — 아래 내용을 그대로 복사해서 Claude에게 반영을 요청해 주세요.`;
+  if(!applied.length && !failed.length) msg="변경된 내용이 없어요.";
+  bg.innerHTML=`<div class="ed-modal ed-report">
+    <h3>${applied.length>0?"저장 완료":(failed.length>0?"저장 실패":"변경 없음")}</h3>
+    <p>${msg}</p>
+    <ul>${okList}${failList}</ul>
+    <div class="ed-btnrow" style="margin-top:14px">
+      ${commitUrl?`<a href="${commitUrl}" target="_blank" style="align-self:center;font-size:12px;color:#234A86;margin-right:auto">커밋 보기 ↗</a>`:""}
+      <button class="ed-ok" type="button">확인</button>
+    </div>
+  </div>`;
+  document.body.appendChild(bg);
+  bg.querySelector(".ed-ok").onclick=()=>bg.remove();
+}
+
+function edKeydownHandler(e){
+  if(e.key==="Enter"){ e.preventDefault(); document.execCommand("insertText", false, "\n"); }
+}
+function edPasteHandler(e){
+  e.preventDefault();
+  const text=(e.clipboardData||window.clipboardData).getData("text/plain");
+  document.execCommand("insertText", false, text);
+}
+function edInputHandler(e){
+  const el=e.currentTarget;
+  el.classList.toggle("ed-changed", el.innerHTML!==EDIT_ORIG.get(el));
+}
+
+function toggleEditMode(){ EDIT_MODE? edExit(true) : edEnter(); }
+
+function edEnter(){
+  const page=document.getElementById("page"); if(!page) return;
+  EDIT_MODE=true; EDIT_ORIG.clear();
+  const all=[...page.querySelectorAll(EDITABLE_SEL)];
+  // 카드 안에 카드가 중첩된 경우(예: col-body 안에 subcard-body) 안쪽 요소만 편집 대상으로 삼음 —
+  // 편집 영역이 겹치면 브라우저가 텍스트를 미묘하게 재구성해 저장 시 불필요한 "실패" 항목이 생김
+  const targets=all.filter(el=>!all.some(other=>other!==el && el.contains(other)));
+  targets.forEach(el=>{
+    if(el.closest(".cmp-table-wrap")) return; // 표는 구조가 복잡해 이번 버전에서는 제외
+    EDIT_ORIG.set(el, el.innerHTML);
+    el.setAttribute("contenteditable","true");
+    el.classList.add("edit-target");
+    el.addEventListener("keydown", edKeydownHandler);
+    el.addEventListener("paste", edPasteHandler);
+    el.addEventListener("input", edInputHandler);
+  });
+  const btn=document.getElementById("editModeBtn"); if(btn) btn.textContent="✕ 편집 종료";
+  edShowSaveBar();
+}
+
+function edExit(discard){
+  EDIT_ORIG.forEach((html,el)=>{
+    el.removeAttribute("contenteditable");
+    el.classList.remove("edit-target","ed-changed");
+    el.removeEventListener("keydown", edKeydownHandler);
+    el.removeEventListener("paste", edPasteHandler);
+    el.removeEventListener("input", edInputHandler);
+    if(discard) el.innerHTML=html;
+  });
+  EDIT_MODE=false; EDIT_ORIG.clear();
+  const btn=document.getElementById("editModeBtn"); if(btn) btn.textContent="✏️ 수정하기";
+  edHideSaveBar();
+}
+
+function edShowSaveBar(){
+  let bar=document.getElementById("editSaveBar");
+  if(!bar){
+    bar=document.createElement("div"); bar.id="editSaveBar";
+    bar.innerHTML=`<span>✏️ 편집 모드 — 본문·제목을 클릭해서 바로 고치세요</span>
+      <button class="es-cancel" type="button" onclick="edExit(true)">취소</button>
+      <button class="es-save" type="button" onclick="edSave()">💾 저장 (GitHub 반영)</button>`;
+    document.body.appendChild(bar);
+  }
+  bar.style.display="flex";
+}
+function edHideSaveBar(){ const bar=document.getElementById("editSaveBar"); if(bar) bar.style.display="none"; }
+
+function edVariant(s, mode){
+  // mode 0: 원문 그대로(실제 줄바꿈) / 1: \n → 리터럴 \n 이스케이프 / 2: 1번 + 큰따옴표까지 이스케이프
+  let r=s;
+  if(mode>=1) r=r.replace(/\\/g,"\\\\").replace(/\n/g,"\\n");
+  if(mode>=2) r=r.replace(/"/g,'\\"');
+  return r;
+}
+
+async function edSave(){
+  const changed=[...EDIT_ORIG.entries()].filter(([el,orig])=>el.innerHTML!==orig);
+  if(changed.length===0){ edShowReportModal([],[]); return; }
+
+  let token=edGetToken();
+  if(!token){ token=await edShowTokenModal(); if(!token) return; }
+
+  const saveBtn=document.querySelector("#editSaveBar .es-save");
+  if(saveBtn){ saveBtn.disabled=true; saveBtn.textContent="저장 중…"; }
+
+  try{
+    const fileRes=await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}?ref=${GH_BRANCH}`,{
+      headers:{Authorization:`Bearer ${token}`, Accept:"application/vnd.github+json"}
+    });
+    if(!fileRes.ok){
+      const why=fileRes.status===401?"토큰이 유효하지 않아요. 토큰을 다시 확인해 주세요.":
+                 fileRes.status===403?"이 계정은 저장소 쓰기 권한이 없어요.":
+                 `파일을 불러오지 못했어요 (오류 코드 ${fileRes.status})`;
+      throw new Error(why);
+    }
+    const fileJson=await fileRes.json();
+    let src=edB64ToUtf8(fileJson.content);
+    const sha=fileJson.sha;
+
+    const applied=[], failed=[];
+    for(const [el,origHTML] of changed){
+      const newHTML=el.innerHTML;
+      const label=(el.closest(".macro,.subcard,.col-card,.guide-card,.star-note,.blue-note")
+        ?.querySelector(".mname,.sc-label,.col-h span,.star-h b,.bn-h b")?.textContent
+        || el.tagName).trim().slice(0,40) || "(제목 없음)";
+
+      if(origHTML.trim()===""){
+        failed.push(`${label} → 원래 비어있던 항목이라 자동 반영이 안 돼요. 새로 입력한 문구를 Claude에게 알려주세요: "${el.textContent.trim().slice(0,80)}"`);
+        continue;
+      }
+
+      let done=false;
+      for(let mode=0; mode<3 && !done; mode++){
+        const needle=edVariant(origHTML, mode);
+        const cnt=src.split(needle).length-1;
+        if(cnt===1){
+          src = src.split(needle).join(edVariant(newHTML, mode));
+          done=true;
+        }
+      }
+      if(done) applied.push(`${label} 수정됨`);
+      else failed.push(`${label} → 소스에서 정확히 못 찾아 자동 반영 실패. 원문: "${el.textContent.trim().slice(0,60)}"`);
+    }
+
+    if(applied.length===0){
+      edShowReportModal(applied,failed);
+      return;
+    }
+
+    const putRes=await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_PATH}`,{
+      method:"PUT",
+      headers:{Authorization:`Bearer ${token}`, Accept:"application/vnd.github+json", "Content-Type":"application/json"},
+      body:JSON.stringify({
+        message:`[웹 편집기] ${applied.length}건 문구 수정`,
+        content:edUtf8ToB64(src),
+        sha:sha,
+        branch:GH_BRANCH
+      })
+    });
+    if(!putRes.ok){
+      const errJson=await putRes.json().catch(()=>({}));
+      throw new Error(`GitHub 저장 실패 (오류 코드 ${putRes.status}) ${errJson.message||""}`);
+    }
+    const putJson=await putRes.json();
+    edExit(false);
+    edShowReportModal(applied,failed,putJson.commit&&putJson.commit.html_url);
+  }catch(err){
+    alert("저장 중 오류가 발생했어요: "+err.message);
+  }finally{
+    const btn=document.querySelector("#editSaveBar .es-save");
+    if(btn){ btn.disabled=false; btn.textContent="💾 저장 (GitHub 반영)"; }
+  }
+}
+
+/* 편집 중 다른 페이지로 이동하면 편집 상태 안전하게 종료 */
+(function(){
+  const _edOrigRender=render;
+  render=function(html){
+    if(EDIT_MODE) edExit(true);
+    return _edOrigRender(html);
+  };
 })();
 
 </script>
