@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git --version)",
+      "Bash(git config *)",
+      "Bash(git ls-remote *)",
+      "Bash(gh auth *)",
+      "Bash(echo \"---GH_EXIT:$?---\")",
+      "Bash(echo \"name=[$\\(git config --global --get user.name\\)]\")",
+      "Bash(echo \"email=[$\\(git config --global --get user.email\\)]\")",
+      "Bash(echo \"cred_helper=[$\\(git config --global --get credential.helper\\)]\")"
+    ]
+  }
+}
