@@ -11048,6 +11048,11 @@ async function edSave(){
       }
 
       let done=false;
+      // 비교표(브랜드별 표)는 같은 페이지 안에 여러 브랜드 행이 있고, 그중 문구가 우연히
+      // 완전히 똑같은 두 행이 실제로 있음(예: 심플리케어/닥터아망, 빌바/셀올로지).
+      // 이 경우 페이지 단위 스코프만으로는 어느 행인지 구분이 안 되므로,
+      // 같은 <tr> 안의 브랜드명(.cmp-row-label)을 추가 단서로 써서 정확한 행을 좁힘.
+      const rowLabel=(el.closest("tr")?.querySelector(".cmp-row-label")?.textContent||"").trim();
       const scopeVarName=edFindScopeVarname(src, EDIT_ENTER_KEY);
       const scoped=scopeVarName ? edScopeRange(src, scopeVarName) : null;
       const searchRanges=scoped ? [scoped, [0, src.length]] : [[0, src.length]];
@@ -11057,10 +11062,27 @@ async function edSave(){
           const needle=edVariant(origHTML, mode);
           if(!needle) continue;
           const region=src.slice(rs, re);
-          const cnt=region.split(needle).length-1;
-          if(cnt===1){
-            const relIdx=region.indexOf(needle);
-            const absIdx=rs+relIdx;
+          const occ=[];
+          let searchFrom=0;
+          while(true){
+            const idx=region.indexOf(needle, searchFrom);
+            if(idx===-1) break;
+            occ.push(idx);
+            searchFrom=idx+1;
+          }
+          let chosenIdx=null;
+          if(occ.length===1){
+            chosenIdx=occ[0];
+          }else if(occ.length>1 && rowLabel){
+            const rowLabelNeedle=">"+rowLabel+"<";
+            const cands=occ.filter(idx=>{
+              const back=region.lastIndexOf(rowLabelNeedle, idx);
+              return back!==-1 && (idx-back)<800;
+            });
+            if(cands.length===1) chosenIdx=cands[0];
+          }
+          if(chosenIdx!==null){
+            const absIdx=rs+chosenIdx;
             src = src.slice(0, absIdx) + edVariant(newHTML, mode) + src.slice(absIdx+needle.length);
             done=true;
           }
