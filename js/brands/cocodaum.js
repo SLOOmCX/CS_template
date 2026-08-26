@@ -330,7 +330,6 @@ const COCODAUM_REFUND = `
     )}
   </div>
   <div class="grid2">
-    ${subcard(D_COCODAUM["cocodaum_refund__010"].name, D_COCODAUM["cocodaum_refund__010"].tag, D_COCODAUM["cocodaum_refund__010"].body, D_COCODAUM["cocodaum_refund__010"].desc)}
     ${subcard(D_COCODAUM["cocodaum_refund__011"].name, D_COCODAUM["cocodaum_refund__011"].tag, D_COCODAUM["cocodaum_refund__011"].body, D_COCODAUM["cocodaum_refund__011"].desc)}
   </div>
 
@@ -395,7 +394,6 @@ ${col("pink","🔹 부분 교환",
 subcard(D_COCODAUM["cocodaum_exchange__007"].name, D_COCODAUM["cocodaum_exchange__007"].tag, D_COCODAUM["cocodaum_exchange__007"].body, D_COCODAUM["cocodaum_exchange__007"].desc) + caution(`🎁 증정품 회수 X`)
 )}
 </div>
-  ${subcard(D_COCODAUM["cocodaum_exchange__008"].name, D_COCODAUM["cocodaum_exchange__008"].tag, D_COCODAUM["cocodaum_exchange__008"].body, D_COCODAUM["cocodaum_exchange__008"].desc)}
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
   ${secTitle("","4. 검수 및 재출고 안내","전체·부분 공통","sec4")}
   ${macro(D_COCODAUM["cocodaum_exchange__009"].name, D_COCODAUM["cocodaum_exchange__009"].tag, D_COCODAUM["cocodaum_exchange__009"].body, D_COCODAUM["cocodaum_exchange__009"].desc)}
