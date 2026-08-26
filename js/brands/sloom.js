@@ -26,98 +26,20 @@ const REF_100REFUND = `
 • 이벤트 기간 전 문의한 경우
    └ 이벤트 신청 기간에 신청 페이지를 통해 접수할 수 있도록 안내</div></div>
   ${secTitle("","1. 기간 전 응대",null,"secBefore")}
-  ${macro("🔊 100% 환불 이벤트 안내","100프로_기간전",
-`네, 고객님. 제품 사용 후 만족을 드리지 못해 정말 안타깝습니다.
-
-다만 앞서 안내드린 것처럼, 개봉 후 사용하신 제품은 원칙적으로 단순 변심에 의한 반품이 어렵습니다.
-
-다만, 공식몰에서 구매하신 첫 구매 고객님께는 <b>[100% 환불 이벤트]</b>를 운영하고 있어요.
-상품 수령일로부터 30일 이내 사용 후 만족스럽지 않으신 경우, 이벤트 조건 충족 시 환불 신청이 가능합니다.
-
-또한 (제품명)은 인체공학적으로 설계된 제품으로, 개인에 따라 1~2주 정도의 적응 기간이 필요할 수 있습니다.
-
-조금 더 사용해 보신 후에도 만족스럽지 않으시다면, 기간 내 아래 페이지를 통해 환불 신청 부탁드립니다. 😊
-
-👉🏻 100% 환불 이벤트 신청 페이지: https://sloom-refund-v2.onrender.com/`)}
+  ${macro(D_SLOOM["slm_100refund__001"].name, D_SLOOM["slm_100refund__001"].tag, D_SLOOM["slm_100refund__001"].body, D_SLOOM["slm_100refund__001"].desc)}
   ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?pli=1&amp;gid=1155889750#gid=1155889750" target="_blank">[슬룸] 100%환불이벤트_사용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② imweb·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석)·배송 택배사(CJ대한통운) 등을 통해 배송완료일자 확인`)}
-  ${macro("*️⃣ 100% 환불 이벤트 제도 문의","100프로_제도문의",
-`<100% 환불 이벤트>는 제품을 30일간 꾸준히 사용하신 경우, 배송 완료 후 40일 이내 신청 가능합니다 :)
-
-해당 서비스는 첫 구매 고객님을 위한 1회 한정 체험 혜택으로, 1회 이상 환불 이력이 있을 경우 대상에서 제외됩니다.
-
-또한, 구매하신 제품 구성에 따라 적용 조건이 다를 수 있으니 자세한 내용은 아래 링크를 꼭 참고 부탁드립니다.
-
-👉🏻 100% 환불 이벤트 상세 조건 : https://sleeplab.co.kr/notice/?page=1#13709226_notice`)}
-  ${macro("i. 고객 수긍","100프로_기간전_수긍",
-`네, 고객님. 이용에 번거로움을 드려 죄송합니다.
-
-<100% 환불 이벤트> 상세 조건이 안내된 페이지도 함께 전달드립니다 :)
-내용 확인 후, 기간 내 신청 부탁드립니다.
-
-궁금하신 점이나 어려우신 부분 있으시면 언제든 편하게 말씀 주세요 :)
-
-👉🏻 상세 조건 : https://sleeplab.co.kr/notice/?page=1#13709226_notice
-👉🏻 신청 페이지: https://sloom-refund-v2.onrender.com/`)}
+  ${macro(D_SLOOM["slm_100refund__002"].name, D_SLOOM["slm_100refund__002"].tag, D_SLOOM["slm_100refund__002"].body, D_SLOOM["slm_100refund__002"].desc)}
+  ${macro(D_SLOOM["slm_100refund__003"].name, D_SLOOM["slm_100refund__003"].tag, D_SLOOM["slm_100refund__003"].body, D_SLOOM["slm_100refund__003"].desc)}
   <div class="grp-h">b. 고객 2차 미수긍 — 아래 두 유형 중 선택</div>
-  <div class="grid2">${subcard("기한 내 신청 재안내 ①","100프로_기간전_재안내①",
-`남겨주신 반품 사유와 같이 이미 전원을 켜보신 뒤 불만족으로 반품을 희망하시는 경우, 공식몰에서 주문하신 고객님에 한하여 <b>[100% 환불이벤트]</b>를 진행해드리고 있습니다.
-
-30일 이내 무조건 반품이 아닌, 수령하신 뒤 30일 이후 ~ 40일 이내 접수 가능합니다.
-(*공식몰 주문 건에 한하여 단 1회, 상품 1종 적용 가능)
-
-<b>[100% 환불 이벤트]</b>는 제품을 꾸준히 사용해 보신 후에도 만족하시지 못한 경우, 수령일 기준 30~40일 이내 환불을 도와드리는 서비스입니다. (*왕복 배송비 6,000원 차감)
-
-따라서 번거로우시겠지만, 이벤트 기간인 (주문 건별 신청 가능일자 기재) 내 다시 접수가 필요합니다.
-현재 고객님의 접수 가능 기간이 아니기에 접수가 어려운 상황으로, 불만족 시 이벤트 기간 내 100%환불이벤트 신청 페이지를 통해 접수 부탁드립니다.
-
-👉🏻 신청 페이지: https://sloom-refund-v2.onrender.com/`)}${subcard("기한 내 신청 재안내 ②","100프로_기간전_재안내②",
-`고객님, (제품명)은 초기 사용 시 다소 익숙하지 않을 수 있으나 1~2주 정도 사용 후에는 편안하다는 후기들이 많아 꾸준한 사용을 권장드리고 있습니다.
-
-만약 사용법에 맞게 지속적으로 사용하셨음에도 만족스럽지 않으셨다면, <100% 환불 이벤트> 기간 내 문의 주시는 경우 이벤트 조건에 맞춰 환불 절차 안내 도와드리고 있습니다.
-
-저희 슬룸을 믿고 조금만 더 사용해 보신 뒤 기간 내 아래 신청 페이지를 통해 접수 부탁드립니다 :)
-
-👉🏻 신청 페이지: https://sloom-refund-v2.onrender.com/`)}</div>
+  <div class="grid2">${subcard(D_SLOOM["slm_100refund__004"].name, D_SLOOM["slm_100refund__004"].tag, D_SLOOM["slm_100refund__004"].body, D_SLOOM["slm_100refund__004"].desc)}${subcard(D_SLOOM["slm_100refund__005"].name, D_SLOOM["slm_100refund__005"].tag, D_SLOOM["slm_100refund__005"].body, D_SLOOM["slm_100refund__005"].desc)}</div>
   <div class="grp-h">c. 고객 3차 미수긍</div>
-  <div class="grid2">${subcard("소비자원 사례 안내","100프로_기간전_소비자원사례",
-`더불어 전자 제품의 경우 별도 테스트 작동 개념이 없어, 본래는 전원을 켜보신 이후에는 남겨주신 반품 사유와 같이 사용 후 불만족으로 인해 반품이 불가한 품목입니다. 🥲
-
-아래 유사한 소비자원 사례 전달드리며, 말씀드린 내용처럼 본래 반품이 불가한 상황이나 꾸준히 사용해 보셨음에도 불만족하시는 경우 예외 반품을 도와드리는 100% 환불 이벤트를 진행하고 있으니 해당 기간에 맞춰 신청을 부탁드리겠습니다.`,
-`한국소비자원 피해구제 정보 관련 이미지 첨부하여 안내`)}${subcard("i. 고객 최종 수긍","100프로_기간전_최종수긍",
-`네, 고객님. 이용에 번거로움을 드려 죄송합니다.
-
-<100% 환불 이벤트> 상세 조건이 안내된 페이지도 함께 전달드립니다 :)
-내용 확인 후, 기간 내 100%환불이벤트 신청 페이지를 통해 접수 부탁드립니다.
-
-궁금하신 점이나 어려우신 부분 있으시면 언제든 편하게 말씀 주세요 :)
-
-👉🏻 상세 조건 : https://sleeplab.co.kr/notice/?page=1#13709226_notice
-👉🏻 신청 페이지: https://sloom-refund-v2.onrender.com/`)}</div>
+  <div class="grid2">${subcard(D_SLOOM["slm_100refund__006"].name, D_SLOOM["slm_100refund__006"].tag, D_SLOOM["slm_100refund__006"].body, D_SLOOM["slm_100refund__006"].desc)}${subcard(D_SLOOM["slm_100refund__007"].name, D_SLOOM["slm_100refund__007"].tag, D_SLOOM["slm_100refund__007"].body, D_SLOOM["slm_100refund__007"].desc)}</div>
   ${secTitle("","2. 기간 경과 응대",null,"secAfter")}
-  ${macro("🔊 신청 기간 경과 안내","100프로_기간경과",
-`네, 고객님. 제품 사용 후 만족을 드리지 못해 안타깝습니다.
-다만 앞서 안내드린 것처럼, 개봉하여 사용하신 제품은 원칙적으로 반품이 어렵습니다.
-
-또한 슬룸에서 운영 중인 <100% 환불 이벤트>는 제품 수령 후 40일 이내 신청 가능하며, 30일간 꾸준히 사용하신 경우에만 환불이 가능합니다.
-
-고객님의 경우 (배송 완료일) 배송 완료 기준으로 신청 가능 기간이 경과되어 환불 도움드리기 어려운 점 양해 부탁드립니다.`)}
+  ${macro(D_SLOOM["slm_100refund__008"].name, D_SLOOM["slm_100refund__008"].tag, D_SLOOM["slm_100refund__008"].body, D_SLOOM["slm_100refund__008"].desc)}
   ${secTitle("","3. 기간 내 응대",null,"secWithin")}
-  ${macro("🔊 100%환불이벤트 신청 유도","100프로_기간내_신청유도",
-`네, 고객님. 제품 사용 후 만족을 드리지 못해 안타깝습니다.
-
-현재 슬룸에서는 첫 구매 고객님을 위한 <100% 환불 이벤트>를 운영 중입니다 :)
-수령일 기준 30일간 꾸준히 사용하신 뒤에도 만족하지 못하신 경우, 해당 조건에 따라 환불을 도와드리고 있습니다.
-
-<100% 환불 이벤트> 참여를 원하신다면 바로 안내 도와드리겠습니다!`)}
+  ${macro(D_SLOOM["slm_100refund__009"].name, D_SLOOM["slm_100refund__009"].tag, D_SLOOM["slm_100refund__009"].body, D_SLOOM["slm_100refund__009"].desc)}
   ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?pli=1&amp;gid=1155889750#gid=1155889750" target="_blank">[슬룸] 100%환불이벤트_사용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② imweb·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석)·배송 택배사(CJ대한통운) 등을 통해 배송완료일자 확인`)}
-  ${macro("*️⃣ 100% 환불 이벤트 제도 문의","100프로_기간내_제도문의2",
-`<100% 환불 이벤트>는 제품을 30일간 꾸준히 사용하신 경우, 배송 완료 후 40일 이내 신청 가능합니다 :)
-
-해당 서비스는 첫 구매 고객님을 위한 1회 한정 체험 혜택으로, 1회 이상 환불 이력이 있을 경우 대상에서 제외됩니다.
-
-또한, 구매하신 제품 구성에 따라 적용 조건이 다를 수 있으니 자세한 내용은 아래 링크를 꼭 참고 부탁드립니다.
-
-👉🏻 상세 조건 확인하기 : https://sleeplab.co.kr/notice/?page=1#13709226_notice`)}
+  ${macro(D_SLOOM["slm_100refund__010"].name, D_SLOOM["slm_100refund__010"].tag, D_SLOOM["slm_100refund__010"].body, D_SLOOM["slm_100refund__010"].desc)}
   ${secMajor("💯","100%환불이벤트 접수","자사몰 ONLY","secAccept")}
   ${secTitle("🟢","유형별 기준","자사몰 ONLY","secRef")}
   ${notice([
@@ -129,183 +51,49 @@ const REF_100REFUND = `
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">구분</th><th>세부</th><th class="cmp-blue">상세 조건</th><th class="cmp-pink">예시</th></tr></thead><tbody><tr><td class="cmp-row-label">① 상품 1개 단품</td><td>–</td><td>· 100%환불이벤트 기준 부합 시 적용 가능</td><td>목편한케어 1</td></tr><tr><td class="cmp-row-label" rowspan="2">② 동일 상품 2개 이상</td><td>a. 체험 1개만 사용</td><td>· 미사용(미작동) 제품도 환불 요청 시 전체 환불 가능</td><td>목편한케어 1+1 → 2개 모두 미개봉 &amp; 미사용</td></tr><tr><td>b. 체험 외 추가 사용</td><td>· 무료 체험은 1개만 적용 가능<br>· 나머지 사용(작동) 제품은 환불 불가<br>· 개봉/손상 상품은 상품 수만큼 차감 후 환불<br>※ 차감 기준 : 자사몰 1개 정가</td><td>목편한케어 1+1 → 1개 100%환불 신청 → 그 외 1개 추가 개봉·사용</td></tr><tr><td class="cmp-row-label">③ 세트 상품</td><td>–</td><td>· 각 상품 모두 개봉 시에도 전액 환불 가능</td><td>목베개 프로 1 + 허리베개 1 → 개봉·사용 여부 무관</td></tr><tr><td class="cmp-row-label" rowspan="2">④ 기타 유형</td><td>a. 여러 주문번호로 각각 구매</td><td>· 세트 구성이 아닌 개별 주문 건, 주문 1건에만 적용</td><td>4/12 목편한케어 1 · 4/13 목베개 1 (각각 주문)</td></tr><tr><td>b. 동일 주문번호이나 세트구성 아님</td><td>· 개별 구성 주문건, 체험 상품 1개에만 적용<br>※ 그 외 제품 미개봉·무손상 시 단순변심 반품 가능</td><td>한 주문번호에 목베개 프로1 + 허리베개1 각각 담아 결제</td></tr></tbody></table></div>
   ${secTitle("1","상품 1개 단품",null,"secSingle")}
   ${col("blue","반품 배송비 안내",
-subcard("i. 네이버페이","공통_전체_반품배송비_네이버페이",
-`네이버페이 결제는 부분 취소가 어려워 반품 배송비 6,000원 입금 후 반품이 가능합니다. 🥹
-
-반품 배송비 : 6,000원
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-위 계좌로 송금해 주신 다음 '입금자명'을 말씀해 주시면 확인 후 도와드리겠습니다. :)`) + subcard("ii. 카드 / 삼성페이 / 계좌 (무통장·가상계좌)","공통_반품배송비_일반결제",
-`반품 배송비 6,000원 제외 후 반품 진행됩니다.`)
+subcard(D_SLOOM["slm_100refund__011"].name, D_SLOOM["slm_100refund__011"].tag, D_SLOOM["slm_100refund__011"].body, D_SLOOM["slm_100refund__011"].desc) + subcard(D_SLOOM["slm_100refund__012"].name, D_SLOOM["slm_100refund__012"].tag, D_SLOOM["slm_100refund__012"].body, D_SLOOM["slm_100refund__012"].desc)
 )}
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
   ${col("blue","포장 및 회수 안내",
-subcard("포장 · 회수 안내","100프로_포장회수_증정품O",
-`<100% 환불 이벤트> 접수 도와드리겠습니다.
-
-📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-
-✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
+subcard(D_SLOOM["slm_100refund__013"].name, D_SLOOM["slm_100refund__013"].tag, D_SLOOM["slm_100refund__013"].body, D_SLOOM["slm_100refund__013"].desc)
  + guide(`🎁 증정품 회수 O`))}
   ${secTitle("2","동일 상품 2개 이상 (1+1 포함)",null,"secMulti")}
-  ${macro("체험 상품 외 개봉 여부 확인","100프로_동일상품_개봉확인",
-`고객님, 동일한 상품을 1개 이상 구매하신 경우에는 체험용 1개 외 나머지 상품은 개봉 또는 손상 없이 보관된 경우에만 전액 환불이 가능합니다.
-
-체험 상품 1개를 제외하고, 나머지 상품 모두 미개봉 상태가 맞으실까요? 확인 부탁드립니다. 🙏🏻`,
-`개봉 여부 확인 후 (a)체험 1개만 or (b)추가 사용 분기하여 진행`)}
+  ${macro(D_SLOOM["slm_100refund__014"].name, D_SLOOM["slm_100refund__014"].tag, D_SLOOM["slm_100refund__014"].body, D_SLOOM["slm_100refund__014"].desc)}
   <div class="grid2">${col("pink","a. 체험 제품 1개만 사용 (부분)",
-subcard("i. 네이버페이","공통_전체_반품배송비_네이버페이",
-`네이버페이 결제는 부분 취소가 어려워 반품 배송비 6,000원 입금 후 반품이 가능합니다. 🥹
-
-반품 배송비 : 6,000원
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-위 계좌로 송금해 주신 다음 '입금자명'을 말씀해 주시면 확인 후 도와드리겠습니다. :)`) + subcard("ii. 카드 / 삼성페이 / 계좌","공통_반품배송비_일반결제",
-`반품 배송비 6,000원 제외 후 반품 진행됩니다.`) + subcard("포장 · 회수 안내","100프로_포장회수_증정품X",
-`<100% 환불 이벤트> 접수 도와드리겠습니다.
-
-📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-※ 사은품·증정품 및 그 외 구매한 부속품과 제품은 보내지 않으셔도 됩니다.
-
-✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + guide(`🎁 증정품 회수 X`)
+subcard(D_SLOOM["slm_100refund__015"].name, D_SLOOM["slm_100refund__015"].tag, D_SLOOM["slm_100refund__015"].body, D_SLOOM["slm_100refund__015"].desc) + subcard(D_SLOOM["slm_100refund__016"].name, D_SLOOM["slm_100refund__016"].tag, D_SLOOM["slm_100refund__016"].body, D_SLOOM["slm_100refund__016"].desc) + subcard(D_SLOOM["slm_100refund__017"].name, D_SLOOM["slm_100refund__017"].tag, D_SLOOM["slm_100refund__017"].body, D_SLOOM["slm_100refund__017"].desc) + guide(`🎁 증정품 회수 X`)
 )}${col("blue","b. 체험 1개 외 추가 사용",
-subcard("🔴 일부 상품 차감 안내","100프로_동일상품_차감안내",
-`확인 감사합니다 :)
-
-다만, 동일 상품을 1개 이상 또는 세트로 구매하신 경우 체험 상품 1개 외에는 미개봉 상태일 때만 전액 환불이 가능합니다.
-
-현재 (개봉된 박스 개수 기재)개 개봉된 상태로 확인되어, 개봉 상품에 대해서는 차감 후 환불이 가능합니다.
-(상품명) (개봉된 박스 개수 기재) (금액)과 반품 배송비 6,000원을 제외한 환불 금액 안내 도와드리겠습니다.`) + subcard("ii. 네이버페이 (동의 시)","100프로_동일상품_배송비_네이버페이",
-`네이버페이 결제는 부분 취소가 어려워, 사용하신 제품 금액과 반품 배송비를 입금해 주신 후 반품 처리가 가능합니다. 🥹
-
-(제품명) : (가격)
-반품 배송비 : 6,000원
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-위 계좌로 송금해 주신 다음 '입금자명'을 말씀해 주시면 확인 후 도와드리겠습니다.`) + subcard("ii. 카드 / 삼성페이 / 계좌","100프로_동일상품_배송비_카드",
-`반품 배송비 6,000원과 개봉하여 반품이 어려운 (사용할 제품명) (정가) 제외 후 반품 진행됩니다.`) + subcard("포장 · 회수 안내","100프로_포장회수_증정품X",
-`<100% 환불 이벤트> 접수 도와드리겠습니다.
-
-📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-※ 사은품·증정품 및 그 외 구매한 부속품과 제품은 보내지 않으셔도 됩니다.
-
-✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + '<div class="note-tight">' + guide(`🎁 증정품 회수 X`) + guide(`- 체험 1개 외 1개 추가 개봉 → 개봉 제품 2개 중 1개는 고객 부담, 반품 배송비 6,000원 부담
+subcard(D_SLOOM["slm_100refund__018"].name, D_SLOOM["slm_100refund__018"].tag, D_SLOOM["slm_100refund__018"].body, D_SLOOM["slm_100refund__018"].desc) + subcard(D_SLOOM["slm_100refund__019"].name, D_SLOOM["slm_100refund__019"].tag, D_SLOOM["slm_100refund__019"].body, D_SLOOM["slm_100refund__019"].desc) + subcard(D_SLOOM["slm_100refund__020"].name, D_SLOOM["slm_100refund__020"].tag, D_SLOOM["slm_100refund__020"].body, D_SLOOM["slm_100refund__020"].desc) + subcard(D_SLOOM["slm_100refund__021"].name, D_SLOOM["slm_100refund__021"].tag, D_SLOOM["slm_100refund__021"].body, D_SLOOM["slm_100refund__021"].desc) + '<div class="note-tight">' + guide(`🎁 증정품 회수 X`) + guide(`- 체험 1개 외 1개 추가 개봉 → 개봉 제품 2개 중 1개는 고객 부담, 반품 배송비 6,000원 부담
 - n개 추가 개봉 → n개-1 (1개는 100% 환불 적용) 만큼 차감
 ※ 상품 차감 기준 : 자사몰 1개 정가 기준`) + '</div>'
 )}</div>
-  ${macro(`고객 정가 차감 미동의`,"100프로_동일상품_정가차감미동의",
-`<100% 환불 이벤트>는 공지사항에 안내된 것처럼 1회에 한해 체험 상품 1종에 대해서만 신청이 가능합니다.
-
-체험 상품 외 나머지 제품은 정상 구매로 처리되며, 반품 시에는 해당 제품들의 정가 차감 후 환불되는 점 양해 부탁드립니다.`)}
+  ${macro(D_SLOOM["slm_100refund__022"].name, D_SLOOM["slm_100refund__022"].tag, D_SLOOM["slm_100refund__022"].body, D_SLOOM["slm_100refund__022"].desc)}
   ${guide(`💡 반품/교환 접수 시 <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트 리스트업 필수 (→ 후처리 관리 시트 통합 가이드 참고)
 
 🟢 동일 상품 2개 이상 구매 후 1개만 체험하고 나머지가 미개봉인 경우
 → 전체 환불 가능. 미개봉 상품은 단순 변심 기간이 지났더라도 예외 반품 가능하며, 주문 건별 확인 필요`)}
   ${secTitle("3","세트 상품",null,"secSet")}
-  ${macro("반품 금액 추가 안내","100프로_세트_금액안내",
-`구성이 다른 세트 상품을 구매해 주셨기 때문에, 각 상품을 모두 개봉해 체험하신 경우에도 왕복 배송비를 제외한 전액 환불이 가능합니다.`)}
+  ${macro(D_SLOOM["slm_100refund__023"].name, D_SLOOM["slm_100refund__023"].tag, D_SLOOM["slm_100refund__023"].body, D_SLOOM["slm_100refund__023"].desc)}
   ${col("blue","반품 배송비 안내",
-subcard("i. 네이버페이","공통_전체_반품배송비_네이버페이",
-`네이버페이 결제는 부분 취소가 어려워 반품 배송비 6,000원 입금 후 반품이 가능합니다. 🥹
-
-반품 배송비 : 6,000원
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-위 계좌로 송금해 주신 다음 '입금자명'을 말씀해 주시면 확인 후 도와드리겠습니다. :)`) + subcard("ii. 카드 / 삼성페이 / 계좌","공통_반품배송비_일반결제",
-`반품 배송비 6,000원 제외 후 반품 진행됩니다.`)
+subcard(D_SLOOM["slm_100refund__024"].name, D_SLOOM["slm_100refund__024"].tag, D_SLOOM["slm_100refund__024"].body, D_SLOOM["slm_100refund__024"].desc) + subcard(D_SLOOM["slm_100refund__025"].name, D_SLOOM["slm_100refund__025"].tag, D_SLOOM["slm_100refund__025"].body, D_SLOOM["slm_100refund__025"].desc)
 )}${col("blue","포장 및 회수 안내",
-subcard("포장 · 회수 안내","100프로_포장회수_증정품O",
-`<100% 환불 이벤트> 접수 도와드리겠습니다.
-
-📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-
-✍🏽 택배 박스 윗면에 [★100% 환불★] 기재 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
+subcard(D_SLOOM["slm_100refund__026"].name, D_SLOOM["slm_100refund__026"].tag, D_SLOOM["slm_100refund__026"].body, D_SLOOM["slm_100refund__026"].desc)
  + guide(`🎁 증정품 회수 O`))}
   ${secTitle("4","기타 유형",null,"secExc")}
   <div class="grp-h">⚠️ 전액 환불 불가 안내</div>
   <div class="grid2">${col("blue","a. 여러 주문번호로 각각 구매",
-subcard("전액 환불 불가 안내","100프로_다건개별주문",
-`고객님의 경우, 하나의 주문에서 여러 제품을 구매하신 세트 구성 형태가 아닌 개별 주문건으로 확인되고 있습니다.
-
-<100% 환불 이벤트>는 공지사항에 안내된 대로 회원당 1회만 신청 가능한 첫 구매 체험 서비스이기 때문에, 주문 1건에 한해서만 이벤트 신청이 가능한 점 양해 부탁드립니다.`,
-`동일 주문번호가 아닌 다른 주문번호로 여러 상품 각각 구매한 경우`)
+subcard(D_SLOOM["slm_100refund__027"].name, D_SLOOM["slm_100refund__027"].tag, D_SLOOM["slm_100refund__027"].body, D_SLOOM["slm_100refund__027"].desc)
 )}${col("pink","b. 동일 주문번호이나 세트구성 아님",
-subcard("전액 환불 불가 안내","100프로_개별선택주문",
-`고객님의 경우, 슬룸에서 제공하는 세트 구성 상품이 아닌 원하시는 제품을 개별로 선택해 구매하신 주문건으로 확인됩니다.
-
-<100% 환불 이벤트>는 공지사항에 안내된 대로, 상품명에 '세트(SET)'가 포함된 세트 구성만 '구성이 다른 세트 상품'에 해당되는 점 양해 부탁드립니다.`,
-`동일 주문번호이나 제품 각각 선택한 경우`)
+subcard(D_SLOOM["slm_100refund__028"].name, D_SLOOM["slm_100refund__028"].tag, D_SLOOM["slm_100refund__028"].body, D_SLOOM["slm_100refund__028"].desc)
 )}</div>
   ${secTitle("💳","[공통] 환불 안내","모든 구성 공통","secCommon")}
-  ${macro("회수지 확인","공통_반품_회수지확인",
-`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
-`채널톡 정상 flow 인입 시 회수지 정보가 사전 저장되어 생략 · 물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 수동 등록 필요 시 주소 동일/변경에 따라 접수`)}
+  ${macro(D_SLOOM["slm_100refund__029"].name, D_SLOOM["slm_100refund__029"].tag, D_SLOOM["slm_100refund__029"].body, D_SLOOM["slm_100refund__029"].desc)}
   <div class="grid2">
 ${col("blue","환불 안내 (카드 · 삼성페이 · 네이버페이)",
-subcard("환불 절차 안내","검수환불안내_카드_클레임X",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.`)
+subcard(D_SLOOM["slm_100refund__030"].name, D_SLOOM["slm_100refund__030"].tag, D_SLOOM["slm_100refund__030"].body, D_SLOOM["slm_100refund__030"].desc)
 )}
 ${col("blue","환불 안내 (계좌 · 무통장/가상계좌)",
-subcard("계좌 정보 요청","공통_환불예정_계좌요청",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-다만, (결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>`) + subcard("▶ 계좌 정보 확인","검수환불안내_계좌등록",
-`소중한 정보 확인 감사합니다.
-해당 계좌로 환불 계좌 등록이 완료되었습니다.
-
-💸 <b>입금 안내</b>
-실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
-
-※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
+subcard(D_SLOOM["slm_100refund__031"].name, D_SLOOM["slm_100refund__031"].tag, D_SLOOM["slm_100refund__031"].body, D_SLOOM["slm_100refund__031"].desc) + subcard(D_SLOOM["slm_100refund__032"].name, D_SLOOM["slm_100refund__032"].tag, D_SLOOM["slm_100refund__032"].body, D_SLOOM["slm_100refund__032"].desc)
 )}
 </div>
   ${guide(`※ '네이버페이-구매확정' 건은 아임웹에서 반품 접수로 변경 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 내역과 관리자메모 확인 후 처리
@@ -381,98 +169,29 @@ const REF_AS = `
 💡 고객이 변경된 기간별 정책에 대해 이의나 불만을 제기하는 경우 무상 AS·유상 AS의 관련 템플릿을 참고하여 응대</div>
   <div class="h1lvl" id="step1"><span class="num">2</span>불량 유형 확인</div>
   <div class="quote-box"><b>💡 AS·불량은 사과·양해 멘트 선행 필수</b>. 고객 상황에 맞는 공감 멘트 추가하여 케어 진행</div>
-  <div class="grid2">${subcard(`i. 사과·양해 멘트`,"불량AS_사과양해",`제품 사용 후 만족스러운 경험을 드리지 못해 대단히 죄송합니다. 🥲`)}${subcard(`ii. 불량 증상 확인`,"불량AS_상세증상_확인",`고객님, 번거로우시겠지만
-불량으로 의심되는 증상에 대해 조금 더 자세히 말씀해주실 수 있을까요?
-
-말씀해주신 내용을 기반으로 정확한 안내 도와드리겠습니다. 🙏🏻`,`CX매니저 연결 전, 취합된 정보나 증빙 자료만으로 증상 확인이 불가할 경우 사용`)}</div>
+  <div class="grid2">${subcard(D_SLOOM["slm_as__001"].name, D_SLOOM["slm_as__001"].tag, D_SLOOM["slm_as__001"].body, D_SLOOM["slm_as__001"].desc)}${subcard(D_SLOOM["slm_as__002"].name, D_SLOOM["slm_as__002"].tag, D_SLOOM["slm_as__002"].body, D_SLOOM["slm_as__002"].desc)}</div>
   ${guide(`👉🏻 증상에 해당하는 유형으로 이어서 상담 진행 (표 참고)`)}
   <div class="h2lvl">💡 사용법 안내 필요 여부에 따른 유형 구분</div>
   <div class="lvl2-body"><table class="astbl"><thead><tr><th>사용법 안내 여부</th><th>증상</th></tr></thead><tbody><tr><td>A. 사용법 안내 필요</td><td><a class="jump-link" href="#t1" onclick="return jumpTo('t1')">1. 충전/전원</a><br><a class="jump-link" href="#t2" onclick="return jumpTo('t2')">2. 작동 관련 증상</a> (증빙 자료로 판단 가능한 유형 전체)<br><a class="jump-link" href="#t3" onclick="return jumpTo('t3')">3. 소음·온열·EMS 강도</a></td></tr><tr><td>B. 사용법 안내 불필요</td><td><a class="jump-link" href="#t5" onclick="return jumpTo('t5')">4. 구성품 누락</a><br><a class="jump-link" href="#t6" onclick="return jumpTo('t6')">5. 이염/오염/초도파손/스크래치</a></td></tr></tbody></table></div>
   <div class="h2lvl as-sub" id="groupA">A. 사용법 안내 필요</div>
-  <div class="lvl2-body"><div class="quote-box" style="display:flex;gap:18px;align-items:flex-start;"><div style="flex:1;"><b>📌 해당 증상 CS건은 사용법 오인으로 인한 불량 문의가 많으므로 제품별 유의사항 또는 사용법 안내가 선행되어야 함</b>\n⚠️ 단, <span style="color:#1B3A68">ALF·워크플로우에서 관련 안내가 완료된 경우에는아래 제품별 유의사항 중복 안내를 생략</span>하고, Flow 및 고객 증빙을 확인하여 미확인 사항만 추가 확인 \n ※ 5V2A 정격전압 확인은 필수입니다.</div><div style="flex:1;padding-left:18px;border-left:1px dashed var(--trust-blue);"><b>제품별 유의사항은 <a href="https://docs.google.com/spreadsheets/d/1OwcLG2XuwPUHt7grmSIjpWsZqU8MAhWPrcp-RVykLMI/edit?gid=613121707#gid=613121707" target="_blank">[슬룸] 제품별 사용법&amp;유의사항 템플릿</a> 시트 또는 채널톡 매크로 이용</b></div></div><div class="grid2">${macro(``,"불량AS_올바른사용법안내",`고객님, 문의주신 (제품명)의 올바른 사용법 먼저 안내드립니다.
-
-사용법과 다르게 사용하실 경우 정상 작동이 어려울 수 있어, 안내드린 방식대로 사용해 보셨는지 확인 부탁드립니다. 🙏🏻`)}${macro(``,"불량AS_사용법후재확인",`혹시 사용법대로 진행하셨음에도 문제가 지속되었을까요?`,`👉🏻 올바른 사용법 안내 후 바로 송출`)}</div>${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함)\n✔️ 사용법대로 사용했으나 불량 증상 지속 의사 표현 시\n → <a class="jump-link" href="#t1" onclick="return jumpTo('t1')">1. 충전/전원</a> · <a class="jump-link" href="#t2" onclick="return jumpTo('t2')">2. 작동 관련 증상</a> · <a class="jump-link" href="#t3" onclick="return jumpTo('t3')">3. 소음·온열·EMS 강도</a> 중 알맞은 유형으로 이동하여 안내 진행`)}<div class="typ" id="t1"><span class="tnum">1</span>충전/전원</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 유의사항</b>\n① 슬룸 전자제품은 유선 / 무선 제품으로 구분되며, 이에 따라 필수 안내 및 체크 포인트가 상이.\n② 정격전압 미사용으로 인한 고객 과실 불량이나 오인 VOC가 많은 편으로 정격전압 사용 여부는 필수 확인 필요</div><table class="astbl"><thead><tr><th>구분</th><th>제품</th></tr></thead><tbody><tr><td>🟡 유선 제품</td><td>목베개프로, 목베개플러스, 허리베개프로, 멀티 릴렉스 체어</td></tr><tr><td>🔴 무선 제품<br>(5V 2A)</td><td>등·허리 : 허리편한케어V1·V2, 골반마사지기, 등허리 힐링케어 / 목·어깨 : 목마사지베개V2, 넥숄더 힐링케어V1·V2, 목편한케어 플라잉, 넥숄더프로, 목편한케어 / 발·종아리·손 : 발편한케어V1·V2, 종아리편한케어, 손편한케어</td></tr><tr><td>🔴 무선 제품<br>(5V 1A)</td><td>등·허리 : 복부순환마스터(허리편한케어마스터) / 눈 : 눈편한케어 / 카카오 단독 : 넥프레쉬, 물멍가습기 / 전신 : 바디풀고컷</td></tr></tbody></table><div class="h3lvl">① 유·무선 확인</div><div class="grp-h">🟡 유선 제품</div><div class="lvl3-body"><div class="grid2">${macro(`i. 유선 제품 안내`,"불량AS_유선_케이블연결",`고객님, 문의주신 (제품명)은 충전식이 아닌,
-전원이 연결된 상태로 사용하는 유선 케이블 제품입니다.
-
-해당 내용은 상세페이지에도 기재되어 있으며,
-제품 사용 시에는 케이블을 제거하지 마시고 연결된 상태로 사용 부탁드립니다. 🙏🏻`)}${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함) 
+  <div class="lvl2-body"><div class="quote-box" style="display:flex;gap:18px;align-items:flex-start;"><div style="flex:1;"><b>📌 해당 증상 CS건은 사용법 오인으로 인한 불량 문의가 많으므로 제품별 유의사항 또는 사용법 안내가 선행되어야 함</b>\n⚠️ 단, <span style="color:#1B3A68">ALF·워크플로우에서 관련 안내가 완료된 경우에는아래 제품별 유의사항 중복 안내를 생략</span>하고, Flow 및 고객 증빙을 확인하여 미확인 사항만 추가 확인 \n ※ 5V2A 정격전압 확인은 필수입니다.</div><div style="flex:1;padding-left:18px;border-left:1px dashed var(--trust-blue);"><b>제품별 유의사항은 <a href="https://docs.google.com/spreadsheets/d/1OwcLG2XuwPUHt7grmSIjpWsZqU8MAhWPrcp-RVykLMI/edit?gid=613121707#gid=613121707" target="_blank">[슬룸] 제품별 사용법&amp;유의사항 템플릿</a> 시트 또는 채널톡 매크로 이용</b></div></div><div class="grid2">${macro(D_SLOOM["slm_as__003"].name, D_SLOOM["slm_as__003"].tag, D_SLOOM["slm_as__003"].body, D_SLOOM["slm_as__003"].desc)}${macro(D_SLOOM["slm_as__004"].name, D_SLOOM["slm_as__004"].tag, D_SLOOM["slm_as__004"].body, D_SLOOM["slm_as__004"].desc)}</div>${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함)\n✔️ 사용법대로 사용했으나 불량 증상 지속 의사 표현 시\n → <a class="jump-link" href="#t1" onclick="return jumpTo('t1')">1. 충전/전원</a> · <a class="jump-link" href="#t2" onclick="return jumpTo('t2')">2. 작동 관련 증상</a> · <a class="jump-link" href="#t3" onclick="return jumpTo('t3')">3. 소음·온열·EMS 강도</a> 중 알맞은 유형으로 이동하여 안내 진행`)}<div class="typ" id="t1"><span class="tnum">1</span>충전/전원</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 유의사항</b>\n① 슬룸 전자제품은 유선 / 무선 제품으로 구분되며, 이에 따라 필수 안내 및 체크 포인트가 상이.\n② 정격전압 미사용으로 인한 고객 과실 불량이나 오인 VOC가 많은 편으로 정격전압 사용 여부는 필수 확인 필요</div><table class="astbl"><thead><tr><th>구분</th><th>제품</th></tr></thead><tbody><tr><td>🟡 유선 제품</td><td>목베개프로, 목베개플러스, 허리베개프로, 멀티 릴렉스 체어</td></tr><tr><td>🔴 무선 제품<br>(5V 2A)</td><td>등·허리 : 허리편한케어V1·V2, 골반마사지기, 등허리 힐링케어 / 목·어깨 : 목마사지베개V2, 넥숄더 힐링케어V1·V2, 목편한케어 플라잉, 넥숄더프로, 목편한케어 / 발·종아리·손 : 발편한케어V1·V2, 종아리편한케어, 손편한케어</td></tr><tr><td>🔴 무선 제품<br>(5V 1A)</td><td>등·허리 : 복부순환마스터(허리편한케어마스터) / 눈 : 눈편한케어 / 카카오 단독 : 넥프레쉬, 물멍가습기 / 전신 : 바디풀고컷</td></tr></tbody></table><div class="h3lvl">① 유·무선 확인</div><div class="grp-h">🟡 유선 제품</div><div class="lvl3-body"><div class="grid2">${macro(D_SLOOM["slm_as__005"].name, D_SLOOM["slm_as__005"].tag, D_SLOOM["slm_as__005"].body, D_SLOOM["slm_as__005"].desc)}${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함) 
 ✔️ 체결된 상태로 사용 주장 + 증빙(사진·영상) 미흡 시 <a class="jump-link" href="#evidCheck" onclick="return jumpTo('evidCheck')">② 증빙 확인 (사진/영상)</a> 단계로 이동`)}</div></div><div class="grp-h">🔴 무선 제품</div>
-  <div class="lvl3-body"><div class="grid2"><div class="flowgroup">${subcard(`i. 정격전압 사용 여부 확인_5V 2A`,"불량AS_정격전압_5V2A",`(제품명)은 정격 전압이 5V 2A인 제품으로, 고속 충전기 사용 시 기기가 고장 날 수 있습니다.
-
-동봉된 전용 케이블과 함께 5V 2A 어댑터 (슬룸 전용 어댑터 사용 가능) 또는 PC/노트북의 USB 포트를 이용해 충전해 주세요.
-
-또한 해당 제품은 무선 제품으로, 충전 중에는 작동되지 않습니다. 
-번거로우시겠지만, 위 안내 방식대로 충전 및 사용해주셨는지 확인 부탁드립니다. 🙂`)}${subcard(`👉🏻 전용케이블& 정격전압 어댑터 미사용으로 확인 시`,"불량AS_미사용_5V2A",`휴대폰 충전용 고속 충전기를 사용하실 경우, 기기 고장의 원인이 될 수 있습니다.
-
-번거로우시겠지만,
-동봉된 전용 케이블과 함께 5V 2A 어댑터 (슬룸 전용 어댑터 사용 가능) 또는 PC/노트북의 USB 포트를 이용해 충전해 주세요.`,`→ 안내 후 종결`)}</div><div class="flowgroup">${subcard(`ii. 정격전압 사용 여부 확인_5V 1A`,"불량AS_정격전압_5V1A",`(제품명)은 정격 전압이 5V 1A인 제품으로, 고속 충전기 사용 시 기기가 고장 날 수 있습니다.
-
-동봉된 전용 케이블과 함께 5V 1A 어댑터 또는 PC/노트북의 USB 포트를 이용해 충전해 주세요.
-
-또한 해당 제품은 무선 제품으로, 충전 중에는 작동되지 않습니다. 
-번거로우시겠지만, 위 안내 방식대로 충전 및 사용해주셨는지 확인 부탁드립니다. 🙂`)}${subcard(`👉🏻 전용케이블& 정격전압 어댑터 미사용으로 확인 시`,"불량AS_미사용_5V1A",`휴대폰 충전용 고속 충전기를 사용하실 경우, 기기 고장의 원인이 될 수 있습니다.
-
-번거로우시겠지만,
-동봉된 전용 케이블과 함께 5V 1A 어댑터 또는 PC/노트북의 USB 포트를 이용해 충전해 주세요.`,`→ 안내 후 종결`)}</div></div>${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함)\n✔️ 올바르게 사용 주장 + 증빙(사진·영상) 미흡 시 <a class="jump-link" href="#evidCheck" onclick="return jumpTo('evidCheck')">② 증빙 확인 (사진/영상)</a> 단계로 이동\n✔️ 올바르게 사용 주장 + 증빙(사진·영상) 확인 완료 시 <a class="jump-link" href="#step2" onclick="return jumpTo('step2')">3. AS 접수</a> 로 이동`)}</div>
-  <div class="h3lvl" id="evidCheck">② 증빙 확인 (사진/영상)</div><div class="lvl3-body">${caution(`⚠️  단, 추가 증빙 자료 요청은 고객이 선첨부한 자료(사진/영상)가 미흡할 경우에만  진행`)}<div class="grid2">${subcard(`🔌 충전 불량`,"불량AS_사진영상_충전불량",` (ex. 충전이 안 돼요. 충전하는데 빨간불이 안들어와요 등)
-
-📷 고객님, 정확한 불량 증상 확인을 위해 
-번거로우시겠지만 <b>아래 4가지가 모두 확인되도록</b> 촬영 부탁드립니다.
-
-1️⃣ 충전 중인 제품 상태
-2️⃣ 충전기(어댑터) 정격전압의 5V 2A 표시
-3️⃣ 전용 케이블 연결 상태 (케이블선이 연결된 모습 포함)
-4️⃣ 충전 시 LED 표시등 작동 여부`)}${subcard(`🔌 무선 제품 – 완충 후 미작동`,"불량AS_사진영상_무선_미작동",`(ex. 충전 후 전원을 눌러도 작동이 안 돼요 등)
-
-📷 고객님, 정확한 불량 증상 확인을 위해 
-번거로우시겠지만 <b>아래 3가지가 모두 확인되도록</b> 촬영 부탁드립니다.
-
-1️⃣ 충전기(어댑터) 정격전압의 5V 2A 표시
-2️⃣ 충전 시 사용된 케이블 
-3️⃣ 케이블선 제거 후 제품 버튼을 눌러도 작동하지 않는 장면`)}</div><div class="grid2">${subcard(`🔌 유선 제품 – 미작동`,"불량AS_사진영상_유선_미작동",`(ex. 충전선 연결했는데도 작동이 안 돼요. 등)
-
-📷 고객님, 정확한 불량 증상 확인을 위해 
-번거로우시겠지만 <b>아래 3가지가 모두 확인되도록</b> 촬영 부탁드립니다.
-
-1️⃣ 충전기(어댑터) 정격전압의 5V 2A 표시
-2️⃣ 전용 케이블 연결 상태 (케이블선이 연결된 모습 포함)
-3️⃣ 케이블선 연결 상태에서 제품 버튼을 눌러도 작동하지 않는 장면`)}${subcard(`🔌 어댑터 정격전압 추가 확인 요청`,"불량AS_정격전압_추가확인_5V2A",`고객님, 첨부해주신 사진/영상은 확인되었습니다 🙂
-다만, 정격전압 확인이 어려워 어댑터의 5V 2A 표기가 보이도록 추가 촬영 부탁드립니다 🙏🏽
-
-※ 적정 정격전압이 아닌 충전기 사용 시 제품 작동 이상이나 고장의 원인이 될 수 있어 확인이 필요한 점 양해 부탁드립니다.
-※ 숫자와 표기가 선명하게 보이도록 가까이서 촬영 부탁드립니다.`)}</div>${guide(`<b>👉🏻 증빙(사진·영상) 확인 완료 시 <a class="jump-link" href="#step2" onclick="return jumpTo('step2')">3. AS 접수</a>로 이동</b>`)}</div></div><div class="typ" id="t2"><span class="tnum">2</span>작동 관련 증상</div><div class="lvl3-body">${caution(`⚠️ 제품별 작동 관련 증상은 상이 (마사지볼 작동 불량, 에어백 불량 등) 하며 충전/전원 불량이 아닌 사진/영상으로 확인 가능한 모든 작동 불량을 포함함.`)}${macro(`i. 사진/영상 확인`,"불량AS_사진영상_작동관련증상",`📷 고객님, 정확한 불량 증상 확인을 위해\n번거로우시겠지만 아래 2가지가 모두 확인되도록 촬영 부탁드립니다.\n\n1️⃣ 불량 증상이 나타나는 장면 (작동 시도 영상)\n2️⃣ 충전기(어댑터) 정격전압의 5V 2A 표시\n※ 정격전압이 아닌 충전기 사용 시 제품 오작동 및 고장의 원인이 될 수 있어 확인이 필요한 점 양해 부탁드립니다.`)}${guide(`<b>👉🏻 증빙(사진·영상) 확인 완료 시 <a class="jump-link" href="#step2" onclick="return jumpTo('step2')">3. AS 접수</a>로 이동</b>`)}</div><div class="typ" id="t3"><span class="tnum">3</span>소음·온열·EMS 강도</div><div class="lvl3-body">${caution(`🚨 사용자의 ‘체감 강도’ 관련 문의만 해당함\n→ 육안으로 확인이 어려운 유형으로, 사진/영상 요청은 진행하지 않음`)}<table style="border-collapse:collapse;width:100%;margin:6px 0 14px;font-size:13px"><thead><tr><th style="background:#9BBB59;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">👉 적용 예시</th><th style="background:#9BBB59;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">👉 미적용 예시 (작동 불량 등으로 진행)</th></tr></thead><tbody><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">소리가 너무 커요 / 너무 뜨거워요 / 전기가 느껴지지 않습니다 등</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">온도·강도 조절 버튼 불량 / EMS 단계 조절 기능 자체 불량 등</td></tr></tbody></table>${guide(`👉🏻 <a class="jump-link" href="#step2" onclick="return jumpTo('step2')">3. AS 접수</a>로 이동`)}</div></div>
+  <div class="lvl3-body"><div class="grid2"><div class="flowgroup">${subcard(D_SLOOM["slm_as__006"].name, D_SLOOM["slm_as__006"].tag, D_SLOOM["slm_as__006"].body, D_SLOOM["slm_as__006"].desc)}${subcard(D_SLOOM["slm_as__007"].name, D_SLOOM["slm_as__007"].tag, D_SLOOM["slm_as__007"].body, D_SLOOM["slm_as__007"].desc)}</div><div class="flowgroup">${subcard(D_SLOOM["slm_as__008"].name, D_SLOOM["slm_as__008"].tag, D_SLOOM["slm_as__008"].body, D_SLOOM["slm_as__008"].desc)}${subcard(D_SLOOM["slm_as__009"].name, D_SLOOM["slm_as__009"].tag, D_SLOOM["slm_as__009"].body, D_SLOOM["slm_as__009"].desc)}</div></div>${guide(`✔️ 고객 정상 사용 답변 시 상담 종료 유도 (무응답 종료 포함)\n✔️ 올바르게 사용 주장 + 증빙(사진·영상) 미흡 시 <a class="jump-link" href="#evidCheck" onclick="return jumpTo('evidCheck')">② 증빙 확인 (사진/영상)</a> 단계로 이동\n✔️ 올바르게 사용 주장 + 증빙(사진·영상) 확인 완료 시 <a class="jump-link" href="#step2" onclick="return jumpTo('step2')">3. AS 접수</a> 로 이동`)}</div>
+  <div class="h3lvl" id="evidCheck">② 증빙 확인 (사진/영상)</div><div class="lvl3-body">${caution(`⚠️  단, 추가 증빙 자료 요청은 고객이 선첨부한 자료(사진/영상)가 미흡할 경우에만  진행`)}<div class="grid2">${subcard(D_SLOOM["slm_as__010"].name, D_SLOOM["slm_as__010"].tag, D_SLOOM["slm_as__010"].body, D_SLOOM["slm_as__010"].desc)}${subcard(D_SLOOM["slm_as__011"].name, D_SLOOM["slm_as__011"].tag, D_SLOOM["slm_as__011"].body, D_SLOOM["slm_as__011"].desc)}</div><div class="grid2">${subcard(D_SLOOM["slm_as__012"].name, D_SLOOM["slm_as__012"].tag, D_SLOOM["slm_as__012"].body, D_SLOOM["slm_as__012"].desc)}${subcard(D_SLOOM["slm_as__013"].name, D_SLOOM["slm_as__013"].tag, D_SLOOM["slm_as__013"].body, D_SLOOM["slm_as__013"].desc)}</div>${guide(`<b>👉🏻 증빙(사진·영상) 확인 완료 시 <a class="jump-link" href="#step2" onclick="return jumpTo('step2')">3. AS 접수</a>로 이동</b>`)}</div></div><div class="typ" id="t2"><span class="tnum">2</span>작동 관련 증상</div><div class="lvl3-body">${caution(`⚠️ 제품별 작동 관련 증상은 상이 (마사지볼 작동 불량, 에어백 불량 등) 하며 충전/전원 불량이 아닌 사진/영상으로 확인 가능한 모든 작동 불량을 포함함.`)}${macro(D_SLOOM["slm_as__014"].name, D_SLOOM["slm_as__014"].tag, D_SLOOM["slm_as__014"].body, D_SLOOM["slm_as__014"].desc)}${guide(`<b>👉🏻 증빙(사진·영상) 확인 완료 시 <a class="jump-link" href="#step2" onclick="return jumpTo('step2')">3. AS 접수</a>로 이동</b>`)}</div><div class="typ" id="t3"><span class="tnum">3</span>소음·온열·EMS 강도</div><div class="lvl3-body">${caution(`🚨 사용자의 ‘체감 강도’ 관련 문의만 해당함\n→ 육안으로 확인이 어려운 유형으로, 사진/영상 요청은 진행하지 않음`)}<table style="border-collapse:collapse;width:100%;margin:6px 0 14px;font-size:13px"><thead><tr><th style="background:#9BBB59;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">👉 적용 예시</th><th style="background:#9BBB59;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">👉 미적용 예시 (작동 불량 등으로 진행)</th></tr></thead><tbody><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">소리가 너무 커요 / 너무 뜨거워요 / 전기가 느껴지지 않습니다 등</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">온도·강도 조절 버튼 불량 / EMS 단계 조절 기능 자체 불량 등</td></tr></tbody></table>${guide(`👉🏻 <a class="jump-link" href="#step2" onclick="return jumpTo('step2')">3. AS 접수</a>로 이동`)}</div></div>
   <div class="h2lvl as-sub" id="groupB">B. 사용법 안내 불필요</div>
-  <div class="lvl2-body"><div class="typ" id="t5"><span class="tnum">4</span>구성품 누락</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</b></div><div class="grp-h">① 배송 완료일자 확인</div><div class="grid2">${macro(`i. 수령일로부터 영업일 7일 이내 · 사진 전송 요청`,"구성품_사진영상",`고객님, 번거로우시겠지만 수령하신 제품의 구성품 전체가 확인되도록 사진을 보내주시면 \n빠르게 확인 후 안내드리겠습니다. 🙏🏻`)}${macro(`ii. 수령일로부터 영업일 7일 경과 · 처리 불가 안내`,"구성품_7일경과_불가",`구성품 누락의 경우, 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.\n고객님 주문 건의 경우 접수 가능 기간이 경과되어 처리가 어려운 점 양해 부탁드립니다. 🥲`)}</div>${guide(`▶ 고객 강하게 미수긍 시 예외 처리 진행`)}${macro(`예외 처리 안내 & 사진 전송 요청`,"구성품_7일경과_예외",`고객님, 앞서 안내드린 것처럼 구성품 누락의 경우, 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.\n다만, 불편하셨던 상황 충분히 이해되어 이번 건은 예외적으로 도와드리겠습니다.\n\n번거로우시겠지만, 수령하신 제품의 구성품 전체가 확인되도록 사진 전송 부탁드립니다.\n확인 후 안내드리겠습니다. 🙏🏻`)}<div class="grp-h">2️⃣ 별도 재출고 안내</div>${macro(`i. 별도 재출고 안내`,"구성품_재출고안내",`확인 감사합니다.\n이용에 불편을 드려 정말 죄송합니다.\n누락된 (구성품명)은 재출고로 진행해 드리겠습니다.`)}${macro(`회수지 확인 필요 시`,"공통_교환_회수지확인",`🙋‍♀️ 마지막으로, 제품 회수와 배송은 기존 주소지로 접수해 드리면 될까요?`,`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}${macro(`iii. 출고 시일 소요 안내`,"구성품_재출고시일",`확인 감사합니다.\n\n🚚 재출고 일정 안내드리겠습니다.\n\n· 출고 : 영업일 2일 이내\n· 배송 : 접수일로부터 영업일 5~6일 소요\n· 택배사 : CJ대한통운\n\n※ 구성품만 별도 출고되는 경우에는 다소 시간이 소요될 수 있는 점 양해 부탁드립니다.`,`▶ 상담 종료 후 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">수기출고 통합 시트</a> - 자사 제품 신청 탭\n\n⚠️ 본품 전체 출고일 경우, ※문구 삭제 필요`)}<div class="grp-h">🔔 [예외케이스] 구성품 누락으로 전체 반품 희망</div><div class="quote-box"><b>상품 개봉 여부와 무관하게 제품 회수 및 전액 환불 처리로 진행</b></div>${macro(`i. 포장 및 회수 안내`,"구성품_포장회수_증정품X",`<b>전액 환불 접수 도와드리겠습니다.</b>\n\n\n<b>📦 <b>제품 포장 안내</b></b>\n■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}\n※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.\n\n✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.\n\n\n<b>🚚 <b>회수 안내</b></b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡 택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.` + caution(`🎁 증정품 회수 O`))}<div class="grp-h">② 결제수단별 환불 안내</div><div class="grid2">${col("blue","◆ 카드결제",subcard(`i. 카드결제 취소`,"검수환불안내_카드_클레임O",`환불은 아래 절차를 거쳐 진행되며,\n영업일 기준 약 6~8일 정도 소요됩니다.\n\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n\n결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는\n반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.\n\n이용에 불편을 드려 다시 한 번 죄송합니다.`))}${col("pink","◆ 계좌 환불",`<div class="stack">`+subcard(`i. 계좌 환불 (무통장·가상계좌)`,"검수환불안내_계좌확인_클레임O",`환불은 아래 절차를 거쳐 진행되며,\n영업일 기준 약 6~8일 정도 소요됩니다.\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n\n다만, (결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해주신 점 확인되어,\n환불을 위해 아래 계좌 정보 전달 부탁드립니다.\n\n🏦 은행 / 계좌번호 / 예금주\n\n이용에 불편을 드려 다시 한 번 죄송합니다.`)+subcard(`ii. 이후 계좌 정보 확인`,"검수환불안내_계좌등록",`소중한 정보 확인 감사합니다.\n해당 계좌로 환불 계좌 등록이 완료되었습니다.\n\n<b>💸 입금 안내</b>\n실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정\n\n※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)+`</div>`)}</div></div><div class="typ" id="t6"><span class="tnum">5</span>이염/오염/초도파손</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</b></div><div class="grp-h">① 배송 완료일자 확인</div><div class="grid2">${macro(`i. 수령일로부터 영업일 7일 이내 · 사진 전송 요청`,"이염_사진영상",`고객님, 번거로우시겠지만 수령하신 제품의 (이염·오염·파손) 상태가 확인되도록 사진을 보내주시면 빠르게 확인 후 안내드리겠습니다. 🙏🏻`)}${macro(`ii. 수령일로부터 영업일 7일 경과 · 처리 불가 안내`,"이염_7일경과_불가",`제품 (이염·오염·파손)의 경우, 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.\n고객님 주문 건의 경우 접수 가능 기간이 경과되어 처리가 어려운 점 양해 부탁드립니다. 🥲`)}</div>${guide(`▶ 고객 강하게 미수긍 시 예외 처리 진행`)}${macro(`예외 처리 안내 & 사진 전송 요청`,"이염_7일경과_예외",`고객님, 앞서 안내드린 것처럼 제품 (이염·오염·파손)의 경우, 제품 수령 후 영업일 기준 7일 이내에 문의 주셔야 처리가 가능합니다.\n다만, 불편하셨던 상황 충분히 이해되어 이번 건은 예외적으로 도와드리겠습니다.\n\n번거로우시겠지만, 수령하신 제품의 이염·오염 상태가 확인되도록 사진 전송 부탁드립니다.\n확인 후 안내드리겠습니다. 🙏🏻`)}<div class="grp-h">② 고객 요청 처리 방안 확인</div>${macro(`고객 요청 처리 방안 확인`,"불량AS_처리방안확인",`불편을 드려 죄송합니다. 🥲\n새 제품으로 교환 또는 반품 중 원하시는 방식으로 도움드리고 있습니다.\n어느 쪽으로 진행해 드릴까요?`)}${guide(`⚠️ 상품수령일로부터 7일 이내 이염/오염/초도파손은 고객이 원하는 처리 방안(교환 또는 반품) 확인 후 진행 (단, 기간별 정책에 따라만 진행 가능)\n👉🏻 교환 요청 시 <a class="jump-link" href="#freeBranch" onclick="return jumpTo('freeBranch')">🔷 무상 교환 안내</a> 로 이동\n👉🏻 반품 요청 시 <a class="jump-link" href="#freePack" onclick="return jumpTo('freePack')">🔷 무상 반품 안내</a> 로 이동`)}</div></div>
+  <div class="lvl2-body"><div class="typ" id="t5"><span class="tnum">4</span>구성품 누락</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</b></div><div class="grp-h">① 배송 완료일자 확인</div><div class="grid2">${macro(D_SLOOM["slm_as__015"].name, D_SLOOM["slm_as__015"].tag, D_SLOOM["slm_as__015"].body, D_SLOOM["slm_as__015"].desc)}${macro(D_SLOOM["slm_as__016"].name, D_SLOOM["slm_as__016"].tag, D_SLOOM["slm_as__016"].body, D_SLOOM["slm_as__016"].desc)}</div>${guide(`▶ 고객 강하게 미수긍 시 예외 처리 진행`)}${macro(D_SLOOM["slm_as__017"].name, D_SLOOM["slm_as__017"].tag, D_SLOOM["slm_as__017"].body, D_SLOOM["slm_as__017"].desc)}<div class="grp-h">2️⃣ 별도 재출고 안내</div>${macro(D_SLOOM["slm_as__018"].name, D_SLOOM["slm_as__018"].tag, D_SLOOM["slm_as__018"].body, D_SLOOM["slm_as__018"].desc)}${macro(D_SLOOM["slm_as__019"].name, D_SLOOM["slm_as__019"].tag, D_SLOOM["slm_as__019"].body, D_SLOOM["slm_as__019"].desc)}${macro(D_SLOOM["slm_as__020"].name, D_SLOOM["slm_as__020"].tag, D_SLOOM["slm_as__020"].body, D_SLOOM["slm_as__020"].desc)}<div class="grp-h">🔔 [예외케이스] 구성품 누락으로 전체 반품 희망</div><div class="quote-box"><b>상품 개봉 여부와 무관하게 제품 회수 및 전액 환불 처리로 진행</b></div>${macro(D_SLOOM["slm_as__021"].name, D_SLOOM["slm_as__021"].tag, D_SLOOM["slm_as__021"].body, D_SLOOM["slm_as__021"].desc)}<div class="grp-h">② 결제수단별 환불 안내</div><div class="grid2">${col("blue","◆ 카드결제",subcard(D_SLOOM["slm_as__022"].name, D_SLOOM["slm_as__022"].tag, D_SLOOM["slm_as__022"].body, D_SLOOM["slm_as__022"].desc))}${col("pink","◆ 계좌 환불",`<div class="stack">`+subcard(D_SLOOM["slm_as__023"].name, D_SLOOM["slm_as__023"].tag, D_SLOOM["slm_as__023"].body, D_SLOOM["slm_as__023"].desc)+subcard(D_SLOOM["slm_as__024"].name, D_SLOOM["slm_as__024"].tag, D_SLOOM["slm_as__024"].body, D_SLOOM["slm_as__024"].desc)+`</div>`)}</div></div><div class="typ" id="t6"><span class="tnum">5</span>이염/오염/초도파손</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</b></div><div class="grp-h">① 배송 완료일자 확인</div><div class="grid2">${macro(D_SLOOM["slm_as__025"].name, D_SLOOM["slm_as__025"].tag, D_SLOOM["slm_as__025"].body, D_SLOOM["slm_as__025"].desc)}${macro(D_SLOOM["slm_as__026"].name, D_SLOOM["slm_as__026"].tag, D_SLOOM["slm_as__026"].body, D_SLOOM["slm_as__026"].desc)}</div>${guide(`▶ 고객 강하게 미수긍 시 예외 처리 진행`)}${macro(D_SLOOM["slm_as__027"].name, D_SLOOM["slm_as__027"].tag, D_SLOOM["slm_as__027"].body, D_SLOOM["slm_as__027"].desc)}<div class="grp-h">② 고객 요청 처리 방안 확인</div>${macro(D_SLOOM["slm_as__028"].name, D_SLOOM["slm_as__028"].tag, D_SLOOM["slm_as__028"].body, D_SLOOM["slm_as__028"].desc)}${guide(`⚠️ 상품수령일로부터 7일 이내 이염/오염/초도파손은 고객이 원하는 처리 방안(교환 또는 반품) 확인 후 진행 (단, 기간별 정책에 따라만 진행 가능)\n👉🏻 교환 요청 시 <a class="jump-link" href="#freeBranch" onclick="return jumpTo('freeBranch')">🔷 무상 교환 안내</a> 로 이동\n👉🏻 반품 요청 시 <a class="jump-link" href="#freePack" onclick="return jumpTo('freePack')">🔷 무상 반품 안내</a> 로 이동`)}</div></div>
   <div class="h2lvl" id="t4">🔁 재불량 (교환품 동일 증상)</div>
-  <div class="lvl2-body">${caution(`👉 [예시] 2026.01.01 허리편한케어 V1 충전 불량으로 무상 교환 진행 → 2026.03.02 교환 제품에서 동일 증상(충전 불량)으로 재문의`)}<div class="grp-h">💡 공통 안내</div>${macro(`i. 사과·양해 멘트`,"재불량_사과양해",`교환 받으신 제품에서도 동일한 증상이 발생하여 많이 당황스러우셨을 것 같습니다.\n다시 한 번 불편을 드리게 된 점 진심으로 사과드립니다. 🥲`)}<div class="grp-h">① 무상 교환 후 동일 증상 재인입</div><div class="quote-box"><b>1. 충전/전원 불량, 2. 작동 관련 증상(증빙 자료로 판단 가능한 유형 전체)만 아래와 같이 진행</b></div><table class="astbl"><thead><tr><th>재인입</th><th>고객 반품 희망</th><th>고객 교환 희망</th></tr></thead><tbody><tr><td>1차 재인입</td><td>각 불량 유형 기본 flow 대로 진행</td><td>각 불량 유형 기본 flow 대로 진행</td></tr><tr><td>2차 재인입</td><td>회수 후 검수 결과에 따라 처리</td><td>① 정격전압 확인 ㅡ 어댑터 사진 필수<br>② 사진 확인 후 기존 flow 대로 진행</td></tr><tr><td>3차 재인입~</td><td>회수 후 검수 결과에 따라 처리</td><td>회수 후 검수 결과에 따라 처리</td></tr></tbody></table><div class="grp-h">② 유상 교환 후 동일 증상 재인입</div><div class="quote-box"><b>1차 유상 교환 접수 시점 기준으로 <span style="color:#E03131">① 2개월 이내 + ② 동일 증상을 충족할 경우에만</span> → 무상 교환 (고객이 원할 경우 수령일로부터 3개월 이내 무상 반품) 처리 가능</b></div><table class="astbl"><thead><tr><th>구분</th><th>예시</th></tr></thead><tbody><tr><td>무상 반품 or 무상 교환<br>가능 ⭕</td><td>① 허리편한케어 V1 전원 불량 증상으로 유상 교환<br>→ 2개월 이내 동일 증상으로 문의</td></tr><tr><td>무상 반품 or 무상 교환<br>불가능 ❌</td><td>① 허리편한케어 V1 전원 불량 증상으로 유상 교환<br>→ 2개월 이내 버튼 불량으로 문의<br><br>② 허리편한케어 V1 전원 불량 증상으로 유상 교환<br>→ 2개월 이후 동일 증상으로 문의</td></tr></tbody></table><div class="grp-h">✔️ 고객이 무상 서비스 요청할 경우 ㅡ 무상 서비스 가능 여부 확인</div><div class="grid2">${macro(`i. 무상 서비스 가능 (2개월 이내 · 동일 증상)`,"유상재불량_2개월이내_가능",`유상 교환 이후에는 동일 증상 발생 시 2개월 이내에 한하여 무상 서비스가 지원되고 있습니다.\n\n고객님의 경우 이전 증상과 동일한 증상으로 확인되며,\n접수 시점 또한 2개월 이내로 확인되어 무상 서비스로 진행 도와드릴 예정입니다.\n\n동일 증상으로 다시 불편을 드리게 되어 다시 한 번 죄송합니다. 🥲\n\n반품 또는 새 제품 교환 중 어떤 방향으로 진행 원하실까요?`)}<div class="stack">${macro(`ii. 무상 서비스 불가능 (2개월 경과)`,"유상재불량_2개월경과_불가",`유상 교환 이후에는 동일 증상 발생 시 2개월 이내에 한하여 무상 서비스가 지원되고 있습니다.\n\n고객님의 경우 해당 기간이 경과된 상태로,\n최초 제품 수령일 기준 품질보증 정책이 적용되어 이전과 동일하게 유상 서비스 대상으로 확인됩니다.\n\n도움드리지 못해 죄송하며,\n이전과 동일하게 유상 서비스로 진행 가능한 점 양해 부탁드립니다. 🙏🏻`)}${macro(`iii. 무상 서비스 불가능 (2개월 이내 · 다른 증상)`,"유상재불량_2개월이내_불가",`유상 교환 이후에는 동일 증상 발생 시 2개월 이내에 한하여 무상 서비스가 지원되고 있습니다.\n\n고객님의 경우 접수 기간은 충족되었으나,\n현재 증상이 기존과 동일 증상으로 확인되지 않아 정책상 무상 서비스 적용이 어려운 점 안내드립니다.\n\n도움드리지 못해 죄송하며,\n이전과 동일하게 유상 서비스로 진행 가능한 점 양해 부탁드립니다. 🙏🏻`)}</div></div></div>
+  <div class="lvl2-body">${caution(`👉 [예시] 2026.01.01 허리편한케어 V1 충전 불량으로 무상 교환 진행 → 2026.03.02 교환 제품에서 동일 증상(충전 불량)으로 재문의`)}<div class="grp-h">💡 공통 안내</div>${macro(D_SLOOM["slm_as__029"].name, D_SLOOM["slm_as__029"].tag, D_SLOOM["slm_as__029"].body, D_SLOOM["slm_as__029"].desc)}<div class="grp-h">① 무상 교환 후 동일 증상 재인입</div><div class="quote-box"><b>1. 충전/전원 불량, 2. 작동 관련 증상(증빙 자료로 판단 가능한 유형 전체)만 아래와 같이 진행</b></div><table class="astbl"><thead><tr><th>재인입</th><th>고객 반품 희망</th><th>고객 교환 희망</th></tr></thead><tbody><tr><td>1차 재인입</td><td>각 불량 유형 기본 flow 대로 진행</td><td>각 불량 유형 기본 flow 대로 진행</td></tr><tr><td>2차 재인입</td><td>회수 후 검수 결과에 따라 처리</td><td>① 정격전압 확인 ㅡ 어댑터 사진 필수<br>② 사진 확인 후 기존 flow 대로 진행</td></tr><tr><td>3차 재인입~</td><td>회수 후 검수 결과에 따라 처리</td><td>회수 후 검수 결과에 따라 처리</td></tr></tbody></table><div class="grp-h">② 유상 교환 후 동일 증상 재인입</div><div class="quote-box"><b>1차 유상 교환 접수 시점 기준으로 <span style="color:#E03131">① 2개월 이내 + ② 동일 증상을 충족할 경우에만</span> → 무상 교환 (고객이 원할 경우 수령일로부터 3개월 이내 무상 반품) 처리 가능</b></div><table class="astbl"><thead><tr><th>구분</th><th>예시</th></tr></thead><tbody><tr><td>무상 반품 or 무상 교환<br>가능 ⭕</td><td>① 허리편한케어 V1 전원 불량 증상으로 유상 교환<br>→ 2개월 이내 동일 증상으로 문의</td></tr><tr><td>무상 반품 or 무상 교환<br>불가능 ❌</td><td>① 허리편한케어 V1 전원 불량 증상으로 유상 교환<br>→ 2개월 이내 버튼 불량으로 문의<br><br>② 허리편한케어 V1 전원 불량 증상으로 유상 교환<br>→ 2개월 이후 동일 증상으로 문의</td></tr></tbody></table><div class="grp-h">✔️ 고객이 무상 서비스 요청할 경우 ㅡ 무상 서비스 가능 여부 확인</div><div class="grid2">${macro(D_SLOOM["slm_as__030"].name, D_SLOOM["slm_as__030"].tag, D_SLOOM["slm_as__030"].body, D_SLOOM["slm_as__030"].desc)}<div class="stack">${macro(D_SLOOM["slm_as__031"].name, D_SLOOM["slm_as__031"].tag, D_SLOOM["slm_as__031"].body, D_SLOOM["slm_as__031"].desc)}${macro(D_SLOOM["slm_as__032"].name, D_SLOOM["slm_as__032"].tag, D_SLOOM["slm_as__032"].body, D_SLOOM["slm_as__032"].desc)}</div></div></div>
   <div class="h1lvl" id="step2"><span class="num">3</span>AS 접수</div>
   <div class="h2lvl as-major" id="freeFlow">🛠️ 무상 AS</div><div class="lvl2-body"><div class="h3lvl" id="freeBranch">🔷 무상 교환 안내</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 상품 수령일로부터 6개월 이내 제품 자체 고장은 원칙적으로 무상 교환으로 안내</b>
 
 ✔️ 만약 고객이 반품을 요청할 경우, 아래 기간에 따라 응대
 · 상품 수령일 3개월 이내 → ② 무상 반품 접수
-· 상품 수령일 3개월 경과 → ⚠️ [예외] 3개월 경과 건이나 무상 반품 요청 (아래 템플릿 안내)</div><table class="astbl"><thead><tr><th style="width:210px">구분</th><th>안내</th></tr></thead><tbody><tr><td>수령일로부터 3개월 경과건<br>👉🏻 무상 반품 요청할 경우</td><td class="cmp-ment"><span class="tag">#AS_3개월경과_반품요청</span><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 이용에 불편을 드려 죄송합니다. 🙏🏻\n확인 결과, 고객님의 제품은 수령일로부터 3개월이 경과한 것으로 확인되었습니다.\n\n슬룸은 공정거래위원회 소비자분쟁해결기준을 토대로, 품질보증기간 내 정상 사용 중 발생한 하자에 대해 기간별 AS 정책을 운영하고 있습니다.\n이에 따라 수령 후 3개월 이후에는 무상 반품이 아닌 무상 교환으로 진행되며, 고객님의 제품도 해당 기준에 따라 동일 제품으로 무상 교환을 도와드리는 점 양해 부탁드립니다.</div></td></tr><tr><td>수령일로부터 3개월 이내<br>👉🏻 무상 반품 요청할 경우</td><td><a class="jump-link" href="#freePack" onclick="return jumpTo('freePack')">🔷 무상 반품 안내</a> 로 이동하여 안내</td></tr></tbody></table>${macro(`💡 상황에 따라서 고객에게 처리방안(교환 or 반품) 선택지를 줘야 하는 경우 아래 템플릿 전송`,"불량AS_처리방안확인",`불편을 드려 죄송합니다. 🥲\n새 제품으로 교환 또는 반품 중 원하시는 방식으로 도움드리고 있습니다.\n어느 쪽으로 진행해 드릴까요?`)}<div class="grp-h">a. 포장 및 회수 안내</div>${col("gray",`🔹 전체·부분 동일`,subcard(`포장 · 회수 안내`,"불량AS_포장회수_교환",`불량 증상 확인되어 교환 접수 도와드리겠습니다.\n\n\n<b>📦 <b>제품 포장 안내</b></b>\n■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}\n※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.\n※ 사은품·증정품 및 그 외 구매한 부속품과 제품은 보내지 않으셔도 됩니다.\n\n✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.\n\n\n<b>🚚 <b>회수 안내</b></b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡 택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + caution(`🎁 증정품 회수 X`))}${macro(`회수지 확인 필요 시`,"공통_교환_회수지확인",`🙋‍♀️ 마지막으로, 제품 회수와 배송은 기존 주소지로 접수해 드리면 될까요?`,`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}<div class="grp-h">b. 검수 및 재출고 안내</div><div class="grid2"><div class="quote-box"><b>⚠️ 유의사항</b>\n① 접수 시간 기준으로 안내 필요\n② 불량으로 인한 재출고는 회수 접수와 동시에 재출고 접수</div>${guide(`🔗 <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 리스트업 필수!\n👉🏻 회수·재출고 자동 등록`)}</div><div class="grid2">${subcard(`i. 월-금 오후 2시 이전 상담`,"불량AS_재출고_금일",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 오늘 출고 예정 \n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}${subcard(`ii. 월-목 오후 2시 이후 상담`,"불량AS_재출고_익일",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 오늘 출고 마감으로 내일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}</div>${macro(`iii. 금요일 오후 2시 이후 상담`,"불량AS_재출고_차주월요일",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 오늘 출고 마감으로 차주 월요일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운\n\n※ 주말/공휴일 출고 미진행`)}</div><div class="h3lvl" id="freePack">🔷 무상 반품 안내</div><div class="lvl3-body"><div class="grp-h">a. 포장 및 회수 안내</div><div class="grid2">${col("blue",`🔹 전체 반품`,subcard(`포장 · 회수 안내`,"불량AS_포장회수_전체반품",`<b>불량 증상 확인되어 전액 환불 접수 도와드리겠습니다.</b>\n\n\n<b>📦 <b>제품 포장 안내</b></b>\n■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}\n※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.\n\n✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.\n\n\n<b>🚚 <b>회수 안내</b></b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡 택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + caution(`🎁 증정품 회수 O`))}${col("pink",`🔹 부분 반품`,subcard(`포장 · 회수 안내`,"불량AS_포장회수_부분반품",`불량 증상 확인되어 부분 환불 접수 도와드리겠습니다.\n\n\n<b>📦 <b>제품 포장 안내</b></b>\n■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}\n※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.\n※ 사은품·증정품 및 그 외 구매한 부속품과 제품은 보내지 않으셔도 됩니다.\n\n✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.\n\n\n<b>🚚 <b>회수 안내</b></b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡 택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + caution(`🎁 증정품 회수 X`))}</div><div class="stack">${col("gray",`💡 복합 유형 (불량 반품 + 단순변심 반품)`,subcard(`포장 · 회수 안내`,"불량AS_포장회수_복합",`<b>전액 환불 접수 도와드리겠습니다.</b>\n\n<b>📦 <b>제품 포장 안내</b></b>\n■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}\n※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.\n\n✍🏽 불량 제품은 박스 윗면에만 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.\n\n<b>🚚 <b>회수 안내</b></b>\n· 택배사 : CJ대한통운\n· 영업일 기준 2~3일 내 방문\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.\n⚠️ 박스 포장이 아닐 경우 수거가 거부됩니다.`) + caution(`🎁 증정품 회수 O`))}</div><div class="grid2">${macro(`회수지 확인 필요 시`,"공통_반품_회수지확인",`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}${macro(`네이버 스마트스토어 직접 반품 신청 시`,"불량AS_네이버_자동수거",`네이버를 통해 반품 기사님을 신청해 주신 점 확인되었습니다. :)\n미개봉 제품은 전체 다시 택배 박스에 포장해 주시고, 기사님 방문 시 전달해 주시면 수거가 진행될 예정입니다.`)}</div><div class="grp-h">b. 결제수단별 환불 안내</div><div class="grid2">${col("blue","◆ 카드결제",subcard(`i. 카드결제 취소`,"검수환불안내_카드_클레임O",`환불은 아래 절차를 거쳐 진행되며,\n영업일 기준 약 6~8일 정도 소요됩니다.\n\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n\n결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는\n반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.\n\n이용에 불편을 드려 다시 한 번 죄송합니다.`))}${col("pink","◆ 계좌 환불",`<div class="stack">`+subcard(`i. 계좌 환불 (무통장·가상계좌)`,"검수환불안내_계좌확인_클레임O",`환불은 아래 절차를 거쳐 진행되며,\n영업일 기준 약 6~8일 정도 소요됩니다.\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n\n다만, (결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해주신 점 확인되어,\n환불을 위해 아래 계좌 정보 전달 부탁드립니다.\n\n🏦 은행 / 계좌번호 / 예금주\n\n이용에 불편을 드려 다시 한 번 죄송합니다.`)+subcard(`ii. 이후 계좌 정보 확인`,"검수환불안내_계좌등록",`소중한 정보 확인 감사합니다.\n해당 계좌로 환불 계좌 등록이 완료되었습니다.\n\n<b>💸 입금 안내</b>\n실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정\n\n※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)+`</div>`)}</div></div></div><div class="h2lvl as-major" id="paidFlow">🔧 유상 AS</div>
+· 상품 수령일 3개월 경과 → ⚠️ [예외] 3개월 경과 건이나 무상 반품 요청 (아래 템플릿 안내)</div><table class="astbl"><thead><tr><th style="width:210px">구분</th><th>안내</th></tr></thead><tbody><tr><td>수령일로부터 3개월 경과건<br>👉🏻 무상 반품 요청할 경우</td><td class="cmp-ment"><span class="tag">#AS_3개월경과_반품요청</span><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 이용에 불편을 드려 죄송합니다. 🙏🏻\n확인 결과, 고객님의 제품은 수령일로부터 3개월이 경과한 것으로 확인되었습니다.\n\n슬룸은 공정거래위원회 소비자분쟁해결기준을 토대로, 품질보증기간 내 정상 사용 중 발생한 하자에 대해 기간별 AS 정책을 운영하고 있습니다.\n이에 따라 수령 후 3개월 이후에는 무상 반품이 아닌 무상 교환으로 진행되며, 고객님의 제품도 해당 기준에 따라 동일 제품으로 무상 교환을 도와드리는 점 양해 부탁드립니다.</div></td></tr><tr><td>수령일로부터 3개월 이내<br>👉🏻 무상 반품 요청할 경우</td><td><a class="jump-link" href="#freePack" onclick="return jumpTo('freePack')">🔷 무상 반품 안내</a> 로 이동하여 안내</td></tr></tbody></table>${macro(D_SLOOM["slm_as__033"].name, D_SLOOM["slm_as__033"].tag, D_SLOOM["slm_as__033"].body, D_SLOOM["slm_as__033"].desc)}<div class="grp-h">a. 포장 및 회수 안내</div>${col("gray",`🔹 전체·부분 동일`,subcard(D_SLOOM["slm_as__034"].name, D_SLOOM["slm_as__034"].tag, D_SLOOM["slm_as__034"].body, D_SLOOM["slm_as__034"].desc) + caution(`🎁 증정품 회수 X`))}${macro(D_SLOOM["slm_as__035"].name, D_SLOOM["slm_as__035"].tag, D_SLOOM["slm_as__035"].body, D_SLOOM["slm_as__035"].desc)}<div class="grp-h">b. 검수 및 재출고 안내</div><div class="grid2"><div class="quote-box"><b>⚠️ 유의사항</b>\n① 접수 시간 기준으로 안내 필요\n② 불량으로 인한 재출고는 회수 접수와 동시에 재출고 접수</div>${guide(`🔗 <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 리스트업 필수!\n👉🏻 회수·재출고 자동 등록`)}</div><div class="grid2">${subcard(D_SLOOM["slm_as__036"].name, D_SLOOM["slm_as__036"].tag, D_SLOOM["slm_as__036"].body, D_SLOOM["slm_as__036"].desc)}${subcard(D_SLOOM["slm_as__037"].name, D_SLOOM["slm_as__037"].tag, D_SLOOM["slm_as__037"].body, D_SLOOM["slm_as__037"].desc)}</div>${macro(D_SLOOM["slm_as__038"].name, D_SLOOM["slm_as__038"].tag, D_SLOOM["slm_as__038"].body, D_SLOOM["slm_as__038"].desc)}</div><div class="h3lvl" id="freePack">🔷 무상 반품 안내</div><div class="lvl3-body"><div class="grp-h">a. 포장 및 회수 안내</div><div class="grid2">${col("blue",`🔹 전체 반품`,subcard(D_SLOOM["slm_as__039"].name, D_SLOOM["slm_as__039"].tag, D_SLOOM["slm_as__039"].body, D_SLOOM["slm_as__039"].desc) + caution(`🎁 증정품 회수 O`))}${col("pink",`🔹 부분 반품`,subcard(D_SLOOM["slm_as__040"].name, D_SLOOM["slm_as__040"].tag, D_SLOOM["slm_as__040"].body, D_SLOOM["slm_as__040"].desc) + caution(`🎁 증정품 회수 X`))}</div><div class="stack">${col("gray",`💡 복합 유형 (불량 반품 + 단순변심 반품)`,subcard(D_SLOOM["slm_as__041"].name, D_SLOOM["slm_as__041"].tag, D_SLOOM["slm_as__041"].body, D_SLOOM["slm_as__041"].desc) + caution(`🎁 증정품 회수 O`))}</div><div class="grid2">${macro(D_SLOOM["slm_as__042"].name, D_SLOOM["slm_as__042"].tag, D_SLOOM["slm_as__042"].body, D_SLOOM["slm_as__042"].desc)}${macro(D_SLOOM["slm_as__043"].name, D_SLOOM["slm_as__043"].tag, D_SLOOM["slm_as__043"].body, D_SLOOM["slm_as__043"].desc)}</div><div class="grp-h">b. 결제수단별 환불 안내</div><div class="grid2">${col("blue","◆ 카드결제",subcard(D_SLOOM["slm_as__044"].name, D_SLOOM["slm_as__044"].tag, D_SLOOM["slm_as__044"].body, D_SLOOM["slm_as__044"].desc))}${col("pink","◆ 계좌 환불",`<div class="stack">`+subcard(D_SLOOM["slm_as__045"].name, D_SLOOM["slm_as__045"].tag, D_SLOOM["slm_as__045"].body, D_SLOOM["slm_as__045"].desc)+subcard(D_SLOOM["slm_as__046"].name, D_SLOOM["slm_as__046"].tag, D_SLOOM["slm_as__046"].body, D_SLOOM["slm_as__046"].desc)+`</div>`)}</div></div></div><div class="h2lvl as-major" id="paidFlow">🔧 유상 AS</div>
   <div class="lvl2-body">
   <div class="h3lvl" id="paidCost">① 유상 비용 안내</div>
-  <div class="lvl3-body">${macro(`무상 보증기간 경과 · 유상 AS 안내`,"불량AS_6개월경과_유상AS안내",`슬룸 전자제품의 AS 품질 보증 기간은 상품 수령일 기준 1년이며, 이는 무상·유상 AS를 모두 포함한 전체 기간입니다.
-
-상세 AS 기준은 아래와 같습니다.
-
-<b>■ 상품 수령 후 6개월 이내</b>
- • 제품 자체 고장 → 무상 AS
- • 소비자 과실 → 유상 AS (유상 교환)
-
-<b>■ 상품 수령 후 6개월 ~ 1년 이내</b>
- • 원인 불문 → 유상 AS (유상 교환)
-
-슬룸의 유상 AS는 동일한 새 제품 교환으로 진행됩니다.
-
-✅ 기존 제품은 별도 회수 없이,
-고객님께서 자체 폐기해 주시면 감사하겠습니다.`,`정확한 금액은 아래 [제품별 유상교환 가격표] 참고 · 표에 없는 제품·최신 여부는 CX팀 확인 후 안내`)}
-  ${macro(`1년 경과 · 유상 AS 필요성 안내`,"불량AS_1년경과_유상AS안내",`제품을 수령하신 지 1년이 경과하여 공식 품질보증기간은 종료된 것으로 확인됩니다.
-
-다만 보증기간이 지나 제품에 대한 서비스를 받지 못하신 채 그대로 폐기하시거나, 새 제품을 다시 구매하시기에는 비용적으로 많이 부담스러우실 것 같습니다.
-
-이러한 고객님의 부담을 덜어드리고자, 보증기간이 경과한 제품이라도 유상 AS(유상 교환) 서비스를 통해 지속해서 제품을 사용하실 수 있도록 도와드리고자 합니다.`,`1년 경과 건 안내 시, 위 기본 매크로 다음으로 발송 — 비용 언급 전 공감/필요성 설명용`)}
+  <div class="lvl3-body">${macro(D_SLOOM["slm_as__047"].name, D_SLOOM["slm_as__047"].tag, D_SLOOM["slm_as__047"].body, D_SLOOM["slm_as__047"].desc)}
+  ${macro(D_SLOOM["slm_as__048"].name, D_SLOOM["slm_as__048"].tag, D_SLOOM["slm_as__048"].body, D_SLOOM["slm_as__048"].desc)}
   <div class="h3lvl">💰 제품별 유상교환 가격표 (내부 참고용)</div>
   ${caution(`⚠️ 2026.08.03 기준 가격표 · 가격 산정 : CX팀 · 배송비(자체폐기 3,000원 / 회수 6,000원)는 별도\n※ 판단 기준은 '단종여부'가 아닌 <b>교환재고 유무</b> — 단종확정이어도 재고가 남아있으면(*표시) 정상 유상교환 진행`)}
   <table class="astbl"><thead><tr><th>제품명</th><th>6개월~1년 이내</th><th>1년 경과</th></tr></thead><tbody>
@@ -502,82 +221,36 @@ const REF_AS = `
   <div class="h3lvl" id="paidDiscard">② 자체 폐기 수긍여부에 따른 안내</div>
   <div class="lvl3-body">
   <div class="h3lvl">⭕ 자체 폐기 안내 (수긍 시)</div>
-  <div class="grid2">${col("blue","6개월 경과 ~ 1년 이내",subcard(`자체 폐기 수긍 안내`,"유상AS_{제품명}_1년이내",`우선 {주문일시} 주문 건으로 무상 보증기간이 경과하여,
-제품 불량 확인 후 유상AS로만 접수 가능한 점 양해 부탁드립니다.
-
-결제는 무통장 입금으로만 가능하며,
-배송비 3,000원을 포함해 총 ({제품별 유상금액}+3000)원입니다.
-
-이 부분 진행 의사가 있다 하시면
-
-▶ 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-위 계좌로 송금해 주신 다음
-[입금자 성함, 수령인 성함, 주소, 핸드폰번호]를 답장으로 말씀 부탁드립니다.`,`{제품별 유상금액} = 위 가격표의 '6개월~1년 이내' 열 값`))}${col("pink","1년 경과",subcard(`자체 폐기 수긍 안내`,"유상AS_{제품명}_1년경과",`우선 {주문일시} 주문 건으로 무상 보증기간이 경과하여,
-제품 불량 확인 후 유상AS로만 접수 가능한 점 양해 부탁드립니다.
-
-결제는 무통장 입금으로만 가능하며,
-배송비 3,000원을 포함해 총 ({제품별 유상금액}+3000)원입니다.
-
-이 부분 진행 의사가 있다 하시면
-
-▶ 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-위 계좌로 송금해 주신 다음
-[입금자 성함, 수령인 성함, 주소, 핸드폰번호]를 답장으로 말씀 부탁드립니다.`,`{제품별 유상금액} = 위 가격표의 '1년 경과' 열 값`))}</div>
+  <div class="grid2">${col("blue","6개월 경과 ~ 1년 이내",subcard(D_SLOOM["slm_as__049"].name, D_SLOOM["slm_as__049"].tag, D_SLOOM["slm_as__049"].body, D_SLOOM["slm_as__049"].desc))}${col("pink","1년 경과",subcard(D_SLOOM["slm_as__050"].name, D_SLOOM["slm_as__050"].tag, D_SLOOM["slm_as__050"].body, D_SLOOM["slm_as__050"].desc))}</div>
   ${guide(`👉🏻 고객 수긍 시 → 입금 확인 후 ③ 재출고 안내 이어 진행\n👉🏻 미수긍(회수 희망) 시 → 아래 ② 회수 진행 안내로 전환`)}
   <div class="h3lvl">❌ 회수 진행 안내 (미수긍 시)</div>
-  <div class="grid2">${col("blue","6개월 경과 ~ 1년 경과",`<div class="stack"><div class="grp-h">6개월 경과 ~ 1년 이내</div>`+subcard(`자체 폐기 미수긍 · 회수 안내`,"유상AS_폐기미수긍",`고객님, 기존 제품 회수도 가능하나,\n회수 진행 시 수거비 3,000원이 추가됩니다.\n\n이 경우 왕복 배송비 6,000원(수거+배송)을 포함해 총 {(제품별 유상금액) + 6000}원입니다.\n\n기존 제품 회수까지 함께 진행해 드릴까요?`)+`<div class="grp-h">1년 경과</div>`+subcard(`자체 폐기 미수긍 · 회수 안내`,"유상AS_폐기미수긍",`고객님, 기존 제품 회수도 가능하나,\n회수 진행 시 수거비 3,000원이 추가됩니다.\n\n이 경우 왕복 배송비 6,000원(수거+배송)을 포함해 총 {(제품별 유상금액) + 6000}원입니다.\n\n기존 제품 회수까지 함께 진행해 드릴까요?`)+`</div>`)}${col("gray",`🔹 포장 · 회수 안내`,subcard(`포장 · 회수 안내`,"유상AS_포장회수_폐기미수긍",`입금이 정상적으로 확인되어 제품 포장과 회수 안내 도와드리겠습니다.\n\n\n<b>📦 <b>제품 포장 안내</b></b>\n■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}\n※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.\n※ 사은품·증정품 및 그 외 구매한 부속품과 제품은 보내지 않으셔도 됩니다.\n\n✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.\n\n\n<b>🚚 <b>회수 안내</b></b>\n· 택배사 : CJ대한통운 \n· 영업일 기준 2~3일 내 방문\n\n방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.\n\n\n💡 택배·제품 자체 박스가 없는 경우, 대체 가능한 택배 박스에 포장해주세요.\n⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`) + caution(`🎁 증정품 회수 X`))}</div>${guide(`👉🏻 미수긍 매크로 발송 후 고객이 회수까지 수긍하면 → 입금 확인 후 포장 · 회수 안내 → ③ 재출고 안내 이어 진행`)}
+  <div class="grid2">${col("blue","6개월 경과 ~ 1년 경과",`<div class="stack"><div class="grp-h">6개월 경과 ~ 1년 이내</div>`+subcard(D_SLOOM["slm_as__051"].name, D_SLOOM["slm_as__051"].tag, D_SLOOM["slm_as__051"].body, D_SLOOM["slm_as__051"].desc)+`<div class="grp-h">1년 경과</div>`+subcard(D_SLOOM["slm_as__052"].name, D_SLOOM["slm_as__052"].tag, D_SLOOM["slm_as__052"].body, D_SLOOM["slm_as__052"].desc)+`</div>`)}${col("gray",`🔹 포장 · 회수 안내`,subcard(D_SLOOM["slm_as__053"].name, D_SLOOM["slm_as__053"].tag, D_SLOOM["slm_as__053"].body, D_SLOOM["slm_as__053"].desc) + caution(`🎁 증정품 회수 X`))}</div>${guide(`👉🏻 미수긍 매크로 발송 후 고객이 회수까지 수긍하면 → 입금 확인 후 포장 · 회수 안내 → ③ 재출고 안내 이어 진행`)}
   <div class="h3lvl">✔️ 1년 경과 유상 비용 불만 대응</div>
-  ${macro(`상품수령일로부터 1년 경과 · 유상 비용 불만`,"유상AS_1년경과_비용불만",`고객님, 유상 교환 비용이 부담스럽게 느껴지실 수 있는 점 충분히 이해합니다.
-
-슬룸 제품의 AS 품질보증기간은 상품 수령일로부터 1년이며, 해당 기간 내에는 품질보증 기준에 따라 무상 또는 유상 AS를 제공하고 있습니다.
-다만, 품질보증기간이 경과한 이후에도 제품을 계속 사용하고자 하시는 고객님들을 위해 유상 AS (유상 교환 서비스)를 운영하고 있습니다.
-
-현재 안내드린 금액은 품질보증기간 경과 후 유상 교환 서비스를 이용하실 때 적용되는 비용인 점 양해 부탁드립니다.`,`1년 경과 건에서 비용 문의·불만 제기 시에만 사용`)}
+  ${macro(D_SLOOM["slm_as__054"].name, D_SLOOM["slm_as__054"].tag, D_SLOOM["slm_as__054"].body, D_SLOOM["slm_as__054"].desc)}
   ${caution(`💡 공감·양해 멘트나 문구 등은 고객이 언급한 불만 내용에 따라 변형하여 유연하게 응대`)}
   </div>
   <div class="h3lvl" id="paidReship">③ 재출고 안내</div>
   <div class="lvl3-body">${guide(`💡 입금 확인 후 상담 시점 기준으로 재출고 진행`)}
-  <div class="grid2">${subcard("i. 월-금 오후 2시 이전","유상AS_재출고_금일",`🚚 입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
-
-· 출고 : 오늘 출고 예정
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터(전용 케이블) 사용을 꼭 안내드립니다.`)}${subcard("ii. 월-목 오후 2시 이후","유상AS_재출고_익일",`🚚 입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
-
-· 출고 : 오늘 출고 마감으로 내일 출고 예정
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터(전용 케이블) 사용을 꼭 안내드립니다.`)}</div>
-  ${macro("iii. 금요일 오후 2시 이후","유상AS_재출고_차주월요일",`🚚 입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
-
-· 출고 : 오늘 출고 마감으로 차주 월요일 출고 예정
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-※ 주말/공휴일 출고 미진행
-※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터(전용 케이블) 사용을 꼭 안내드립니다.`)}
+  <div class="grid2">${subcard(D_SLOOM["slm_as__055"].name, D_SLOOM["slm_as__055"].tag, D_SLOOM["slm_as__055"].body, D_SLOOM["slm_as__055"].desc)}${subcard(D_SLOOM["slm_as__056"].name, D_SLOOM["slm_as__056"].tag, D_SLOOM["slm_as__056"].body, D_SLOOM["slm_as__056"].desc)}</div>
+  ${macro(D_SLOOM["slm_as__057"].name, D_SLOOM["slm_as__057"].tag, D_SLOOM["slm_as__057"].body, D_SLOOM["slm_as__057"].desc)}
   </div>
   <div class="h3lvl" id="paidDeposit">✔️ [유상비용 미입금 시] 상담 종료 유도</div>
-  <div class="lvl3-body">${macro(`미입금 → 상담 종료`,"유상AS_미입금_상담종료",`고객님, 안내드린 계좌로 입금이 확인되지 않아 이번 유상 교환 접수는 종료됩니다.\n\n편하게 고민해 보시고 의사가 있다 하시면, 위 안내드린 계좌에 입금해 주신 후\n\n입금확인 상담 링크 : https://sloom.channel.io/workflows/800803\n해당 링크로 문의해 주시면 됩니다. :)`)}</div>
+  <div class="lvl3-body">${macro(D_SLOOM["slm_as__058"].name, D_SLOOM["slm_as__058"].tag, D_SLOOM["slm_as__058"].body, D_SLOOM["slm_as__058"].desc)}</div>
   </div>
   <div class="h2lvl" id="edgeDiscon">🚨 [단종] EDGE CASE</div>
-  <div class="lvl2-body"><div class="h3lvl" id="edgeIn">① 품질보증기간(1년) 이내 단종</div><div class="lvl3-body"><div class="quote-box"><b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용\n① 유사 모델을 '유상교환 가격' 으로 구매 안내\n② 고객이 구매를 원하지 않는 경우 단종 보상 기준에 따라 <b>구입가를 자사몰 포인트로 대체 환급</b></div>${macro(`i. 단종 안내 및 유사 제품 추천`,"불량AS_단종이내_유사제품추천",`고객님, 현재 해당 제품은 단종되어 동일 제품으로는 교환이 어려운 점 양해 부탁드립니다.\n\n다만 현재 판매 중인 제품 가운데 사용하시던 제품의 기능과 사용 목적을 종합적으로 고려하여 가장 유사한 (추천 제품명)을 추천드립니다.\n\n사용을 원하신다면, (추천 제품명)을 품질보증기간(1년) 이내 유상 교환 기준을 적용한 ({1년 이내 기준 유상금액}+3000)원으로 접수 도와드리겠습니다.\n\n아래 주요 기능과 슬룸 공식몰 판매 페이지를 확인해 보시고, 편하게 말씀해 주세요.\n\n(슬룸 자사몰 추천 제품 판매 페이지 바로가기 첨부)\n(채널톡 내 부위별 제품 주요 차이점 이미지 첨부)`)}${guide(`💡 1년 이내 유상 비용 금액으로 반영`)}<div class="grid2"><div class="flowgroup">${subcard(`i. 유사 제품 구매 동의_입금 안내`,"불량AS_단종이내_유사제품입금",`네 고객님, 이해해 주셔서 감사합니다. 🙂\n구매를 원하시는 제품 금액과 배송비를 아래 계좌로 입금해 주시면 확인 후 출고를 도와드리겠습니다.\n\n<b>💳 입금 금액</b>\n• 배송비 : 3,000원\n• (제품명) : (품질보증기간 1년 이내 유상 교환 금액)\n🏦 기업은행 075-09598004-017 (예금주 : 올릿리테일)\n\n입금 후 입금자명을 말씀해 주시면 확인 후 접수 도와드리겠습니다.`)}${subcard(`ii. 기존 제품 자체폐기 안내`,"유상AS_자체폐기안내",`기존 제품은 별도 회수 없이, 고객님께서 자체 폐기해 주시면 감사하겠습니다.`)}</div>${subcard(`i. 유사 제품 구매 미동의_포인트 환급 안내`,"불량AS_단종이내_포인트환급",`고객님, 다시 한번 불편을 드려 죄송합니다.\n다른 제품으로 교환을 원치 않으시다면, 구입가를 공식몰 포인트로 환급해 드리겠습니다.\n포인트는 주문하신 계정과 동일한 계정으로 지급되며, 지급까지는 영업일 기준 1~2일 정도 소요됩니다.`)}</div>${guide(`👉🏻 i. 유사 제품 구매 동의_입금 안내 시 접수 시점에 따라 출고 안내`)}<div class="grid2">${subcard(`i. 월-금 오후 2시 이전 상담`,"불량AS_재출고_금일",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 오늘 출고 예정 \n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}${subcard(`ii. 월-목 오후 2시 이후 상담`,"불량AS_재출고_익일",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 오늘 출고 마감으로 내일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운`)}</div>${macro(`iii. 금요일 오후 2시 이후 상담`,"불량AS_재출고_차주월요일",`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>\n\n· 출고 : 오늘 출고 마감으로 차주 월요일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운\n\n※ 주말/공휴일 출고 미진행`)}</div><div class="h3lvl" id="edgeOut">② 품질보증기간(1년) 경과 단종</div><div class="lvl3-body"><div class="quote-box"><b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용\n① 동일 부위·동일 용도의 유사 제품이 있는지 확인\n<span class="sub-ex">(예: 넥숄더프로 → 넥숄더힐링케어 V2)</span>\n② 유사 제품을 품질보증기간(1년) 경과 유상 교환 비용으로 구매할 수 있도록 안내\n③ 고객이 유사 제품 구매를 원하지 않는 경우, <b>감가상각을 반영한 잔여 금액에 구입가의 10%를 가산</b>하여 자사몰 포인트로 환급</div>${macro(`i. 단종 안내 및 유사 제품 추천`,"불량AS_단종경과_유사제품추천",`고객님, 현재 해당 제품은 단종되어 동일 제품으로는 교환이 어려운 점 양해 부탁드립니다.\n\n다만 현재 판매 중인 제품 가운데 사용하시던 제품의 기능과 사용 목적을 종합적으로 고려하여 가장 유사한 (추천 제품명)을 추천드립니다.\n\n사용을 원하신다면, (추천 제품명)을 품질보증기간(1년) 경과 유상 교환 기준을 적용한 ({1년 경과 기준 유상금액}+3000)원으로 접수 도와드리겠습니다.\n\n아래 주요 기능과 슬룸 공식몰 판매 페이지를 확인해 보시고, 편하게 말씀해 주세요.\n\n(슬룸 자사몰 추천 제품 판매 페이지 바로가기 첨부)\n(채널톡 내 부위별 제품 주요 차이점 이미지 첨부)`)}${guide(`💡 1년 경과 유상 비용 금액으로 반영`)}<div class="grid2"><div class="flowgroup">${subcard(`i. 유사 제품 구매 동의_입금 안내`,"불량AS_단종경과_유사제품입금",`네 고객님, 이해해 주셔서 감사합니다. 🙂\n구매를 원하시는 제품 금액과 배송비를 아래 계좌로 입금해 주시면 확인 후 출고를 도와드리겠습니다.\n\n<b>💳 입금 금액</b>\n• 배송비 : 3,000원\n• (제품명) : (품질보증기간 1년 경과 유상 교환 금액)\n🏦 기업은행 075-09598004-017 (예금주 : 올릿리테일)\n\n입금 후 입금자명을 말씀해 주시면 확인 후 접수 도와드리겠습니다.`)}${subcard(`ii. 기존 제품 자체폐기 안내`,"유상AS_자체폐기안내",`기존 제품은 별도 회수 없이, 고객님께서 자체 폐기해 주시면 감사하겠습니다.`)}</div><div class="flowgroup">${subcard(`i. 유사 제품 구매 미동의_감가상각`,"불량AS_단종경과_감가상각",`고객님, 다시 한번 불편을 드려 죄송합니다.\n문의주신 주문 건은 현재 품질보증기간 1년이 경과한 상태로, 구매 당시 결제 금액과 사용 기간을 반영한 기준에 따라 환급을 도와드리겠습니다.\n고객님께 적용되는 환불 예정 금액은 (환불예정금액)원이며, 영업일 기준 1~2일 정도 소요됩니다.\n환불을 위해 아래 계좌 정보 전달 부탁드립니다.\n\n🏦 은행 / 계좌번호 / 예금주`)}${subcard(`ii. 이후 계좌 정보 확인`,"불량AS_단종경과_계좌확인",`소중한 정보 확인 감사합니다.\n해당 계좌로 환불 계좌 등록이 완료되었습니다.\n\n💸 입금 안내\n영업일 기준 1~2일 내 입금 예정\n\n※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)}</div></div></div></div>
+  <div class="lvl2-body"><div class="h3lvl" id="edgeIn">① 품질보증기간(1년) 이내 단종</div><div class="lvl3-body"><div class="quote-box"><b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용\n① 유사 모델을 '유상교환 가격' 으로 구매 안내\n② 고객이 구매를 원하지 않는 경우 단종 보상 기준에 따라 <b>구입가를 자사몰 포인트로 대체 환급</b></div>${macro(D_SLOOM["slm_as__059"].name, D_SLOOM["slm_as__059"].tag, D_SLOOM["slm_as__059"].body, D_SLOOM["slm_as__059"].desc)}${guide(`💡 1년 이내 유상 비용 금액으로 반영`)}<div class="grid2"><div class="flowgroup">${subcard(D_SLOOM["slm_as__060"].name, D_SLOOM["slm_as__060"].tag, D_SLOOM["slm_as__060"].body, D_SLOOM["slm_as__060"].desc)}${subcard(D_SLOOM["slm_as__061"].name, D_SLOOM["slm_as__061"].tag, D_SLOOM["slm_as__061"].body, D_SLOOM["slm_as__061"].desc)}</div>${subcard(D_SLOOM["slm_as__062"].name, D_SLOOM["slm_as__062"].tag, D_SLOOM["slm_as__062"].body, D_SLOOM["slm_as__062"].desc)}</div>${guide(`👉🏻 i. 유사 제품 구매 동의_입금 안내 시 접수 시점에 따라 출고 안내`)}<div class="grid2">${subcard(D_SLOOM["slm_as__063"].name, D_SLOOM["slm_as__063"].tag, D_SLOOM["slm_as__063"].body, D_SLOOM["slm_as__063"].desc)}${subcard(D_SLOOM["slm_as__064"].name, D_SLOOM["slm_as__064"].tag, D_SLOOM["slm_as__064"].body, D_SLOOM["slm_as__064"].desc)}</div>${macro(D_SLOOM["slm_as__065"].name, D_SLOOM["slm_as__065"].tag, D_SLOOM["slm_as__065"].body, D_SLOOM["slm_as__065"].desc)}</div><div class="h3lvl" id="edgeOut">② 품질보증기간(1년) 경과 단종</div><div class="lvl3-body"><div class="quote-box"><b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용\n① 동일 부위·동일 용도의 유사 제품이 있는지 확인\n<span class="sub-ex">(예: 넥숄더프로 → 넥숄더힐링케어 V2)</span>\n② 유사 제품을 품질보증기간(1년) 경과 유상 교환 비용으로 구매할 수 있도록 안내\n③ 고객이 유사 제품 구매를 원하지 않는 경우, <b>감가상각을 반영한 잔여 금액에 구입가의 10%를 가산</b>하여 자사몰 포인트로 환급</div>${macro(D_SLOOM["slm_as__066"].name, D_SLOOM["slm_as__066"].tag, D_SLOOM["slm_as__066"].body, D_SLOOM["slm_as__066"].desc)}${guide(`💡 1년 경과 유상 비용 금액으로 반영`)}<div class="grid2"><div class="flowgroup">${subcard(D_SLOOM["slm_as__067"].name, D_SLOOM["slm_as__067"].tag, D_SLOOM["slm_as__067"].body, D_SLOOM["slm_as__067"].desc)}${subcard(D_SLOOM["slm_as__068"].name, D_SLOOM["slm_as__068"].tag, D_SLOOM["slm_as__068"].body, D_SLOOM["slm_as__068"].desc)}</div><div class="flowgroup">${subcard(D_SLOOM["slm_as__069"].name, D_SLOOM["slm_as__069"].tag, D_SLOOM["slm_as__069"].body, D_SLOOM["slm_as__069"].desc)}${subcard(D_SLOOM["slm_as__070"].name, D_SLOOM["slm_as__070"].tag, D_SLOOM["slm_as__070"].body, D_SLOOM["slm_as__070"].desc)}</div></div></div></div>
   ${blueNote(`💰 환급금 계산 가이드`,`<div class="refund-guide-grid"><div style="padding-right:18px">① 구입가 확인\n② 사용개월 확인\n③ 아래 계산식 적용\n\n<b>감가상각비</b> = (사용개월 ÷ 60개월) × 구입가\n<b>잔여금</b> = 구입가 - 감가상각비\n<b>최종 환급금</b> = 잔여금 + 구입가의 10%\n\n※ 슬룸 제품의 내용연수는 60개월로 적용합니다.<div class="quote-box" style="margin-top:14px"><b>예시)</b> 목베개플러스 · 구입가 99,000원 · 구입일 2024년 7월 · AS 문의일 2026년 7월 · 사용기간 24개월\n\n· 감가상각비 = (24개월 ÷ 60개월) × 99,000원 = 39,600원\n· 잔여금 = 99,000원 - 39,600원 = 59,400원\n· 구입가의 10% = 99,000원 × 10% = 9,900원\n· <b>최종 환급금</b> = 59,400원 + 9,900원 = <b>69,300원</b></div></div><div style="padding-left:18px;border-left:2px dashed #C7DAF2"><div class="refund-calc" style="margin-top:0"><div class="refund-calc-h">🧮 자동 계산기 (숫자만 입력)</div><div class="refund-calc-row"><label>구입가</label><input type="text" inputmode="numeric" data-role="price" placeholder="예: 99000" oninput="this.value=this.value.replace(/[^0-9]/g,'');calcRefund(this)"><span class="unit">원</span></div><div class="refund-calc-row"><label>사용개월</label><input type="text" inputmode="numeric" data-role="months" placeholder="예: 24" oninput="this.value=this.value.replace(/[^0-9]/g,'');calcRefund(this)"><span class="unit">개월</span></div><div class="refund-calc-err"></div><div class="refund-calc-out"><div><span>감가상각비</span><b data-out="dep">0원</b></div><div><span>잔여금</span><b data-out="rem">0원</b></div><div><span>구입가의 10%</span><b data-out="add">0원</b></div><div class="final"><span>최종 환급금</span><b data-out="final">0원</b></div></div></div></div></div><details class="legal-fold"><summary>※ 관련 기준 보기</summary><p>공정거래위원회 소비자분쟁해결기준에 따라 품질보증기간이 경과한 후 부품보유기간 내 수리가 불가능한 경우, 정액 감가상각한 잔여 금액에 구입가의 10%를 가산하여 환급합니다.</p></details>`)}
   <div class="h2lvl" id="secProof">📸 증빙 제출 불만에 따른 대응</div>
-  <div class="lvl2-body"><div class="quote-box"><b>✔️ 증빙(영상/사진)이 필요한 유형이나 지속 미수긍, 불만 제기 시 아래 flow로 진행</b></div><div class="grp-h">① 방어 멘트 1차</div>${guide(`👉 1번, 2번 중 선택하여 사용`)}<div class="grid2"><div>${macro(`1번`,"불량AS_사진영상_방어1차①",`고객님, 촬영 항목이 많아 번거로우신 점 충분히 이해합니다. 🥲\n\n다만 사진만으로는 정확한 불량 원인을 파악하기 어려워, 위 항목 모두 확인이 필요한 점 양해 부탁드립니다.\n항목별로 나눠 찍어 보내주셔도 괜찮습니다.\n\n확인 후 최대한 빠르게 안내드리겠습니다. 🙏`)}</div><div>${macro(`2번`,"불량AS_사진영상_방어1차②",`고객님, 번거로우신 점 충분히 이해합니다. 🥲\n\n다만 채팅으로는 제품 상태를 직접 확인하기 어려워, 정확한 안내를 위해 사진·영상 확인이 필요한 점 양해 부탁드립니다.\n\n위에 안내드린 항목대로 촬영 후 보내주시면 빠르게 확인해 드리겠습니다. 🙏`)}</div></div><div class="grp-h">② 방어 멘트 2차</div>${guide(`👉 ① 방어 멘트 진행 시에도 미수긍할 경우`)}${macro(``,"불량AS_사진영상_방어2차",`영상 촬영이 어려우시다면, 제품을 회수하여 불량 여부를 확인하는 방법도 가능합니다.\n다만 회수 후 검수까지는 아래 절차로 진행되어 영업일 기준 약 1주 소요됩니다.\n\n① 택배 기사 방문 수거\n② 물류센터 입고\n③ 검수 부서 불량 확인\n\n검수 결과에 따라 불량이 확인되면 교환·반품 중 원하시는 방향으로 처리해 드리며, 정상 제품은 즉시 반송 처리됩니다.\n시간이 다소 소요되는 만큼, 채팅으로 영상을 보내주시는 것이 가능하실까요? 🙏`)}<div class="grp-h">③ 채팅 상담 유지 안내 (지금 촬영 불가 시)</div>${guide(`ex. 영상 미첨부로 촬영 후 재인입해야하거나, 채팅 전송 영상 미흡으로 재 촬영 필요 시 모두 포함`)}${macro(``,"불량AS_사진영상_채팅유지",`고객님, 지금 바로 첨부가 어려우시다면\n앞서 안내드린 항목을 참고하여 촬영 후 편하신 시간에 전송 부탁드립니다.\n\n💡 채팅창은 유지되며, 닫으신 후 다시 열어도 이어서 상담 가능합니다.`)}<div class="grid2">${guide(`⚠️ 단, 아래와 같은 경우에는 [채팅 상담 유지 안내] 후 채널톡 보류 처리로 진행\n(예시) 상담 중 촬영이 어려운 상황 / 외부에 있어 확인이 어려운 경우 등`)}<div class="quote-box"><b>📌 상담 보류 처리 기준</b>\n· 보류 기간 : 상담 진행 내일 오전까지\n→ 해당 기간 내 회신이 없을 경우, 장시간 무응답 매크로를 활용하여 상담 종료\n· 고객이 기존 보류 채팅창이 아닌 새로운 채팅창으로 재문의할 수 있음\n→ 해당 경우, 중복 상담 매크로를 활용하여 보류 및 상담 종료\n※ 매크로 사용 시 상황에 맞게 멘트 수정 필수</div></div><div class="grp-h">④ 회수 후 검수로 진행 안내 (①, ②, ③ 미수긍 시)</div><div class="grid2"><div class="quote-box"><b>👉 ①, ②, ③ 미수긍 시에만 제품 회수 후 물류센터 검수 절차로 진행</b>\n\n· 고객 희망하는 처리 방안(반품 or 교환)은 채널톡 워크플로우 및 우측 메모리값에서 확인 가능</div><div class="quote-box"><b>· 물류센터(품고 또는 정석) 별도반출&불량 검수 시트에 취합 후 검수 결과에 따라</b>\n✔️ '정상'일 경우 → 고객 주소로 반송\n✔️ '불량'일 경우 → 고객 원하는 방향으로 '교환' 또는 '반품' 처리\n\n👉🏻 물류센터별 시트 바로가기\n① <a href="https://docs.google.com/spreadsheets/d/1ZgqMOaFfBW60cln1V6oVRRSmjEeNjZSJrlf1ytdM5V4/edit?pli=1&amp;gid=1560630591#gid=1560630591" target="_blank">[품고/올릿] 별도반출&불량 검수</a>\n② <a href="https://docs.google.com/spreadsheets/d/1X7-VBL7xA8UWJtdHh5elOtYrDaA-qwtrrvc0qrM5_eU/edit?gid=0#gid=0" target="_blank">[정석/올릿] 별도반출&불량 검수</a></div></div>${macro(``,"불량AS_사진영상_회수검수안내",`네 고객님, 불편을 드려 죄송합니다. 🙏🏻\n\n번거로우시겠지만 회수 후 검수 절차로 진행해 드리겠습니다.\n아래 순서로 진행되며 불량 확인까지 영업일 기준 약 1주 소요됩니다.\n\n① 택배 기사 방문 수거\n② 물류센터 입고\n③ 검수 부서 불량 확인\n\n검수 결과 불량 확인 시 교환/반품 중 원하시는 방향으로 처리해 드리며, 정상 제품일 경우엔 즉시 고객님 주소로 반송 처리됩니다.\n최대한 빠르게 진행될 수 있도록 담당 부서에 요청해두겠으며, 검수 결과 확인되는 대로 고객님 연락처로 연락 드리겠습니다.`)}<div class="grp-h">🔴 수거 미수긍/불만 제기 시 — 1번 또는 2번 중 선택</div><div class="grid2"><div>${macro(`1번`,"불량AS_사진영상_수거불만①",`최대한 빠르게 도움드리고 싶으나, \n수거 후 물류센터 입고 및 검수 절차로 진행되어 시간이 다소 소요되는 점 양해 부탁드립니다.\n\n안내드린 기간보다 지연될 경우 별도로 연락드리겠습니다. 🙏🏻`)}</div><div>${macro(`2번`,"불량AS_사진영상_수거불만②",`전자제품 특성상 정확한 불량 확인을 위해 수거 후 검수 절차를 거치고 있어 시간이 다소 소요되는 점 양해 부탁드립니다.\n\n최대한 빠르게 처리될 수 있도록 담당 부서에 요청해두겠으며, \n안내드린 기간보다 지연될 경우 별도로 연락드리겠습니다. 🙏🏻`)}</div></div><div class="grp-h">💸 고객 반품 요청 & 결제수단 무통장/가상계좌일 경우에만, 환불 계좌 선탐색</div>${macro(``,"불량AS_사진영상_계좌확인",`(결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해주신 점 확인되어,\n불량으로 확정 시 환불을 위해 아래 계좌 정보 전달 부탁드립니다.\n\n🏦 은행 / 계좌번호 / 예금주`)}${guide(`👉🏻 이후, <a class="jump-link" href="#exNoEvid" onclick="return jumpTo('exNoEvid')">✨ [예외] 증빙 미제출</a>로 이동하여 이어 진행`)}</div>
+  <div class="lvl2-body"><div class="quote-box"><b>✔️ 증빙(영상/사진)이 필요한 유형이나 지속 미수긍, 불만 제기 시 아래 flow로 진행</b></div><div class="grp-h">① 방어 멘트 1차</div>${guide(`👉 1번, 2번 중 선택하여 사용`)}<div class="grid2"><div>${macro(D_SLOOM["slm_as__071"].name, D_SLOOM["slm_as__071"].tag, D_SLOOM["slm_as__071"].body, D_SLOOM["slm_as__071"].desc)}</div><div>${macro(D_SLOOM["slm_as__072"].name, D_SLOOM["slm_as__072"].tag, D_SLOOM["slm_as__072"].body, D_SLOOM["slm_as__072"].desc)}</div></div><div class="grp-h">② 방어 멘트 2차</div>${guide(`👉 ① 방어 멘트 진행 시에도 미수긍할 경우`)}${macro(D_SLOOM["slm_as__073"].name, D_SLOOM["slm_as__073"].tag, D_SLOOM["slm_as__073"].body, D_SLOOM["slm_as__073"].desc)}<div class="grp-h">③ 채팅 상담 유지 안내 (지금 촬영 불가 시)</div>${guide(`ex. 영상 미첨부로 촬영 후 재인입해야하거나, 채팅 전송 영상 미흡으로 재 촬영 필요 시 모두 포함`)}${macro(D_SLOOM["slm_as__074"].name, D_SLOOM["slm_as__074"].tag, D_SLOOM["slm_as__074"].body, D_SLOOM["slm_as__074"].desc)}<div class="grid2">${guide(`⚠️ 단, 아래와 같은 경우에는 [채팅 상담 유지 안내] 후 채널톡 보류 처리로 진행\n(예시) 상담 중 촬영이 어려운 상황 / 외부에 있어 확인이 어려운 경우 등`)}<div class="quote-box"><b>📌 상담 보류 처리 기준</b>\n· 보류 기간 : 상담 진행 내일 오전까지\n→ 해당 기간 내 회신이 없을 경우, 장시간 무응답 매크로를 활용하여 상담 종료\n· 고객이 기존 보류 채팅창이 아닌 새로운 채팅창으로 재문의할 수 있음\n→ 해당 경우, 중복 상담 매크로를 활용하여 보류 및 상담 종료\n※ 매크로 사용 시 상황에 맞게 멘트 수정 필수</div></div><div class="grp-h">④ 회수 후 검수로 진행 안내 (①, ②, ③ 미수긍 시)</div><div class="grid2"><div class="quote-box"><b>👉 ①, ②, ③ 미수긍 시에만 제품 회수 후 물류센터 검수 절차로 진행</b>\n\n· 고객 희망하는 처리 방안(반품 or 교환)은 채널톡 워크플로우 및 우측 메모리값에서 확인 가능</div><div class="quote-box"><b>· 물류센터(품고 또는 정석) 별도반출&불량 검수 시트에 취합 후 검수 결과에 따라</b>\n✔️ '정상'일 경우 → 고객 주소로 반송\n✔️ '불량'일 경우 → 고객 원하는 방향으로 '교환' 또는 '반품' 처리\n\n👉🏻 물류센터별 시트 바로가기\n① <a href="https://docs.google.com/spreadsheets/d/1ZgqMOaFfBW60cln1V6oVRRSmjEeNjZSJrlf1ytdM5V4/edit?pli=1&amp;gid=1560630591#gid=1560630591" target="_blank">[품고/올릿] 별도반출&불량 검수</a>\n② <a href="https://docs.google.com/spreadsheets/d/1X7-VBL7xA8UWJtdHh5elOtYrDaA-qwtrrvc0qrM5_eU/edit?gid=0#gid=0" target="_blank">[정석/올릿] 별도반출&불량 검수</a></div></div>${macro(D_SLOOM["slm_as__075"].name, D_SLOOM["slm_as__075"].tag, D_SLOOM["slm_as__075"].body, D_SLOOM["slm_as__075"].desc)}<div class="grp-h">🔴 수거 미수긍/불만 제기 시 — 1번 또는 2번 중 선택</div><div class="grid2"><div>${macro(D_SLOOM["slm_as__076"].name, D_SLOOM["slm_as__076"].tag, D_SLOOM["slm_as__076"].body, D_SLOOM["slm_as__076"].desc)}</div><div>${macro(D_SLOOM["slm_as__077"].name, D_SLOOM["slm_as__077"].tag, D_SLOOM["slm_as__077"].body, D_SLOOM["slm_as__077"].desc)}</div></div><div class="grp-h">💸 고객 반품 요청 & 결제수단 무통장/가상계좌일 경우에만, 환불 계좌 선탐색</div>${macro(D_SLOOM["slm_as__078"].name, D_SLOOM["slm_as__078"].tag, D_SLOOM["slm_as__078"].body, D_SLOOM["slm_as__078"].desc)}${guide(`👉🏻 이후, <a class="jump-link" href="#exNoEvid" onclick="return jumpTo('exNoEvid')">✨ [예외] 증빙 미제출</a>로 이동하여 이어 진행`)}</div>
   <div class="h2lvl" id="exNoEvid">✨ [예외] 증빙 미제출</div>
-  <div class="lvl2-body"><div class="quote-box"><b>✔️ 사진/영상 확인 시, 정상 제품으로 확인되거나 사용법 문제로 확인될 경우 → 증상별 올바른 사용법 재안내 후 재사용 시도 유도</b>\n⚠️ 아래 flow는 사진/영상 촬영 지속 미수긍으로 회수 후 검수 예외 처리 진행에 동의한 경우에만 이어서 안내</div><div class="h3lvl">❌ 검수 결과 — 불량 확인</div><div class="lvl3-body">${guide(`※ 채널톡 이전 상담 내역에 교환/반품 처리 방안 확인`)}<div class="grp-h">A. 고객 반품 요청 · 반품 안내 유저챗 발송</div><div class="grid2">${macro(`i. 카드 / 삼성페이 / 네이버페이`,"불량AS_검수결과_카드",`안녕하세요 고객님, 슬룸 고객센터입니다.\n\n요청하신 제품의 검수 결과 안내드립니다.\n\n■ 제품명 :\n■ 확인 결과 : 불량\n\n전액 환불로 처리해 드리겠습니다.\n\n카드 승인 취소(환불 완료)까지 영업일 기준 3~5일 소요될 수 있습니다.\n\n추가 문의 사항이 있으실 경우 아래 채널을 통해 문의 부탁드립니다.\n\n👉🏻 슬룸 채팅 상담 <a href="https://sloom.channel.io/home" target="_blank">https://sloom.channel.io/home</a>\n월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)\n\n다시 한번 이용에 불편을 드려 대단히 죄송합니다.`)}${macro(`ii. 계좌 환불 (무통장/가상계좌)`,"불량AS_검수결과_계좌환불",`안녕하세요 고객님, 슬룸 고객센터입니다.\n\n요청하신 제품의 '검수 결과'를 안내드립니다.\n\n■ 제품명 :\n■ 확인 결과 : 불량\n\n전액 환불로 처리해 드리겠습니다.\n\n접수 시 말씀해주신 고객님 명의 계좌로 환불 등록해 드렸으며,\n입금까지 영업일 기준 1~2일 소요될 수 있는 점 참고 부탁드립니다.\n\n추가 문의 사항이 있으실 경우 아래 채널을 통해 문의 부탁드립니다.\n\n👉🏻 슬룸 채팅 상담 <a href="https://sloom.channel.io/home" target="_blank">https://sloom.channel.io/home</a>\n월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)\n\n다시 한번 이용에 불편을 드려 대단히 죄송합니다.`)}</div><div class="grp-h">B. 고객 교환 요청 · 재출고 안내 유저챗 발송</div>${macro(`재출고 안내`,"불량AS_검수결과_재출고_익일",`안녕하세요 고객님, 슬룸 고객센터입니다.\n\n요청하신 제품의 검수 결과 안내드립니다.\n\n■ 제품명 :\n■ 확인 결과 : 불량\n\n교환 제품은 접수 시 요청하신 주소로 발송 예정입니다.\n\n🚚 재출고 일정\n· 출고 : 내일 출고 예정\n· 배송 : 출고일로부터 영업일 기준 2~3일 소요\n· 택배사 : CJ대한통운\n\n추가 문의 사항이 있으실 경우 아래 채널을 통해 문의 부탁드립니다.\n\n👉🏻 슬룸 채팅 상담 <a href="https://sloom.channel.io/home" target="_blank">https://sloom.channel.io/home</a>\n월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)\n\n다시 한번 이용에 불편을 드려 대단히 죄송합니다.`,`👉 최초 AS 문의 flow 인입 시 회수지 정보가 사전 저장되므로 이전 상담 내역 확인\n\n\n💡 회수/검수 후 재발송 건의 경우, 물류센터(품고 또는 정석) 전산에서 별도 등록`)}</div><div class="h3lvl">⭕ 검수 결과 — 정상 제품</div><div class="lvl3-body">${macro(`알림톡 / 유저챗 발송`,"불량AS_검수결과_정상발송",`안녕하세요 고객님, 슬룸 고객센터입니다.\n\n요청하신 제품의 검수 결과 안내드립니다.\n\n■ 제품명 :\n■ 확인 결과 : 정상\n\n※ 정상 제품은 수거 시 등록된 주소로 재발송 진행 예정이며, \n시간이 다소 소요되어 불편을 드린 점 대단히 죄송합니다.\n\n\n추가 문의 사항이 있으실 경우 아래 채널을 통해 문의 부탁드립니다.\n\n👉🏻 슬룸 채팅 상담 <a href="https://sloom.channel.io/home" target="_blank">https://sloom.channel.io/home</a>\n월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)\n\n다시 한번 이용에 불편을 드려 대단히 죄송합니다.`,`✔️ 필요 시, 알리고 템플릿 등록 예정`)}</div></div>
+  <div class="lvl2-body"><div class="quote-box"><b>✔️ 사진/영상 확인 시, 정상 제품으로 확인되거나 사용법 문제로 확인될 경우 → 증상별 올바른 사용법 재안내 후 재사용 시도 유도</b>\n⚠️ 아래 flow는 사진/영상 촬영 지속 미수긍으로 회수 후 검수 예외 처리 진행에 동의한 경우에만 이어서 안내</div><div class="h3lvl">❌ 검수 결과 — 불량 확인</div><div class="lvl3-body">${guide(`※ 채널톡 이전 상담 내역에 교환/반품 처리 방안 확인`)}<div class="grp-h">A. 고객 반품 요청 · 반품 안내 유저챗 발송</div><div class="grid2">${macro(D_SLOOM["slm_as__079"].name, D_SLOOM["slm_as__079"].tag, D_SLOOM["slm_as__079"].body, D_SLOOM["slm_as__079"].desc)}${macro(D_SLOOM["slm_as__080"].name, D_SLOOM["slm_as__080"].tag, D_SLOOM["slm_as__080"].body, D_SLOOM["slm_as__080"].desc)}</div><div class="grp-h">B. 고객 교환 요청 · 재출고 안내 유저챗 발송</div>${macro(D_SLOOM["slm_as__081"].name, D_SLOOM["slm_as__081"].tag, D_SLOOM["slm_as__081"].body, D_SLOOM["slm_as__081"].desc)}</div><div class="h3lvl">⭕ 검수 결과 — 정상 제품</div><div class="lvl3-body">${macro(D_SLOOM["slm_as__082"].name, D_SLOOM["slm_as__082"].tag, D_SLOOM["slm_as__082"].body, D_SLOOM["slm_as__082"].desc)}</div></div>
 
   <div class="h2lvl" id="autoPickup">🍏 [외부몰] 자동수거 : 쿠팡, 스마트스토어 등</div>
-  <div class="lvl2-body"><div class="quote-box"><b>⚠️ 고객이 처리방안(교환 또는 반품)을 선택 후, 자동수거 진행되고 있는 건이므로 아래 flow 대로 진행</b></div><div class="grp-h">A. 고객 반품 요청</div><div class="grid2">${macro(`i. 자동수거로 제품 회수 중`,"자동수거_반품_회수중",`네, 고객님. (쿠팡 또는 네이버)를 통해 회수 진행 중인 점 확인되었습니다.\n다만, 상품이 물류센터에 입고된 뒤 검수 절차를 거쳐야 하므로 즉시 처리는 어려운 점 양해 부탁드립니다. 🙏🏻\n\n회수 완료 후 영업일 기준 2~3일 정도 소요될 수 있으니 참고 부탁드립니다.`)}${guide(`▶ 쿠팡 or 네이버 스마트스토어 주문내역 조회 \n→ 반품/교환 자동 수거 여부 확인\n\n단, 자동수거 물류센터 회수 내역 조회는 입고 완료 후에만 조회됨 \n회수중 상태에서는 물류센터(품고 또는 정석)에서 조회되지 않음`)}</div>${macro(`ii. 불량 증상 추가 확인 필요 시`,"자동수거_반품_상세증상",`고객님께서 말씀해주신 증상을 기준으로 검수 도와드릴 예정입니다.\n\n번거로우시겠지만\n불량 증상에 대해 조금 더 자세히 말씀해주실 수 있을까요?\n\n말씀해주신 내용을 기반으로 정확한 접수 도와드리겠습니다. 🙏🏻\n\n예: 충전했는데 전원이 켜지지 않음 / 버튼 눌러도 반응 없음 등`)}<div class="grid2">${macro(`iii. 시간 양해 후 종료`,"자동수거_반품_시간양해",`물류센터로 고객님의 제품이 입고되면,\n접수해 주신 증상을 바탕으로 검수를 진행하여 최종 불량 여부를 확인하게 됩니다.\n\n<b>📦 제품 수거 → 검수 → 반품 완료 (환불 승인)</b>\n\n검수는 회수 완료 후 영업일 기준 2~3일 정도 소요되며,\n불량으로 확인될 경우 문자 안내 후 결제하신 수단으로 환불을 도와드리겠습니다.\n\n최대한 빠르게 처리될 수 있도록 노력하겠습니다. 🙂\n\n※ 검수 결과는 문자로 별도 안내드립니다.\n※ 정상 제품으로 확인될 경우에는 제품이 고객님께 반송될 수 있습니다.`)}${guide(`물류센터(품고 또는 정석) 별도반출&불량 검수 시트에 취합 후 검수 결과에 따라 \n✔️ '정상'일 경우 → 고객 주소로 반송\n✔️ '불량'일 경우 → '반품' 처리 \n\n※ 쿠팡 건은 검수 결과 확인 전 쿠팡 자체적으로 기한 내 반품 완료 처리되는 경우가 대부분\n→ 고객 별도 안내 불필요, 시스템만 인지하고 이해하기!\n\n👉🏻 물류센터별 시트 바로가기\n① <a href="https://docs.google.com/spreadsheets/d/1ZgqMOaFfBW60cln1V6oVRRSmjEeNjZSJrlf1ytdM5V4/edit?pli=1&amp;gid=1560630591#gid=1560630591" target="_blank">[품고/올릿] 별도반출&불량 검수</a>\n② <a href="https://docs.google.com/spreadsheets/d/1X7-VBL7xA8UWJtdHh5elOtYrDaA-qwtrrvc0qrM5_eU/edit?gid=0#gid=0" target="_blank">[정석/올릿] 별도반출&불량 검수</a>`)}</div><div class="grp-h">B. 고객 교환 요청</div><div class="grid2">${macro(`i. 자동수거로 제품 회수 중`,"자동수거_교환_회수중",`네, 고객님. (쿠팡 또는 네이버)를 통해 회수 진행 중인 점 확인되었습니다.\n상품이 물류센터에 입고되면, 말씀해주신 증상을 기준으로 검수를 진행할 예정입니다.\n\n번거로우시겠지만, 어떤 증상이 있었는지 조금 더 자세히 알려주시면 감사하겠습니다 :)`)}${guide(`▶ 쿠팡 or 네이버 스마트스토어 주문내역 조회 \n→ 반품/교환 자동 수거 여부 확인\n\n단, 자동수거건 물류센터 회수 내역 조회는 입고 완료 후에만 조회됨 \n회수중 상태에서는 조회되지 않음`)}</div><div class="grid2">${macro(`ii. 불량 교환 요청 시`,"자동수거_교환_시간양해",`고객님께서 말씀해 주신 불량 증상을 바탕으로 교환 처리 도와드리겠습니다.\n이용에 불편을 드려 대단히 죄송합니다. 🙏🏻`)}${guide(`※ 교환은 고객께 불량 증상 확인되면 즉시 재출고 접수 진행`)}</div></div>
+  <div class="lvl2-body"><div class="quote-box"><b>⚠️ 고객이 처리방안(교환 또는 반품)을 선택 후, 자동수거 진행되고 있는 건이므로 아래 flow 대로 진행</b></div><div class="grp-h">A. 고객 반품 요청</div><div class="grid2">${macro(D_SLOOM["slm_as__083"].name, D_SLOOM["slm_as__083"].tag, D_SLOOM["slm_as__083"].body, D_SLOOM["slm_as__083"].desc)}${guide(`▶ 쿠팡 or 네이버 스마트스토어 주문내역 조회 \n→ 반품/교환 자동 수거 여부 확인\n\n단, 자동수거 물류센터 회수 내역 조회는 입고 완료 후에만 조회됨 \n회수중 상태에서는 물류센터(품고 또는 정석)에서 조회되지 않음`)}</div>${macro(D_SLOOM["slm_as__084"].name, D_SLOOM["slm_as__084"].tag, D_SLOOM["slm_as__084"].body, D_SLOOM["slm_as__084"].desc)}<div class="grid2">${macro(D_SLOOM["slm_as__085"].name, D_SLOOM["slm_as__085"].tag, D_SLOOM["slm_as__085"].body, D_SLOOM["slm_as__085"].desc)}${guide(`물류센터(품고 또는 정석) 별도반출&불량 검수 시트에 취합 후 검수 결과에 따라 \n✔️ '정상'일 경우 → 고객 주소로 반송\n✔️ '불량'일 경우 → '반품' 처리 \n\n※ 쿠팡 건은 검수 결과 확인 전 쿠팡 자체적으로 기한 내 반품 완료 처리되는 경우가 대부분\n→ 고객 별도 안내 불필요, 시스템만 인지하고 이해하기!\n\n👉🏻 물류센터별 시트 바로가기\n① <a href="https://docs.google.com/spreadsheets/d/1ZgqMOaFfBW60cln1V6oVRRSmjEeNjZSJrlf1ytdM5V4/edit?pli=1&amp;gid=1560630591#gid=1560630591" target="_blank">[품고/올릿] 별도반출&불량 검수</a>\n② <a href="https://docs.google.com/spreadsheets/d/1X7-VBL7xA8UWJtdHh5elOtYrDaA-qwtrrvc0qrM5_eU/edit?gid=0#gid=0" target="_blank">[정석/올릿] 별도반출&불량 검수</a>`)}</div><div class="grp-h">B. 고객 교환 요청</div><div class="grid2">${macro(D_SLOOM["slm_as__086"].name, D_SLOOM["slm_as__086"].tag, D_SLOOM["slm_as__086"].body, D_SLOOM["slm_as__086"].desc)}${guide(`▶ 쿠팡 or 네이버 스마트스토어 주문내역 조회 \n→ 반품/교환 자동 수거 여부 확인\n\n단, 자동수거건 물류센터 회수 내역 조회는 입고 완료 후에만 조회됨 \n회수중 상태에서는 조회되지 않음`)}</div><div class="grid2">${macro(D_SLOOM["slm_as__087"].name, D_SLOOM["slm_as__087"].tag, D_SLOOM["slm_as__087"].body, D_SLOOM["slm_as__087"].desc)}${guide(`※ 교환은 고객께 불량 증상 확인되면 즉시 재출고 접수 진행`)}</div></div>
 
   <div class="h1lvl" id="crRocket">🚀 쿠팡 판매자로켓 AS</div>
   <div class="sub-ex">쿠팡 판매자로켓 구매 건 · 판매자 주문 조회 불가 → 캡처 확인 후 브랜드별 진행</div>
-  ${secTitle("1️⃣","AS 프로세스",null,"cr_process")}<table style="border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:12.5px"><thead><tr><th style="background:#234A86;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">유형</th><th style="background:#234A86;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">기간</th><th style="background:#234A86;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">프로세스</th></tr></thead><tbody><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top" rowspan="2"><b>불량 무상 반품</b></td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">구매 후 90일(3개월) 이내</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">① 불량 판정 & 고객 반품 희망 <br>② 고객 직접 쿠팡 고객센터 (1577-7011)로 접수 안내 <br>③ 고객 쿠팡 측으로 업체에서 불량으로 무상반품 받았음으로 문의 <br>④ 쿠팡에서 반품 처리 (※ 판매자에게 권한 X)</td></tr><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">구매 후 90일(3개월) 경과</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">① 불량 판정 & 고객 반품 희망 <br>② 결제 금액 확인 후 계좌 환불 안내 (※ 쿠팡으로 문의 X)</td></tr><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top" rowspan="2"><b>불량 무상 교환</b></td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">구매 후 90일(3개월) 이내</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">① 불량 판정 & 고객 교환 희망 <br>② 고객 직접 쿠팡 고객센터 (1577-7011)로 접수 안내 <br>③ 고객 쿠팡측으로 업체에서 불량으로 무상교환 확정 받았음으로 문의 <br>④ 쿠팡에서 교환 처리 (※ 판매자에게 권한 X)</td></tr><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">구매 후 90일(3개월) 경과</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">① 불량 판정 & 고객 교환 희망 <br>② 기존 자사몰 교환 프로세스와 동일하게 고객 회수지 & 재배송지 확인, 재출고 요청</td></tr><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top"><b>유상 AS (유상교환)</b></td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top" colspan="2">주문 내역 확인 후 기존 유상 AS(유상교환) 프로세스 따라 진행</td></tr></tbody></table>${caution(`※ 구매 후 90일 (3개월) 이내 \n→ 쿠팡에서 후처리 가능 \n\n※ 구매 후 90일 (3개월) 경과 \n→ 쿠팡에서 후처리 불가, 자체 처리 필요`)}  ${secTitle("2️⃣","응대 프로세스",null,"cr_respond")}<div class="grp-h">① 사과/양해 안내</div>${macro(`🔊 사과/양해 스크립트`,"불량AS_쿠팡로켓_사과양해",`제품 사용 후 만족스러운 경험을 드리지 못해 대단히 죄송합니다.🥲`)}<div class="grp-h">② 판매자로켓 주문건 조회 불가 양해</div>${macro(`주문 조회 불가 · 캡처 안내`,"불량AS_쿠팡로켓_조회불가",`쿠팡 판매자 로켓을 통해 구매하신 것으로 확인되는데요,\n이 경우 주문정보에 대한 조회 권한이 쿠팡 측에만 있어 저희 쪽에서는 직접적인 확인이나 접수가 어려운 점 양해 부탁드립니다.\n\n불편하시겠지만 아래 안내드리는 방법대로 주문내역과 판매자 정보 화면을 캡처하셔서\n이 채팅창으로 보내주시면, 확인 후 신속히 AS 절차 안내 도와드리겠습니다.\n\n📌 주문내역 캡처 방법\n쿠팡 로그인 → 마이페이지 → 주문목록 → 주문 상세보기\n👉 '주문일자 / 결제금액 / 고객정보 / 상품명'이 모두 보이도록 캡처 부탁드립니다.\n\n📌 판매자 정보 캡처 방법\n구매하신 상품 페이지 접속 → 제품 이미지 아래 [판매자명] 확인 후 해당 화면 캡처\n\n확인되는 즉시 최대한 빠르게 도움드릴 수 있도록 하겠습니다.`)}${subcard(`직접 캡쳐 전송에 대한 불만 제기`,"불량AS_쿠팡로켓_캡쳐불만",`고객님, 번거로우시겠지만 양해 부탁드립니다.\n개인정보 보호 정책에 따라, 저희 쪽에서는 쿠팡을 통해 구매하신 주문 내역을 직접 확인할 수 없는 점 양해 부탁드립니다.\n\n정확한 확인을 위해 아래 안내드린 주문 내역과 판매자 정보 화면을 캡처하시어\n이 채팅창으로 전송해 주시면, 확인 후 신속히 AS 절차 안내 도와드리겠습니다.`)}<div class="grp-h">③ 캡쳐본 주문내역 & 판매자(브랜드명) 확인</div>${guide(`※ 캡쳐본 수신 하여 올릿/올릿리테일/더마 판매건인지 아닌지 판단\n※ 판매자명(브랜드) 확인 필수`)}<div class="grid2">${col("pink",`🔹 A. 올릿/올릿리테일/더마 판매건이 아닐 경우`,subcard(`처리 불가 안내`,"불량AS_쿠팡로켓_비공식",`사진 전송 감사합니다.\n다만, 전송해주신 주문 건은 (브랜드명) 공식 판매처를 통해 판매된 제품이 아닌 것으로 확인됩니다.\n\n정확한 AS 및 품질 확인을 위해서는 반드시 공식 유통처를 통한 구매가 필요하며,\n안타깝게도 고객님께서 주문하신 제품은 공식 유통 이외의 경로에서 구매하신 것으로 확인되어\n저희 측에서는 품질 보증 및 사후 서비스 제공이 어려운 점 양해 부탁드립니다.\n\n📌 중고거래, 재판매 업체, 비공식 판매처 등에서 구매하신 제품은 AS 및 환불·교환 등 처리가 불가한 점 참고 부탁드립니다.\n\n불편을 드려 죄송하다는 말씀 드리며,\n이후에는 보다 정확한 품질과 서비스를 위해 공식 판매처 이용을 권장드립니다.`))}${col("blue",`🔹 B. 올릿/올릿리테일/더마 판매건일 경우`,subcard(`공식 판매건 확인`,"불량AS_쿠팡로켓_공식",`사진 전송 감사합니다.\n해당 주문 건은 (브랜드명) 공식 판매처를 통해 구매하신 것으로 확인되었습니다.\n\n남겨주신 내용 및 제품 상태를 바탕으로\n이어서 처리 절차 안내 도와드리겠습니다.`))}</div>${guide(`👉 수령일로부터 기간 얼마나 경과했는지 확인 후, 브랜드별 ★불량 유형★에 맞춰 상담 진행`)}
+  ${secTitle("1️⃣","AS 프로세스",null,"cr_process")}<table style="border-collapse:collapse;width:100%;margin:6px 0 10px;font-size:12.5px"><thead><tr><th style="background:#234A86;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">유형</th><th style="background:#234A86;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">기간</th><th style="background:#234A86;color:#fff;padding:9px 12px;text-align:left;border:1px solid #d9d9d9">프로세스</th></tr></thead><tbody><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top" rowspan="2"><b>불량 무상 반품</b></td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">구매 후 90일(3개월) 이내</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">① 불량 판정 & 고객 반품 희망 <br>② 고객 직접 쿠팡 고객센터 (1577-7011)로 접수 안내 <br>③ 고객 쿠팡 측으로 업체에서 불량으로 무상반품 받았음으로 문의 <br>④ 쿠팡에서 반품 처리 (※ 판매자에게 권한 X)</td></tr><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">구매 후 90일(3개월) 경과</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">① 불량 판정 & 고객 반품 희망 <br>② 결제 금액 확인 후 계좌 환불 안내 (※ 쿠팡으로 문의 X)</td></tr><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top" rowspan="2"><b>불량 무상 교환</b></td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">구매 후 90일(3개월) 이내</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">① 불량 판정 & 고객 교환 희망 <br>② 고객 직접 쿠팡 고객센터 (1577-7011)로 접수 안내 <br>③ 고객 쿠팡측으로 업체에서 불량으로 무상교환 확정 받았음으로 문의 <br>④ 쿠팡에서 교환 처리 (※ 판매자에게 권한 X)</td></tr><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">구매 후 90일(3개월) 경과</td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top">① 불량 판정 & 고객 교환 희망 <br>② 기존 자사몰 교환 프로세스와 동일하게 고객 회수지 & 재배송지 확인, 재출고 요청</td></tr><tr><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top"><b>유상 AS (유상교환)</b></td><td style="padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top" colspan="2">주문 내역 확인 후 기존 유상 AS(유상교환) 프로세스 따라 진행</td></tr></tbody></table>${caution(`※ 구매 후 90일 (3개월) 이내 \n→ 쿠팡에서 후처리 가능 \n\n※ 구매 후 90일 (3개월) 경과 \n→ 쿠팡에서 후처리 불가, 자체 처리 필요`)}  ${secTitle("2️⃣","응대 프로세스",null,"cr_respond")}<div class="grp-h">① 사과/양해 안내</div>${macro(D_SLOOM["slm_as__088"].name, D_SLOOM["slm_as__088"].tag, D_SLOOM["slm_as__088"].body, D_SLOOM["slm_as__088"].desc)}<div class="grp-h">② 판매자로켓 주문건 조회 불가 양해</div>${macro(D_SLOOM["slm_as__089"].name, D_SLOOM["slm_as__089"].tag, D_SLOOM["slm_as__089"].body, D_SLOOM["slm_as__089"].desc)}${subcard(D_SLOOM["slm_as__090"].name, D_SLOOM["slm_as__090"].tag, D_SLOOM["slm_as__090"].body, D_SLOOM["slm_as__090"].desc)}<div class="grp-h">③ 캡쳐본 주문내역 & 판매자(브랜드명) 확인</div>${guide(`※ 캡쳐본 수신 하여 올릿/올릿리테일/더마 판매건인지 아닌지 판단\n※ 판매자명(브랜드) 확인 필수`)}<div class="grid2">${col("pink",`🔹 A. 올릿/올릿리테일/더마 판매건이 아닐 경우`,subcard(D_SLOOM["slm_as__091"].name, D_SLOOM["slm_as__091"].tag, D_SLOOM["slm_as__091"].body, D_SLOOM["slm_as__091"].desc))}${col("blue",`🔹 B. 올릿/올릿리테일/더마 판매건일 경우`,subcard(D_SLOOM["slm_as__092"].name, D_SLOOM["slm_as__092"].tag, D_SLOOM["slm_as__092"].body, D_SLOOM["slm_as__092"].desc))}</div>${guide(`👉 수령일로부터 기간 얼마나 경과했는지 확인 후, 브랜드별 ★불량 유형★에 맞춰 상담 진행`)}
   `;
 
 const SLM_MERGE_TEMPLATE = `
@@ -598,13 +271,7 @@ const SLM_MERGE_TEMPLATE = `
 
   ${secTitle("","1. 교환/반품 의사 확인","전체·부분 공통","sec1")}
   ${col("blue","🔄 교환 희망 시 (수령일로부터 7일 이내)",
-    subcard("반품 및 재주문 권유","변심교환_반품재주문권유",
-`단순변심 사유의 다른 옵션 교환은 차액과 주문서 옵션 불일치 등의 사유로 진행이 어렵습니다.
-
-또한 진행 시 수거 → 검수 → 희망 옵션 발송 등의 순서로 반품과 재주문을 직접 동시에 진행하시는 것보다 오랜 시일이 소요되며 차액 결제는 무통장입금으로만 가능합니다.
-
-이에 교환 배송비와 반품 배송비는 동일하므로,
-더욱 빠르게 새 제품을 받아보실 수 있는 반품으로 접수하시길 권장드립니다.`)
+    subcard(D_SLOOM["slm_simplemerge__001"].name, D_SLOOM["slm_simplemerge__001"].tag, D_SLOOM["slm_simplemerge__001"].body, D_SLOOM["slm_simplemerge__001"].desc)
     + caution(`▶ 고객 수긍 시 → 반품으로 이동해 진행
 ▶ 미수긍 시(교환 진행 희망) → 하단 플로우(2. 전체/부분 방식 안내~) 그대로 진행`)
   )}
@@ -660,44 +327,14 @@ const SLM_MERGE_TEMPLATE = `
   <div class="quote-box"><b>🔹 반품 배송비</b></div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard("i. 공식몰 · 네이버페이 / 스마트스토어","변심반품_전체배송비_네이버페이",
-`네이버페이 결제는 시스템상 반품 배송비 차감 처리가 어려워, 반품 배송비 6,000원 입금 후 반품 접수가 가능합니다. 🥹
-
-✅ 반품 배송비 : 6,000원
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
-      + subcard("ii. 공식몰 결제 (신용카드 · 무통장 · 가상계좌)","공통_반품배송비_일반결제",
-`반품 배송비 6,000원 제외 후 반품 진행됩니다.`)
-      + subcard("iii. 쿠팡","변심반품_전체배송비_쿠팡",
-`쿠팡 주문은 시스템상 반품 배송비 차감 처리가 어려워, 반품 배송비 6,000원 입금 후 반품 접수가 가능합니다. 🥹
-
-✅ 반품 배송비 : 6,000원
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+      subcard(D_SLOOM["slm_simplemerge__002"].name, D_SLOOM["slm_simplemerge__002"].tag, D_SLOOM["slm_simplemerge__002"].body, D_SLOOM["slm_simplemerge__002"].desc)
+      + subcard(D_SLOOM["slm_simplemerge__003"].name, D_SLOOM["slm_simplemerge__003"].tag, D_SLOOM["slm_simplemerge__003"].body, D_SLOOM["slm_simplemerge__003"].desc)
+      + subcard(D_SLOOM["slm_simplemerge__004"].name, D_SLOOM["slm_simplemerge__004"].tag, D_SLOOM["slm_simplemerge__004"].body, D_SLOOM["slm_simplemerge__004"].desc)
     )}
     ${col("pink","🔹 부분 반품",
-      subcard("i. 공식몰 · 네이버페이 / 스마트스토어","변심반품_부분배송비_네이버페이",
-`네이버페이 결제는 시스템상 부분 취소가 어려워, 반품 배송비 3,000원과 계속 사용하실 제품의 금액을 먼저 입금해 주신 후 반품 접수가 가능합니다. 🥹
-
-✅ 반품 배송비 : 3,000원
-✅ (제품명) : (가격)
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
-      + subcard("ii. 공식몰 결제 (신용카드 · 무통장 · 가상계좌)","변심반품_부분배송비_카드",
-`반품 배송비 3,000원과 개봉하여 반품이 어려운 (제품명) (가격) 제외 후 반품 진행돼요.`)
-      + subcard("iii. 쿠팡","변심반품_부분배송비_쿠팡",
-`쿠팡 주문은 시스템상 부분 취소가 어려워, 반품 배송비 3,000원과 계속 사용하실 제품의 금액을 먼저 입금해 주신 후 반품 접수가 가능합니다. 🥹
-수거 및 검수 완료 후 주문 금액은 전액 환불 처리됩니다.
-
-💳 입금 금액
-• 반품 배송비 : 3,000원
-• (제품명) : (가격)
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+      subcard(D_SLOOM["slm_simplemerge__005"].name, D_SLOOM["slm_simplemerge__005"].tag, D_SLOOM["slm_simplemerge__005"].body, D_SLOOM["slm_simplemerge__005"].desc)
+      + subcard(D_SLOOM["slm_simplemerge__006"].name, D_SLOOM["slm_simplemerge__006"].tag, D_SLOOM["slm_simplemerge__006"].body, D_SLOOM["slm_simplemerge__006"].desc)
+      + subcard(D_SLOOM["slm_simplemerge__007"].name, D_SLOOM["slm_simplemerge__007"].tag, D_SLOOM["slm_simplemerge__007"].body, D_SLOOM["slm_simplemerge__007"].desc)
       + starNote("고객이 정가 차감에 미동의할 경우",
 `구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
 부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
@@ -707,35 +344,11 @@ const SLM_MERGE_TEMPLATE = `
   <div class="quote-box" style="margin-top:18px"><b>🔄 교환 배송비</b></div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard("교환 왕복 배송비","변심교환_왕복배송비",
-`교환 시 왕복 배송비 6,000원이 발생하며, 입금 확인 후 교환 접수를 도와드립니다.
-
-✅ 교환 왕복 배송비 : 6,000원
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+      subcard(D_SLOOM["slm_simplemerge__008"].name, D_SLOOM["slm_simplemerge__008"].tag, D_SLOOM["slm_simplemerge__008"].body, D_SLOOM["slm_simplemerge__008"].desc)
     )}
     ${col("pink","🔹 부분 교환",
-      subcard("i. 공식몰 · 네이버페이 / 스마트스토어","변심교환_부분배송비_네이버페이",
-`부분 교환 시 사용하실 제품은 회수하지 않으며, 해당 제품 금액은 최종 결제 금액에서 차감됩니다.
-
-네이버페이 결제 건은 시스템상 부분 결제 처리가 어려워, 사용하실 제품 금액과 교환 왕복 배송비를 함께 입금해 주셔야 합니다.
-
-💳 입금 금액
-• 교환 왕복 배송비 : 3,000원
-• (제품명) : (가격)
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
-      + subcard("ii. 공식몰 결제 (신용카드 · 무통장 · 가상계좌)","변심교환_부분배송비_카드",
-`부분 교환 시 사용하실 제품은 회수하지 않으며, 해당 제품 금액은 최종 결제 금액에서 차감됩니다.
-
-교환을 원하시는 제품에 대해서는 왕복 배송비 6,000원이 발생하며, 입금 확인 후 교환 접수를 도와드립니다.
-
-✅ 교환 왕복 배송비 : 6,000원
-🏦 기업은행 075-09598004-017 (예금주: 올릿리테일)
-
-입금 후 '입금자명'을 말씀해 주시면 확인 후 접수 도와드리겠습니다. 😊`)
+      subcard(D_SLOOM["slm_simplemerge__009"].name, D_SLOOM["slm_simplemerge__009"].tag, D_SLOOM["slm_simplemerge__009"].body, D_SLOOM["slm_simplemerge__009"].desc)
+      + subcard(D_SLOOM["slm_simplemerge__010"].name, D_SLOOM["slm_simplemerge__010"].tag, D_SLOOM["slm_simplemerge__010"].body, D_SLOOM["slm_simplemerge__010"].desc)
     )}
   </div>
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
@@ -744,91 +357,36 @@ const SLM_MERGE_TEMPLATE = `
   ${secTitle("","4. 포장 및 회수 안내",null,"sec4")}
   <div class="grid2">
     ${col("blue","🔹 전체",
-      subcard("포장 · 회수 안내","변심반품_포장회수_전체",
-`📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거가 거부됩니다.`)
+      subcard(D_SLOOM["slm_simplemerge__011"].name, D_SLOOM["slm_simplemerge__011"].tag, D_SLOOM["slm_simplemerge__011"].body, D_SLOOM["slm_simplemerge__011"].desc)
       + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분",
-      subcard("포장 · 회수 안내","변심반품_포장회수_부분",
-`📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-※ 사은품·증정품 및 그 외 구매한 부속품과 제품은 보내지 않으셔도 됩니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거가 거부됩니다.`)
+      subcard(D_SLOOM["slm_simplemerge__012"].name, D_SLOOM["slm_simplemerge__012"].tag, D_SLOOM["slm_simplemerge__012"].body, D_SLOOM["slm_simplemerge__012"].desc)
       + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
-    ${subcard("회수지 확인 필요 시","공통_반품_회수지확인",
-`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
-"워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용")}
-    ${subcard("[외부몰] 자동수거 신청 시","변심반품_포장회수_자동수거",
-`(쿠팡 또는 네이버)를 통해 반품 기사님을 신청해 주신 점 확인되었습니다. :)
-미개봉 제품은 전체 다시 택배 박스에 포장해 주시고, 기사님 방문 시 전달해 주시면 수거가 진행될 예정입니다.`)}
+    ${subcard(D_SLOOM["slm_simplemerge__013"].name, D_SLOOM["slm_simplemerge__013"].tag, D_SLOOM["slm_simplemerge__013"].body, D_SLOOM["slm_simplemerge__013"].desc)}
+    ${subcard(D_SLOOM["slm_simplemerge__014"].name, D_SLOOM["slm_simplemerge__014"].tag, D_SLOOM["slm_simplemerge__014"].body, D_SLOOM["slm_simplemerge__014"].desc)}
   </div>
 
   <div class="quote-box" style="margin-top:18px"><b>🔄 교환 시 추가 확인</b></div>
-  ${subcard("회수지 확인 필요 시","공통_교환_회수지확인",
-`🙋‍♀️ 마지막으로, 제품 회수와 배송은 기존 주소지로 접수해 드리면 될까요?`,
-`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}
+  ${subcard(D_SLOOM["slm_simplemerge__015"].name, D_SLOOM["slm_simplemerge__015"].tag, D_SLOOM["slm_simplemerge__015"].body, D_SLOOM["slm_simplemerge__015"].desc)}
   <div class="warn-note" style="margin-top:12px">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
   ${secTitle("","5. 교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","재출고 안내","exchangeFlow")}
-  ${macro("검수 및 재출고 안내","변심교환_검수재출고",
-`📦 교환 진행 일정 안내드리겠습니다.
-
-· 검수 및 재출고 : 제품 입고 후 영업일 기준 6~8일 소요
-· 배송 : 재출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-※ 주말 및 공휴일에는 검수·출고가 진행되지 않습니다.`)}
+  ${macro(D_SLOOM["slm_simplemerge__016"].name, D_SLOOM["slm_simplemerge__016"].tag, D_SLOOM["slm_simplemerge__016"].body, D_SLOOM["slm_simplemerge__016"].desc)}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
 
   ${secTitle("💰","반품 시","환불 안내","refundFlow")}
   <div class="grid2">
     ${col("blue","🔹 카드결제",
-      subcard("i. 카드결제 취소","검수환불안내_카드_클레임X",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.`)
+      subcard(D_SLOOM["slm_simplemerge__017"].name, D_SLOOM["slm_simplemerge__017"].tag, D_SLOOM["slm_simplemerge__017"].body, D_SLOOM["slm_simplemerge__017"].desc)
     )}
     ${col("blue","🔹 계좌 환불",
-      subcard("i. 계좌 환불 (무통장 · 가상계좌)","검수환불안내_계좌확인_클레임X",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-다만 (무통장 입금 / 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>`)
-      + subcard("ii. 이후 계좌 정보 확인","검수환불안내_계좌등록",
-`소중한 정보 확인 감사합니다.
-해당 계좌로 환불 계좌 등록이 완료되었습니다.
-
-💸 <b>입금 안내</b>
-실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
-
-※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
+      subcard(D_SLOOM["slm_simplemerge__018"].name, D_SLOOM["slm_simplemerge__018"].tag, D_SLOOM["slm_simplemerge__018"].body, D_SLOOM["slm_simplemerge__018"].desc)
+      + subcard(D_SLOOM["slm_simplemerge__019"].name, D_SLOOM["slm_simplemerge__019"].tag, D_SLOOM["slm_simplemerge__019"].body, D_SLOOM["slm_simplemerge__019"].desc)
     )}
   </div>
 `;
@@ -852,126 +410,41 @@ const REF_SIDE = `
   <div class="sec-title" id="secNormal" style="font-size:22px;margin-top:72px;scroll-margin-top:72px"><span class="sec-n">☑️</span>Nomal Case (일반)</div>
   <div class="quote-box">ex. 간단한 상처, 멍, 그 외 Normal Case</div>
   ${secTitle("1","선제적 사과 멘트",null,null)}
-  ${macro("선제적 사과 멘트","부작용상해_일반_선제사과",
-`먼저, 제품 사용 중 불편을 겪으셨다는 말씀에 진심으로 죄송한 마음입니다.🥲
-예상치 못한 불편과 걱정을 드리게 되어 깊이 사과드립니다.`)}
+  ${macro(D_SLOOM["slm_side__001"].name, D_SLOOM["slm_side__001"].tag, D_SLOOM["slm_side__001"].body, D_SLOOM["slm_side__001"].desc)}
   ${secTitle("💡","사용 환경 확인",null,null)}
-  ${macro("사용 환경 확인","부작용_환경확인",
-`해당 사안에 대해 저희가 신속하고 정확하게 파악하여 도움을 드리고자 합니다.
-
-번거로우시겠지만, 상세한 확인을 위해 아래 몇 가지 사항에 대해 답변을 부탁드려도 될까요?
-
-💡 제품 사용 환경 및 상황
-사용 당시의 구체적인 상황(사용 시간, 착용 방식 등)을 자세히 공유해 주시면 감사하겠습니다.
-혹시 상해 부위와 제품 사용 상황을 확인할 수 있는 사진이 있다면 함께 첨부해 주세요.
-
-고객님의 소중한 답변을 바탕으로 안전하고 신속하게 조치를 취할 수 있도록 최선을 다하겠습니다. 🙏🏻`,
-`상황이나 증상에 따라 사용 환경 등은 생략<br>단, 부작용·상해 부위 증빙 사진은 탐색 필수`)}
+  ${macro(D_SLOOM["slm_side__002"].name, D_SLOOM["slm_side__002"].tag, D_SLOOM["slm_side__002"].body, D_SLOOM["slm_side__002"].desc)}
   ${secTitle("2","포장 및 회수 안내",null,null)}
   <div class="grid2">
 ${col("blue","🔹 포장 · 회수 안내",
-subcard("포장 · 회수 안내","부작용상해_포장회수_일반",
-`불편을 드린 점 다시 한 번 진심으로 죄송합니다. 😥
-전액 환불 처리 도와드리겠습니다.
-
-또한, 혹시 현재 겪고 계신 증상으로 병원 진료를 받으셨거나 진료 예정이신 경우라면
-소비자분쟁해결기준에 따라 필요한 서류를 안내드리고 진료비 보상 절차도 함께 도와드릴 수 있습니다.
-괜찮으시다면 관련 내용도 함께 확인 도와드리겠습니다.
-
-📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-
-✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
+subcard(D_SLOOM["slm_side__003"].name, D_SLOOM["slm_side__003"].tag, D_SLOOM["slm_side__003"].body, D_SLOOM["slm_side__003"].desc)
 )}
 ${col("gray","회수지 확인 필요 시",
-subcard("회수지 확인 필요 시","공통_반품_회수지확인",
-`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
-`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)
+subcard(D_SLOOM["slm_side__004"].name, D_SLOOM["slm_side__004"].tag, D_SLOOM["slm_side__004"].body, D_SLOOM["slm_side__004"].desc)
 )}
 </div>
   ${secTitle("3","결제수단별 환불 안내",null,null)}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard("환불 절차 안내","검수환불안내_카드_클레임O",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`)
+subcard(D_SLOOM["slm_side__005"].name, D_SLOOM["slm_side__005"].tag, D_SLOOM["slm_side__005"].body, D_SLOOM["slm_side__005"].desc)
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
-subcard("계좌 정보 요청","부작용상해_환불_계좌",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-다만, (결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`) + subcard("▶ 계좌 정보 확인","검수환불안내_계좌등록",
-`소중한 정보 확인 감사합니다.
-해당 계좌로 환불 계좌 등록이 완료되었습니다.
-
-💸 <b>입금 안내</b>
-실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
-
-※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
+subcard(D_SLOOM["slm_side__006"].name, D_SLOOM["slm_side__006"].tag, D_SLOOM["slm_side__006"].body, D_SLOOM["slm_side__006"].desc) + subcard(D_SLOOM["slm_side__007"].name, D_SLOOM["slm_side__007"].tag, D_SLOOM["slm_side__007"].body, D_SLOOM["slm_side__007"].desc)
 )}
 </div>
   ${secTitle("4","병원 내원 및 치료 안내_증빙 서류",null,null)}
   <div class="grid2">
 ${col("blue","🔹 병원 내원 및 치료 안내_증빙 서류",
-subcard("병원 내원 및 치료 안내_증빙 서류","부작용상해_일반_병원서류안내",
-`네, 고객님. 양해해 주셔서 감사합니다.
-진료비 보상과 관련해 필요한 서류 안내 도와드리겠습니다.
-조금 번거로우시겠지만, 아래 내용 확인 부탁드립니다 :)
-
-📋 접수 시 필요한 서류
-① 증상 사진
-② 진단서 또는 전문의 소견서
- - 저희 제품 사용으로 인해 발생한 증상임이 기재된 서류
- - 정확한 제품명 기재가 꼭 필요합니다
-③ 진료비 세부 산정 내역서 또는 진료비 계산서
-④ 약제비 계산서
-
-✅ ③·④ 항목은 급여/비급여 항목 확인을 위해 반드시 필요합니다.
-단순 결제 영수증이나 처방전만으로는 처리가 어려운 점 양해 부탁드려요.
-
-💬 추가 안내
-서류 확인 후, 건강보험 적용 급여 항목에 한해 진료비 보상을 도와드리고 있습니다.
-(※ 비급여 항목은 환불이 어려운 점 참고 부탁드립니다.)
-
-불편을 드리게 되어 다시 한번 진심으로 사과드리며, 고객님의 빠른 회복을 진심으로 바랍니다. 🙏`,
-`고객이 병원 방문 예정, 진료비 보상 요구 시 안내`)
+subcard(D_SLOOM["slm_side__008"].name, D_SLOOM["slm_side__008"].tag, D_SLOOM["slm_side__008"].body, D_SLOOM["slm_side__008"].desc)
 )}
 ${col("gray","🔗 채팅 링크 안내",
-subcard("🔗 채팅 링크 안내","부작용상해_채팅링크",
-`문자로 회신해 주시는 경우에는 확인이 어려우므로, 채팅 상담으로 서류를 전달 부탁드립니다.
-동일한 상담으로 이어서 문의하실 수 있도록 아래 채팅 링크를 함께 안내드립니다.
-
-🔗 (현재 상담 중인 채팅창 링크 기재)`,
-`서류 제출을 위해 고객 재문의가 필요한 경우에만 안내 / 증빙 자료를 이미 제출한 경우나 nomal case로 무상 반품 외 내원 등 진행 예정 없을 경우 사용하지 않음`)
+subcard(D_SLOOM["slm_side__009"].name, D_SLOOM["slm_side__009"].tag, D_SLOOM["slm_side__009"].body, D_SLOOM["slm_side__009"].desc)
 )}
 </div>
   ${guide(`💡 병원 내원 및 치료 안내 진행 시 팀 리드 공유 필수`)}
   ${secTitle("5","보상금 요구 여부에 따른 응대",null,null)}
   <div class="grid2">
 ${col("blue","🔹 보상금 요구 없을 경우",
-subcard("상담 종료 유도","부작용상해_상담종료",
-`네 고객님, 슬룸에서는 무엇보다도 고객님의 건강 회복을 최우선으로 하고 있습니다.
-치료 후 문의 주시면 최대한 신속히 도움드리겠습니다. 🙏`)
+subcard(D_SLOOM["slm_side__010"].name, D_SLOOM["slm_side__010"].tag, D_SLOOM["slm_side__010"].body, D_SLOOM["slm_side__010"].desc)
 )}
 ${col("pink","🔹 보상금 요청할 경우",
 `<div class="subcard"><div class="subcard-h"><span class="sc-label">🚨 고객 치료비 + 보상금 추가 요구 시</span></div><div class="subcard-body">👉🏻 내부 VOC·Issue 프로세스 기준에 따라 내부 확인 및 컨펌 진행
@@ -982,126 +455,41 @@ ${col("pink","🔹 보상금 요청할 경우",
   <div class="sec-title" id="secEdge" style="font-size:22px;margin-top:72px;scroll-margin-top:72px"><span class="sec-n">🚨</span>EDGE Case (Critical)</div>
   <div class="quote-box">ex. 화상, 혈흔 등 Critical keyword 언급이나 증상 사진 확인 시</div>
   ${secTitle("1","선제적 사과 멘트",null,null)}
-  ${macro("선제적 사과 멘트","부작용상해_일반_선제사과",
-`먼저, 제품 사용 중 불편을 겪으셨다는 말씀에 진심으로 죄송한 마음입니다.🥲
-예상치 못한 불편과 걱정을 드리게 되어 깊이 사과드립니다.`)}
+  ${macro(D_SLOOM["slm_side__012"].name, D_SLOOM["slm_side__012"].tag, D_SLOOM["slm_side__012"].body, D_SLOOM["slm_side__012"].desc)}
   ${secTitle("💡","사용 환경 확인",null,null)}
-  ${macro("사용 환경 확인","부작용_환경확인",
-`해당 사안에 대해 저희가 신속하고 정확하게 파악하여 도움을 드리고자 합니다.
-
-번거로우시겠지만, 상세한 확인을 위해 아래 몇 가지 사항에 대해 답변을 부탁드려도 될까요?
-
-💡 제품 사용 환경 및 상황
-사용 당시의 구체적인 상황(사용 시간, 착용 방식 등)을 자세히 공유해 주시면 감사하겠습니다.
-혹시 상해 부위와 제품 사용 상황을 확인할 수 있는 사진이 있다면 함께 첨부해 주세요.
-
-고객님의 소중한 답변을 바탕으로 안전하고 신속하게 조치를 취할 수 있도록 최선을 다하겠습니다. 🙏🏻`,
-`상황이나 증상에 따라 사용 환경 등은 생략<br>단, 부작용·상해 부위 증빙 사진은 탐색 필수`)}
+  ${macro(D_SLOOM["slm_side__013"].name, D_SLOOM["slm_side__013"].tag, D_SLOOM["slm_side__013"].body, D_SLOOM["slm_side__013"].desc)}
   ${secTitle("2","포장 및 회수 안내",null,null)}
   <div class="grid2">
 ${col("pink","🔹 포장 · 회수 안내",
-subcard("포장 · 회수 안내","부작용상해_포장회수_Critical",
-`먼저, 제품 사용 중 불편을 겪으셨다는 말씀에 진심으로 죄송한 마음입니다.
-예상치 못한 불편과 걱정을 드리게 되어 깊이 사과드립니다.
-
-우선 제품에 대해서는 전액 환불 도와드리고자 합니다.
-
-📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 구성품(케이블·설명서 등)도 모두 함께 포장해 주세요.
-
-✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 슬룸 ]</b> 표기 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)
+subcard(D_SLOOM["slm_side__014"].name, D_SLOOM["slm_side__014"].tag, D_SLOOM["slm_side__014"].body, D_SLOOM["slm_side__014"].desc)
 )}
 ${col("gray","회수지 확인 필요 시",
-subcard("회수지 확인 필요 시","공통_반품_회수지확인",
-`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
-`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)
+subcard(D_SLOOM["slm_side__015"].name, D_SLOOM["slm_side__015"].tag, D_SLOOM["slm_side__015"].body, D_SLOOM["slm_side__015"].desc)
 )}
 </div>
   ${secTitle("3","결제수단별 환불 안내",null,null)}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard("환불 절차 안내","검수환불안내_카드_클레임O",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`)
+subcard(D_SLOOM["slm_side__016"].name, D_SLOOM["slm_side__016"].tag, D_SLOOM["slm_side__016"].body, D_SLOOM["slm_side__016"].desc)
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
-subcard("계좌 정보 요청","부작용상해_환불_계좌",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-다만, (결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`) + subcard("▶ 계좌 정보 확인","검수환불안내_계좌등록",
-`소중한 정보 확인 감사합니다.
-해당 계좌로 환불 계좌 등록이 완료되었습니다.
-
-💸 <b>입금 안내</b>
-실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
-
-※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
+subcard(D_SLOOM["slm_side__017"].name, D_SLOOM["slm_side__017"].tag, D_SLOOM["slm_side__017"].body, D_SLOOM["slm_side__017"].desc) + subcard(D_SLOOM["slm_side__018"].name, D_SLOOM["slm_side__018"].tag, D_SLOOM["slm_side__018"].body, D_SLOOM["slm_side__018"].desc)
 )}
 </div>
   ${secTitle("4","병원 내원 및 치료 안내_증빙 서류",null,null)}
   <div class="grid2">
 ${col("pink","🔹 병원 내원 및 치료 안내_증빙 서류",
-subcard("i. 병원 내원 안내","부작용상해_Critical_병원내원",
-`또한 고객님, 무엇보다도 고객님의 건강 회복이 최우선인데요, 혹시 병원에는 방문해 보셨을까요?
-현재 겪고 계신 증상과 관련하여 병원 진료를 받으셨거나, 혹은 방문 예정이신 경우
-괜찮으시다면 소비자분쟁해결기준에 따라 필요한 서류에 대해 안내 도와드리고,
-이에 따른 진료비에 대해서는 신속하게 환불 도와드리고자 합니다. 😥`) + subcard("ii. 서류 안내","부작용상해_Critical_서류안내",
-`네, 진료비 보상과 관련해 필요한 서류 안내 도와드리겠습니다.
-조금 번거로우시겠지만, 아래 내용 확인 부탁드립니다 :)
-
-📋 접수 시 필요한 서류
-① 증상 사진
-② 진단서 또는 전문의 소견서
- - 저희 제품 사용으로 인해 발생한 증상임이 기재된 서류
- - 정확한 제품명 기재가 꼭 필요합니다
-③ 진료비 세부 산정 내역서 또는 진료비 계산서
-④ 약제비 계산서
-
-✅ ③·④ 항목은 급여/비급여 항목 확인을 위해 반드시 필요합니다.
-단순 결제 영수증이나 처방전만으로는 처리가 어려운 점 양해 부탁드려요.
-
-💬 추가 안내
-서류 확인 후, 건강보험 적용 급여 항목에 한해 진료비 보상을 도와드리고 있습니다.
-(※ 비급여 항목은 환불이 어려운 점 참고 부탁드립니다.)
-
-불편을 드리게 되어 다시 한번 진심으로 사과드리며, 고객님의 빠른 회복을 진심으로 바랍니다. 🙏`)
+subcard(D_SLOOM["slm_side__019"].name, D_SLOOM["slm_side__019"].tag, D_SLOOM["slm_side__019"].body, D_SLOOM["slm_side__019"].desc) + subcard(D_SLOOM["slm_side__020"].name, D_SLOOM["slm_side__020"].tag, D_SLOOM["slm_side__020"].body, D_SLOOM["slm_side__020"].desc)
 )}
 ${col("gray","🔗 채팅 링크 안내",
-subcard("🔗 채팅 링크 안내","부작용상해_채팅링크",
-`문자로 회신해 주시는 경우에는 확인이 어려우므로, 채팅 상담으로 서류를 전달 부탁드립니다.
-동일한 상담으로 이어서 문의하실 수 있도록 아래 채팅 링크를 함께 안내드립니다.
-
-🔗 (현재 상담 중인 채팅창 링크 기재)`,
-`서류 제출을 위해 고객 재문의가 필요한 경우에만 안내 / 증빙 자료를 이미 제출한 경우나 nomal case로 무상 반품 외 내원 등 진행 예정 없을 경우 사용하지 않음`)
+subcard(D_SLOOM["slm_side__021"].name, D_SLOOM["slm_side__021"].tag, D_SLOOM["slm_side__021"].body, D_SLOOM["slm_side__021"].desc)
 )}
 </div>
   ${guide(`💡 병원 내원 및 치료 안내 진행 시 팀 리드 공유 필수`)}
   ${secTitle("5","보상금 요구 여부에 따른 응대",null,null)}
   <div class="grid2">
 ${col("blue","🔹 보상금 요구 없을 경우",
-subcard("상담 종료 유도","부작용상해_상담종료",
-`네 고객님, 슬룸에서는 무엇보다도 고객님의 건강 회복을 최우선으로 하고 있습니다.
-치료 후 문의 주시면 최대한 신속히 도움드리겠습니다. 🙏`)
+subcard(D_SLOOM["slm_side__022"].name, D_SLOOM["slm_side__022"].tag, D_SLOOM["slm_side__022"].body, D_SLOOM["slm_side__022"].desc)
 )}
 ${col("pink","🔹 보상금 요청할 경우",
 `<div class="subcard"><div class="subcard-h"><span class="sc-label">🚨 고객 치료비 + 보상금 추가 요구 시</span></div><div class="subcard-body">👉🏻 내부 VOC·Issue 프로세스 기준에 따라 내부 확인 및 컨펌 진행
@@ -1109,16 +497,8 @@ ${col("pink","🔹 보상금 요청할 경우",
 )}
 </div>
   ${secTitle("💠","[공통] 서류 제출 후",null,"sec_submit")}
-  ${macro("증빙 서류 확인","부작용상해_서류확인",
-`고객님, 경황이 없으셨을 텐데 필요한 서류와 사진을 준비하여 보내주셔서 감사합니다. 🙏🏻
-보내주신 내용은 내부적으로 면밀히 확인한 후, 확인이 완료되는 대로 처리 결과와 다음 절차를 빠르게 안내드리겠습니다.`)}
-  ${macro("진료비 환불 계좌 정보 요청","부작용상해_진료비_계좌확인",
-`보내주신 영수증을 확인한 결과, 총 진료비는 (환불 예정금 기재)으로 확인되었습니다.
-해당 비용은 아래 계좌로 입금해 드릴 예정이오니, 환불받으실 계좌 정보를 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>
-
-이용에 불편을 드려 다시 한 번 죄송합니다. 🙇🏻‍♀️`)}
+  ${macro(D_SLOOM["slm_side__024"].name, D_SLOOM["slm_side__024"].tag, D_SLOOM["slm_side__024"].body, D_SLOOM["slm_side__024"].desc)}
+  ${macro(D_SLOOM["slm_side__025"].name, D_SLOOM["slm_side__025"].tag, D_SLOOM["slm_side__025"].body, D_SLOOM["slm_side__025"].desc)}
   ${guide(`<b style="color:#d32f2f;">증빙 서류 기반으로 건보 급여 항목 전액 보상</b>
 ⚠️ 팀 리드 공유 필수
 📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>의 Critical Issue(EDGE Case) 보상금 flex 워크플로우 작성법 참고하여 등록`)}
@@ -1127,3 +507,159 @@ ${col("pink","🔹 보상금 요청할 경우",
 
 
 
+
+
+const SLOOM_REFUND = `
+  <h1>🔄 단순변심 반품</h1>
+  <div class="sub">고객 변심에 의한 반품 · 유형별 응대</div>
+
+  ${secTitle("💡","기준 및 조건",null,"secGuide")}
+  ${cmpTable(
+    [{cls:"blue",label:"🔹 전체 반품"},{cls:"pink",label:"🔹 부분 반품"}],
+    [
+      {label:"조건", values:[
+        "구매 제품 전체 미사용<br>미개봉 또는 개봉했으나 미사용<br>(예: 박스만 열어보고 다시 닫음)",
+        "2개 이상 구매 후 일부만 개봉(사용)<br>(예: 허리편한케어 + 목편한케어 구매 → 허리편한케어만 사용 시, 목편한케어만 부분 반품)"
+      ]},
+      {label:"반품 배송비", values:["6,000원","3,000원"]},
+      {label:"회수 품목", values:[
+        "모든 구성품 + 증정품 포함",
+        "사용(개봉) 제품 제외, 미사용(미개봉) 제품과 그 구성품만 회수"
+      ]}
+    ]
+  )}
+  <div class="grp-h">🧭 상담 플로우</div>
+  <div class="flow-diagram"><div class="fd-box">1. 7일 경과 여부 및 사유 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 결제수단별 환불 안내</div></div>
+  ${notice([
+    "<b>전자제품은 어댑터 연결·작동을 한 번이라도 했다면 '사용 제품'으로 간주되어 단순변심 반품 불가.</b>",
+    "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
+    `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`
+  ])}
+
+  ${secTitle("","1. 7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
+  <div class="grid2">
+    ${colTag("gray","수령일로부터 7일 이내","반품교환_7일이내_사유확인",
+`반품을 원하시는 사유가 어떻게 되실까요? :)
+개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
+제품 사용 여부도 함께 확인 부탁드립니다.`)}
+    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+`단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
+현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
+  </div>
+  <div class="branch-box">
+    <div class="branch-h">💡 고객이 말씀하신 사유·증상에 따라 알맞은 유형으로 이동하여 응대</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">수령일 7일 이내 · <b>미사용</b></td><td class="ar">→</td><td><span class="bdg b-blue">단순변심</span></td></tr>
+    <tr><td class="cond">수령일 7일 이내 · <b>사용</b></td><td class="ar">→</td><td><span class="bdg b-amber">100% 환불 이벤트</span></td></tr>
+    <tr><td class="cond">수령일 7일 경과 · <b>미사용</b></td><td class="ar">→</td><td><span class="bdg b-amber">100% 환불 이벤트</span></td></tr>
+    <tr><td class="cond">제품 <b>불량</b> (사용·수령일 무관)</td><td class="ar">→</td><td><span class="bdg b-pink">불량 AS 교환/반품</span></td></tr>
+    </tbody></table>
+    <div class="branch-note">※ 100% 환불 이벤트는 신청 이력이 없는 경우에만 가능합니다.</div>
+  </div>
+
+  ${secTitle("","2. 반품 배송비 안내",null,"sec2")}
+  <div class="grid2">
+    ${col("blue","🔹 전체 반품",
+      subcard(D_SLOOM["slm_refund__001"].name, D_SLOOM["slm_refund__001"].tag, D_SLOOM["slm_refund__001"].body, D_SLOOM["slm_refund__001"].desc)
+      + subcard(D_SLOOM["slm_refund__002"].name, D_SLOOM["slm_refund__002"].tag, D_SLOOM["slm_refund__002"].body, D_SLOOM["slm_refund__002"].desc)
+      + subcard(D_SLOOM["slm_refund__003"].name, D_SLOOM["slm_refund__003"].tag, D_SLOOM["slm_refund__003"].body, D_SLOOM["slm_refund__003"].desc)
+    )}
+    ${col("pink","🔹 부분 반품",
+      subcard(D_SLOOM["slm_refund__004"].name, D_SLOOM["slm_refund__004"].tag, D_SLOOM["slm_refund__004"].body, D_SLOOM["slm_refund__004"].desc)
+      + subcard(D_SLOOM["slm_refund__005"].name, D_SLOOM["slm_refund__005"].tag, D_SLOOM["slm_refund__005"].body, D_SLOOM["slm_refund__005"].desc)
+      + subcard(D_SLOOM["slm_refund__006"].name, D_SLOOM["slm_refund__006"].tag, D_SLOOM["slm_refund__006"].body, D_SLOOM["slm_refund__006"].desc)
+      + starNote("고객이 정가 차감에 미동의할 경우",
+`구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
+부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
+반품 전 꼭 확인 부탁드립니다.`)
+    )}
+  </div>
+
+  ${secTitle("","3. 포장 및 회수 안내",null,"sec3")}
+  <div class="grid2">
+    ${col("blue","🔹 전체 반품",
+      subcard(D_SLOOM["slm_refund__007"].name, D_SLOOM["slm_refund__007"].tag, D_SLOOM["slm_refund__007"].body, D_SLOOM["slm_refund__007"].desc)
+      + caution(`🎁 증정품 회수 O`)
+    )}
+    ${col("pink","🔹 부분 반품",
+      subcard(D_SLOOM["slm_refund__008"].name, D_SLOOM["slm_refund__008"].tag, D_SLOOM["slm_refund__008"].body, D_SLOOM["slm_refund__008"].desc)
+      + caution(`🎁 증정품 회수 X`)
+    )}
+  </div>
+  <div class="stack">
+    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
+      subcard(D_SLOOM["slm_refund__009"].name, D_SLOOM["slm_refund__009"].tag, D_SLOOM["slm_refund__009"].body, D_SLOOM["slm_refund__009"].desc)
+    )}
+  </div>
+  <div class="grid2">
+    ${subcard(D_SLOOM["slm_refund__010"].name, D_SLOOM["slm_refund__010"].tag, D_SLOOM["slm_refund__010"].body, D_SLOOM["slm_refund__010"].desc)}
+    ${subcard(D_SLOOM["slm_refund__011"].name, D_SLOOM["slm_refund__011"].tag, D_SLOOM["slm_refund__011"].body, D_SLOOM["slm_refund__011"].desc)}
+  </div>
+
+  ${secTitle("","4. 결제수단별 환불 안내","전체·부분 공통","sec4")}
+  <div class="grid2">
+    ${col("blue","🔹 카드결제",
+      subcard(D_SLOOM["slm_refund__012"].name, D_SLOOM["slm_refund__012"].tag, D_SLOOM["slm_refund__012"].body, D_SLOOM["slm_refund__012"].desc)
+    )}
+    ${col("blue","🔹 계좌 환불",
+      subcard(D_SLOOM["slm_refund__013"].name, D_SLOOM["slm_refund__013"].tag, D_SLOOM["slm_refund__013"].body, D_SLOOM["slm_refund__013"].desc)
+      + subcard(D_SLOOM["slm_refund__014"].name, D_SLOOM["slm_refund__014"].tag, D_SLOOM["slm_refund__014"].body, D_SLOOM["slm_refund__014"].desc)
+    )}
+  </div>
+`;
+
+const SLOOM_EXCHANGE = `
+
+  <h1>🔁 단순변심 교환</h1>
+    <div class="sub">고객 변심에 의한 교환 · 유형별 응대 (자사몰/외부몰)</div>
+
+  ${secTitle("💡","기준 및 조건",null,"secGuideX")}
+  ${caution(`※ 미개봉 또는 개봉은 했으나 미사용한 경우에만 교환 가능 (예: 뜯어만 보고 사용 안 함)`)}
+  ${cmpTable(
+  [{cls:"blue",label:"🔹 전체 교환"},{cls:"pink",label:"🔹 부분 교환"}],
+  [
+   {label:"대상", values:["구매 상품 전체 교환 희망<br>(2개 이상 구매 후 전체 교환 포함)","2개 이상 구매 후 일부만 개봉 → 개봉 제품만 교환"]},
+   {label:"교환 배송비", values:["왕복 6,000원","왕복 배송비 + 사용 제품 금액 차감"]},
+   {label:"증정품 회수", values:["회수 O","회수 X"]}
+  ]
+)}
+  <div class="grp-h">🧭 상담 플로우</div>
+  <div class="flow-diagram"><div class="fd-box">1. 교환 방식 안내 (전체 / 부분)</div><div class="fd-arrow">▶</div><div class="fd-box">2. 교환 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 검수 및 재출고 안내</div></div>
+  ${notice(["미개봉 또는 개봉했으나 미사용한 경우에만 교환 가능","교환 제품 금액이 더 높은 경우 <b>차액 결제</b> 필요","교환은 회수 → 입고 → 검수 → 재출고 방식으로 <b>영업일 기준 6~8일</b> 소요"])}
+  ${secTitle("","1. 교환 방식 안내","전체·부분","sec1")}
+  <div class="grid2">
+${col("blue","🔹 전체 교환",
+subcard(D_SLOOM["slm_exchange__001"].name, D_SLOOM["slm_exchange__001"].tag, D_SLOOM["slm_exchange__001"].body, D_SLOOM["slm_exchange__001"].desc)
+)}
+${col("pink","🔹 부분 교환",
+subcard(D_SLOOM["slm_exchange__002"].name, D_SLOOM["slm_exchange__002"].tag, D_SLOOM["slm_exchange__002"].body, D_SLOOM["slm_exchange__002"].desc)
+)}
+</div>
+  ${caution(`▶ (전체 교환) 고객이 반품 희망 시 → '단순변심 반품' 페이지로 이동하여 안내
+▶ 교환 희망 시 → ②부터 진행`)}
+  ${secTitle("","2. 교환 배송비 안내","전체·부분","sec2")}
+  <div class="grid2">
+${col("blue","🔹 전체 교환",
+subcard(D_SLOOM["slm_exchange__003"].name, D_SLOOM["slm_exchange__003"].tag, D_SLOOM["slm_exchange__003"].body, D_SLOOM["slm_exchange__003"].desc)
+)}
+${col("pink","🔹 부분 교환",
+subcard(D_SLOOM["slm_exchange__004"].name, D_SLOOM["slm_exchange__004"].tag, D_SLOOM["slm_exchange__004"].body, D_SLOOM["slm_exchange__004"].desc) + subcard(D_SLOOM["slm_exchange__005"].name, D_SLOOM["slm_exchange__005"].tag, D_SLOOM["slm_exchange__005"].body, D_SLOOM["slm_exchange__005"].desc)
+)}
+</div>
+  ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
+🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
+  ${secTitle("","3. 포장 및 회수 안내","전체·부분","sec3")}
+  <div class="grid2">
+${col("blue","🔹 전체 교환",
+subcard(D_SLOOM["slm_exchange__006"].name, D_SLOOM["slm_exchange__006"].tag, D_SLOOM["slm_exchange__006"].body, D_SLOOM["slm_exchange__006"].desc) + caution(`🎁 증정품 회수 O`)
+)}
+${col("pink","🔹 부분 교환",
+subcard(D_SLOOM["slm_exchange__007"].name, D_SLOOM["slm_exchange__007"].tag, D_SLOOM["slm_exchange__007"].body, D_SLOOM["slm_exchange__007"].desc) + caution(`🎁 증정품 회수 X`)
+)}
+</div>
+  ${subcard(D_SLOOM["slm_exchange__008"].name, D_SLOOM["slm_exchange__008"].tag, D_SLOOM["slm_exchange__008"].body, D_SLOOM["slm_exchange__008"].desc)}
+  <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
+  ${secTitle("","4. 검수 및 재출고 안내","전체·부분 공통","sec4")}
+  ${macro(D_SLOOM["slm_exchange__009"].name, D_SLOOM["slm_exchange__009"].tag, D_SLOOM["slm_exchange__009"].body, D_SLOOM["slm_exchange__009"].desc)}
+  ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
+`;

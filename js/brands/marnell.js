@@ -13,135 +13,39 @@ const MARNELL_SIDE = `
   <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">⚠️ 병원 진료·진료비 보상 요청 등 클레임/민원 발생 시 → 아래 [예외케이스] 그룹 참고</div>
 
   ${secTitle("1","선제적 사과 멘트",null,"sec_apology")}
-  ${macro("선제적 사과 멘트","부작용_사과",
-`고객님, 제품 사용 후 예상치 못한 불편과 걱정을 드리게 되어 진심으로 죄송합니다.`)}
+  ${macro(D_MARNELL["marnell_side__001"].name, D_MARNELL["marnell_side__001"].tag, D_MARNELL["marnell_side__001"].body, D_MARNELL["marnell_side__001"].desc)}
   ${secTitle("2","제품 결함 아님 및 서류 안내",null,"sec_env")}
   ${caution(`⚠️ 단, 고객 최초부터 강하게 항의/민원 제기 or 크리티컬한 단어 언급 등으로 Risk 등급 높을 경우 → 기존 Critical Issue 처리에 따라 예외적 반품 처리 진행`)}
-  ${macro("제품 결함 아님 안내","부작용_결함아님",
-`다만, 마넬 제품 사용 시 피부 타입에 따라 일시적인 반응이나 트러블은 발생할 수 있어요.
-(제품명)은 피부 자극 테스트를 포함한 품질·안전성 검사를 거쳐 출시된 제품으로, 제품 자체의 이상으로 판단하기는 어려운 점 양해 부탁드립니다.
-
-우선 사용을 중단하시고 일정 기간 경과를 확인 부탁드리며 이후 소량으로 다시 사용했을 때에도 동일한 증상이 반복될 경우,
-마넬는 공정거래위원회 고시 소비자 분쟁 해결 기준에 따라 트러블 관련 환불 제도를 운영하고 있어 필요한 서류 접수 후 전액 환불을 도와드리고 있습니다.`,
-`화장품류나 MTS 등은 일시 사용 중단 후 경과 확인 요청`)}
+  ${macro(D_MARNELL["marnell_side__002"].name, D_MARNELL["marnell_side__002"].tag, D_MARNELL["marnell_side__002"].body, D_MARNELL["marnell_side__002"].desc)}
   <div class="grp-h grp-major">🔹 a. 고객 서류 미수긍 시</div>
   ${guide(`👉🏻 고객 증빙 서류 미수긍 시 예외적으로 전액 환불 처리 안내`)}
-  ${macro("3. 전액 환불 처리 안내","부작용_전액환불_미수긍",
-`이용에 불편을 드려 대단히 죄송합니다.
-해당 제품에는 일반적으로 말씀해주신 증상을 유발하는 것으로 알려진 성분은 포함되어 있지 않습니다.
-다만 개인의 체질이나 컨디션에 따라 특정 성분이 맞지 않았을 가능성도 배제할 수 없어, 예외적으로 전액 환불 처리 도와드리겠습니다. 🙏🏻`)}
+  ${macro(D_MARNELL["marnell_side__003"].name, D_MARNELL["marnell_side__003"].tag, D_MARNELL["marnell_side__003"].body, D_MARNELL["marnell_side__003"].desc)}
   <div class="grp-h grp-major">🔹 b. 고객 서류 수긍 시</div>
-  ${macro("3. 트러블 환불/보상 제도 서류 안내","부작용_서류안내",
-`필요 서류 안내드립니다.
-번거로우시겠지만 아래 내용 확인해 주시고, 추후 재문의 주시면 절차 이어서 안내 도와드리겠습니다.
-
-■ 접수 서류 (필수)
-① 증상이 나타난 사진
-② 제품 내용물이 2/3 이상 남아 있는 사진
-③ 피부과 진단서 또는 전문의 소견서
-- 저희 제품 사용으로 인한 트러블임을 증명할 서류
-- 진단서 내 정확한 제품명 기재 필수
-④ 진료비 계산서 (서류 발급 비용 확인용 / 간이영수증 X)
-⑤ 약제비 세부 영수증 (카드 증빙 불가)
-
-■ 유의사항
-※ 해당 화장품과의 인과관계를 입증할 객관적 자료가 필요하여 진단서 내 정확한 제품명이 기재되어 있어야 합니다.
-※ 트러블로 인한 환불 요청 시, 요청 상품 외 추가로 개봉·손상된 상품은 단품 가격으로 차감 후 환불되는 점 참고 부탁드립니다. (자사몰 상품 구성 가격 기준)
-
-불편하시겠지만 피부 상태가 좋지 않으시니 우선 병원에 방문하셔서 전문의의 진료를 받아보시는 것을 권해드립니다.
-진료를 받아보시면서 진단서·소견서 작성 관련해 의사 선생님과 먼저 상의해 보신 뒤, 해당 상담은 종료되지 않도록 유지하고 있을 예정이오니 언제든 편하게 다시 문의해 주시면 이어서 안내 도와드리겠습니다.`)}
-  ${macro("4. [고객 재인입 시] 서류 확인 후 전액 환불 처리 안내","부작용_재인입_환불",
-`고객님, 경황이 없으셨을 텐데 필요한 서류와 사진을 준비하여 보내주셔서 감사합니다. 🙏🏻
-다시 한 번 불편을 드려 대단히 죄송합니다. 전액 환불 처리 도와드리겠습니다.`)}
+  ${macro(D_MARNELL["marnell_side__004"].name, D_MARNELL["marnell_side__004"].tag, D_MARNELL["marnell_side__004"].body, D_MARNELL["marnell_side__004"].desc)}
+  ${macro(D_MARNELL["marnell_side__005"].name, D_MARNELL["marnell_side__005"].tag, D_MARNELL["marnell_side__005"].body, D_MARNELL["marnell_side__005"].desc)}
   <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">👉🏻 이후 공통 : 아래 [3. 포장 및 회수 안내] → [4. 결제수단별 환불 안내] 순으로 진행</div>
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
-  ${macro("포장 및 회수 안내","부작용_포장회수",
-`📦 <b>제품 포장 안내</b>
-■ 회수 대상: {상담마다 회수가 필요한 제품을 확인하여 직접 기재}
-※ 회수 대상 제품의 본품 패키지 구성품(설명서 등)을 모두 함께 포장해 주세요.
-
-✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 마넬 ]</b> 표기 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.`)}
-  ${subcard("회수지 확인 필요 시","공통_반품_회수지확인",
-`🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`,
-`워크플로우로 인입된 건은 연결 전 정보가 수집되어 별도 확인 불필요 → 사전 수집 안 된 건에만 이 멘트 사용`)}
+  ${macro(D_MARNELL["marnell_side__006"].name, D_MARNELL["marnell_side__006"].tag, D_MARNELL["marnell_side__006"].body, D_MARNELL["marnell_side__006"].desc)}
+  ${subcard(D_MARNELL["marnell_side__007"].name, D_MARNELL["marnell_side__007"].tag, D_MARNELL["marnell_side__007"].body, D_MARNELL["marnell_side__007"].desc)}
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard("환불 절차 안내","부작용_환불_카드",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`)
+subcard(D_MARNELL["marnell_side__008"].name, D_MARNELL["marnell_side__008"].tag, D_MARNELL["marnell_side__008"].body, D_MARNELL["marnell_side__008"].desc)
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
-subcard("계좌 정보 요청","부작용_환불_계좌",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료 (환불 승인)</b>
-
-다만, (결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`) + subcard("▶ 계좌 정보 확인","부작용_환불_계좌확인",
-`소중한 정보 확인 감사합니다.
-해당 계좌로 환불 계좌 등록이 완료되었습니다.
-
-💸 <b>입금 안내</b>
-실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
-
-※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
+subcard(D_MARNELL["marnell_side__009"].name, D_MARNELL["marnell_side__009"].tag, D_MARNELL["marnell_side__009"].body, D_MARNELL["marnell_side__009"].desc) + subcard(D_MARNELL["marnell_side__010"].name, D_MARNELL["marnell_side__010"].tag, D_MARNELL["marnell_side__010"].body, D_MARNELL["marnell_side__010"].desc)
 )}
 </div>
   ${secTitle("🔺","[예외케이스] 클레임/민원/보상 요청",null,"sec_exception")}
   ${caution(`예) 부작용으로 인한 병원 진료, 진료비 보상 요청 or 부작용 정도가 심하여 진료비 보상 요청`)}
-  ${macro("① 트러블 환불/보상 제도 안내","부작용_예외_제도안내",
-`저희 마넬의 제품 이용 후 불편을 드려 대단히 죄송합니다.
-마넬는 공정거래위원회 고시 소비자 분쟁 해결 기준에 따라 트러블 관련 환불 제도를 운영하고 있어 필요한 서류 접수 후 전액 환불을 도와 드리겠습니다.`)}
-  ${macro("② 서류 안내","부작용_예외_서류안내",
-`■ 접수 서류 (필수)
-① 증상이 나타난 사진
-② 제품 내용물이 2/3 이상 남아 있는 사진
-③ 피부과 진단서 또는 전문의 소견서
-- 저희 제품 사용으로 인한 트러블임을 증명할 서류
-- 진단서 내 정확한 제품명 기재 필수
-④ 진료비 계산서 (서류 발급 비용 확인용 / 간이영수증 X)
-⑤ 약제비 세부 영수증 (카드 증빙 불가)
-
-■ 유의사항
-※ 해당 화장품과의 인과관계를 입증할 객관적 자료가 필요하여 진단서 내 정확한 제품명이 기재되어 있어야 합니다.
-※ 트러블로 인한 환불 요청 시, 요청 상품 외 추가로 개봉·손상된 상품은 단품 가격으로 차감 후 환불되는 점 참고 부탁드립니다. (자사몰 상품 구성 가격 기준)`,
-`※ ①번 트러블 환불/보상 제도 안내 전송 후 이 서류 안내 템플릿 전송`)}
-  ${macro("🔗 채팅 링크 안내","부작용_채팅링크",
-`문자로 회신해 주시는 경우에는 확인이 어려우므로, 채팅 상담으로 서류를 전달해 주세요.
-동일한 상담으로 이어서 문의하실 수 있도록 아래 채팅 링크를 함께 안내드려요.
-
-🔗 (현재 상담 중인 채팅창 링크 기재)`,
-`서류 제출을 위해 고객 재문의가 필요한 경우에만 안내 / 증빙 자료를 이미 제출한 경우에는 사용하지 않음`)}
+  ${macro(D_MARNELL["marnell_side__011"].name, D_MARNELL["marnell_side__011"].tag, D_MARNELL["marnell_side__011"].body, D_MARNELL["marnell_side__011"].desc)}
+  ${macro(D_MARNELL["marnell_side__012"].name, D_MARNELL["marnell_side__012"].tag, D_MARNELL["marnell_side__012"].body, D_MARNELL["marnell_side__012"].desc)}
+  ${macro(D_MARNELL["marnell_side__013"].name, D_MARNELL["marnell_side__013"].tag, D_MARNELL["marnell_side__013"].body, D_MARNELL["marnell_side__013"].desc)}
   ${caution(`⚠️ 고객 서류 미수긍/지속 치료비 보상 요구\n★ 증빙 서류 없이 치료비 보상은 불가`)}
   ${guide(`✔️ 부작용·트러블 유형은 제품, 고객 성향과 증상에 따라 유연하게 응대 필요\n기본적으로 증빙 자료 제출 후 전액 환불 및 급여 항목에 한해 보상 가능`)}
   ${secTitle("💠","[공통] 서류 제출 후",null,"sec_submit")}
-  ${macro("증빙 서류 확인","부작용_서류확인",
-`고객님, 경황이 없으셨을 텐데 필요한 서류와 사진을 준비하여 보내주셔서 감사합니다. 🙏🏻
-보내주신 내용은 내부적으로 면밀히 확인한 후, 확인이 완료되는 대로 처리 결과와 다음 절차를 빠르게 안내드리겠습니다.`)}
-  ${macro("진료비 환불 계좌 정보 요청","부작용_진료비계좌",
-`보내주신 영수증을 확인한 결과, 총 진료비는 (환불 예정금 기재)으로 확인되었습니다.
-해당 비용은 아래 계좌로 입금해 드릴 예정이오니, 환불받으실 계좌 정보를 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>
-
-이용에 불편을 드려 다시 한 번 죄송합니다. 🙇🏻‍♀️`)}
+  ${macro(D_MARNELL["marnell_side__014"].name, D_MARNELL["marnell_side__014"].tag, D_MARNELL["marnell_side__014"].body, D_MARNELL["marnell_side__014"].desc)}
+  ${macro(D_MARNELL["marnell_side__015"].name, D_MARNELL["marnell_side__015"].tag, D_MARNELL["marnell_side__015"].body, D_MARNELL["marnell_side__015"].desc)}
   ${guide(`<b style="color:#d32f2f;">증빙 서류 기반으로 건보 급여 항목 전액 보상</b>
 ⚠️ 팀 리드 공유 필수
 📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>의 Critical Issue(EDGE Case) 보상금 flex 워크플로우 작성법 참고하여 등록`)}
@@ -174,200 +78,265 @@ const MARNELL_DEFECT = `
   ${secTitle("2","불량 유형별 증빙·인정 안내",null,"sec_evid")}
   <div class="quote-box"><b>⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</b><br><span style="font-weight:500;font-size:13px;">※ 단, 변질·굳음·결로 유형은 예외 — 미개봉 보관 + 보관주의사항 준수 시 7일 경과 후에도 확인 후 처리(아래 해당 유형별 안내 참고)</span></div>
   <div class="grp-h">1. 리무빙컬 매직 앰플&브러시 — 브러시 파손(빗살 휘어짐·부러짐)</div>
-  ${macro("사진·영상 증빙 요청","marnell_브러시파손_증빙",
-`말씀해 주신 빗살이 휘어지거나 부러진 부위 확인을 위해, 제품 전체 사진(또는 영상)과 문제 부위를 확대한 사진을 함께 보내주실 수 있을까요?`)}
+  ${macro(D_MARNELL["marnell_as__001"].name, D_MARNELL["marnell_as__001"].tag, D_MARNELL["marnell_as__001"].body, D_MARNELL["marnell_as__001"].desc)}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard("교환/반품 안내","marnell_브러시파손_인정",
-`보내주신 사진 확인 결과 브러시 불량으로 확인되어, 교환 또는 반품(전액 환불) 도와드리겠습니다.
-어떤 방식으로 도와드리면 좋을지 말씀해 주시면, 이어서 포장·회수 안내 도와드리겠습니다.`)
+subcard(D_MARNELL["marnell_as__002"].name, D_MARNELL["marnell_as__002"].tag, D_MARNELL["marnell_as__002"].body, D_MARNELL["marnell_as__002"].desc)
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard("정상 판정 안내","marnell_브러시파손_미인정",
-`다만 확인 결과 제품 자체의 불량이라기보다(보관·사용 환경 등에 따른) 정상 범위로 확인되어, 불량 처리는 어려운 점 양해 부탁드립니다. 🙏🏻
-불편을 드려 죄송하며, 추가로 궁금하신 점 있으시면 다시 말씀해 주세요.`)
+subcard(D_MARNELL["marnell_as__003"].name, D_MARNELL["marnell_as__003"].tag, D_MARNELL["marnell_as__003"].body, D_MARNELL["marnell_as__003"].desc)
 )}
 </div>
   ${caution(`📝 근거/비고: 공식몰 확인 — 헤어 스트레이트닝용 수동 브러시(전동 아님). 앰플을 브러시에 발라 빗어 사용하는 구조.`)}
 
   <div class="grp-h">2. 리무빙컬 매직 앰플&브러시 — 앰플 용기 파손·누출</div>
-  ${macro("사진·영상 증빙 요청","marnell_앰플누출_증빙",
-`말씀해 주신 앰플 용기 파손 부위 또는 누출 상태 확인을 위해, 제품 전체 사진(또는 영상)과 문제 부위를 확대한 사진을 함께 보내주실 수 있을까요?`)}
+  ${macro(D_MARNELL["marnell_as__004"].name, D_MARNELL["marnell_as__004"].tag, D_MARNELL["marnell_as__004"].body, D_MARNELL["marnell_as__004"].desc)}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard("교환/반품 안내","marnell_앰플누출_인정",
-`보내주신 사진 확인 결과 앰플 불량으로 확인되어, 교환 또는 반품(전액 환불) 도와드리겠습니다.
-어떤 방식으로 도와드리면 좋을지 말씀해 주시면, 이어서 포장·회수 안내 도와드리겠습니다.`)
+subcard(D_MARNELL["marnell_as__005"].name, D_MARNELL["marnell_as__005"].tag, D_MARNELL["marnell_as__005"].body, D_MARNELL["marnell_as__005"].desc)
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard("정상 판정 안내","marnell_앰플누출_미인정",
-`다만 확인 결과 제품 자체의 불량이라기보다(보관·사용 환경 등에 따른) 정상 범위로 확인되어, 불량 처리는 어려운 점 양해 부탁드립니다. 🙏🏻
-불편을 드려 죄송하며, 추가로 궁금하신 점 있으시면 다시 말씀해 주세요.`)
+subcard(D_MARNELL["marnell_as__006"].name, D_MARNELL["marnell_as__006"].tag, D_MARNELL["marnell_as__006"].body, D_MARNELL["marnell_as__006"].desc)
 )}
 </div>
   ${caution(`📝 근거/비고: 앰플과 브러시가 세트 구성이라 앰플만 불량이어도 세트 전체 회수.`)}
 
   <div class="grp-h">3. 리무빙컬 매직 앰플&브러시 — 앰플 내용물 변질(변색·냄새 변화·분리)</div>
-  ${macro("사진·영상 증빙 요청","marnell_앰플변질_증빙",
-`말씀해 주신 앰플 내용물의 변색·냄새 변화·분리 상태 확인을 위해, 제품 전체 사진(또는 영상)과 문제 부위를 확대한 사진을 함께 보내주실 수 있을까요?`)}
+  ${macro(D_MARNELL["marnell_as__007"].name, D_MARNELL["marnell_as__007"].tag, D_MARNELL["marnell_as__007"].body, D_MARNELL["marnell_as__007"].desc)}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard("교환/반품 안내","marnell_앰플변질_인정",
-`보내주신 사진 확인 결과 앰플 불량으로 확인되어, 교환 또는 반품(전액 환불) 도와드리겠습니다.
-어떤 방식으로 도와드리면 좋을지 말씀해 주시면, 이어서 포장·회수 안내 도와드리겠습니다.`)
+subcard(D_MARNELL["marnell_as__008"].name, D_MARNELL["marnell_as__008"].tag, D_MARNELL["marnell_as__008"].body, D_MARNELL["marnell_as__008"].desc)
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard("정상 판정 안내","marnell_앰플변질_미인정",
-`다만 확인 결과 제품 자체의 불량이라기보다(보관·사용 환경 등에 따른) 정상 범위로 확인되어, 불량 처리는 어려운 점 양해 부탁드립니다. 🙏🏻
-불편을 드려 죄송하며, 추가로 궁금하신 점 있으시면 다시 말씀해 주세요.`)
+subcard(D_MARNELL["marnell_as__009"].name, D_MARNELL["marnell_as__009"].tag, D_MARNELL["marnell_as__009"].body, D_MARNELL["marnell_as__009"].desc)
 )}
 </div>
   ${caution(`🕐 [7일 룰 예외] 변질·굳음·결로는 개봉 전에는 확인이 불가능한 유형이므로, 수령일로부터 7일이 경과했더라도 <b>미개봉 상태로 보관</b>했고 <b>보관주의사항을 준수</b>한 경우라면 접수 후 확인하여 처리함(7일 경과를 이유로 즉시 처리 불가 안내하지 않음).`)}
   ${caution(`📝 근거/비고: [v5 보완] 파손/누출과 별개로 '내용물 변질' 유형이 빠져 있었음 — 추가함.`)}
 
   <div class="grp-h">4. 마그네슘 슬리밍 부스터 — 펌프·캡 작동 불량 / 용기 파손</div>
-  ${macro("사진·영상 증빙 요청","marnell_부스터용기_증빙",
-`말씀해 주신 펌프·캡 작동 불량 또는 용기 파손 부위 확인을 위해, 제품 전체 사진(또는 영상)과 문제 부위를 확대한 사진을 함께 보내주실 수 있을까요?`)}
+  ${macro(D_MARNELL["marnell_as__010"].name, D_MARNELL["marnell_as__010"].tag, D_MARNELL["marnell_as__010"].body, D_MARNELL["marnell_as__010"].desc)}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard("교환/반품 안내","marnell_부스터용기_인정",
-`보내주신 사진 확인 결과 용기 불량으로 확인되어, 교환 또는 반품(전액 환불) 도와드리겠습니다.
-어떤 방식으로 도와드리면 좋을지 말씀해 주시면, 이어서 포장·회수 안내 도와드리겠습니다.`)
+subcard(D_MARNELL["marnell_as__011"].name, D_MARNELL["marnell_as__011"].tag, D_MARNELL["marnell_as__011"].body, D_MARNELL["marnell_as__011"].desc)
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard("정상 판정 안내","marnell_부스터용기_미인정",
-`다만 확인 결과 제품 자체의 불량이라기보다(보관·사용 환경 등에 따른) 정상 범위로 확인되어, 불량 처리는 어려운 점 양해 부탁드립니다. 🙏🏻
-불편을 드려 죄송하며, 추가로 궁금하신 점 있으시면 다시 말씀해 주세요.`)
+subcard(D_MARNELL["marnell_as__012"].name, D_MARNELL["marnell_as__012"].tag, D_MARNELL["marnell_as__012"].body, D_MARNELL["marnell_as__012"].desc)
 )}
 </div>
   ${caution(`📝 근거/비고: 박스형 부스터 제품, 실제 용기 구조(펌프/드로퍼 등) 실물 확인 후 유형 보완 필요.`)}
 
   <div class="grp-h">5. 마그네슘 슬리밍 부스터 — 내용물 변질(변색·냄새 변화·분리)</div>
-  ${macro("사진·영상 증빙 요청","marnell_부스터변질_증빙",
-`말씀해 주신 내용물의 변색·냄새 변화·분리 상태 확인을 위해, 제품 전체 사진(또는 영상)과 문제 부위를 확대한 사진을 함께 보내주실 수 있을까요?`)}
+  ${macro(D_MARNELL["marnell_as__013"].name, D_MARNELL["marnell_as__013"].tag, D_MARNELL["marnell_as__013"].body, D_MARNELL["marnell_as__013"].desc)}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard("교환/반품 안내","marnell_부스터변질_인정",
-`보내주신 사진 확인 결과 내용물 불량으로 확인되어, 교환 또는 반품(전액 환불) 도와드리겠습니다.
-어떤 방식으로 도와드리면 좋을지 말씀해 주시면, 이어서 포장·회수 안내 도와드리겠습니다.`)
+subcard(D_MARNELL["marnell_as__014"].name, D_MARNELL["marnell_as__014"].tag, D_MARNELL["marnell_as__014"].body, D_MARNELL["marnell_as__014"].desc)
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard("정상 판정 안내","marnell_부스터변질_미인정",
-`다만 확인 결과 제품 자체의 불량이라기보다(보관·사용 환경 등에 따른) 정상 범위로 확인되어, 불량 처리는 어려운 점 양해 부탁드립니다. 🙏🏻
-불편을 드려 죄송하며, 추가로 궁금하신 점 있으시면 다시 말씀해 주세요.`)
+subcard(D_MARNELL["marnell_as__015"].name, D_MARNELL["marnell_as__015"].tag, D_MARNELL["marnell_as__015"].body, D_MARNELL["marnell_as__015"].desc)
 )}
 </div>
   ${caution(`🕐 [7일 룰 예외] 변질·굳음·결로는 개봉 전에는 확인이 불가능한 유형이므로, 수령일로부터 7일이 경과했더라도 <b>미개봉 상태로 보관</b>했고 <b>보관주의사항을 준수</b>한 경우라면 접수 후 확인하여 처리함(7일 경과를 이유로 즉시 처리 불가 안내하지 않음).`)}
   ${caution(`📝 근거/비고: [v5 보완] '변질' 유형 누락분 추가.`)}
 
   <div class="grp-h">6. 듀얼 블랙 속눈썹 영양제(현재 품절) — 브러시·용기 불량 / 내용물 변질</div>
-  ${macro("사진·영상 증빙 요청","marnell_속눈썹영양제_증빙",
-`말씀해 주신 브러시 손상 또는 용기 파손 부위, 혹은 내용물의 변색·냄새 변화 확인을 위해, 제품 전체 사진(또는 영상)과 문제 부위를 확대한 사진을 함께 보내주실 수 있을까요?`)}
+  ${macro(D_MARNELL["marnell_as__016"].name, D_MARNELL["marnell_as__016"].tag, D_MARNELL["marnell_as__016"].body, D_MARNELL["marnell_as__016"].desc)}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard("교환/반품 안내","marnell_속눈썹영양제_인정",
-`보내주신 사진 확인 결과 용기(브러시) 또는 내용물 불량으로 확인되어, 교환 또는 반품(전액 환불) 도와드리겠습니다.
-어떤 방식으로 도와드리면 좋을지 말씀해 주시면, 이어서 포장·회수 안내 도와드리겠습니다.`)
+subcard(D_MARNELL["marnell_as__017"].name, D_MARNELL["marnell_as__017"].tag, D_MARNELL["marnell_as__017"].body, D_MARNELL["marnell_as__017"].desc)
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard("정상 판정 안내","marnell_속눈썹영양제_미인정",
-`다만 확인 결과 제품 자체의 불량이라기보다(보관·사용 환경 등에 따른) 정상 범위로 확인되어, 불량 처리는 어려운 점 양해 부탁드립니다. 🙏🏻
-불편을 드려 죄송하며, 추가로 궁금하신 점 있으시면 다시 말씀해 주세요.`)
+subcard(D_MARNELL["marnell_as__018"].name, D_MARNELL["marnell_as__018"].tag, D_MARNELL["marnell_as__018"].body, D_MARNELL["marnell_as__018"].desc)
 )}
 </div>
   ${caution(`🕐 [7일 룰 예외] 변질·굳음·결로는 개봉 전에는 확인이 불가능한 유형이므로, 수령일로부터 7일이 경과했더라도 <b>미개봉 상태로 보관</b>했고 <b>보관주의사항을 준수</b>한 경우라면 접수 후 확인하여 처리함(7일 경과를 이유로 즉시 처리 불가 안내하지 않음).`)}
   ${caution(`📝 근거/비고: 공식몰 기준 현재 품절 상태 — 재입고 시 유효한 유형으로 남겨둠. 재입고 안내 시점에 재확인 필요.`)}
 
   <div class="grp-h">7. 올인원 주름 패치(현재 품절) — 패치 접착 불량 / 파손</div>
-  ${macro("사진·영상 증빙 요청","marnell_주름패치_증빙",
-`말씀해 주신 패치가 붙지 않거나 찢어진 부위 확인을 위해, 제품 전체 사진(또는 영상)과 문제 부위를 확대한 사진을 함께 보내주실 수 있을까요?`)}
+  ${macro(D_MARNELL["marnell_as__019"].name, D_MARNELL["marnell_as__019"].tag, D_MARNELL["marnell_as__019"].body, D_MARNELL["marnell_as__019"].desc)}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard("교환/반품 안내","marnell_주름패치_인정",
-`보내주신 사진 확인 결과 패치 불량으로 확인되어, 교환 또는 반품(전액 환불) 도와드리겠습니다.
-어떤 방식으로 도와드리면 좋을지 말씀해 주시면, 이어서 포장·회수 안내 도와드리겠습니다.`)
+subcard(D_MARNELL["marnell_as__020"].name, D_MARNELL["marnell_as__020"].tag, D_MARNELL["marnell_as__020"].body, D_MARNELL["marnell_as__020"].desc)
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard("정상 판정 안내","marnell_주름패치_미인정",
-`다만 확인 결과 제품 자체의 불량이라기보다(보관·사용 환경 등에 따른) 정상 범위로 확인되어, 불량 처리는 어려운 점 양해 부탁드립니다. 🙏🏻
-불편을 드려 죄송하며, 추가로 궁금하신 점 있으시면 다시 말씀해 주세요.`)
+subcard(D_MARNELL["marnell_as__021"].name, D_MARNELL["marnell_as__021"].tag, D_MARNELL["marnell_as__021"].body, D_MARNELL["marnell_as__021"].desc)
 )}
 </div>
   ${caution(`📝 근거/비고: 공식몰 기준 현재 품절 상태 — 재입고 시 유효한 유형으로 남겨둠.`)}
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
-  ${macro("포장 및 회수 안내","marnell_포장회수",
-`📦 <b>제품 포장 안내</b>
-■ 제품 전체(캡·펌프·뚜껑 등 용기 부속 포함)
-💡 세트로 구성된 상품(본품 외 별도 부속품 포함)은 부속품까지 함께 포장해 주세요. (예: 리무빙컬 매직 앰플&브러시 — 앰플만 불량이어도 세트 전체 회수)
-■ 사은품·증정품(받으신 경우)
-
-✍🏽 택배 박스 윗면에 <b>[ 불량 / CJ대한통운 / 마넬 ]</b> 표기 부탁드립니다.
-
-🚚 <b>회수 안내</b>
-· 택배사 : CJ대한통운
-· 영업일 기준 2~3일 내 방문
-방문 전 택배사 알림톡 또는 택배 기사 연락이 있을 예정이며, 택배 기사 방문 시 직접 전달 또는 문 앞 보관 부탁드립니다.
-
-💡 택배·제품 자체 박스가 없는 경우 대체 가능한 택배 박스에 포장해 주세요.
-⚠️ 박스 포장이 아닐 경우 수거 거부됩니다.
-
-🙋‍♀️ 마지막으로, 제품 회수는 기존 주소지로 접수해 드리면 될까요?`)}
+  ${macro(D_MARNELL["marnell_as__022"].name, D_MARNELL["marnell_as__022"].tag, D_MARNELL["marnell_as__022"].body, D_MARNELL["marnell_as__022"].desc)}
   ${caution(`📝 [통합판] 화장품류 카테고리 문구 + 세트 구성 상품(리무빙컬) 예외 한 줄 추가. 속눈썹영양제·주름패치(품절)도 동일 화장품류 문구 적용.`)}
 
   ${secTitle("4","교환/반품 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","🔹 교환 시 — 재출고 일정 안내",
 `<div class="quote-box"><b>⚠️ 유의사항</b>\n① 접수 시간 기준으로 안내 필요\n② 불량으로 인한 재출고는 회수 접수와 동시에 재출고 접수</div>` +
-subcard("i. 월-금 오후 2시 이전 상담","marnell_교환_재출고A",
-`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>
-
-· 출고 : 오늘 출고 예정
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운`) +
-subcard("ii. 월-목 오후 2시 이후 상담","marnell_교환_재출고B",
-`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>
-
-· 출고 : 오늘 출고 마감으로 내일 출고 예정
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운`) +
-subcard("iii. 금요일 오후 2시 이후 상담","marnell_교환_재출고C",
-`<b>🚚 교환 제품 재출고 일정 안내드리겠습니다.</b>
-
-· 출고 : 오늘 출고 마감으로 차주 월요일 출고 예정
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-※ 주말/공휴일 출고 미진행`)
+subcard(D_MARNELL["marnell_as__023"].name, D_MARNELL["marnell_as__023"].tag, D_MARNELL["marnell_as__023"].body, D_MARNELL["marnell_as__023"].desc) +
+subcard(D_MARNELL["marnell_as__024"].name, D_MARNELL["marnell_as__024"].tag, D_MARNELL["marnell_as__024"].body, D_MARNELL["marnell_as__024"].desc) +
+subcard(D_MARNELL["marnell_as__025"].name, D_MARNELL["marnell_as__025"].tag, D_MARNELL["marnell_as__025"].body, D_MARNELL["marnell_as__025"].desc)
 )}
 ${col("pink","🔹 반품 시 — 결제수단별 환불 안내",
-subcard("환불 절차 안내(카드·삼성페이·네이버페이)","marnell_환불_카드",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료(환불 승인)</b>
-
-결제수단에 따라 실제 카드 승인 취소(환불 완료)까지는 반품 완료 시점으로부터 영업일 기준 3~6일 추가 소요될 수 있습니다.
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`) + subcard("환불 절차 안내(계좌·무통장/가상계좌)","marnell_환불_계좌",
-`환불은 아래 절차를 거쳐 진행되며, 영업일 기준 약 6~8일 정도 소요됩니다.
-
-📦 <b>제품 수거 → 검수 → 반품 완료(환불 승인)</b>
-
-다만, (결제수단 안내 - 무통장 입금 or 가상계좌 결제)로 결제해 주신 점 확인되어, 환불을 위해 아래 계좌 정보 전달 부탁드립니다.
-
-🏦 <b>은행 / 계좌번호 / 예금주</b>
-
-이용에 불편을 드려 다시 한 번 죄송합니다.`) + subcard("▶ 계좌 정보 확인","marnell_환불_계좌확인",
-`소중한 정보 확인 감사합니다.
-해당 계좌로 환불 계좌 등록이 완료되었습니다.
-
-💸 <b>입금 안내</b>
-실제 반품 완료 처리 후 영업일 기준 1~2일 내 입금 예정
-
-※ 은행 점검 시간 또는 공휴일에 따라 입금이 지연될 수 있습니다.`)
+subcard(D_MARNELL["marnell_as__026"].name, D_MARNELL["marnell_as__026"].tag, D_MARNELL["marnell_as__026"].body, D_MARNELL["marnell_as__026"].desc) + subcard(D_MARNELL["marnell_as__027"].name, D_MARNELL["marnell_as__027"].tag, D_MARNELL["marnell_as__027"].body, D_MARNELL["marnell_as__027"].desc) + subcard(D_MARNELL["marnell_as__028"].name, D_MARNELL["marnell_as__028"].tag, D_MARNELL["marnell_as__028"].body, D_MARNELL["marnell_as__028"].desc)
 )}
 </div>
 
 `;
 
 
+
+
+const MARNELL_REFUND = `
+  <h1>🔄 단순변심 반품</h1>
+  <div class="sub">고객 변심에 의한 반품 · 유형별 응대</div>
+
+  ${secTitle("💡","기준 및 조건",null,"secGuide")}
+  ${cmpTable(
+    [{cls:"blue",label:"🔹 전체 반품"},{cls:"pink",label:"🔹 부분 반품"}],
+    [
+      {label:"조건", values:[
+        "구매 제품 전체 미사용<br>미개봉 또는 개봉했으나 미사용<br>(예: 박스만 열어보고 다시 닫음)",
+        "2개 이상 구매 후 일부만 개봉(사용)<br>(예: 2개 구매 후 1개만 개봉·사용 시, 미개봉 제품만 부분 반품)"
+      ]},
+      {label:"반품 배송비", values:["6,000원","3,000원"]},
+      {label:"회수 품목", values:[
+        "모든 구성품 + 증정품 포함",
+        "사용(개봉) 제품 제외, 미사용(미개봉) 제품과 그 구성품만 회수"
+      ]}
+    ]
+  )}
+  <div class="grp-h">🧭 상담 플로우</div>
+  <div class="flow-diagram"><div class="fd-box">1. 7일 경과 여부 및 사유 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 결제수단별 환불 안내</div></div>
+  ${notice([
+    "<b>개봉 후 사용한 제품은 '사용 제품'으로 간주되어 단순변심 반품 불가.</b>",
+    "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
+    `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`
+  ])}
+
+  ${secTitle("","1. 7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
+  <div class="grid2">
+    ${colTag("gray","수령일로부터 7일 이내","반품교환_7일이내_사유확인",
+`반품을 원하시는 사유가 어떻게 되실까요? :)
+개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
+제품 사용 여부도 함께 확인 부탁드립니다.`)}
+    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+`단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
+현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
+  </div>
+  <div class="branch-box">
+    <div class="branch-h">💡 고객이 말씀하신 사유·증상에 따라 알맞은 유형으로 이동하여 응대</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">수령일 7일 이내 · <b>미사용</b></td><td class="ar">→</td><td><span class="bdg b-blue">단순변심</span></td></tr>
+    
+    
+    <tr><td class="cond">제품 <b>불량</b> (사용·수령일 무관)</td><td class="ar">→</td><td><span class="bdg b-pink">불량 AS 교환/반품</span></td></tr>
+    </tbody></table>
+    
+  </div>
+
+  ${secTitle("","2. 반품 배송비 안내",null,"sec2")}
+  <div class="grid2">
+    ${col("blue","🔹 전체 반품",
+      subcard(D_MARNELL["marnell_refund__001"].name, D_MARNELL["marnell_refund__001"].tag, D_MARNELL["marnell_refund__001"].body, D_MARNELL["marnell_refund__001"].desc)
+      + subcard(D_MARNELL["marnell_refund__002"].name, D_MARNELL["marnell_refund__002"].tag, D_MARNELL["marnell_refund__002"].body, D_MARNELL["marnell_refund__002"].desc)
+      + subcard(D_MARNELL["marnell_refund__003"].name, D_MARNELL["marnell_refund__003"].tag, D_MARNELL["marnell_refund__003"].body, D_MARNELL["marnell_refund__003"].desc)
+    )}
+    ${col("pink","🔹 부분 반품",
+      subcard(D_MARNELL["marnell_refund__004"].name, D_MARNELL["marnell_refund__004"].tag, D_MARNELL["marnell_refund__004"].body, D_MARNELL["marnell_refund__004"].desc)
+      + subcard(D_MARNELL["marnell_refund__005"].name, D_MARNELL["marnell_refund__005"].tag, D_MARNELL["marnell_refund__005"].body, D_MARNELL["marnell_refund__005"].desc)
+      + subcard(D_MARNELL["marnell_refund__006"].name, D_MARNELL["marnell_refund__006"].tag, D_MARNELL["marnell_refund__006"].body, D_MARNELL["marnell_refund__006"].desc)
+      + starNote("고객이 정가 차감에 미동의할 경우",
+`구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
+부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
+반품 전 꼭 확인 부탁드립니다.`)
+    )}
+  </div>
+
+  ${secTitle("","3. 포장 및 회수 안내",null,"sec3")}
+  <div class="grid2">
+    ${col("blue","🔹 전체 반품",
+      subcard(D_MARNELL["marnell_refund__007"].name, D_MARNELL["marnell_refund__007"].tag, D_MARNELL["marnell_refund__007"].body, D_MARNELL["marnell_refund__007"].desc)
+      + caution(`🎁 증정품 회수 O`)
+    )}
+    ${col("pink","🔹 부분 반품",
+      subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc)
+      + caution(`🎁 증정품 회수 X`)
+    )}
+  </div>
+  <div class="stack">
+    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
+      subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc)
+    )}
+  </div>
+  <div class="grid2">
+    ${subcard(D_MARNELL["marnell_refund__010"].name, D_MARNELL["marnell_refund__010"].tag, D_MARNELL["marnell_refund__010"].body, D_MARNELL["marnell_refund__010"].desc)}
+    ${subcard(D_MARNELL["marnell_refund__011"].name, D_MARNELL["marnell_refund__011"].tag, D_MARNELL["marnell_refund__011"].body, D_MARNELL["marnell_refund__011"].desc)}
+  </div>
+
+  ${secTitle("","4. 결제수단별 환불 안내","전체·부분 공통","sec4")}
+  <div class="grid2">
+    ${col("blue","🔹 카드결제",
+      subcard(D_MARNELL["marnell_refund__012"].name, D_MARNELL["marnell_refund__012"].tag, D_MARNELL["marnell_refund__012"].body, D_MARNELL["marnell_refund__012"].desc)
+    )}
+    ${col("blue","🔹 계좌 환불",
+      subcard(D_MARNELL["marnell_refund__013"].name, D_MARNELL["marnell_refund__013"].tag, D_MARNELL["marnell_refund__013"].body, D_MARNELL["marnell_refund__013"].desc)
+      + subcard(D_MARNELL["marnell_refund__014"].name, D_MARNELL["marnell_refund__014"].tag, D_MARNELL["marnell_refund__014"].body, D_MARNELL["marnell_refund__014"].desc)
+    )}
+  </div>
+`;
+
+const MARNELL_EXCHANGE = `
+
+  <h1>🔁 단순변심 교환</h1>
+    <div class="sub">고객 변심에 의한 교환 · 유형별 응대 (자사몰/외부몰)</div>
+
+  ${secTitle("💡","기준 및 조건",null,"secGuideX")}
+  ${caution(`※ 미개봉 또는 개봉은 했으나 미사용한 경우에만 교환 가능 (예: 뜯어만 보고 사용 안 함)`)}
+  ${cmpTable(
+  [{cls:"blue",label:"🔹 전체 교환"},{cls:"pink",label:"🔹 부분 교환"}],
+  [
+   {label:"대상", values:["구매 상품 전체 교환 희망<br>(2개 이상 구매 후 전체 교환 포함)","2개 이상 구매 후 일부만 개봉 → 개봉 제품만 교환"]},
+   {label:"교환 배송비", values:["왕복 6,000원","왕복 배송비 + 사용 제품 금액 차감"]},
+   {label:"증정품 회수", values:["회수 O","회수 X"]}
+  ]
+)}
+  <div class="grp-h">🧭 상담 플로우</div>
+  <div class="flow-diagram"><div class="fd-box">1. 교환 방식 안내 (전체 / 부분)</div><div class="fd-arrow">▶</div><div class="fd-box">2. 교환 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 검수 및 재출고 안내</div></div>
+  ${notice(["미개봉 또는 개봉했으나 미사용한 경우에만 교환 가능","교환 제품 금액이 더 높은 경우 <b>차액 결제</b> 필요","교환은 회수 → 입고 → 검수 → 재출고 방식으로 <b>영업일 기준 6~8일</b> 소요"])}
+  ${secTitle("","1. 교환 방식 안내","전체·부분","sec1")}
+  <div class="grid2">
+${col("blue","🔹 전체 교환",
+subcard(D_MARNELL["marnell_exchange__001"].name, D_MARNELL["marnell_exchange__001"].tag, D_MARNELL["marnell_exchange__001"].body, D_MARNELL["marnell_exchange__001"].desc)
+)}
+${col("pink","🔹 부분 교환",
+subcard(D_MARNELL["marnell_exchange__002"].name, D_MARNELL["marnell_exchange__002"].tag, D_MARNELL["marnell_exchange__002"].body, D_MARNELL["marnell_exchange__002"].desc)
+)}
+</div>
+  ${caution(`▶ (전체 교환) 고객이 반품 희망 시 → '단순변심 반품' 페이지로 이동하여 안내
+▶ 교환 희망 시 → ②부터 진행`)}
+  ${secTitle("","2. 교환 배송비 안내","전체·부분","sec2")}
+  <div class="grid2">
+${col("blue","🔹 전체 교환",
+subcard(D_MARNELL["marnell_exchange__003"].name, D_MARNELL["marnell_exchange__003"].tag, D_MARNELL["marnell_exchange__003"].body, D_MARNELL["marnell_exchange__003"].desc)
+)}
+${col("pink","🔹 부분 교환",
+subcard(D_MARNELL["marnell_exchange__004"].name, D_MARNELL["marnell_exchange__004"].tag, D_MARNELL["marnell_exchange__004"].body, D_MARNELL["marnell_exchange__004"].desc) + subcard(D_MARNELL["marnell_exchange__005"].name, D_MARNELL["marnell_exchange__005"].tag, D_MARNELL["marnell_exchange__005"].body, D_MARNELL["marnell_exchange__005"].desc)
+)}
+</div>
+  ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
+🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
+  ${secTitle("","3. 포장 및 회수 안내","전체·부분","sec3")}
+  <div class="grid2">
+${col("blue","🔹 전체 교환",
+subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc) + caution(`🎁 증정품 회수 O`)
+)}
+${col("pink","🔹 부분 교환",
+subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc) + caution(`🎁 증정품 회수 X`)
+)}
+</div>
+  ${subcard(D_MARNELL["marnell_exchange__008"].name, D_MARNELL["marnell_exchange__008"].tag, D_MARNELL["marnell_exchange__008"].body, D_MARNELL["marnell_exchange__008"].desc)}
+  <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
+  ${secTitle("","4. 검수 및 재출고 안내","전체·부분 공통","sec4")}
+  ${macro(D_MARNELL["marnell_exchange__009"].name, D_MARNELL["marnell_exchange__009"].tag, D_MARNELL["marnell_exchange__009"].body, D_MARNELL["marnell_exchange__009"].desc)}
+  ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
+`;
