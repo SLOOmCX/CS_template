@@ -10821,6 +10821,8 @@ const GH_OWNER="SLOOmCX", GH_REPO="CS_template", GH_BRANCH="main", GH_PATH="inde
 const EDITABLE_SEL=".macro-body,.subcard-body,.guide-body,.col-body,.col-body-plain,.star-body,.bn-body,.cmp-ment-body,.quote-box,h1,h2,h3,.mname,.sc-label,.sub,.cmp-table td,.cmp-table th";
 let EDIT_MODE=false;
 let EDIT_ORIG=new Map(); // el -> 편집 시작 시점 innerHTML 스냅샷
+let EDIT_LAST_KEY=null;  // 마지막으로 render()된 내용이 CONTENT의 어느 key였는지 (같은 문구가 여러 브랜드에 중복될 때 저장 위치를 좁히는 용도)
+let EDIT_ENTER_KEY=null; // 편집 모드 진입 시점의 EDIT_LAST_KEY 스냅샷
 
 function edUtf8ToB64(str){
   const bytes=new TextEncoder().encode(str);
@@ -10915,6 +10917,7 @@ function toggleEditMode(){ EDIT_MODE? edExit(true) : edEnter(); }
 function edEnter(){
   const page=document.getElementById("page"); if(!page) return;
   EDIT_MODE=true; EDIT_ORIG.clear();
+  EDIT_ENTER_KEY=EDIT_LAST_KEY; // 지금 보고 있는 페이지가 CONTENT의 어느 key인지 고정
   const all=[...page.querySelectorAll(EDITABLE_SEL)];
   // 카드 안에 카드가 중첩된 경우(예: col-body 안에 subcard-body) 안쪽 요소만 편집 대상으로 삼음 —
   // 편집 영역이 겹치면 브라우저가 텍스트를 미묘하게 재구성해 저장 시 불필요한 "실패" 항목이 생김
@@ -10970,6 +10973,38 @@ function edVariant(s, mode){
   if(mode>=2) r=r.replace(/"/g,'\\"');
   return r;
 }
+function edPlainText(html){
+  try{ const d=document.createElement("div"); d.innerHTML=html; return d.textContent||""; }
+  catch(e){ return ""; }
+}
+// 같은 문구가 여러 브랜드 페이지에 거의 그대로 반복되는 경우가 많아서(예: 100% 환불 안내, 전화 주문 유의사항 등),
+// 전체 파일에서 무조건 "유일하게 1번만 매치"를 요구하면 정상적인 문구도 실패 처리될 수 있음.
+// 그래서 지금 보고 있는 페이지(CONTENT의 key)가 소스의 어느 const 블록에서 나왔는지 먼저 찾아
+// 그 블록 안에서 우선 매칭을 시도하고, 못 찾으면 기존처럼 전체 파일에서 매칭(안전장치 유지).
+function edFindScopeVarname(src, key){
+  if(!key) return null;
+  try{
+    const cMatch=src.match(/const CONTENT\s*=\s*\{[\s\S]*?\n\};/);
+    if(!cMatch) return null;
+    const kEsc=key.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+    const pairMatch=cMatch[0].match(new RegExp('"'+kEsc+'"\\s*:\\s*([A-Za-z_][A-Za-z0-9_]*)'));
+    return pairMatch ? pairMatch[1] : null;
+  }catch(e){ return null; }
+}
+function edScopeRange(src, varName){
+  if(!varName) return null;
+  try{
+    const declRe=new RegExp("\\nconst "+varName+"\\s*=");
+    const declM=declRe.exec(src);
+    if(!declM) return null;
+    const scopeStart=declM.index+1;
+    const nextRe=/\nconst [A-Z_][A-Z0-9_]*\s*=/g;
+    nextRe.lastIndex=scopeStart+varName.length+10;
+    const nextM=nextRe.exec(src);
+    const scopeEnd=nextM ? nextM.index+1 : src.length;
+    return [scopeStart, scopeEnd];
+  }catch(e){ return null; }
+}
 
 async function edSave(){
   const changed=[...EDIT_ORIG.entries()].filter(([el,orig])=>el.innerHTML!==orig);
@@ -11013,16 +11048,26 @@ async function edSave(){
       }
 
       let done=false;
-      for(let mode=0; mode<3 && !done; mode++){
-        const needle=edVariant(origHTML, mode);
-        const cnt=src.split(needle).length-1;
-        if(cnt===1){
-          src = src.split(needle).join(edVariant(newHTML, mode));
-          done=true;
+      const scopeVarName=edFindScopeVarname(src, EDIT_ENTER_KEY);
+      const scoped=scopeVarName ? edScopeRange(src, scopeVarName) : null;
+      const searchRanges=scoped ? [scoped, [0, src.length]] : [[0, src.length]];
+      for(const [rs, re] of searchRanges){
+        if(done) break;
+        for(let mode=0; mode<3 && !done; mode++){
+          const needle=edVariant(origHTML, mode);
+          if(!needle) continue;
+          const region=src.slice(rs, re);
+          const cnt=region.split(needle).length-1;
+          if(cnt===1){
+            const relIdx=region.indexOf(needle);
+            const absIdx=rs+relIdx;
+            src = src.slice(0, absIdx) + edVariant(newHTML, mode) + src.slice(absIdx+needle.length);
+            done=true;
+          }
         }
       }
       if(done) applied.push(`${label} 수정됨`);
-      else failed.push(`${label} → 소스에서 정확히 못 찾아 자동 반영 실패. 원문: "${el.textContent.trim().slice(0,60)}"`);
+      else failed.push(`${label} → 소스에서 정확히 못 찾아 자동 반영 실패 (같은 문구가 다른 브랜드에도 있어 위치를 특정 못했을 수 있어요). 원문: "${edPlainText(origHTML).trim().slice(0,60)}"`);
     }
 
     if(applied.length===0){
@@ -11060,6 +11105,12 @@ async function edSave(){
   const _edOrigRender=render;
   render=function(html){
     if(EDIT_MODE) edExit(true);
+    // 지금 렌더링되는 html이 CONTENT의 어느 key와 같은 문자열인지 역추적해서 저장해둠
+    // (여러 브랜드가 문구를 거의 그대로 복붙해 쓰는 경우가 많아, 저장 시 이 페이지의 소스 블록만 먼저 찾는 데 사용)
+    try{
+      EDIT_LAST_KEY=null;
+      for(const k in CONTENT){ if(CONTENT[k]===html){ EDIT_LAST_KEY=k; break; } }
+    }catch(e){ EDIT_LAST_KEY=null; }
     return _edOrigRender(html);
   };
 })();
