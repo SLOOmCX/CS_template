@@ -522,6 +522,7 @@
 .ed-modal .ed-ok{background:#234A86;color:#fff;}
 .ed-modal .ed-no{background:#eef1f5;color:#333;}
 .ed-report ul{margin:0;padding-left:18px;font-size:12.5px;line-height:1.8;list-style:none;}
+.ed-report li.ed-fail-item{white-space:pre-wrap;margin-bottom:8px;}
 .ed-report li.ed-ok-item{color:#2f7a52;}
 .ed-report li.ed-fail-item{color:#c0392b;}
 </style>
@@ -11088,8 +11089,17 @@ async function edSave(){
           }
         }
       }
-      if(done) applied.push(`${label} 수정됨`);
-      else failed.push(`${label} → 소스에서 정확히 못 찾아 자동 반영 실패 (같은 문구가 다른 브랜드에도 있어 위치를 특정 못했을 수 있어요). 원문: "${edPlainText(origHTML).trim().slice(0,60)}"`);
+      if(done){
+        applied.push(`${label} 수정됨`);
+      }else{
+        // 저장 실패한 항목을 화면에 그대로 두면, 다음에 "수정하기"를 다시 눌렀을 때
+        // 이 저장 안 된 내용이 "원본"으로 잘못 인식돼 계속 같은 실패가 반복될 수 있음.
+        // 그래서 실패한 항목은 입력하신 새 문구를 안내 메시지에 남기고, 화면은 실제 저장된(원래) 내용으로 되돌림.
+        const typedText=edPlainText(newHTML).trim().slice(0,80);
+        failed.push(`${label} → 소스에서 정확히 못 찾아 자동 반영 실패 (같은 문구가 다른 브랜드/행에도 있어 위치를 특정 못했을 수 있어요, 또는 화면이 최신 상태가 아닐 수 있어요 — 새로고침 후 다시 시도해 보세요).\n   찾으려던 원문: "${edPlainText(origHTML).trim().slice(0,60)}"\n   입력하신 새 문구: "${typedText}"`);
+        el.innerHTML=origHTML;
+        el.classList.remove("ed-changed");
+      }
     }
 
     if(applied.length===0){
