@@ -343,16 +343,22 @@ const ALIGNLAB_MERGE_TEMPLATE = `
   <div class="flow-diagram"><div class="fd-box">1. 교환/반품 의사 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 전체/부분 방식 안내</div><div class="fd-arrow">▶</div><div class="fd-box">3. 교환/반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">5. 교환:재출고 안내 / 반품:환불 안내</div></div>
 
   ${secTitle("","1. 교환/반품 의사 확인","전체·부분 공통","sec1")}
-  <div class="grid2">
-    ${colTag("gray","수령일로부터 7일 이내","반품교환_7일이내_사유확인",
+  ${col("blue","🔄 교환 희망 시",
+    subcard(D_ALIGNLAB["alignlab_exchange__001"].name, D_ALIGNLAB["alignlab_exchange__001"].tag, D_ALIGNLAB["alignlab_exchange__001"].body, D_ALIGNLAB["alignlab_exchange__001"].desc)
+    + subcard(D_ALIGNLAB["alignlab_exchange__002"].name, D_ALIGNLAB["alignlab_exchange__002"].tag, D_ALIGNLAB["alignlab_exchange__002"].body, D_ALIGNLAB["alignlab_exchange__002"].desc)
+    + caution(`▶ (전체 교환) 고객이 반품 희망 시 → 아래 '💰 반품 희망 시'로 이동해 진행
+▶ 교환 진행 희망 시 → 아래 2. 전체/부분 방식 안내(교환)부터 진행`)
+  )}
+  <div style="margin-top:12px">${col("pink","💰 반품 희망 시",
+    colTag("gray","수령일로부터 7일 이내","반품교환_7일이내_사유확인",
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
-제품 사용 여부도 함께 확인 부탁드립니다.`)}
-    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+제품 사용 여부도 함께 확인 부탁드립니다.`)
+    + colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
-현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
-  </div>
-  <div class="branch-box">
+현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
+  )}</div>
+  <div class="branch-box" style="margin-top:12px">
     <div class="branch-h">💡 고객이 말씀하신 사유·증상에 따라 알맞은 유형으로 이동하여 응대</div>
     <table class="branch-tbl"><tbody>
     <tr><td class="cond">수령일 7일 이내 · <b>미사용</b></td><td class="ar">→</td><td><span class="bdg b-blue">단순변심</span></td></tr>

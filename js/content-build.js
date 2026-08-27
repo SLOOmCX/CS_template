@@ -23,8 +23,11 @@ CONTENT["simplicare_simplemerge"]=SIMPLICARE_MERGE_TEMPLATE;
 CONTENT["alignlab_refund"]=ALIGNLAB_REFUND; CONTENT["alignlab_exchange"]=ALIGNLAB_EXCHANGE;
 CONTENT["alignlab_simplemerge"]=ALIGNLAB_MERGE_TEMPLATE;
 CONTENT["bilba_refund"]=BILBA_REFUND; CONTENT["bilba_exchange"]=BILBA_EXCHANGE;
+CONTENT["bilba_simplemerge"]=BILBA_MERGE_TEMPLATE;
 CONTENT["cellology_refund"]=CELLOLOGY_REFUND; CONTENT["cellology_exchange"]=CELLOLOGY_EXCHANGE;
+CONTENT["cellology_simplemerge"]=CELLOLOGY_MERGE_TEMPLATE;
 CONTENT["cocodaum_refund"]=COCODAUM_REFUND; CONTENT["cocodaum_exchange"]=COCODAUM_EXCHANGE;
+CONTENT["cocodaum_simplemerge"]=COCODAUM_MERGE_TEMPLATE;
 CONTENT["oclock_refund"]=OCLOCK_REFUND; CONTENT["oclock_exchange"]=OCLOCK_EXCHANGE;
 CONTENT["drmans_refund"]=DRMANS_REFUND; CONTENT["drmans_exchange"]=DRMANS_EXCHANGE;
 CONTENT["yvening_refund"]=YVENING_REFUND; CONTENT["yvening_exchange"]=YVENING_EXCHANGE;
@@ -184,11 +187,11 @@ BRAND_TREE["셀올로지"]["불량 AS 교환/반품"]={
     {group:true, label:"1. 보증기간 확인", anchor:"guar"},
     {group:true, label:"2. 불량 유형 확인", anchor:"step1"},
     {label:"A. 사용법 안내 필요", anchor:"groupA"},
-    {sub:true, label:"1. 충전/전원 불량", anchor:"t1"},
-    {sub:true, label:"2. 작동/제작 불량", anchor:"t2"},
+    {sub:true, label:"① 충전/전원 불량", anchor:"t1"},
+    {sub:true, label:"② 작동/제작 불량", anchor:"t2"},
     {label:"B. 사용법 안내 불필요", anchor:"groupB"},
-    {sub:true, label:"4. 스크래치/이물질", anchor:"t6"},
-    {sub:true, label:"5. 구성품 누락", anchor:"t5"},
+    {sub:true, label:"③ 스크래치/이물질", anchor:"t6"},
+    {sub:true, label:"④ 구성품 누락", anchor:"t5"},
     {label:"🔁 재불량", anchor:"t4"},
     {group:true, label:"3. AS 접수", anchor:"step2"},
     {label:"🛠️ 무상 AS", anchor:"freeFlow"},
@@ -205,8 +208,8 @@ BRAND_TREE["셀올로지"]["불량 AS 교환/반품"]={
     {label:"📸 증빙 제출 불만에 따른 대응", anchor:"secProof"},
     {label:"✨ [예외] 증빙 미제출", anchor:"exNoEvid"},
     {group:true, label:"🔷 [디바이스 외_화장품]", anchor:"cosmetic"},
-    {sub:true, label:"1. 불량 증상 확인", anchor:"cos_symptom"},
-    {sub:true, label:"2. 불량 접수", anchor:"cos_intake"},
+    {sub:true, label:"① 불량 증상 확인", anchor:"cos_symptom"},
+    {sub:true, label:"② 불량 접수", anchor:"cos_intake"},
     {group:true, label:"🍏 [외부몰] 자동수거", anchor:"autoPickup"}
   ]
 };
@@ -249,11 +252,11 @@ BRAND_TREE["빌바"]["불량 AS 교환/반품"]={
     {group:true, label:"1. 보증기간 확인", anchor:"guar"},
     {group:true, label:"2. 불량 유형 확인", anchor:"step1"},
     {label:"A. 사용법 안내 필요", anchor:"groupA"},
-    {sub:true, label:"1. 전원/작동", anchor:"t1"},
+    {sub:true, label:"① 전원/작동", anchor:"t1"},
     {label:"B. 사용법 안내 불필요", anchor:"groupB"},
-    {sub:true, label:"2. 소음 강도 & 쿠팡/네이버 자동수거", anchor:"t3"},
-    {sub:true, label:"3. 구성품 누락", anchor:"t5"},
-    {sub:true, label:"4. 이염/오염/초도파손", anchor:"t6"},
+    {sub:true, label:"② 소음 강도 & 쿠팡/네이버 자동수거", anchor:"t3"},
+    {sub:true, label:"③ 구성품 누락", anchor:"t5"},
+    {sub:true, label:"④ 이염/오염/초도파손", anchor:"t6"},
     {label:"🔁 재불량", anchor:"t4"},
     {group:true, label:"3. AS 접수", anchor:"step2"},
     {label:"🛠️ 무상 AS", anchor:"freeFlow"},
@@ -703,6 +706,89 @@ BRAND_TREE["심플리케어"]["100%환불이벤트"]={
     }
   }
   BRAND_TREE["얼라인랩"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 빌바에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 빌바 기존 BILBA_REFUND/BILBA_EXCHANGE를 그대로 재배치한 BILBA_MERGE_TEMPLATE 사용 — 새 데이터 항목 없음) === */
+(function(){
+  var old = BRAND_TREE["빌바"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "bilba_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["빌바"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 셀올로지에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 셀올로지 기존 CELLOLOGY_REFUND/CELLOLOGY_EXCHANGE를 그대로 재배치한 CELLOLOGY_MERGE_TEMPLATE 사용 — 새 데이터 항목 없음.
+   셀올로지는 100%환불이벤트 카테고리가 있는 브랜드라 분류 매트릭스도 원본 4행 그대로 유지) === */
+(function(){
+  var old = BRAND_TREE["셀올로지"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "cellology_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["셀올로지"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 코코다움에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 코코다움 기존 COCODAUM_REFUND/COCODAUM_EXCHANGE를 그대로 재배치한 COCODAUM_MERGE_TEMPLATE 사용 — 새 데이터 항목 없음.
+   코코다움은 100%환불이벤트 카테고리가 있는 브랜드라 분류 매트릭스도 원본 4행 그대로 유지) === */
+(function(){
+  var old = BRAND_TREE["코코다움"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "cocodaum_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["코코다움"] = merged;
 })();
 
 
