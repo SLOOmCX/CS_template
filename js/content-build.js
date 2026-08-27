@@ -35,7 +35,9 @@ CONTENT["drmans_simplemerge"]=DRMANS_MERGE_TEMPLATE;
 CONTENT["yvening_refund"]=YVENING_REFUND; CONTENT["yvening_exchange"]=YVENING_EXCHANGE;
 CONTENT["yvening_simplemerge"]=YVENING_MERGE_TEMPLATE;
 CONTENT["marnell_refund"]=MARNELL_REFUND; CONTENT["marnell_exchange"]=MARNELL_EXCHANGE;
+CONTENT["marnell_simplemerge"]=MARNELL_MERGE_TEMPLATE;
 CONTENT["dramang_refund"]=DRAMANG_REFUND; CONTENT["dramang_exchange"]=DRAMANG_EXCHANGE;
+CONTENT["dramang_simplemerge"]=DRAMANG_MERGE_TEMPLATE;
 
 /* 공통 IB/OB (대분류 맨 위) */
 const COMMON_TREE = {
@@ -876,6 +878,63 @@ BRAND_TREE["심플리케어"]["100%환불이벤트"]={
     }
   }
   BRAND_TREE["와이브닝"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 마넬에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 마넬 기존 MARNELL_REFUND/MARNELL_EXCHANGE를 그대로 재배치한 MARNELL_MERGE_TEMPLATE 사용 — 새 데이터 없음.
+   마넬은 100%환불이벤트 카테고리가 없는 브랜드라 분류 매트릭스는 2행(단순변심/불량AS교환·반품) 구조로 구성) === */
+(function(){
+  var old = BRAND_TREE["마넬"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "marnell_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["마넬"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 닥터아망에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 닥터아망 기존 DRAMANG_REFUND/DRAMANG_EXCHANGE를 그대로 재배치한 DRAMANG_MERGE_TEMPLATE 사용 — 새 데이터 없음.
+   닥터아망은 100%환불이벤트 카테고리가 있는 브랜드라 분류 매트릭스는 원본 4행 그대로 유지. 이 IIFE는 "단순변심 교환"/"단순변심 반품" 키만 처리하므로 100%환불이벤트 카테고리는 그대로 보존됨.
+   이 브랜드로 1번+1-1번(단순변심 통합+넘버링 통일) 작업 전체 종료) === */
+(function(){
+  var old = BRAND_TREE["닥터아망"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "dramang_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["닥터아망"] = merged;
 })();
 
 
