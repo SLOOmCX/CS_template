@@ -19,7 +19,9 @@ const CONTENT = {
 };
 
 CONTENT["simplicare_refund"]=SIMPLICARE_REFUND; CONTENT["simplicare_exchange"]=SIMPLICARE_EXCHANGE;
+CONTENT["simplicare_simplemerge"]=SIMPLICARE_MERGE_TEMPLATE;
 CONTENT["alignlab_refund"]=ALIGNLAB_REFUND; CONTENT["alignlab_exchange"]=ALIGNLAB_EXCHANGE;
+CONTENT["alignlab_simplemerge"]=ALIGNLAB_MERGE_TEMPLATE;
 CONTENT["bilba_refund"]=BILBA_REFUND; CONTENT["bilba_exchange"]=BILBA_EXCHANGE;
 CONTENT["cellology_refund"]=CELLOLOGY_REFUND; CONTENT["cellology_exchange"]=CELLOLOGY_EXCHANGE;
 CONTENT["cocodaum_refund"]=COCODAUM_REFUND; CONTENT["cocodaum_exchange"]=COCODAUM_EXCHANGE;
@@ -216,12 +218,12 @@ BRAND_TREE["얼라인랩"]["불량 AS 교환/반품"]={
     {group:true, label:"1. 보증기간 확인", anchor:"guar"},
     {group:true, label:"2. 불량 유형 확인", anchor:"step1"},
     {label:"A. 사용법 안내 필요", anchor:"groupA"},
-    {sub:true, label:"1. 충전/전원/작동", anchor:"t1"},
-    {sub:true, label:"2. 진동/EMS 강도", anchor:"t3"},
+    {sub:true, label:"① 충전/전원/작동", anchor:"t1"},
+    {sub:true, label:"② 진동/EMS 강도", anchor:"t3"},
     {label:"B. 사용법 안내 불필요", anchor:"groupB"},
-    {sub:true, label:"3. 소음 강도 & 쿠팡/네이버 자동수거", anchor:"tsound"},
-    {sub:true, label:"4. 구성품 누락", anchor:"t5"},
-    {sub:true, label:"5. 이염/오염/초도파손/스크래치", anchor:"t6"},
+    {sub:true, label:"③ 소음 강도 & 쿠팡/네이버 자동수거", anchor:"tsound"},
+    {sub:true, label:"④ 구성품 누락", anchor:"t5"},
+    {sub:true, label:"⑤ 이염/오염/초도파손/스크래치", anchor:"t6"},
     {label:"🔁 재불량", anchor:"t4"},
     {group:true, label:"3. AS 접수", anchor:"step2"},
     {label:"🛠️ 무상 AS", anchor:"freeFlow"},
@@ -647,6 +649,60 @@ BRAND_TREE["심플리케어"]["100%환불이벤트"]={
     }
   }
   BRAND_TREE["슬룸"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-26) — 심플리케어에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 심플리케어 기존 SIMPLICARE_REFUND/SIMPLICARE_EXCHANGE를 그대로 재배치한 SIMPLICARE_MERGE_TEMPLATE 사용 — 새 데이터 항목 없음) === */
+(function(){
+  var old = BRAND_TREE["심플리케어"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "simplicare_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["심플리케어"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 얼라인랩에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 얼라인랩 기존 ALIGNLAB_REFUND/ALIGNLAB_EXCHANGE를 그대로 재배치한 ALIGNLAB_MERGE_TEMPLATE 사용 — 새 데이터 항목 없음) === */
+(function(){
+  var old = BRAND_TREE["얼라인랩"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "alignlab_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["얼라인랩"] = merged;
 })();
 
 
