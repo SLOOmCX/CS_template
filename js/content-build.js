@@ -29,8 +29,11 @@ CONTENT["cellology_simplemerge"]=CELLOLOGY_MERGE_TEMPLATE;
 CONTENT["cocodaum_refund"]=COCODAUM_REFUND; CONTENT["cocodaum_exchange"]=COCODAUM_EXCHANGE;
 CONTENT["cocodaum_simplemerge"]=COCODAUM_MERGE_TEMPLATE;
 CONTENT["oclock_refund"]=OCLOCK_REFUND; CONTENT["oclock_exchange"]=OCLOCK_EXCHANGE;
+CONTENT["oclock_simplemerge"]=OCLOCK_MERGE_TEMPLATE;
 CONTENT["drmans_refund"]=DRMANS_REFUND; CONTENT["drmans_exchange"]=DRMANS_EXCHANGE;
+CONTENT["drmans_simplemerge"]=DRMANS_MERGE_TEMPLATE;
 CONTENT["yvening_refund"]=YVENING_REFUND; CONTENT["yvening_exchange"]=YVENING_EXCHANGE;
+CONTENT["yvening_simplemerge"]=YVENING_MERGE_TEMPLATE;
 CONTENT["marnell_refund"]=MARNELL_REFUND; CONTENT["marnell_exchange"]=MARNELL_EXCHANGE;
 CONTENT["dramang_refund"]=DRAMANG_REFUND; CONTENT["dramang_exchange"]=DRAMANG_EXCHANGE;
 
@@ -282,11 +285,11 @@ BRAND_TREE["12 o'clock"]["불량 AS 교환/반품"]={
     {group:true, label:"1. 보증기간 확인", anchor:"guar"},
     {group:true, label:"2. 불량 유형 확인", anchor:"step1"},
     {label:"A. 사용법 안내 필요", anchor:"groupA"},
-    {sub:true, label:"1. 충전/전원/작동", anchor:"t1"},
+    {sub:true, label:"① 충전/전원/작동", anchor:"t1"},
     {label:"B. 사용법 안내 불필요", anchor:"groupB"},
-    {sub:true, label:"2. 소음·온열 강도 & 쿠팡/네이버 자동수거", anchor:"t3"},
-    {sub:true, label:"3. 구성품 누락", anchor:"t5"},
-    {sub:true, label:"4. 이염/오염/초도파손/스크래치", anchor:"t6"},
+    {sub:true, label:"② 소음·온열 강도 & 쿠팡/네이버 자동수거", anchor:"t3"},
+    {sub:true, label:"③ 구성품 누락", anchor:"t5"},
+    {sub:true, label:"④ 이염/오염/초도파손/스크래치", anchor:"t6"},
     {label:"🔁 재불량", anchor:"t4"},
     {group:true, label:"3. AS 접수", anchor:"step2"},
     {label:"🛠️ 무상 AS", anchor:"freeFlow"},
@@ -789,6 +792,90 @@ BRAND_TREE["심플리케어"]["100%환불이벤트"]={
     }
   }
   BRAND_TREE["코코다움"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 12 o'clock에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 12 o'clock 기존 OCLOCK_REFUND/OCLOCK_EXCHANGE를 그대로 재배치한 OCLOCK_MERGE_TEMPLATE 사용 — 새 데이터 항목 없음.
+   12 o'clock은 100%환불이벤트 카테고리가 없는 브랜드라 분류 매트릭스는 원본 2행 그대로 유지) === */
+(function(){
+  var old = BRAND_TREE["12 o'clock"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "oclock_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["12 o'clock"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 닥터맨즈에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 닥터맨즈 기존 DRMANS_REFUND/DRMANS_EXCHANGE를 그대로 재배치한 DRMANS_MERGE_TEMPLATE 사용 — 새 데이터 항목 없음.
+   닥터맨즈는 100%환불이벤트 카테고리가 없는 브랜드라 분류 매트릭스는 원본 2행 그대로 유지) === */
+(function(){
+  var old = BRAND_TREE["닥터맨즈"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "drmans_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["닥터맨즈"] = merged;
+})();
+
+/* === 단순변심 통합 시안 확장 (2026-08-27) — 와이브닝에 한해 '단순변심 반품'+'단순변심 교환' → '단순변심 교환/반품' 병합
+   (슬룸 SLM_MERGE_TEMPLATE의 구조·병합 방식만 참고, 콘텐츠는 와이브닝 기존 YVENING_REFUND/YVENING_EXCHANGE를 그대로 재배치한 YVENING_MERGE_TEMPLATE 사용 — 새 데이터 없음.
+   와이브닝은 100%환불이벤트 카테고리가 있는 브랜드라 분류 매트릭스는 원본 4행 그대로 유지. 이 IIFE는 "단순변심 교환"/"단순변심 반품" 키만 처리하므로 100%환불이벤트 카테고리는 그대로 보존됨) === */
+(function(){
+  var old = BRAND_TREE["와이브닝"];
+  var merged = {};
+  for (var k in old) {
+    if (k === "단순변심 교환") {
+      merged["단순변심 교환/반품"] = {
+        __content: "yvening_simplemerge",
+        __sections: [
+          {label:"🧭 상담 플로우", anchor:"secFlow"},
+          {label:"1. 교환/반품 의사 확인", anchor:"sec1"},
+          {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
+          {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
+          {label:"4. 포장 및 회수 안내", anchor:"sec4"},
+          {label:"5. 교환/반품 안내", anchor:"step5"}
+        ]
+      };
+    } else if (k === "단순변심 반품") {
+      // skip: 위 '단순변심 교환/반품'으로 병합됨
+    } else {
+      merged[k] = old[k];
+    }
+  }
+  BRAND_TREE["와이브닝"] = merged;
 })();
 
 
