@@ -935,8 +935,7 @@ function buildSearchIndex(){
 let curRail="dash";
 let CUR_CID="";
 
-/* 이스케이프 / 하이라이트 / 경로표시 */
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+/* 하이라이트 / 경로표시 (esc는 js/core/helpers.js에서 최우선 정의됨) */
 function hl(t,q){const i=t.toLowerCase().indexOf(q.toLowerCase());if(!q||i<0)return esc(t);return esc(t.slice(0,i))+"<mark>"+esc(t.slice(i,i+q.length))+"</mark>"+esc(t.slice(i+q.length));}
 function pathHtml(p){const a=p.split(" › ");return `<b>${esc(a[0])}</b>`+a.slice(1).map(x=>" › "+esc(x)).join("");}
 

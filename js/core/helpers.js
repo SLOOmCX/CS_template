@@ -5,6 +5,9 @@
 const BRAND_LIST = ["슬룸","심플리케어","얼라인랩","빌바","셀올로지","코코다움","12 o'clock","닥터맨즈","와이브닝","마넬","닥터아망"];
 const INQUIRY_TYPES = ["단순변심 교환","단순변심 반품","100%환불이벤트","불량 AS 교환/반품","유상 AS","부작용·상해 VOC"];
 
+/* 이스케이프 (shared-templates.js 등에서 content-build.js 로드 전에 참조하므로 여기서 최우선 정의) */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
 /* 콘텐츠 렌더 함수들 -------------------------------------- */
 function macro(name, tag, body, desc){
   return `<div class="macro">
