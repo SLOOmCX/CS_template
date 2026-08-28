@@ -47,8 +47,8 @@ const REF_OCLOCK = `
   <td>유상 교환</td>
   </tr>
   </tbody></table></div>
-  <div style="border:1px solid #e3e8ee;border-radius:var(--radius-lg);overflow:hidden;margin-top:12px"><div style="background:#EAF4F0;padding:11px 15px;font-weight:800;color:#3E8B7B;border-bottom:1px solid #e3e8ee">💡 무상 접수 기간 제한 <span style="font-weight:500;color:#ea2261;font-size:13px">· 구성품 누락 / 초도 파손 / 이염·오염 case</span></div><table style="width:100%;border-collapse:collapse;font-size:14px"><tbody><tr style="border-top:1px solid #e3e8ee"><td style="width:140px;background:#f6f9fc;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap">📅 수령일 7일 이내</td><td style="padding:13px 16px;vertical-align:top;color:#64748d;font-size:12.5px;line-height:1.7">✔️ 구성품 누락<br>✔️ 초도 파손 / 이염 / 오염<br>→ 상품 수령일로부터 <b>7일 이내 문의 시에만 무상 접수 가능</b></td></tr></tbody></table></div>
-  <div style="background:#FAFAFA;border:1px solid #e3e8ee;border-left:3px solid #D1D5DB;border-radius:var(--radius-lg);padding:16px 6px;display:grid;grid-template-columns:1fr 1fr"><div style="padding:0 20px"><div style="font-weight:800;color:#273951;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) '<span style="color:#234A86">이내</span>' 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 이내 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 구입가를 계좌로 환급</div></div><div style="padding:0 20px;border-left:2px dashed #D1D5DB"><div style="font-weight:800;color:#273951;margin-bottom:8px">★ EDGE CASE · 보증기간(1년) '<span style="color:#234A86">경과</span>' 단종</div><div style="line-height:1.85;color:#333;font-size:13.5px">① 유사 모델을 '1년 경과 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 정액 감가상각한 잔여 금액에 구입가의 10%를 가산 후 계좌로 환급</div></div></div>
+  ${limitNotice("구성품 누락 / 초도 파손 / 이염·오염 case", `✔️ 구성품 누락<br>✔️ 초도 파손 / 이염 / 오염<br>→ 상품 수령일로부터 <b>7일 이내 문의 시에만 무상 접수 가능</b>`)}
+  ${edgeCaseCompare(`① 유사 모델을 '1년 이내 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 구입가를 계좌로 환급`, `① 유사 모델을 '1년 경과 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 정액 감가상각한 잔여 금액에 구입가의 10%를 가산 후 계좌로 환급`)}
 
 
   
@@ -226,7 +226,7 @@ const OCLOCK_REFUND = `
     `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`
   ])}
 
-  ${secTitle("","1. 7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
+  ${secTitle("1", "7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
   <div class="grid2">
     ${colTag("gray","수령일로부터 7일 이내","반품교환_7일이내_사유확인",
 `반품을 원하시는 사유가 어떻게 되실까요? :)
@@ -247,7 +247,7 @@ const OCLOCK_REFUND = `
     
   </div>
 
-  ${secTitle("","2. 반품 배송비 안내",null,"sec2")}
+  ${secTitle("2", "반품 배송비 안내",null,"sec2")}
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_OCLOCK["oclock_refund__001"].name, D_OCLOCK["oclock_refund__001"].tag, D_OCLOCK["oclock_refund__001"].body, D_OCLOCK["oclock_refund__001"].desc)
@@ -265,7 +265,7 @@ const OCLOCK_REFUND = `
     )}
   </div>
 
-  ${secTitle("","3. 포장 및 회수 안내",null,"sec3")}
+  ${secTitle("3", "포장 및 회수 안내",null,"sec3")}
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_OCLOCK["oclock_refund__007"].name, D_OCLOCK["oclock_refund__007"].tag, D_OCLOCK["oclock_refund__007"].body, D_OCLOCK["oclock_refund__007"].desc)
@@ -285,7 +285,7 @@ const OCLOCK_REFUND = `
     ${subcard(D_OCLOCK["oclock_refund__011"].name, D_OCLOCK["oclock_refund__011"].tag, D_OCLOCK["oclock_refund__011"].body, D_OCLOCK["oclock_refund__011"].desc)}
   </div>
 
-  ${secTitle("","4. 결제수단별 환불 안내","전체·부분 공통","sec4")}
+  ${secTitle("4", "결제수단별 환불 안내","전체·부분 공통","sec4")}
   <div class="grid2">
     ${col("blue","🔹 카드결제",
       subcard(D_OCLOCK["oclock_refund__012"].name, D_OCLOCK["oclock_refund__012"].tag, D_OCLOCK["oclock_refund__012"].body, D_OCLOCK["oclock_refund__012"].desc)
@@ -315,7 +315,7 @@ const OCLOCK_EXCHANGE = `
   <div class="grp-h">🧭 상담 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 교환 방식 안내 (전체 / 부분)</div><div class="fd-arrow">▶</div><div class="fd-box">2. 교환 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">3. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 검수 및 재출고 안내</div></div>
   ${notice(["미개봉 또는 개봉했으나 미사용한 경우에만 교환 가능","교환 제품 금액이 더 높은 경우 <b>차액 결제</b> 필요","교환은 회수 → 입고 → 검수 → 재출고 방식으로 <b>영업일 기준 6~8일</b> 소요"])}
-  ${secTitle("","1. 교환 방식 안내","전체·부분","sec1")}
+  ${secTitle("1", "교환 방식 안내","전체·부분","sec1")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
 subcard(D_OCLOCK["oclock_exchange__001"].name, D_OCLOCK["oclock_exchange__001"].tag, D_OCLOCK["oclock_exchange__001"].body, D_OCLOCK["oclock_exchange__001"].desc)
@@ -326,7 +326,7 @@ subcard(D_OCLOCK["oclock_exchange__002"].name, D_OCLOCK["oclock_exchange__002"].
 </div>
   ${caution(`▶ (전체 교환) 고객이 반품 희망 시 → '단순변심 반품' 페이지로 이동하여 안내
 ▶ 교환 희망 시 → 2부터 진행`)}
-  ${secTitle("","2. 교환 배송비 안내","전체·부분","sec2")}
+  ${secTitle("2", "교환 배송비 안내","전체·부분","sec2")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
 subcard(D_OCLOCK["oclock_exchange__003"].name, D_OCLOCK["oclock_exchange__003"].tag, D_OCLOCK["oclock_exchange__003"].body, D_OCLOCK["oclock_exchange__003"].desc)
@@ -337,7 +337,7 @@ subcard(D_OCLOCK["oclock_exchange__004"].name, D_OCLOCK["oclock_exchange__004"].
 </div>
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
-  ${secTitle("","3. 포장 및 회수 안내","전체·부분","sec3")}
+  ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
 subcard(D_OCLOCK["oclock_exchange__006"].name, D_OCLOCK["oclock_exchange__006"].tag, D_OCLOCK["oclock_exchange__006"].body, D_OCLOCK["oclock_exchange__006"].desc) + caution(`🎁 증정품 회수 O`)
@@ -347,7 +347,7 @@ subcard(D_OCLOCK["oclock_exchange__007"].name, D_OCLOCK["oclock_exchange__007"].
 )}
 </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
-  ${secTitle("","4. 검수 및 재출고 안내","전체·부분 공통","sec4")}
+  ${secTitle("4", "검수 및 재출고 안내","전체·부분 공통","sec4")}
   ${macro(D_OCLOCK["oclock_exchange__009"].name, D_OCLOCK["oclock_exchange__009"].tag, D_OCLOCK["oclock_exchange__009"].body, D_OCLOCK["oclock_exchange__009"].desc)}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
 `;
@@ -372,7 +372,7 @@ const OCLOCK_MERGE_TEMPLATE = `
   <div class="grp-h" id="secFlow">🧭 상담 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 교환/반품 의사 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 전체/부분 방식 안내</div><div class="fd-arrow">▶</div><div class="fd-box">3. 교환/반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">5. 교환:재출고 안내 / 반품:환불 안내</div></div>
 
-  ${secTitle("","1. 교환/반품 의사 확인","전체·부분 공통","sec1")}
+  ${secTitle("1", "교환/반품 의사 확인","전체·부분 공통","sec1")}
   ${col("blue","🔄 교환 희망 시",
     subcard(D_OCLOCK["oclock_exchange__001"].name, D_OCLOCK["oclock_exchange__001"].tag, D_OCLOCK["oclock_exchange__001"].body, D_OCLOCK["oclock_exchange__001"].desc)
     + subcard(D_OCLOCK["oclock_exchange__002"].name, D_OCLOCK["oclock_exchange__002"].tag, D_OCLOCK["oclock_exchange__002"].body, D_OCLOCK["oclock_exchange__002"].desc)
@@ -398,7 +398,7 @@ const OCLOCK_MERGE_TEMPLATE = `
   <div style="margin-top:12px">${caution(`▶ 반품 희망 시 → 아래 2. 전체/부분 방식 안내(반품)부터 진행
 ▶ 교환 희망 시 → 아래 2. 전체/부분 방식 안내(교환)부터 진행`)}</div>
 
-  ${secTitle("","2. 전체/부분 방식 안내",null,"sec2")}
+  ${secTitle("2", "전체/부분 방식 안내",null,"sec2")}
   <div class="grp-h">🔹 반품</div>
   ${cmpTable(
     [{cls:"blue",label:"🔹 전체 반품"},{cls:"pink",label:"🔹 부분 반품"}],
@@ -425,7 +425,7 @@ const OCLOCK_MERGE_TEMPLATE = `
   ]
 )}
 
-  ${secTitle("","3. 교환/반품 배송비 안내",null,"sec3")}
+  ${secTitle("3", "교환/반품 배송비 안내",null,"sec3")}
   <div class="grp-h">🔹 반품 배송비</div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
@@ -455,7 +455,7 @@ subcard(D_OCLOCK["oclock_exchange__004"].name, D_OCLOCK["oclock_exchange__004"].
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
 
-  ${secTitle("","4. 포장 및 회수 안내",null,"sec4")}
+  ${secTitle("4", "포장 및 회수 안내",null,"sec4")}
   <div class="grp-h">🔹 반품</div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
@@ -486,7 +486,7 @@ subcard(D_OCLOCK["oclock_exchange__007"].name, D_OCLOCK["oclock_exchange__007"].
   </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
-  ${secTitle("","5. 교환/반품 안내",null,"step5")}
+  ${secTitle("5", "교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","재출고 안내","exchangeFlow")}
   ${macro(D_OCLOCK["oclock_exchange__009"].name, D_OCLOCK["oclock_exchange__009"].tag, D_OCLOCK["oclock_exchange__009"].body, D_OCLOCK["oclock_exchange__009"].desc)}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}

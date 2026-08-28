@@ -72,5 +72,13 @@ function subcard(label,tag,body,desc){
 }
 function starNote(title,body){ return `<div class="star-note"><div class="star-h"><b>★ ${title}</b><span class="spacer"></span></div><div class="star-body">${body}</div></div>`; }
 function blueNote(title,body){ return `<div class="blue-note"><div class="bn-h"><b>${title}</b><span class="spacer"></span></div><div class="bn-body">${body}</div></div>`; }
+/* 무상 접수 기간 제한 안내 박스 (A그룹 AS 페이지 공통, 2026-08-28 인라인 스타일 → 헬퍼 통합) */
+function limitNotice(caseLabel,body){
+  return `<div class="limit-notice"><div class="limit-notice-h">💡 무상 접수 기간 제한 <span class="limit-notice-sub">· ${caseLabel}</span></div><table class="limit-notice-table"><tbody><tr><td class="limit-notice-day">📅 수령일 7일 이내</td><td class="limit-notice-body">${body}</td></tr></tbody></table></div>`;
+}
+/* 보증기간 단종 EDGE CASE 2열 비교 (A그룹 AS 페이지 공통, 2026-08-28 인라인 스타일 → 헬퍼 통합) */
+function edgeCaseCompare(bodyIn,bodyOut){
+  return `<div class="edge-compare"><div class="edge-compare-col"><div class="edge-compare-h">★ EDGE CASE · 보증기간(1년) '<span class="edge-compare-hi">이내</span>' 단종</div><div class="edge-compare-body">${bodyIn}</div></div><div class="edge-compare-col edge-compare-col-r"><div class="edge-compare-h">★ EDGE CASE · 보증기간(1년) '<span class="edge-compare-hi">경과</span>' 단종</div><div class="edge-compare-body">${bodyOut}</div></div></div>`;
+}
 
 /* 슬룸 > 반품 > 단순변심 반품 · 단계별 (이미지 ④⑤ 재구성) */
