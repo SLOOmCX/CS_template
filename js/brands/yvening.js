@@ -25,7 +25,7 @@ const YVENING_100 = `
 • 배송 완료 후 <b>40일 이내</b> 신청
 • 수령 후 <b>30일 이내, 용량의 2/3 이상 사용</b>하신 경우 환불 가능
 • 신청 방법 : 별도 신청 페이지 없이 <b>채널톡 채팅 상담</b></div></div>
-  ${secTitle("","1. 기간 전 응대",null,"secBefore")}
+  ${secTitle("1", "기간 전 응대",null,"secBefore")}
   ${macro(D_YVENING["yvening_100refund__001"].name, D_YVENING["yvening_100refund__001"].tag, D_YVENING["yvening_100refund__001"].body, D_YVENING["yvening_100refund__001"].desc)}
   ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석)·배송 택배사(CJ대한통운) 등을 통해 배송완료일자 확인`)}
   ${macro(D_YVENING["yvening_100refund__002"].name, D_YVENING["yvening_100refund__002"].tag, D_YVENING["yvening_100refund__002"].body, D_YVENING["yvening_100refund__002"].desc)}
@@ -34,9 +34,9 @@ const YVENING_100 = `
   <div class="grid2">${subcard(D_YVENING["yvening_100refund__004"].name, D_YVENING["yvening_100refund__004"].tag, D_YVENING["yvening_100refund__004"].body, D_YVENING["yvening_100refund__004"].desc)}${subcard(D_YVENING["yvening_100refund__005"].name, D_YVENING["yvening_100refund__005"].tag, D_YVENING["yvening_100refund__005"].body, D_YVENING["yvening_100refund__005"].desc)}</div>
   <div class="grp-h">c. 고객 3차 미수긍</div>
   <div class="grid2">${subcard(D_YVENING["yvening_100refund__006"].name, D_YVENING["yvening_100refund__006"].tag, D_YVENING["yvening_100refund__006"].body, D_YVENING["yvening_100refund__006"].desc)}${subcard(D_YVENING["yvening_100refund__007"].name, D_YVENING["yvening_100refund__007"].tag, D_YVENING["yvening_100refund__007"].body, D_YVENING["yvening_100refund__007"].desc)}</div>
-  ${secTitle("","2. 기간 경과 응대",null,"secAfter")}
+  ${secTitle("2", "기간 경과 응대",null,"secAfter")}
   ${macro(D_YVENING["yvening_100refund__008"].name, D_YVENING["yvening_100refund__008"].tag, D_YVENING["yvening_100refund__008"].body, D_YVENING["yvening_100refund__008"].desc)}
-  ${secTitle("","3. 기간 내 응대",null,"secWithin")}
+  ${secTitle("3", "기간 내 응대",null,"secWithin")}
   ${macro(D_YVENING["yvening_100refund__009"].name, D_YVENING["yvening_100refund__009"].tag, D_YVENING["yvening_100refund__009"].body, D_YVENING["yvening_100refund__009"].desc)}
   ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석)·배송 택배사(CJ대한통운) 등을 통해 배송완료일자 확인`)}
   ${macro(D_YVENING["yvening_100refund__010"].name, D_YVENING["yvening_100refund__010"].tag, D_YVENING["yvening_100refund__010"].body, D_YVENING["yvening_100refund__010"].desc)}
@@ -290,7 +290,7 @@ const YVENING_REFUND = `
     `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`
   ])}
 
-  ${secTitle("","1. 7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
+  ${secTitle("1", "7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
   <div class="grid2">
     ${colTag("gray","수령일로부터 7일 이내","반품교환_7일이내_사유확인",
 `반품을 원하시는 사유가 어떻게 되실까요? :)
@@ -311,7 +311,7 @@ const YVENING_REFUND = `
     <div class="branch-note">※ 100% 환불 이벤트는 신청 이력이 없는 경우에만 가능합니다.</div>
   </div>
 
-  ${secTitle("","2. 반품 배송비 안내",null,"sec2")}
+  ${secTitle("2", "반품 배송비 안내",null,"sec2")}
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_YVENING["yvening_refund__001"].name, D_YVENING["yvening_refund__001"].tag, D_YVENING["yvening_refund__001"].body, D_YVENING["yvening_refund__001"].desc)
@@ -329,7 +329,7 @@ const YVENING_REFUND = `
     )}
   </div>
 
-  ${secTitle("","3. 포장 및 회수 안내",null,"sec3")}
+  ${secTitle("3", "포장 및 회수 안내",null,"sec3")}
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_YVENING["yvening_refund__007"].name, D_YVENING["yvening_refund__007"].tag, D_YVENING["yvening_refund__007"].body, D_YVENING["yvening_refund__007"].desc)
@@ -349,7 +349,7 @@ const YVENING_REFUND = `
     ${subcard(D_YVENING["yvening_refund__011"].name, D_YVENING["yvening_refund__011"].tag, D_YVENING["yvening_refund__011"].body, D_YVENING["yvening_refund__011"].desc)}
   </div>
 
-  ${secTitle("","4. 결제수단별 환불 안내","전체·부분 공통","sec4")}
+  ${secTitle("4", "결제수단별 환불 안내","전체·부분 공통","sec4")}
   <div class="grid2">
     ${col("blue","🔹 카드결제",
       subcard(D_YVENING["yvening_refund__012"].name, D_YVENING["yvening_refund__012"].tag, D_YVENING["yvening_refund__012"].body, D_YVENING["yvening_refund__012"].desc)
@@ -379,7 +379,7 @@ const YVENING_EXCHANGE = `
   <div class="grp-h">🧭 상담 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 교환 방식 안내 (전체 / 부분)</div><div class="fd-arrow">▶</div><div class="fd-box">2. 교환 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">3. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 검수 및 재출고 안내</div></div>
   ${notice(["미개봉 또는 개봉했으나 미사용한 경우에만 교환 가능","교환 제품 금액이 더 높은 경우 <b>차액 결제</b> 필요","교환은 회수 → 입고 → 검수 → 재출고 방식으로 <b>영업일 기준 6~8일</b> 소요"])}
-  ${secTitle("","1. 교환 방식 안내","전체·부분","sec1")}
+  ${secTitle("1", "교환 방식 안내","전체·부분","sec1")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
 subcard(D_YVENING["yvening_exchange__001"].name, D_YVENING["yvening_exchange__001"].tag, D_YVENING["yvening_exchange__001"].body, D_YVENING["yvening_exchange__001"].desc)
@@ -390,7 +390,7 @@ subcard(D_YVENING["yvening_exchange__002"].name, D_YVENING["yvening_exchange__00
 </div>
   ${caution(`▶ (전체 교환) 고객이 반품 희망 시 → '단순변심 반품' 페이지로 이동하여 안내
 ▶ 교환 희망 시 → 2부터 진행`)}
-  ${secTitle("","2. 교환 배송비 안내","전체·부분","sec2")}
+  ${secTitle("2", "교환 배송비 안내","전체·부분","sec2")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
 subcard(D_YVENING["yvening_exchange__003"].name, D_YVENING["yvening_exchange__003"].tag, D_YVENING["yvening_exchange__003"].body, D_YVENING["yvening_exchange__003"].desc)
@@ -401,7 +401,7 @@ subcard(D_YVENING["yvening_exchange__004"].name, D_YVENING["yvening_exchange__00
 </div>
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
-  ${secTitle("","3. 포장 및 회수 안내","전체·부분","sec3")}
+  ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
 subcard(D_YVENING["yvening_exchange__006"].name, D_YVENING["yvening_exchange__006"].tag, D_YVENING["yvening_exchange__006"].body, D_YVENING["yvening_exchange__006"].desc) + caution(`🎁 증정품 회수 O`)
@@ -411,7 +411,7 @@ subcard(D_YVENING["yvening_exchange__007"].name, D_YVENING["yvening_exchange__00
 )}
 </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
-  ${secTitle("","4. 검수 및 재출고 안내","전체·부분 공통","sec4")}
+  ${secTitle("4", "검수 및 재출고 안내","전체·부분 공통","sec4")}
   ${macro(D_YVENING["yvening_exchange__009"].name, D_YVENING["yvening_exchange__009"].tag, D_YVENING["yvening_exchange__009"].body, D_YVENING["yvening_exchange__009"].desc)}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
 `;
@@ -436,7 +436,7 @@ const YVENING_MERGE_TEMPLATE = `
   <div class="grp-h" id="secFlow">🧭 상담 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 교환/반품 의사 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 전체/부분 방식 안내</div><div class="fd-arrow">▶</div><div class="fd-box">3. 교환/반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">5. 교환:재출고 안내 / 반품:환불 안내</div></div>
 
-  ${secTitle("","1. 교환/반품 의사 확인","전체·부분 공통","sec1")}
+  ${secTitle("1", "교환/반품 의사 확인","전체·부분 공통","sec1")}
   ${col("blue","🔄 교환 희망 시",
     subcard(D_YVENING["yvening_exchange__001"].name, D_YVENING["yvening_exchange__001"].tag, D_YVENING["yvening_exchange__001"].body, D_YVENING["yvening_exchange__001"].desc)
     + subcard(D_YVENING["yvening_exchange__002"].name, D_YVENING["yvening_exchange__002"].tag, D_YVENING["yvening_exchange__002"].body, D_YVENING["yvening_exchange__002"].desc)
@@ -465,7 +465,7 @@ const YVENING_MERGE_TEMPLATE = `
   <div style="margin-top:12px">${caution(`▶ 반품 희망 시 → 아래 2. 전체/부분 방식 안내(반품)부터 진행
 ▶ 교환 희망 시 → 아래 2. 전체/부분 방식 안내(교환)부터 진행`)}</div>
 
-  ${secTitle("","2. 전체/부분 방식 안내",null,"sec2")}
+  ${secTitle("2", "전체/부분 방식 안내",null,"sec2")}
   <div class="grp-h">🔹 반품</div>
   ${cmpTable(
     [{cls:"blue",label:"🔹 전체 반품"},{cls:"pink",label:"🔹 부분 반품"}],
@@ -492,7 +492,7 @@ const YVENING_MERGE_TEMPLATE = `
     ]
   )}
 
-  ${secTitle("","3. 교환/반품 배송비 안내",null,"sec3")}
+  ${secTitle("3", "교환/반품 배송비 안내",null,"sec3")}
   <div class="grp-h">🔹 반품 배송비</div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
@@ -523,7 +523,7 @@ const YVENING_MERGE_TEMPLATE = `
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
 
-  ${secTitle("","4. 포장 및 회수 안내",null,"sec4")}
+  ${secTitle("4", "포장 및 회수 안내",null,"sec4")}
   <div class="grp-h">🔹 반품</div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
@@ -554,7 +554,7 @@ const YVENING_MERGE_TEMPLATE = `
   </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
-  ${secTitle("","5. 교환/반품 안내",null,"step5")}
+  ${secTitle("5", "교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","검수 및 재출고 안내","exchangeFlow")}
   ${macro(D_YVENING["yvening_exchange__009"].name, D_YVENING["yvening_exchange__009"].tag, D_YVENING["yvening_exchange__009"].body, D_YVENING["yvening_exchange__009"].desc)}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
