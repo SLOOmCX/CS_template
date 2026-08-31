@@ -3,18 +3,18 @@ const COMMON_IB = `
   <h1>📥 인바운드(IB) 공통</h1>
   <div class="sub">고객이 먼저 문의한 경우 · 상황 순서대로</div>
   <div class="hint">💡 <b>순서</b> : 첫인사 → 본인 확인 → 대기/보류 안내 → 상담 종료. 채널톡·유선 공통으로 사용합니다.</div>
-  ${macro(D_SHARED["ib__001"].name, D_SHARED["ib__001"].tag, D_SHARED["ib__001"].body, D_SHARED["ib__001"].desc)}
-  ${macro(D_SHARED["ib__002"].name, D_SHARED["ib__002"].tag, D_SHARED["ib__002"].body, D_SHARED["ib__002"].desc)}
-  ${macro(D_SHARED["ib__003"].name, D_SHARED["ib__003"].tag, D_SHARED["ib__003"].body, D_SHARED["ib__003"].desc)}
-  ${macro(D_SHARED["ib__004"].name, D_SHARED["ib__004"].tag, D_SHARED["ib__004"].body, D_SHARED["ib__004"].desc)}
+  ${macro(D_SHARED["ib__001"].name, D_SHARED["ib__001"].tag, D_SHARED["ib__001"].body, D_SHARED["ib__001"].desc, "ib__001", "shared")}
+  ${macro(D_SHARED["ib__002"].name, D_SHARED["ib__002"].tag, D_SHARED["ib__002"].body, D_SHARED["ib__002"].desc, "ib__002", "shared")}
+  ${macro(D_SHARED["ib__003"].name, D_SHARED["ib__003"].tag, D_SHARED["ib__003"].body, D_SHARED["ib__003"].desc, "ib__003", "shared")}
+  ${macro(D_SHARED["ib__004"].name, D_SHARED["ib__004"].tag, D_SHARED["ib__004"].body, D_SHARED["ib__004"].desc, "ib__004", "shared")}
 `;
 const COMMON_OB = `
   <h1>📤 아웃바운드(OB) 공통</h1>
   <div class="sub">우리가 먼저 연락하는 경우 · 상황 순서대로</div>
   <div class="hint">💡 <b>순서</b> : 발신 첫인사 → (부재 시) 부재 안내 문자 → 해피콜/재통화 약속.</div>
-  ${macro(D_SHARED["ob__001"].name, D_SHARED["ob__001"].tag, D_SHARED["ob__001"].body, D_SHARED["ob__001"].desc)}
-  ${macro(D_SHARED["ob__002"].name, D_SHARED["ob__002"].tag, D_SHARED["ob__002"].body, D_SHARED["ob__002"].desc)}
-  ${macro(D_SHARED["ob__003"].name, D_SHARED["ob__003"].tag, D_SHARED["ob__003"].body, D_SHARED["ob__003"].desc)}
+  ${macro(D_SHARED["ob__001"].name, D_SHARED["ob__001"].tag, D_SHARED["ob__001"].body, D_SHARED["ob__001"].desc, "ob__001", "shared")}
+  ${macro(D_SHARED["ob__002"].name, D_SHARED["ob__002"].tag, D_SHARED["ob__002"].body, D_SHARED["ob__002"].desc, "ob__002", "shared")}
+  ${macro(D_SHARED["ob__003"].name, D_SHARED["ob__003"].tag, D_SHARED["ob__003"].body, D_SHARED["ob__003"].desc, "ob__003", "shared")}
 `;
 
 const BOARD_ALL = `
@@ -36,7 +36,7 @@ Be Live and Better — 더 나은 나의 라이프, 빌바입니다.</div></td><
 마넬입니다.</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
 아이들의 올바른 성장을 연구하는 닥터아망입니다.</div></td><td class="cmp-row-label"></td><td></td></tr></tbody></table></div>
   <div class="grp-h">[공통] 끝인사 (1:1·FAQ)</div>
-  ${macro(D_SHARED["board__001"].name, D_SHARED["board__001"].tag, D_SHARED["board__001"].body, D_SHARED["board__001"].desc)}
+  ${macro(D_SHARED["board__001"].name, D_SHARED["board__001"].tag, D_SHARED["board__001"].body, D_SHARED["board__001"].desc, "board__001", "shared")}
   <div class="grp-h" id="b_form_2">[전브랜드] 채팅 상담 유도 (사진·정보·실시간 상담 필요 시)</div>
   ${caution(`문의 내용에 사진·고객 정보·실시간 상담 등이 필요해 채팅 상담으로 유도할 경우 사용`)}
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">채팅 상담 유도 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 슬룸 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
@@ -122,11 +122,11 @@ Be Live and Better — 더 나은 나의 라이프, 빌바입니다.</div></td><
 ※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr></tbody></table></div>
   ${secTitle("📄","문의 유형별 템플릿","자사몰·커머스","b_type")}
   <div class="grp-h" id="b_type_1">[슬룸] 불량 반품·교환·AS 상담 요청</div>
-  ${macro(D_SHARED["board__002"].name, D_SHARED["board__002"].tag, D_SHARED["board__002"].body, D_SHARED["board__002"].desc)}
+  ${macro(D_SHARED["board__002"].name, D_SHARED["board__002"].tag, D_SHARED["board__002"].body, D_SHARED["board__002"].desc, "board__002", "shared")}
   <div class="grp-h" id="b_type_2">[슬룸] 네이버페이 주문형 환불금 송금 입금 안내</div>
-  ${macro(D_SHARED["board__003"].name, D_SHARED["board__003"].tag, D_SHARED["board__003"].body, D_SHARED["board__003"].desc)}
+  ${macro(D_SHARED["board__003"].name, D_SHARED["board__003"].tag, D_SHARED["board__003"].body, D_SHARED["board__003"].desc, "board__003", "shared")}
   <div class="grp-h" id="b_type_3">[슬룸] 100% 환불 이벤트 안내</div>
-  ${macro(D_SHARED["board__004"].name, D_SHARED["board__004"].tag, D_SHARED["board__004"].body, D_SHARED["board__004"].desc)}
+  ${macro(D_SHARED["board__004"].name, D_SHARED["board__004"].tag, D_SHARED["board__004"].body, D_SHARED["board__004"].desc, "board__004", "shared")}
   <div class="grp-h" id="b_type_4">[전브랜드] 교환/반품 사유 확인 필요 시</div>
   ${caution(`반품·교환 사유 확인 등 절차가 필요해 채팅 상담으로 접수 유도할 경우 사용`)}
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">교환/반품 사유 확인 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
@@ -245,35 +245,35 @@ Be Live and Better — 더 나은 나의 라이프, 빌바입니다.
   <div class="quote-box"><b>📌 이 템플릿은 외부몰 고객문의 답변 기준입니다</b>
 <span style="color:#9b6829;font-weight:800">고객센터 문의(외부몰 상담사) 답변 시에는 템플릿을 그대로 복사하지 말고, 인사말·문장·톤을 상황에 맞게 수정하여 사용</span><br><br>📌 <b>배송·기타 문의 응대 방법</b><br>별도 템플릿은 사용하지 않으며, 아래 순서대로 조합하여 발송<br>① 외부몰 첫인사 → ② 채팅 표준 응대 템플릿 본문(원문 그대로) → ③ 외부몰 끝인사<br>※ 채팅 표준 응대 템플릿만 원본으로 관리하며, 외부몰에서는 첫인사와 끝인사만 조합하여 사용</div>
   <div class="grp-h" id="b_ext_1">1. 일반 문의</div>
-  <div class="grid2">${macro(D_SHARED["board__005"].name, D_SHARED["board__005"].tag, D_SHARED["board__005"].body, D_SHARED["board__005"].desc)}${macro(D_SHARED["board__006"].name, D_SHARED["board__006"].tag, D_SHARED["board__006"].body, D_SHARED["board__006"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["board__007"].name, D_SHARED["board__007"].tag, D_SHARED["board__007"].body, D_SHARED["board__007"].desc)}${macro(D_SHARED["board__008"].name, D_SHARED["board__008"].tag, D_SHARED["board__008"].body, D_SHARED["board__008"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["board__005"].name, D_SHARED["board__005"].tag, D_SHARED["board__005"].body, D_SHARED["board__005"].desc, "board__005", "shared")}${macro(D_SHARED["board__006"].name, D_SHARED["board__006"].tag, D_SHARED["board__006"].body, D_SHARED["board__006"].desc, "board__006", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["board__007"].name, D_SHARED["board__007"].tag, D_SHARED["board__007"].body, D_SHARED["board__007"].desc, "board__007", "shared")}${macro(D_SHARED["board__008"].name, D_SHARED["board__008"].tag, D_SHARED["board__008"].body, D_SHARED["board__008"].desc, "board__008", "shared")}</div>
   <div class="grp-h" id="b_ext_2">2. 제품별 사용법</div>
   <div class="grp-h" id="b_ext_2a">🧍 등·허리 제품</div>
-  <div class="grid2">${macro(D_SHARED["board__009"].name, D_SHARED["board__009"].tag, D_SHARED["board__009"].body, D_SHARED["board__009"].desc)}${macro(D_SHARED["board__010"].name, D_SHARED["board__010"].tag, D_SHARED["board__010"].body, D_SHARED["board__010"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["board__011"].name, D_SHARED["board__011"].tag, D_SHARED["board__011"].body, D_SHARED["board__011"].desc)}${macro(D_SHARED["board__012"].name, D_SHARED["board__012"].tag, D_SHARED["board__012"].body, D_SHARED["board__012"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["board__009"].name, D_SHARED["board__009"].tag, D_SHARED["board__009"].body, D_SHARED["board__009"].desc, "board__009", "shared")}${macro(D_SHARED["board__010"].name, D_SHARED["board__010"].tag, D_SHARED["board__010"].body, D_SHARED["board__010"].desc, "board__010", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["board__011"].name, D_SHARED["board__011"].tag, D_SHARED["board__011"].body, D_SHARED["board__011"].desc, "board__011", "shared")}${macro(D_SHARED["board__012"].name, D_SHARED["board__012"].tag, D_SHARED["board__012"].body, D_SHARED["board__012"].desc, "board__012", "shared")}</div>
   <div class="v2-nest">
   <div class="grp-h" id="b_ext_3">✨ [허편케V2] 사용법 오인</div>
-  <div class="grid2">${macro(D_SHARED["board__013"].name, D_SHARED["board__013"].tag, D_SHARED["board__013"].body, D_SHARED["board__013"].desc)}${macro(D_SHARED["board__014"].name, D_SHARED["board__014"].tag, D_SHARED["board__014"].body, D_SHARED["board__014"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["board__015"].name, D_SHARED["board__015"].tag, D_SHARED["board__015"].body, D_SHARED["board__015"].desc)}${macro(D_SHARED["board__016"].name, D_SHARED["board__016"].tag, D_SHARED["board__016"].body, D_SHARED["board__016"].desc)}</div>
-  ${macro(D_SHARED["board__017"].name, D_SHARED["board__017"].tag, D_SHARED["board__017"].body, D_SHARED["board__017"].desc)}
+  <div class="grid2">${macro(D_SHARED["board__013"].name, D_SHARED["board__013"].tag, D_SHARED["board__013"].body, D_SHARED["board__013"].desc, "board__013", "shared")}${macro(D_SHARED["board__014"].name, D_SHARED["board__014"].tag, D_SHARED["board__014"].body, D_SHARED["board__014"].desc, "board__014", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["board__015"].name, D_SHARED["board__015"].tag, D_SHARED["board__015"].body, D_SHARED["board__015"].desc, "board__015", "shared")}${macro(D_SHARED["board__016"].name, D_SHARED["board__016"].tag, D_SHARED["board__016"].body, D_SHARED["board__016"].desc, "board__016", "shared")}</div>
+  ${macro(D_SHARED["board__017"].name, D_SHARED["board__017"].tag, D_SHARED["board__017"].body, D_SHARED["board__017"].desc, "board__017", "shared")}
   </div>
   <div class="grp-h" id="b_ext_2b">💆 목·어깨 제품</div>
-  <div class="grid2">${macro(D_SHARED["board__018"].name, D_SHARED["board__018"].tag, D_SHARED["board__018"].body, D_SHARED["board__018"].desc)}${macro(D_SHARED["board__019"].name, D_SHARED["board__019"].tag, D_SHARED["board__019"].body, D_SHARED["board__019"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["board__020"].name, D_SHARED["board__020"].tag, D_SHARED["board__020"].body, D_SHARED["board__020"].desc)}${macro(D_SHARED["board__021"].name, D_SHARED["board__021"].tag, D_SHARED["board__021"].body, D_SHARED["board__021"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["board__022"].name, D_SHARED["board__022"].tag, D_SHARED["board__022"].body, D_SHARED["board__022"].desc)}${macro(D_SHARED["board__023"].name, D_SHARED["board__023"].tag, D_SHARED["board__023"].body, D_SHARED["board__023"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["board__024"].name, D_SHARED["board__024"].tag, D_SHARED["board__024"].body, D_SHARED["board__024"].desc)}${macro(D_SHARED["board__025"].name, D_SHARED["board__025"].tag, D_SHARED["board__025"].body, D_SHARED["board__025"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["board__018"].name, D_SHARED["board__018"].tag, D_SHARED["board__018"].body, D_SHARED["board__018"].desc, "board__018", "shared")}${macro(D_SHARED["board__019"].name, D_SHARED["board__019"].tag, D_SHARED["board__019"].body, D_SHARED["board__019"].desc, "board__019", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["board__020"].name, D_SHARED["board__020"].tag, D_SHARED["board__020"].body, D_SHARED["board__020"].desc, "board__020", "shared")}${macro(D_SHARED["board__021"].name, D_SHARED["board__021"].tag, D_SHARED["board__021"].body, D_SHARED["board__021"].desc, "board__021", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["board__022"].name, D_SHARED["board__022"].tag, D_SHARED["board__022"].body, D_SHARED["board__022"].desc, "board__022", "shared")}${macro(D_SHARED["board__023"].name, D_SHARED["board__023"].tag, D_SHARED["board__023"].body, D_SHARED["board__023"].desc, "board__023", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["board__024"].name, D_SHARED["board__024"].tag, D_SHARED["board__024"].body, D_SHARED["board__024"].desc, "board__024", "shared")}${macro(D_SHARED["board__025"].name, D_SHARED["board__025"].tag, D_SHARED["board__025"].body, D_SHARED["board__025"].desc, "board__025", "shared")}</div>
   <div class="grp-h" id="b_ext_2c">🦵🏻 발·종아리 제품</div>
-  <div class="grid2">${macro(D_SHARED["board__026"].name, D_SHARED["board__026"].tag, D_SHARED["board__026"].body, D_SHARED["board__026"].desc)}${macro(D_SHARED["board__027"].name, D_SHARED["board__027"].tag, D_SHARED["board__027"].body, D_SHARED["board__027"].desc)}</div>
-  ${macro(D_SHARED["board__028"].name, D_SHARED["board__028"].tag, D_SHARED["board__028"].body, D_SHARED["board__028"].desc)}
+  <div class="grid2">${macro(D_SHARED["board__026"].name, D_SHARED["board__026"].tag, D_SHARED["board__026"].body, D_SHARED["board__026"].desc, "board__026", "shared")}${macro(D_SHARED["board__027"].name, D_SHARED["board__027"].tag, D_SHARED["board__027"].body, D_SHARED["board__027"].desc, "board__027", "shared")}</div>
+  ${macro(D_SHARED["board__028"].name, D_SHARED["board__028"].tag, D_SHARED["board__028"].body, D_SHARED["board__028"].desc, "board__028", "shared")}
   <div class="grp-h" id="b_ext_2d">🖐️ 손·눈·팔 제품</div>
-  <div class="grid2">${macro(D_SHARED["board__029"].name, D_SHARED["board__029"].tag, D_SHARED["board__029"].body, D_SHARED["board__029"].desc)}${macro(D_SHARED["board__030"].name, D_SHARED["board__030"].tag, D_SHARED["board__030"].body, D_SHARED["board__030"].desc)}</div>
-  ${macro(D_SHARED["board__031"].name, D_SHARED["board__031"].tag, D_SHARED["board__031"].body, D_SHARED["board__031"].desc)}
+  <div class="grid2">${macro(D_SHARED["board__029"].name, D_SHARED["board__029"].tag, D_SHARED["board__029"].body, D_SHARED["board__029"].desc, "board__029", "shared")}${macro(D_SHARED["board__030"].name, D_SHARED["board__030"].tag, D_SHARED["board__030"].body, D_SHARED["board__030"].desc, "board__030", "shared")}</div>
+  ${macro(D_SHARED["board__031"].name, D_SHARED["board__031"].tag, D_SHARED["board__031"].body, D_SHARED["board__031"].desc, "board__031", "shared")}
   <div class="grp-h" id="b_ext_2e">🧖 전신·바디케어 제품</div>
-  <div class="grid2">${macro(D_SHARED["board__032"].name, D_SHARED["board__032"].tag, D_SHARED["board__032"].body, D_SHARED["board__032"].desc)}${macro(D_SHARED["board__033"].name, D_SHARED["board__033"].tag, D_SHARED["board__033"].body, D_SHARED["board__033"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["board__032"].name, D_SHARED["board__032"].tag, D_SHARED["board__032"].body, D_SHARED["board__032"].desc, "board__032", "shared")}${macro(D_SHARED["board__033"].name, D_SHARED["board__033"].tag, D_SHARED["board__033"].body, D_SHARED["board__033"].desc, "board__033", "shared")}</div>
   <div class="grp-h" id="b_ext_2f">🎁 카카오톡 선물하기</div>
-  ${macro(D_SHARED["board__034"].name, D_SHARED["board__034"].tag, D_SHARED["board__034"].body, D_SHARED["board__034"].desc)}
+  ${macro(D_SHARED["board__034"].name, D_SHARED["board__034"].tag, D_SHARED["board__034"].body, D_SHARED["board__034"].desc, "board__034", "shared")}
   <div class="grp-h" id="b_ext_4">3. 반품·교환·AS</div>
-  <div class="grid2">${macro(D_SHARED["board__035"].name, D_SHARED["board__035"].tag, D_SHARED["board__035"].body, D_SHARED["board__035"].desc)}${macro(D_SHARED["board__036"].name, D_SHARED["board__036"].tag, D_SHARED["board__036"].body, D_SHARED["board__036"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["board__035"].name, D_SHARED["board__035"].tag, D_SHARED["board__035"].body, D_SHARED["board__035"].desc, "board__035", "shared")}${macro(D_SHARED["board__036"].name, D_SHARED["board__036"].tag, D_SHARED["board__036"].body, D_SHARED["board__036"].desc, "board__036", "shared")}</div>
 `;
 
 /* =========================================================
@@ -292,90 +292,90 @@ const COMMON_ALL = `
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">캐치프라이즈</th><th class="cmp-blue">대표번호</th><th class="cmp-blue">채팅</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td>프리미엄 헬스테크 브랜드, 슬룸 💜</td><td>1668-2956</td><td><a href="http://sloom.channel.io/" target="_blank">http://sloom.channel.io</a></td></tr><tr><td class="cmp-row-label">심플리케어</td><td>건강식품의 본질에 집중하는 심플리케어</td><td>1668-1406</td><td><a href="http://simplicare.channel.io/" target="_blank">http://simplicare.channel.io</a></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td>나를 위한 뷰티케어 브랜드, 얼라인랩</td><td>1668-3559</td><td><a href="http://alignlab.channel.io/" target="_blank">http://alignlab.channel.io</a></td></tr><tr><td class="cmp-row-label">빌바</td><td>Be Live and Better — 더 나은 나의 라이프, 빌바</td><td>1668-2908</td><td><a href="http://bilba.channel.io/" target="_blank">http://bilba.channel.io</a></td></tr><tr><td class="cmp-row-label">셀올로지</td><td>피부의 근본을 연구하는 셀올로지 💙</td><td>1544-5748</td><td><a href="http://cellology.channel.io/" target="_blank">http://cellology.channel.io</a></td></tr><tr><td class="cmp-row-label">코코다움</td><td>사랑하는 코코들을 위해, 코코다움 🐾</td><td>1668-1376</td><td><a href="http://cocodaum.channel.io/" target="_blank">http://cocodaum.channel.io</a></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td>새로운 하루의 시작인 12시를 기념하며, 투엘브어클락(12 o'clock)</td><td>없음</td><td><a href="http://12oclock.channel.io/" target="_blank">http://12oclock.channel.io</a></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td>바쁜 남자들을 위한 올인원 솔루션, 닥터맨즈</td><td>1668-0953</td><td><a href="http://drmans.channel.io/" target="_blank">http://drmans.channel.io</a></td></tr><tr><td class="cmp-row-label">와이브닝</td><td>로맨틱한 순간을 위한 페미닌 케어, 와이브닝</td><td>1668-5811</td><td><a href="http://yvening.channel.io/" target="_blank">http://yvening.channel.io</a></td></tr><tr><td class="cmp-row-label">마넬</td><td>눈부신 나를 위한 내추럴 뷰티, 마넬입니다.</td><td>없음</td><td><a href="http://pf.kakao.com/_YxcIxexj/chat" target="_blank">http://pf.kakao.com/_YxcIxexj/chat</a></td></tr><tr><td class="cmp-row-label">닥터아망</td><td>아이들의 올바른 성장을 연구하는 닥터아망</td><td>1668-3342</td><td><a href="http://dramang.channel.io/" target="_blank">http://dramang.channel.io</a></td></tr></tbody></table></div>
   <div class="grp-h" id="c_basic_1">1. 인사말</div>
   <div class="grp-h grp-sub">첫인사</div>
-  ${macro(D_SHARED["cmn_all__001"].name, D_SHARED["cmn_all__001"].tag, D_SHARED["cmn_all__001"].body, D_SHARED["cmn_all__001"].desc)}
+  ${macro(D_SHARED["cmn_all__001"].name, D_SHARED["cmn_all__001"].tag, D_SHARED["cmn_all__001"].body, D_SHARED["cmn_all__001"].desc, "cmn_all__001", "shared")}
   <div class="grp-h grp-sub">그외 인사</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__002"].name, D_SHARED["cmn_all__002"].tag, D_SHARED["cmn_all__002"].body, D_SHARED["cmn_all__002"].desc)}${macro(D_SHARED["cmn_all__003"].name, D_SHARED["cmn_all__003"].tag, D_SHARED["cmn_all__003"].body, D_SHARED["cmn_all__003"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__002"].name, D_SHARED["cmn_all__002"].tag, D_SHARED["cmn_all__002"].body, D_SHARED["cmn_all__002"].desc, "cmn_all__002", "shared")}${macro(D_SHARED["cmn_all__003"].name, D_SHARED["cmn_all__003"].tag, D_SHARED["cmn_all__003"].body, D_SHARED["cmn_all__003"].desc, "cmn_all__003", "shared")}</div>
   <div class="grp-h grp-sub">끝인사</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__004"].name, D_SHARED["cmn_all__004"].tag, D_SHARED["cmn_all__004"].body, D_SHARED["cmn_all__004"].desc)}${macro(D_SHARED["cmn_all__005"].name, D_SHARED["cmn_all__005"].tag, D_SHARED["cmn_all__005"].body, D_SHARED["cmn_all__005"].desc)}</div>
-  ${macro(D_SHARED["cmn_all__006"].name, D_SHARED["cmn_all__006"].tag, D_SHARED["cmn_all__006"].body, D_SHARED["cmn_all__006"].desc)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__007"].name, D_SHARED["cmn_all__007"].tag, D_SHARED["cmn_all__007"].body, D_SHARED["cmn_all__007"].desc)}${macro(D_SHARED["cmn_all__008"].name, D_SHARED["cmn_all__008"].tag, D_SHARED["cmn_all__008"].body, D_SHARED["cmn_all__008"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__009"].name, D_SHARED["cmn_all__009"].tag, D_SHARED["cmn_all__009"].body, D_SHARED["cmn_all__009"].desc)}${macro(D_SHARED["cmn_all__010"].name, D_SHARED["cmn_all__010"].tag, D_SHARED["cmn_all__010"].body, D_SHARED["cmn_all__010"].desc)}</div>
-  ${macro(D_SHARED["cmn_all__011"].name, D_SHARED["cmn_all__011"].tag, D_SHARED["cmn_all__011"].body, D_SHARED["cmn_all__011"].desc)}
+  <div class="grid2">${macro(D_SHARED["cmn_all__004"].name, D_SHARED["cmn_all__004"].tag, D_SHARED["cmn_all__004"].body, D_SHARED["cmn_all__004"].desc, "cmn_all__004", "shared")}${macro(D_SHARED["cmn_all__005"].name, D_SHARED["cmn_all__005"].tag, D_SHARED["cmn_all__005"].body, D_SHARED["cmn_all__005"].desc, "cmn_all__005", "shared")}</div>
+  ${macro(D_SHARED["cmn_all__006"].name, D_SHARED["cmn_all__006"].tag, D_SHARED["cmn_all__006"].body, D_SHARED["cmn_all__006"].desc, "cmn_all__006", "shared")}
+  <div class="grid2">${macro(D_SHARED["cmn_all__007"].name, D_SHARED["cmn_all__007"].tag, D_SHARED["cmn_all__007"].body, D_SHARED["cmn_all__007"].desc, "cmn_all__007", "shared")}${macro(D_SHARED["cmn_all__008"].name, D_SHARED["cmn_all__008"].tag, D_SHARED["cmn_all__008"].body, D_SHARED["cmn_all__008"].desc, "cmn_all__008", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__009"].name, D_SHARED["cmn_all__009"].tag, D_SHARED["cmn_all__009"].body, D_SHARED["cmn_all__009"].desc, "cmn_all__009", "shared")}${macro(D_SHARED["cmn_all__010"].name, D_SHARED["cmn_all__010"].tag, D_SHARED["cmn_all__010"].body, D_SHARED["cmn_all__010"].desc, "cmn_all__010", "shared")}</div>
+  ${macro(D_SHARED["cmn_all__011"].name, D_SHARED["cmn_all__011"].tag, D_SHARED["cmn_all__011"].body, D_SHARED["cmn_all__011"].desc, "cmn_all__011", "shared")}
   <div class="grp-h" id="c_basic_2">2. 사전/사후 대기</div>
   ${caution(`★ 고객에게 대기 요청 후 자동 종료 경고 멘트가 나가지 않도록 [종료대기] 설정 필수`)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__012"].name, D_SHARED["cmn_all__012"].tag, D_SHARED["cmn_all__012"].body, D_SHARED["cmn_all__012"].desc)}${macro(D_SHARED["cmn_all__013"].name, D_SHARED["cmn_all__013"].tag, D_SHARED["cmn_all__013"].body, D_SHARED["cmn_all__013"].desc)}</div>
-  ${macro(D_SHARED["cmn_all__014"].name, D_SHARED["cmn_all__014"].tag, D_SHARED["cmn_all__014"].body, D_SHARED["cmn_all__014"].desc)}
+  <div class="grid2">${macro(D_SHARED["cmn_all__012"].name, D_SHARED["cmn_all__012"].tag, D_SHARED["cmn_all__012"].body, D_SHARED["cmn_all__012"].desc, "cmn_all__012", "shared")}${macro(D_SHARED["cmn_all__013"].name, D_SHARED["cmn_all__013"].tag, D_SHARED["cmn_all__013"].body, D_SHARED["cmn_all__013"].desc, "cmn_all__013", "shared")}</div>
+  ${macro(D_SHARED["cmn_all__014"].name, D_SHARED["cmn_all__014"].tag, D_SHARED["cmn_all__014"].body, D_SHARED["cmn_all__014"].desc, "cmn_all__014", "shared")}
   <div class="grp-h" id="c_basic_3">3. 호응 표현</div>
   ${caution(`고객 말씀 후 상황에 맞는 호응 필수 (단답 '네'는 부적절 / "네, 많이 불편하셨을 것 같습니다" 같은 공감 표현은 적절)`)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__015"].name, D_SHARED["cmn_all__015"].tag, D_SHARED["cmn_all__015"].body, D_SHARED["cmn_all__015"].desc)}${macro(D_SHARED["cmn_all__016"].name, D_SHARED["cmn_all__016"].tag, D_SHARED["cmn_all__016"].body, D_SHARED["cmn_all__016"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__015"].name, D_SHARED["cmn_all__015"].tag, D_SHARED["cmn_all__015"].body, D_SHARED["cmn_all__015"].desc, "cmn_all__015", "shared")}${macro(D_SHARED["cmn_all__016"].name, D_SHARED["cmn_all__016"].tag, D_SHARED["cmn_all__016"].body, D_SHARED["cmn_all__016"].desc, "cmn_all__016", "shared")}</div>
   <div class="grp-h" id="c_basic_4">4. 채팅 중 유선(O/B) 요청</div>
   ${caution(`고객이 채팅 인입 후 전화 요청 시 우선 채팅 상담 권유 (불필요한 O/B 감소 목적)`)}
-  ${macro(D_SHARED["cmn_all__017"].name, D_SHARED["cmn_all__017"].tag, D_SHARED["cmn_all__017"].body, D_SHARED["cmn_all__017"].desc)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__018"].name, D_SHARED["cmn_all__018"].tag, D_SHARED["cmn_all__018"].body, D_SHARED["cmn_all__018"].desc)}${macro(D_SHARED["cmn_all__019"].name, D_SHARED["cmn_all__019"].tag, D_SHARED["cmn_all__019"].body, D_SHARED["cmn_all__019"].desc)}</div>
+  ${macro(D_SHARED["cmn_all__017"].name, D_SHARED["cmn_all__017"].tag, D_SHARED["cmn_all__017"].body, D_SHARED["cmn_all__017"].desc, "cmn_all__017", "shared")}
+  <div class="grid2">${macro(D_SHARED["cmn_all__018"].name, D_SHARED["cmn_all__018"].tag, D_SHARED["cmn_all__018"].body, D_SHARED["cmn_all__018"].desc, "cmn_all__018", "shared")}${macro(D_SHARED["cmn_all__019"].name, D_SHARED["cmn_all__019"].tag, D_SHARED["cmn_all__019"].body, D_SHARED["cmn_all__019"].desc, "cmn_all__019", "shared")}</div>
   <div class="grp-h" id="c_basic_5">5. 추가 문의 / 점심시간</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__020"].name, D_SHARED["cmn_all__020"].tag, D_SHARED["cmn_all__020"].body, D_SHARED["cmn_all__020"].desc)}${macro(D_SHARED["cmn_all__021"].name, D_SHARED["cmn_all__021"].tag, D_SHARED["cmn_all__021"].body, D_SHARED["cmn_all__021"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__020"].name, D_SHARED["cmn_all__020"].tag, D_SHARED["cmn_all__020"].body, D_SHARED["cmn_all__020"].desc, "cmn_all__020", "shared")}${macro(D_SHARED["cmn_all__021"].name, D_SHARED["cmn_all__021"].tag, D_SHARED["cmn_all__021"].body, D_SHARED["cmn_all__021"].desc, "cmn_all__021", "shared")}</div>
   <div class="grp-h" id="c_basic_7">🚨 상담 종료 경고</div>
   ${caution(`고객 욕설·반말·폭언·성희롱 (1회) — 담당 관리자 보고 필수`)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__022"].name, D_SHARED["cmn_all__022"].tag, D_SHARED["cmn_all__022"].body, D_SHARED["cmn_all__022"].desc)}${macro(D_SHARED["cmn_all__023"].name, D_SHARED["cmn_all__023"].tag, D_SHARED["cmn_all__023"].body, D_SHARED["cmn_all__023"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__022"].name, D_SHARED["cmn_all__022"].tag, D_SHARED["cmn_all__022"].body, D_SHARED["cmn_all__022"].desc, "cmn_all__022", "shared")}${macro(D_SHARED["cmn_all__023"].name, D_SHARED["cmn_all__023"].tag, D_SHARED["cmn_all__023"].body, D_SHARED["cmn_all__023"].desc, "cmn_all__023", "shared")}</div>
   ${secTitle("🎁","제품 문의",null,"c_product")}
-  ${macro(D_SHARED["cmn_all__024"].name, D_SHARED["cmn_all__024"].tag, D_SHARED["cmn_all__024"].body, D_SHARED["cmn_all__024"].desc)}
+  ${macro(D_SHARED["cmn_all__024"].name, D_SHARED["cmn_all__024"].tag, D_SHARED["cmn_all__024"].body, D_SHARED["cmn_all__024"].desc, "cmn_all__024", "shared")}
   ${secTitle("📦","배송·출고 문의",null,"c_ship")}
   <div class="grp-h" id="c_ship_1">1. 배송 일정 문의</div>
   ${caution(`오후 2시 이전 결제 건 당일 출고 기준 · 결제일자+시간 확인 필수 · 금요일 2시 이후/주말·공휴일 결제는 공휴일 출고 미진행`)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__025"].name, D_SHARED["cmn_all__025"].tag, D_SHARED["cmn_all__025"].body, D_SHARED["cmn_all__025"].desc)}${macro(D_SHARED["cmn_all__026"].name, D_SHARED["cmn_all__026"].tag, D_SHARED["cmn_all__026"].body, D_SHARED["cmn_all__026"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__027"].name, D_SHARED["cmn_all__027"].tag, D_SHARED["cmn_all__027"].body, D_SHARED["cmn_all__027"].desc)}${macro(D_SHARED["cmn_all__028"].name, D_SHARED["cmn_all__028"].tag, D_SHARED["cmn_all__028"].body, D_SHARED["cmn_all__028"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__029"].name, D_SHARED["cmn_all__029"].tag, D_SHARED["cmn_all__029"].body, D_SHARED["cmn_all__029"].desc)}${macro(D_SHARED["cmn_all__030"].name, D_SHARED["cmn_all__030"].tag, D_SHARED["cmn_all__030"].body, D_SHARED["cmn_all__030"].desc)}</div>
-  ${macro(D_SHARED["cmn_all__031"].name, D_SHARED["cmn_all__031"].tag, D_SHARED["cmn_all__031"].body, D_SHARED["cmn_all__031"].desc)}
+  <div class="grid2">${macro(D_SHARED["cmn_all__025"].name, D_SHARED["cmn_all__025"].tag, D_SHARED["cmn_all__025"].body, D_SHARED["cmn_all__025"].desc, "cmn_all__025", "shared")}${macro(D_SHARED["cmn_all__026"].name, D_SHARED["cmn_all__026"].tag, D_SHARED["cmn_all__026"].body, D_SHARED["cmn_all__026"].desc, "cmn_all__026", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__027"].name, D_SHARED["cmn_all__027"].tag, D_SHARED["cmn_all__027"].body, D_SHARED["cmn_all__027"].desc, "cmn_all__027", "shared")}${macro(D_SHARED["cmn_all__028"].name, D_SHARED["cmn_all__028"].tag, D_SHARED["cmn_all__028"].body, D_SHARED["cmn_all__028"].desc, "cmn_all__028", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__029"].name, D_SHARED["cmn_all__029"].tag, D_SHARED["cmn_all__029"].body, D_SHARED["cmn_all__029"].desc, "cmn_all__029", "shared")}${macro(D_SHARED["cmn_all__030"].name, D_SHARED["cmn_all__030"].tag, D_SHARED["cmn_all__030"].body, D_SHARED["cmn_all__030"].desc, "cmn_all__030", "shared")}</div>
+  ${macro(D_SHARED["cmn_all__031"].name, D_SHARED["cmn_all__031"].tag, D_SHARED["cmn_all__031"].body, D_SHARED["cmn_all__031"].desc, "cmn_all__031", "shared")}
   <div class="grp-h" id="c_ship_2">2. 미배송 / 오배송 문의</div>
   ${guide(`자사몰·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 주문내역에서 송장번호 확인 → CJ대한통운 송장 조회로 배송 상태·흐름 확인`)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__032"].name, D_SHARED["cmn_all__032"].tag, D_SHARED["cmn_all__032"].body, D_SHARED["cmn_all__032"].desc)}${macro(D_SHARED["cmn_all__033"].name, D_SHARED["cmn_all__033"].tag, D_SHARED["cmn_all__033"].body, D_SHARED["cmn_all__033"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__032"].name, D_SHARED["cmn_all__032"].tag, D_SHARED["cmn_all__032"].body, D_SHARED["cmn_all__032"].desc, "cmn_all__032", "shared")}${macro(D_SHARED["cmn_all__033"].name, D_SHARED["cmn_all__033"].tag, D_SHARED["cmn_all__033"].body, D_SHARED["cmn_all__033"].desc, "cmn_all__033", "shared")}</div>
   <div class="grp-h" id="c_ship_3">3. 분리배송 안내</div>
-  ${macro(D_SHARED["cmn_all__034"].name, D_SHARED["cmn_all__034"].tag, D_SHARED["cmn_all__034"].body, D_SHARED["cmn_all__034"].desc)}
+  ${macro(D_SHARED["cmn_all__034"].name, D_SHARED["cmn_all__034"].tag, D_SHARED["cmn_all__034"].body, D_SHARED["cmn_all__034"].desc, "cmn_all__034", "shared")}
   ${secTitle("🔄","주문 변경 (취소·배송정보 변경)",null,"c_order")}
   <div class="grp-h" id="c_order_1">1. 주문 취소</div>
   <div class="warn-note">📦 물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 출고 상태 확인 필수
 · 취소 가능 : 송장 상태가 '마감됨'을 제외한 전체
 · 취소 불가 : 송장 상태가 '마감됨'</div>
   <div class="grid2">${col("blue","취소 가능",
-subcard(D_SHARED["cmn_all__035"].name, D_SHARED["cmn_all__035"].tag, D_SHARED["cmn_all__035"].body, D_SHARED["cmn_all__035"].desc) + subcard(D_SHARED["cmn_all__036"].name, D_SHARED["cmn_all__036"].tag, D_SHARED["cmn_all__036"].body, D_SHARED["cmn_all__036"].desc) + subcard(D_SHARED["cmn_all__037"].name, D_SHARED["cmn_all__037"].tag, D_SHARED["cmn_all__037"].body, D_SHARED["cmn_all__037"].desc)
+subcard(D_SHARED["cmn_all__035"].name, D_SHARED["cmn_all__035"].tag, D_SHARED["cmn_all__035"].body, D_SHARED["cmn_all__035"].desc, "cmn_all__035", "shared") + subcard(D_SHARED["cmn_all__036"].name, D_SHARED["cmn_all__036"].tag, D_SHARED["cmn_all__036"].body, D_SHARED["cmn_all__036"].desc, "cmn_all__036", "shared") + subcard(D_SHARED["cmn_all__037"].name, D_SHARED["cmn_all__037"].tag, D_SHARED["cmn_all__037"].body, D_SHARED["cmn_all__037"].desc, "cmn_all__037", "shared")
 )}${col("pink","취소 불가",
-subcard(D_SHARED["cmn_all__038"].name, D_SHARED["cmn_all__038"].tag, D_SHARED["cmn_all__038"].body, D_SHARED["cmn_all__038"].desc)
+subcard(D_SHARED["cmn_all__038"].name, D_SHARED["cmn_all__038"].tag, D_SHARED["cmn_all__038"].body, D_SHARED["cmn_all__038"].desc, "cmn_all__038", "shared")
 )}</div>
   <div class="grp-h">[예외] 취소했으나 배송된 경우</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__039"].name, D_SHARED["cmn_all__039"].tag, D_SHARED["cmn_all__039"].body, D_SHARED["cmn_all__039"].desc)}${macro(D_SHARED["cmn_all__040"].name, D_SHARED["cmn_all__040"].tag, D_SHARED["cmn_all__040"].body, D_SHARED["cmn_all__040"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__039"].name, D_SHARED["cmn_all__039"].tag, D_SHARED["cmn_all__039"].body, D_SHARED["cmn_all__039"].desc, "cmn_all__039", "shared")}${macro(D_SHARED["cmn_all__040"].name, D_SHARED["cmn_all__040"].tag, D_SHARED["cmn_all__040"].body, D_SHARED["cmn_all__040"].desc, "cmn_all__040", "shared")}</div>
   <div class="grp-h" id="c_order_2">2. 배송 정보 변경</div>
   <div class="warn-note">📦 물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 출고 상태 확인 필수
 · 변경 가능 : 송장 상태가 '마감됨'을 제외한 전체
 · 변경 불가 : 송장 상태가 '마감됨'</div>
   <div class="grid2">${col("blue","변경 가능",
-subcard(D_SHARED["cmn_all__041"].name, D_SHARED["cmn_all__041"].tag, D_SHARED["cmn_all__041"].body, D_SHARED["cmn_all__041"].desc) + subcard(D_SHARED["cmn_all__042"].name, D_SHARED["cmn_all__042"].tag, D_SHARED["cmn_all__042"].body, D_SHARED["cmn_all__042"].desc)
+subcard(D_SHARED["cmn_all__041"].name, D_SHARED["cmn_all__041"].tag, D_SHARED["cmn_all__041"].body, D_SHARED["cmn_all__041"].desc, "cmn_all__041", "shared") + subcard(D_SHARED["cmn_all__042"].name, D_SHARED["cmn_all__042"].tag, D_SHARED["cmn_all__042"].body, D_SHARED["cmn_all__042"].desc, "cmn_all__042", "shared")
 )}${col("pink","변경 불가",
-subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["cmn_all__043"].body, D_SHARED["cmn_all__043"].desc)
+subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["cmn_all__043"].body, D_SHARED["cmn_all__043"].desc, "cmn_all__043", "shared")
 )}</div>
   ${secTitle("💳","결제 문의 (입금 확인)",null,"c_pay")}
   ${caution(`고객 정보 확인부터 진행 · 정상 입금 시 확인 내용 안내`)}
-  ${macro(D_SHARED["cmn_all__044"].name, D_SHARED["cmn_all__044"].tag, D_SHARED["cmn_all__044"].body, D_SHARED["cmn_all__044"].desc)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__045"].name, D_SHARED["cmn_all__045"].tag, D_SHARED["cmn_all__045"].body, D_SHARED["cmn_all__045"].desc)}${macro(D_SHARED["cmn_all__046"].name, D_SHARED["cmn_all__046"].tag, D_SHARED["cmn_all__046"].body, D_SHARED["cmn_all__046"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__047"].name, D_SHARED["cmn_all__047"].tag, D_SHARED["cmn_all__047"].body, D_SHARED["cmn_all__047"].desc)}${macro(D_SHARED["cmn_all__048"].name, D_SHARED["cmn_all__048"].tag, D_SHARED["cmn_all__048"].body, D_SHARED["cmn_all__048"].desc)}</div>
+  ${macro(D_SHARED["cmn_all__044"].name, D_SHARED["cmn_all__044"].tag, D_SHARED["cmn_all__044"].body, D_SHARED["cmn_all__044"].desc, "cmn_all__044", "shared")}
+  <div class="grid2">${macro(D_SHARED["cmn_all__045"].name, D_SHARED["cmn_all__045"].tag, D_SHARED["cmn_all__045"].body, D_SHARED["cmn_all__045"].desc, "cmn_all__045", "shared")}${macro(D_SHARED["cmn_all__046"].name, D_SHARED["cmn_all__046"].tag, D_SHARED["cmn_all__046"].body, D_SHARED["cmn_all__046"].desc, "cmn_all__046", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__047"].name, D_SHARED["cmn_all__047"].tag, D_SHARED["cmn_all__047"].body, D_SHARED["cmn_all__047"].desc, "cmn_all__047", "shared")}${macro(D_SHARED["cmn_all__048"].name, D_SHARED["cmn_all__048"].tag, D_SHARED["cmn_all__048"].body, D_SHARED["cmn_all__048"].desc, "cmn_all__048", "shared")}</div>
   ${secTitle("👤","멤버십·회원정보·쿠폰",null,"c_member")}
-  ${macro(D_SHARED["cmn_all__049"].name, D_SHARED["cmn_all__049"].tag, D_SHARED["cmn_all__049"].body, D_SHARED["cmn_all__049"].desc)}
+  ${macro(D_SHARED["cmn_all__049"].name, D_SHARED["cmn_all__049"].tag, D_SHARED["cmn_all__049"].body, D_SHARED["cmn_all__049"].desc, "cmn_all__049", "shared")}
     <div class="grp-h">웰컴 쿠폰팩 안내</div>
   <div class="warn-note">⚠️ 슬룸은 2026년 6월 11일(목)부로 멤버십 혜택이 변경되어 웰컴 쿠폰팩이 제공되지 않습니다.</div>
   <div class="grp-h">(1) 쿠폰팩이란? (예: 쿠폰팩이 뭔가요?)</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__050"].name, D_SHARED["cmn_all__050"].tag, D_SHARED["cmn_all__050"].body, D_SHARED["cmn_all__050"].desc)}${macro(D_SHARED["cmn_all__051"].name, D_SHARED["cmn_all__051"].tag, D_SHARED["cmn_all__051"].body, D_SHARED["cmn_all__051"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__050"].name, D_SHARED["cmn_all__050"].tag, D_SHARED["cmn_all__050"].body, D_SHARED["cmn_all__050"].desc, "cmn_all__050", "shared")}${macro(D_SHARED["cmn_all__051"].name, D_SHARED["cmn_all__051"].tag, D_SHARED["cmn_all__051"].body, D_SHARED["cmn_all__051"].desc, "cmn_all__051", "shared")}</div>
   <div class="grp-h">(2) 쿠폰팩 재발급 가능 문의</div>
-  ${macro(D_SHARED["cmn_all__052"].name, D_SHARED["cmn_all__052"].tag, D_SHARED["cmn_all__052"].body, D_SHARED["cmn_all__052"].desc)}
+  ${macro(D_SHARED["cmn_all__052"].name, D_SHARED["cmn_all__052"].tag, D_SHARED["cmn_all__052"].body, D_SHARED["cmn_all__052"].desc, "cmn_all__052", "shared")}
   <div class="grp-h">(3) 회원 가입·탈퇴·비밀번호 문의</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__053"].name, D_SHARED["cmn_all__053"].tag, D_SHARED["cmn_all__053"].body, D_SHARED["cmn_all__053"].desc)}${macro(D_SHARED["cmn_all__054"].name, D_SHARED["cmn_all__054"].tag, D_SHARED["cmn_all__054"].body, D_SHARED["cmn_all__054"].desc)}</div>
-  ${macro(D_SHARED["cmn_all__055"].name, D_SHARED["cmn_all__055"].tag, D_SHARED["cmn_all__055"].body, D_SHARED["cmn_all__055"].desc)}
+  <div class="grid2">${macro(D_SHARED["cmn_all__053"].name, D_SHARED["cmn_all__053"].tag, D_SHARED["cmn_all__053"].body, D_SHARED["cmn_all__053"].desc, "cmn_all__053", "shared")}${macro(D_SHARED["cmn_all__054"].name, D_SHARED["cmn_all__054"].tag, D_SHARED["cmn_all__054"].body, D_SHARED["cmn_all__054"].desc, "cmn_all__054", "shared")}</div>
+  ${macro(D_SHARED["cmn_all__055"].name, D_SHARED["cmn_all__055"].tag, D_SHARED["cmn_all__055"].body, D_SHARED["cmn_all__055"].desc, "cmn_all__055", "shared")}
   <div class="grp-h">🚨 [예외] 회원탈퇴·비번초기화 (유선 O/B)</div>
   ${guide(`⚠️ 이메일 사용 불가로 비밀번호 초기화가 필요하거나 로그인 불가하여 수동 탈퇴 필요시엔, 개인정보 보호를 위해 <b>유선 O/B로만 진행</b> (본인 확인 후 처리 필수)
 👇🏻 상담사가 아래 멘트 송출 후 통화 가능한 연락처 확보 → 유선O/B 진행`)}
-  ${macro(D_SHARED["cmn_all__056"].name, D_SHARED["cmn_all__056"].tag, D_SHARED["cmn_all__056"].body, D_SHARED["cmn_all__056"].desc)}
+  ${macro(D_SHARED["cmn_all__056"].name, D_SHARED["cmn_all__056"].tag, D_SHARED["cmn_all__056"].body, D_SHARED["cmn_all__056"].desc, "cmn_all__056", "shared")}
     <div class="grp-h">브랜드별 대표번호</div>
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">대표번호</th><th class="cmp-corner">브랜드</th><th class="cmp-blue">대표번호</th></tr></thead><tbody><tr><td class="cmp-row-label">심플리케어</td><td>1668-1406</td><td class="cmp-row-label">코코다움</td><td>1668-1376</td></tr><tr><td class="cmp-row-label">슬룸</td><td>1668-2956</td><td class="cmp-row-label">얼라인랩</td><td>1668-3559</td></tr><tr><td class="cmp-row-label">닥터아망</td><td>1668-3342</td><td class="cmp-row-label">와이브닝</td><td>1668-5811</td></tr><tr><td class="cmp-row-label">셀올로지</td><td>1544-5748</td><td class="cmp-row-label">빌바</td><td>1668-2908</td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td>1668-0953</td><td class="cmp-row-label"></td><td></td></tr></tbody></table></div>
   ${secTitle("📣","마케팅·제휴 문의",null,"c_mkt")}
-  <div class="grid2">${macro(D_SHARED["cmn_all__057"].name, D_SHARED["cmn_all__057"].tag, D_SHARED["cmn_all__057"].body, D_SHARED["cmn_all__057"].desc)}${macro(D_SHARED["cmn_all__058"].name, D_SHARED["cmn_all__058"].tag, D_SHARED["cmn_all__058"].body, D_SHARED["cmn_all__058"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__057"].name, D_SHARED["cmn_all__057"].tag, D_SHARED["cmn_all__057"].body, D_SHARED["cmn_all__057"].desc, "cmn_all__057", "shared")}${macro(D_SHARED["cmn_all__058"].name, D_SHARED["cmn_all__058"].tag, D_SHARED["cmn_all__058"].body, D_SHARED["cmn_all__058"].desc, "cmn_all__058", "shared")}</div>
   ${secTitle("🛒","채팅 주문",null,"c_chat")}
   <div class="grp-h">브랜드별 채팅 주문 유의사항 멘트</div>
   <div class="quote-box"><b>• 배송비는 브랜드별 금액 기준만 상이 (슬룸 제외)
@@ -419,10 +419,10 @@ subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["c
 
 이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr></tbody></table></div>
   ${guide(`12 o'clock · 마넬 : 배송비 기준 미확인 → 확인 후 반영 예정`)}
-  <div class="grid2">${macro(D_SHARED["cmn_all__059"].name, D_SHARED["cmn_all__059"].tag, D_SHARED["cmn_all__059"].body, D_SHARED["cmn_all__059"].desc)}${macro(D_SHARED["cmn_all__060"].name, D_SHARED["cmn_all__060"].tag, D_SHARED["cmn_all__060"].body, D_SHARED["cmn_all__060"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__059"].name, D_SHARED["cmn_all__059"].tag, D_SHARED["cmn_all__059"].body, D_SHARED["cmn_all__059"].desc, "cmn_all__059", "shared")}${macro(D_SHARED["cmn_all__060"].name, D_SHARED["cmn_all__060"].tag, D_SHARED["cmn_all__060"].body, D_SHARED["cmn_all__060"].desc, "cmn_all__060", "shared")}</div>
   <div class="grp-h">출고 예정 안내 (입금 확인 후)</div>
-  <div class="grid2">${macro(D_SHARED["cmn_all__061"].name, D_SHARED["cmn_all__061"].tag, D_SHARED["cmn_all__061"].body, D_SHARED["cmn_all__061"].desc)}${macro(D_SHARED["cmn_all__062"].name, D_SHARED["cmn_all__062"].tag, D_SHARED["cmn_all__062"].body, D_SHARED["cmn_all__062"].desc)}</div>
-  ${macro(D_SHARED["cmn_all__063"].name, D_SHARED["cmn_all__063"].tag, D_SHARED["cmn_all__063"].body, D_SHARED["cmn_all__063"].desc)}
+  <div class="grid2">${macro(D_SHARED["cmn_all__061"].name, D_SHARED["cmn_all__061"].tag, D_SHARED["cmn_all__061"].body, D_SHARED["cmn_all__061"].desc, "cmn_all__061", "shared")}${macro(D_SHARED["cmn_all__062"].name, D_SHARED["cmn_all__062"].tag, D_SHARED["cmn_all__062"].body, D_SHARED["cmn_all__062"].desc, "cmn_all__062", "shared")}</div>
+  ${macro(D_SHARED["cmn_all__063"].name, D_SHARED["cmn_all__063"].tag, D_SHARED["cmn_all__063"].body, D_SHARED["cmn_all__063"].desc, "cmn_all__063", "shared")}
   ${guide(`상담 종료 후 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">[SCM파트 X CX팀] 수기 주문 출고 리스트</a> 시트에 사업자(올릿/리테일/더마) 구분하여 작성, 출고 요청`)}
 `;
 
@@ -442,39 +442,39 @@ const COMMON_CALL_ALL = `<div class="no-copy">
 추후 확대 예정 : 배송 정보 변경 요청 / 무통장 입금 내역 확인</td></tr></tbody></table></div>
   ${secTitle("💡","공통 기본","전 브랜드 공통","c_basic")}
   <div class="grp-h" id="c_basic_1">1. 인사말</div>
-  ${macro(D_SHARED["call__001"].name, D_SHARED["call__001"].tag, D_SHARED["call__001"].body, D_SHARED["call__001"].desc)}
-  ${macro(D_SHARED["call__002"].name, D_SHARED["call__002"].tag, D_SHARED["call__002"].body, D_SHARED["call__002"].desc)}
-  <div class="grid2">${macro(D_SHARED["call__003"].name, D_SHARED["call__003"].tag, D_SHARED["call__003"].body, D_SHARED["call__003"].desc)}${macro(D_SHARED["call__004"].name, D_SHARED["call__004"].tag, D_SHARED["call__004"].body, D_SHARED["call__004"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["call__005"].name, D_SHARED["call__005"].tag, D_SHARED["call__005"].body, D_SHARED["call__005"].desc)}${macro(D_SHARED["call__006"].name, D_SHARED["call__006"].tag, D_SHARED["call__006"].body, D_SHARED["call__006"].desc)}</div>
+  ${macro(D_SHARED["call__001"].name, D_SHARED["call__001"].tag, D_SHARED["call__001"].body, D_SHARED["call__001"].desc, "call__001", "shared")}
+  ${macro(D_SHARED["call__002"].name, D_SHARED["call__002"].tag, D_SHARED["call__002"].body, D_SHARED["call__002"].desc, "call__002", "shared")}
+  <div class="grid2">${macro(D_SHARED["call__003"].name, D_SHARED["call__003"].tag, D_SHARED["call__003"].body, D_SHARED["call__003"].desc, "call__003", "shared")}${macro(D_SHARED["call__004"].name, D_SHARED["call__004"].tag, D_SHARED["call__004"].body, D_SHARED["call__004"].desc, "call__004", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["call__005"].name, D_SHARED["call__005"].tag, D_SHARED["call__005"].body, D_SHARED["call__005"].desc, "call__005", "shared")}${macro(D_SHARED["call__006"].name, D_SHARED["call__006"].tag, D_SHARED["call__006"].body, D_SHARED["call__006"].desc, "call__006", "shared")}</div>
   <div class="grp-h" id="c_basic_2">2. 사전/사후 대기</div>
   ${caution(`★ 대기 요청 후 자동 종료 경고 멘트가 나가지 않도록 [종료대기] 설정 필수`)}
-  <div class="grid2">${macro(D_SHARED["call__007"].name, D_SHARED["call__007"].tag, D_SHARED["call__007"].body, D_SHARED["call__007"].desc)}${macro(D_SHARED["call__008"].name, D_SHARED["call__008"].tag, D_SHARED["call__008"].body, D_SHARED["call__008"].desc)}</div>
-  ${macro(D_SHARED["call__009"].name, D_SHARED["call__009"].tag, D_SHARED["call__009"].body, D_SHARED["call__009"].desc)}
+  <div class="grid2">${macro(D_SHARED["call__007"].name, D_SHARED["call__007"].tag, D_SHARED["call__007"].body, D_SHARED["call__007"].desc, "call__007", "shared")}${macro(D_SHARED["call__008"].name, D_SHARED["call__008"].tag, D_SHARED["call__008"].body, D_SHARED["call__008"].desc, "call__008", "shared")}</div>
+  ${macro(D_SHARED["call__009"].name, D_SHARED["call__009"].tag, D_SHARED["call__009"].body, D_SHARED["call__009"].desc, "call__009", "shared")}
   <div class="grp-h" id="c_basic_3">3. 호응 표현</div>
   ${caution(`고객 말씀 후 상황에 맞는 호응 필수 (단답 '네'는 부적절 / "네, 많이 불편하셨을 것 같습니다" 같은 공감 표현은 적절)`)}
-  <div class="grid2">${macro(D_SHARED["call__010"].name, D_SHARED["call__010"].tag, D_SHARED["call__010"].body, D_SHARED["call__010"].desc)}${macro(D_SHARED["call__011"].name, D_SHARED["call__011"].tag, D_SHARED["call__011"].body, D_SHARED["call__011"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["call__010"].name, D_SHARED["call__010"].tag, D_SHARED["call__010"].body, D_SHARED["call__010"].desc, "call__010", "shared")}${macro(D_SHARED["call__011"].name, D_SHARED["call__011"].tag, D_SHARED["call__011"].body, D_SHARED["call__011"].desc, "call__011", "shared")}</div>
   <div class="grp-h" id="c_basic_4">4. 추가 문의</div>
-  ${macro(D_SHARED["call__012"].name, D_SHARED["call__012"].tag, D_SHARED["call__012"].body, D_SHARED["call__012"].desc)}
+  ${macro(D_SHARED["call__012"].name, D_SHARED["call__012"].tag, D_SHARED["call__012"].body, D_SHARED["call__012"].desc, "call__012", "shared")}
   <div class="grp-h" id="c_warn">🚨 상담 종료 경고</div>
   ${caution(`고객 욕설·반말·폭언·성희롱 (1회) — 담당 관리자 보고 필수`)}
-  <div class="grid2">${macro(D_SHARED["call__013"].name, D_SHARED["call__013"].tag, D_SHARED["call__013"].body, D_SHARED["call__013"].desc)}${macro(D_SHARED["call__014"].name, D_SHARED["call__014"].tag, D_SHARED["call__014"].body, D_SHARED["call__014"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["call__013"].name, D_SHARED["call__013"].tag, D_SHARED["call__013"].body, D_SHARED["call__013"].desc, "call__013", "shared")}${macro(D_SHARED["call__014"].name, D_SHARED["call__014"].tag, D_SHARED["call__014"].body, D_SHARED["call__014"].desc, "call__014", "shared")}</div>
   ${secTitle("📞","콜백 · 아웃바운드 (O/B)",null,"c_ob")}
   ${caution(`불필요한 OB는 지양 · 고객이 인입하지 않았으므로 [소속 브랜드명 + OB 사유 + 통화 가능 여부] 반드시 확인 · 필수 유형: 콜백 전화 주문 접수 건 / 교환·반품 장기 미처리`)}
-  <div class="grid2">${macro(D_SHARED["call__015"].name, D_SHARED["call__015"].tag, D_SHARED["call__015"].body, D_SHARED["call__015"].desc)}${macro(D_SHARED["call__016"].name, D_SHARED["call__016"].tag, D_SHARED["call__016"].body, D_SHARED["call__016"].desc)}</div>
-  ${macro(D_SHARED["call__017"].name, D_SHARED["call__017"].tag, D_SHARED["call__017"].body, D_SHARED["call__017"].desc)}
+  <div class="grid2">${macro(D_SHARED["call__015"].name, D_SHARED["call__015"].tag, D_SHARED["call__015"].body, D_SHARED["call__015"].desc, "call__015", "shared")}${macro(D_SHARED["call__016"].name, D_SHARED["call__016"].tag, D_SHARED["call__016"].body, D_SHARED["call__016"].desc, "call__016", "shared")}</div>
+  ${macro(D_SHARED["call__017"].name, D_SHARED["call__017"].tag, D_SHARED["call__017"].body, D_SHARED["call__017"].desc, "call__017", "shared")}
   ${secTitle("🔄","주문 변경 (취소·배송정보 변경)",null,"c_order")}
   <div class="grp-h" id="c_order_1">1. 취소 후 배송</div>
   ${guide(`물류센터(품고 또는 정석) 조회로 취소 가능 확인 후 취소했으나 실제 배송된 경우 · ①~⑤ 순서로 응대`)}
-  <div class="grid2">${macro(D_SHARED["call__018"].name, D_SHARED["call__018"].tag, D_SHARED["call__018"].body, D_SHARED["call__018"].desc)}${macro(D_SHARED["call__019"].name, D_SHARED["call__019"].tag, D_SHARED["call__019"].body, D_SHARED["call__019"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["call__020"].name, D_SHARED["call__020"].tag, D_SHARED["call__020"].body, D_SHARED["call__020"].desc)}${macro(D_SHARED["call__021"].name, D_SHARED["call__021"].tag, D_SHARED["call__021"].body, D_SHARED["call__021"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["call__018"].name, D_SHARED["call__018"].tag, D_SHARED["call__018"].body, D_SHARED["call__018"].desc, "call__018", "shared")}${macro(D_SHARED["call__019"].name, D_SHARED["call__019"].tag, D_SHARED["call__019"].body, D_SHARED["call__019"].desc, "call__019", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["call__020"].name, D_SHARED["call__020"].tag, D_SHARED["call__020"].body, D_SHARED["call__020"].desc, "call__020", "shared")}${macro(D_SHARED["call__021"].name, D_SHARED["call__021"].tag, D_SHARED["call__021"].body, D_SHARED["call__021"].desc, "call__021", "shared")}</div>
   ${guide(`⑤ 상담 종료 유도 후, 끝인사 멘트하고 종료`)}
   <div class="grp-h" id="c_order_2">2. 배송 정보 변경</div>
   <div class="warn-note">📦 물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 출고 상태 확인 필수
 · 변경 가능 : 송장 상태가 '마감됨'을 제외한 전체
 · 변경 불가 : 송장 상태가 '마감됨'</div>
   <div class="grid2">${col("blue","변경 가능",
-subcard(D_SHARED["call__022"].name, D_SHARED["call__022"].tag, D_SHARED["call__022"].body, D_SHARED["call__022"].desc) + subcard(D_SHARED["call__023"].name, D_SHARED["call__023"].tag, D_SHARED["call__023"].body, D_SHARED["call__023"].desc))}${col("pink","변경 불가",
-subcard(D_SHARED["call__024"].name, D_SHARED["call__024"].tag, D_SHARED["call__024"].body, D_SHARED["call__024"].desc))}</div>
+subcard(D_SHARED["call__022"].name, D_SHARED["call__022"].tag, D_SHARED["call__022"].body, D_SHARED["call__022"].desc, "call__022", "shared") + subcard(D_SHARED["call__023"].name, D_SHARED["call__023"].tag, D_SHARED["call__023"].body, D_SHARED["call__023"].desc, "call__023", "shared"))}${col("pink","변경 불가",
+subcard(D_SHARED["call__024"].name, D_SHARED["call__024"].tag, D_SHARED["call__024"].body, D_SHARED["call__024"].desc, "call__024", "shared"))}</div>
   ${blueNote("📩 통화 종료 후 문자 발송 · 배송정보 문자 템플릿",
 `[브랜드명]
 안녕하세요, (브랜드명)입니다.
@@ -488,25 +488,25 @@ subcard(D_SHARED["call__024"].name, D_SHARED["call__024"].tag, D_SHARED["call__0
 감사합니다.`)}
   ${secTitle("💳","결제 문의 (입금 확인)",null,"c_pay")}
   ${caution(`고객 정보 확인부터 진행 · 정상 입금 시 확인 내용 안내`)}
-  ${macro(D_SHARED["call__025"].name, D_SHARED["call__025"].tag, D_SHARED["call__025"].body, D_SHARED["call__025"].desc)}
-  <div class="grid2">${macro(D_SHARED["call__026"].name, D_SHARED["call__026"].tag, D_SHARED["call__026"].body, D_SHARED["call__026"].desc)}${macro(D_SHARED["call__027"].name, D_SHARED["call__027"].tag, D_SHARED["call__027"].body, D_SHARED["call__027"].desc)}</div>
-  ${macro(D_SHARED["call__028"].name, D_SHARED["call__028"].tag, D_SHARED["call__028"].body, D_SHARED["call__028"].desc)}
-  <div class="grid2">${macro(D_SHARED["call__029"].name, D_SHARED["call__029"].tag, D_SHARED["call__029"].body, D_SHARED["call__029"].desc)}${macro(D_SHARED["call__030"].name, D_SHARED["call__030"].tag, D_SHARED["call__030"].body, D_SHARED["call__030"].desc)}</div>
-  ${macro(D_SHARED["call__031"].name, D_SHARED["call__031"].tag, D_SHARED["call__031"].body, D_SHARED["call__031"].desc)}
+  ${macro(D_SHARED["call__025"].name, D_SHARED["call__025"].tag, D_SHARED["call__025"].body, D_SHARED["call__025"].desc, "call__025", "shared")}
+  <div class="grid2">${macro(D_SHARED["call__026"].name, D_SHARED["call__026"].tag, D_SHARED["call__026"].body, D_SHARED["call__026"].desc, "call__026", "shared")}${macro(D_SHARED["call__027"].name, D_SHARED["call__027"].tag, D_SHARED["call__027"].body, D_SHARED["call__027"].desc, "call__027", "shared")}</div>
+  ${macro(D_SHARED["call__028"].name, D_SHARED["call__028"].tag, D_SHARED["call__028"].body, D_SHARED["call__028"].desc, "call__028", "shared")}
+  <div class="grid2">${macro(D_SHARED["call__029"].name, D_SHARED["call__029"].tag, D_SHARED["call__029"].body, D_SHARED["call__029"].desc, "call__029", "shared")}${macro(D_SHARED["call__030"].name, D_SHARED["call__030"].tag, D_SHARED["call__030"].body, D_SHARED["call__030"].desc, "call__030", "shared")}</div>
+  ${macro(D_SHARED["call__031"].name, D_SHARED["call__031"].tag, D_SHARED["call__031"].body, D_SHARED["call__031"].desc, "call__031", "shared")}
   <div class="grp-h">결제 완료 후 출고 안내</div>
-  <div class="grid2">${macro(D_SHARED["call__032"].name, D_SHARED["call__032"].tag, D_SHARED["call__032"].body, D_SHARED["call__032"].desc)}${macro(D_SHARED["call__033"].name, D_SHARED["call__033"].tag, D_SHARED["call__033"].body, D_SHARED["call__033"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["call__032"].name, D_SHARED["call__032"].tag, D_SHARED["call__032"].body, D_SHARED["call__032"].desc, "call__032", "shared")}${macro(D_SHARED["call__033"].name, D_SHARED["call__033"].tag, D_SHARED["call__033"].body, D_SHARED["call__033"].desc, "call__033", "shared")}</div>
   ${secTitle("👤","회원 정보 (탈퇴·비밀번호·가입)",null,"c_member")}
   <div class="grp-h">1. 회원 탈퇴 (본인 확인 후 처리)</div>
-  ${macro(D_SHARED["call__034"].name, D_SHARED["call__034"].tag, D_SHARED["call__034"].body, D_SHARED["call__034"].desc)}
-  <div class="grid2">${macro(D_SHARED["call__035"].name, D_SHARED["call__035"].tag, D_SHARED["call__035"].body, D_SHARED["call__035"].desc)}${macro(D_SHARED["call__036"].name, D_SHARED["call__036"].tag, D_SHARED["call__036"].body, D_SHARED["call__036"].desc)}</div>
-  ${macro(D_SHARED["call__037"].name, D_SHARED["call__037"].tag, D_SHARED["call__037"].body, D_SHARED["call__037"].desc)}
+  ${macro(D_SHARED["call__034"].name, D_SHARED["call__034"].tag, D_SHARED["call__034"].body, D_SHARED["call__034"].desc, "call__034", "shared")}
+  <div class="grid2">${macro(D_SHARED["call__035"].name, D_SHARED["call__035"].tag, D_SHARED["call__035"].body, D_SHARED["call__035"].desc, "call__035", "shared")}${macro(D_SHARED["call__036"].name, D_SHARED["call__036"].tag, D_SHARED["call__036"].body, D_SHARED["call__036"].desc, "call__036", "shared")}</div>
+  ${macro(D_SHARED["call__037"].name, D_SHARED["call__037"].tag, D_SHARED["call__037"].body, D_SHARED["call__037"].desc, "call__037", "shared")}
   <div class="grp-h">2. 비밀번호 찾기</div>
-  <div class="grid2">${macro(D_SHARED["call__038"].name, D_SHARED["call__038"].tag, D_SHARED["call__038"].body, D_SHARED["call__038"].desc)}${macro(D_SHARED["call__039"].name, D_SHARED["call__039"].tag, D_SHARED["call__039"].body, D_SHARED["call__039"].desc)}</div>
-  ${macro(D_SHARED["call__040"].name, D_SHARED["call__040"].tag, D_SHARED["call__040"].body, D_SHARED["call__040"].desc)}
+  <div class="grid2">${macro(D_SHARED["call__038"].name, D_SHARED["call__038"].tag, D_SHARED["call__038"].body, D_SHARED["call__038"].desc, "call__038", "shared")}${macro(D_SHARED["call__039"].name, D_SHARED["call__039"].tag, D_SHARED["call__039"].body, D_SHARED["call__039"].desc, "call__039", "shared")}</div>
+  ${macro(D_SHARED["call__040"].name, D_SHARED["call__040"].tag, D_SHARED["call__040"].body, D_SHARED["call__040"].desc, "call__040", "shared")}
   <div class="grp-h">3. 회원가입</div>
-  ${macro(D_SHARED["call__041"].name, D_SHARED["call__041"].tag, D_SHARED["call__041"].body, D_SHARED["call__041"].desc)}
+  ${macro(D_SHARED["call__041"].name, D_SHARED["call__041"].tag, D_SHARED["call__041"].body, D_SHARED["call__041"].desc, "call__041", "shared")}
   ${secTitle("📣","마케팅·제휴 문의",null,"c_mkt")}
-  <div class="grid2">${macro(D_SHARED["call__042"].name, D_SHARED["call__042"].tag, D_SHARED["call__042"].body, D_SHARED["call__042"].desc)}${macro(D_SHARED["call__043"].name, D_SHARED["call__043"].tag, D_SHARED["call__043"].body, D_SHARED["call__043"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["call__042"].name, D_SHARED["call__042"].tag, D_SHARED["call__042"].body, D_SHARED["call__042"].desc, "call__042", "shared")}${macro(D_SHARED["call__043"].name, D_SHARED["call__043"].tag, D_SHARED["call__043"].body, D_SHARED["call__043"].desc, "call__043", "shared")}</div>
   ${secTitle("📞","전화 주문",null,"c_call")}
   <div class="grp-h">1) 주문 시 유의사항 안내 (브랜드별)</div>
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">전화 주문 유의사항 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화로 주문하시는 경우 회원 전용 혜택인 쿠폰, 적립금, 회원 등급 할인 등은 적용되지 않으며, 적립금 사용도 어렵습니다.
@@ -528,19 +528,19 @@ subcard(D_SHARED["call__024"].name, D_SHARED["call__024"].tag, D_SHARED["call__0
 또한 4만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
 안내드린 내용 괜찮으실까요?</div></td></tr></tbody></table></div>
   ${guide(`12 o'clock · 마넬 : 배송비 기준 미확인 → 확인 후 반영 예정`)}
-  <div class="grid2">${macro(D_SHARED["call__044"].name, D_SHARED["call__044"].tag, D_SHARED["call__044"].body, D_SHARED["call__044"].desc)}${macro(D_SHARED["call__045"].name, D_SHARED["call__045"].tag, D_SHARED["call__045"].body, D_SHARED["call__045"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["call__044"].name, D_SHARED["call__044"].tag, D_SHARED["call__044"].body, D_SHARED["call__044"].desc, "call__044", "shared")}${macro(D_SHARED["call__045"].name, D_SHARED["call__045"].tag, D_SHARED["call__045"].body, D_SHARED["call__045"].desc, "call__045", "shared")}</div>
   <div class="grp-h">a. 무통장 결제</div>
-  <div class="grid2">${macro(D_SHARED["call__046"].name, D_SHARED["call__046"].tag, D_SHARED["call__046"].body, D_SHARED["call__046"].desc)}${macro(D_SHARED["call__047"].name, D_SHARED["call__047"].tag, D_SHARED["call__047"].body, D_SHARED["call__047"].desc)}</div>
-  ${macro(D_SHARED["call__048"].name, D_SHARED["call__048"].tag, D_SHARED["call__048"].body, D_SHARED["call__048"].desc)}
-  ${macro(D_SHARED["call__049"].name, D_SHARED["call__049"].tag, D_SHARED["call__049"].body, D_SHARED["call__049"].desc)}
-  <div class="grid2">${macro(D_SHARED["call__050"].name, D_SHARED["call__050"].tag, D_SHARED["call__050"].body, D_SHARED["call__050"].desc)}${macro(D_SHARED["call__051"].name, D_SHARED["call__051"].tag, D_SHARED["call__051"].body, D_SHARED["call__051"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["call__046"].name, D_SHARED["call__046"].tag, D_SHARED["call__046"].body, D_SHARED["call__046"].desc, "call__046", "shared")}${macro(D_SHARED["call__047"].name, D_SHARED["call__047"].tag, D_SHARED["call__047"].body, D_SHARED["call__047"].desc, "call__047", "shared")}</div>
+  ${macro(D_SHARED["call__048"].name, D_SHARED["call__048"].tag, D_SHARED["call__048"].body, D_SHARED["call__048"].desc, "call__048", "shared")}
+  ${macro(D_SHARED["call__049"].name, D_SHARED["call__049"].tag, D_SHARED["call__049"].body, D_SHARED["call__049"].desc, "call__049", "shared")}
+  <div class="grid2">${macro(D_SHARED["call__050"].name, D_SHARED["call__050"].tag, D_SHARED["call__050"].body, D_SHARED["call__050"].desc, "call__050", "shared")}${macro(D_SHARED["call__051"].name, D_SHARED["call__051"].tag, D_SHARED["call__051"].body, D_SHARED["call__051"].desc, "call__051", "shared")}</div>
   <div class="grp-h">b. 카드 결제 (<a href="https://cp.payup.co.kr/login.do" target="_blank">페이업</a>)</div>
   ${guide(`① 구매 희망 제품·옵션·가격 안내
 · 배송비 발생 시 해당 금액을 포함하여 안내 (필수)
 · 홈페이지(자사몰) 기준 가격으로 안내하며, 행사 중이면 행사명 포함 (예: 가정의 달 특가)
 · 5만원 이상 결제 시 할부 여부 확인 후 <a href="https://cp.payup.co.kr/login.do" target="_blank">페이업</a>에서 진행`)}
-  <div class="grid2">${macro(D_SHARED["call__052"].name, D_SHARED["call__052"].tag, D_SHARED["call__052"].body, D_SHARED["call__052"].desc)}${macro(D_SHARED["call__053"].name, D_SHARED["call__053"].tag, D_SHARED["call__053"].body, D_SHARED["call__053"].desc)}</div>
-  <div class="grid2">${macro(D_SHARED["call__054"].name, D_SHARED["call__054"].tag, D_SHARED["call__054"].body, D_SHARED["call__054"].desc)}${macro(D_SHARED["call__055"].name, D_SHARED["call__055"].tag, D_SHARED["call__055"].body, D_SHARED["call__055"].desc)}</div>
+  <div class="grid2">${macro(D_SHARED["call__052"].name, D_SHARED["call__052"].tag, D_SHARED["call__052"].body, D_SHARED["call__052"].desc, "call__052", "shared")}${macro(D_SHARED["call__053"].name, D_SHARED["call__053"].tag, D_SHARED["call__053"].body, D_SHARED["call__053"].desc, "call__053", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["call__054"].name, D_SHARED["call__054"].tag, D_SHARED["call__054"].body, D_SHARED["call__054"].desc, "call__054", "shared")}${macro(D_SHARED["call__055"].name, D_SHARED["call__055"].tag, D_SHARED["call__055"].body, D_SHARED["call__055"].desc, "call__055", "shared")}</div>
   ${guide(`상담 종료 후 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">[SCM파트 X CX팀] 수기 주문 출고 리스트</a> 시트에 사업자(올릿/리테일/더마) 구분하여 작성, 출고 요청`)}
 </div>`;
 

@@ -13,39 +13,39 @@ const DRMANS_SIDE = `
   <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">⚠️ 병원 진료·진료비 보상 요청 등 클레임/민원 발생 시 → 아래 [예외케이스] 그룹 참고</div>
 
   ${secTitle("1","선제적 사과 멘트",null,"sec_apology")}
-  ${macro(D_DRMANS["drmans_side__001"].name, D_DRMANS["drmans_side__001"].tag, D_DRMANS["drmans_side__001"].body, D_DRMANS["drmans_side__001"].desc)}
+  ${macro(D_DRMANS["drmans_side__001"].name, D_DRMANS["drmans_side__001"].tag, D_DRMANS["drmans_side__001"].body, D_DRMANS["drmans_side__001"].desc, "drmans_side__001", "drmans")}
   ${secTitle("2","제품 결함 아님 및 서류 안내",null,"sec_env")}
   ${caution(`⚠️ 단, 고객 최초부터 강하게 항의/민원 제기 or 크리티컬한 단어 언급 등으로 Risk 등급 높을 경우 → 기존 Critical Issue 처리에 따라 예외적 반품 처리 진행`)}
-  ${macro(D_DRMANS["drmans_side__002"].name, D_DRMANS["drmans_side__002"].tag, D_DRMANS["drmans_side__002"].body, D_DRMANS["drmans_side__002"].desc)}
+  ${macro(D_DRMANS["drmans_side__002"].name, D_DRMANS["drmans_side__002"].tag, D_DRMANS["drmans_side__002"].body, D_DRMANS["drmans_side__002"].desc, "drmans_side__002", "drmans")}
   <div class="grp-h grp-major">🔹 a. 고객 서류 미수긍 시</div>
   ${guide(`👉🏻 고객 증빙 서류 미수긍 시 예외적으로 전액 환불 처리 안내`)}
-  ${macro(D_DRMANS["drmans_side__003"].name, D_DRMANS["drmans_side__003"].tag, D_DRMANS["drmans_side__003"].body, D_DRMANS["drmans_side__003"].desc)}
+  ${macro(D_DRMANS["drmans_side__003"].name, D_DRMANS["drmans_side__003"].tag, D_DRMANS["drmans_side__003"].body, D_DRMANS["drmans_side__003"].desc, "drmans_side__003", "drmans")}
   <div class="grp-h grp-major">🔹 b. 고객 서류 수긍 시</div>
-  ${macro(D_DRMANS["drmans_side__004"].name, D_DRMANS["drmans_side__004"].tag, D_DRMANS["drmans_side__004"].body, D_DRMANS["drmans_side__004"].desc)}
-  ${macro(D_DRMANS["drmans_side__005"].name, D_DRMANS["drmans_side__005"].tag, D_DRMANS["drmans_side__005"].body, D_DRMANS["drmans_side__005"].desc)}
+  ${macro(D_DRMANS["drmans_side__004"].name, D_DRMANS["drmans_side__004"].tag, D_DRMANS["drmans_side__004"].body, D_DRMANS["drmans_side__004"].desc, "drmans_side__004", "drmans")}
+  ${macro(D_DRMANS["drmans_side__005"].name, D_DRMANS["drmans_side__005"].tag, D_DRMANS["drmans_side__005"].body, D_DRMANS["drmans_side__005"].desc, "drmans_side__005", "drmans")}
   <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">👉🏻 이후 공통 : 아래 [3. 포장 및 회수 안내] → [4. 결제수단별 환불 안내] 순으로 진행</div>
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
-  ${macro(D_DRMANS["drmans_side__006"].name, D_DRMANS["drmans_side__006"].tag, D_DRMANS["drmans_side__006"].body, D_DRMANS["drmans_side__006"].desc)}
-  ${subcard(D_DRMANS["drmans_side__007"].name, D_DRMANS["drmans_side__007"].tag, D_DRMANS["drmans_side__007"].body, D_DRMANS["drmans_side__007"].desc)}
+  ${macro(D_DRMANS["drmans_side__006"].name, D_DRMANS["drmans_side__006"].tag, D_DRMANS["drmans_side__006"].body, D_DRMANS["drmans_side__006"].desc, "drmans_side__006", "drmans")}
+  ${subcard(D_DRMANS["drmans_side__007"].name, D_DRMANS["drmans_side__007"].tag, D_DRMANS["drmans_side__007"].body, D_DRMANS["drmans_side__007"].desc, "drmans_side__007", "drmans")}
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard(D_DRMANS["drmans_side__008"].name, D_DRMANS["drmans_side__008"].tag, D_DRMANS["drmans_side__008"].body, D_DRMANS["drmans_side__008"].desc)
+subcard(D_DRMANS["drmans_side__008"].name, D_DRMANS["drmans_side__008"].tag, D_DRMANS["drmans_side__008"].body, D_DRMANS["drmans_side__008"].desc, "drmans_side__008", "drmans")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
-subcard(D_DRMANS["drmans_side__009"].name, D_DRMANS["drmans_side__009"].tag, D_DRMANS["drmans_side__009"].body, D_DRMANS["drmans_side__009"].desc) + subcard(D_DRMANS["drmans_side__010"].name, D_DRMANS["drmans_side__010"].tag, D_DRMANS["drmans_side__010"].body, D_DRMANS["drmans_side__010"].desc)
+subcard(D_DRMANS["drmans_side__009"].name, D_DRMANS["drmans_side__009"].tag, D_DRMANS["drmans_side__009"].body, D_DRMANS["drmans_side__009"].desc, "drmans_side__009", "drmans") + subcard(D_DRMANS["drmans_side__010"].name, D_DRMANS["drmans_side__010"].tag, D_DRMANS["drmans_side__010"].body, D_DRMANS["drmans_side__010"].desc, "drmans_side__010", "drmans")
 )}
 </div>
   ${secTitle("🔺","[예외케이스] 클레임/민원/보상 요청",null,"sec_exception")}
   ${caution(`예) 부작용으로 인한 병원 진료, 진료비 보상 요청 or 부작용 정도가 심하여 진료비 보상 요청`)}
-  ${macro(D_DRMANS["drmans_side__011"].name, D_DRMANS["drmans_side__011"].tag, D_DRMANS["drmans_side__011"].body, D_DRMANS["drmans_side__011"].desc)}
-  ${macro(D_DRMANS["drmans_side__012"].name, D_DRMANS["drmans_side__012"].tag, D_DRMANS["drmans_side__012"].body, D_DRMANS["drmans_side__012"].desc)}
-  ${macro(D_DRMANS["drmans_side__013"].name, D_DRMANS["drmans_side__013"].tag, D_DRMANS["drmans_side__013"].body, D_DRMANS["drmans_side__013"].desc)}
+  ${macro(D_DRMANS["drmans_side__011"].name, D_DRMANS["drmans_side__011"].tag, D_DRMANS["drmans_side__011"].body, D_DRMANS["drmans_side__011"].desc, "drmans_side__011", "drmans")}
+  ${macro(D_DRMANS["drmans_side__012"].name, D_DRMANS["drmans_side__012"].tag, D_DRMANS["drmans_side__012"].body, D_DRMANS["drmans_side__012"].desc, "drmans_side__012", "drmans")}
+  ${macro(D_DRMANS["drmans_side__013"].name, D_DRMANS["drmans_side__013"].tag, D_DRMANS["drmans_side__013"].body, D_DRMANS["drmans_side__013"].desc, "drmans_side__013", "drmans")}
   ${caution(`⚠️ 고객 서류 미수긍/지속 치료비 보상 요구\n★ 증빙 서류 없이 치료비 보상은 불가`)}
   ${guide(`✔️ 부작용·트러블 유형은 제품, 고객 성향과 증상에 따라 유연하게 응대 필요\n기본적으로 증빙 자료 제출 후 전액 환불 및 급여 항목에 한해 보상 가능`)}
   ${secTitle("💠","[공통] 서류 제출 후",null,"sec_submit")}
-  ${macro(D_DRMANS["drmans_side__014"].name, D_DRMANS["drmans_side__014"].tag, D_DRMANS["drmans_side__014"].body, D_DRMANS["drmans_side__014"].desc)}
-  ${macro(D_DRMANS["drmans_side__015"].name, D_DRMANS["drmans_side__015"].tag, D_DRMANS["drmans_side__015"].body, D_DRMANS["drmans_side__015"].desc)}
+  ${macro(D_DRMANS["drmans_side__014"].name, D_DRMANS["drmans_side__014"].tag, D_DRMANS["drmans_side__014"].body, D_DRMANS["drmans_side__014"].desc, "drmans_side__014", "drmans")}
+  ${macro(D_DRMANS["drmans_side__015"].name, D_DRMANS["drmans_side__015"].tag, D_DRMANS["drmans_side__015"].body, D_DRMANS["drmans_side__015"].desc, "drmans_side__015", "drmans")}
   ${guide(`<b style="color:#d32f2f;">증빙 서류 기반으로 건보 급여 항목 전액 보상</b>
 ⚠️ 팀 리드 공유 필수
 📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>의 Critical Issue(EDGE Case) 보상금 flex 워크플로우 작성법 참고하여 등록`)}
@@ -78,81 +78,81 @@ const DRMANS_DEFECT = `
   ${secTitle("2","불량 유형별 증빙·인정 안내",null,"sec_evid")}
   <div class="quote-box"><b>⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</b><br><span style="font-weight:500;font-size:13px;">※ 단, 변질·굳음·결로 유형은 예외 — 미개봉 보관 + 보관주의사항 준수 시 7일 경과 후에도 확인 후 처리(아래 해당 유형별 안내 참고)</span></div>
   <div class="grp-h">1. 올인원 로션·바디워시·부활초 샴푸(펌프형) — 펌프 작동 불량(안 눌러짐·공회전)</div>
-  ${macro(D_DRMANS["drmans_as__001"].name, D_DRMANS["drmans_as__001"].tag, D_DRMANS["drmans_as__001"].body, D_DRMANS["drmans_as__001"].desc)}
-  ${macro(D_DRMANS["drmans_as__002"].name, D_DRMANS["drmans_as__002"].tag, D_DRMANS["drmans_as__002"].body, D_DRMANS["drmans_as__002"].desc)}
+  ${macro(D_DRMANS["drmans_as__001"].name, D_DRMANS["drmans_as__001"].tag, D_DRMANS["drmans_as__001"].body, D_DRMANS["drmans_as__001"].desc, "drmans_as__001", "drmans")}
+  ${macro(D_DRMANS["drmans_as__002"].name, D_DRMANS["drmans_as__002"].tag, D_DRMANS["drmans_as__002"].body, D_DRMANS["drmans_as__002"].desc, "drmans_as__002", "drmans")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_DRMANS["drmans_as__003"].name, D_DRMANS["drmans_as__003"].tag, D_DRMANS["drmans_as__003"].body, D_DRMANS["drmans_as__003"].desc)
+subcard(D_DRMANS["drmans_as__003"].name, D_DRMANS["drmans_as__003"].tag, D_DRMANS["drmans_as__003"].body, D_DRMANS["drmans_as__003"].desc, "drmans_as__003", "drmans")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_DRMANS["drmans_as__004"].name, D_DRMANS["drmans_as__004"].tag, D_DRMANS["drmans_as__004"].body, D_DRMANS["drmans_as__004"].desc)
+subcard(D_DRMANS["drmans_as__004"].name, D_DRMANS["drmans_as__004"].tag, D_DRMANS["drmans_as__004"].body, D_DRMANS["drmans_as__004"].desc, "drmans_as__004", "drmans")
 )}
 </div>
   ${caution(`📝 근거/비고: 펌프형 3종(로션·바디워시·부활초 엑소좀 샴푸) 공통 유형. 최초 펌프 프라이밍(공회전)은 오상담 빈도 높아 '정상' 분기 추가. 잠금(락) 해제 여부 미확인으로 인한 오상담 방지를 위해 증빙 요청 전 잠금 해제 여부 선확인 단계 추가.`)}
 
   <div class="grp-h">2. 올인원 로션·바디워시·부활초 샴푸(펌프형) — 용기 파손·내용물 변질</div>
-  ${macro(D_DRMANS["drmans_as__005"].name, D_DRMANS["drmans_as__005"].tag, D_DRMANS["drmans_as__005"].body, D_DRMANS["drmans_as__005"].desc)}
+  ${macro(D_DRMANS["drmans_as__005"].name, D_DRMANS["drmans_as__005"].tag, D_DRMANS["drmans_as__005"].body, D_DRMANS["drmans_as__005"].desc, "drmans_as__005", "drmans")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_DRMANS["drmans_as__006"].name, D_DRMANS["drmans_as__006"].tag, D_DRMANS["drmans_as__006"].body, D_DRMANS["drmans_as__006"].desc)
+subcard(D_DRMANS["drmans_as__006"].name, D_DRMANS["drmans_as__006"].tag, D_DRMANS["drmans_as__006"].body, D_DRMANS["drmans_as__006"].desc, "drmans_as__006", "drmans")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_DRMANS["drmans_as__007"].name, D_DRMANS["drmans_as__007"].tag, D_DRMANS["drmans_as__007"].body, D_DRMANS["drmans_as__007"].desc)
+subcard(D_DRMANS["drmans_as__007"].name, D_DRMANS["drmans_as__007"].tag, D_DRMANS["drmans_as__007"].body, D_DRMANS["drmans_as__007"].desc, "drmans_as__007", "drmans")
 )}
 </div>
   ${caution(`🕐 [7일 룰 예외] 변질·굳음·결로는 개봉 전에는 확인이 불가능한 유형이므로, 수령일로부터 7일이 경과했더라도 <b>미개봉 상태로 보관</b>했고 <b>보관주의사항을 준수</b>한 경우라면 접수 후 확인하여 처리함(7일 경과를 이유로 즉시 처리 불가 안내하지 않음).`)}
   ${caution(`📝 근거/비고: 펌프형 3종 공통.`)}
 
   <div class="grp-h">3. 올인원 선스틱·립밤(스틱형) — 스틱 심 불량(부러짐·안 올라옴·과도하게 무름)</div>
-  ${macro(D_DRMANS["drmans_as__008"].name, D_DRMANS["drmans_as__008"].tag, D_DRMANS["drmans_as__008"].body, D_DRMANS["drmans_as__008"].desc)}
+  ${macro(D_DRMANS["drmans_as__008"].name, D_DRMANS["drmans_as__008"].tag, D_DRMANS["drmans_as__008"].body, D_DRMANS["drmans_as__008"].desc, "drmans_as__008", "drmans")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_DRMANS["drmans_as__009"].name, D_DRMANS["drmans_as__009"].tag, D_DRMANS["drmans_as__009"].body, D_DRMANS["drmans_as__009"].desc)
+subcard(D_DRMANS["drmans_as__009"].name, D_DRMANS["drmans_as__009"].tag, D_DRMANS["drmans_as__009"].body, D_DRMANS["drmans_as__009"].desc, "drmans_as__009", "drmans")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_DRMANS["drmans_as__010"].name, D_DRMANS["drmans_as__010"].tag, D_DRMANS["drmans_as__010"].body, D_DRMANS["drmans_as__010"].desc)
+subcard(D_DRMANS["drmans_as__010"].name, D_DRMANS["drmans_as__010"].tag, D_DRMANS["drmans_as__010"].body, D_DRMANS["drmans_as__010"].desc, "drmans_as__010", "drmans")
 )}
 </div>
   ${caution(`📝 근거/비고: 공식몰 확인 — 선스틱·립밤이 트위스트업 스틱 형태로 확인되어 추가한 유형.`)}
 
   <div class="grp-h">4. 클렌저(튜브형) — 튜브 파손·캡 불량(눌러도 안 나옴)</div>
-  ${macro(D_DRMANS["drmans_as__011"].name, D_DRMANS["drmans_as__011"].tag, D_DRMANS["drmans_as__011"].body, D_DRMANS["drmans_as__011"].desc)}
+  ${macro(D_DRMANS["drmans_as__011"].name, D_DRMANS["drmans_as__011"].tag, D_DRMANS["drmans_as__011"].body, D_DRMANS["drmans_as__011"].desc, "drmans_as__011", "drmans")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_DRMANS["drmans_as__012"].name, D_DRMANS["drmans_as__012"].tag, D_DRMANS["drmans_as__012"].body, D_DRMANS["drmans_as__012"].desc)
+subcard(D_DRMANS["drmans_as__012"].name, D_DRMANS["drmans_as__012"].tag, D_DRMANS["drmans_as__012"].body, D_DRMANS["drmans_as__012"].desc, "drmans_as__012", "drmans")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_DRMANS["drmans_as__013"].name, D_DRMANS["drmans_as__013"].tag, D_DRMANS["drmans_as__013"].body, D_DRMANS["drmans_as__013"].desc)
+subcard(D_DRMANS["drmans_as__013"].name, D_DRMANS["drmans_as__013"].tag, D_DRMANS["drmans_as__013"].body, D_DRMANS["drmans_as__013"].desc, "drmans_as__013", "drmans")
 )}
 </div>
   ${caution(`📝 근거/비고: 클렌저 1종 전용 유형(플립캡 튜브 구조).`)}
 
   <div class="grp-h">5. 딥클렌징 두피 브러쉬(용품) — 브러시 파손(모 빠짐·손잡이 파손·이탈)</div>
-  ${macro(D_DRMANS["drmans_as__014"].name, D_DRMANS["drmans_as__014"].tag, D_DRMANS["drmans_as__014"].body, D_DRMANS["drmans_as__014"].desc)}
+  ${macro(D_DRMANS["drmans_as__014"].name, D_DRMANS["drmans_as__014"].tag, D_DRMANS["drmans_as__014"].body, D_DRMANS["drmans_as__014"].desc, "drmans_as__014", "drmans")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_DRMANS["drmans_as__015"].name, D_DRMANS["drmans_as__015"].tag, D_DRMANS["drmans_as__015"].body, D_DRMANS["drmans_as__015"].desc)
+subcard(D_DRMANS["drmans_as__015"].name, D_DRMANS["drmans_as__015"].tag, D_DRMANS["drmans_as__015"].body, D_DRMANS["drmans_as__015"].desc, "drmans_as__015", "drmans")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_DRMANS["drmans_as__016"].name, D_DRMANS["drmans_as__016"].tag, D_DRMANS["drmans_as__016"].body, D_DRMANS["drmans_as__016"].desc)
+subcard(D_DRMANS["drmans_as__016"].name, D_DRMANS["drmans_as__016"].tag, D_DRMANS["drmans_as__016"].body, D_DRMANS["drmans_as__016"].desc, "drmans_as__016", "drmans")
 )}
 </div>
   ${caution(`📝 근거/비고: 액체 화장품이 아닌 물리 용품이라 별도 유형 필요. 전동 여부는 실물 확인 후 CS팀 재확인 필요(전동이면 '작동 불량' 유형 추가 필요).`)}
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
-  ${macro(D_DRMANS["drmans_as__017"].name, D_DRMANS["drmans_as__017"].tag, D_DRMANS["drmans_as__017"].body, D_DRMANS["drmans_as__017"].desc)}
+  ${macro(D_DRMANS["drmans_as__017"].name, D_DRMANS["drmans_as__017"].tag, D_DRMANS["drmans_as__017"].body, D_DRMANS["drmans_as__017"].desc, "drmans_as__017", "drmans")}
   ${caution(`📝 [통합판] 화장품류·용품류 두 카테고리에 걸쳐 있어 카테고리 라벨만 구분(용기 형태별 세부 문구는 생략).`)}
 
   ${secTitle("4","교환/반품 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","🔹 교환 시 — 재출고 일정 안내",
 `<div class="quote-box"><b>⚠️ 유의사항</b>\n① 접수 시간 기준으로 안내 필요\n② 불량으로 인한 재출고는 회수 접수와 동시에 재출고 접수</div>` +
-subcard(D_DRMANS["drmans_as__018"].name, D_DRMANS["drmans_as__018"].tag, D_DRMANS["drmans_as__018"].body, D_DRMANS["drmans_as__018"].desc) +
-subcard(D_DRMANS["drmans_as__019"].name, D_DRMANS["drmans_as__019"].tag, D_DRMANS["drmans_as__019"].body, D_DRMANS["drmans_as__019"].desc) +
-subcard(D_DRMANS["drmans_as__020"].name, D_DRMANS["drmans_as__020"].tag, D_DRMANS["drmans_as__020"].body, D_DRMANS["drmans_as__020"].desc)
+subcard(D_DRMANS["drmans_as__018"].name, D_DRMANS["drmans_as__018"].tag, D_DRMANS["drmans_as__018"].body, D_DRMANS["drmans_as__018"].desc, "drmans_as__018", "drmans") +
+subcard(D_DRMANS["drmans_as__019"].name, D_DRMANS["drmans_as__019"].tag, D_DRMANS["drmans_as__019"].body, D_DRMANS["drmans_as__019"].desc, "drmans_as__019", "drmans") +
+subcard(D_DRMANS["drmans_as__020"].name, D_DRMANS["drmans_as__020"].tag, D_DRMANS["drmans_as__020"].body, D_DRMANS["drmans_as__020"].desc, "drmans_as__020", "drmans")
 )}
 ${col("pink","🔹 반품 시 — 결제수단별 환불 안내",
-subcard(D_DRMANS["drmans_as__021"].name, D_DRMANS["drmans_as__021"].tag, D_DRMANS["drmans_as__021"].body, D_DRMANS["drmans_as__021"].desc) + subcard(D_DRMANS["drmans_as__022"].name, D_DRMANS["drmans_as__022"].tag, D_DRMANS["drmans_as__022"].body, D_DRMANS["drmans_as__022"].desc) + subcard(D_DRMANS["drmans_as__023"].name, D_DRMANS["drmans_as__023"].tag, D_DRMANS["drmans_as__023"].body, D_DRMANS["drmans_as__023"].desc)
+subcard(D_DRMANS["drmans_as__021"].name, D_DRMANS["drmans_as__021"].tag, D_DRMANS["drmans_as__021"].body, D_DRMANS["drmans_as__021"].desc, "drmans_as__021", "drmans") + subcard(D_DRMANS["drmans_as__022"].name, D_DRMANS["drmans_as__022"].tag, D_DRMANS["drmans_as__022"].body, D_DRMANS["drmans_as__022"].desc, "drmans_as__022", "drmans") + subcard(D_DRMANS["drmans_as__023"].name, D_DRMANS["drmans_as__023"].tag, D_DRMANS["drmans_as__023"].body, D_DRMANS["drmans_as__023"].desc, "drmans_as__023", "drmans")
 )}
 </div>
 
@@ -212,14 +212,14 @@ const DRMANS_REFUND = `
   ${secTitle("2", "반품 배송비 안내",null,"sec2")}
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard(D_DRMANS["drmans_refund__001"].name, D_DRMANS["drmans_refund__001"].tag, D_DRMANS["drmans_refund__001"].body, D_DRMANS["drmans_refund__001"].desc)
-      + subcard(D_DRMANS["drmans_refund__002"].name, D_DRMANS["drmans_refund__002"].tag, D_DRMANS["drmans_refund__002"].body, D_DRMANS["drmans_refund__002"].desc)
-      + subcard(D_DRMANS["drmans_refund__003"].name, D_DRMANS["drmans_refund__003"].tag, D_DRMANS["drmans_refund__003"].body, D_DRMANS["drmans_refund__003"].desc)
+      subcard(D_DRMANS["drmans_refund__001"].name, D_DRMANS["drmans_refund__001"].tag, D_DRMANS["drmans_refund__001"].body, D_DRMANS["drmans_refund__001"].desc, "drmans_refund__001", "drmans")
+      + subcard(D_DRMANS["drmans_refund__002"].name, D_DRMANS["drmans_refund__002"].tag, D_DRMANS["drmans_refund__002"].body, D_DRMANS["drmans_refund__002"].desc, "drmans_refund__002", "drmans")
+      + subcard(D_DRMANS["drmans_refund__003"].name, D_DRMANS["drmans_refund__003"].tag, D_DRMANS["drmans_refund__003"].body, D_DRMANS["drmans_refund__003"].desc, "drmans_refund__003", "drmans")
     )}
     ${col("pink","🔹 부분 반품",
-      subcard(D_DRMANS["drmans_refund__004"].name, D_DRMANS["drmans_refund__004"].tag, D_DRMANS["drmans_refund__004"].body, D_DRMANS["drmans_refund__004"].desc)
-      + subcard(D_DRMANS["drmans_refund__005"].name, D_DRMANS["drmans_refund__005"].tag, D_DRMANS["drmans_refund__005"].body, D_DRMANS["drmans_refund__005"].desc)
-      + subcard(D_DRMANS["drmans_refund__006"].name, D_DRMANS["drmans_refund__006"].tag, D_DRMANS["drmans_refund__006"].body, D_DRMANS["drmans_refund__006"].desc)
+      subcard(D_DRMANS["drmans_refund__004"].name, D_DRMANS["drmans_refund__004"].tag, D_DRMANS["drmans_refund__004"].body, D_DRMANS["drmans_refund__004"].desc, "drmans_refund__004", "drmans")
+      + subcard(D_DRMANS["drmans_refund__005"].name, D_DRMANS["drmans_refund__005"].tag, D_DRMANS["drmans_refund__005"].body, D_DRMANS["drmans_refund__005"].desc, "drmans_refund__005", "drmans")
+      + subcard(D_DRMANS["drmans_refund__006"].name, D_DRMANS["drmans_refund__006"].tag, D_DRMANS["drmans_refund__006"].body, D_DRMANS["drmans_refund__006"].desc, "drmans_refund__006", "drmans")
       + starNote("고객이 정가 차감에 미동의할 경우",
 `구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
 부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
@@ -230,31 +230,31 @@ const DRMANS_REFUND = `
   ${secTitle("3", "포장 및 회수 안내",null,"sec3")}
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard(D_DRMANS["drmans_refund__007"].name, D_DRMANS["drmans_refund__007"].tag, D_DRMANS["drmans_refund__007"].body, D_DRMANS["drmans_refund__007"].desc)
+      subcard(D_DRMANS["drmans_refund__007"].name, D_DRMANS["drmans_refund__007"].tag, D_DRMANS["drmans_refund__007"].body, D_DRMANS["drmans_refund__007"].desc, "drmans_refund__007", "drmans")
       + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
-      subcard(D_DRMANS["drmans_refund__008"].name, D_DRMANS["drmans_refund__008"].tag, D_DRMANS["drmans_refund__008"].body, D_DRMANS["drmans_refund__008"].desc)
+      subcard(D_DRMANS["drmans_refund__008"].name, D_DRMANS["drmans_refund__008"].tag, D_DRMANS["drmans_refund__008"].body, D_DRMANS["drmans_refund__008"].desc, "drmans_refund__008", "drmans")
       + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="stack">
     ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_DRMANS["drmans_refund__009"].name, D_DRMANS["drmans_refund__009"].tag, D_DRMANS["drmans_refund__009"].body, D_DRMANS["drmans_refund__009"].desc)
+      subcard(D_DRMANS["drmans_refund__009"].name, D_DRMANS["drmans_refund__009"].tag, D_DRMANS["drmans_refund__009"].body, D_DRMANS["drmans_refund__009"].desc, "drmans_refund__009", "drmans")
     )}
   </div>
   <div class="grid2">
-    ${subcard(D_DRMANS["drmans_refund__011"].name, D_DRMANS["drmans_refund__011"].tag, D_DRMANS["drmans_refund__011"].body, D_DRMANS["drmans_refund__011"].desc)}
+    ${subcard(D_DRMANS["drmans_refund__011"].name, D_DRMANS["drmans_refund__011"].tag, D_DRMANS["drmans_refund__011"].body, D_DRMANS["drmans_refund__011"].desc, "drmans_refund__011", "drmans")}
   </div>
 
   ${secTitle("4", "결제수단별 환불 안내","전체·부분 공통","sec4")}
   <div class="grid2">
     ${col("blue","🔹 카드결제",
-      subcard(D_DRMANS["drmans_refund__012"].name, D_DRMANS["drmans_refund__012"].tag, D_DRMANS["drmans_refund__012"].body, D_DRMANS["drmans_refund__012"].desc)
+      subcard(D_DRMANS["drmans_refund__012"].name, D_DRMANS["drmans_refund__012"].tag, D_DRMANS["drmans_refund__012"].body, D_DRMANS["drmans_refund__012"].desc, "drmans_refund__012", "drmans")
     )}
     ${col("blue","🔹 계좌 환불",
-      subcard(D_DRMANS["drmans_refund__013"].name, D_DRMANS["drmans_refund__013"].tag, D_DRMANS["drmans_refund__013"].body, D_DRMANS["drmans_refund__013"].desc)
-      + subcard(D_DRMANS["drmans_refund__014"].name, D_DRMANS["drmans_refund__014"].tag, D_DRMANS["drmans_refund__014"].body, D_DRMANS["drmans_refund__014"].desc)
+      subcard(D_DRMANS["drmans_refund__013"].name, D_DRMANS["drmans_refund__013"].tag, D_DRMANS["drmans_refund__013"].body, D_DRMANS["drmans_refund__013"].desc, "drmans_refund__013", "drmans")
+      + subcard(D_DRMANS["drmans_refund__014"].name, D_DRMANS["drmans_refund__014"].tag, D_DRMANS["drmans_refund__014"].body, D_DRMANS["drmans_refund__014"].desc, "drmans_refund__014", "drmans")
     )}
   </div>
 `;
@@ -280,10 +280,10 @@ const DRMANS_EXCHANGE = `
   ${secTitle("1", "교환 방식 안내","전체·부분","sec1")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_DRMANS["drmans_exchange__001"].name, D_DRMANS["drmans_exchange__001"].tag, D_DRMANS["drmans_exchange__001"].body, D_DRMANS["drmans_exchange__001"].desc)
+subcard(D_DRMANS["drmans_exchange__001"].name, D_DRMANS["drmans_exchange__001"].tag, D_DRMANS["drmans_exchange__001"].body, D_DRMANS["drmans_exchange__001"].desc, "drmans_exchange__001", "drmans")
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_DRMANS["drmans_exchange__002"].name, D_DRMANS["drmans_exchange__002"].tag, D_DRMANS["drmans_exchange__002"].body, D_DRMANS["drmans_exchange__002"].desc)
+subcard(D_DRMANS["drmans_exchange__002"].name, D_DRMANS["drmans_exchange__002"].tag, D_DRMANS["drmans_exchange__002"].body, D_DRMANS["drmans_exchange__002"].desc, "drmans_exchange__002", "drmans")
 )}
 </div>
   ${caution(`▶ (전체 교환) 고객이 반품 희망 시 → '단순변심 반품' 페이지로 이동하여 안내
@@ -291,10 +291,10 @@ subcard(D_DRMANS["drmans_exchange__002"].name, D_DRMANS["drmans_exchange__002"].
   ${secTitle("2", "교환 배송비 안내","전체·부분","sec2")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_DRMANS["drmans_exchange__003"].name, D_DRMANS["drmans_exchange__003"].tag, D_DRMANS["drmans_exchange__003"].body, D_DRMANS["drmans_exchange__003"].desc)
+subcard(D_DRMANS["drmans_exchange__003"].name, D_DRMANS["drmans_exchange__003"].tag, D_DRMANS["drmans_exchange__003"].body, D_DRMANS["drmans_exchange__003"].desc, "drmans_exchange__003", "drmans")
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_DRMANS["drmans_exchange__004"].name, D_DRMANS["drmans_exchange__004"].tag, D_DRMANS["drmans_exchange__004"].body, D_DRMANS["drmans_exchange__004"].desc) + subcard(D_DRMANS["drmans_exchange__005"].name, D_DRMANS["drmans_exchange__005"].tag, D_DRMANS["drmans_exchange__005"].body, D_DRMANS["drmans_exchange__005"].desc)
+subcard(D_DRMANS["drmans_exchange__004"].name, D_DRMANS["drmans_exchange__004"].tag, D_DRMANS["drmans_exchange__004"].body, D_DRMANS["drmans_exchange__004"].desc, "drmans_exchange__004", "drmans") + subcard(D_DRMANS["drmans_exchange__005"].name, D_DRMANS["drmans_exchange__005"].tag, D_DRMANS["drmans_exchange__005"].body, D_DRMANS["drmans_exchange__005"].desc, "drmans_exchange__005", "drmans")
 )}
 </div>
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
@@ -302,15 +302,15 @@ subcard(D_DRMANS["drmans_exchange__004"].name, D_DRMANS["drmans_exchange__004"].
   ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_DRMANS["drmans_exchange__006"].name, D_DRMANS["drmans_exchange__006"].tag, D_DRMANS["drmans_exchange__006"].body, D_DRMANS["drmans_exchange__006"].desc) + caution(`🎁 증정품 회수 O`)
+subcard(D_DRMANS["drmans_exchange__006"].name, D_DRMANS["drmans_exchange__006"].tag, D_DRMANS["drmans_exchange__006"].body, D_DRMANS["drmans_exchange__006"].desc, "drmans_exchange__006", "drmans") + caution(`🎁 증정품 회수 O`)
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_DRMANS["drmans_exchange__007"].name, D_DRMANS["drmans_exchange__007"].tag, D_DRMANS["drmans_exchange__007"].body, D_DRMANS["drmans_exchange__007"].desc) + caution(`🎁 증정품 회수 X`)
+subcard(D_DRMANS["drmans_exchange__007"].name, D_DRMANS["drmans_exchange__007"].tag, D_DRMANS["drmans_exchange__007"].body, D_DRMANS["drmans_exchange__007"].desc, "drmans_exchange__007", "drmans") + caution(`🎁 증정품 회수 X`)
 )}
 </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
   ${secTitle("4", "검수 및 재출고 안내","전체·부분 공통","sec4")}
-  ${macro(D_DRMANS["drmans_exchange__009"].name, D_DRMANS["drmans_exchange__009"].tag, D_DRMANS["drmans_exchange__009"].body, D_DRMANS["drmans_exchange__009"].desc)}
+  ${macro(D_DRMANS["drmans_exchange__009"].name, D_DRMANS["drmans_exchange__009"].tag, D_DRMANS["drmans_exchange__009"].body, D_DRMANS["drmans_exchange__009"].desc, "drmans_exchange__009", "drmans")}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
 `;
 
@@ -336,8 +336,8 @@ const DRMANS_MERGE_TEMPLATE = `
 
   ${secTitle("1", "교환/반품 의사 확인","전체·부분 공통","sec1")}
   ${col("blue","🔄 교환 희망 시",
-    subcard(D_DRMANS["drmans_exchange__001"].name, D_DRMANS["drmans_exchange__001"].tag, D_DRMANS["drmans_exchange__001"].body, D_DRMANS["drmans_exchange__001"].desc)
-    + subcard(D_DRMANS["drmans_exchange__002"].name, D_DRMANS["drmans_exchange__002"].tag, D_DRMANS["drmans_exchange__002"].body, D_DRMANS["drmans_exchange__002"].desc)
+    subcard(D_DRMANS["drmans_exchange__001"].name, D_DRMANS["drmans_exchange__001"].tag, D_DRMANS["drmans_exchange__001"].body, D_DRMANS["drmans_exchange__001"].desc, "drmans_exchange__001", "drmans")
+    + subcard(D_DRMANS["drmans_exchange__002"].name, D_DRMANS["drmans_exchange__002"].tag, D_DRMANS["drmans_exchange__002"].body, D_DRMANS["drmans_exchange__002"].desc, "drmans_exchange__002", "drmans")
     + caution(`▶ (전체 교환) 고객이 반품 희망 시 → 아래 '💰 반품 희망 시'로 이동해 진행
 ▶ 교환 진행 희망 시 → 아래 2. 전체/부분 방식 안내(교환)부터 진행`)
   )}
@@ -391,14 +391,14 @@ const DRMANS_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 반품 배송비</div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard(D_DRMANS["drmans_refund__001"].name, D_DRMANS["drmans_refund__001"].tag, D_DRMANS["drmans_refund__001"].body, D_DRMANS["drmans_refund__001"].desc)
-      + subcard(D_DRMANS["drmans_refund__002"].name, D_DRMANS["drmans_refund__002"].tag, D_DRMANS["drmans_refund__002"].body, D_DRMANS["drmans_refund__002"].desc)
-      + subcard(D_DRMANS["drmans_refund__003"].name, D_DRMANS["drmans_refund__003"].tag, D_DRMANS["drmans_refund__003"].body, D_DRMANS["drmans_refund__003"].desc)
+      subcard(D_DRMANS["drmans_refund__001"].name, D_DRMANS["drmans_refund__001"].tag, D_DRMANS["drmans_refund__001"].body, D_DRMANS["drmans_refund__001"].desc, "drmans_refund__001", "drmans")
+      + subcard(D_DRMANS["drmans_refund__002"].name, D_DRMANS["drmans_refund__002"].tag, D_DRMANS["drmans_refund__002"].body, D_DRMANS["drmans_refund__002"].desc, "drmans_refund__002", "drmans")
+      + subcard(D_DRMANS["drmans_refund__003"].name, D_DRMANS["drmans_refund__003"].tag, D_DRMANS["drmans_refund__003"].body, D_DRMANS["drmans_refund__003"].desc, "drmans_refund__003", "drmans")
     )}
     ${col("pink","🔹 부분 반품",
-      subcard(D_DRMANS["drmans_refund__004"].name, D_DRMANS["drmans_refund__004"].tag, D_DRMANS["drmans_refund__004"].body, D_DRMANS["drmans_refund__004"].desc)
-      + subcard(D_DRMANS["drmans_refund__005"].name, D_DRMANS["drmans_refund__005"].tag, D_DRMANS["drmans_refund__005"].body, D_DRMANS["drmans_refund__005"].desc)
-      + subcard(D_DRMANS["drmans_refund__006"].name, D_DRMANS["drmans_refund__006"].tag, D_DRMANS["drmans_refund__006"].body, D_DRMANS["drmans_refund__006"].desc)
+      subcard(D_DRMANS["drmans_refund__004"].name, D_DRMANS["drmans_refund__004"].tag, D_DRMANS["drmans_refund__004"].body, D_DRMANS["drmans_refund__004"].desc, "drmans_refund__004", "drmans")
+      + subcard(D_DRMANS["drmans_refund__005"].name, D_DRMANS["drmans_refund__005"].tag, D_DRMANS["drmans_refund__005"].body, D_DRMANS["drmans_refund__005"].desc, "drmans_refund__005", "drmans")
+      + subcard(D_DRMANS["drmans_refund__006"].name, D_DRMANS["drmans_refund__006"].tag, D_DRMANS["drmans_refund__006"].body, D_DRMANS["drmans_refund__006"].desc, "drmans_refund__006", "drmans")
       + starNote("고객이 정가 차감에 미동의할 경우",
 `구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
 부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
@@ -408,11 +408,11 @@ const DRMANS_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 교환 배송비</div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard(D_DRMANS["drmans_exchange__003"].name, D_DRMANS["drmans_exchange__003"].tag, D_DRMANS["drmans_exchange__003"].body, D_DRMANS["drmans_exchange__003"].desc)
+      subcard(D_DRMANS["drmans_exchange__003"].name, D_DRMANS["drmans_exchange__003"].tag, D_DRMANS["drmans_exchange__003"].body, D_DRMANS["drmans_exchange__003"].desc, "drmans_exchange__003", "drmans")
     )}
     ${col("pink","🔹 부분 교환",
-      subcard(D_DRMANS["drmans_exchange__004"].name, D_DRMANS["drmans_exchange__004"].tag, D_DRMANS["drmans_exchange__004"].body, D_DRMANS["drmans_exchange__004"].desc)
-      + subcard(D_DRMANS["drmans_exchange__005"].name, D_DRMANS["drmans_exchange__005"].tag, D_DRMANS["drmans_exchange__005"].body, D_DRMANS["drmans_exchange__005"].desc)
+      subcard(D_DRMANS["drmans_exchange__004"].name, D_DRMANS["drmans_exchange__004"].tag, D_DRMANS["drmans_exchange__004"].body, D_DRMANS["drmans_exchange__004"].desc, "drmans_exchange__004", "drmans")
+      + subcard(D_DRMANS["drmans_exchange__005"].name, D_DRMANS["drmans_exchange__005"].tag, D_DRMANS["drmans_exchange__005"].body, D_DRMANS["drmans_exchange__005"].desc, "drmans_exchange__005", "drmans")
     )}
   </div>
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
@@ -422,45 +422,45 @@ const DRMANS_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 반품</div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard(D_DRMANS["drmans_refund__007"].name, D_DRMANS["drmans_refund__007"].tag, D_DRMANS["drmans_refund__007"].body, D_DRMANS["drmans_refund__007"].desc)
+      subcard(D_DRMANS["drmans_refund__007"].name, D_DRMANS["drmans_refund__007"].tag, D_DRMANS["drmans_refund__007"].body, D_DRMANS["drmans_refund__007"].desc, "drmans_refund__007", "drmans")
       + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
-      subcard(D_DRMANS["drmans_refund__008"].name, D_DRMANS["drmans_refund__008"].tag, D_DRMANS["drmans_refund__008"].body, D_DRMANS["drmans_refund__008"].desc)
+      subcard(D_DRMANS["drmans_refund__008"].name, D_DRMANS["drmans_refund__008"].tag, D_DRMANS["drmans_refund__008"].body, D_DRMANS["drmans_refund__008"].desc, "drmans_refund__008", "drmans")
       + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="stack">
     ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_DRMANS["drmans_refund__009"].name, D_DRMANS["drmans_refund__009"].tag, D_DRMANS["drmans_refund__009"].body, D_DRMANS["drmans_refund__009"].desc)
+      subcard(D_DRMANS["drmans_refund__009"].name, D_DRMANS["drmans_refund__009"].tag, D_DRMANS["drmans_refund__009"].body, D_DRMANS["drmans_refund__009"].desc, "drmans_refund__009", "drmans")
     )}
   </div>
   <div class="grid2">
-    ${subcard(D_DRMANS["drmans_refund__011"].name, D_DRMANS["drmans_refund__011"].tag, D_DRMANS["drmans_refund__011"].body, D_DRMANS["drmans_refund__011"].desc)}
+    ${subcard(D_DRMANS["drmans_refund__011"].name, D_DRMANS["drmans_refund__011"].tag, D_DRMANS["drmans_refund__011"].body, D_DRMANS["drmans_refund__011"].desc, "drmans_refund__011", "drmans")}
   </div>
   <div class="grp-h">🔹 교환</div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard(D_DRMANS["drmans_exchange__006"].name, D_DRMANS["drmans_exchange__006"].tag, D_DRMANS["drmans_exchange__006"].body, D_DRMANS["drmans_exchange__006"].desc) + caution(`🎁 증정품 회수 O`)
+      subcard(D_DRMANS["drmans_exchange__006"].name, D_DRMANS["drmans_exchange__006"].tag, D_DRMANS["drmans_exchange__006"].body, D_DRMANS["drmans_exchange__006"].desc, "drmans_exchange__006", "drmans") + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 교환",
-      subcard(D_DRMANS["drmans_exchange__007"].name, D_DRMANS["drmans_exchange__007"].tag, D_DRMANS["drmans_exchange__007"].body, D_DRMANS["drmans_exchange__007"].desc) + caution(`🎁 증정품 회수 X`)
+      subcard(D_DRMANS["drmans_exchange__007"].name, D_DRMANS["drmans_exchange__007"].tag, D_DRMANS["drmans_exchange__007"].body, D_DRMANS["drmans_exchange__007"].desc, "drmans_exchange__007", "drmans") + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
   ${secTitle("5", "교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","검수 및 재출고 안내","exchangeFlow")}
-  ${macro(D_DRMANS["drmans_exchange__009"].name, D_DRMANS["drmans_exchange__009"].tag, D_DRMANS["drmans_exchange__009"].body, D_DRMANS["drmans_exchange__009"].desc)}
+  ${macro(D_DRMANS["drmans_exchange__009"].name, D_DRMANS["drmans_exchange__009"].tag, D_DRMANS["drmans_exchange__009"].body, D_DRMANS["drmans_exchange__009"].desc, "drmans_exchange__009", "drmans")}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
   ${secTitle("💰","반품 시","결제수단별 환불 안내","refundFlow")}
   <div class="grid2">
     ${col("blue","🔹 카드결제",
-      subcard(D_DRMANS["drmans_refund__012"].name, D_DRMANS["drmans_refund__012"].tag, D_DRMANS["drmans_refund__012"].body, D_DRMANS["drmans_refund__012"].desc)
+      subcard(D_DRMANS["drmans_refund__012"].name, D_DRMANS["drmans_refund__012"].tag, D_DRMANS["drmans_refund__012"].body, D_DRMANS["drmans_refund__012"].desc, "drmans_refund__012", "drmans")
     )}
     ${col("blue","🔹 계좌 환불",
-      subcard(D_DRMANS["drmans_refund__013"].name, D_DRMANS["drmans_refund__013"].tag, D_DRMANS["drmans_refund__013"].body, D_DRMANS["drmans_refund__013"].desc)
-      + subcard(D_DRMANS["drmans_refund__014"].name, D_DRMANS["drmans_refund__014"].tag, D_DRMANS["drmans_refund__014"].body, D_DRMANS["drmans_refund__014"].desc)
+      subcard(D_DRMANS["drmans_refund__013"].name, D_DRMANS["drmans_refund__013"].tag, D_DRMANS["drmans_refund__013"].body, D_DRMANS["drmans_refund__013"].desc, "drmans_refund__013", "drmans")
+      + subcard(D_DRMANS["drmans_refund__014"].name, D_DRMANS["drmans_refund__014"].tag, D_DRMANS["drmans_refund__014"].body, D_DRMANS["drmans_refund__014"].desc, "drmans_refund__014", "drmans")
     )}
   </div>
 `;

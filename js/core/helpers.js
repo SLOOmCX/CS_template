@@ -9,8 +9,9 @@ const INQUIRY_TYPES = ["단순변심 교환","단순변심 반품","100%환불�
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
 /* 콘텐츠 렌더 함수들 -------------------------------------- */
-function macro(name, tag, body, desc){
-  return `<div class="macro">
+function macro(name, tag, body, desc, contentKey, contentBrand){
+  const _dk = contentKey?` data-content-key="${contentKey}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+  return `<div class="macro"${_dk}>
     <div class="macro-head">
       ${/^[\u2190-\u2bff\u{1f000}-\u{1faff}]/u.test(name)||/^.{0,2}[\ufe0f\u20e3]/.test(name)||/^(i{1,3}|iv|v)\.\s/.test(name)?"":'<span class="gdot"></span>'}
       <span class="mname">${name}</span>
@@ -67,8 +68,9 @@ function cmpTable(cols,rows){
 function colTag(cls,head,tag,body){
   return `<div class="col-card"><div class="col-h ${cls}"><span>${head}</span><span class="spacer"></span>${tag?`<span class="ct-tag">#${tag}</span>`:""}<button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button></div><div class="col-body-plain">${body}</div></div>`;
 }
-function subcard(label,tag,body,desc){
-  return `<div class="subcard"><div class="subcard-h"><span class="sc-label">${label}</span><span class="spacer"></span>${tag?`<span class="tag">#${tag}</span>`:""}<button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button></div>${desc?`<div class="sc-desc">${desc}</div>`:""}<div class="subcard-body">${body}</div></div>`;
+function subcard(label,tag,body,desc,contentKey,contentBrand){
+  const _dk = contentKey?` data-content-key="${contentKey}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+  return `<div class="subcard"${_dk}><div class="subcard-h"><span class="sc-label">${label}</span><span class="spacer"></span>${tag?`<span class="tag">#${tag}</span>`:""}<button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button></div>${desc?`<div class="sc-desc">${desc}</div>`:""}<div class="subcard-body">${body}</div></div>`;
 }
 function starNote(title,body){ return `<div class="star-note"><div class="star-h"><b>★ ${title}</b><span class="spacer"></span></div><div class="star-body">${body}</div></div>`; }
 function blueNote(title,body){ return `<div class="blue-note"><div class="bn-h"><b>${title}</b><span class="spacer"></span></div><div class="bn-body">${body}</div></div>`; }

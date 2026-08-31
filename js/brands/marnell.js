@@ -13,39 +13,39 @@ const MARNELL_SIDE = `
   <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">⚠️ 병원 진료·진료비 보상 요청 등 클레임/민원 발생 시 → 아래 [예외케이스] 그룹 참고</div>
 
   ${secTitle("1","선제적 사과 멘트",null,"sec_apology")}
-  ${macro(D_MARNELL["marnell_side__001"].name, D_MARNELL["marnell_side__001"].tag, D_MARNELL["marnell_side__001"].body, D_MARNELL["marnell_side__001"].desc)}
+  ${macro(D_MARNELL["marnell_side__001"].name, D_MARNELL["marnell_side__001"].tag, D_MARNELL["marnell_side__001"].body, D_MARNELL["marnell_side__001"].desc, "marnell_side__001", "marnell")}
   ${secTitle("2","제품 결함 아님 및 서류 안내",null,"sec_env")}
   ${caution(`⚠️ 단, 고객 최초부터 강하게 항의/민원 제기 or 크리티컬한 단어 언급 등으로 Risk 등급 높을 경우 → 기존 Critical Issue 처리에 따라 예외적 반품 처리 진행`)}
-  ${macro(D_MARNELL["marnell_side__002"].name, D_MARNELL["marnell_side__002"].tag, D_MARNELL["marnell_side__002"].body, D_MARNELL["marnell_side__002"].desc)}
+  ${macro(D_MARNELL["marnell_side__002"].name, D_MARNELL["marnell_side__002"].tag, D_MARNELL["marnell_side__002"].body, D_MARNELL["marnell_side__002"].desc, "marnell_side__002", "marnell")}
   <div class="grp-h grp-major">🔹 a. 고객 서류 미수긍 시</div>
   ${guide(`👉🏻 고객 증빙 서류 미수긍 시 예외적으로 전액 환불 처리 안내`)}
-  ${macro(D_MARNELL["marnell_side__003"].name, D_MARNELL["marnell_side__003"].tag, D_MARNELL["marnell_side__003"].body, D_MARNELL["marnell_side__003"].desc)}
+  ${macro(D_MARNELL["marnell_side__003"].name, D_MARNELL["marnell_side__003"].tag, D_MARNELL["marnell_side__003"].body, D_MARNELL["marnell_side__003"].desc, "marnell_side__003", "marnell")}
   <div class="grp-h grp-major">🔹 b. 고객 서류 수긍 시</div>
-  ${macro(D_MARNELL["marnell_side__004"].name, D_MARNELL["marnell_side__004"].tag, D_MARNELL["marnell_side__004"].body, D_MARNELL["marnell_side__004"].desc)}
-  ${macro(D_MARNELL["marnell_side__005"].name, D_MARNELL["marnell_side__005"].tag, D_MARNELL["marnell_side__005"].body, D_MARNELL["marnell_side__005"].desc)}
+  ${macro(D_MARNELL["marnell_side__004"].name, D_MARNELL["marnell_side__004"].tag, D_MARNELL["marnell_side__004"].body, D_MARNELL["marnell_side__004"].desc, "marnell_side__004", "marnell")}
+  ${macro(D_MARNELL["marnell_side__005"].name, D_MARNELL["marnell_side__005"].tag, D_MARNELL["marnell_side__005"].body, D_MARNELL["marnell_side__005"].desc, "marnell_side__005", "marnell")}
   <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">👉🏻 이후 공통 : 아래 [3. 포장 및 회수 안내] → [4. 결제수단별 환불 안내] 순으로 진행</div>
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
-  ${macro(D_MARNELL["marnell_side__006"].name, D_MARNELL["marnell_side__006"].tag, D_MARNELL["marnell_side__006"].body, D_MARNELL["marnell_side__006"].desc)}
-  ${subcard(D_MARNELL["marnell_side__007"].name, D_MARNELL["marnell_side__007"].tag, D_MARNELL["marnell_side__007"].body, D_MARNELL["marnell_side__007"].desc)}
+  ${macro(D_MARNELL["marnell_side__006"].name, D_MARNELL["marnell_side__006"].tag, D_MARNELL["marnell_side__006"].body, D_MARNELL["marnell_side__006"].desc, "marnell_side__006", "marnell")}
+  ${subcard(D_MARNELL["marnell_side__007"].name, D_MARNELL["marnell_side__007"].tag, D_MARNELL["marnell_side__007"].body, D_MARNELL["marnell_side__007"].desc, "marnell_side__007", "marnell")}
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard(D_MARNELL["marnell_side__008"].name, D_MARNELL["marnell_side__008"].tag, D_MARNELL["marnell_side__008"].body, D_MARNELL["marnell_side__008"].desc)
+subcard(D_MARNELL["marnell_side__008"].name, D_MARNELL["marnell_side__008"].tag, D_MARNELL["marnell_side__008"].body, D_MARNELL["marnell_side__008"].desc, "marnell_side__008", "marnell")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
-subcard(D_MARNELL["marnell_side__009"].name, D_MARNELL["marnell_side__009"].tag, D_MARNELL["marnell_side__009"].body, D_MARNELL["marnell_side__009"].desc) + subcard(D_MARNELL["marnell_side__010"].name, D_MARNELL["marnell_side__010"].tag, D_MARNELL["marnell_side__010"].body, D_MARNELL["marnell_side__010"].desc)
+subcard(D_MARNELL["marnell_side__009"].name, D_MARNELL["marnell_side__009"].tag, D_MARNELL["marnell_side__009"].body, D_MARNELL["marnell_side__009"].desc, "marnell_side__009", "marnell") + subcard(D_MARNELL["marnell_side__010"].name, D_MARNELL["marnell_side__010"].tag, D_MARNELL["marnell_side__010"].body, D_MARNELL["marnell_side__010"].desc, "marnell_side__010", "marnell")
 )}
 </div>
   ${secTitle("🔺","[예외케이스] 클레임/민원/보상 요청",null,"sec_exception")}
   ${caution(`예) 부작용으로 인한 병원 진료, 진료비 보상 요청 or 부작용 정도가 심하여 진료비 보상 요청`)}
-  ${macro(D_MARNELL["marnell_side__011"].name, D_MARNELL["marnell_side__011"].tag, D_MARNELL["marnell_side__011"].body, D_MARNELL["marnell_side__011"].desc)}
-  ${macro(D_MARNELL["marnell_side__012"].name, D_MARNELL["marnell_side__012"].tag, D_MARNELL["marnell_side__012"].body, D_MARNELL["marnell_side__012"].desc)}
-  ${macro(D_MARNELL["marnell_side__013"].name, D_MARNELL["marnell_side__013"].tag, D_MARNELL["marnell_side__013"].body, D_MARNELL["marnell_side__013"].desc)}
+  ${macro(D_MARNELL["marnell_side__011"].name, D_MARNELL["marnell_side__011"].tag, D_MARNELL["marnell_side__011"].body, D_MARNELL["marnell_side__011"].desc, "marnell_side__011", "marnell")}
+  ${macro(D_MARNELL["marnell_side__012"].name, D_MARNELL["marnell_side__012"].tag, D_MARNELL["marnell_side__012"].body, D_MARNELL["marnell_side__012"].desc, "marnell_side__012", "marnell")}
+  ${macro(D_MARNELL["marnell_side__013"].name, D_MARNELL["marnell_side__013"].tag, D_MARNELL["marnell_side__013"].body, D_MARNELL["marnell_side__013"].desc, "marnell_side__013", "marnell")}
   ${caution(`⚠️ 고객 서류 미수긍/지속 치료비 보상 요구\n★ 증빙 서류 없이 치료비 보상은 불가`)}
   ${guide(`✔️ 부작용·트러블 유형은 제품, 고객 성향과 증상에 따라 유연하게 응대 필요\n기본적으로 증빙 자료 제출 후 전액 환불 및 급여 항목에 한해 보상 가능`)}
   ${secTitle("💠","[공통] 서류 제출 후",null,"sec_submit")}
-  ${macro(D_MARNELL["marnell_side__014"].name, D_MARNELL["marnell_side__014"].tag, D_MARNELL["marnell_side__014"].body, D_MARNELL["marnell_side__014"].desc)}
-  ${macro(D_MARNELL["marnell_side__015"].name, D_MARNELL["marnell_side__015"].tag, D_MARNELL["marnell_side__015"].body, D_MARNELL["marnell_side__015"].desc)}
+  ${macro(D_MARNELL["marnell_side__014"].name, D_MARNELL["marnell_side__014"].tag, D_MARNELL["marnell_side__014"].body, D_MARNELL["marnell_side__014"].desc, "marnell_side__014", "marnell")}
+  ${macro(D_MARNELL["marnell_side__015"].name, D_MARNELL["marnell_side__015"].tag, D_MARNELL["marnell_side__015"].body, D_MARNELL["marnell_side__015"].desc, "marnell_side__015", "marnell")}
   ${guide(`<b style="color:#d32f2f;">증빙 서류 기반으로 건보 급여 항목 전액 보상</b>
 ⚠️ 팀 리드 공유 필수
 📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>의 Critical Issue(EDGE Case) 보상금 flex 워크플로우 작성법 참고하여 등록`)}
@@ -78,106 +78,106 @@ const MARNELL_DEFECT = `
   ${secTitle("2","불량 유형별 증빙·인정 안내",null,"sec_evid")}
   <div class="quote-box"><b>⚠️ 상품 수령일로부터 영업일 7일 이내 문의 시에만 처리 가능</b><br><span style="font-weight:500;font-size:13px;">※ 단, 변질·굳음·결로 유형은 예외 — 미개봉 보관 + 보관주의사항 준수 시 7일 경과 후에도 확인 후 처리(아래 해당 유형별 안내 참고)</span></div>
   <div class="grp-h">1. 리무빙컬 매직 앰플&브러시 — 브러시 파손(빗살 휘어짐·부러짐)</div>
-  ${macro(D_MARNELL["marnell_as__001"].name, D_MARNELL["marnell_as__001"].tag, D_MARNELL["marnell_as__001"].body, D_MARNELL["marnell_as__001"].desc)}
+  ${macro(D_MARNELL["marnell_as__001"].name, D_MARNELL["marnell_as__001"].tag, D_MARNELL["marnell_as__001"].body, D_MARNELL["marnell_as__001"].desc, "marnell_as__001", "marnell")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_MARNELL["marnell_as__002"].name, D_MARNELL["marnell_as__002"].tag, D_MARNELL["marnell_as__002"].body, D_MARNELL["marnell_as__002"].desc)
+subcard(D_MARNELL["marnell_as__002"].name, D_MARNELL["marnell_as__002"].tag, D_MARNELL["marnell_as__002"].body, D_MARNELL["marnell_as__002"].desc, "marnell_as__002", "marnell")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_MARNELL["marnell_as__003"].name, D_MARNELL["marnell_as__003"].tag, D_MARNELL["marnell_as__003"].body, D_MARNELL["marnell_as__003"].desc)
+subcard(D_MARNELL["marnell_as__003"].name, D_MARNELL["marnell_as__003"].tag, D_MARNELL["marnell_as__003"].body, D_MARNELL["marnell_as__003"].desc, "marnell_as__003", "marnell")
 )}
 </div>
   ${caution(`📝 근거/비고: 공식몰 확인 — 헤어 스트레이트닝용 수동 브러시(전동 아님). 앰플을 브러시에 발라 빗어 사용하는 구조.`)}
 
   <div class="grp-h">2. 리무빙컬 매직 앰플&브러시 — 앰플 용기 파손·누출</div>
-  ${macro(D_MARNELL["marnell_as__004"].name, D_MARNELL["marnell_as__004"].tag, D_MARNELL["marnell_as__004"].body, D_MARNELL["marnell_as__004"].desc)}
+  ${macro(D_MARNELL["marnell_as__004"].name, D_MARNELL["marnell_as__004"].tag, D_MARNELL["marnell_as__004"].body, D_MARNELL["marnell_as__004"].desc, "marnell_as__004", "marnell")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_MARNELL["marnell_as__005"].name, D_MARNELL["marnell_as__005"].tag, D_MARNELL["marnell_as__005"].body, D_MARNELL["marnell_as__005"].desc)
+subcard(D_MARNELL["marnell_as__005"].name, D_MARNELL["marnell_as__005"].tag, D_MARNELL["marnell_as__005"].body, D_MARNELL["marnell_as__005"].desc, "marnell_as__005", "marnell")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_MARNELL["marnell_as__006"].name, D_MARNELL["marnell_as__006"].tag, D_MARNELL["marnell_as__006"].body, D_MARNELL["marnell_as__006"].desc)
+subcard(D_MARNELL["marnell_as__006"].name, D_MARNELL["marnell_as__006"].tag, D_MARNELL["marnell_as__006"].body, D_MARNELL["marnell_as__006"].desc, "marnell_as__006", "marnell")
 )}
 </div>
   ${caution(`📝 근거/비고: 앰플과 브러시가 세트 구성이라 앰플만 불량이어도 세트 전체 회수.`)}
 
   <div class="grp-h">3. 리무빙컬 매직 앰플&브러시 — 앰플 내용물 변질(변색·냄새 변화·분리)</div>
-  ${macro(D_MARNELL["marnell_as__007"].name, D_MARNELL["marnell_as__007"].tag, D_MARNELL["marnell_as__007"].body, D_MARNELL["marnell_as__007"].desc)}
+  ${macro(D_MARNELL["marnell_as__007"].name, D_MARNELL["marnell_as__007"].tag, D_MARNELL["marnell_as__007"].body, D_MARNELL["marnell_as__007"].desc, "marnell_as__007", "marnell")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_MARNELL["marnell_as__008"].name, D_MARNELL["marnell_as__008"].tag, D_MARNELL["marnell_as__008"].body, D_MARNELL["marnell_as__008"].desc)
+subcard(D_MARNELL["marnell_as__008"].name, D_MARNELL["marnell_as__008"].tag, D_MARNELL["marnell_as__008"].body, D_MARNELL["marnell_as__008"].desc, "marnell_as__008", "marnell")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_MARNELL["marnell_as__009"].name, D_MARNELL["marnell_as__009"].tag, D_MARNELL["marnell_as__009"].body, D_MARNELL["marnell_as__009"].desc)
+subcard(D_MARNELL["marnell_as__009"].name, D_MARNELL["marnell_as__009"].tag, D_MARNELL["marnell_as__009"].body, D_MARNELL["marnell_as__009"].desc, "marnell_as__009", "marnell")
 )}
 </div>
   ${caution(`🕐 [7일 룰 예외] 변질·굳음·결로는 개봉 전에는 확인이 불가능한 유형이므로, 수령일로부터 7일이 경과했더라도 <b>미개봉 상태로 보관</b>했고 <b>보관주의사항을 준수</b>한 경우라면 접수 후 확인하여 처리함(7일 경과를 이유로 즉시 처리 불가 안내하지 않음).`)}
   ${caution(`📝 근거/비고: [v5 보완] 파손/누출과 별개로 '내용물 변질' 유형이 빠져 있었음 — 추가함.`)}
 
   <div class="grp-h">4. 마그네슘 슬리밍 부스터 — 펌프·캡 작동 불량 / 용기 파손</div>
-  ${macro(D_MARNELL["marnell_as__010"].name, D_MARNELL["marnell_as__010"].tag, D_MARNELL["marnell_as__010"].body, D_MARNELL["marnell_as__010"].desc)}
+  ${macro(D_MARNELL["marnell_as__010"].name, D_MARNELL["marnell_as__010"].tag, D_MARNELL["marnell_as__010"].body, D_MARNELL["marnell_as__010"].desc, "marnell_as__010", "marnell")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_MARNELL["marnell_as__011"].name, D_MARNELL["marnell_as__011"].tag, D_MARNELL["marnell_as__011"].body, D_MARNELL["marnell_as__011"].desc)
+subcard(D_MARNELL["marnell_as__011"].name, D_MARNELL["marnell_as__011"].tag, D_MARNELL["marnell_as__011"].body, D_MARNELL["marnell_as__011"].desc, "marnell_as__011", "marnell")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_MARNELL["marnell_as__012"].name, D_MARNELL["marnell_as__012"].tag, D_MARNELL["marnell_as__012"].body, D_MARNELL["marnell_as__012"].desc)
+subcard(D_MARNELL["marnell_as__012"].name, D_MARNELL["marnell_as__012"].tag, D_MARNELL["marnell_as__012"].body, D_MARNELL["marnell_as__012"].desc, "marnell_as__012", "marnell")
 )}
 </div>
   ${caution(`📝 근거/비고: 박스형 부스터 제품, 실제 용기 구조(펌프/드로퍼 등) 실물 확인 후 유형 보완 필요.`)}
 
   <div class="grp-h">5. 마그네슘 슬리밍 부스터 — 내용물 변질(변색·냄새 변화·분리)</div>
-  ${macro(D_MARNELL["marnell_as__013"].name, D_MARNELL["marnell_as__013"].tag, D_MARNELL["marnell_as__013"].body, D_MARNELL["marnell_as__013"].desc)}
+  ${macro(D_MARNELL["marnell_as__013"].name, D_MARNELL["marnell_as__013"].tag, D_MARNELL["marnell_as__013"].body, D_MARNELL["marnell_as__013"].desc, "marnell_as__013", "marnell")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_MARNELL["marnell_as__014"].name, D_MARNELL["marnell_as__014"].tag, D_MARNELL["marnell_as__014"].body, D_MARNELL["marnell_as__014"].desc)
+subcard(D_MARNELL["marnell_as__014"].name, D_MARNELL["marnell_as__014"].tag, D_MARNELL["marnell_as__014"].body, D_MARNELL["marnell_as__014"].desc, "marnell_as__014", "marnell")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_MARNELL["marnell_as__015"].name, D_MARNELL["marnell_as__015"].tag, D_MARNELL["marnell_as__015"].body, D_MARNELL["marnell_as__015"].desc)
+subcard(D_MARNELL["marnell_as__015"].name, D_MARNELL["marnell_as__015"].tag, D_MARNELL["marnell_as__015"].body, D_MARNELL["marnell_as__015"].desc, "marnell_as__015", "marnell")
 )}
 </div>
   ${caution(`🕐 [7일 룰 예외] 변질·굳음·결로는 개봉 전에는 확인이 불가능한 유형이므로, 수령일로부터 7일이 경과했더라도 <b>미개봉 상태로 보관</b>했고 <b>보관주의사항을 준수</b>한 경우라면 접수 후 확인하여 처리함(7일 경과를 이유로 즉시 처리 불가 안내하지 않음).`)}
   ${caution(`📝 근거/비고: [v5 보완] '변질' 유형 누락분 추가.`)}
 
   <div class="grp-h">6. 듀얼 블랙 속눈썹 영양제(현재 품절) — 브러시·용기 불량 / 내용물 변질</div>
-  ${macro(D_MARNELL["marnell_as__016"].name, D_MARNELL["marnell_as__016"].tag, D_MARNELL["marnell_as__016"].body, D_MARNELL["marnell_as__016"].desc)}
+  ${macro(D_MARNELL["marnell_as__016"].name, D_MARNELL["marnell_as__016"].tag, D_MARNELL["marnell_as__016"].body, D_MARNELL["marnell_as__016"].desc, "marnell_as__016", "marnell")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_MARNELL["marnell_as__017"].name, D_MARNELL["marnell_as__017"].tag, D_MARNELL["marnell_as__017"].body, D_MARNELL["marnell_as__017"].desc)
+subcard(D_MARNELL["marnell_as__017"].name, D_MARNELL["marnell_as__017"].tag, D_MARNELL["marnell_as__017"].body, D_MARNELL["marnell_as__017"].desc, "marnell_as__017", "marnell")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_MARNELL["marnell_as__018"].name, D_MARNELL["marnell_as__018"].tag, D_MARNELL["marnell_as__018"].body, D_MARNELL["marnell_as__018"].desc)
+subcard(D_MARNELL["marnell_as__018"].name, D_MARNELL["marnell_as__018"].tag, D_MARNELL["marnell_as__018"].body, D_MARNELL["marnell_as__018"].desc, "marnell_as__018", "marnell")
 )}
 </div>
   ${caution(`🕐 [7일 룰 예외] 변질·굳음·결로는 개봉 전에는 확인이 불가능한 유형이므로, 수령일로부터 7일이 경과했더라도 <b>미개봉 상태로 보관</b>했고 <b>보관주의사항을 준수</b>한 경우라면 접수 후 확인하여 처리함(7일 경과를 이유로 즉시 처리 불가 안내하지 않음).`)}
   ${caution(`📝 근거/비고: 공식몰 기준 현재 품절 상태 — 재입고 시 유효한 유형으로 남겨둠. 재입고 안내 시점에 재확인 필요.`)}
 
   <div class="grp-h">7. 올인원 주름 패치(현재 품절) — 패치 접착 불량 / 파손</div>
-  ${macro(D_MARNELL["marnell_as__019"].name, D_MARNELL["marnell_as__019"].tag, D_MARNELL["marnell_as__019"].body, D_MARNELL["marnell_as__019"].desc)}
+  ${macro(D_MARNELL["marnell_as__019"].name, D_MARNELL["marnell_as__019"].tag, D_MARNELL["marnell_as__019"].body, D_MARNELL["marnell_as__019"].desc, "marnell_as__019", "marnell")}
   <div class="grid2">
 ${col("blue","🔹 불량 인정 시",
-subcard(D_MARNELL["marnell_as__020"].name, D_MARNELL["marnell_as__020"].tag, D_MARNELL["marnell_as__020"].body, D_MARNELL["marnell_as__020"].desc)
+subcard(D_MARNELL["marnell_as__020"].name, D_MARNELL["marnell_as__020"].tag, D_MARNELL["marnell_as__020"].body, D_MARNELL["marnell_as__020"].desc, "marnell_as__020", "marnell")
 )}
 ${col("pink","🔹 불량 미인정(정상 판정) 시",
-subcard(D_MARNELL["marnell_as__021"].name, D_MARNELL["marnell_as__021"].tag, D_MARNELL["marnell_as__021"].body, D_MARNELL["marnell_as__021"].desc)
+subcard(D_MARNELL["marnell_as__021"].name, D_MARNELL["marnell_as__021"].tag, D_MARNELL["marnell_as__021"].body, D_MARNELL["marnell_as__021"].desc, "marnell_as__021", "marnell")
 )}
 </div>
   ${caution(`📝 근거/비고: 공식몰 기준 현재 품절 상태 — 재입고 시 유효한 유형으로 남겨둠.`)}
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
-  ${macro(D_MARNELL["marnell_as__022"].name, D_MARNELL["marnell_as__022"].tag, D_MARNELL["marnell_as__022"].body, D_MARNELL["marnell_as__022"].desc)}
+  ${macro(D_MARNELL["marnell_as__022"].name, D_MARNELL["marnell_as__022"].tag, D_MARNELL["marnell_as__022"].body, D_MARNELL["marnell_as__022"].desc, "marnell_as__022", "marnell")}
   ${caution(`📝 [통합판] 화장품류 카테고리 문구 + 세트 구성 상품(리무빙컬) 예외 한 줄 추가. 속눈썹영양제·주름패치(품절)도 동일 화장품류 문구 적용.`)}
 
   ${secTitle("4","교환/반품 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","🔹 교환 시 — 재출고 일정 안내",
 `<div class="quote-box"><b>⚠️ 유의사항</b>\n① 접수 시간 기준으로 안내 필요\n② 불량으로 인한 재출고는 회수 접수와 동시에 재출고 접수</div>` +
-subcard(D_MARNELL["marnell_as__023"].name, D_MARNELL["marnell_as__023"].tag, D_MARNELL["marnell_as__023"].body, D_MARNELL["marnell_as__023"].desc) +
-subcard(D_MARNELL["marnell_as__024"].name, D_MARNELL["marnell_as__024"].tag, D_MARNELL["marnell_as__024"].body, D_MARNELL["marnell_as__024"].desc) +
-subcard(D_MARNELL["marnell_as__025"].name, D_MARNELL["marnell_as__025"].tag, D_MARNELL["marnell_as__025"].body, D_MARNELL["marnell_as__025"].desc)
+subcard(D_MARNELL["marnell_as__023"].name, D_MARNELL["marnell_as__023"].tag, D_MARNELL["marnell_as__023"].body, D_MARNELL["marnell_as__023"].desc, "marnell_as__023", "marnell") +
+subcard(D_MARNELL["marnell_as__024"].name, D_MARNELL["marnell_as__024"].tag, D_MARNELL["marnell_as__024"].body, D_MARNELL["marnell_as__024"].desc, "marnell_as__024", "marnell") +
+subcard(D_MARNELL["marnell_as__025"].name, D_MARNELL["marnell_as__025"].tag, D_MARNELL["marnell_as__025"].body, D_MARNELL["marnell_as__025"].desc, "marnell_as__025", "marnell")
 )}
 ${col("pink","🔹 반품 시 — 결제수단별 환불 안내",
-subcard(D_MARNELL["marnell_as__026"].name, D_MARNELL["marnell_as__026"].tag, D_MARNELL["marnell_as__026"].body, D_MARNELL["marnell_as__026"].desc) + subcard(D_MARNELL["marnell_as__027"].name, D_MARNELL["marnell_as__027"].tag, D_MARNELL["marnell_as__027"].body, D_MARNELL["marnell_as__027"].desc) + subcard(D_MARNELL["marnell_as__028"].name, D_MARNELL["marnell_as__028"].tag, D_MARNELL["marnell_as__028"].body, D_MARNELL["marnell_as__028"].desc)
+subcard(D_MARNELL["marnell_as__026"].name, D_MARNELL["marnell_as__026"].tag, D_MARNELL["marnell_as__026"].body, D_MARNELL["marnell_as__026"].desc, "marnell_as__026", "marnell") + subcard(D_MARNELL["marnell_as__027"].name, D_MARNELL["marnell_as__027"].tag, D_MARNELL["marnell_as__027"].body, D_MARNELL["marnell_as__027"].desc, "marnell_as__027", "marnell") + subcard(D_MARNELL["marnell_as__028"].name, D_MARNELL["marnell_as__028"].tag, D_MARNELL["marnell_as__028"].body, D_MARNELL["marnell_as__028"].desc, "marnell_as__028", "marnell")
 )}
 </div>
 
@@ -237,14 +237,14 @@ const MARNELL_REFUND = `
   ${secTitle("2", "반품 배송비 안내",null,"sec2")}
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard(D_MARNELL["marnell_refund__001"].name, D_MARNELL["marnell_refund__001"].tag, D_MARNELL["marnell_refund__001"].body, D_MARNELL["marnell_refund__001"].desc)
-      + subcard(D_MARNELL["marnell_refund__002"].name, D_MARNELL["marnell_refund__002"].tag, D_MARNELL["marnell_refund__002"].body, D_MARNELL["marnell_refund__002"].desc)
-      + subcard(D_MARNELL["marnell_refund__003"].name, D_MARNELL["marnell_refund__003"].tag, D_MARNELL["marnell_refund__003"].body, D_MARNELL["marnell_refund__003"].desc)
+      subcard(D_MARNELL["marnell_refund__001"].name, D_MARNELL["marnell_refund__001"].tag, D_MARNELL["marnell_refund__001"].body, D_MARNELL["marnell_refund__001"].desc, "marnell_refund__001", "marnell")
+      + subcard(D_MARNELL["marnell_refund__002"].name, D_MARNELL["marnell_refund__002"].tag, D_MARNELL["marnell_refund__002"].body, D_MARNELL["marnell_refund__002"].desc, "marnell_refund__002", "marnell")
+      + subcard(D_MARNELL["marnell_refund__003"].name, D_MARNELL["marnell_refund__003"].tag, D_MARNELL["marnell_refund__003"].body, D_MARNELL["marnell_refund__003"].desc, "marnell_refund__003", "marnell")
     )}
     ${col("pink","🔹 부분 반품",
-      subcard(D_MARNELL["marnell_refund__004"].name, D_MARNELL["marnell_refund__004"].tag, D_MARNELL["marnell_refund__004"].body, D_MARNELL["marnell_refund__004"].desc)
-      + subcard(D_MARNELL["marnell_refund__005"].name, D_MARNELL["marnell_refund__005"].tag, D_MARNELL["marnell_refund__005"].body, D_MARNELL["marnell_refund__005"].desc)
-      + subcard(D_MARNELL["marnell_refund__006"].name, D_MARNELL["marnell_refund__006"].tag, D_MARNELL["marnell_refund__006"].body, D_MARNELL["marnell_refund__006"].desc)
+      subcard(D_MARNELL["marnell_refund__004"].name, D_MARNELL["marnell_refund__004"].tag, D_MARNELL["marnell_refund__004"].body, D_MARNELL["marnell_refund__004"].desc, "marnell_refund__004", "marnell")
+      + subcard(D_MARNELL["marnell_refund__005"].name, D_MARNELL["marnell_refund__005"].tag, D_MARNELL["marnell_refund__005"].body, D_MARNELL["marnell_refund__005"].desc, "marnell_refund__005", "marnell")
+      + subcard(D_MARNELL["marnell_refund__006"].name, D_MARNELL["marnell_refund__006"].tag, D_MARNELL["marnell_refund__006"].body, D_MARNELL["marnell_refund__006"].desc, "marnell_refund__006", "marnell")
       + starNote("고객이 정가 차감에 미동의할 경우",
 `구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
 부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
@@ -255,31 +255,31 @@ const MARNELL_REFUND = `
   ${secTitle("3", "포장 및 회수 안내",null,"sec3")}
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard(D_MARNELL["marnell_refund__007"].name, D_MARNELL["marnell_refund__007"].tag, D_MARNELL["marnell_refund__007"].body, D_MARNELL["marnell_refund__007"].desc)
+      subcard(D_MARNELL["marnell_refund__007"].name, D_MARNELL["marnell_refund__007"].tag, D_MARNELL["marnell_refund__007"].body, D_MARNELL["marnell_refund__007"].desc, "marnell_refund__007", "marnell")
       + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
-      subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc)
+      subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc, "marnell_refund__008", "marnell")
       + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="stack">
     ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc)
+      subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc, "marnell_refund__009", "marnell")
     )}
   </div>
   <div class="grid2">
-    ${subcard(D_MARNELL["marnell_refund__011"].name, D_MARNELL["marnell_refund__011"].tag, D_MARNELL["marnell_refund__011"].body, D_MARNELL["marnell_refund__011"].desc)}
+    ${subcard(D_MARNELL["marnell_refund__011"].name, D_MARNELL["marnell_refund__011"].tag, D_MARNELL["marnell_refund__011"].body, D_MARNELL["marnell_refund__011"].desc, "marnell_refund__011", "marnell")}
   </div>
 
   ${secTitle("4", "결제수단별 환불 안내","전체·부분 공통","sec4")}
   <div class="grid2">
     ${col("blue","🔹 카드결제",
-      subcard(D_MARNELL["marnell_refund__012"].name, D_MARNELL["marnell_refund__012"].tag, D_MARNELL["marnell_refund__012"].body, D_MARNELL["marnell_refund__012"].desc)
+      subcard(D_MARNELL["marnell_refund__012"].name, D_MARNELL["marnell_refund__012"].tag, D_MARNELL["marnell_refund__012"].body, D_MARNELL["marnell_refund__012"].desc, "marnell_refund__012", "marnell")
     )}
     ${col("blue","🔹 계좌 환불",
-      subcard(D_MARNELL["marnell_refund__013"].name, D_MARNELL["marnell_refund__013"].tag, D_MARNELL["marnell_refund__013"].body, D_MARNELL["marnell_refund__013"].desc)
-      + subcard(D_MARNELL["marnell_refund__014"].name, D_MARNELL["marnell_refund__014"].tag, D_MARNELL["marnell_refund__014"].body, D_MARNELL["marnell_refund__014"].desc)
+      subcard(D_MARNELL["marnell_refund__013"].name, D_MARNELL["marnell_refund__013"].tag, D_MARNELL["marnell_refund__013"].body, D_MARNELL["marnell_refund__013"].desc, "marnell_refund__013", "marnell")
+      + subcard(D_MARNELL["marnell_refund__014"].name, D_MARNELL["marnell_refund__014"].tag, D_MARNELL["marnell_refund__014"].body, D_MARNELL["marnell_refund__014"].desc, "marnell_refund__014", "marnell")
     )}
   </div>
 `;
@@ -305,10 +305,10 @@ const MARNELL_EXCHANGE = `
   ${secTitle("1", "교환 방식 안내","전체·부분","sec1")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_MARNELL["marnell_exchange__001"].name, D_MARNELL["marnell_exchange__001"].tag, D_MARNELL["marnell_exchange__001"].body, D_MARNELL["marnell_exchange__001"].desc)
+subcard(D_MARNELL["marnell_exchange__001"].name, D_MARNELL["marnell_exchange__001"].tag, D_MARNELL["marnell_exchange__001"].body, D_MARNELL["marnell_exchange__001"].desc, "marnell_exchange__001", "marnell")
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_MARNELL["marnell_exchange__002"].name, D_MARNELL["marnell_exchange__002"].tag, D_MARNELL["marnell_exchange__002"].body, D_MARNELL["marnell_exchange__002"].desc)
+subcard(D_MARNELL["marnell_exchange__002"].name, D_MARNELL["marnell_exchange__002"].tag, D_MARNELL["marnell_exchange__002"].body, D_MARNELL["marnell_exchange__002"].desc, "marnell_exchange__002", "marnell")
 )}
 </div>
   ${caution(`▶ (전체 교환) 고객이 반품 희망 시 → '단순변심 반품' 페이지로 이동하여 안내
@@ -316,10 +316,10 @@ subcard(D_MARNELL["marnell_exchange__002"].name, D_MARNELL["marnell_exchange__00
   ${secTitle("2", "교환 배송비 안내","전체·부분","sec2")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_MARNELL["marnell_exchange__003"].name, D_MARNELL["marnell_exchange__003"].tag, D_MARNELL["marnell_exchange__003"].body, D_MARNELL["marnell_exchange__003"].desc)
+subcard(D_MARNELL["marnell_exchange__003"].name, D_MARNELL["marnell_exchange__003"].tag, D_MARNELL["marnell_exchange__003"].body, D_MARNELL["marnell_exchange__003"].desc, "marnell_exchange__003", "marnell")
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_MARNELL["marnell_exchange__004"].name, D_MARNELL["marnell_exchange__004"].tag, D_MARNELL["marnell_exchange__004"].body, D_MARNELL["marnell_exchange__004"].desc) + subcard(D_MARNELL["marnell_exchange__005"].name, D_MARNELL["marnell_exchange__005"].tag, D_MARNELL["marnell_exchange__005"].body, D_MARNELL["marnell_exchange__005"].desc)
+subcard(D_MARNELL["marnell_exchange__004"].name, D_MARNELL["marnell_exchange__004"].tag, D_MARNELL["marnell_exchange__004"].body, D_MARNELL["marnell_exchange__004"].desc, "marnell_exchange__004", "marnell") + subcard(D_MARNELL["marnell_exchange__005"].name, D_MARNELL["marnell_exchange__005"].tag, D_MARNELL["marnell_exchange__005"].body, D_MARNELL["marnell_exchange__005"].desc, "marnell_exchange__005", "marnell")
 )}
 </div>
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
@@ -327,15 +327,15 @@ subcard(D_MARNELL["marnell_exchange__004"].name, D_MARNELL["marnell_exchange__00
   ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc) + caution(`🎁 증정품 회수 O`)
+subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc, "marnell_exchange__006", "marnell") + caution(`🎁 증정품 회수 O`)
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc) + caution(`🎁 증정품 회수 X`)
+subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc, "marnell_exchange__007", "marnell") + caution(`🎁 증정품 회수 X`)
 )}
 </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
   ${secTitle("4", "검수 및 재출고 안내","전체·부분 공통","sec4")}
-  ${macro(D_MARNELL["marnell_exchange__009"].name, D_MARNELL["marnell_exchange__009"].tag, D_MARNELL["marnell_exchange__009"].body, D_MARNELL["marnell_exchange__009"].desc)}
+  ${macro(D_MARNELL["marnell_exchange__009"].name, D_MARNELL["marnell_exchange__009"].tag, D_MARNELL["marnell_exchange__009"].body, D_MARNELL["marnell_exchange__009"].desc, "marnell_exchange__009", "marnell")}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
 `;
 
@@ -363,8 +363,8 @@ const MARNELL_MERGE_TEMPLATE = `
 
   ${secTitle("1", "교환/반품 의사 확인","전체·부분 공통","sec1")}
   ${col("blue","🔄 교환 희망 시",
-    subcard(D_MARNELL["marnell_exchange__001"].name, D_MARNELL["marnell_exchange__001"].tag, D_MARNELL["marnell_exchange__001"].body, D_MARNELL["marnell_exchange__001"].desc)
-    + subcard(D_MARNELL["marnell_exchange__002"].name, D_MARNELL["marnell_exchange__002"].tag, D_MARNELL["marnell_exchange__002"].body, D_MARNELL["marnell_exchange__002"].desc)
+    subcard(D_MARNELL["marnell_exchange__001"].name, D_MARNELL["marnell_exchange__001"].tag, D_MARNELL["marnell_exchange__001"].body, D_MARNELL["marnell_exchange__001"].desc, "marnell_exchange__001", "marnell")
+    + subcard(D_MARNELL["marnell_exchange__002"].name, D_MARNELL["marnell_exchange__002"].tag, D_MARNELL["marnell_exchange__002"].body, D_MARNELL["marnell_exchange__002"].desc, "marnell_exchange__002", "marnell")
     + caution(`▶ (전체 교환) 고객이 반품 희망 시 → 아래 '💰 반품 희망 시'로 이동해 진행
 ▶ 교환 진행 희망 시 → 아래 2. 전체/부분 방식 안내(교환)부터 진행`)
   )}
@@ -418,14 +418,14 @@ const MARNELL_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 반품 배송비</div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard(D_MARNELL["marnell_refund__001"].name, D_MARNELL["marnell_refund__001"].tag, D_MARNELL["marnell_refund__001"].body, D_MARNELL["marnell_refund__001"].desc)
-      + subcard(D_MARNELL["marnell_refund__002"].name, D_MARNELL["marnell_refund__002"].tag, D_MARNELL["marnell_refund__002"].body, D_MARNELL["marnell_refund__002"].desc)
-      + subcard(D_MARNELL["marnell_refund__003"].name, D_MARNELL["marnell_refund__003"].tag, D_MARNELL["marnell_refund__003"].body, D_MARNELL["marnell_refund__003"].desc)
+      subcard(D_MARNELL["marnell_refund__001"].name, D_MARNELL["marnell_refund__001"].tag, D_MARNELL["marnell_refund__001"].body, D_MARNELL["marnell_refund__001"].desc, "marnell_refund__001", "marnell")
+      + subcard(D_MARNELL["marnell_refund__002"].name, D_MARNELL["marnell_refund__002"].tag, D_MARNELL["marnell_refund__002"].body, D_MARNELL["marnell_refund__002"].desc, "marnell_refund__002", "marnell")
+      + subcard(D_MARNELL["marnell_refund__003"].name, D_MARNELL["marnell_refund__003"].tag, D_MARNELL["marnell_refund__003"].body, D_MARNELL["marnell_refund__003"].desc, "marnell_refund__003", "marnell")
     )}
     ${col("pink","🔹 부분 반품",
-      subcard(D_MARNELL["marnell_refund__004"].name, D_MARNELL["marnell_refund__004"].tag, D_MARNELL["marnell_refund__004"].body, D_MARNELL["marnell_refund__004"].desc)
-      + subcard(D_MARNELL["marnell_refund__005"].name, D_MARNELL["marnell_refund__005"].tag, D_MARNELL["marnell_refund__005"].body, D_MARNELL["marnell_refund__005"].desc)
-      + subcard(D_MARNELL["marnell_refund__006"].name, D_MARNELL["marnell_refund__006"].tag, D_MARNELL["marnell_refund__006"].body, D_MARNELL["marnell_refund__006"].desc)
+      subcard(D_MARNELL["marnell_refund__004"].name, D_MARNELL["marnell_refund__004"].tag, D_MARNELL["marnell_refund__004"].body, D_MARNELL["marnell_refund__004"].desc, "marnell_refund__004", "marnell")
+      + subcard(D_MARNELL["marnell_refund__005"].name, D_MARNELL["marnell_refund__005"].tag, D_MARNELL["marnell_refund__005"].body, D_MARNELL["marnell_refund__005"].desc, "marnell_refund__005", "marnell")
+      + subcard(D_MARNELL["marnell_refund__006"].name, D_MARNELL["marnell_refund__006"].tag, D_MARNELL["marnell_refund__006"].body, D_MARNELL["marnell_refund__006"].desc, "marnell_refund__006", "marnell")
       + starNote("고객이 정가 차감에 미동의할 경우",
 `구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
 부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
@@ -435,11 +435,11 @@ const MARNELL_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 교환 배송비</div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard(D_MARNELL["marnell_exchange__003"].name, D_MARNELL["marnell_exchange__003"].tag, D_MARNELL["marnell_exchange__003"].body, D_MARNELL["marnell_exchange__003"].desc)
+      subcard(D_MARNELL["marnell_exchange__003"].name, D_MARNELL["marnell_exchange__003"].tag, D_MARNELL["marnell_exchange__003"].body, D_MARNELL["marnell_exchange__003"].desc, "marnell_exchange__003", "marnell")
     )}
     ${col("pink","🔹 부분 교환",
-      subcard(D_MARNELL["marnell_exchange__004"].name, D_MARNELL["marnell_exchange__004"].tag, D_MARNELL["marnell_exchange__004"].body, D_MARNELL["marnell_exchange__004"].desc)
-      + subcard(D_MARNELL["marnell_exchange__005"].name, D_MARNELL["marnell_exchange__005"].tag, D_MARNELL["marnell_exchange__005"].body, D_MARNELL["marnell_exchange__005"].desc)
+      subcard(D_MARNELL["marnell_exchange__004"].name, D_MARNELL["marnell_exchange__004"].tag, D_MARNELL["marnell_exchange__004"].body, D_MARNELL["marnell_exchange__004"].desc, "marnell_exchange__004", "marnell")
+      + subcard(D_MARNELL["marnell_exchange__005"].name, D_MARNELL["marnell_exchange__005"].tag, D_MARNELL["marnell_exchange__005"].body, D_MARNELL["marnell_exchange__005"].desc, "marnell_exchange__005", "marnell")
     )}
   </div>
   ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
@@ -449,45 +449,45 @@ const MARNELL_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 반품</div>
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
-      subcard(D_MARNELL["marnell_refund__007"].name, D_MARNELL["marnell_refund__007"].tag, D_MARNELL["marnell_refund__007"].body, D_MARNELL["marnell_refund__007"].desc)
+      subcard(D_MARNELL["marnell_refund__007"].name, D_MARNELL["marnell_refund__007"].tag, D_MARNELL["marnell_refund__007"].body, D_MARNELL["marnell_refund__007"].desc, "marnell_refund__007", "marnell")
       + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
-      subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc)
+      subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc, "marnell_refund__008", "marnell")
       + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="stack">
     ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc)
+      subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc, "marnell_refund__009", "marnell")
     )}
   </div>
   <div class="grid2">
-    ${subcard(D_MARNELL["marnell_refund__011"].name, D_MARNELL["marnell_refund__011"].tag, D_MARNELL["marnell_refund__011"].body, D_MARNELL["marnell_refund__011"].desc)}
+    ${subcard(D_MARNELL["marnell_refund__011"].name, D_MARNELL["marnell_refund__011"].tag, D_MARNELL["marnell_refund__011"].body, D_MARNELL["marnell_refund__011"].desc, "marnell_refund__011", "marnell")}
   </div>
   <div class="grp-h">🔹 교환</div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc) + caution(`🎁 증정품 회수 O`)
+      subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc, "marnell_exchange__006", "marnell") + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 교환",
-      subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc) + caution(`🎁 증정품 회수 X`)
+      subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc, "marnell_exchange__007", "marnell") + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
   ${secTitle("5", "교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","검수 및 재출고 안내","exchangeFlow")}
-  ${macro(D_MARNELL["marnell_exchange__009"].name, D_MARNELL["marnell_exchange__009"].tag, D_MARNELL["marnell_exchange__009"].body, D_MARNELL["marnell_exchange__009"].desc)}
+  ${macro(D_MARNELL["marnell_exchange__009"].name, D_MARNELL["marnell_exchange__009"].tag, D_MARNELL["marnell_exchange__009"].body, D_MARNELL["marnell_exchange__009"].desc, "marnell_exchange__009", "marnell")}
   ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
   ${secTitle("💰","반품 시","결제수단별 환불 안내","refundFlow")}
   <div class="grid2">
     ${col("blue","🔹 카드결제",
-      subcard(D_MARNELL["marnell_refund__012"].name, D_MARNELL["marnell_refund__012"].tag, D_MARNELL["marnell_refund__012"].body, D_MARNELL["marnell_refund__012"].desc)
+      subcard(D_MARNELL["marnell_refund__012"].name, D_MARNELL["marnell_refund__012"].tag, D_MARNELL["marnell_refund__012"].body, D_MARNELL["marnell_refund__012"].desc, "marnell_refund__012", "marnell")
     )}
     ${col("blue","🔹 계좌 환불",
-      subcard(D_MARNELL["marnell_refund__013"].name, D_MARNELL["marnell_refund__013"].tag, D_MARNELL["marnell_refund__013"].body, D_MARNELL["marnell_refund__013"].desc)
-      + subcard(D_MARNELL["marnell_refund__014"].name, D_MARNELL["marnell_refund__014"].tag, D_MARNELL["marnell_refund__014"].body, D_MARNELL["marnell_refund__014"].desc)
+      subcard(D_MARNELL["marnell_refund__013"].name, D_MARNELL["marnell_refund__013"].tag, D_MARNELL["marnell_refund__013"].body, D_MARNELL["marnell_refund__013"].desc, "marnell_refund__013", "marnell")
+      + subcard(D_MARNELL["marnell_refund__014"].name, D_MARNELL["marnell_refund__014"].tag, D_MARNELL["marnell_refund__014"].body, D_MARNELL["marnell_refund__014"].desc, "marnell_refund__014", "marnell")
     )}
   </div>
 `;
