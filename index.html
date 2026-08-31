@@ -510,6 +510,40 @@
 .chat-brand-grid{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 4px;}
 .brand-chip{font:inherit;font-size:13px;font-weight:600;color:var(--trust-blue,#234A86);background:var(--primary-bg,#F4F8FD);border:1px solid #cddcf1;border-radius:999px;padding:7px 15px;cursor:pointer;transition:background .15s,color .15s,border-color .15s;}
 .brand-chip:hover{background:var(--trust-blue,#234A86);color:#fff;border-color:var(--trust-blue,#234A86);}
+
+/* ── 웹 편집기 (2026-08-28 도입) ── */
+.editor-bar{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.editor-user{font-size:12px;color:var(--ink-soft);display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.editor-user b{color:var(--trust-blue);}
+.editor-user .editor-logout{color:#e5484d;cursor:pointer;text-decoration:underline;font-size:11px;background:none;border:none;font-family:inherit;padding:0;}
+#editModeBtn.on{background:var(--trust-blue);color:#fff;border-color:var(--trust-blue);}
+body.olit-edit-mode .page [data-content-key]{position:relative;outline:2px dashed transparent;border-radius:var(--radius-md);cursor:pointer;transition:.12s;}
+body.olit-edit-mode .page [data-content-key]:hover{outline-color:var(--skyblue);background:var(--skyblue-soft);}
+body.olit-edit-mode .page [data-content-key]:hover:after{
+  content:"✏️ 편집";position:absolute;bottom:8px;right:8px;z-index:5;pointer-events:none;
+  font-size:11px;font-weight:700;color:var(--trust-blue);
+  background:#fff;border:1px solid var(--skyblue);border-radius:var(--radius-pill);padding:2px 9px;
+  box-shadow:var(--shadow-1);
+}
+.editor-modal-overlay{position:fixed;inset:0;background:rgba(13,37,61,.45);z-index:200;display:flex;align-items:center;justify-content:center;}
+.editor-modal{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-2);width:560px;max-width:92vw;max-height:86vh;overflow:auto;padding:22px 24px;}
+.editor-modal h3{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:4px;}
+.editor-modal .editor-meta{font-size:11.5px;color:var(--ink-soft);margin-bottom:14px;}
+.editor-modal label{display:block;font-size:12px;font-weight:700;color:var(--ink-soft);margin:14px 0 6px;}
+.editor-modal input[type=text],.editor-modal input[type=password],.editor-modal textarea{
+  width:100%;border:1px solid var(--line);border-radius:var(--radius-md);padding:9px 12px;font-size:13px;
+  font-family:var(--font-ui);color:var(--ink);outline:none;
+}
+.editor-modal input[type=text]:focus,.editor-modal input[type=password]:focus,.editor-modal textarea:focus{border-color:var(--skyblue);box-shadow:0 0 0 3px var(--skyblue-soft);}
+.editor-modal textarea{min-height:180px;resize:vertical;line-height:1.55;white-space:pre-wrap;font-family:'Consolas','Menlo',monospace;}
+.editor-modal .editor-help{font-size:11.5px;color:var(--ink-soft);line-height:1.6;background:var(--skyblue-soft);border-radius:var(--radius-md);padding:10px 12px;margin-top:10px;}
+.editor-modal .editor-help a{color:var(--trust-blue);font-weight:700;}
+.editor-modal .editor-err{font-size:12px;color:#e5484d;background:#fdeaea;border-radius:var(--radius-md);padding:9px 12px;margin-top:10px;display:none;}
+.editor-modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px;}
+.editor-btn{font-size:13px;font-weight:700;border-radius:var(--radius-md);padding:8px 16px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);}
+.editor-btn.primary{background:var(--trust-blue);border-color:var(--trust-blue);color:#fff;}
+.editor-btn.primary:disabled{opacity:.5;cursor:not-allowed;}
+.editor-btn:hover:not(:disabled){border-color:var(--skyblue);}
 </style>
 </head>
 <body>
@@ -529,6 +563,10 @@
         <span class="ub-email" id="ubEmail"></span>
         <a class="ub-btn" href="/cdn-cgi/access/logout">로그아웃</a>
         <button class="ub-btn" type="button" onclick="location.reload()">↻ 새로고침</button>
+      </div>
+      <div class="editor-bar">
+        <span class="editor-user" id="editorUserBadge" style="display:none"></span>
+        <button class="ub-btn" id="editModeBtn" type="button" title="편집 모드 켜기/끄기">✏️ 편집 모드</button>
       </div>
     </div>
   </header>
@@ -592,5 +630,6 @@
 <script src="js/data/dramang.js"></script>
 <script src="js/brands/dramang.js"></script>
 <script src="js/content-build.js"></script>
+<script src="js/core/editor.js"></script>
 </body>
 </html>
