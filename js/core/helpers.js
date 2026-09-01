@@ -9,18 +9,35 @@ const INQUIRY_TYPES = ["단순변심 교환","단순변심 반품","100%환불�
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
 /* 콘텐츠 렌더 함수들 -------------------------------------- */
-function macro(name, tag, body, desc, contentKey, contentBrand){
+function macro(name, tag, body, desc, contentKey, contentBrand, noCopy, noHead){
   const _dk = contentKey?` data-content-key="${contentKey}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
   return `<div class="macro"${_dk}>
-    <div class="macro-head">
+    ${noHead?"":`<div class="macro-head">
       ${/^[\u2190-\u2bff\u{1f000}-\u{1faff}]/u.test(name)||/^.{0,2}[\ufe0f\u20e3]/.test(name)||/^(i{1,3}|iv|v)\.\s/.test(name)?"":'<span class="gdot"></span>'}
       <span class="mname">${name}</span>
       <span class="spacer"></span>
       ${tag?`<span class="tag">#${tag}</span>`:""}
-      <button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button>
-    </div>
+      ${noCopy?"":'<button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button>'}
+    </div>`}
     ${desc?`<div class="sc-desc">${desc}</div>`:""}
     <div class="macro-body">${body}</div>
+  </div>`;
+}
+
+/* 알리고 템플릿 토글(아코디언) — 클릭 시 펼쳐지는 매크로 카드. code는 "#" 없이 표시. label은 접두어 없이 그대로 노출.
+   행(row)에 복사 버튼을 두어 펼치지 않아도 바로 복사 가능. 템플릿코드는 드래그 선택도 가능(알리고 검색용).
+   패널 내부 macro 카드는 복사버튼을 별도로 만들지 않음(noCopy) — 즐겨찾기 id가 행의 코드 기준 하나로 유지되게 함 */
+function cbTpl(label, code, body, desc){
+  return `<div class="cb-tpl">
+    <div class="cb-tpl-row" onclick="cbToggleTpl(this)">
+      <span class="cb-tpl-ico">🔻</span>
+      <span class="cb-tpl-label">${label}</span>
+      ${code?`<span class="tag cb-tpl-code" onclick="event.stopPropagation()" title="드래그하여 템플릿코드 복사 (알리고 검색용)">${code}</span>`:""}
+      <span class="spacer"></span>
+      <button class="copy-btn" onclick="event.stopPropagation();copyMacro(this)" title="복사">📋</button>
+      <span class="cb-tpl-caret">펼치기 ▾</span>
+    </div>
+    <div class="cb-tpl-panel">${macro(label, null, body, desc, null, null, true, true)}</div>
   </div>`;
 }
 

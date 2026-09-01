@@ -361,6 +361,35 @@
     padding:20px;font-size:12.5px;line-height:1.8;color:var(--ink);white-space:pre-wrap;
   }
 
+  /* 콜백 티켓 알리고 템플릿 토글(아코디언) */
+  .cb-tpl{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+    margin:0 0 var(--space-content);overflow:hidden;
+    transition:box-shadow .16s ease, border-color .16s ease;
+  }
+  .cb-tpl:hover{box-shadow:0 8px 22px rgba(0,55,112,.07);border-color:#dbe3ef;}
+  .cb-tpl-row{
+    display:flex;align-items:center;gap:8px;padding:12px 16px;background:#F2F5F9;
+    cursor:pointer;user-select:none;
+  }
+  .cb-tpl-row .cb-tpl-ico{font-size:13px;flex-shrink:0;transition:transform .16s ease;}
+  .cb-tpl.open .cb-tpl-row .cb-tpl-ico{transform:rotate(-90deg);}
+  .cb-tpl-row .cb-tpl-label{font-weight:700;font-size:13px;color:var(--ink);}
+  .cb-tpl-row .tag.cb-tpl-code{
+    display:inline-block;font-size:11px;color:var(--trust-blue);background:var(--skyblue-soft);
+    padding:2px 8px;border-radius:var(--radius-pill);font-weight:700;letter-spacing:.2px;
+    user-select:text;-webkit-user-select:text;cursor:text;
+  }
+  .cb-tpl-row .copy-btn{flex-shrink:0;}
+  /* 알리고 템플릿 복사는 no-copy(유선 페이지 전체 복사버튼 비활성) 예외 — 실제 발송 문구를 복사해야 하므로 항상 노출 */
+  .no-copy .cb-tpl-row .copy-btn{display:flex !important;}
+  .cb-tpl-row .spacer{flex:1;}
+  .cb-tpl-row .cb-tpl-caret{font-size:12px;color:var(--trust-blue);font-weight:700;flex-shrink:0;}
+  .cb-tpl-panel{display:none;border-top:1px solid var(--line);}
+  .cb-tpl-panel.open{display:block;}
+  .cb-tpl-panel .macro{margin:0;border:none;border-radius:0;box-shadow:none;}
+  .cb-tpl-panel .macro:hover{box-shadow:none;border-color:transparent;}
+
   .hint{
     background:var(--skyblue-soft);border:1px solid #d6d3fb;border-radius:var(--radius-lg);
     padding:12px 16px;font-size:12px;color:var(--trust-blue);line-height:1.6;margin:16px 0;
