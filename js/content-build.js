@@ -15,7 +15,8 @@ const CONTENT = {
   "slm_exchange":SLOOM_EXCHANGE,
   "slm_simplemerge":SLM_MERGE_TEMPLATE,
   "slm_side":REF_SIDE, "simplicare_side":SIMPLICARE_SIDE, "alignlab_side":ALIGNLAB_SIDE, "bilba_side":BILBA_SIDE, "cellology_side":CELLOLOGY_SIDE, "cocodaum_side":COCODAUM_SIDE, "oclock_side":OCLOCK_SIDE, "drmans_side":DRMANS_SIDE, "yvening_side":YVENING_SIDE, "marnell_side":MARNELL_SIDE, "dramang_side":DRAMANG_SIDE,
-  "cmn_all":COMMON_ALL, "ib":COMMON_IB, "ob":COMMON_OB, "call":COMMON_CALL_ALL, "board":BOARD_ALL
+  "cmn_all":COMMON_ALL, "ib":COMMON_IB, "ob":COMMON_OB, "board":BOARD_ALL,
+  "call_ops":CALL_OPS, "call_basic":CALL_BASIC, "call_order":CALL_ORDER, "call_pay":CALL_PAY, "call_member":CALL_MEMBER, "call_ob":CALL_OB, "call_sloomcb":CALL_SLOOMCB
 };
 
 CONTENT["simplicare_refund"]=SIMPLICARE_REFUND; CONTENT["simplicare_exchange"]=SIMPLICARE_EXCHANGE;
@@ -66,23 +67,35 @@ const COMMON_TREE = {
 };
 
 const CALL_TREE = {
-  "유선 표준 응대":{__content:"call", __sections:[
-    {group:true, label:"📋 유선 상담 운영 기준", anchor:"c_ops"},
-    {group:true, label:"💡 공통 기본", anchor:"c_basic"},
-    {label:"1. 인사말", anchor:"c_basic_1"},
-    {label:"2. 사전/사후 대기", anchor:"c_basic_2"},
-    {label:"3. 호응 표현", anchor:"c_basic_3"},
-    {label:"4. 추가 문의", anchor:"c_basic_4"},
-    {label:"🚨 상담 종료 경고", anchor:"c_warn"},
-    {group:true, label:"📞 콜백·아웃바운드(O/B)", anchor:"c_ob"},
-    {group:true, label:"🔄 주문 변경", anchor:"c_order"},
-    {label:"1. 취소 후 배송", anchor:"c_order_1"},
-    {label:"2. 배송 정보 변경", anchor:"c_order_2"},
-    {group:true, label:"💳 결제 문의", anchor:"c_pay"},
-    {group:true, label:"👤 회원 정보", anchor:"c_member"},
-    {group:true, label:"📣 마케팅·제휴", anchor:"c_mkt"},
-    {group:true, label:"📞 전화 주문", anchor:"c_call"}
-  ]}
+  "유선 표준 응대":{
+    "유선 상담 운영 기준":{__content:"call_ops"},
+    "공통 기본":{__content:"call_basic", __sections:[
+      {label:"1. 인사말", anchor:"c_basic_1"},
+      {label:"2. 사전/사후 대기", anchor:"c_basic_2"},
+      {label:"3. 호응 표현", anchor:"c_basic_3"},
+      {label:"4. 추가 문의", anchor:"c_basic_4"},
+      {label:"🚨 상담 종료 경고", anchor:"c_warn"}
+    ]},
+    "주문 변경":{__content:"call_order", __sections:[
+      {label:"1. 취소 후 배송", anchor:"c_order_1"},
+      {label:"2. 배송 정보 변경", anchor:"c_order_2"}
+    ]},
+    "결제 문의":{__content:"call_pay"},
+    "회원 정보 · 마케팅/제휴":{__content:"call_member", __sections:[
+      {label:"1. 회원 탈퇴", anchor:"c_member_1"},
+      {label:"2. 비밀번호 찾기", anchor:"c_member_2"},
+      {label:"3. 회원가입", anchor:"c_member_3"},
+      {label:"📣 마케팅·제휴 문의", anchor:"c_mkt"}
+    ]},
+    "[OB] 아웃바운드 / 전화 주문":{__content:"call_ob", __sections:[
+      {label:"📞 콜백·아웃바운드 스크립트", anchor:"c_ob"},
+      {label:"📞 전화 주문 유의사항", anchor:"c_call"}
+    ]},
+    "🎫 [슬룸] 콜백 티켓 처리 프로세스":{__content:"call_sloomcb", __sections:[
+      {label:"공통 처리 원칙", anchor:"c_sloomcb_0"},
+      {label:"1. 교환·반품 철회 요청", anchor:"c_sloomcb_1"}
+    ]}
+  }
 };
 
 const BOARD_TREE = {
@@ -1051,7 +1064,7 @@ function renderTree(){
       +buildTree(BRAND_TREE,"");
   }else if(cfg.type==="tree"){
     tree.innerHTML=buildTree(curRail==="board"?BOARD_TREE:CALL_TREE,"");
-    tree.querySelectorAll(".node").forEach(n=>n.classList.add("open"));
+    tree.querySelectorAll(":scope > .node").forEach(n=>n.classList.add("open"));
   }else{
     tree.innerHTML=cfg.items.map((it,i)=>
       `<div class="leaf ${i===0?'active':''}" data-key="${it.key}" onclick="pickList(this,'${it.key}','${it.label}')"><span class="dot"></span>${it.label}</div>`).join("");
@@ -1248,7 +1261,7 @@ function decorateMentBookmarks(){
   root.querySelectorAll(".copy-btn").forEach(btn=>{
     const nx=btn.nextElementSibling;
     if(nx && nx.classList && nx.classList.contains("bm-star")) return;
-    const card=btn.closest(".macro,.subcard,.col-card,.cmp-ment");
+    const card=btn.closest(".macro,.subcard,.col-card,.cmp-ment,.cb-tpl");
     if(!card) return;
     const info=mentInfo(card); if(!info) return;
     const star=document.createElement("button");
@@ -1396,13 +1409,24 @@ function calcRefund(el){
 
 /* 복사 버튼 */
 function copyMacro(btn){
-  const box=btn.closest(".macro,.subcard,.col-card,.star-note,.blue-note,.cmp-ment");
+  const box=btn.closest(".macro,.subcard,.col-card,.star-note,.blue-note,.cmp-ment,.cb-tpl");
   const text=box.querySelector(".macro-body,.subcard-body,.col-body-plain,.star-body,.bn-body,.cmp-ment-body").innerText;
   navigator.clipboard.writeText(text).then(()=>{
     const orig=btn.innerHTML;
     btn.innerHTML="✓";btn.classList.add("done");
     setTimeout(()=>{btn.innerHTML=orig;btn.classList.remove("done");},1400);
   });
+}
+
+/* 콜백 티켓 알리고 템플릿 토글 */
+function cbToggleTpl(row){
+  const wrap=row.closest(".cb-tpl");
+  const panel=wrap.querySelector(".cb-tpl-panel");
+  const caret=row.querySelector(".cb-tpl-caret");
+  const willOpen=!panel.classList.contains("open");
+  panel.classList.toggle("open",willOpen);
+  wrap.classList.toggle("open",willOpen);
+  if(caret) caret.textContent=willOpen?"접기 ▲":"펼치기 ▾";
 }
 
 /* 레일 전환 */
