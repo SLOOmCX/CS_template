@@ -318,10 +318,10 @@ const CALL_SLOOMCB = `<div class="no-copy">
   </tbody></table></div>
   <div class="grp-h">📌 유형별 처리 프로세스</div>
   <div class="cmp-table-wrap"><table class="cmp-table"><tbody>
-  <tr><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_1" onclick="return jumpTo('c_sloomcb_1')">1. 교환·반품 철회 요청</a></td><td style="padding:12px 16px;font-weight:700">5. 재회수 접수</td></tr>
-  <tr><td style="padding:12px 16px;font-weight:700">2. 교환제품 배송일정</td><td style="padding:12px 16px;font-weight:700">6. 전화주문</td></tr>
-  <tr><td style="padding:12px 16px;font-weight:700">3. 반품·환불일정</td><td style="padding:12px 16px;font-weight:700">7. 주문취소 요청</td></tr>
-  <tr><td style="padding:12px 16px;font-weight:700">4. 오배송·미배송</td><td style="padding:12px 16px;font-weight:700">8. 취소 후 배송·회수</td></tr>
+  <tr><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_1" onclick="return jumpTo('c_sloomcb_1')">1. 교환·반품 철회 요청</a></td><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_5" onclick="return jumpTo('c_sloomcb_5')">5. 재회수 접수</a></td></tr>
+  <tr><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_2" onclick="return jumpTo('c_sloomcb_2')">2. 교환제품 배송일정</a></td><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_6" onclick="return jumpTo('c_sloomcb_6')">6. 전화주문</a></td></tr>
+  <tr><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_3" onclick="return jumpTo('c_sloomcb_3')">3. 반품·환불일정</a></td><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_7" onclick="return jumpTo('c_sloomcb_7')">7. 주문취소 요청</a></td></tr>
+  <tr><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_4" onclick="return jumpTo('c_sloomcb_4')">4. 오배송·미배송</a></td><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_8" onclick="return jumpTo('c_sloomcb_8')">8. 취소 후 배송·회수</a></td></tr>
   </tbody></table></div>
 
   <div class="h1lvl" id="c_sloomcb_1"><span class="num">1</span>교환·반품 철회 요청</div>
@@ -375,6 +375,390 @@ const CALL_SLOOMCB = `<div class="no-copy">
 요청하신 교환/반품 철회 요청 건은, 기존 교환/반품 접수 건의 제품 회수가 이미 진행 중인 상태로 철회가 어려운 점 안내드립니다.`, null, true)}
     <div class="ph" style="margin-top:10px">👉 회수 진행 중으로 철회 불가 안내 후, 기존 교환/반품 접수 유형에 따른 후속 처리 절차 안내<br>※ 기존 <b>교환_재출고</b> / <b>반품_환불</b> 안내 멘트 기반으로 발송 문구 작성</div>
   </td></tr>
+  </tbody></table></div>
+
+  <div class="h1lvl" id="c_sloomcb_2"><span class="num">2</span>교환제품 배송일정</div>
+  <div class="quote-box"><b>☑️ 교환 접수 건의 출고(배송) 일정 문의</b></div>
+  <div class="grid2">
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">고객이 남긴 연락처로 주문 정보를 조회하여 진행 중인 교환 접수 건 유무를 확인합니다.</div></div>
+  <div class="branch-box">
+    <div class="branch-h">💡 접수 건 유무에 따라 분기</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">교환 접수 건 <b>있음</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 교환 현황 확인</span></td></tr>
+    <tr><td class="cond">교환 접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
+    </tbody></table>
+  </div>
+  </div>
+
+  <div class="grp-h">CASE 1 · 교환 접수 건 있음 → 교환 현황 확인</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 수기 출고 시트에서 출고 송장 조회
+② 고객 연락처로 "새 상담 열기" 안내 메시지 발송
+（기존 양식 없을 시 기본 양식(뼈대) 활용해 유저챗 발송）
+③ 태그 : 콜백OB + 교환 현황 확인</td><td style="padding:20px 12px;text-align:center;color:var(--muted,#9aa0a8);font-size:13px;line-height:1.6">— 없음 —<br>매칭되는 알리고 템플릿 없음<br>（유저챗 뼈대 양식으로 안내）</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 2 · 교환 접수 건 없음 → 확인 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환 접수 이력 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_확인불가`, `UE_4486`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+접수된 주문자 정보로 교환·반품 접수 이력이 확인되지 않습니다.
+
+교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="h1lvl" id="c_sloomcb_3"><span class="num">3</span>반품·환불일정</div>
+  <div class="quote-box"><b>☑️ 반품 접수 건의 환불(처리) 일정 문의</b></div>
+  <div class="grid2">
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">고객이 남긴 연락처로 후처리 시트의 반품 접수 내역을 조회하여 진행 상태를 확인합니다.<br>⚠️ 검품 완료 상태이나 환불이 지연된 경우 반품 처리 후 안내가 필요합니다.</div></div>
+  <div class="branch-box">
+    <div class="branch-h">💡 접수 건 유무에 따라 분기</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">반품 접수 건 <b>있음</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 상태별 안내</span></td></tr>
+    <tr><td class="cond">반품 접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
+    </tbody></table>
+  </div>
+  </div>
+
+  <div class="grp-h">CASE 1 · 반품 접수 건 있음 → 상태에 맞춰 알림톡 발송</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">상태</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">접수 후 거절</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_교환반품_사유확인필요`, `UI_4803`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 교환·반품은 아래 사유로 진행이 어렵습니다.
+
+■ 불가 사유 : 신청 사유 재확인 필요
+■ 단순 변심 교환·반품 승인 조건 :
+- 제품 수령일로부터 7일 이내
+- 미개봉 또는 개봉 후 미작동
+
+※ 상품의 단순 구성 확인을 위해 포장만 훼손한 경우만 신청이 가능합니다.
+※ 개봉 후 작동 제품은 교환·반품이 불가합니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`, `⚠️ 확실하지 않음 : {승인조건}·{개봉후표현}은 변수매핑표의 슬룸 참고값(미작동/작동)을 반영. {이벤트문구}(슬룸 30일 무료체험 반품 이벤트 관련 문구)는 실제 등록 문안 확인 필요하여 본문에서 제외함`)}</td></tr>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">AS 접수 필요</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_AS접수안내`, `UE_4473`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 교환·반품은 아래 사유로 즉시 진행이 어렵습니다.
+
+■ 불가 사유 : A/S 접수 필요
+■ A/S 접수 링크 클릭 → 불량 증상 선택 → 제품 선택 → 상세 증상 선택 → 구매하신 쇼핑몰 선택 → 원하시는 처리 방안 선택 후 간편 접수
+
+■ 아래의 A/S 접수 전 유의 사항도 꼭 확인 부탁드립니다.
+1. A/S는 구매 후 6개월 이내는 무상, 6개월부터 최대 1년까지는 유상으로 진행되며, 1년 이후에는 보증 기간 만료로 인해 접수할 수 없습니다.
+2. 제품 회수 전에는 직접 확인이 어려운 온라인 판매 특성 상, 사용 미숙으로 인한 작동의 어려움이 있을 수 있습니다.
+2-1. 특히, 정상품의 경우 다시 반송되기에 불필요하게 제품을 사용하지 못하는 번거로움이 발생할 수 있기에 정확한 안내를 위해 불량 증상 영상이나 사진을 꼭 함께 전달 부탁드립니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.`)}</td></tr>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">배송비 입금 필요</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_반품배송비 안내`, `UE_4475`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 교환·반품은 네이버페이 결제로, 반품 배송비 입금 후 접수 가능하여 안내드립니다.
+
+■ 반품 배송비 및 계좌 정보
+- 배송비 : 6,000원
+- 계좌 : 기업은행 075-095980-04-017
+- 예금주 : 주식회사 올릿리테일
+* 입금은 영업일 기준 1일 내 확인되며, 확인 후 반품 접수 및 수거가 순차적으로 진행됩니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">반품 완료</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_반품완료`, `UE_4476`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 제품의 '반품 처리가 완료'되어 안내드립니다.
+
+■ 환불 관련 안내
+- 신용/체크카드: 승인 취소 또는 계좌 환급까지 영업일 기준 3~5일 소요됩니다.
+※ 네이버페이 결제일 경우, 네이버페이 환불 금액을 확인해주세요.
+- 무통장/가상 계좌 결제: 영업일 기준 1~2일 이내 환불 처리됩니다.
+- 유효기간이 남아있는 쿠폰 및 적립금은 자동으로 환급됩니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">검수 시간양해 필요</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_환불일정_시간양해`, `UE_4488`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+접수된 주문자 정보로 확인 시, 회수 상품이 도착 전 또는 검수가 완료되지 않은 것으로 확인됩니다.
+
+상품이 도착하더라도 검수 이후 환불되며, 검수 완료 후 최종 확인까지는 영업일 기준 2~3일 정도 소요될 수 있는 점 양해 부탁드립니다.
+
+최대한 신속하게 처리해드릴 수 있도록 노력하겠습니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 2 · 반품 접수 건 없음 → 확인 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 반품 접수 이력 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_확인불가`, `UE_4486`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+접수된 주문자 정보로 교환·반품 접수 이력이 확인되지 않습니다.
+
+교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="h1lvl" id="c_sloomcb_4"><span class="num">4</span>오배송·미배송</div>
+  <div class="quote-box"><b>☑️ 오배송 또는 미배송 문의</b></div>
+  <div class="grid2">
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">정상 출고 내역 확인 후 배송 흐름을 조회하여 반송 이력 유무를 확인합니다.</div></div>
+  <div class="branch-box">
+    <div class="branch-h">💡 주문 건 유무에 따라 분기</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">주문 건 <b>있음</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 배송 정보 안내</span></td></tr>
+    <tr><td class="cond">주문 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
+    </tbody></table>
+  </div>
+  </div>
+
+  <div class="grp-h">CASE 1 · 주문 건 있음 → 배송 정보 안내</div>
+  ${caution(`⚠️ 확실하지 않음 : 통합마스터 내 "배송" 관련 등록 템플릿은 [CS] 슬룸_배송지연 1건뿐이라 PDF가 언급한 "배송 정보 안내 템플릿"의 유력 후보로 판단했으나, 발송조건(출고 지연 시점)이 이 케이스 상황(정상 출고 후 반송 이력 체크)과 완전히 일치하지는 않아 실무 확인 필요`)}
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 정상 출고 내역 확인 후 배송 흐름 확인, 반송 이력 여부 체크
+② 고객 주소지 지역 배송 이력 확인 시 → 고객 연락처로 "새 상담 열기" 안내 메시지 발송
+③ 내부 공유된 오배송 건(오출고 등 시스템 문제)은 OB로 추가 안내
+④ 태그 : 콜백OB + 오배송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_배송지연 (후보 · 확인필요)`, `UB_4888`,
+`안녕하세요 고객님, 슬룸입니다. 슬룸을(를) 믿고 구매해주시어 감사합니다.
+
+고객님의 주문건의 경우, #{기존 출고일} 출고 진행 예정이었으나 갑작스러운 주문량 증가로 인해 출고가 지연되고 있습니다.
+
+■ 제품명 : #{제품명}
+■ 예상 출고일 : #{예상 날짜}
+
+최대한 빠른 배송을 할 수 있도록 노력하겠습니다. 불편을 드려 죄송합니다.`)}
+    <div class="ph" style="margin-top:10px">👉 위 템플릿으로 커버되지 않는 상황은 뼈대 양식(콜백 템플릿 공통 구조)을 참고해 유저챗으로 직접 작성</div>
+  </td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 2 · 주문 건 없음 → 확인 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 배송 문제 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_배송이슈_확인불가`, `UE_4484`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+접수된 주문자 정보로 배송 문제로 접수 가능한 주문건이 확인되지 않습니다.
+
+다른 문의가 있으시다면, 슬룸 채팅 상담으로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="h1lvl" id="c_sloomcb_5"><span class="num">5</span>재회수 접수</div>
+  <div class="quote-box"><b>☑️ 기존 교환·반품 접수 건의 재회수(재수거) 요청</b></div>
+  <div class="grid2">
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">후처리 시트의 교환/반품 접수 이력을 확인하여 접수 일자를 기준으로 분기합니다.</div></div>
+  <div class="branch-box">
+    <div class="branch-h">💡 접수 건 유무·경과일에 따라 분기</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">접수 건 있음 · <b>3영업일 이내</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 재회수 접수</span></td></tr>
+    <tr><td class="cond">접수 건 있음 · <b>3영업일 이후</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 2 · 택배사 변경</span></td></tr>
+    <tr><td class="cond">접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 3 · 확인 불가</span></td></tr>
+    </tbody></table>
+  </div>
+  </div>
+
+  <div class="grp-h">CASE 1 · 접수 건 있음 (3영업일 이내) → 재회수 접수</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 후처리 시트의 교환/반품 접수 이력 확인
+② 접수 일자에 맞게 알림톡(알리고) 발송
+③ 태그 : 콜백OB + 회수 재신청</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_재회수접수_CJ`, `UH_6710`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 재회수 접수가 완료되었습니다.
+
+■ 수거 안내
+1. 영업일 기준 1~3일 내 배송 진행한 택배사(CJ대한통운)에서 연락 후 방문 수거 예정입니다.
+2. 제품은 택배 박스에 포장 후 기사 방문 시 전달 부탁드립니다.
+3. 수거 후, 반품 완료까지는 영업일 기준 약 5일 소요될 수 있습니다.
+4. 수거 후, 교환 제품 재출고는 영업일 기준 약 5일 소요될 수 있습니다.
+
+번거롭게 해드려 대단히 죄송합니다. 관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 2 · 접수 건 있음 (3영업일 이후) → 택배사 변경 수거 안내</div>
+  ${caution(`⚠️ [CS] 슬룸_교환반품_수거안내_택배사변경 템플릿은 통합마스터·브랜드한정 시트 어디에도 등재되어 있지 않아 코드·본문 확보 불가. 실무 확인 필요`)}
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 후처리 시트의 교환/반품 접수 이력 확인
+② 3영업일 경과로 택배사 변경 안내 알림톡(알리고) 발송
+③ 태그 : 콜백OB + 회수 재신청</td><td style="padding:20px 12px;text-align:center;color:var(--muted,#9aa0a8);font-size:13px;line-height:1.6">— 없음 —<br>[CS] 슬룸_교환반품_수거안내_택배사변경<br>（마스터 시트 미등재）</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 3 · 접수 건 없음 → 확인 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환/반품 접수 이력 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_확인불가`, `UE_4486`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+접수된 주문자 정보로 교환·반품 접수 이력이 확인되지 않습니다.
+
+교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="h1lvl" id="c_sloomcb_6"><span class="num">6</span>전화주문</div>
+  <div class="quote-box"><b>☑️ 전화 주문 요청 · OB 필요</b></div>
+  <div class="grid2">
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">고객이 남긴 연락처로 온라인 주문 이력 유무를 확인합니다.<br>⚠️ 실제 전화 주문 건은 유선 OB가 필수입니다.</div></div>
+  <div class="branch-box">
+    <div class="branch-h">💡 주문 건 유무에 따라 분기</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">주문 건 <b>있음</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · OB 진행 후 전화 주문 안내</span></td></tr>
+    <tr><td class="cond">주문 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
+    </tbody></table>
+  </div>
+  </div>
+
+  <div class="grp-h">CASE 1 · 주문 건 있음 → OB 진행 후 전화 주문 안내</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 알림톡(알리고) 발송
+② 유선 OB 진행하여 전화 구매 안내
+（실제 전화 주문이 아닌 경우 채팅 상담으로 유도）
+③ 태그 : 콜백OB + 전화 주문</td><td style="padding:20px 12px;text-align:center;color:var(--muted,#9aa0a8);font-size:13px;line-height:1.6">— 없음 —<br>매칭되는 알리고 템플릿 없음<br>（유선 OB 중심 처리）</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 2 · 주문 건 없음 → 확인 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 온라인 주문이력 확인 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_전화주문_확인불가`, `UH_8560`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+전화 주문 문의주셨으나 온라인 주문이력이 확인되어 문자 발송드립니다.
+
+다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="h1lvl" id="c_sloomcb_7"><span class="num">7</span>주문취소 요청</div>
+  <div class="quote-box"><b>☑️ 주문 취소 요청</b></div>
+  <div class="grid2">
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">고객 연락처로 주문 내역을 조회하여 품고(출고 준비) 상태에 따라 취소 가능 여부를 확인합니다.</div></div>
+  <div class="branch-box">
+    <div class="branch-h">💡 주문 건 유무·취소 가능 여부에 따라 분기</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">주문 건 있음 · <b>취소 가능</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 취소 승인</span></td></tr>
+    <tr><td class="cond">주문 건 있음 · <b>취소 불가</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 2 · 취소 불가</span></td></tr>
+    <tr><td class="cond">주문 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 3 · 확인 불가</span></td></tr>
+    </tbody></table>
+  </div>
+  </div>
+
+  <div class="grp-h">CASE 1 · 주문 건 있음 (취소 가능) → 취소 승인</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 품고 조회 후 취소 가능 상태 확인
+② 고객 연락처로 취소 승인 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_주문취소_승인`, `UE_4489`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 주문 취소가 완료되어 안내드립니다.
+
+■ 환불 관련 안내
+- 신용/체크카드: 승인 취소 또는 계좌 환급까지 영업일 기준 3~5일 소요됩니다.
+※ 네이버페이 결제일 경우, 네이버페이 환불 금액을 확인해주세요.
+- 무통장/가상 계좌 결제: 영업일 기준 1~2일 이내 환불 처리됩니다.
+- 유효기간이 남아있는 쿠폰 및 적립금은 자동으로 환급됩니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 2 · 주문 건 있음 (취소 불가) → 취소 불가 안내</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 품고 조회 후 취소 불가(출고 완료) 상태 확인
+② 고객 연락처로 취소 불가 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_주문취소_불가`, `UE_4490`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 주문 취소는 아래 사유로 진행이 어렵습니다.
+
+■ 불가 사유 : 출고 완료
+※ 출고가 완료된 이후 취소 요청 시, 제품 수령 후 '단순변심'으로 반품 접수가 필요하며 왕복 택배비 6,000원이 발생합니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 3 · 주문 건 없음 → 확인 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 주문 취소 접수 가능 건 확인 불가 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_주문취소_확인불가`, `UH_8983`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+접수된 주문자 정보로 주문 취소 접수가 가능한 주문 건이 확인되지 않습니다.
+
+다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="h1lvl" id="c_sloomcb_8"><span class="num">8</span>취소 후 배송·회수</div>
+  <div class="quote-box"><b>☑️ 취소 처리 이후 이미 출고된 주문 건의 회수</b></div>
+  <div class="grid2">
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">고객 연락처로 취소 후 배송 진행 이력을 조회합니다.<br>⚠️ 취소 요청 시점과 출고 시스템 간 시간차로 이미 출고된 경우에 해당합니다.</div></div>
+  <div class="branch-box">
+    <div class="branch-h">💡 취소 후 출고 건 유무에 따라 분기</div>
+    <table class="branch-tbl"><tbody>
+    <tr><td class="cond">취소 후 배송 건 <b>있음</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 회수 안내</span></td></tr>
+    <tr><td class="cond">취소 후 배송 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
+    </tbody></table>
+  </div>
+  </div>
+
+  <div class="grp-h">CASE 1 · 취소 후 배송 건 있음 → 회수 안내</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 취소 후 배송(회수 필요) 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_취소후배송_안내`, `UE_4709`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+고객님께서 신청해주신 주문 취소 건 관련하여 안내드립니다.
+
+신청해주신 주문은 취소 요청 시점과 출고 시스템 간의 시간 차로 인해 이미 출고가 진행된 상태로 확인됩니다.
+
+현재 시스템상 취소 처리는 완료되었으나, 제품 회수가 필요한 상황입니다.
+
+번거로우시겠지만, 제품 수령 후 택배 포장 그대로 보관해 주시고, 회수 예정 택배기사님 연락 시 문 앞 보관 또는 제품 전달을 부탁드립니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 2 · 취소 후 배송 건 없음 → 확인 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 취소 후 배송 진행 이력 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_취소후배송_확인불가`, `UE_4481`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+접수된 주문자 정보로 주문 취소 후 배송 진행 이력이 확인되지 않습니다.
+
+다른 문의가 있으시다면, 슬룸 채팅 상담으로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
   </tbody></table></div>
 </div>`;
 
