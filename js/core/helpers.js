@@ -58,29 +58,47 @@ function secMajor(n,t,badge,anchor){ const _id=anchor||("sec"+n); return `<div c
 /* 복사 없는 내부 주의/안내 메모 */
 function caution(body){ return `<div class="star-note"><div class="star-body">${body}</div></div>`; }
 function col(cls,head,inner){ return `<div class="col-card"><div class="col-h ${cls}"><span>${head}</span></div><div class="col-body">${inner}</div></div>`; }
-/* 전체/부분 등 2열 비교표 */
-function cmpTable(cols,rows){
+/* 전체/부분 등 2열 비교표. rows[i].keys가 있으면 values[i]와 같은 인덱스로 매칭해 셀별 data-content-key 부여(contentBrand는 표 전체 공통, 2026-08-31 편집기 확장) */
+function cmpTable(cols,rows,contentBrand){
   const head=`<tr><th class="cmp-corner"></th>${cols.map(c=>`<th class="${c.cls?`cmp-${c.cls}`:""}">${c.label}</th>`).join("")}</tr>`;
-  const body=rows.map(r=>`<tr><td class="cmp-row-label">${r.label}</td>${r.values.map(v=>`<td>${v}</td>`).join("")}</tr>`).join("");
+  const body=rows.map(r=>{
+    const cells=r.values.map((v,i)=>{
+      const k=r.keys&&r.keys[i];
+      const _dk=k?` data-content-key="${k}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+      return `<td${_dk}>${v}</td>`;
+    }).join("");
+    return `<tr><td class="cmp-row-label">${r.label}</td>${cells}</tr>`;
+  }).join("");
   return `<div class="cmp-table-wrap"><table class="cmp-table"><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
 }
-/* 헤더에 매크로명(#태그)+복사 버튼을 넣고, 본문은 라벨 없이 (공통 안내 섹션용) */
-function colTag(cls,head,tag,body){
-  return `<div class="col-card"><div class="col-h ${cls}"><span>${head}</span><span class="spacer"></span>${tag?`<span class="ct-tag">#${tag}</span>`:""}<button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button></div><div class="col-body-plain">${body}</div></div>`;
+/* 헤더에 매크로명(#태그)+복사 버튼을 넣고, 본문은 라벨 없이 (공통 안내 섹션용). contentKey/contentBrand는 head(라벨)+body 편집용(2026-08-31 확장) */
+function colTag(cls,head,tag,body,contentKey,contentBrand){
+  const _dk = contentKey?` data-content-key="${contentKey}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+  return `<div class="col-card"${_dk}><div class="col-h ${cls}"><span>${head}</span><span class="spacer"></span>${tag?`<span class="ct-tag">#${tag}</span>`:""}<button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button></div><div class="col-body-plain">${body}</div></div>`;
 }
 function subcard(label,tag,body,desc,contentKey,contentBrand){
   const _dk = contentKey?` data-content-key="${contentKey}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
   return `<div class="subcard"${_dk}><div class="subcard-h"><span class="sc-label">${label}</span><span class="spacer"></span>${tag?`<span class="tag">#${tag}</span>`:""}<button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button></div>${desc?`<div class="sc-desc">${desc}</div>`:""}<div class="subcard-body">${body}</div></div>`;
 }
-function starNote(title,body){ return `<div class="star-note"><div class="star-h"><b>★ ${title}</b><span class="spacer"></span></div><div class="star-body">${body}</div></div>`; }
-function blueNote(title,body){ return `<div class="blue-note"><div class="bn-h"><b>${title}</b><span class="spacer"></span></div><div class="bn-body">${body}</div></div>`; }
-/* 무상 접수 기간 제한 안내 박스 (A그룹 AS 페이지 공통, 2026-08-28 인라인 스타일 → 헬퍼 통합) */
-function limitNotice(caseLabel,body){
-  return `<div class="limit-notice"><div class="limit-notice-h">💡 무상 접수 기간 제한 <span class="limit-notice-sub">· ${caseLabel}</span></div><table class="limit-notice-table"><tbody><tr><td class="limit-notice-day">📅 수령일 7일 이내</td><td class="limit-notice-body">${body}</td></tr></tbody></table></div>`;
+/* contentKey/contentBrand는 title(라벨)+body 편집용(2026-08-31 확장) */
+function starNote(title,body,contentKey,contentBrand){
+  const _dk = contentKey?` data-content-key="${contentKey}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+  return `<div class="star-note"${_dk}><div class="star-h"><b>★ ${title}</b><span class="spacer"></span></div><div class="star-body">${body}</div></div>`;
 }
-/* 보증기간 단종 EDGE CASE 2열 비교 (A그룹 AS 페이지 공통, 2026-08-28 인라인 스타일 → 헬퍼 통합) */
-function edgeCaseCompare(bodyIn,bodyOut){
-  return `<div class="edge-compare"><div class="edge-compare-col"><div class="edge-compare-h">★ EDGE CASE · 보증기간(1년) '<span class="edge-compare-hi">이내</span>' 단종</div><div class="edge-compare-body">${bodyIn}</div></div><div class="edge-compare-col edge-compare-col-r"><div class="edge-compare-h">★ EDGE CASE · 보증기간(1년) '<span class="edge-compare-hi">경과</span>' 단종</div><div class="edge-compare-body">${bodyOut}</div></div></div>`;
+function blueNote(title,body,contentKey,contentBrand){
+  const _dk = contentKey?` data-content-key="${contentKey}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+  return `<div class="blue-note"${_dk}><div class="bn-h"><b>${title}</b><span class="spacer"></span></div><div class="bn-body">${body}</div></div>`;
+}
+/* 무상 접수 기간 제한 안내 박스 (A그룹 AS 페이지 공통, 2026-08-28 인라인 스타일 → 헬퍼 통합). contentKey/contentBrand는 caseLabel+body 편집용(2026-08-31 확장) */
+function limitNotice(caseLabel,body,contentKey,contentBrand){
+  const _dk = contentKey?` data-content-key="${contentKey}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+  return `<div class="limit-notice"${_dk}><div class="limit-notice-h">💡 무상 접수 기간 제한 <span class="limit-notice-sub">· ${caseLabel}</span></div><table class="limit-notice-table"><tbody><tr><td class="limit-notice-day">📅 수령일 7일 이내</td><td class="limit-notice-body">${body}</td></tr></tbody></table></div>`;
+}
+/* 보증기간 단종 EDGE CASE 2열 비교 (A그룹 AS 페이지 공통, 2026-08-28 인라인 스타일 → 헬퍼 통합). contentKeyIn/contentKeyOut 각각 별도 편집 키(2026-08-31 확장, contentBrand는 두 칸 공통) */
+function edgeCaseCompare(bodyIn,bodyOut,contentKeyIn,contentKeyOut,contentBrand){
+  const dkIn = contentKeyIn?` data-content-key="${contentKeyIn}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+  const dkOut = contentKeyOut?` data-content-key="${contentKeyOut}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
+  return `<div class="edge-compare"><div class="edge-compare-col"${dkIn}><div class="edge-compare-h">★ EDGE CASE · 보증기간(1년) '<span class="edge-compare-hi">이내</span>' 단종</div><div class="edge-compare-body">${bodyIn}</div></div><div class="edge-compare-col edge-compare-col-r"${dkOut}><div class="edge-compare-h">★ EDGE CASE · 보증기간(1년) '<span class="edge-compare-hi">경과</span>' 단종</div><div class="edge-compare-body">${bodyOut}</div></div></div>`;
 }
 
 /* 슬룸 > 반품 > 단순변심 반품 · 단계별 (이미지 ④⑤ 재구성) */

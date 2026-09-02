@@ -155,8 +155,8 @@ const REF_AS = `
   <td>유상 교환</td>
   </tr>
   </tbody></table></div>
-  ${limitNotice("구성품 누락 / 초도 파손 / 이염·오염 case", `✔️ 구성품 누락<br>✔️ 초도 파손 / 이염 / 오염<br>→ 상품 수령일로부터 <b>7일 이내 문의 시에만 무상 접수 가능</b>`)}
-  ${edgeCaseCompare(`① 유사 모델을 '1년 이내 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 구입가를 자사몰 포인트로 대체 환급`, `① 유사 모델을 '1년 경과 유상교환 가격'으로 구매 안내<br>② 고객 거부 시 → 정액 감가상각한 잔여 금액에 구입가의 10%를 가산 후 자사몰 포인트로 대체 환급`)}
+  ${limitNotice(D_SLOOM["slm_as__093"].name, D_SLOOM["slm_as__093"].body, "slm_as__093", "sloom")}
+  ${edgeCaseCompare(D_SLOOM["slm_as__094"].body, D_SLOOM["slm_as__095"].body, "slm_as__094", "slm_as__095", "sloom")}
 
 
   
@@ -239,7 +239,7 @@ const REF_AS = `
   </div>
   <div class="h2lvl" id="edgeDiscon">🚨 [단종] EDGE CASE</div>
   <div class="lvl2-body"><div class="h3lvl" id="edgeIn">① 품질보증기간(1년) 이내 단종</div><div class="lvl3-body"><div class="quote-box"><b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용\n① 유사 모델을 '유상교환 가격' 으로 구매 안내\n② 고객이 구매를 원하지 않는 경우 단종 보상 기준에 따라 <b>구입가를 자사몰 포인트로 대체 환급</b></div>${macro(D_SLOOM["slm_as__059"].name, D_SLOOM["slm_as__059"].tag, D_SLOOM["slm_as__059"].body, D_SLOOM["slm_as__059"].desc, "slm_as__059", "sloom")}${guide(`💡 1년 이내 유상 비용 금액으로 반영`)}<div class="grid2"><div class="flowgroup">${subcard(D_SLOOM["slm_as__060"].name, D_SLOOM["slm_as__060"].tag, D_SLOOM["slm_as__060"].body, D_SLOOM["slm_as__060"].desc, "slm_as__060", "sloom")}${subcard(D_SLOOM["slm_as__061"].name, D_SLOOM["slm_as__061"].tag, D_SLOOM["slm_as__061"].body, D_SLOOM["slm_as__061"].desc, "slm_as__061", "sloom")}</div>${subcard(D_SLOOM["slm_as__062"].name, D_SLOOM["slm_as__062"].tag, D_SLOOM["slm_as__062"].body, D_SLOOM["slm_as__062"].desc, "slm_as__062", "sloom")}</div>${guide(`👉🏻 i. 유사 제품 구매 동의_입금 안내 시 접수 시점에 따라 출고 안내`)}<div class="grid2">${subcard(D_SLOOM["slm_as__063"].name, D_SLOOM["slm_as__063"].tag, D_SLOOM["slm_as__063"].body, D_SLOOM["slm_as__063"].desc, "slm_as__063", "sloom")}${subcard(D_SLOOM["slm_as__064"].name, D_SLOOM["slm_as__064"].tag, D_SLOOM["slm_as__064"].body, D_SLOOM["slm_as__064"].desc, "slm_as__064", "sloom")}</div>${macro(D_SLOOM["slm_as__065"].name, D_SLOOM["slm_as__065"].tag, D_SLOOM["slm_as__065"].body, D_SLOOM["slm_as__065"].desc, "slm_as__065", "sloom")}</div><div class="h3lvl" id="edgeOut">② 품질보증기간(1년) 경과 단종</div><div class="lvl3-body"><div class="quote-box"><b>📌 응대 가이드</b>\n동일 제품이 단종되어 교환이 불가능한 경우 적용\n① 동일 부위·동일 용도의 유사 제품이 있는지 확인\n<span class="sub-ex">(예: 넥숄더프로 → 넥숄더힐링케어 V2)</span>\n② 유사 제품을 품질보증기간(1년) 경과 유상 교환 비용으로 구매할 수 있도록 안내\n③ 고객이 유사 제품 구매를 원하지 않는 경우, <b>감가상각을 반영한 잔여 금액에 구입가의 10%를 가산</b>하여 자사몰 포인트로 환급</div>${macro(D_SLOOM["slm_as__066"].name, D_SLOOM["slm_as__066"].tag, D_SLOOM["slm_as__066"].body, D_SLOOM["slm_as__066"].desc, "slm_as__066", "sloom")}${guide(`💡 1년 경과 유상 비용 금액으로 반영`)}<div class="grid2"><div class="flowgroup">${subcard(D_SLOOM["slm_as__067"].name, D_SLOOM["slm_as__067"].tag, D_SLOOM["slm_as__067"].body, D_SLOOM["slm_as__067"].desc, "slm_as__067", "sloom")}${subcard(D_SLOOM["slm_as__068"].name, D_SLOOM["slm_as__068"].tag, D_SLOOM["slm_as__068"].body, D_SLOOM["slm_as__068"].desc, "slm_as__068", "sloom")}</div><div class="flowgroup">${subcard(D_SLOOM["slm_as__069"].name, D_SLOOM["slm_as__069"].tag, D_SLOOM["slm_as__069"].body, D_SLOOM["slm_as__069"].desc, "slm_as__069", "sloom")}${subcard(D_SLOOM["slm_as__070"].name, D_SLOOM["slm_as__070"].tag, D_SLOOM["slm_as__070"].body, D_SLOOM["slm_as__070"].desc, "slm_as__070", "sloom")}</div></div></div></div>
-  ${blueNote(`💰 환급금 계산 가이드`,`<div class="refund-guide-grid"><div style="padding-right:18px">① 구입가 확인\n② 사용개월 확인\n③ 아래 계산식 적용\n\n<b>감가상각비</b> = (사용개월 ÷ 60개월) × 구입가\n<b>잔여금</b> = 구입가 - 감가상각비\n<b>최종 환급금</b> = 잔여금 + 구입가의 10%\n\n※ 슬룸 제품의 내용연수는 60개월로 적용합니다.<div class="quote-box" style="margin-top:14px"><b>예시)</b> 목베개플러스 · 구입가 99,000원 · 구입일 2024년 7월 · AS 문의일 2026년 7월 · 사용기간 24개월\n\n· 감가상각비 = (24개월 ÷ 60개월) × 99,000원 = 39,600원\n· 잔여금 = 99,000원 - 39,600원 = 59,400원\n· 구입가의 10% = 99,000원 × 10% = 9,900원\n· <b>최종 환급금</b> = 59,400원 + 9,900원 = <b>69,300원</b></div></div><div style="padding-left:18px;border-left:2px dashed #C7DAF2"><div class="refund-calc" style="margin-top:0"><div class="refund-calc-h">🧮 자동 계산기 (숫자만 입력)</div><div class="refund-calc-row"><label>구입가</label><input type="text" inputmode="numeric" data-role="price" placeholder="예: 99000" oninput="this.value=this.value.replace(/[^0-9]/g,'');calcRefund(this)"><span class="unit">원</span></div><div class="refund-calc-row"><label>사용개월</label><input type="text" inputmode="numeric" data-role="months" placeholder="예: 24" oninput="this.value=this.value.replace(/[^0-9]/g,'');calcRefund(this)"><span class="unit">개월</span></div><div class="refund-calc-err"></div><div class="refund-calc-out"><div><span>감가상각비</span><b data-out="dep">0원</b></div><div><span>잔여금</span><b data-out="rem">0원</b></div><div><span>구입가의 10%</span><b data-out="add">0원</b></div><div class="final"><span>최종 환급금</span><b data-out="final">0원</b></div></div></div></div></div><details class="legal-fold"><summary>※ 관련 기준 보기</summary><p>공정거래위원회 소비자분쟁해결기준에 따라 품질보증기간이 경과한 후 부품보유기간 내 수리가 불가능한 경우, 정액 감가상각한 잔여 금액에 구입가의 10%를 가산하여 환급합니다.</p></details>`)}
+  ${blueNote(D_SLOOM["slm_as__096"].name, D_SLOOM["slm_as__096"].body, "slm_as__096", "sloom")}
   <div class="h2lvl" id="secProof">📸 증빙 제출 불만에 따른 대응</div>
   <div class="lvl2-body"><div class="quote-box"><b>✔️ 증빙(영상/사진)이 필요한 유형이나 지속 미수긍, 불만 제기 시 아래 flow로 진행</b></div><div class="grp-h">① 방어 멘트 1차</div>${guide(`👉 1번, 2번 중 선택하여 사용`)}<div class="grid2"><div>${macro(D_SLOOM["slm_as__071"].name, D_SLOOM["slm_as__071"].tag, D_SLOOM["slm_as__071"].body, D_SLOOM["slm_as__071"].desc, "slm_as__071", "sloom")}</div><div>${macro(D_SLOOM["slm_as__072"].name, D_SLOOM["slm_as__072"].tag, D_SLOOM["slm_as__072"].body, D_SLOOM["slm_as__072"].desc, "slm_as__072", "sloom")}</div></div><div class="grp-h">② 방어 멘트 2차</div>${guide(`👉 ① 방어 멘트 진행 시에도 미수긍할 경우`)}${macro(D_SLOOM["slm_as__073"].name, D_SLOOM["slm_as__073"].tag, D_SLOOM["slm_as__073"].body, D_SLOOM["slm_as__073"].desc, "slm_as__073", "sloom")}<div class="grp-h">③ 채팅 상담 유지 안내 (지금 촬영 불가 시)</div>${guide(`ex. 영상 미첨부로 촬영 후 재인입해야하거나, 채팅 전송 영상 미흡으로 재 촬영 필요 시 모두 포함`)}${macro(D_SLOOM["slm_as__074"].name, D_SLOOM["slm_as__074"].tag, D_SLOOM["slm_as__074"].body, D_SLOOM["slm_as__074"].desc, "slm_as__074", "sloom")}<div class="grid2">${guide(`⚠️ 단, 아래와 같은 경우에는 [채팅 상담 유지 안내] 후 채널톡 보류 처리로 진행\n(예시) 상담 중 촬영이 어려운 상황 / 외부에 있어 확인이 어려운 경우 등`)}<div class="quote-box"><b>📌 상담 보류 처리 기준</b>\n· 보류 기간 : 상담 진행 내일 오전까지\n→ 해당 기간 내 회신이 없을 경우, 장시간 무응답 매크로를 활용하여 상담 종료\n· 고객이 기존 보류 채팅창이 아닌 새로운 채팅창으로 재문의할 수 있음\n→ 해당 경우, 중복 상담 매크로를 활용하여 보류 및 상담 종료\n※ 매크로 사용 시 상황에 맞게 멘트 수정 필수</div></div><div class="grp-h">④ 회수 후 검수로 진행 안내 (①, ②, ③ 미수긍 시)</div><div class="grid2"><div class="quote-box"><b>👉 ①, ②, ③ 미수긍 시에만 제품 회수 후 물류센터 검수 절차로 진행</b>\n\n· 고객 희망하는 처리 방안(반품 or 교환)은 채널톡 워크플로우 및 우측 메모리값에서 확인 가능</div><div class="quote-box"><b>· 물류센터(품고 또는 정석) 별도반출&불량 검수 시트에 취합 후 검수 결과에 따라</b>\n✔️ '정상'일 경우 → 고객 주소로 반송\n✔️ '불량'일 경우 → 고객 원하는 방향으로 '교환' 또는 '반품' 처리\n\n👉🏻 물류센터별 시트 바로가기\n① <a href="https://docs.google.com/spreadsheets/d/1ZgqMOaFfBW60cln1V6oVRRSmjEeNjZSJrlf1ytdM5V4/edit?pli=1&amp;gid=1560630591#gid=1560630591" target="_blank">[품고/올릿] 별도반출&불량 검수</a>\n② <a href="https://docs.google.com/spreadsheets/d/1X7-VBL7xA8UWJtdHh5elOtYrDaA-qwtrrvc0qrM5_eU/edit?gid=0#gid=0" target="_blank">[정석/올릿] 별도반출&불량 검수</a></div></div>${macro(D_SLOOM["slm_as__075"].name, D_SLOOM["slm_as__075"].tag, D_SLOOM["slm_as__075"].body, D_SLOOM["slm_as__075"].desc, "slm_as__075", "sloom")}<div class="grp-h">🔴 수거 미수긍/불만 제기 시 — 1번 또는 2번 중 선택</div><div class="grid2"><div>${macro(D_SLOOM["slm_as__076"].name, D_SLOOM["slm_as__076"].tag, D_SLOOM["slm_as__076"].body, D_SLOOM["slm_as__076"].desc, "slm_as__076", "sloom")}</div><div>${macro(D_SLOOM["slm_as__077"].name, D_SLOOM["slm_as__077"].tag, D_SLOOM["slm_as__077"].body, D_SLOOM["slm_as__077"].desc, "slm_as__077", "sloom")}</div></div><div class="grp-h">💸 고객 반품 요청 & 결제수단 무통장/가상계좌일 경우에만, 환불 계좌 선탐색</div>${macro(D_SLOOM["slm_as__078"].name, D_SLOOM["slm_as__078"].tag, D_SLOOM["slm_as__078"].body, D_SLOOM["slm_as__078"].desc, "slm_as__078", "sloom")}${guide(`👉🏻 이후, <a class="jump-link" href="#exNoEvid" onclick="return jumpTo('exNoEvid')">✨ [예외] 증빙 미제출</a>로 이동하여 이어 진행`)}</div>
   <div class="h2lvl" id="exNoEvid">✨ [예외] 증빙 미제출</div>
@@ -276,13 +276,8 @@ const SLM_MERGE_TEMPLATE = `
 ▶ 미수긍 시(교환 진행 희망) → 하단 플로우(2. 전체/부분 방식 안내~) 그대로 진행`)
   )}
   <div style="margin-top:12px">${col("pink","💰 반품 희망 시",
-    colTag("gray","수령일로부터 7일 이내","변심교환_7일이내_사유확인",
-`반품을 원하시는 사유가 어떻게 되실까요? :)
-개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
-제품 사용 여부도 함께 확인 부탁드립니다.`)
-    + colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
-`단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
-현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
+    colTag("gray",D_SLOOM["slm_cond__013"].name,"변심교환_7일이내_사유확인",D_SLOOM["slm_cond__013"].body,"slm_cond__013","sloom")
+    + colTag("gray",D_SLOOM["slm_cond__014"].name,"변심반품_7일경과_사유확인",D_SLOOM["slm_cond__014"].body,"slm_cond__014","sloom")
   )}</div>
   <div class="branch-box" style="margin-top:12px">
     <div class="branch-h">💡 고객이 말씀하신 사유·증상에 따라 알맞은 유형으로 이동하여 응대</div>
@@ -302,26 +297,22 @@ const SLM_MERGE_TEMPLATE = `
   ${cmpTable(
     [{cls:"blue",label:"🔹 전체 반품"},{cls:"pink",label:"🔹 부분 반품"}],
     [
-      {label:"조건", values:[
-        "구매 제품 전체 미사용<br>미개봉 또는 개봉했으나 미사용<br>(예: 박스만 열어보고 다시 닫음)",
-        "2개 이상 구매 후 일부만 개봉(사용)<br>(예: 허리편한케어 + 목편한케어 구매 → 허리편한케어만 사용 시, 목편한케어만 부분 반품)"
-      ]},
-      {label:"반품 배송비", values:["6,000원","3,000원"]},
-      {label:"회수 품목", values:[
-        "모든 구성품 + 증정품 포함",
-        "사용(개봉) 제품 제외, 미사용(미개봉) 제품과 그 구성품만 회수"
-      ]}
-    ]
+      {label:"조건", values:[D_SLOOM["slm_cond__001"].body, D_SLOOM["slm_cond__002"].body], keys:["slm_cond__001","slm_cond__002"]},
+      {label:"반품 배송비", values:[D_SLOOM["slm_cond__003"].body, D_SLOOM["slm_cond__004"].body], keys:["slm_cond__003","slm_cond__004"]},
+      {label:"회수 품목", values:[D_SLOOM["slm_cond__005"].body, D_SLOOM["slm_cond__006"].body], keys:["slm_cond__005","slm_cond__006"]}
+    ],
+    "sloom"
   )}
   <div class="quote-box" style="margin-top:18px"><b>🔄 교환</b></div>
   ${cmpTable(
     [{cls:"blue",label:"🔹 전체 교환"},{cls:"pink",label:"🔹 부분 교환"}],
     [
-      {label:"대상", values:["구매 상품 전체 교환 희망<br>(2개 이상 구매 후 전체 교환 포함)","2개 이상 구매 후 일부만 개봉 → 개봉 제품만 교환"]},
-      {label:"교환 배송비", values:["왕복 6,000원","왕복 배송비 + 사용 제품 금액 차감"]},
-      {label:"증정품 회수", values:["회수 O","회수 X"]}
-    ]
-  )}
+     {label:"대상", values:[D_SLOOM["slm_cond__007"].body, D_SLOOM["slm_cond__008"].body], keys:["slm_cond__007","slm_cond__008"]},
+     {label:"교환 배송비", values:[D_SLOOM["slm_cond__009"].body, D_SLOOM["slm_cond__010"].body], keys:["slm_cond__009","slm_cond__010"]},
+     {label:"증정품 회수", values:[D_SLOOM["slm_cond__011"].body, D_SLOOM["slm_cond__012"].body], keys:["slm_cond__011","slm_cond__012"]}
+    ],
+    "sloom"
+)}
 
   ${secTitle("3", "교환/반품 배송비 안내",null,"sec3")}
   <div class="quote-box"><b>🔹 반품 배송비</b></div>
@@ -335,10 +326,7 @@ const SLM_MERGE_TEMPLATE = `
       subcard(D_SLOOM["slm_simplemerge__005"].name, D_SLOOM["slm_simplemerge__005"].tag, D_SLOOM["slm_simplemerge__005"].body, D_SLOOM["slm_simplemerge__005"].desc, "slm_simplemerge__005", "sloom")
       + subcard(D_SLOOM["slm_simplemerge__006"].name, D_SLOOM["slm_simplemerge__006"].tag, D_SLOOM["slm_simplemerge__006"].body, D_SLOOM["slm_simplemerge__006"].desc, "slm_simplemerge__006", "sloom")
       + subcard(D_SLOOM["slm_simplemerge__007"].name, D_SLOOM["slm_simplemerge__007"].tag, D_SLOOM["slm_simplemerge__007"].body, D_SLOOM["slm_simplemerge__007"].desc, "slm_simplemerge__007", "sloom")
-      + starNote("고객이 정가 차감에 미동의할 경우",
-`구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
-부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
-반품 전 꼭 확인 부탁드립니다.`)
+      + starNote(D_SLOOM["slm_cond__015"].name,D_SLOOM["slm_cond__015"].body,"slm_cond__015","sloom")
     )}
   </div>
   <div class="quote-box" style="margin-top:18px"><b>🔄 교환 배송비</b></div>
@@ -517,16 +505,11 @@ const SLOOM_REFUND = `
   ${cmpTable(
     [{cls:"blue",label:"🔹 전체 반품"},{cls:"pink",label:"🔹 부분 반품"}],
     [
-      {label:"조건", values:[
-        "구매 제품 전체 미사용<br>미개봉 또는 개봉했으나 미사용<br>(예: 박스만 열어보고 다시 닫음)",
-        "2개 이상 구매 후 일부만 개봉(사용)<br>(예: 허리편한케어 + 목편한케어 구매 → 허리편한케어만 사용 시, 목편한케어만 부분 반품)"
-      ]},
-      {label:"반품 배송비", values:["6,000원","3,000원"]},
-      {label:"회수 품목", values:[
-        "모든 구성품 + 증정품 포함",
-        "사용(개봉) 제품 제외, 미사용(미개봉) 제품과 그 구성품만 회수"
-      ]}
-    ]
+      {label:"조건", values:[D_SLOOM["slm_cond__001"].body, D_SLOOM["slm_cond__002"].body], keys:["slm_cond__001","slm_cond__002"]},
+      {label:"반품 배송비", values:[D_SLOOM["slm_cond__003"].body, D_SLOOM["slm_cond__004"].body], keys:["slm_cond__003","slm_cond__004"]},
+      {label:"회수 품목", values:[D_SLOOM["slm_cond__005"].body, D_SLOOM["slm_cond__006"].body], keys:["slm_cond__005","slm_cond__006"]}
+    ],
+    "sloom"
   )}
   <div class="grp-h">🧭 상담 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 7일 경과 여부 및 사유 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 결제수단별 환불 안내</div></div>
@@ -538,13 +521,8 @@ const SLOOM_REFUND = `
 
   ${secTitle("1", "7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
   <div class="grid2">
-    ${colTag("gray","수령일로부터 7일 이내","반품교환_7일이내_사유확인",
-`반품을 원하시는 사유가 어떻게 되실까요? :)
-개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
-제품 사용 여부도 함께 확인 부탁드립니다.`)}
-    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
-`단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
-현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
+    ${colTag("gray",D_SLOOM["slm_cond__013"].name,"반품교환_7일이내_사유확인",D_SLOOM["slm_cond__013"].body,"slm_cond__013","sloom")}
+    ${colTag("gray",D_SLOOM["slm_cond__014"].name,"단순반품_7일경과_사유확인",D_SLOOM["slm_cond__014"].body,"slm_cond__014","sloom")}
   </div>
   <div class="branch-box">
     <div class="branch-h">💡 고객이 말씀하신 사유·증상에 따라 알맞은 유형으로 이동하여 응대</div>
@@ -568,10 +546,7 @@ const SLOOM_REFUND = `
       subcard(D_SLOOM["slm_refund__004"].name, D_SLOOM["slm_refund__004"].tag, D_SLOOM["slm_refund__004"].body, D_SLOOM["slm_refund__004"].desc, "slm_refund__004", "sloom")
       + subcard(D_SLOOM["slm_refund__005"].name, D_SLOOM["slm_refund__005"].tag, D_SLOOM["slm_refund__005"].body, D_SLOOM["slm_refund__005"].desc, "slm_refund__005", "sloom")
       + subcard(D_SLOOM["slm_refund__006"].name, D_SLOOM["slm_refund__006"].tag, D_SLOOM["slm_refund__006"].body, D_SLOOM["slm_refund__006"].desc, "slm_refund__006", "sloom")
-      + starNote("고객이 정가 차감에 미동의할 경우",
-`구매하신 옵션은 1개 이상 구매 시 적용되는 구성입니다.
-부분 반품 시 개봉된 상품 수량만큼 정상가로 간주되어 원물 금액에서 차감됩니다.
-반품 전 꼭 확인 부탁드립니다.`)
+      + starNote(D_SLOOM["slm_cond__015"].name,D_SLOOM["slm_cond__015"].body,"slm_cond__015","sloom")
     )}
   </div>
 
@@ -618,10 +593,11 @@ const SLOOM_EXCHANGE = `
   ${cmpTable(
   [{cls:"blue",label:"🔹 전체 교환"},{cls:"pink",label:"🔹 부분 교환"}],
   [
-   {label:"대상", values:["구매 상품 전체 교환 희망<br>(2개 이상 구매 후 전체 교환 포함)","2개 이상 구매 후 일부만 개봉 → 개봉 제품만 교환"]},
-   {label:"교환 배송비", values:["왕복 6,000원","왕복 배송비 + 사용 제품 금액 차감"]},
-   {label:"증정품 회수", values:["회수 O","회수 X"]}
-  ]
+   {label:"대상", values:[D_SLOOM["slm_cond__007"].body, D_SLOOM["slm_cond__008"].body], keys:["slm_cond__007","slm_cond__008"]},
+   {label:"교환 배송비", values:[D_SLOOM["slm_cond__009"].body, D_SLOOM["slm_cond__010"].body], keys:["slm_cond__009","slm_cond__010"]},
+   {label:"증정품 회수", values:[D_SLOOM["slm_cond__011"].body, D_SLOOM["slm_cond__012"].body], keys:["slm_cond__011","slm_cond__012"]}
+  ],
+  "sloom"
 )}
   <div class="grp-h">🧭 상담 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 교환 방식 안내 (전체 / 부분)</div><div class="fd-arrow">▶</div><div class="fd-box">2. 교환 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 검수 및 재출고 안내</div></div>
