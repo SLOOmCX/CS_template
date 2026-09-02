@@ -185,7 +185,7 @@
     document.getElementById("editorSaveBtn").addEventListener("click", function(){
       const newName = document.getElementById("editorNameInput").value;
       const newBody = document.getElementById("editorBodyInput").value;
-      if(!newName.trim()){
+      if(!newName.trim() && String(cur.name||"").trim()){
         showSaveErr("라벨(name)은 비워둘 수 없습니다.");
         return;
       }
