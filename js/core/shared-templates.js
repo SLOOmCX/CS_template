@@ -192,24 +192,17 @@ subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["c
   ${guide(`상담 종료 후 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">[SCM파트 X CX팀] 수기 주문 출고 리스트</a> 시트에 사업자(올릿/리테일/더마) 구분하여 작성, 출고 요청`)}
 `;
 
-const CALL_OPS = `<div class="no-copy">
-  <h1>📋 유선 상담 운영 기준</h1>
-      <div class="sub">슬룸 유선(전화) 응대 표준 · 콜백티켓 중심 운영</div>
+const CALL_ALL = `<div class="no-copy">
+  <h1>📞 유선 표준 응대</h1>
+  <div class="sub">전 브랜드 공통 전화 응대 · 슬룸 콜백티켓 중심 운영</div>
+
+  ${secTitle("📋","유선 상담 운영 기준",null,"c_ops")}
   <div class="warn-note">⚠️ AS·불량은 증빙(영상·사진) 확인이 필요해 유선 상담을 진행하지 않습니다. → 채팅으로만 접수 안내</div>
   <div class="quote-box"><b>📞 [슬룸] 현재 콜백티켓 중심 운영</b>
 대표번호 고객센터 연결 → 고객 문의 유형 선택 → 유형별 요청 정보 기재 후 접수 완료 → 채널톡 팀챗 콜백 티켓 접수건 확인 후 OB 진행</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7">AS·불량은 증빙(영상·사진) 확인이 필요해 전화로는 접수할 수 없습니다.
-고객님께 채팅으로만 진행 가능함을 안내하고, 아래 워크플로우를 유저챗으로 발송해 주세요.
-▶ <a href="https://sloom.channel.io/workflows/789993" target="_blank">[IVR/ALF] 불량 AS 접수 직통 ver.</a> 유저챗 발송</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">슬룸 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7">현재 슬룸은 콜백 티켓을 중심으로 유선 상담을 운영하고 있습니다.
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__as" data-content-brand="shared">${D_SHARED["cmp_callops__as"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">슬룸 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__opmode" data-content-brand="shared">${D_SHARED["cmp_callops__opmode"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__cbtypes" data-content-brand="shared">${D_SHARED["cmp_callops__cbtypes"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__livetypes" data-content-brand="shared">${D_SHARED["cmp_callops__livetypes"].body}</td></tr></tbody></table></div>
 
-콜백티켓 운영 방식 : 🔗 대표번호 고객센터 연결 → 문의 유형 선택 → 요청 정보 입력·접수 → 채널톡 팀챗에서 콜백 티켓으로 접수 → 상담사 OB 진행
-(⚠️ 전화 주문 유형만 유선 OB / 그 외 유저챗 오픈하여 진행)</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7">전화 주문 · 주문 취소 · 반품/교환 철회 요청 · 교환 제품 배송 일정 · 반품 환불 일정 · 오배송/미배송(배송 오류) · 재회수 요청 · 취소 후 배송/회수 요청</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7">현재 : 전화 주문
-추후 확대 예정 : 배송 정보 변경 요청 / 무통장 입금 내역 확인</td></tr></tbody></table></div>
-</div>`;
-
-const CALL_BASIC = `<div class="no-copy">
-  <h1>💡 공통 기본</h1>
-      <div class="sub">전 브랜드 공통 · 인사말·대기·호응·종료 기준</div>
+  ${secTitle("💡","공통 기본","전 브랜드 공통","c_basic")}
   <div class="grp-h" id="c_basic_1">1. 인사말</div>
   ${macro(D_SHARED["call__001"].name, D_SHARED["call__001"].tag, D_SHARED["call__001"].body, D_SHARED["call__001"].desc, "call__001", "shared")}
   ${macro(D_SHARED["call__002"].name, D_SHARED["call__002"].tag, D_SHARED["call__002"].body, D_SHARED["call__002"].desc, "call__002", "shared")}
@@ -227,11 +220,8 @@ const CALL_BASIC = `<div class="no-copy">
   <div class="grp-h" id="c_warn">🚨 상담 종료 경고</div>
   ${caution(`고객 욕설·반말·폭언·성희롱 (1회) — 담당 관리자 보고 필수`)}
   <div class="grid2">${macro(D_SHARED["call__013"].name, D_SHARED["call__013"].tag, D_SHARED["call__013"].body, D_SHARED["call__013"].desc, "call__013", "shared")}${macro(D_SHARED["call__014"].name, D_SHARED["call__014"].tag, D_SHARED["call__014"].body, D_SHARED["call__014"].desc, "call__014", "shared")}</div>
-</div>`;
 
-const CALL_ORDER = `<div class="no-copy">
-  <h1>🔄 주문 변경</h1>
-      <div class="sub">취소 후 배송 · 배송 정보 변경</div>
+  ${secTitle("🔄","주문 변경",null,"c_order")}
   <div class="grp-h" id="c_order_1">1. 취소 후 배송</div>
   ${guide(`물류센터(품고 또는 정석) 조회로 취소 가능 확인 후 취소했으나 실제 배송된 경우 · ①~⑤ 순서로 응대`)}
   <div class="grid2">${macro(D_SHARED["call__018"].name, D_SHARED["call__018"].tag, D_SHARED["call__018"].body, D_SHARED["call__018"].desc, "call__018", "shared")}${macro(D_SHARED["call__019"].name, D_SHARED["call__019"].tag, D_SHARED["call__019"].body, D_SHARED["call__019"].desc, "call__019", "shared")}</div>
@@ -255,11 +245,8 @@ subcard(D_SHARED["call__024"].name, D_SHARED["call__024"].tag, D_SHARED["call__0
 ▶ CJ대한통운 고객센터 : 1588-1255
 
 감사합니다.`)}
-</div>`;
 
-const CALL_PAY = `<div class="no-copy">
-  <h1>💳 결제 문의</h1>
-      <div class="sub">입금 확인 · 결제 완료 후 출고 안내</div>
+  ${secTitle("💳","결제 문의",null,"c_pay")}
   ${caution(`고객 정보 확인부터 진행 · 정상 입금 시 확인 내용 안내`)}
   ${macro(D_SHARED["call__025"].name, D_SHARED["call__025"].tag, D_SHARED["call__025"].body, D_SHARED["call__025"].desc, "call__025", "shared")}
   <div class="grid2">${macro(D_SHARED["call__026"].name, D_SHARED["call__026"].tag, D_SHARED["call__026"].body, D_SHARED["call__026"].desc, "call__026", "shared")}${macro(D_SHARED["call__027"].name, D_SHARED["call__027"].tag, D_SHARED["call__027"].body, D_SHARED["call__027"].desc, "call__027", "shared")}</div>
@@ -268,11 +255,8 @@ const CALL_PAY = `<div class="no-copy">
   ${macro(D_SHARED["call__031"].name, D_SHARED["call__031"].tag, D_SHARED["call__031"].body, D_SHARED["call__031"].desc, "call__031", "shared")}
   <div class="grp-h">결제 완료 후 출고 안내</div>
   <div class="grid2">${macro(D_SHARED["call__032"].name, D_SHARED["call__032"].tag, D_SHARED["call__032"].body, D_SHARED["call__032"].desc, "call__032", "shared")}${macro(D_SHARED["call__033"].name, D_SHARED["call__033"].tag, D_SHARED["call__033"].body, D_SHARED["call__033"].desc, "call__033", "shared")}</div>
-</div>`;
 
-const CALL_MEMBER = `<div class="no-copy">
-  <h1>👤 회원 정보 · 마케팅/제휴</h1>
-      <div class="sub">탈퇴·비밀번호·가입 · 마케팅·제휴 문의</div>
+  ${secTitle("👤","회원 정보 · 마케팅/제휴",null,"c_member")}
   <div class="grp-h" id="c_member_1">1. 회원 탈퇴 (본인 확인 후 처리)</div>
   ${macro(D_SHARED["call__034"].name, D_SHARED["call__034"].tag, D_SHARED["call__034"].body, D_SHARED["call__034"].desc, "call__034", "shared")}
   <div class="grid2">${macro(D_SHARED["call__035"].name, D_SHARED["call__035"].tag, D_SHARED["call__035"].body, D_SHARED["call__035"].desc, "call__035", "shared")}${macro(D_SHARED["call__036"].name, D_SHARED["call__036"].tag, D_SHARED["call__036"].body, D_SHARED["call__036"].desc, "call__036", "shared")}</div>
@@ -284,35 +268,14 @@ const CALL_MEMBER = `<div class="no-copy">
   ${macro(D_SHARED["call__041"].name, D_SHARED["call__041"].tag, D_SHARED["call__041"].body, D_SHARED["call__041"].desc, "call__041", "shared")}
   <div class="grp-h" id="c_mkt">📣 마케팅·제휴 문의</div>
   <div class="grid2">${macro(D_SHARED["call__042"].name, D_SHARED["call__042"].tag, D_SHARED["call__042"].body, D_SHARED["call__042"].desc, "call__042", "shared")}${macro(D_SHARED["call__043"].name, D_SHARED["call__043"].tag, D_SHARED["call__043"].body, D_SHARED["call__043"].desc, "call__043", "shared")}</div>
-</div>`;
 
-const CALL_OB = `<div class="no-copy">
-  <h1>📞 [OB] 아웃바운드 / 전화 주문</h1>
-      <div class="sub">콜백·아웃바운드 스크립트 · 전화 주문 유의사항·결제</div>
   ${secTitle("📞","콜백 · 아웃바운드 (O/B) 스크립트",null,"c_ob")}
   ${caution(`불필요한 OB는 지양 · 고객이 인입하지 않았으므로 [소속 브랜드명 + OB 사유 + 통화 가능 여부] 반드시 확인 · 필수 유형: 콜백 전화 주문 접수 건 / 교환·반품 장기 미처리`)}
   <div class="grid2">${macro(D_SHARED["call__015"].name, D_SHARED["call__015"].tag, D_SHARED["call__015"].body, D_SHARED["call__015"].desc, "call__015", "shared")}${macro(D_SHARED["call__016"].name, D_SHARED["call__016"].tag, D_SHARED["call__016"].body, D_SHARED["call__016"].desc, "call__016", "shared")}</div>
   ${macro(D_SHARED["call__017"].name, D_SHARED["call__017"].tag, D_SHARED["call__017"].body, D_SHARED["call__017"].desc, "call__017", "shared")}
   ${secTitle("📞","전화 주문 유의사항",null,"c_call")}
   <div class="grp-h">1) 주문 시 유의사항 안내 (브랜드별)</div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">전화 주문 유의사항 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화로 주문하시는 경우 회원 전용 혜택인 쿠폰, 적립금, 회원 등급 할인 등은 적용되지 않으며, 적립금 사용도 어렵습니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 4만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 9만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 7만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 7만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 3만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 26,800원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 5만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 4만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">전화 주문 유의사항 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__sloom" data-content-brand="shared">${D_SHARED["cmp_callorder__sloom"].body}</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__simplicare" data-content-brand="shared">${D_SHARED["cmp_callorder__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__alignlab" data-content-brand="shared">${D_SHARED["cmp_callorder__alignlab"].body}</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__bilba" data-content-brand="shared">${D_SHARED["cmp_callorder__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__cellology" data-content-brand="shared">${D_SHARED["cmp_callorder__cellology"].body}</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__cocodaum" data-content-brand="shared">${D_SHARED["cmp_callorder__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__drmans" data-content-brand="shared">${D_SHARED["cmp_callorder__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__yvening" data-content-brand="shared">${D_SHARED["cmp_callorder__yvening"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__dramang" data-content-brand="shared">${D_SHARED["cmp_callorder__dramang"].body}</div></td></tr></tbody></table></div>
   ${guide(`12 o'clock · 마넬 : 배송비 기준 미확인 → 확인 후 반영 예정`)}
   <div class="grid2">${macro(D_SHARED["call__044"].name, D_SHARED["call__044"].tag, D_SHARED["call__044"].body, D_SHARED["call__044"].desc, "call__044", "shared")}${macro(D_SHARED["call__045"].name, D_SHARED["call__045"].tag, D_SHARED["call__045"].body, D_SHARED["call__045"].desc, "call__045", "shared")}</div>
   <div class="grp-h">a. 무통장 결제</div>
@@ -331,7 +294,7 @@ const CALL_OB = `<div class="no-copy">
 </div>`;
 
 const CALL_SLOOMCB = `<div class="no-copy">
-  <h1>🎫 [슬룸] 콜백 티켓 처리 프로세스</h1>
+  <h1>🎫 콜백 티켓 처리 프로세스</h1>
       <div class="sub">유형별 접수 처리 표준 · 공통 처리 원칙 + 유형별 프로세스</div>
   <div class="quote-box"><b>콜백 티켓은 고객이 유선(IVR)을 통해 인입, 문의 유형에 따른 필수 정보를 남기면 담당자가 접수 내용을 확인하여 후속 처리하는 방식입니다.
 모든 콜백 티켓에 유선 OB를 진행하는 것은 아니며, 유형별 가이드에 따라 처리 후 알림톡·문자로 안내하거나 필요한 경우에만 유선 OB를 진행합니다. <span style="color:#ea2261;font-weight:800">(단, 전화 주문은 유선 OB 필수)</span></b></div>

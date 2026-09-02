@@ -16,7 +16,7 @@ const CONTENT = {
   "slm_simplemerge":SLM_MERGE_TEMPLATE,
   "slm_side":REF_SIDE, "simplicare_side":SIMPLICARE_SIDE, "alignlab_side":ALIGNLAB_SIDE, "bilba_side":BILBA_SIDE, "cellology_side":CELLOLOGY_SIDE, "cocodaum_side":COCODAUM_SIDE, "oclock_side":OCLOCK_SIDE, "drmans_side":DRMANS_SIDE, "yvening_side":YVENING_SIDE, "marnell_side":MARNELL_SIDE, "dramang_side":DRAMANG_SIDE,
   "cmn_all":COMMON_ALL, "ib":COMMON_IB, "ob":COMMON_OB, "board":BOARD_ALL,
-  "call_ops":CALL_OPS, "call_basic":CALL_BASIC, "call_order":CALL_ORDER, "call_pay":CALL_PAY, "call_member":CALL_MEMBER, "call_ob":CALL_OB, "call_sloomcb":CALL_SLOOMCB
+  "call_all":CALL_ALL, "call_sloomcb":CALL_SLOOMCB
 };
 
 CONTENT["simplicare_refund"]=SIMPLICARE_REFUND; CONTENT["simplicare_exchange"]=SIMPLICARE_EXCHANGE;
@@ -67,31 +67,32 @@ const COMMON_TREE = {
 };
 
 const CALL_TREE = {
-  "유선 표준 응대":{
-    "유선 상담 운영 기준":{__content:"call_ops"},
-    "공통 기본":{__content:"call_basic", __sections:[
-      {label:"1. 인사말", anchor:"c_basic_1"},
-      {label:"2. 사전/사후 대기", anchor:"c_basic_2"},
-      {label:"3. 호응 표현", anchor:"c_basic_3"},
-      {label:"4. 추가 문의", anchor:"c_basic_4"},
-      {label:"🚨 상담 종료 경고", anchor:"c_warn"}
-    ]},
-    "주문 변경":{__content:"call_order", __sections:[
-      {label:"1. 취소 후 배송", anchor:"c_order_1"},
-      {label:"2. 배송 정보 변경", anchor:"c_order_2"}
-    ]},
-    "결제 문의":{__content:"call_pay"},
-    "회원 정보 · 마케팅/제휴":{__content:"call_member", __sections:[
-      {label:"1. 회원 탈퇴", anchor:"c_member_1"},
-      {label:"2. 비밀번호 찾기", anchor:"c_member_2"},
-      {label:"3. 회원가입", anchor:"c_member_3"},
-      {label:"📣 마케팅·제휴 문의", anchor:"c_mkt"}
-    ]},
-    "[OB] 아웃바운드 / 전화 주문":{__content:"call_ob", __sections:[
-      {label:"📞 콜백·아웃바운드 스크립트", anchor:"c_ob"},
-      {label:"📞 전화 주문 유의사항", anchor:"c_call"}
-    ]},
-    "🎫 [슬룸] 콜백 티켓 처리 프로세스":{__content:"call_sloomcb", __sections:[
+  "유선 표준 응대":{__content:"call_all", __sections:[
+    {group:true, label:"📋 유선 상담 운영 기준", anchor:"c_ops"},
+    {group:true, label:"💡 공통 기본", anchor:"c_basic"},
+    {label:"1. 인사말", anchor:"c_basic_1"},
+    {label:"2. 사전/사후 대기", anchor:"c_basic_2"},
+    {label:"3. 호응 표현", anchor:"c_basic_3"},
+    {label:"4. 추가 문의", anchor:"c_basic_4"},
+    {label:"🚨 상담 종료 경고", anchor:"c_warn"},
+    {group:true, label:"🔄 주문 변경", anchor:"c_order"},
+    {label:"1. 취소 후 배송", anchor:"c_order_1"},
+    {label:"2. 배송 정보 변경", anchor:"c_order_2"},
+    {group:true, label:"💳 결제 문의", anchor:"c_pay"},
+    {group:true, label:"👤 회원 정보 · 마케팅/제휴", anchor:"c_member"},
+    {label:"1. 회원 탈퇴", anchor:"c_member_1"},
+    {label:"2. 비밀번호 찾기", anchor:"c_member_2"},
+    {label:"3. 회원가입", anchor:"c_member_3"},
+    {label:"📣 마케팅·제휴 문의", anchor:"c_mkt"},
+    {group:true, label:"📞 콜백·아웃바운드 스크립트", anchor:"c_ob"},
+    {group:true, label:"📞 전화 주문 유의사항", anchor:"c_call"}
+  ]}
+};
+
+/* 유선 브랜드별 전용 프로세스 (채팅의 "공통"/"브랜드" 구분과 동일 패턴) */
+const CALL_BRAND_TREE = {
+  "슬룸":{
+    "🎫 콜백 티켓 처리 프로세스":{__content:"call_sloomcb", __sections:[
       {label:"공통 처리 원칙", anchor:"c_sloomcb_0"},
       {label:"1. 교환·반품 철회 요청", anchor:"c_sloomcb_1"}
     ]}
@@ -1001,6 +1002,7 @@ function buildSearchIndex(){
   walk(COMMON_TREE,"","home","채팅");
   walk(BRAND_TREE,"","home","채팅");
   if(typeof CALL_TREE!=="undefined") walk(CALL_TREE,"","call","유선");
+  if(typeof CALL_BRAND_TREE!=="undefined") walk(CALL_BRAND_TREE,"","call","유선");
   if(typeof BOARD_TREE!=="undefined") walk(BOARD_TREE,"","board","게시판");
 }
 
@@ -1062,6 +1064,12 @@ function renderTree(){
       +`<div class="tree-divider"></div>`
       +`<div class="group-label">브랜드</div>`
       +buildTree(BRAND_TREE,"");
+  }else if(curRail==="call"){
+    tree.innerHTML=`<div class="group-label">공통</div>`
+      +buildTree(CALL_TREE,"")
+      +`<div class="tree-divider"></div>`
+      +`<div class="group-label">브랜드</div>`
+      +buildTree(CALL_BRAND_TREE,"");
   }else if(cfg.type==="tree"){
     tree.innerHTML=buildTree(curRail==="board"?BOARD_TREE:CALL_TREE,"");
     tree.querySelectorAll(":scope > .node").forEach(n=>n.classList.add("open"));
@@ -1145,6 +1153,16 @@ function openHomeDefault(){
   document.querySelectorAll("#tree .node.open").forEach(n=>n.classList.remove("open"));
   setCrumb("채팅 › 개요");
   render(CHAT_HOME);
+  const c=document.querySelector(".content"); if(c) c.scrollTop=0;
+}
+
+/* 유선 탭 진입 시 기본 상태: 사이드바 토글은 전부 접고, 첫 화면에는 "유선 표준 응대" 본문을 바로 띄운다 */
+function openCallDefault(){
+  CUR_CID="";
+  document.querySelectorAll(".leaf").forEach(l=>l.classList.remove("active"));
+  document.querySelectorAll("#tree .node.open").forEach(n=>n.classList.remove("open"));
+  setCrumb("유선 › 유선 표준 응대");
+  render(CONTENT["call_all"]);
   const c=document.querySelector(".content"); if(c) c.scrollTop=0;
 }
 
@@ -1441,6 +1459,7 @@ document.querySelectorAll(".rail-btn").forEach(b=>{
     if(curRail==="dash"){ commitView(); }
     else if(curRail==="bm"){ commitView(); }
     else if(curRail==="home"){ openHomeDefault(); commitView(); }
+    else if(curRail==="call"){ openCallDefault(); commitView(); }
     else if(first){ first.click(); }
   });
 });
@@ -1453,7 +1472,9 @@ document.getElementById("searchInput").addEventListener("input",e=>{
 });
 function restoreView(){
   const active=document.querySelector(".leaf.active");
-  if(active) active.click(); else openHomeDefault();
+  if(active) active.click();
+  else if(curRail==="call") openCallDefault();
+  else openHomeDefault();
 }
 
 /* 사이드바 너비 드래그 조절 */
