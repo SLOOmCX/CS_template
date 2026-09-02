@@ -23,103 +23,15 @@ const BOARD_ALL = `
   ${secTitle("📋","1:1·FAQ·댓글 공통 양식","자사몰·커머스","b_form")}
   <div class="grp-h" id="b_form_1">[전브랜드] 첫인사 (1:1·FAQ)</div>
   ${caution(`1:1 문의·FAQ·댓글 응대 시 사용 · 끝인사는 클레임에 사용 금지`)}
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">첫인사 멘트</th><th class="cmp-corner">브랜드</th><th class="cmp-blue">첫인사 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-프리미엄 헬스테크 브랜드, 슬룸입니다. 💜</div></td><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-건강식품의 본질에 집중하는 심플리케어입니다.</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-나를 위한 뷰티케어 브랜드, 얼라인랩입니다.</div></td><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-Be Live and Better — 더 나은 나의 라이프, 빌바입니다.</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-피부의 근본을 연구하는 셀올로지입니다. 💙</div></td><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 보호자님,
-사랑하는 코코들을 위해, 코코다움입니다. 🐾</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-12 o'clock입니다.</div></td><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-바쁜 남자들을 위한 올인원 솔루션, 닥터맨즈입니다.</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-로맨틱한 순간을 위한 페미닌 케어, 와이브닝입니다.</div></td><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-마넬입니다.</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-아이들의 올바른 성장을 연구하는 닥터아망입니다.</div></td><td class="cmp-row-label"></td><td></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">첫인사 멘트</th><th class="cmp-corner">브랜드</th><th class="cmp-blue">첫인사 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__sloom" data-content-brand="shared">${D_SHARED["cmp_greet__sloom"].body}</div></td><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__simplicare" data-content-brand="shared">${D_SHARED["cmp_greet__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__alignlab" data-content-brand="shared">${D_SHARED["cmp_greet__alignlab"].body}</div></td><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__bilba" data-content-brand="shared">${D_SHARED["cmp_greet__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__cellology" data-content-brand="shared">${D_SHARED["cmp_greet__cellology"].body}</div></td><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__cocodaum" data-content-brand="shared">${D_SHARED["cmp_greet__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__oclock" data-content-brand="shared">${D_SHARED["cmp_greet__oclock"].body}</div></td><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__drmans" data-content-brand="shared">${D_SHARED["cmp_greet__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__yvening" data-content-brand="shared">${D_SHARED["cmp_greet__yvening"].body}</div></td><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__marnell" data-content-brand="shared">${D_SHARED["cmp_greet__marnell"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_greet__dramang" data-content-brand="shared">${D_SHARED["cmp_greet__dramang"].body}</div></td><td class="cmp-row-label"></td><td></td></tr></tbody></table></div>
   <div class="grp-h">[공통] 끝인사 (1:1·FAQ)</div>
   ${macro(D_SHARED["board__001"].name, D_SHARED["board__001"].tag, D_SHARED["board__001"].body, D_SHARED["board__001"].desc, "board__001", "shared")}
   <div class="grp-h" id="b_form_2">[전브랜드] 채팅 상담 유도 (사진·정보·실시간 상담 필요 시)</div>
   ${caution(`문의 내용에 사진·고객 정보·실시간 상담 등이 필요해 채팅 상담으로 유도할 경우 사용`)}
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">채팅 상담 유도 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 슬룸 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 슬룸 채팅 상담 바로가기 : http://sloom.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 심플리케어 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 심플리케어 채팅 상담 바로가기 : http://simplicare.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 얼라인랩 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 얼라인랩 채팅 상담 바로가기 : http://alignlab.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 빌바 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 빌바 채팅 상담 바로가기 : http://bilba.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 셀올로지 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 셀올로지 채팅 상담 바로가기 : http://cellology.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 코코다움 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 코코다움 채팅 상담 바로가기 : http://cocodaum.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 12 o'clock 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 12 o'clock 채팅 상담 바로가기 : http://12oclock.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 닥터맨즈 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 닥터맨즈 채팅 상담 바로가기 : http://drmans.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 와이브닝 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 와이브닝 채팅 상담 바로가기 : http://yvening.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 마넬 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 마넬 채팅 상담 바로가기 : http://pf.kakao.com/_YxcIxexj/chat
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">다만 (목적 기재)를 위해 (사진 또는 고객님 정보 확인 또는 실시간 상담)이 필요하여, 번거로우시겠지만 1:1 문의가 아닌 닥터아망 채팅 상담으로 문의해 주시면 확인 후 도와드리겠습니다.
-감사합니다.
-
-👉 닥터아망 채팅 상담 바로가기 : http://dramang.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">채팅 상담 유도 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__sloom" data-content-brand="shared">${D_SHARED["cmp_chatlead__sloom"].body}</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__simplicare" data-content-brand="shared">${D_SHARED["cmp_chatlead__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__alignlab" data-content-brand="shared">${D_SHARED["cmp_chatlead__alignlab"].body}</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__bilba" data-content-brand="shared">${D_SHARED["cmp_chatlead__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__cellology" data-content-brand="shared">${D_SHARED["cmp_chatlead__cellology"].body}</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__cocodaum" data-content-brand="shared">${D_SHARED["cmp_chatlead__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__oclock" data-content-brand="shared">${D_SHARED["cmp_chatlead__oclock"].body}</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__drmans" data-content-brand="shared">${D_SHARED["cmp_chatlead__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__yvening" data-content-brand="shared">${D_SHARED["cmp_chatlead__yvening"].body}</div></td></tr><tr><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__marnell" data-content-brand="shared">${D_SHARED["cmp_chatlead__marnell"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatlead__dramang" data-content-brand="shared">${D_SHARED["cmp_chatlead__dramang"].body}</div></td></tr></tbody></table></div>
   <div class="grp-h" id="b_form_3">[전브랜드] 고객센터 안내 (문자·1:1 문의)</div>
   ${caution(`문자·1:1 문의에 고객센터를 안내할 경우 아래 양식으로 일괄 통일`)}
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">고객센터 안내 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 슬룸 고객센터를 통해 문의 부탁드립니다.
-
-👉 슬룸 채팅 상담 바로가기 : http://sloom.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 심플리케어 고객센터를 통해 문의 부탁드립니다.
-
-👉 심플리케어 채팅 상담 바로가기 : http://simplicare.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 얼라인랩 고객센터를 통해 문의 부탁드립니다.
-
-👉 얼라인랩 채팅 상담 바로가기 : http://alignlab.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 빌바 고객센터를 통해 문의 부탁드립니다.
-
-👉 빌바 채팅 상담 바로가기 : http://bilba.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 셀올로지 고객센터를 통해 문의 부탁드립니다.
-
-👉 셀올로지 채팅 상담 바로가기 : http://cellology.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 코코다움 고객센터를 통해 문의 부탁드립니다.
-
-👉 코코다움 채팅 상담 바로가기 : http://cocodaum.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 12 o'clock 고객센터를 통해 문의 부탁드립니다.
-
-👉 12 o'clock 채팅 상담 바로가기 : http://12oclock.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 닥터맨즈 고객센터를 통해 문의 부탁드립니다.
-
-👉 닥터맨즈 채팅 상담 바로가기 : http://drmans.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 와이브닝 고객센터를 통해 문의 부탁드립니다.
-
-👉 와이브닝 채팅 상담 바로가기 : http://yvening.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 마넬 고객센터를 통해 문의 부탁드립니다.
-
-👉 마넬 채팅 상담 바로가기 : http://pf.kakao.com/_YxcIxexj/chat
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">추가적으로 문의 사항이 있으실 경우 닥터아망 고객센터를 통해 문의 부탁드립니다.
-
-👉 닥터아망 채팅 상담 바로가기 : http://dramang.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)</div></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">고객센터 안내 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__sloom" data-content-brand="shared">${D_SHARED["cmp_csinfo__sloom"].body}</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__simplicare" data-content-brand="shared">${D_SHARED["cmp_csinfo__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__alignlab" data-content-brand="shared">${D_SHARED["cmp_csinfo__alignlab"].body}</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__bilba" data-content-brand="shared">${D_SHARED["cmp_csinfo__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__cellology" data-content-brand="shared">${D_SHARED["cmp_csinfo__cellology"].body}</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__cocodaum" data-content-brand="shared">${D_SHARED["cmp_csinfo__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__oclock" data-content-brand="shared">${D_SHARED["cmp_csinfo__oclock"].body}</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__drmans" data-content-brand="shared">${D_SHARED["cmp_csinfo__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__yvening" data-content-brand="shared">${D_SHARED["cmp_csinfo__yvening"].body}</div></td></tr><tr><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__marnell" data-content-brand="shared">${D_SHARED["cmp_csinfo__marnell"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__dramang" data-content-brand="shared">${D_SHARED["cmp_csinfo__dramang"].body}</div></td></tr></tbody></table></div>
   ${secTitle("📄","문의 유형별 템플릿","자사몰·커머스","b_type")}
   <div class="grp-h" id="b_type_1">[슬룸] 불량 반품·교환·AS 상담 요청</div>
   ${macro(D_SHARED["board__002"].name, D_SHARED["board__002"].tag, D_SHARED["board__002"].body, D_SHARED["board__002"].desc, "board__002", "shared")}
@@ -129,117 +41,7 @@ Be Live and Better — 더 나은 나의 라이프, 빌바입니다.</div></td><
   ${macro(D_SHARED["board__004"].name, D_SHARED["board__004"].tag, D_SHARED["board__004"].body, D_SHARED["board__004"].desc, "board__004", "shared")}
   <div class="grp-h" id="b_type_4">[전브랜드] 교환/반품 사유 확인 필요 시</div>
   ${caution(`반품·교환 사유 확인 등 절차가 필요해 채팅 상담으로 접수 유도할 경우 사용`)}
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">교환/반품 사유 확인 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-프리미엄 헬스테크 브랜드, 슬룸입니다. 💜
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 슬룸 채팅 상담 바로가기 : http://sloom.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-건강식품의 본질에 집중하는 심플리케어입니다.
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 심플리케어 채팅 상담 바로가기 : http://simplicare.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-나를 위한 뷰티케어 브랜드, 얼라인랩입니다.
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 얼라인랩 채팅 상담 바로가기 : http://alignlab.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-Be Live and Better — 더 나은 나의 라이프, 빌바입니다.
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 빌바 채팅 상담 바로가기 : http://bilba.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-피부의 근본을 연구하는 셀올로지입니다. 💙
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 셀올로지 채팅 상담 바로가기 : http://cellology.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 보호자님,
-사랑하는 코코들을 위해, 코코다움입니다. 🐾
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 코코다움 채팅 상담 바로가기 : http://cocodaum.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-12 o'clock입니다.
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 12 o'clock 채팅 상담 바로가기 : http://12oclock.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-바쁜 남자들을 위한 올인원 솔루션, 닥터맨즈입니다.
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 닥터맨즈 채팅 상담 바로가기 : http://drmans.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-로맨틱한 순간을 위한 페미닌 케어, 와이브닝입니다.
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 와이브닝 채팅 상담 바로가기 : http://yvening.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-마넬입니다.
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 마넬 채팅 상담 바로가기 : http://pf.kakao.com/_YxcIxexj/chat
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">안녕하세요 고객님,
-아이들의 올바른 성장을 연구하는 닥터아망입니다.
-
-제품의 반품 및 교환 접수는 반품 사유 확인 등 일정한 절차를 거쳐 진행되고 있습니다.
-번거로우시겠지만 채팅 상담을 통해 관련 내용을 접수해 주시면 확인 후 최대한 신속하게 도와드리겠습니다.
-
-☞ 닥터아망 채팅 상담 바로가기 : http://dramang.channel.io/
-※ 상담 가능 시간 : 월–금 09:30-17:00 (점심시간 12:30-13:30 / 주말·공휴일 휴무)
-
-앞으로도 고객님께 더 큰 만족을 드릴 수 있도록 최선을 다하겠습니다.
-감사합니다.</div></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">교환/반품 사유 확인 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__sloom" data-content-brand="shared">${D_SHARED["cmp_reasonchk__sloom"].body}</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__simplicare" data-content-brand="shared">${D_SHARED["cmp_reasonchk__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__alignlab" data-content-brand="shared">${D_SHARED["cmp_reasonchk__alignlab"].body}</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__bilba" data-content-brand="shared">${D_SHARED["cmp_reasonchk__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__cellology" data-content-brand="shared">${D_SHARED["cmp_reasonchk__cellology"].body}</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__cocodaum" data-content-brand="shared">${D_SHARED["cmp_reasonchk__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__oclock" data-content-brand="shared">${D_SHARED["cmp_reasonchk__oclock"].body}</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__drmans" data-content-brand="shared">${D_SHARED["cmp_reasonchk__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__yvening" data-content-brand="shared">${D_SHARED["cmp_reasonchk__yvening"].body}</div></td></tr><tr><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__marnell" data-content-brand="shared">${D_SHARED["cmp_reasonchk__marnell"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_reasonchk__dramang" data-content-brand="shared">${D_SHARED["cmp_reasonchk__dramang"].body}</div></td></tr></tbody></table></div>
 
   ${secTitle("📦","[슬룸] 외부몰 유형별 템플릿",null,"b_ext")}
   <div class="quote-box"><b>📌 이 템플릿은 외부몰 고객문의 답변 기준입니다</b>
@@ -289,7 +91,7 @@ const COMMON_ALL = `
 
   ${secTitle("💡","공통 기본","전 브랜드 공통","c_basic")}
   <div class="grp-h" id="c_basic_0">0. 브랜드별 개요</div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">캐치프라이즈</th><th class="cmp-blue">대표번호</th><th class="cmp-blue">채팅</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td>프리미엄 헬스테크 브랜드, 슬룸 💜</td><td>1668-2956</td><td><a href="http://sloom.channel.io/" target="_blank">http://sloom.channel.io</a></td></tr><tr><td class="cmp-row-label">심플리케어</td><td>건강식품의 본질에 집중하는 심플리케어</td><td>1668-1406</td><td><a href="http://simplicare.channel.io/" target="_blank">http://simplicare.channel.io</a></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td>나를 위한 뷰티케어 브랜드, 얼라인랩</td><td>1668-3559</td><td><a href="http://alignlab.channel.io/" target="_blank">http://alignlab.channel.io</a></td></tr><tr><td class="cmp-row-label">빌바</td><td>Be Live and Better — 더 나은 나의 라이프, 빌바</td><td>1668-2908</td><td><a href="http://bilba.channel.io/" target="_blank">http://bilba.channel.io</a></td></tr><tr><td class="cmp-row-label">셀올로지</td><td>피부의 근본을 연구하는 셀올로지 💙</td><td>1544-5748</td><td><a href="http://cellology.channel.io/" target="_blank">http://cellology.channel.io</a></td></tr><tr><td class="cmp-row-label">코코다움</td><td>사랑하는 코코들을 위해, 코코다움 🐾</td><td>1668-1376</td><td><a href="http://cocodaum.channel.io/" target="_blank">http://cocodaum.channel.io</a></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td>새로운 하루의 시작인 12시를 기념하며, 투엘브어클락(12 o'clock)</td><td>없음</td><td><a href="http://12oclock.channel.io/" target="_blank">http://12oclock.channel.io</a></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td>바쁜 남자들을 위한 올인원 솔루션, 닥터맨즈</td><td>1668-0953</td><td><a href="http://drmans.channel.io/" target="_blank">http://drmans.channel.io</a></td></tr><tr><td class="cmp-row-label">와이브닝</td><td>로맨틱한 순간을 위한 페미닌 케어, 와이브닝</td><td>1668-5811</td><td><a href="http://yvening.channel.io/" target="_blank">http://yvening.channel.io</a></td></tr><tr><td class="cmp-row-label">마넬</td><td>눈부신 나를 위한 내추럴 뷰티, 마넬입니다.</td><td>없음</td><td><a href="http://pf.kakao.com/_YxcIxexj/chat" target="_blank">http://pf.kakao.com/_YxcIxexj/chat</a></td></tr><tr><td class="cmp-row-label">닥터아망</td><td>아이들의 올바른 성장을 연구하는 닥터아망</td><td>1668-3342</td><td><a href="http://dramang.channel.io/" target="_blank">http://dramang.channel.io</a></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">캐치프라이즈</th><th class="cmp-blue">대표번호</th><th class="cmp-blue">채팅</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td data-content-key="cmp_catch__sloom" data-content-brand="shared">${D_SHARED["cmp_catch__sloom"].body}</td><td data-content-key="cmp_phone__sloom" data-content-brand="shared">${D_SHARED["cmp_phone__sloom"].body}</td><td data-content-key="cmp_chatlink__sloom" data-content-brand="shared">${D_SHARED["cmp_chatlink__sloom"].body}</td></tr><tr><td class="cmp-row-label">심플리케어</td><td data-content-key="cmp_catch__simplicare" data-content-brand="shared">${D_SHARED["cmp_catch__simplicare"].body}</td><td data-content-key="cmp_phone__simplicare" data-content-brand="shared">${D_SHARED["cmp_phone__simplicare"].body}</td><td data-content-key="cmp_chatlink__simplicare" data-content-brand="shared">${D_SHARED["cmp_chatlink__simplicare"].body}</td></tr><tr><td class="cmp-row-label">얼라인랩</td><td data-content-key="cmp_catch__alignlab" data-content-brand="shared">${D_SHARED["cmp_catch__alignlab"].body}</td><td data-content-key="cmp_phone__alignlab" data-content-brand="shared">${D_SHARED["cmp_phone__alignlab"].body}</td><td data-content-key="cmp_chatlink__alignlab" data-content-brand="shared">${D_SHARED["cmp_chatlink__alignlab"].body}</td></tr><tr><td class="cmp-row-label">빌바</td><td data-content-key="cmp_catch__bilba" data-content-brand="shared">${D_SHARED["cmp_catch__bilba"].body}</td><td data-content-key="cmp_phone__bilba" data-content-brand="shared">${D_SHARED["cmp_phone__bilba"].body}</td><td data-content-key="cmp_chatlink__bilba" data-content-brand="shared">${D_SHARED["cmp_chatlink__bilba"].body}</td></tr><tr><td class="cmp-row-label">셀올로지</td><td data-content-key="cmp_catch__cellology" data-content-brand="shared">${D_SHARED["cmp_catch__cellology"].body}</td><td data-content-key="cmp_phone__cellology" data-content-brand="shared">${D_SHARED["cmp_phone__cellology"].body}</td><td data-content-key="cmp_chatlink__cellology" data-content-brand="shared">${D_SHARED["cmp_chatlink__cellology"].body}</td></tr><tr><td class="cmp-row-label">코코다움</td><td data-content-key="cmp_catch__cocodaum" data-content-brand="shared">${D_SHARED["cmp_catch__cocodaum"].body}</td><td data-content-key="cmp_phone__cocodaum" data-content-brand="shared">${D_SHARED["cmp_phone__cocodaum"].body}</td><td data-content-key="cmp_chatlink__cocodaum" data-content-brand="shared">${D_SHARED["cmp_chatlink__cocodaum"].body}</td></tr><tr><td class="cmp-row-label">12 o'clock</td><td data-content-key="cmp_catch__oclock" data-content-brand="shared">${D_SHARED["cmp_catch__oclock"].body}</td><td>없음</td><td data-content-key="cmp_chatlink__oclock" data-content-brand="shared">${D_SHARED["cmp_chatlink__oclock"].body}</td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td data-content-key="cmp_catch__drmans" data-content-brand="shared">${D_SHARED["cmp_catch__drmans"].body}</td><td data-content-key="cmp_phone__drmans" data-content-brand="shared">${D_SHARED["cmp_phone__drmans"].body}</td><td data-content-key="cmp_chatlink__drmans" data-content-brand="shared">${D_SHARED["cmp_chatlink__drmans"].body}</td></tr><tr><td class="cmp-row-label">와이브닝</td><td data-content-key="cmp_catch__yvening" data-content-brand="shared">${D_SHARED["cmp_catch__yvening"].body}</td><td data-content-key="cmp_phone__yvening" data-content-brand="shared">${D_SHARED["cmp_phone__yvening"].body}</td><td data-content-key="cmp_chatlink__yvening" data-content-brand="shared">${D_SHARED["cmp_chatlink__yvening"].body}</td></tr><tr><td class="cmp-row-label">마넬</td><td data-content-key="cmp_catch__marnell" data-content-brand="shared">${D_SHARED["cmp_catch__marnell"].body}</td><td>없음</td><td data-content-key="cmp_chatlink__marnell" data-content-brand="shared">${D_SHARED["cmp_chatlink__marnell"].body}</td></tr><tr><td class="cmp-row-label">닥터아망</td><td data-content-key="cmp_catch__dramang" data-content-brand="shared">${D_SHARED["cmp_catch__dramang"].body}</td><td data-content-key="cmp_phone__dramang" data-content-brand="shared">${D_SHARED["cmp_phone__dramang"].body}</td><td data-content-key="cmp_chatlink__dramang" data-content-brand="shared">${D_SHARED["cmp_chatlink__dramang"].body}</td></tr></tbody></table></div>
   <div class="grp-h" id="c_basic_1">1. 인사말</div>
   <div class="grp-h grp-sub">첫인사</div>
   ${macro(D_SHARED["cmn_all__001"].name, D_SHARED["cmn_all__001"].tag, D_SHARED["cmn_all__001"].body, D_SHARED["cmn_all__001"].desc, "cmn_all__001", "shared")}
@@ -373,7 +175,7 @@ subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["c
 👇🏻 상담사가 아래 멘트 송출 후 통화 가능한 연락처 확보 → 유선O/B 진행`)}
   ${macro(D_SHARED["cmn_all__056"].name, D_SHARED["cmn_all__056"].tag, D_SHARED["cmn_all__056"].body, D_SHARED["cmn_all__056"].desc, "cmn_all__056", "shared")}
     <div class="grp-h">브랜드별 대표번호</div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">대표번호</th><th class="cmp-corner">브랜드</th><th class="cmp-blue">대표번호</th></tr></thead><tbody><tr><td class="cmp-row-label">심플리케어</td><td>1668-1406</td><td class="cmp-row-label">코코다움</td><td>1668-1376</td></tr><tr><td class="cmp-row-label">슬룸</td><td>1668-2956</td><td class="cmp-row-label">얼라인랩</td><td>1668-3559</td></tr><tr><td class="cmp-row-label">닥터아망</td><td>1668-3342</td><td class="cmp-row-label">와이브닝</td><td>1668-5811</td></tr><tr><td class="cmp-row-label">셀올로지</td><td>1544-5748</td><td class="cmp-row-label">빌바</td><td>1668-2908</td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td>1668-0953</td><td class="cmp-row-label"></td><td></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">대표번호</th><th class="cmp-corner">브랜드</th><th class="cmp-blue">대표번호</th></tr></thead><tbody><tr><td class="cmp-row-label">심플리케어</td><td data-content-key="cmp_phone__simplicare" data-content-brand="shared">${D_SHARED["cmp_phone__simplicare"].body}</td><td class="cmp-row-label">코코다움</td><td data-content-key="cmp_phone__cocodaum" data-content-brand="shared">${D_SHARED["cmp_phone__cocodaum"].body}</td></tr><tr><td class="cmp-row-label">슬룸</td><td data-content-key="cmp_phone__sloom" data-content-brand="shared">${D_SHARED["cmp_phone__sloom"].body}</td><td class="cmp-row-label">얼라인랩</td><td data-content-key="cmp_phone__alignlab" data-content-brand="shared">${D_SHARED["cmp_phone__alignlab"].body}</td></tr><tr><td class="cmp-row-label">닥터아망</td><td data-content-key="cmp_phone__dramang" data-content-brand="shared">${D_SHARED["cmp_phone__dramang"].body}</td><td class="cmp-row-label">와이브닝</td><td data-content-key="cmp_phone__yvening" data-content-brand="shared">${D_SHARED["cmp_phone__yvening"].body}</td></tr><tr><td class="cmp-row-label">셀올로지</td><td data-content-key="cmp_phone__cellology" data-content-brand="shared">${D_SHARED["cmp_phone__cellology"].body}</td><td class="cmp-row-label">빌바</td><td data-content-key="cmp_phone__bilba" data-content-brand="shared">${D_SHARED["cmp_phone__bilba"].body}</td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td data-content-key="cmp_phone__drmans" data-content-brand="shared">${D_SHARED["cmp_phone__drmans"].body}</td><td class="cmp-row-label"></td><td></td></tr></tbody></table></div>
   ${secTitle("📣","마케팅·제휴 문의",null,"c_mkt")}
   <div class="grid2">${macro(D_SHARED["cmn_all__057"].name, D_SHARED["cmn_all__057"].tag, D_SHARED["cmn_all__057"].body, D_SHARED["cmn_all__057"].desc, "cmn_all__057", "shared")}${macro(D_SHARED["cmn_all__058"].name, D_SHARED["cmn_all__058"].tag, D_SHARED["cmn_all__058"].body, D_SHARED["cmn_all__058"].desc, "cmn_all__058", "shared")}</div>
   ${secTitle("🛒","채팅 주문",null,"c_chat")}
@@ -381,43 +183,7 @@ subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["c
   <div class="quote-box"><b>• 배송비는 브랜드별 금액 기준만 상이 (슬룸 제외)
 • 무통장 입금으로만 결제 가능, 자사몰 회원 혜택 미제공은 동일
 • 채팅 주문은 카드 결제(페이업) 불가 — 개인정보 이슈</b></div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">채팅 주문 유의사항 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 제공되는 무료배송쿠폰 등의 사용이 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능합니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 발급되는 웰컴 쿠폰팩 등 쿠폰 사용은 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능하며, 4만원 미만 주문 시 배송비 3,000원이 추가됩니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 발급되는 웰컴 쿠폰팩 등 쿠폰 사용은 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능하며, 9만원 미만 주문 시 배송비 3,000원이 추가됩니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 발급되는 웰컴 쿠폰팩 등 쿠폰 사용은 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능하며, 7만원 미만 주문 시 배송비 3,000원이 추가됩니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 발급되는 웰컴 쿠폰팩 등 쿠폰 사용은 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능하며, 7만원 미만 주문 시 배송비 3,000원이 추가됩니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 발급되는 웰컴 쿠폰팩 등 쿠폰 사용은 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능하며, 3만원 미만 주문 시 배송비 3,000원이 추가됩니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 발급되는 웰컴 쿠폰팩 등 쿠폰 사용은 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능하며, 26,800원 미만 주문 시 배송비 3,000원이 추가됩니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 발급되는 웰컴 쿠폰팩 등 쿠폰 사용은 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능하며, 5만원 미만 주문 시 배송비 3,000원이 추가됩니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">고객님, 채팅 주문 시 유의사항 먼저 안내드립니다.
-회원 가입 시 발급되는 웰컴 쿠폰팩 등 쿠폰 사용은 제한되며, 적립금 혜택도 적용되지 않습니다.
-또한, 무통장 입금으로만 가능하며, 4만원 미만 주문 시 배송비 3,000원이 추가됩니다.
-
-이 조건으로 주문 계속 진행해도 괜찮을까요?</div></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">채팅 주문 유의사항 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__sloom" data-content-brand="shared">${D_SHARED["cmp_chatorder__sloom"].body}</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__simplicare" data-content-brand="shared">${D_SHARED["cmp_chatorder__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__alignlab" data-content-brand="shared">${D_SHARED["cmp_chatorder__alignlab"].body}</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__bilba" data-content-brand="shared">${D_SHARED["cmp_chatorder__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__cellology" data-content-brand="shared">${D_SHARED["cmp_chatorder__cellology"].body}</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__cocodaum" data-content-brand="shared">${D_SHARED["cmp_chatorder__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__drmans" data-content-brand="shared">${D_SHARED["cmp_chatorder__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__yvening" data-content-brand="shared">${D_SHARED["cmp_chatorder__yvening"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__dramang" data-content-brand="shared">${D_SHARED["cmp_chatorder__dramang"].body}</div></td></tr></tbody></table></div>
   ${guide(`12 o'clock · 마넬 : 배송비 기준 미확인 → 확인 후 반영 예정`)}
   <div class="grid2">${macro(D_SHARED["cmn_all__059"].name, D_SHARED["cmn_all__059"].tag, D_SHARED["cmn_all__059"].body, D_SHARED["cmn_all__059"].desc, "cmn_all__059", "shared")}${macro(D_SHARED["cmn_all__060"].name, D_SHARED["cmn_all__060"].tag, D_SHARED["cmn_all__060"].body, D_SHARED["cmn_all__060"].desc, "cmn_all__060", "shared")}</div>
   <div class="grp-h">출고 예정 안내 (입금 확인 후)</div>
@@ -426,24 +192,15 @@ subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["c
   ${guide(`상담 종료 후 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">[SCM파트 X CX팀] 수기 주문 출고 리스트</a> 시트에 사업자(올릿/리테일/더마) 구분하여 작성, 출고 요청`)}
 `;
 
-const CALL_OPS = `<div class="no-copy">
-  <h1>📋 유선 상담 운영 기준</h1>
-      <div class="sub">슬룸 유선(전화) 응대 표준 · 콜백티켓 중심 운영</div>
+const COMMON_CALL_ALL = `<div class="no-copy">
+  <h1>📞 유선 응대</h1>
+      <div class="sub">슬룸 유선(전화) 응대 표준 · 구어체 · 콜백/OB 중심 운영</div>
+  ${secTitle("📋","유선 상담 운영 기준",null,"c_ops")}
   <div class="warn-note">⚠️ AS·불량은 증빙(영상·사진) 확인이 필요해 유선 상담을 진행하지 않습니다. → 채팅으로만 접수 안내</div>
   <div class="quote-box"><b>📞 [슬룸] 현재 콜백티켓 중심 운영</b>
 대표번호 고객센터 연결 → 고객 문의 유형 선택 → 유형별 요청 정보 기재 후 접수 완료 → 채널톡 팀챗 콜백 티켓 접수건 확인 후 OB 진행</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7">AS·불량은 증빙(영상·사진) 확인이 필요해 전화로는 접수할 수 없습니다.
-고객님께 채팅으로만 진행 가능함을 안내하고, 아래 워크플로우를 유저챗으로 발송해 주세요.
-▶ <a href="https://sloom.channel.io/workflows/789993" target="_blank">[IVR/ALF] 불량 AS 접수 직통 ver.</a> 유저챗 발송</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">슬룸 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7">현재 슬룸은 콜백 티켓을 중심으로 유선 상담을 운영하고 있습니다.
-
-콜백티켓 운영 방식 : 🔗 대표번호 고객센터 연결 → 문의 유형 선택 → 요청 정보 입력·접수 → 채널톡 팀챗에서 콜백 티켓으로 접수 → 상담사 OB 진행
-(⚠️ 전화 주문 유형만 유선 OB / 그 외 유저챗 오픈하여 진행)</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7">전화 주문 · 주문 취소 · 반품/교환 철회 요청 · 교환 제품 배송 일정 · 반품 환불 일정 · 오배송/미배송(배송 오류) · 재회수 요청 · 취소 후 배송/회수 요청</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7">현재 : 전화 주문
-추후 확대 예정 : 배송 정보 변경 요청 / 무통장 입금 내역 확인</td></tr></tbody></table></div>
-</div>`;
-
-const CALL_BASIC = `<div class="no-copy">
-  <h1>💡 공통 기본</h1>
-      <div class="sub">전 브랜드 공통 · 인사말·대기·호응·종료 기준</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__as" data-content-brand="shared">${D_SHARED["cmp_callops__as"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">슬룸 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__opmode" data-content-brand="shared">${D_SHARED["cmp_callops__opmode"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__cbtypes" data-content-brand="shared">${D_SHARED["cmp_callops__cbtypes"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__livetypes" data-content-brand="shared">${D_SHARED["cmp_callops__livetypes"].body}</td></tr></tbody></table></div>
+  ${secTitle("💡","공통 기본","전 브랜드 공통","c_basic")}
   <div class="grp-h" id="c_basic_1">1. 인사말</div>
   ${macro(D_SHARED["call__001"].name, D_SHARED["call__001"].tag, D_SHARED["call__001"].body, D_SHARED["call__001"].desc, "call__001", "shared")}
   ${macro(D_SHARED["call__002"].name, D_SHARED["call__002"].tag, D_SHARED["call__002"].body, D_SHARED["call__002"].desc, "call__002", "shared")}
@@ -461,11 +218,11 @@ const CALL_BASIC = `<div class="no-copy">
   <div class="grp-h" id="c_warn">🚨 상담 종료 경고</div>
   ${caution(`고객 욕설·반말·폭언·성희롱 (1회) — 담당 관리자 보고 필수`)}
   <div class="grid2">${macro(D_SHARED["call__013"].name, D_SHARED["call__013"].tag, D_SHARED["call__013"].body, D_SHARED["call__013"].desc, "call__013", "shared")}${macro(D_SHARED["call__014"].name, D_SHARED["call__014"].tag, D_SHARED["call__014"].body, D_SHARED["call__014"].desc, "call__014", "shared")}</div>
-</div>`;
-
-const CALL_ORDER = `<div class="no-copy">
-  <h1>🔄 주문 변경</h1>
-      <div class="sub">취소 후 배송 · 배송 정보 변경</div>
+  ${secTitle("📞","콜백 · 아웃바운드 (O/B)",null,"c_ob")}
+  ${caution(`불필요한 OB는 지양 · 고객이 인입하지 않았으므로 [소속 브랜드명 + OB 사유 + 통화 가능 여부] 반드시 확인 · 필수 유형: 콜백 전화 주문 접수 건 / 교환·반품 장기 미처리`)}
+  <div class="grid2">${macro(D_SHARED["call__015"].name, D_SHARED["call__015"].tag, D_SHARED["call__015"].body, D_SHARED["call__015"].desc, "call__015", "shared")}${macro(D_SHARED["call__016"].name, D_SHARED["call__016"].tag, D_SHARED["call__016"].body, D_SHARED["call__016"].desc, "call__016", "shared")}</div>
+  ${macro(D_SHARED["call__017"].name, D_SHARED["call__017"].tag, D_SHARED["call__017"].body, D_SHARED["call__017"].desc, "call__017", "shared")}
+  ${secTitle("🔄","주문 변경 (취소·배송정보 변경)",null,"c_order")}
   <div class="grp-h" id="c_order_1">1. 취소 후 배송</div>
   ${guide(`물류센터(품고 또는 정석) 조회로 취소 가능 확인 후 취소했으나 실제 배송된 경우 · ①~⑤ 순서로 응대`)}
   <div class="grid2">${macro(D_SHARED["call__018"].name, D_SHARED["call__018"].tag, D_SHARED["call__018"].body, D_SHARED["call__018"].desc, "call__018", "shared")}${macro(D_SHARED["call__019"].name, D_SHARED["call__019"].tag, D_SHARED["call__019"].body, D_SHARED["call__019"].desc, "call__019", "shared")}</div>
@@ -489,11 +246,7 @@ subcard(D_SHARED["call__024"].name, D_SHARED["call__024"].tag, D_SHARED["call__0
 ▶ CJ대한통운 고객센터 : 1588-1255
 
 감사합니다.`)}
-</div>`;
-
-const CALL_PAY = `<div class="no-copy">
-  <h1>💳 결제 문의</h1>
-      <div class="sub">입금 확인 · 결제 완료 후 출고 안내</div>
+  ${secTitle("💳","결제 문의 (입금 확인)",null,"c_pay")}
   ${caution(`고객 정보 확인부터 진행 · 정상 입금 시 확인 내용 안내`)}
   ${macro(D_SHARED["call__025"].name, D_SHARED["call__025"].tag, D_SHARED["call__025"].body, D_SHARED["call__025"].desc, "call__025", "shared")}
   <div class="grid2">${macro(D_SHARED["call__026"].name, D_SHARED["call__026"].tag, D_SHARED["call__026"].body, D_SHARED["call__026"].desc, "call__026", "shared")}${macro(D_SHARED["call__027"].name, D_SHARED["call__027"].tag, D_SHARED["call__027"].body, D_SHARED["call__027"].desc, "call__027", "shared")}</div>
@@ -502,51 +255,21 @@ const CALL_PAY = `<div class="no-copy">
   ${macro(D_SHARED["call__031"].name, D_SHARED["call__031"].tag, D_SHARED["call__031"].body, D_SHARED["call__031"].desc, "call__031", "shared")}
   <div class="grp-h">결제 완료 후 출고 안내</div>
   <div class="grid2">${macro(D_SHARED["call__032"].name, D_SHARED["call__032"].tag, D_SHARED["call__032"].body, D_SHARED["call__032"].desc, "call__032", "shared")}${macro(D_SHARED["call__033"].name, D_SHARED["call__033"].tag, D_SHARED["call__033"].body, D_SHARED["call__033"].desc, "call__033", "shared")}</div>
-</div>`;
-
-const CALL_MEMBER = `<div class="no-copy">
-  <h1>👤 회원 정보 · 마케팅/제휴</h1>
-      <div class="sub">탈퇴·비밀번호·가입 · 마케팅·제휴 문의</div>
-  <div class="grp-h" id="c_member_1">1. 회원 탈퇴 (본인 확인 후 처리)</div>
+  ${secTitle("👤","회원 정보 (탈퇴·비밀번호·가입)",null,"c_member")}
+  <div class="grp-h">1. 회원 탈퇴 (본인 확인 후 처리)</div>
   ${macro(D_SHARED["call__034"].name, D_SHARED["call__034"].tag, D_SHARED["call__034"].body, D_SHARED["call__034"].desc, "call__034", "shared")}
   <div class="grid2">${macro(D_SHARED["call__035"].name, D_SHARED["call__035"].tag, D_SHARED["call__035"].body, D_SHARED["call__035"].desc, "call__035", "shared")}${macro(D_SHARED["call__036"].name, D_SHARED["call__036"].tag, D_SHARED["call__036"].body, D_SHARED["call__036"].desc, "call__036", "shared")}</div>
   ${macro(D_SHARED["call__037"].name, D_SHARED["call__037"].tag, D_SHARED["call__037"].body, D_SHARED["call__037"].desc, "call__037", "shared")}
-  <div class="grp-h" id="c_member_2">2. 비밀번호 찾기</div>
+  <div class="grp-h">2. 비밀번호 찾기</div>
   <div class="grid2">${macro(D_SHARED["call__038"].name, D_SHARED["call__038"].tag, D_SHARED["call__038"].body, D_SHARED["call__038"].desc, "call__038", "shared")}${macro(D_SHARED["call__039"].name, D_SHARED["call__039"].tag, D_SHARED["call__039"].body, D_SHARED["call__039"].desc, "call__039", "shared")}</div>
   ${macro(D_SHARED["call__040"].name, D_SHARED["call__040"].tag, D_SHARED["call__040"].body, D_SHARED["call__040"].desc, "call__040", "shared")}
-  <div class="grp-h" id="c_member_3">3. 회원가입</div>
+  <div class="grp-h">3. 회원가입</div>
   ${macro(D_SHARED["call__041"].name, D_SHARED["call__041"].tag, D_SHARED["call__041"].body, D_SHARED["call__041"].desc, "call__041", "shared")}
-  <div class="grp-h" id="c_mkt">📣 마케팅·제휴 문의</div>
+  ${secTitle("📣","마케팅·제휴 문의",null,"c_mkt")}
   <div class="grid2">${macro(D_SHARED["call__042"].name, D_SHARED["call__042"].tag, D_SHARED["call__042"].body, D_SHARED["call__042"].desc, "call__042", "shared")}${macro(D_SHARED["call__043"].name, D_SHARED["call__043"].tag, D_SHARED["call__043"].body, D_SHARED["call__043"].desc, "call__043", "shared")}</div>
-</div>`;
-
-const CALL_OB = `<div class="no-copy">
-  <h1>📞 [OB] 아웃바운드 / 전화 주문</h1>
-      <div class="sub">콜백·아웃바운드 스크립트 · 전화 주문 유의사항·결제</div>
-  ${secTitle("📞","콜백 · 아웃바운드 (O/B) 스크립트",null,"c_ob")}
-  ${caution(`불필요한 OB는 지양 · 고객이 인입하지 않았으므로 [소속 브랜드명 + OB 사유 + 통화 가능 여부] 반드시 확인 · 필수 유형: 콜백 전화 주문 접수 건 / 교환·반품 장기 미처리`)}
-  <div class="grid2">${macro(D_SHARED["call__015"].name, D_SHARED["call__015"].tag, D_SHARED["call__015"].body, D_SHARED["call__015"].desc, "call__015", "shared")}${macro(D_SHARED["call__016"].name, D_SHARED["call__016"].tag, D_SHARED["call__016"].body, D_SHARED["call__016"].desc, "call__016", "shared")}</div>
-  ${macro(D_SHARED["call__017"].name, D_SHARED["call__017"].tag, D_SHARED["call__017"].body, D_SHARED["call__017"].desc, "call__017", "shared")}
-  ${secTitle("📞","전화 주문 유의사항",null,"c_call")}
+  ${secTitle("📞","전화 주문",null,"c_call")}
   <div class="grp-h">1) 주문 시 유의사항 안내 (브랜드별)</div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">전화 주문 유의사항 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화로 주문하시는 경우 회원 전용 혜택인 쿠폰, 적립금, 회원 등급 할인 등은 적용되지 않으며, 적립금 사용도 어렵습니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 4만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 9만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 7만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 7만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 3만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 26,800원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 5만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body">전화를 통한 주문 시 회원 가입 후 발급되는 웰컴 쿠폰팩 등 회원 전용 혜택과 적립금은 사용이 어렵습니다.
-또한 4만원 미만 구매 시에는 배송비 3,000원이 추가로 발생합니다.
-안내드린 내용 괜찮으실까요?</div></td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">전화 주문 유의사항 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__sloom" data-content-brand="shared">${D_SHARED["cmp_callorder__sloom"].body}</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__simplicare" data-content-brand="shared">${D_SHARED["cmp_callorder__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__alignlab" data-content-brand="shared">${D_SHARED["cmp_callorder__alignlab"].body}</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__bilba" data-content-brand="shared">${D_SHARED["cmp_callorder__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__cellology" data-content-brand="shared">${D_SHARED["cmp_callorder__cellology"].body}</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__cocodaum" data-content-brand="shared">${D_SHARED["cmp_callorder__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__drmans" data-content-brand="shared">${D_SHARED["cmp_callorder__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__yvening" data-content-brand="shared">${D_SHARED["cmp_callorder__yvening"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_callorder__dramang" data-content-brand="shared">${D_SHARED["cmp_callorder__dramang"].body}</div></td></tr></tbody></table></div>
   ${guide(`12 o'clock · 마넬 : 배송비 기준 미확인 → 확인 후 반영 예정`)}
   <div class="grid2">${macro(D_SHARED["call__044"].name, D_SHARED["call__044"].tag, D_SHARED["call__044"].body, D_SHARED["call__044"].desc, "call__044", "shared")}${macro(D_SHARED["call__045"].name, D_SHARED["call__045"].tag, D_SHARED["call__045"].body, D_SHARED["call__045"].desc, "call__045", "shared")}</div>
   <div class="grp-h">a. 무통장 결제</div>
@@ -564,92 +287,6 @@ const CALL_OB = `<div class="no-copy">
   ${guide(`상담 종료 후 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">[SCM파트 X CX팀] 수기 주문 출고 리스트</a> 시트에 사업자(올릿/리테일/더마) 구분하여 작성, 출고 요청`)}
 </div>`;
 
-const CALL_SLOOMCB = `<div class="no-copy">
-  <h1>🎫 [슬룸] 콜백 티켓 처리 프로세스</h1>
-      <div class="sub">유형별 접수 처리 표준 · 공통 처리 원칙 + 유형별 프로세스</div>
-  <div class="quote-box"><b>콜백 티켓은 고객이 유선(IVR)을 통해 인입, 문의 유형에 따른 필수 정보를 남기면 담당자가 접수 내용을 확인하여 후속 처리하는 방식입니다.
-모든 콜백 티켓에 유선 OB를 진행하는 것은 아니며, 유형별 가이드에 따라 처리 후 알림톡·문자로 안내하거나 필요한 경우에만 유선 OB를 진행합니다. <span style="color:#ea2261;font-weight:800">(단, 전화 주문은 유선 OB 필수)</span></b></div>
-  <div class="grp-h">📌 공통 처리 흐름</div>
-  <div class="flow-diagram"><div class="fd-box">1. 고객 IVR 콜백 티켓 접수</div><div class="fd-arrow">▶</div><div class="fd-box">2. 문의 유형별 팀챗 알림 확인</div><div class="fd-arrow">▶</div><div class="fd-box">3. 처리 담당자 ✅ 표시<br>(중복 처리 방지)</div><div class="fd-arrow">▶</div><div class="fd-box">4. 신규 건 URL 클릭 후<br>우측 사이드바 상담 내역 확인</div></div>
-  <div style="text-align:center;color:var(--trust-blue);font-weight:800;font-size:14px;margin:-6px 0">▼</div>
-  <div class="flow-diagram"><div class="fd-box">5. 담당자를 '나'로 배정</div><div class="fd-arrow">▶</div><div class="fd-box">6. 고객 연락처 기준<br>주문·접수 내역 조회</div><div class="fd-arrow">▶</div><div class="fd-box">7. 유형별 프로세스에 따라 처리<br>(알리고·유저챗 안내 또는 필요 시 유선 OB)</div><div class="fd-arrow">▶</div><div class="fd-box">8. 상담 설명 작성 및<br>태그 후처리</div></div>
-  <div class="grp-h" id="c_sloomcb_0">📌 공통 처리 원칙</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:110px"><col><col style="width:110px"><col></colgroup><tbody>
-  <tr><td class="cmp-row-label">담당자 지정</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">처리 예정인 팀원은 팀챗 알림에 ✅ 이모지를 표시하여 중복 처리를 방지합니다.</td><td class="cmp-row-label">고객 정보 확인</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">고객이 IVR에서 입력한 연락처를 기준으로 주문 및 접수 내역을 조회합니다.</td></tr>
-  <tr><td class="cmp-row-label">고객 안내</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">① 처리 결과 안내가 필요한 경우 알리고에 등록된 템플릿을 우선 사용하여 발송합니다.
-
-② 상황에 적합한 알리고 템플릿이 없는 경우 기본 뼈대 템플릿을 활용하여 채널톡 유저챗으로 발송합니다.</td><td class="cmp-row-label">유선 OB</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">콜백 티켓은 기본적으로 확인 및 후처리 후 알리고 알림톡·채널톡 유저챗으로 안내합니다.
-
-전화주문, 추가 정보 확인 필요, 유형별 가이드에서 별도 OB가 명시된 경우에만 유선 연락을 진행합니다.
-
-⚠️ 단, 전화 주문은 유선으로 OB 진행합니다.</td></tr>
-  <tr><td class="cmp-row-label">후처리</td><td colspan="3" style="white-space:pre-line;padding:10px 14px;line-height:1.7">채널톡을 사용하여 유저챗 또는 유선 OB 진행 후 상담 설명 작성 및 상담 태그 반영은 필수입니다
-
-✅ 콜백 상담 태그 기준 : <b>콜백OB</b> + 문의 유형에 맞는 태그 선택</td></tr>
-  </tbody></table></div>
-  <div class="grp-h">📌 유형별 처리 프로세스</div>
-  <div class="cmp-table-wrap"><table class="cmp-table"><tbody>
-  <tr><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_1" onclick="return jumpTo('c_sloomcb_1')">1. 교환·반품 철회 요청</a></td><td style="padding:12px 16px;font-weight:700">5. 재회수 접수</td></tr>
-  <tr><td style="padding:12px 16px;font-weight:700">2. 교환제품 배송일정</td><td style="padding:12px 16px;font-weight:700">6. 전화주문</td></tr>
-  <tr><td style="padding:12px 16px;font-weight:700">3. 반품·환불일정</td><td style="padding:12px 16px;font-weight:700">7. 주문취소 요청</td></tr>
-  <tr><td style="padding:12px 16px;font-weight:700">4. 오배송·미배송</td><td style="padding:12px 16px;font-weight:700">8. 취소 후 배송·회수</td></tr>
-  </tbody></table></div>
-
-  <div class="h1lvl" id="c_sloomcb_1"><span class="num">1</span>교환·반품 철회 요청</div>
-  <div class="quote-box"><b>☑️ 교환 또는 반품 신청 건에 대한 철회 요청</b></div>
-  <div class="grid2">
-  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">고객이 남긴 연락처로 주문 정보를 조회하여 현재 진행 중인 교환/반품 접수 건 유무 및 회수 상태를 확인합니다.<br>⚠️ 제품 회수(수거) 전 건에 한해 철회가 가능합니다.</div></div>
-  <div class="branch-box">
-    <div class="branch-h">💡 접수 건 유무·회수 상태에 따라 분기</div>
-    <table class="branch-tbl"><tbody>
-    <tr><td class="cond">접수 건 있음 · <b>회수 진행 전</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 철회 가능</span></td></tr>
-    <tr><td class="cond">접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
-    <tr><td class="cond">접수 건 있음 · <b>회수 진행 중</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 3 · 철회 불가</span></td></tr>
-    </tbody></table>
-  </div>
-  </div>
-
-  <div class="grp-h">CASE 1 · 접수 건 있음 (회수 진행 전) → 철회 가능</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
-  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 어드민(아임웹) 주문 상태 원복
-② 후처리 시트 J열(반품 메모) 기재 (ex: 0826 반품철회)
-③ 고객 연락처로 철회 완료 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환·반품 철회 완료`, `UH_8982`,
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-요청하신 교환·반품 철회가 완료되었습니다.
-
-다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁 드립니다.
-
-※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
-→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
-  </tbody></table></div>
-
-  <div class="grp-h">CASE 2 · 접수 건 없음 → 확인 불가</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
-  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환/반품 접수 이력 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_확인불가`, `UE_4486`,
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-접수된 주문자 정보로 교환·반품 접수 이력이 확인되지 않습니다.
-
-교환·반품 접수 접수는 슬룸 채팅 상담으로 문의 부탁 드립니다.
-
-
-※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
-→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
-  </tbody></table></div>
-
-  <div class="grp-h">CASE 3 · 접수 건 있음 (회수 진행 중) → 철회 불가</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
-  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환/반품 접수 기존 제품 회수 진행 중으로 철회 불가 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`알리고 템플릿 미등록_채널톡 유저챗으로 발송`, null,
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-요청하신 교환/반품 철회 요청 건은, 기존 교환/반품 접수 건의 제품 회수가 이미 진행 중인 상태로 철회가 어려운 점 안내드립니다.`, null, true)}
-    <div class="ph" style="margin-top:10px">👉 회수 진행 중으로 철회 불가 안내 후, 기존 교환/반품 접수 유형에 따른 후속 처리 절차 안내<br>※ 기존 <b>교환_재출고</b> / <b>반품_환불</b> 안내 멘트 기반으로 발송 문구 작성</div>
-  </td></tr>
-  </tbody></table></div>
-</div>`;
-
-
 const DASH_HOME = `
   <h1>🏠 올릿 CS 응대 템플릿</h1>
   <div class="quote-box"><b>채널별(채팅·유선·게시판) 표준 응대 가이드입니다.
@@ -661,7 +298,7 @@ const DASH_HOME = `
   </div>
   <div class="grp-h">🎨 브랜드별 정책 · 톤앤매너 (내부 참고)</div>
   <div style="font-size:12px;color:var(--ink-soft);margin:-4px 0 10px"><span style="color:#234A86;font-weight:800">O</span> 제공 · <span style="color:#9b6829;font-weight:800">X</span> 미제공</div>
-  <div class="cmp-table-wrap"><table class="cmp-table policy-tb" style="table-layout:fixed"><colgroup><col style="width:120px"><col style="width:150px"><col style="width:150px"><col></colgroup><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue" style="text-align:center">AS</th><th class="cmp-blue" style="text-align:center">100% 환불</th><th class="cmp-blue">톤앤매너</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">쉬운 말·짧게·두괄식, 고령 배려·공감 필수</td></tr><tr><td class="cmp-row-label">심플리케어</td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">쉬운 말·짧게, 두괄식+친절</td></tr><tr><td class="cmp-row-label">얼라인랩</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span><div style="font-size:11px;color:#8a94a6;margin-top:3px">(전자제품/디바이스)</div></td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·공감, 하트 이모지</td></tr><tr><td class="cmp-row-label">빌바</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">고령 배려·쉬운 말, 공감 필수</td></tr><tr><td class="cmp-row-label">셀올로지</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span><div style="font-size:11px;color:#8a94a6;margin-top:3px">(디바이스)</div></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">젊은 톤·이모지</td></tr><tr><td class="cmp-row-label">코코다움</td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">다정·이모지, 호칭 ‘보호자님’</td></tr><tr><td class="cmp-row-label">12 o'clock</td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·이모지·젊은 톤</td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">젊은 톤·간결</td></tr><tr><td class="cmp-row-label">와이브닝</td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">공감 필수·이모지</td></tr><tr><td class="cmp-row-label">마넬</td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:left;padding-left:14px">다정·공감 (얼라인랩과 동일)</td></tr><tr><td class="cmp-row-label">닥터아망</td><td style="text-align:center"><span style="color:#9b6829;font-weight:800">X</span></td><td style="text-align:center"><span style="color:#234A86;font-weight:800">O</span></td><td style="text-align:left;padding-left:14px">다정·공감·이모지</td></tr></tbody></table></div>
+  <div class="cmp-table-wrap"><table class="cmp-table policy-tb" style="table-layout:fixed"><colgroup><col style="width:120px"><col style="width:150px"><col style="width:150px"><col></colgroup><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue" style="text-align:center">AS</th><th class="cmp-blue" style="text-align:center">100% 환불</th><th class="cmp-blue">톤앤매너</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td style="text-align:center" data-content-key="cmp_policy_as__sloom" data-content-brand="shared">${D_SHARED["cmp_policy_as__sloom"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__sloom" data-content-brand="shared">${D_SHARED["cmp_policy_refund__sloom"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__sloom" data-content-brand="shared">${D_SHARED["cmp_policy_tone__sloom"].body}</td></tr><tr><td class="cmp-row-label">심플리케어</td><td style="text-align:center" data-content-key="cmp_policy_as__simplicare" data-content-brand="shared">${D_SHARED["cmp_policy_as__simplicare"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__simplicare" data-content-brand="shared">${D_SHARED["cmp_policy_refund__simplicare"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__simplicare" data-content-brand="shared">${D_SHARED["cmp_policy_tone__simplicare"].body}</td></tr><tr><td class="cmp-row-label">얼라인랩</td><td style="text-align:center" data-content-key="cmp_policy_as__alignlab" data-content-brand="shared">${D_SHARED["cmp_policy_as__alignlab"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__alignlab" data-content-brand="shared">${D_SHARED["cmp_policy_refund__alignlab"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__alignlab" data-content-brand="shared">${D_SHARED["cmp_policy_tone__alignlab"].body}</td></tr><tr><td class="cmp-row-label">빌바</td><td style="text-align:center" data-content-key="cmp_policy_as__bilba" data-content-brand="shared">${D_SHARED["cmp_policy_as__bilba"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__bilba" data-content-brand="shared">${D_SHARED["cmp_policy_refund__bilba"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__bilba" data-content-brand="shared">${D_SHARED["cmp_policy_tone__bilba"].body}</td></tr><tr><td class="cmp-row-label">셀올로지</td><td style="text-align:center" data-content-key="cmp_policy_as__cellology" data-content-brand="shared">${D_SHARED["cmp_policy_as__cellology"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__cellology" data-content-brand="shared">${D_SHARED["cmp_policy_refund__cellology"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__cellology" data-content-brand="shared">${D_SHARED["cmp_policy_tone__cellology"].body}</td></tr><tr><td class="cmp-row-label">코코다움</td><td style="text-align:center" data-content-key="cmp_policy_as__cocodaum" data-content-brand="shared">${D_SHARED["cmp_policy_as__cocodaum"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__cocodaum" data-content-brand="shared">${D_SHARED["cmp_policy_refund__cocodaum"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__cocodaum" data-content-brand="shared">${D_SHARED["cmp_policy_tone__cocodaum"].body}</td></tr><tr><td class="cmp-row-label">12 o'clock</td><td style="text-align:center" data-content-key="cmp_policy_as__oclock" data-content-brand="shared">${D_SHARED["cmp_policy_as__oclock"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__oclock" data-content-brand="shared">${D_SHARED["cmp_policy_refund__oclock"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__oclock" data-content-brand="shared">${D_SHARED["cmp_policy_tone__oclock"].body}</td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td style="text-align:center" data-content-key="cmp_policy_as__drmans" data-content-brand="shared">${D_SHARED["cmp_policy_as__drmans"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__drmans" data-content-brand="shared">${D_SHARED["cmp_policy_refund__drmans"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__drmans" data-content-brand="shared">${D_SHARED["cmp_policy_tone__drmans"].body}</td></tr><tr><td class="cmp-row-label">와이브닝</td><td style="text-align:center" data-content-key="cmp_policy_as__yvening" data-content-brand="shared">${D_SHARED["cmp_policy_as__yvening"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__yvening" data-content-brand="shared">${D_SHARED["cmp_policy_refund__yvening"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__yvening" data-content-brand="shared">${D_SHARED["cmp_policy_tone__yvening"].body}</td></tr><tr><td class="cmp-row-label">마넬</td><td style="text-align:center" data-content-key="cmp_policy_as__marnell" data-content-brand="shared">${D_SHARED["cmp_policy_as__marnell"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__marnell" data-content-brand="shared">${D_SHARED["cmp_policy_refund__marnell"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__marnell" data-content-brand="shared">${D_SHARED["cmp_policy_tone__marnell"].body}</td></tr><tr><td class="cmp-row-label">닥터아망</td><td style="text-align:center" data-content-key="cmp_policy_as__dramang" data-content-brand="shared">${D_SHARED["cmp_policy_as__dramang"].body}</td><td style="text-align:center" data-content-key="cmp_policy_refund__dramang" data-content-brand="shared">${D_SHARED["cmp_policy_refund__dramang"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_policy_tone__dramang" data-content-brand="shared">${D_SHARED["cmp_policy_tone__dramang"].body}</td></tr></tbody></table></div>
 `;
 
 const RAIL = {
@@ -693,10 +330,10 @@ const CHAT_HOME = `
 
   <div class="grp-h" style="margin-top:22px">📌 브랜드별 문의 유형</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:170px"><col><col style="width:230px"></colgroup><thead><tr><th class="cmp-corner">문의 유형</th><th class="cmp-blue">설명</th><th class="cmp-blue">대상 브랜드</th></tr></thead><tbody>
-  <tr><td class="cmp-row-label">단순변심 교환·반품</td><td style="text-align:left;padding-left:14px">고객 변심에 의한 교환·반품 신청 접수</td><td style="text-align:left;padding-left:14px">전 브랜드</td></tr>
-  <tr><td class="cmp-row-label">100% 환불 이벤트</td><td style="text-align:left;padding-left:14px">만족하지 못한 고객 대상 100% 환불 이벤트 접수</td><td style="text-align:left;padding-left:14px">슬룸·심플리케어·셀올로지·코코다움·와이브닝·닥터아망</td></tr>
-  <tr><td class="cmp-row-label">불량 AS · 불량 유형</td><td style="text-align:left;padding-left:14px">파손·작동불량·변질 등 불량 접수<br>· <b>AS</b> 지원: 슬룸·얼라인랩·빌바·셀올로지·12 o'clock (<b>전자제품·디바이스</b>에 한함)<br>· 그 외 브랜드는 <b>불량 유형</b>으로 분류</td><td style="text-align:left;padding-left:14px">전 브랜드</td></tr>
-  <tr><td class="cmp-row-label">부작용·상해 VOC</td><td style="text-align:left;padding-left:14px">사용 중 부작용·상해 등 안전 관련 VOC 접수</td><td style="text-align:left;padding-left:14px">전 브랜드</td></tr>
+  <tr><td class="cmp-row-label">단순변심 교환·반품</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_inquiry_desc__simple" data-content-brand="shared">${D_SHARED["cmp_inquiry_desc__simple"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_inquiry_target__simple" data-content-brand="shared">${D_SHARED["cmp_inquiry_target__simple"].body}</td></tr>
+  <tr><td class="cmp-row-label">100% 환불 이벤트</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_inquiry_desc__refund100" data-content-brand="shared">${D_SHARED["cmp_inquiry_desc__refund100"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_inquiry_target__refund100" data-content-brand="shared">${D_SHARED["cmp_inquiry_target__refund100"].body}</td></tr>
+  <tr><td class="cmp-row-label">불량 AS · 불량 유형</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_inquiry_desc__as_defect" data-content-brand="shared">${D_SHARED["cmp_inquiry_desc__as_defect"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_inquiry_target__as_defect" data-content-brand="shared">${D_SHARED["cmp_inquiry_target__as_defect"].body}</td></tr>
+  <tr><td class="cmp-row-label">부작용·상해 VOC</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_inquiry_desc__voc" data-content-brand="shared">${D_SHARED["cmp_inquiry_desc__voc"].body}</td><td style="text-align:left;padding-left:14px" data-content-key="cmp_inquiry_target__voc" data-content-brand="shared">${D_SHARED["cmp_inquiry_target__voc"].body}</td></tr>
   </tbody></table></div>
   ${guide(`브랜드별 <b>AS · 100% 환불 제공 여부</b>와 <b>톤앤매너</b> 상세는 홈(🏠) 화면의 정책표에서 확인하세요. 특정 멘트는 상단 <b>검색</b>으로 바로 찾을 수 있습니다.`)}
 `;
