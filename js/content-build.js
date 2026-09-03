@@ -121,7 +121,6 @@ const BOARD_TREE = {
     {label:"1. 일반 문의", anchor:"b_ext_1"},
     {label:"2. 제품별 사용법", anchor:"b_ext_2"},
     {label:"🧍 등·허리", anchor:"b_ext_2a"},
-    {sub:true, label:"✨ [허편케V2] 사용법 오인", anchor:"b_ext_3"},
     {label:"💆 목·어깨", anchor:"b_ext_2b"},
     {label:"🦵🏻 발·종아리", anchor:"b_ext_2c"},
     {label:"🖐️ 손·눈·팔", anchor:"b_ext_2d"},

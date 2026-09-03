@@ -276,7 +276,7 @@
   .sec-parent-h{cursor:pointer;}
   .sec-caret{display:inline-block;width:12px;font-size:9px;color:var(--ink-soft);transition:transform .15s;margin-right:1px;}
   .sec-parent.open>.sec-parent-h .sec-caret{transform:rotate(90deg);}
-  .grp-h{font-weight:800;color:var(--ink);font-size:15px;margin:var(--space-section) 0 var(--space-title-content);scroll-margin-top:70px;}
+  .grp-h{font-weight:800;color:var(--ink);font-size:16.5px;margin:var(--space-section) 0 var(--space-title-content);scroll-margin-top:70px;}
   .grp-h.grp-major{font-size:16.5px;color:var(--title);margin:var(--space-section) 0 var(--space-title-content);padding-bottom:8px;border-bottom:1px solid var(--line);}
   .grp-h.grp-sub{font-size:13.5px;color:var(--peanut);margin:var(--space-section) 0 var(--space-title-content);}
 
@@ -350,6 +350,7 @@
   .macro:has(.mname:empty) .macro-head .gdot{display:none;}
   .macro:has(.mname:empty) .sc-desc{margin-top:38px;margin-right:46px;}
   .macro:has(.mname:empty) .macro-body{padding-top:42px;}
+  .macro:has(.mname:empty) .sc-desc + .macro-body{padding-top:20px;}
   .cmp-ment{position:relative;text-align:left !important;padding:12px 78px 12px 14px !important;vertical-align:top;}
   .cmp-ment .tag{
     display:inline-block;font-size:11px;color:var(--trust-blue);background:var(--skyblue-soft);
@@ -417,10 +418,11 @@
   .notice-box a{color:var(--trust-blue);font-weight:700;text-decoration:underline;}
   .pre{white-space:pre-wrap;font-size:13.5px;line-height:1.7;color:var(--ink);}
   /* 번호 섹션 */
-  .sec-title{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:800;color:var(--title);margin:var(--space-section-major) 0 var(--space-title-content);padding-bottom:11px;border-bottom:1px solid var(--line);scroll-margin-top:70px;}
+  .sec-title{display:flex;align-items:center;gap:9px;font-size:20px;font-weight:800;color:var(--title);margin:var(--space-section-major) 0 var(--space-title-content);padding-bottom:11px;border-bottom:1px solid var(--line);scroll-margin-top:70px;}
   .sec-title.sec-major{border-bottom:none;padding-bottom:0;font-size:22px;margin:var(--space-section-major) 0 var(--space-title-content);}
   .sec-n{width:26px;height:26px;border-radius:var(--radius-md);background:var(--trust-blue);color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .sec-n:empty{display:none;}
+  .sec-n.sec-n-icon{width:auto;height:auto;background:none;border-radius:0;color:inherit;font-size:17px;}
   /* 전체/부분 2열 카드 */
   .col-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 1px 2px rgba(0,55,112,.04);transition:box-shadow .16s ease;margin:0 0 var(--space-content);}
   .col-card:hover{box-shadow:0 8px 22px rgba(0,55,112,.06);}
@@ -472,9 +474,9 @@
   .bn-body{white-space:pre-wrap;}
   /* 무상 접수 기간 제한 안내 (A그룹 AS 공통, 2026-08-28 헬퍼 통합) */
   .limit-notice{border:1px solid #e3e8ee;border-radius:var(--radius-lg);overflow:hidden;margin:12px 0 var(--space-content);}
-  .limit-notice-h{background:#EAF4F0;padding:11px 15px;font-weight:800;color:#3E8B7B;border-bottom:1px solid #e3e8ee;}
+  .limit-notice-h{background:#EAF4F0;padding:11px 15px;font-weight:800;color:#3E8B7B;border-bottom:1px solid #e3e8ee;font-size:13.5px;}
   .limit-notice-sub{font-weight:500;color:#ea2261;font-size:13px;}
-  .limit-notice-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .limit-notice-table{width:100%;border-collapse:collapse;font-size:13.5px;}
   .limit-notice-table tr{border-top:1px solid #e3e8ee;}
   .limit-notice-day{width:140px;background:#f6f9fc;text-align:center;font-weight:800;color:#234A86;padding:14px 8px;white-space:nowrap;}
   .limit-notice-body{padding:13px 16px;vertical-align:top;color:#64748d;font-size:12.5px;line-height:1.7;}
@@ -482,9 +484,9 @@
   .edge-compare{background:#FAFAFA;border:1px solid #e3e8ee;border-left:3px solid #D1D5DB;border-radius:var(--radius-lg);padding:16px 6px;display:grid;grid-template-columns:1fr 1fr;margin:0 0 var(--space-content);}
   .edge-compare-col{padding:0 20px;}
   .edge-compare-col-r{border-left:2px dashed #D1D5DB;}
-  .edge-compare-h{font-weight:800;color:#273951;margin-bottom:8px;}
+  .edge-compare-h{font-weight:800;color:#273951;margin-bottom:8px;font-size:13.5px;}
   .edge-compare-hi{color:#234A86;}
-  .edge-compare-body{line-height:1.85;color:#333;font-size:13.5px;}
+  .edge-compare-body{line-height:1.85;color:#333;font-size:12.5px;}
   /* 💰 환급금 자동 계산기 */
   .refund-calc{margin-top:14px;background:#fff;border:1px solid #d6d3fb;border-radius:var(--radius-lg);padding:14px 16px;}
   .refund-calc-h{font-weight:800;color:var(--trust-blue);font-size:12.5px;margin-bottom:10px;}
@@ -514,14 +516,23 @@
   .hidden{display:none;}
   /* 매크로명(#태그) 재노출 — 매크로명 정리 완료(2026-08) */
   .macro-head .tag,.subcard-h .tag,.col-h .ct-tag{display:inline-block;}
-  .astbl{border-collapse:collapse;width:100%;margin:0 0 var(--space-content);font-size:12.5px;}
-  table{margin:0 0 var(--space-content);}
-  .astbl th{background:#9BBB59;color:#fff;font-weight:700;padding:9px 12px;text-align:left;border:1px solid #d9d9d9;}
-  .astbl td{padding:9px 12px;border:1px solid #d9d9d9;vertical-align:top;line-height:1.7;color:var(--ink);}
+  .astbl{border-collapse:separate;border-spacing:0;width:100%;margin:0 0 var(--space-content);font-size:12.5px;border:1px solid #d9d9d9;border-radius:var(--radius-lg);overflow:hidden;}
+  .astbl th{background:#9BBB59;color:#fff;font-weight:700;padding:9px 12px;text-align:left;border-bottom:1px solid #d9d9d9;}
+  .astbl th:not(:last-child){border-right:1px solid #d9d9d9;}
+  .astbl td{padding:9px 12px;border-bottom:1px solid #d9d9d9;vertical-align:top;line-height:1.7;color:var(--ink);}
+  .astbl td:not(:last-child){border-right:1px solid #d9d9d9;}
+  .astbl tr:last-child td{border-bottom:none;}
   .astbl td:first-child{width:170px;font-weight:600;background:#fafafa;}
-  .h1lvl{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:800;color:var(--title);margin:var(--space-section-major) 0 var(--space-title-content);padding-bottom:11px;border-bottom:1px solid var(--line);}
+  /* .gridtbl: .astbl과 같은 "엑셀 붙여넣기" 표 껍데기(테두리·radius)를 쓰지만, 대칭 비교용 열 구성이라 .astbl의 첫 열 라벨 스타일(:first-child 회색 배경·고정폭)은 적용하지 않는 변형. 원래 표 하나하나에 인라인 style로 직접 박혀있던 것을 공용 클래스로 통합(2026-09-03) */
+  .gridtbl{border-collapse:separate;border-spacing:0;width:100%;margin:0 0 var(--space-content);font-size:12.5px;border:1px solid #d9d9d9;border-radius:var(--radius-lg);overflow:hidden;}
+  .gridtbl th{background:#9BBB59;color:#fff;font-weight:700;padding:9px 12px;text-align:left;border-bottom:1px solid #d9d9d9;}
+  .gridtbl th:not(:last-child){border-right:1px solid #d9d9d9;}
+  .gridtbl td{padding:9px 12px;border-bottom:1px solid #d9d9d9;vertical-align:top;line-height:1.7;color:var(--ink);}
+  .gridtbl td:not(:last-child){border-right:1px solid #d9d9d9;}
+  .gridtbl tr:last-child td{border-bottom:none;}
+  .h1lvl{display:flex;align-items:center;gap:9px;font-size:20px;font-weight:800;color:var(--title);margin:var(--space-section-major) 0 var(--space-title-content);padding-bottom:11px;border-bottom:1px solid var(--line);}
   .h1lvl .num{width:26px;height:26px;border-radius:var(--radius-md);background:var(--trust-blue);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;}
-  .h2lvl{font-size:15px;font-weight:800;color:var(--ink);margin:var(--space-section) 0 var(--space-title-content);}
+  .h2lvl{font-size:16.5px;font-weight:800;color:var(--ink);margin:var(--space-section) 0 var(--space-title-content);}
   .lvl2-body{margin:0 0 0 13px;padding-left:18px;}
   .h3lvl{font-size:15px;font-weight:700;color:#0d253d;margin:var(--space-section) 0 var(--space-title-content);}
   .lvl3-body{margin:0 0 0 4px;padding-left:16px;}
