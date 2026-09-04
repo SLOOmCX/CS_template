@@ -117,5 +117,15 @@ function edgeCaseCompare(bodyIn,bodyOut,contentKeyIn,contentKeyOut,contentBrand)
   const dkOut = contentKeyOut?` data-content-key="${contentKeyOut}"${contentBrand?` data-content-brand="${contentBrand}"`:""}`:"";
   return `<div class="edge-compare"><div class="edge-compare-col"${dkIn}><div class="edge-compare-h">★ EDGE CASE · 보증기간(1년) '<span class="edge-compare-hi">이내</span>' 단종</div><div class="edge-compare-body">${bodyIn}</div></div><div class="edge-compare-col edge-compare-col-r"${dkOut}><div class="edge-compare-h">★ EDGE CASE · 보증기간(1년) '<span class="edge-compare-hi">경과</span>' 단종</div><div class="edge-compare-body">${bodyOut}</div></div></div>`;
 }
+/* 카카오선물하기 '단독 판매 SKU' A/S 기간 예외 안내 (2026-09 도입, A그룹 AS 정책·기준 섹션 마지막·보증기간 확인 시작 전 공통) — applyText는 브랜드별 적용 대상 문구 */
+function kakaoAsNotice(applyText){
+  return `<div class="warn-note" style="white-space:normal;margin-top:4px">
+  <div style="font-size:13px;font-weight:800;margin-bottom:8px">🎁 [예외 기준] 카카오선물하기 '단독 판매 SKU'</div>
+  <div style="margin-bottom:8px">카카오선물하기에서만 판매하는 단독 판매 SKU에만 적용되는 기준이며, 자사몰·타 채널에서도 함께 판매되는 제품은 일반 기준이 적용됩니다.</div>
+  <div style="margin-bottom:4px">① <b>적용 대상</b> : ${applyText}</div>
+  <div style="margin-bottom:8px">② <b>적용 기준</b> : 위 표의 무상 AS 인정 기준(제품 자체 자연적 고장)이 <b style="color:#ea2261">6개월 이내 → 1년 이내</b>로 연장 적용</div>
+  <div style="font-size:11px;font-weight:400;line-height:1.6">⚠️ 고객이 상품 수령 후 3개월 이내 반품을 요청한 경우에만 무상 반품 가능 및 그 외 기준(유상 AS 등)은 기존과 동일하게 적용</div>
+  </div>`;
+}
 
 /* 슬룸 > 반품 > 단순변심 반품 · 단계별 (이미지 ④⑤ 재구성) */

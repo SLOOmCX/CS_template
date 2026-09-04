@@ -11,7 +11,7 @@ const REF_OCLOCK = `
   <div class="fork fork-split"><div class="fork-branch"><div class="fork-label-row"><span class="fork-label">🛠️ 무상 AS</span><span class="fork-label-line"></span><span class="fork-label-desc">제품 자체 자연적 고장</span></div><div style="margin:16px 0"><span class="free-flow-tag principle">원칙</span><div class="free-flow-box">🔷 무상 교환 안내</div><div class="free-flow-connector">↓ 고객이 반품 요청 시</div><span class="free-flow-tag exception">제품수령일로부터 3개월 이내 건만</span><div class="free-flow-box exception">🔷 무상 반품 안내</div></div></div><div class="fork-branch b2"><div class="fork-label-row"><span class="fork-label">🔧 유상 AS</span><span class="fork-label-line"></span><span class="fork-label-desc">고객 과실에 의한 제품 파손</span></div><div class="flow-diagram"><div class="fd-box">① 유상 비용 안내</div><div class="fd-arrow">▶</div><div class="fd-box">② 자체 폐기 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 재출고 안내</div><div class="fd-box">✔️ [유상비용 미입금 시] 상담 종료 유도</div></div></div></div>
     
   <div class="h1lvl" id="asBase">💡 AS 정책 및 기준</div>
-  
+  <div class="warn-note" style="white-space:normal">🎁 12 o'clock은 전 제품이 <b>카카오선물하기 단독 판매 상품</b>(자사몰 판매 없음)으로, 무상 AS 인정 기간이 <b style="color:#ea2261">1년</b> 적용됩니다. (시즌 한정 상품 특성상 판매 SKU가 수시로 변경될 수 있으며, 판매 종료 상품도 동일한 기준 적용)</div>
   <div class="blue-note"><div class="bn-body"><div style="display:grid;grid-template-columns:1fr 1fr;gap:0"><div style="padding-right:18px"><b>🛠️ 12 o'clock 디바이스 품질 보증 기간 1년</b><br><b>상품 수령일 기준</b>이며, 유상·무상 서비스 기간을 포함한 전체 기간입니다.</div><div style="padding-left:18px;border-left:2px dashed #C7DAF2"><b>💡 배송비 유의사항</b><br>🛠️ <b>무상 AS</b> (교환·반품) 배송비 고객 부담 <b>X</b><br>🔧 <b>유상 AS</b> (유상 교환) 기존 제품 자체 폐기 안내<br>&nbsp;&nbsp;┗ 수긍 시 편도 3,000원 / 미수긍 시 왕복 6,000원 고객 부담</div></div></div></div>
   <div class="cmp-table-wrap"><table class="cmp-table">
   <colgroup><col style="width:12%"><col style="width:20%"><col style="width:46%"><col style="width:22%"></colgroup>
@@ -24,20 +24,14 @@ const REF_OCLOCK = `
   <tbody>
   <tr>
   <td class="cmp-row-label" style="color:#234A86;font-weight:800">무상 AS</td>
-  <td>상품 수령일로부터 6개월 이내</td>
+  <td>상품 수령일로부터 1년 이내</td>
   <td>정상적 사용 환경·제품 자체의 자연적 고장</td>
   <td>무상 교환<div style="color:#1B3A68;font-weight:700;margin-top:6px;font-size:12px;line-height:1.6">⚠️ 단, 고객이 상품 수령 후 <b>3개월 이내</b> 반품을 요청한 경우에만 <b>무상 반품 가능</b></div></td>
   </tr>
   <tr>
   <td class="cmp-row-label" style="color:#ea2261;font-weight:800">유상 AS</td>
-  <td>상품 수령일로부터 6개월 경과 ~ 1년</td>
+  <td>상품 수령일로부터 1년 이내</td>
   <td>제품 이상이 아닌, 고객 과실에 의한 제품 파손, 분실, 사용 부주의 등으로 인한 고장</td>
-  <td>유상 교환</td>
-  </tr>
-  <tr>
-  <td class="cmp-row-label" style="color:#ea2261;font-weight:800">유상 AS</td>
-  <td>상품 수령일로부터 6개월 경과 ~ 1년</td>
-  <td>원인 불문 유상 서비스만 제공 (무상 AS 불가)</td>
   <td>유상 교환</td>
   </tr>
   <tr>
@@ -75,7 +69,7 @@ const REF_OCLOCK = `
   <div class="h2lvl" id="t4">🔁 재불량 (교환품 동일 증상)</div>
   <div class="lvl2-body">${caution(`👉 [예시] 2026.01.01 물멍 가습기 작동 불량으로 무상 교환 진행 → 2026.03.02 교환 제품에서 동일 증상(작동 불량)으로 재문의`)}<div class="grp-h">💡 공통 안내</div>${macro(D_OCLOCK["oclock_as__029"].name, D_OCLOCK["oclock_as__029"].tag, D_OCLOCK["oclock_as__029"].body, D_OCLOCK["oclock_as__029"].desc, "oclock_as__029", "oclock")}<div class="grp-h">① 무상 교환 후 동일 증상 재인입</div><div class="quote-box"><b>1. 충전/전원/작동만 아래와 같이 진행</b></div><table class="astbl"><thead><tr><th>재인입</th><th>고객 반품 희망</th><th>고객 교환 희망</th></tr></thead><tbody><tr><td>1차 재인입</td><td>각 불량 유형 기본 flow 대로 진행</td><td>각 불량 유형 기본 flow 대로 진행</td></tr><tr><td>2차 재인입</td><td>회수 후 검수 결과에 따라 처리</td><td>① 정격전압 확인 ㅡ 어댑터 사진 필수<br>② 사진 확인 후 기존 flow 대로 진행</td></tr><tr><td>3차 재인입~</td><td>회수 후 검수 결과에 따라 처리</td><td>회수 후 검수 결과에 따라 처리</td></tr></tbody></table><div class="grp-h">② 유상 교환 후 동일 증상 재인입</div><div class="quote-box"><b>1차 유상 교환 접수 시점 기준으로 <span style="color:#E03131">① 2개월 이내 + ② 동일 증상을 충족할 경우에만</span> → 무상 교환 (고객이 원할 경우 수령일로부터 3개월 이내 무상 반품) 처리 가능</b></div><table class="astbl"><thead><tr><th>구분</th><th>예시</th></tr></thead><tbody><tr><td>무상 반품 or 무상 교환<br>가능 ⭕</td><td>① 물멍 가습기 전원 불량 증상으로 유상 교환<br>→ 2개월 이내 동일 증상으로 문의</td></tr><tr><td>무상 반품 or 무상 교환<br>불가능 ❌</td><td>① 물멍 가습기 전원 불량 증상으로 유상 교환<br>→ 2개월 이내 버튼 불량으로 문의<br><br>② 물멍 가습기 전원 불량 증상으로 유상 교환<br>→ 2개월 이후 동일 증상으로 문의</td></tr></tbody></table><div class="grp-h">✔️ 고객이 무상 서비스 요청할 경우 ㅡ 무상 서비스 가능 여부 확인</div><div class="grid2">${macro(D_OCLOCK["oclock_as__030"].name, D_OCLOCK["oclock_as__030"].tag, D_OCLOCK["oclock_as__030"].body, D_OCLOCK["oclock_as__030"].desc, "oclock_as__030", "oclock")}<div class="stack">${macro(D_OCLOCK["oclock_as__031"].name, D_OCLOCK["oclock_as__031"].tag, D_OCLOCK["oclock_as__031"].body, D_OCLOCK["oclock_as__031"].desc, "oclock_as__031", "oclock")}${macro(D_OCLOCK["oclock_as__032"].name, D_OCLOCK["oclock_as__032"].tag, D_OCLOCK["oclock_as__032"].body, D_OCLOCK["oclock_as__032"].desc, "oclock_as__032", "oclock")}</div></div></div>
   <div class="h1lvl" id="step2"><span class="num">3</span>AS 접수</div>
-  <div class="h2lvl as-major" id="freeFlow">🛠️ 무상 AS</div><div class="lvl2-body"><div class="h3lvl" id="freeBranch">🔷 무상 교환 안내</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 상품 수령일로부터 6개월 이내 제품 자체 고장은 원칙적으로 무상 교환으로 안내</b>
+  <div class="h2lvl as-major" id="freeFlow">🛠️ 무상 AS</div><div class="lvl2-body"><div class="h3lvl" id="freeBranch">🔷 무상 교환 안내</div><div class="lvl3-body"><div class="quote-box"><b>⚠️ 상품 수령일로부터 1년 이내 제품 자체 고장은 원칙적으로 무상 교환으로 안내</b>
 
 ✔️ 만약 고객이 반품을 요청할 경우, 아래 기간에 따라 응대
 · 상품 수령일 3개월 이내 → ② 무상 반품 접수

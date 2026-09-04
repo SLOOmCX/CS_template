@@ -157,6 +157,7 @@ const REF_AS = `
   </tbody></table></div>
   ${limitNotice(D_SLOOM["slm_as__093"].name, D_SLOOM["slm_as__093"].body, "slm_as__093", "sloom")}
   ${edgeCaseCompare(D_SLOOM["slm_as__094"].body, D_SLOOM["slm_as__095"].body, "slm_as__094", "slm_as__095", "sloom")}
+  ${kakaoAsNotice(`슬룸 <b>종아리발마사지기</b>`)}
 
 
   
