@@ -70,8 +70,8 @@ function notice(items){
   return `<div class="notice-box"><div class="notice-h">⚠️ 유의사항</div>
     <ul>${items.map(i=>`<li>${i}</li>`).join("")}</ul></div>`;
 }
-function secTitle(n,t,badge,anchor){ const _id=anchor||("sec"+n); return `<div class="sec-title" id="${_id}"><span class="sec-n">${n}</span>${t}${badge?`<span class="sec-badge common">${badge}</span>`:""}</div>`; }
-function secMajor(n,t,badge,anchor){ const _id=anchor||("sec"+n); return `<div class="sec-title sec-major" id="${_id}"><span class="sec-n">${n}</span>${t}${badge?`<span class="sec-badge common">${badge}</span>`:""}</div>`; }
+function secTitle(n,t,badge,anchor){ const _id=anchor||("sec"+n); const _cls=/^\d+$/.test(n)?"sec-n":"sec-n sec-n-icon"; return `<div class="sec-title" id="${_id}"><span class="${_cls}">${n}</span>${t}${badge?`<span class="sec-badge common">${badge}</span>`:""}</div>`; }
+function secMajor(n,t,badge,anchor){ const _id=anchor||("sec"+n); const _cls=/^\d+$/.test(n)?"sec-n":"sec-n sec-n-icon"; return `<div class="sec-title sec-major" id="${_id}"><span class="${_cls}">${n}</span>${t}${badge?`<span class="sec-badge common">${badge}</span>`:""}</div>`; }
 /* 복사 없는 내부 주의/안내 메모 */
 function caution(body){ return `<div class="star-note"><div class="star-body">${body}</div></div>`; }
 function col(cls,head,inner){ return `<div class="col-card"><div class="col-h ${cls}"><span>${head}</span></div><div class="col-body">${inner}</div></div>`; }
