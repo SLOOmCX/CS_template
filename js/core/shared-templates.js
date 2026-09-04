@@ -199,7 +199,8 @@ const CALL_ALL = `<div class="no-copy">
   ${secTitle("📋","유선 상담 운영 기준",null,"c_ops")}
   <div class="warn-note">⚠️ AS·불량은 증빙(영상·사진) 확인이 필요해 유선 상담을 진행하지 않습니다. → 채팅으로만 접수 안내</div>
   <div class="quote-box"><b>📞 [슬룸] 현재 콜백티켓 중심 운영</b>
-대표번호 고객센터 연결 → 고객 문의 유형 선택 → 유형별 요청 정보 기재 후 접수 완료 → 채널톡 팀챗 콜백 티켓 접수건 확인 후 OB 진행</div>
+대표번호 고객센터 연결 → 고객 문의 유형 선택 → 유형별 요청 정보 기재 후 접수 완료 → 채널톡 팀챗 콜백 티켓 접수건 확인 후 OB 진행
+👉 「콜백 티켓 처리 프로세스」의 유형별 가이드라인에 따라 알림톡·문자 안내 또는 필요 시 유선 OB 진행</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__as" data-content-brand="shared">${D_SHARED["cmp_callops__as"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">슬룸 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__opmode" data-content-brand="shared">${D_SHARED["cmp_callops__opmode"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__cbtypes" data-content-brand="shared">${D_SHARED["cmp_callops__cbtypes"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__livetypes" data-content-brand="shared">${D_SHARED["cmp_callops__livetypes"].body}</td></tr></tbody></table></div>
 
   ${secTitle("💡","공통 기본","전 브랜드 공통","c_basic")}
@@ -302,21 +303,20 @@ const CALL_SLOOMCB = `<div class="no-copy">
   <div class="flow-diagram"><div class="fd-box">1. 고객 IVR 콜백 티켓 접수</div><div class="fd-arrow">▶</div><div class="fd-box">2. 문의 유형별 팀챗 알림 확인</div><div class="fd-arrow">▶</div><div class="fd-box">3. 처리 담당자 ✅ 표시<br>(중복 처리 방지)</div><div class="fd-arrow">▶</div><div class="fd-box">4. 신규 건 URL 클릭 후<br>우측 사이드바 상담 내역 확인</div></div>
   <div style="text-align:center;color:var(--trust-blue);font-weight:800;font-size:14px;margin:-6px 0">▼</div>
   <div class="flow-diagram"><div class="fd-box">5. 담당자를 '나'로 배정</div><div class="fd-arrow">▶</div><div class="fd-box">6. 고객 연락처 기준<br>주문·접수 내역 조회</div><div class="fd-arrow">▶</div><div class="fd-box">7. 유형별 프로세스에 따라 처리<br>(알리고·유저챗 안내 또는 필요 시 유선 OB)</div><div class="fd-arrow">▶</div><div class="fd-box">8. 상담 설명 작성 및<br>태그 후처리</div></div>
-  <div class="grp-h">📌 공통 처리 원칙</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:110px"><col><col style="width:110px"><col></colgroup><tbody>
-  <tr><td class="cmp-row-label">담당자 지정</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">처리 예정인 팀원은 팀챗 알림에 ✅ 이모지를 표시하여 중복 처리를 방지합니다.</td><td class="cmp-row-label">고객 정보 확인</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">고객이 IVR에서 입력한 연락처를 기준으로 주문 및 접수 내역을 조회합니다.</td></tr>
+  <div class="grp-h" id="c_sloomcb_principle">📌 공통 처리 원칙</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:170px"><col></colgroup><tbody>
+  <tr><td class="cmp-row-label">담당자 지정</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">처리 예정인 팀원은 팀챗 알림에 ✅ 이모지를 표시하여 중복 처리를 방지합니다.</td></tr>
+  <tr><td class="cmp-row-label">고객 정보 확인</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">고객이 IVR에서 입력한 연락처를 기준으로 주문 및 접수 내역을 조회합니다.</td></tr>
   <tr><td class="cmp-row-label">고객 안내</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">① 처리 결과 안내가 필요한 경우 알리고에 등록된 템플릿을 우선 사용하여 발송합니다.
-
-② 상황에 적합한 알리고 템플릿이 없는 경우 기본 뼈대 템플릿을 활용하여 채널톡 유저챗으로 발송합니다.</td><td class="cmp-row-label">유선 OB</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">콜백 티켓은 기본적으로 확인 및 후처리 후 알리고 알림톡·채널톡 유저챗으로 안내합니다.
-
+② 상황에 적합한 알리고 템플릿이 없는 경우 기본 뼈대 템플릿을 활용하여 채널톡 유저챗으로 발송합니다.</td></tr>
+  <tr><td class="cmp-row-label">알림톡/유저챗/유선OB</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">콜백 티켓은 기본적으로 확인 및 후처리 후 알리고 알림톡·채널톡 유저챗으로 안내합니다.
 전화주문, 추가 정보 확인 필요, 유형별 가이드에서 별도 OB가 명시된 경우에만 유선 연락을 진행합니다.
-
 ⚠️ 단, 전화 주문은 유선으로 OB 진행합니다.</td></tr>
-  <tr><td class="cmp-row-label">후처리</td><td colspan="3" style="white-space:pre-line;padding:10px 14px;line-height:1.7">채널톡을 사용하여 유저챗 또는 유선 OB 진행 후 상담 설명 작성 및 상담 태그 반영은 필수입니다
+  <tr><td class="cmp-row-label">후처리</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">채널톡을 사용하여 유저챗 또는 유선 OB 진행 후 상담 설명 작성 및 상담 태그 반영은 필수입니다
 
 ✅ 콜백 상담 태그 기준 : <b>콜백OB</b> + 문의 유형에 맞는 태그 선택</td></tr>
   </tbody></table></div>
-  <div class="grp-h">📌 유형별 처리 프로세스</div>
+  <div class="grp-h" id="c_sloomcb_types">📌 유형별 처리 프로세스</div>
   <div class="cmp-table-wrap"><table class="cmp-table"><tbody>
   <tr><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_1" onclick="return jumpTo('c_sloomcb_1')">1. 교환·반품 철회 요청</a></td><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_5" onclick="return jumpTo('c_sloomcb_5')">5. 재회수 접수</a></td></tr>
   <tr><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_2" onclick="return jumpTo('c_sloomcb_2')">2. 교환제품 배송일정</a></td><td style="padding:12px 16px;font-weight:700"><a class="jump-link" href="#c_sloomcb_6" onclick="return jumpTo('c_sloomcb_6')">6. 전화주문</a></td></tr>
@@ -332,8 +332,8 @@ const CALL_SLOOMCB = `<div class="no-copy">
     <div class="branch-h">💡 접수 건 유무·회수 상태에 따라 분기</div>
     <table class="branch-tbl"><tbody>
     <tr><td class="cond">접수 건 있음 · <b>회수 진행 전</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 철회 가능</span></td></tr>
-    <tr><td class="cond">접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
-    <tr><td class="cond">접수 건 있음 · <b>회수 진행 중</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 3 · 철회 불가</span></td></tr>
+    <tr><td class="cond">접수 건 있음 · <b>회수 진행 중</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 2 · 철회 불가</span></td></tr>
+    <tr><td class="cond">접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 3 · 확인 불가</span></td></tr>
     </tbody></table>
   </div>
   </div>
@@ -353,7 +353,19 @@ const CALL_SLOOMCB = `<div class="no-copy">
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
   </tbody></table></div>
 
-  <div class="grp-h">CASE 2 · 접수 건 없음 → 확인 불가</div>
+  <div class="grp-h">CASE 2 · 접수 건 있음 (회수 진행 중) → 철회 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">유저챗 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 접수된 교환/반품 회수 건 회수 송장 조회
+② 고객 연락처로 "새 상담 열기" 안내 메시지 발송
+③ 태그 : 콜백OB + 교환/반품 철회요청</td><td style="padding:12px">${cbTpl(`[유저챗] 교환반품_철회요청_철회불가`, null,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 교환/반품 철회 요청은 이미 제품이 회수되어 반송 중인 상태로 철회가 어렵습니다.`, null, true)}
+    <div class="ph" style="margin-top:10px">👉 회수 진행 중으로 철회 불가 안내 후, 기존 교환/반품 접수 유형에 따른 후속 처리 절차 안내<br>※ 기존 <b>교환_재출고</b> / <b>반품_환불</b> 안내 멘트 기반으로 발송 문구 작성</div>
+  </td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 3 · 접수 건 없음 → 확인 불가</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환/반품 접수 이력 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_확인불가`, `UE_4486`,
 `안녕하세요 고객님, 슬룸 고객센터입니다.
@@ -365,16 +377,6 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
-  </tbody></table></div>
-
-  <div class="grp-h">CASE 3 · 접수 건 있음 (회수 진행 중) → 철회 불가</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">유저챗 템플릿</th></tr></thead><tbody>
-  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환/반품 접수 기존 제품 회수 진행 중으로 철회 불가 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`알리고 템플릿 미등록_채널톡 유저챗으로 발송`, null,
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-요청하신 교환/반품 철회 요청 건은, 기존 교환/반품 접수 건의 제품 회수가 이미 진행 중인 상태로 철회가 어려운 점 안내드립니다.`, null, true)}
-    <div class="ph" style="margin-top:10px">👉 회수 진행 중으로 철회 불가 안내 후, 기존 교환/반품 접수 유형에 따른 후속 처리 절차 안내<br>※ 기존 <b>교환_재출고</b> / <b>반품_환불</b> 안내 멘트 기반으로 발송 문구 작성</div>
-  </td></tr>
   </tbody></table></div>
 
   <div class="h1lvl" id="c_sloomcb_2"><span class="num">2</span>교환제품 배송일정</div>

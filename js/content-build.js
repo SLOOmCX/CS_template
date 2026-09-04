@@ -94,14 +94,16 @@ const CALL_BRAND_TREE = {
   "슬룸":{
     "🎫 콜백 티켓 처리 프로세스":{__content:"call_sloomcb", __sections:[
       {label:"🧭 공통 처리 플로우", anchor:"c_sloomcb_0"},
-      {label:"1. 교환·반품 철회 요청", anchor:"c_sloomcb_1"},
-      {label:"2. 교환제품 배송일정", anchor:"c_sloomcb_2"},
-      {label:"3. 반품·환불일정", anchor:"c_sloomcb_3"},
-      {label:"4. 오배송·미배송", anchor:"c_sloomcb_4"},
-      {label:"5. 재회수 접수", anchor:"c_sloomcb_5"},
-      {label:"6. 전화주문", anchor:"c_sloomcb_6"},
-      {label:"7. 주문취소 요청", anchor:"c_sloomcb_7"},
-      {label:"8. 취소 후 배송·회수", anchor:"c_sloomcb_8"}
+      {label:"📌 공통 처리 원칙", anchor:"c_sloomcb_principle"},
+      {group:true, label:"📌 유형별 처리 프로세스", anchor:"c_sloomcb_types"},
+      {sub:true, label:"1. 교환·반품 철회 요청", anchor:"c_sloomcb_1"},
+      {sub:true, label:"2. 교환제품 배송일정", anchor:"c_sloomcb_2"},
+      {sub:true, label:"3. 반품·환불일정", anchor:"c_sloomcb_3"},
+      {sub:true, label:"4. 오배송·미배송", anchor:"c_sloomcb_4"},
+      {sub:true, label:"5. 재회수 접수", anchor:"c_sloomcb_5"},
+      {sub:true, label:"6. 전화주문", anchor:"c_sloomcb_6"},
+      {sub:true, label:"7. 주문취소 요청", anchor:"c_sloomcb_7"},
+      {sub:true, label:"8. 취소 후 배송·회수", anchor:"c_sloomcb_8"}
     ]}
   }
 };
