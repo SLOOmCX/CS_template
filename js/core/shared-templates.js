@@ -129,8 +129,9 @@ const COMMON_ALL = `
   <div class="grid2">${macro(D_SHARED["cmn_all__029"].name, D_SHARED["cmn_all__029"].tag, D_SHARED["cmn_all__029"].body, D_SHARED["cmn_all__029"].desc, "cmn_all__029", "shared")}${macro(D_SHARED["cmn_all__030"].name, D_SHARED["cmn_all__030"].tag, D_SHARED["cmn_all__030"].body, D_SHARED["cmn_all__030"].desc, "cmn_all__030", "shared")}</div>
   ${macro(D_SHARED["cmn_all__031"].name, D_SHARED["cmn_all__031"].tag, D_SHARED["cmn_all__031"].body, D_SHARED["cmn_all__031"].desc, "cmn_all__031", "shared")}
   <div class="grp-h" id="c_ship_2">2. 미배송 / 오배송 문의</div>
-  ${guide(`자사몰·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 주문내역에서 송장번호 확인 → CJ대한통운 송장 조회로 배송 상태·흐름 확인`)}
+  ${guide(`자사몰·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 주문내역에서 송장번호 확인 → CJ대한통운 송장 조회로 배송 상태·흐름 확인<br><br>💡 배송 흐름 정상 여부에 따라 분기 : <b>사과 표현</b> 템플릿 공통 사용 후, <b>정상 흐름</b>이면 '배송완료 상태 안내', <b>비정상 흐름</b>이면 '물류사 확인 안내' 템플릿 사용`)}
   <div class="grid2">${macro(D_SHARED["cmn_all__032"].name, D_SHARED["cmn_all__032"].tag, D_SHARED["cmn_all__032"].body, D_SHARED["cmn_all__032"].desc, "cmn_all__032", "shared")}${macro(D_SHARED["cmn_all__033"].name, D_SHARED["cmn_all__033"].tag, D_SHARED["cmn_all__033"].body, D_SHARED["cmn_all__033"].desc, "cmn_all__033", "shared")}</div>
+  <div class="grid2">${macro(D_SHARED["cmn_all__064"].name, D_SHARED["cmn_all__064"].tag, D_SHARED["cmn_all__064"].body, D_SHARED["cmn_all__064"].desc, "cmn_all__064", "shared")}</div>
   <div class="grp-h" id="c_ship_3">3. 분리배송 안내</div>
   ${macro(D_SHARED["cmn_all__034"].name, D_SHARED["cmn_all__034"].tag, D_SHARED["cmn_all__034"].body, D_SHARED["cmn_all__034"].desc, "cmn_all__034", "shared")}
   ${secTitle("🔄","주문 변경 (취소·배송정보 변경)",null,"c_order")}
@@ -443,7 +444,8 @@ const CALL_SLOOMCB = `<div class="no-copy">
   <div class="grp-h">CASE 1 · 반품 접수 건 있음 → 상태에 맞춰 알림톡 발송</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">상태</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">접수 후 거절</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_교환반품_사유확인필요`, `UI_4803`,
-`안녕하세요 고객님, 슬룸 고객센터입니다.
+`안녕하세요 고객님,
+슬룸 고객센터입니다.
 
 요청하신 교환·반품은 아래 사유로 진행이 어렵습니다.
 
@@ -452,13 +454,13 @@ const CALL_SLOOMCB = `<div class="no-copy">
 - 제품 수령일로부터 7일 이내
 - 미개봉 또는 개봉 후 미작동
 
-※ 상품의 단순 구성 확인을 위해 포장만 훼손한 경우만 신청이 가능합니다.
-※ 개봉 후 작동 제품은 교환·반품이 불가합니다.
+※ 상품의 구성 확인을 위해 포장만 단순 개봉한 경우 신청이 가능합니다.
+※ 개봉 후 사용 제품은 교환·반품이 불가하며, 슬룸 공식몰 구매자 대상으로는 &lt;100%환불이벤트&gt;를 진행 중입니다. 하단의 [100%환불이벤트 공지] 버튼을 클릭하여 확인해주세요.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
-※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
-→ 대화창 내 [혜택 보기] > [고객센터] 클릭`, `⚠️ 확실하지 않음 : {승인조건}·{개봉후표현}은 변수매핑표의 슬룸 참고값(미작동/작동)을 반영. {이벤트문구}(슬룸 30일 무료체험 반품 이벤트 관련 문구)는 실제 등록 문안 확인 필요하여 본문에서 제외함`)}</td></tr>
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해 주세요.
+→ 대화창 내 [채팅방 메뉴] 클릭 &gt; [고객센터] 클릭`)}</td></tr>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">AS 접수 필요</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_AS접수안내`, `UE_4473`,
 `안녕하세요 고객님, 슬룸 고객센터입니다.
 
