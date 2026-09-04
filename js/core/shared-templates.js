@@ -520,36 +520,57 @@ const CALL_SLOOMCB = `<div class="no-copy">
   <div class="h1lvl" id="c_sloomcb_4"><span class="num">4</span>오배송·미배송</div>
   <div class="quote-box"><b>☑️ 오배송 또는 미배송 문의</b></div>
   <div class="grid2">
-  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">정상 출고 내역 확인 후 배송 흐름을 조회하여 반송 이력 유무를 확인합니다.</div></div>
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">정상 출고 내역 확인 후 배송 흐름을 조회하여, 도착지가 고객 입력 주소지가 맞는지와 반송 이력 유무를 확인합니다.</div></div>
   <div class="branch-box">
-    <div class="branch-h">💡 주문 건 유무에 따라 분기</div>
+    <div class="branch-h">💡 주문 건 유무·배송 흐름 정상 여부에 따라 분기</div>
     <table class="branch-tbl"><tbody>
-    <tr><td class="cond">주문 건 <b>있음</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 배송 정보 안내</span></td></tr>
-    <tr><td class="cond">주문 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
+    <tr><td class="cond">미배송 · 주문 건 있음 · <b>정상 흐름</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 배송 정보 안내</span></td></tr>
+    <tr><td class="cond">미배송 · 주문 건 있음 · <b>비정상 흐름</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 2 · 물류사 확인 안내</span></td></tr>
+    <tr><td class="cond">주문 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 3 · 확인 불가</span></td></tr>
     </tbody></table>
   </div>
   </div>
 
-  <div class="grp-h">CASE 1 · 주문 건 있음 → 배송 정보 안내</div>
-  ${caution(`⚠️ 확실하지 않음 : 통합마스터 내 "배송" 관련 등록 템플릿은 [CS] 슬룸_배송지연 1건뿐이라 PDF가 언급한 "배송 정보 안내 템플릿"의 유력 후보로 판단했으나, 발송조건(출고 지연 시점)이 이 케이스 상황(정상 출고 후 반송 이력 체크)과 완전히 일치하지는 않아 실무 확인 필요`)}
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <div class="grp-h">CASE 1 · 미배송 : 주문 건 있음 (정상 흐름) → 배송 정보 안내</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">안내 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 정상 출고 내역 확인 후 배송 흐름 확인, 반송 이력 여부 체크
-② 고객 주소지 지역 배송 이력 확인 시 → 고객 연락처로 "새 상담 열기" 안내 메시지 발송
-③ 내부 공유된 오배송 건(오출고 등 시스템 문제)은 OB로 추가 안내
-④ 태그 : 콜백OB + 오배송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_배송지연 (후보 · 확인필요)`, `UB_4888`,
-`안녕하세요 고객님, 슬룸입니다. 슬룸을(를) 믿고 구매해주시어 감사합니다.
+② 택배사 배송조회 내역 확인
+③ 고객 연락처로 "새 상담 열기" 안내 메시지 발송
+④ 태그 : 콜백OB + 미배송</td><td style="padding:12px">${cbTpl(`[유저챗] 미배송_배송완료안내 (상담 템플릿 준용)`, null,
+`안녕하세요 고객님,
+슬룸 고객센터입니다.
 
-고객님의 주문건의 경우, #{기존 출고일} 출고 진행 예정이었으나 갑작스러운 주문량 증가로 인해 출고가 지연되고 있습니다.
+고객님 주문건 확인 시 (배송완료 날짜) 정상 배송완료로 확인됩니다.
+정확한 확인을 위해 운송장 번호와 배송 사원 정보 안내드리겠습니다. 🥲
 
-■ 제품명 : #{제품명}
-■ 예상 출고일 : #{예상 날짜}
+▶ 운송장번호 : (기재)
+▶ 배송사원 : (성함/연락처)
+▶ CJ대한통운 콜센터 : 1588-1255
 
-최대한 빠른 배송을 할 수 있도록 노력하겠습니다. 불편을 드려 죄송합니다.`)}
-    <div class="ph" style="margin-top:10px">👉 위 템플릿으로 커버되지 않는 상황은 뼈대 양식(콜백 템플릿 공통 구조)을 참고해 유저챗으로 직접 작성</div>
-  </td></tr>
+번거로우시겠지만 해당 정보로 택배사 측에 기사 과실에 따른 주소 오배송·분실 여부 문의 부탁드립니다.`)}</td></tr>
   </tbody></table></div>
 
-  <div class="grp-h">CASE 2 · 주문 건 없음 → 확인 불가</div>
+  <div class="grp-h">CASE 2 · 미배송 : 주문 건 있음 (비정상 흐름) → 물류사 확인 안내</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">안내 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 정상 출고 내역 확인 후 배송 흐름 확인, 반송 이력 여부 체크
+② 물류사(품고/정석 등) 확인 요청
+③ 고객 연락처로 "새 상담 열기" 안내 메시지 발송
+④ 내부 공유된 배송 건(출고누락, 파손 반송 등) 확인된 답변 추가 안내
+⑤ 태그 : 콜백OB + 미배송</td><td style="padding:12px">${cbTpl(`[유저챗] 미배송_물류사확인 안내`, null,
+`안녕하세요 고객님,
+슬룸 고객센터입니다.
+
+먼저 기대하고 주문하신 제품 배송으로 불편을 드려 죄송합니다.
+
+고객님 주문건 확인 시 배송 흐름 이상이 확인됩니다.
+이에 물류사에 상세한 확인 요청을 전달하였으며,
+답변이 오는 즉시 고객님께 정확한 내용으로 안내드릴 수 있도록 하겠습니다.
+
+물류사 → 택배사의 확인 답변을 전달받아 안내드리는 구조 상,
+확인에 시간이 소요되어 즉각적인 답변 도와드리지 못하는 점 너른 이해를 부탁드립니다.`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 3 · 주문 건 없음 → 확인 불가</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 배송 문제 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_배송이슈_확인불가`, `UE_4484`,
 `안녕하세요 고객님, 슬룸 고객센터입니다.
@@ -569,18 +590,40 @@ const CALL_SLOOMCB = `<div class="no-copy">
   <div class="branch-box">
     <div class="branch-h">💡 접수 건 유무·경과일에 따라 분기</div>
     <table class="branch-tbl"><tbody>
-    <tr><td class="cond">접수 건 있음 · <b>3영업일 이내</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 재회수 접수</span></td></tr>
-    <tr><td class="cond">접수 건 있음 · <b>3영업일 이후</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 2 · 택배사 변경</span></td></tr>
+    <tr><td class="cond">접수 건 있음 · <b>3영업일 이내</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 수거 안내</span></td></tr>
+    <tr><td class="cond">접수 건 있음 · <b>3영업일 이후</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 2 · 재회수 접수 안내</span></td></tr>
     <tr><td class="cond">접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 3 · 확인 불가</span></td></tr>
     </tbody></table>
   </div>
   </div>
 
-  <div class="grp-h">CASE 1 · 접수 건 있음 (3영업일 이내) → 재회수 접수</div>
+  <div class="grp-h">CASE 1 · 접수 건 있음 (3영업일 이내) → 수거 안내</div>
+  ${caution(`💡 접수일로부터 3영업일 이내면 기존 수거 신청(운송장)이 아직 유효한 상태 — 최초 접수 시와 동일한 수거 안내만 다시 발송`)}
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 후처리 시트의 교환/반품 접수 이력 확인
-② 접수 일자에 맞게 알림톡(알리고) 발송
-③ 태그 : 콜백OB + 회수 재신청</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_재회수접수_CJ`, `UH_6710`,
+② 접수 일자에 맞게 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_교환반품_수거안내_CJ`, `UI_9966`,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 교환·반품의 '수거 접수가 완료'되었습니다.
+
+■ 수거 안내
+1. 영업일 기준 1~3일 내 배송 진행한 택배사(CJ대한통운)에서 연락 후 방문 수거 예정입니다.
+2. 제품은 택배 박스에 포장 후 기사 방문 시 전달 부탁드립니다.
+* 사은품·증정품 포함 전체 포장
+3. 수거 후, 반품 완료까지는 영업일 기준 약 5일 소요될 수 있습니다.
+4. 수거 후, 교환 제품 재출고는 영업일 기준 약 5일 소요될 수 있습니다.
+
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
+→ 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 2 · 접수 건 있음 (3영업일 이후) → 재회수 접수 안내</div>
+  ${caution(`💡 접수일로부터 3영업일이 지나면 기존 운송장이 만료·폐기되어 무조건 재회수(수거 재신청)가 필요한 상태`)}
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 후처리 시트의 교환/반품 접수 이력 확인
+② 3영업일 경과로 재회수접수 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_재회수접수_CJ`, `UH_6710`,
 `안녕하세요 고객님, 슬룸 고객센터입니다.
 
 요청하신 재회수 접수가 완료되었습니다.
@@ -595,14 +638,6 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
-  </tbody></table></div>
-
-  <div class="grp-h">CASE 2 · 접수 건 있음 (3영업일 이후) → 택배사 변경 수거 안내</div>
-  ${caution(`⚠️ [CS] 슬룸_교환반품_수거안내_택배사변경 템플릿은 통합마스터·브랜드한정 시트 어디에도 등재되어 있지 않아 코드·본문 확보 불가. 실무 확인 필요`)}
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
-  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 후처리 시트의 교환/반품 접수 이력 확인
-② 3영업일 경과로 택배사 변경 안내 알림톡(알리고) 발송
-③ 태그 : 콜백OB + 회수 재신청</td><td style="padding:20px 12px;text-align:center;color:var(--muted,#9aa0a8);font-size:13px;line-height:1.6">— 없음 —<br>[CS] 슬룸_교환반품_수거안내_택배사변경<br>（마스터 시트 미등재）</td></tr>
   </tbody></table></div>
 
   <div class="grp-h">CASE 3 · 접수 건 없음 → 확인 불가</div>
