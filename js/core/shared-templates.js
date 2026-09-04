@@ -332,8 +332,8 @@ const CALL_SLOOMCB = `<div class="no-copy">
     <div class="branch-h">💡 접수 건 유무·회수 상태에 따라 분기</div>
     <table class="branch-tbl"><tbody>
     <tr><td class="cond">접수 건 있음 · <b>회수 진행 전</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · 철회 가능</span></td></tr>
-    <tr><td class="cond">접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
-    <tr><td class="cond">접수 건 있음 · <b>회수 진행 중</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 3 · 철회 불가</span></td></tr>
+    <tr><td class="cond">접수 건 있음 · <b>회수 진행 중</b></td><td class="ar">→</td><td><span class="bdg b-amber">CASE 2 · 철회 불가</span></td></tr>
+    <tr><td class="cond">접수 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 3 · 확인 불가</span></td></tr>
     </tbody></table>
   </div>
   </div>
@@ -353,7 +353,19 @@ const CALL_SLOOMCB = `<div class="no-copy">
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
   </tbody></table></div>
 
-  <div class="grp-h">CASE 2 · 접수 건 없음 → 확인 불가</div>
+  <div class="grp-h">CASE 2 · 접수 건 있음 (회수 진행 중) → 철회 불가</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">유저챗 템플릿</th></tr></thead><tbody>
+  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 접수된 교환/반품 회수 건 회수 송장 조회
+② 고객 연락처로 "새 상담 열기" 안내 메시지 발송
+③ 태그 : 콜백OB + 교환/반품 철회요청</td><td style="padding:12px">${cbTpl(`[유저챗] 교환반품_철회요청_철회불가`, null,
+`안녕하세요 고객님, 슬룸 고객센터입니다.
+
+요청하신 교환/반품 철회 요청은 이미 제품이 회수되어 반송 중인 상태로 철회가 어렵습니다.`, null, true)}
+    <div class="ph" style="margin-top:10px">👉 회수 진행 중으로 철회 불가 안내 후, 기존 교환/반품 접수 유형에 따른 후속 처리 절차 안내<br>※ 기존 <b>교환_재출고</b> / <b>반품_환불</b> 안내 멘트 기반으로 발송 문구 작성</div>
+  </td></tr>
+  </tbody></table></div>
+
+  <div class="grp-h">CASE 3 · 접수 건 없음 → 확인 불가</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환/반품 접수 이력 확인 불가 안내 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_교환반품_확인불가`, `UE_4486`,
 `안녕하세요 고객님, 슬룸 고객센터입니다.
@@ -365,16 +377,6 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
-  </tbody></table></div>
-
-  <div class="grp-h">CASE 3 · 접수 건 있음 (회수 진행 중) → 철회 불가</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">유저챗 템플릿</th></tr></thead><tbody>
-  <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환/반품 접수 기존 제품 회수 진행 중으로 철회 불가 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`알리고 템플릿 미등록_채널톡 유저챗으로 발송`, null,
-`안녕하세요 고객님, 슬룸 고객센터입니다.
-
-요청하신 교환/반품 철회 요청 건은, 기존 교환/반품 접수 건의 제품 회수가 이미 진행 중인 상태로 철회가 어려운 점 안내드립니다.`, null, true)}
-    <div class="ph" style="margin-top:10px">👉 회수 진행 중으로 철회 불가 안내 후, 기존 교환/반품 접수 유형에 따른 후속 처리 절차 안내<br>※ 기존 <b>교환_재출고</b> / <b>반품_환불</b> 안내 멘트 기반으로 발송 문구 작성</div>
-  </td></tr>
   </tbody></table></div>
 
   <div class="h1lvl" id="c_sloomcb_2"><span class="num">2</span>교환제품 배송일정</div>
