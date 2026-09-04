@@ -93,7 +93,7 @@ const CALL_TREE = {
 const CALL_BRAND_TREE = {
   "슬룸":{
     "🎫 콜백 티켓 처리 프로세스":{__content:"call_sloomcb", __sections:[
-      {label:"공통 처리 원칙", anchor:"c_sloomcb_0"},
+      {label:"🧭 공통 처리 플로우", anchor:"c_sloomcb_0"},
       {label:"1. 교환·반품 철회 요청", anchor:"c_sloomcb_1"},
       {label:"2. 교환제품 배송일정", anchor:"c_sloomcb_2"},
       {label:"3. 반품·환불일정", anchor:"c_sloomcb_3"},
@@ -1400,6 +1400,14 @@ function updateBackBtn(){const bb=document.getElementById("backBtn"); if(bb) bb.
 function jumpTo(id){
   const t=document.getElementById(id);
   if(t) t.scrollIntoView({behavior:"smooth",block:"start"});
+  return false;
+}
+
+/* 다른 콘텐츠 블록(유선 표준 응대)의 앵커로 크로스 이동 — 콜백 티켓 등 다른 화면에서 참조할 때 사용.
+   goRail("call")이 항상 openCallDefault()를 거쳐 CALL_ALL을 새로 렌더하므로, 렌더 완료 후 지연 스크롤로 앵커 이동 */
+function jumpToOB(){
+  goRail("call");
+  setTimeout(function(){ jumpTo("c_ob"); }, 60);
   return false;
 }
 

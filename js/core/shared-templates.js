@@ -298,11 +298,11 @@ const CALL_SLOOMCB = `<div class="no-copy">
       <div class="sub">유형별 접수 처리 표준 · 공통 처리 원칙 + 유형별 프로세스</div>
   <div class="quote-box"><b>콜백 티켓은 고객이 유선(IVR)을 통해 인입, 문의 유형에 따른 필수 정보를 남기면 담당자가 접수 내용을 확인하여 후속 처리하는 방식입니다.
 모든 콜백 티켓에 유선 OB를 진행하는 것은 아니며, 유형별 가이드에 따라 처리 후 알림톡·문자로 안내하거나 필요한 경우에만 유선 OB를 진행합니다. <span style="color:#ea2261;font-weight:800">(단, 전화 주문은 유선 OB 필수)</span></b></div>
-  <div class="grp-h">📌 공통 처리 흐름</div>
+  <div class="grp-h" id="c_sloomcb_0">🧭 공통 처리 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 고객 IVR 콜백 티켓 접수</div><div class="fd-arrow">▶</div><div class="fd-box">2. 문의 유형별 팀챗 알림 확인</div><div class="fd-arrow">▶</div><div class="fd-box">3. 처리 담당자 ✅ 표시<br>(중복 처리 방지)</div><div class="fd-arrow">▶</div><div class="fd-box">4. 신규 건 URL 클릭 후<br>우측 사이드바 상담 내역 확인</div></div>
   <div style="text-align:center;color:var(--trust-blue);font-weight:800;font-size:14px;margin:-6px 0">▼</div>
   <div class="flow-diagram"><div class="fd-box">5. 담당자를 '나'로 배정</div><div class="fd-arrow">▶</div><div class="fd-box">6. 고객 연락처 기준<br>주문·접수 내역 조회</div><div class="fd-arrow">▶</div><div class="fd-box">7. 유형별 프로세스에 따라 처리<br>(알리고·유저챗 안내 또는 필요 시 유선 OB)</div><div class="fd-arrow">▶</div><div class="fd-box">8. 상담 설명 작성 및<br>태그 후처리</div></div>
-  <div class="grp-h" id="c_sloomcb_0">📌 공통 처리 원칙</div>
+  <div class="grp-h">📌 공통 처리 원칙</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:110px"><col><col style="width:110px"><col></colgroup><tbody>
   <tr><td class="cmp-row-label">담당자 지정</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">처리 예정인 팀원은 팀챗 알림에 ✅ 이모지를 표시하여 중복 처리를 방지합니다.</td><td class="cmp-row-label">고객 정보 확인</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">고객이 IVR에서 입력한 연락처를 기준으로 주문 및 접수 내역을 조회합니다.</td></tr>
   <tr><td class="cmp-row-label">고객 안내</td><td style="white-space:pre-line;padding:10px 14px;line-height:1.7">① 처리 결과 안내가 필요한 경우 알리고에 등록된 템플릿을 우선 사용하여 발송합니다.
@@ -368,7 +368,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
   </tbody></table></div>
 
   <div class="grp-h">CASE 3 · 접수 건 있음 (회수 진행 중) → 철회 불가</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">유저챗 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 교환/반품 접수 기존 제품 회수 진행 중으로 철회 불가 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`알리고 템플릿 미등록_채널톡 유저챗으로 발송`, null,
 `안녕하세요 고객님, 슬룸 고객센터입니다.
 
@@ -391,11 +391,25 @@ const CALL_SLOOMCB = `<div class="no-copy">
   </div>
 
   <div class="grp-h">CASE 1 · 교환 접수 건 있음 → 교환 현황 확인</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">유저챗 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 수기 출고 시트에서 출고 송장 조회
 ② 고객 연락처로 "새 상담 열기" 안내 메시지 발송
-（기존 양식 없을 시 기본 양식(뼈대) 활용해 유저챗 발송）
-③ 태그 : 콜백OB + 교환 현황 확인</td><td style="padding:20px 12px;text-align:center;color:var(--muted,#9aa0a8);font-size:13px;line-height:1.6">— 없음 —<br>매칭되는 알리고 템플릿 없음<br>（유저챗 뼈대 양식으로 안내）</td></tr>
+（단, 고객 지역에 아직 도착하지 않아 배송기사 정보 없는 경우에는 템플릿 내용 수정하여 안내）
+③ 태그 : 콜백OB + 교환 현황 확인</td><td style="padding:12px">${cbTpl(`[유저챗] 교환현황확인_배송완료안내 (상담 템플릿 준용)`, null,
+`안녕하세요 고객님,
+슬룸 고객센터입니다.
+
+이전 교환 안내받으신 제품의 배송 일정 안내드립니다.
+
+고객님의 교환 제품은 (배송완료 날짜) 정상 배송완료로 확인됩니다.
+정확한 확인을 위해 운송장 번호와 배송 사원 정보 안내드리겠습니다.
+
+▶ 운송장번호 : (기재)
+▶ 배송사원 : (성함/연락처)
+▶ CJ대한통운 콜센터 : 1588-1255
+
+해당 내용 참고를 부탁드리며, 이 외의 자세한 배송 문의는 위 택배사측으로 문의를 부탁드립니다.
+감사합니다.`)}</td></tr>
   </tbody></table></div>
 
   <div class="grp-h">CASE 2 · 교환 접수 건 없음 → 확인 불가</div>
@@ -518,9 +532,9 @@ const CALL_SLOOMCB = `<div class="no-copy">
   </tbody></table></div>
 
   <div class="h1lvl" id="c_sloomcb_4"><span class="num">4</span>오배송·미배송</div>
-  <div class="quote-box"><b>☑️ 오배송 또는 미배송 문의</b></div>
+  <div class="quote-box"><b>☑️ 오배송 또는 미배송 문의이나 다른 옵션이 배송된 오배송 탐색 미진행 상황으로, 미배송 유형만 다룸</b></div>
   <div class="grid2">
-  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">정상 출고 내역 확인 후 배송 흐름을 조회하여, 도착지가 고객 입력 주소지가 맞는지와 반송 이력 유무를 확인합니다.</div></div>
+  <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">정상 출고 내역 확인 후 배송 흐름을 조회합니다.<br>⚠️ 도착지가 고객 입력 주소지가 맞는지와 반송 이력 유무를 확인합니다.</div></div>
   <div class="branch-box">
     <div class="branch-h">💡 주문 건 유무·배송 흐름 정상 여부에 따라 분기</div>
     <table class="branch-tbl"><tbody>
@@ -532,7 +546,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
   </div>
 
   <div class="grp-h">CASE 1 · 미배송 : 주문 건 있음 (정상 흐름) → 배송 정보 안내</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">안내 템플릿</th></tr></thead><tbody>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">유저챗 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 정상 출고 내역 확인 후 배송 흐름 확인, 반송 이력 여부 체크
 ② 택배사 배송조회 내역 확인
 ③ 고객 연락처로 "새 상담 열기" 안내 메시지 발송
@@ -551,10 +565,10 @@ const CALL_SLOOMCB = `<div class="no-copy">
   </tbody></table></div>
 
   <div class="grp-h">CASE 2 · 미배송 : 주문 건 있음 (비정상 흐름) → 물류사 확인 안내</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">안내 템플릿</th></tr></thead><tbody>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">유저챗 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 정상 출고 내역 확인 후 배송 흐름 확인, 반송 이력 여부 체크
 ② 물류사(품고/정석 등) 확인 요청
-③ 고객 연락처로 "새 상담 열기" 안내 메시지 발송
+③ 고객 연락처로 "새 상담 열기" 안내 메시지 발송 후 채팅 보류 설정
 ④ 내부 공유된 배송 건(출고누락, 파손 반송 등) 확인된 답변 추가 안내
 ⑤ 태그 : 콜백OB + 미배송</td><td style="padding:12px">${cbTpl(`[유저챗] 미배송_물류사확인 안내`, null,
 `안녕하세요 고객님,
@@ -660,21 +674,21 @@ const CALL_SLOOMCB = `<div class="no-copy">
   <div class="branch-box">
     <div class="branch-h">💡 주문 건 유무에 따라 분기</div>
     <table class="branch-tbl"><tbody>
-    <tr><td class="cond">주문 건 <b>있음</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · OB 진행 후 전화 주문 안내</span></td></tr>
-    <tr><td class="cond">주문 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
+    <tr><td class="cond">주문 건 <b>없음</b></td><td class="ar">→</td><td><span class="bdg b-blue">CASE 1 · OB 진행 후 전화 주문 안내</span></td></tr>
+    <tr><td class="cond">주문 건 <b>있음</b></td><td class="ar">→</td><td><span class="bdg b-pink">CASE 2 · 확인 불가</span></td></tr>
     </tbody></table>
   </div>
   </div>
 
-  <div class="grp-h">CASE 1 · 주문 건 있음 → OB 진행 후 전화 주문 안내</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
+  <div class="grp-h">CASE 1 · 주문 건 없음 → OB 진행 후 전화 주문 안내</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">참고 사항</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 알림톡(알리고) 발송
 ② 유선 OB 진행하여 전화 구매 안내
 （실제 전화 주문이 아닌 경우 채팅 상담으로 유도）
-③ 태그 : 콜백OB + 전화 주문</td><td style="padding:20px 12px;text-align:center;color:var(--muted,#9aa0a8);font-size:13px;line-height:1.6">— 없음 —<br>매칭되는 알리고 템플릿 없음<br>（유선 OB 중심 처리）</td></tr>
+③ 태그 : 콜백OB + 전화 주문</td><td style="padding:20px 12px;text-align:center;color:var(--muted,#9aa0a8);font-size:13px;line-height:1.6"><a href="#" onclick="return jumpToOB()" style="color:var(--acc,#4a8cff);text-decoration:underline">유선 표준 응대 가이드</a>를 참고하여 OB 진행</td></tr>
   </tbody></table></div>
 
-  <div class="grp-h">CASE 2 · 주문 건 없음 → 확인 불가</div>
+  <div class="grp-h">CASE 2 · 주문 건 있음 → 확인 불가</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:50%"><col></colgroup><thead><tr><th class="cmp-corner">프로세스</th><th class="cmp-blue">알리고 템플릿</th></tr></thead><tbody>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">① 고객 연락처로 온라인 주문이력 확인 알림톡(알리고) 발송</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_콜백_전화주문_확인불가`, `UH_8560`,
 `안녕하세요 고객님, 슬룸 고객센터입니다.
