@@ -91,7 +91,7 @@ subcard(D_COCODAUM["cocodaum_100refund__028"].name, D_COCODAUM["cocodaum_100refu
   ${macro(D_COCODAUM["cocodaum_100refund__029"].name, D_COCODAUM["cocodaum_100refund__029"].tag, D_COCODAUM["cocodaum_100refund__029"].body, D_COCODAUM["cocodaum_100refund__029"].desc, "cocodaum_100refund__029", "cocodaum")}
   <div class="grid2">
 ${col("blue","환불 안내 (카드 · 삼성페이 · 네이버페이)",
-subcard(D_COCODAUM["cocodaum_100refund__030"].name, D_COCODAUM["cocodaum_100refund__030"].tag, D_COCODAUM["cocodaum_100refund__030"].body, D_COCODAUM["cocodaum_100refund__030"].desc, "cocodaum_100refund__030", "cocodaum")
+`<div class="stack">`+subcard(D_COCODAUM["cocodaum_100refund__030"].name, D_COCODAUM["cocodaum_100refund__030"].tag, D_COCODAUM["cocodaum_100refund__030"].body, D_COCODAUM["cocodaum_100refund__030"].desc, "cocodaum_100refund__030", "cocodaum")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌 · 무통장/가상계좌)",
 subcard(D_COCODAUM["cocodaum_100refund__031"].name, D_COCODAUM["cocodaum_100refund__031"].tag, D_COCODAUM["cocodaum_100refund__031"].body, D_COCODAUM["cocodaum_100refund__031"].desc, "cocodaum_100refund__031", "cocodaum") + subcard(D_COCODAUM["cocodaum_100refund__032"].name, D_COCODAUM["cocodaum_100refund__032"].tag, D_COCODAUM["cocodaum_100refund__032"].body, D_COCODAUM["cocodaum_100refund__032"].desc, "cocodaum_100refund__032", "cocodaum")
@@ -133,7 +133,7 @@ subcard(D_COCODAUM["cocodaum_side__005"].name, D_COCODAUM["cocodaum_side__005"].
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard(D_COCODAUM["cocodaum_side__007"].name, D_COCODAUM["cocodaum_side__007"].tag, D_COCODAUM["cocodaum_side__007"].body, D_COCODAUM["cocodaum_side__007"].desc, "cocodaum_side__007", "cocodaum")
+`<div class="stack">`+subcard(D_COCODAUM["cocodaum_side__007"].name, D_COCODAUM["cocodaum_side__007"].tag, D_COCODAUM["cocodaum_side__007"].body, D_COCODAUM["cocodaum_side__007"].desc, "cocodaum_side__007", "cocodaum")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
 subcard(D_COCODAUM["cocodaum_side__008"].name, D_COCODAUM["cocodaum_side__008"].tag, D_COCODAUM["cocodaum_side__008"].body, D_COCODAUM["cocodaum_side__008"].desc, "cocodaum_side__008", "cocodaum") + subcard(D_COCODAUM["cocodaum_side__009"].name, D_COCODAUM["cocodaum_side__009"].tag, D_COCODAUM["cocodaum_side__009"].body, D_COCODAUM["cocodaum_side__009"].desc, "cocodaum_side__009", "cocodaum")

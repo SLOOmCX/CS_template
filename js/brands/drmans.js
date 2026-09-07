@@ -30,7 +30,7 @@ const DRMANS_SIDE = `
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard(D_DRMANS["drmans_side__008"].name, D_DRMANS["drmans_side__008"].tag, D_DRMANS["drmans_side__008"].body, D_DRMANS["drmans_side__008"].desc, "drmans_side__008", "drmans")
+`<div class="stack">`+subcard(D_DRMANS["drmans_side__008"].name, D_DRMANS["drmans_side__008"].tag, D_DRMANS["drmans_side__008"].body, D_DRMANS["drmans_side__008"].desc, "drmans_side__008", "drmans")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
 subcard(D_DRMANS["drmans_side__009"].name, D_DRMANS["drmans_side__009"].tag, D_DRMANS["drmans_side__009"].body, D_DRMANS["drmans_side__009"].desc, "drmans_side__009", "drmans") + subcard(D_DRMANS["drmans_side__010"].name, D_DRMANS["drmans_side__010"].tag, D_DRMANS["drmans_side__010"].body, D_DRMANS["drmans_side__010"].desc, "drmans_side__010", "drmans")

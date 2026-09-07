@@ -90,7 +90,7 @@ subcard(D_YVENING["yvening_100refund__028"].name, D_YVENING["yvening_100refund__
   ${macro(D_YVENING["yvening_100refund__029"].name, D_YVENING["yvening_100refund__029"].tag, D_YVENING["yvening_100refund__029"].body, D_YVENING["yvening_100refund__029"].desc, "yvening_100refund__029", "yvening")}
   <div class="grid2">
 ${col("blue","환불 안내 (카드 · 삼성페이 · 네이버페이)",
-subcard(D_YVENING["yvening_100refund__030"].name, D_YVENING["yvening_100refund__030"].tag, D_YVENING["yvening_100refund__030"].body, D_YVENING["yvening_100refund__030"].desc, "yvening_100refund__030", "yvening")
+`<div class="stack">`+subcard(D_YVENING["yvening_100refund__030"].name, D_YVENING["yvening_100refund__030"].tag, D_YVENING["yvening_100refund__030"].body, D_YVENING["yvening_100refund__030"].desc, "yvening_100refund__030", "yvening")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌 · 무통장/가상계좌)",
 subcard(D_YVENING["yvening_100refund__031"].name, D_YVENING["yvening_100refund__031"].tag, D_YVENING["yvening_100refund__031"].body, D_YVENING["yvening_100refund__031"].desc, "yvening_100refund__031", "yvening") + subcard(D_YVENING["yvening_100refund__032"].name, D_YVENING["yvening_100refund__032"].tag, D_YVENING["yvening_100refund__032"].body, D_YVENING["yvening_100refund__032"].desc, "yvening_100refund__032", "yvening")
@@ -132,7 +132,7 @@ const YVENING_SIDE = `
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
 ${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
-subcard(D_YVENING["yvening_side__008"].name, D_YVENING["yvening_side__008"].tag, D_YVENING["yvening_side__008"].body, D_YVENING["yvening_side__008"].desc, "yvening_side__008", "yvening")
+`<div class="stack">`+subcard(D_YVENING["yvening_side__008"].name, D_YVENING["yvening_side__008"].tag, D_YVENING["yvening_side__008"].body, D_YVENING["yvening_side__008"].desc, "yvening_side__008", "yvening")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
 subcard(D_YVENING["yvening_side__009"].name, D_YVENING["yvening_side__009"].tag, D_YVENING["yvening_side__009"].body, D_YVENING["yvening_side__009"].desc, "yvening_side__009", "yvening") + subcard(D_YVENING["yvening_side__010"].name, D_YVENING["yvening_side__010"].tag, D_YVENING["yvening_side__010"].body, D_YVENING["yvening_side__010"].desc, "yvening_side__010", "yvening")
