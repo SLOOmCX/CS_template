@@ -201,9 +201,14 @@ const CALL_ALL = `<div class="no-copy">
   <div class="warn-note">⚠️ AS·불량은 증빙(영상·사진) 확인이 필요해 유선 상담을 진행하지 않습니다. → 채팅으로만 접수 안내</div>
   <div class="quote-box"><b>📞 브랜드마다 유선 처리 방식이 다릅니다</b>
 대표번호 고객센터 연결 → 문의 유형 확인 → 유형별로 ① 상담사 즉시 연결 ② 문자 자가처리 링크 발송 ③ 콜백 티켓 접수(OB) 중 하나로 분기
-👉 슬룸은 좌측 트리 [슬룸] › 🧭 슬룸 유선 운영·유형별 라우팅, 슬룸 외 브랜드는 [슬룸외] › 🧭 슬룸외 유선 운영 원칙 참고</div>
+👉 슬룸 유형별 상세 라우팅은 좌측 트리 [슬룸] › 🧭 슬룸 유선 운영·유형별 라우팅 참고. 슬룸 외 브랜드는 위 표가 곧 전체 기준입니다 (별도 예외 프로세스 없음)</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__as" data-content-brand="shared">${D_SHARED["cmp_callops__as"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">브랜드별 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__opmode" data-content-brand="shared">${D_SHARED["cmp_callops__opmode"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__cbtypes" data-content-brand="shared">${D_SHARED["cmp_callops__cbtypes"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__livetypes" data-content-brand="shared">${D_SHARED["cmp_callops__livetypes"].body}</td></tr></tbody></table></div>
   ${caution(`🚫 마넬 · 12 o'clock : 대표번호가 없어 유선 상담 자체를 운영하지 않습니다. 전화 문의가 들어올 경우 채팅 상담으로 안내해 주세요.`)}
+  <div class="grid2">${col("blue","🟦 [슬룸 외] 상담사 연결 (4종)",
+    `1. 전화 주문<br>2. 주문 취소<br>3. 무통장 입금 확인<br>4. 배송 이슈 (배송사고·지연·오배송)`
+  )}${col("pink","🚫 [슬룸 외] 채팅 안내 대상 (접수 X)",
+    `배송 정보 변경 · 교환/반품 신청·진행상황·재회수 · AS·불량(증빙 필요) · 100% 환불 이벤트 접수`
+  )}</div>
 
   ${secTitle("🎓","기본 유선 응대 지침","QA 교육 기준","c_basic")}
   <div class="grp-h" id="c_basic_1">1. 기본 태도·자세</div>
@@ -835,35 +840,6 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
-  </tbody></table></div>
-</div>`;
-
-/* 슬룸외 브랜드(자동화된 전화 태스크 없음) 유선 운영 원칙 — 2026-09 신규 */
-const CALL_OTHERBRAND = `<div class="no-copy">
-  <h1>🧭 슬룸외 유선 운영 원칙</h1>
-  <div class="sub">심플리케어 · 얼라인랩 · 빌바 · 셀올로지 · 코코다움 · 닥터맨즈 · 와이브닝 · 닥터아망</div>
-
-  ${secTitle("📋","유선 운영 원칙",null,"co_ops")}
-  ${caution(`슬룸과 달리 자동화된 전화 태스크(봇)가 없어, 아래 4개 유형만 상담사가 직접 실시간으로 응대합니다. 그 외 문의는 접수 없이 채팅 상담으로 안내합니다.`)}
-  <div class="grid2">${col("blue","🟦 상담사 연결 (4종)",
-    `1. 전화 주문<br>2. 주문 취소<br>3. 무통장 입금 확인<br>4. 배송 이슈 (배송사고·지연·오배송)`
-  )}${col("pink","🚫 채팅 안내 대상 (접수 X)",
-    `배송 정보 변경 · 교환/반품 신청·진행상황·재회수 · AS·불량(증빙 필요) · 100% 환불 이벤트 접수`
-  )}</div>
-  <div class="warn-note">🚫 마넬 · 12 o'clock : 대표번호가 없어 유선 상담 자체를 운영하지 않습니다. 전화 문의가 잘못 연결된 경우 채팅 상담으로 안내해 주세요.</div>
-  ${guide(`📞 전화 주문 시 유의사항(무통장·카드결제 진행, 브랜드별 안내 멘트)은 [전브랜드 공통] › 유선 표준 응대 › 📞 전화 주문 유의사항 섹션을 그대로 사용합니다.`)}
-
-  ${secTitle("📝","브랜드별 처리 차이",null,"co_diff")}
-  ${caution(`⚠️ [정리 필요] 브랜드마다 전화 주문 배송비·결제수단 등 세부 운영 기준에 차이가 있어 확인 후 채워야 합니다. 확인되는 대로 이 표를 업데이트해 주세요.`)}
-  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">비고</th></tr></thead><tbody>
-  <tr><td class="cmp-row-label">심플리케어</td><td>[정리 필요]</td></tr>
-  <tr><td class="cmp-row-label">얼라인랩</td><td>[정리 필요]</td></tr>
-  <tr><td class="cmp-row-label">빌바</td><td>[정리 필요]</td></tr>
-  <tr><td class="cmp-row-label">셀올로지</td><td>[정리 필요]</td></tr>
-  <tr><td class="cmp-row-label">코코다움</td><td>[정리 필요]</td></tr>
-  <tr><td class="cmp-row-label">닥터맨즈</td><td>[정리 필요]</td></tr>
-  <tr><td class="cmp-row-label">와이브닝</td><td>[정리 필요]</td></tr>
-  <tr><td class="cmp-row-label">닥터아망</td><td>[정리 필요]</td></tr>
   </tbody></table></div>
 </div>`;
 

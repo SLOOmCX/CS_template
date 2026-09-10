@@ -16,7 +16,7 @@ const CONTENT = {
   "slm_simplemerge":SLM_MERGE_TEMPLATE,
   "slm_side":REF_SIDE, "simplicare_side":SIMPLICARE_SIDE, "alignlab_side":ALIGNLAB_SIDE, "bilba_side":BILBA_SIDE, "cellology_side":CELLOLOGY_SIDE, "cocodaum_side":COCODAUM_SIDE, "oclock_side":OCLOCK_SIDE, "drmans_side":DRMANS_SIDE, "yvening_side":YVENING_SIDE, "marnell_side":MARNELL_SIDE, "dramang_side":DRAMANG_SIDE,
   "cmn_all":COMMON_ALL, "ib":COMMON_IB, "ob":COMMON_OB, "board":BOARD_ALL,
-  "call_all":CALL_ALL, "call_sloomcb":CALL_SLOOMCB, "call_other":CALL_OTHERBRAND
+  "call_all":CALL_ALL, "call_sloomcb":CALL_SLOOMCB
 };
 
 CONTENT["simplicare_refund"]=SIMPLICARE_REFUND; CONTENT["simplicare_exchange"]=SIMPLICARE_EXCHANGE;
@@ -104,12 +104,6 @@ const CALL_BRAND_TREE = {
       {sub:true, label:"6. 전화주문", anchor:"c_sloomcb_6"},
       {sub:true, label:"7. 주문취소 요청", anchor:"c_sloomcb_7"},
       {sub:true, label:"8. 취소 후 배송·회수", anchor:"c_sloomcb_8"}
-    ]}
-  },
-  "슬룸외":{
-    "🧭 슬룸외 유선 운영 원칙":{__content:"call_other", __sections:[
-      {label:"📋 유선 운영 원칙", anchor:"co_ops"},
-      {label:"📝 브랜드별 처리 차이", anchor:"co_diff"}
     ]}
   }
 };
