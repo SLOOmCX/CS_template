@@ -195,33 +195,37 @@ subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["c
 
 const CALL_ALL = `<div class="no-copy">
   <h1>📞 유선 표준 응대</h1>
-  <div class="sub">전 브랜드 공통 전화 응대 · 슬룸 콜백티켓 중심 운영</div>
+  <div class="sub">전 브랜드 공통 전화 응대 · 슬룸/슬룸외 운영 방식 상이</div>
 
   ${secTitle("📋","유선 상담 운영 기준",null,"c_ops")}
   <div class="warn-note">⚠️ AS·불량은 증빙(영상·사진) 확인이 필요해 유선 상담을 진행하지 않습니다. → 채팅으로만 접수 안내</div>
-  <div class="quote-box"><b>📞 [슬룸] 현재 콜백티켓 중심 운영</b>
-대표번호 고객센터 연결 → 고객 문의 유형 선택 → 유형별 요청 정보 기재 후 접수 완료 → 채널톡 팀챗 콜백 티켓 접수건 확인 후 OB 진행
-👉 「콜백 티켓 처리 프로세스」의 유형별 가이드라인에 따라 알림톡·문자 안내 또는 필요 시 유선 OB 진행</div>
-  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__as" data-content-brand="shared">${D_SHARED["cmp_callops__as"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">슬룸 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__opmode" data-content-brand="shared">${D_SHARED["cmp_callops__opmode"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__cbtypes" data-content-brand="shared">${D_SHARED["cmp_callops__cbtypes"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__livetypes" data-content-brand="shared">${D_SHARED["cmp_callops__livetypes"].body}</td></tr></tbody></table></div>
+  <div class="quote-box"><b>📞 브랜드마다 유선 처리 방식이 다릅니다</b>
+대표번호 고객센터 연결 → 문의 유형 확인 → 유형별로 ① 상담사 즉시 연결 ② 문자 자가처리 링크 발송 ③ 콜백 티켓 접수(OB) 중 하나로 분기
+👉 슬룸은 좌측 트리 [슬룸] › 🧭 슬룸 유선 운영·유형별 라우팅, 슬룸 외 브랜드는 [슬룸외] › 🧭 슬룸외 유선 운영 원칙 참고</div>
+  <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__as" data-content-brand="shared">${D_SHARED["cmp_callops__as"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">브랜드별 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__opmode" data-content-brand="shared">${D_SHARED["cmp_callops__opmode"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__cbtypes" data-content-brand="shared">${D_SHARED["cmp_callops__cbtypes"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__livetypes" data-content-brand="shared">${D_SHARED["cmp_callops__livetypes"].body}</td></tr></tbody></table></div>
+  ${caution(`🚫 마넬 · 12 o'clock : 대표번호가 없어 유선 상담 자체를 운영하지 않습니다. 전화 문의가 들어올 경우 채팅 상담으로 안내해 주세요.`)}
 
-  ${secTitle("💡","공통 기본","전 브랜드 공통","c_basic")}
-  <div class="grp-h" id="c_basic_1">1. 인사말</div>
+  ${secTitle("🎓","기본 유선 응대 지침","QA 교육 기준","c_basic")}
+  <div class="grp-h" id="c_basic_1">1. 기본 태도·자세</div>
+  ${guide(D_SHARED["call__056"].body)}
   ${macro(D_SHARED["call__001"].name, D_SHARED["call__001"].tag, D_SHARED["call__001"].body, D_SHARED["call__001"].desc, "call__001", "shared")}
   ${macro(D_SHARED["call__002"].name, D_SHARED["call__002"].tag, D_SHARED["call__002"].body, D_SHARED["call__002"].desc, "call__002", "shared")}
   <div class="grid2">${macro(D_SHARED["call__003"].name, D_SHARED["call__003"].tag, D_SHARED["call__003"].body, D_SHARED["call__003"].desc, "call__003", "shared")}${macro(D_SHARED["call__004"].name, D_SHARED["call__004"].tag, D_SHARED["call__004"].body, D_SHARED["call__004"].desc, "call__004", "shared")}</div>
   <div class="grid2">${macro(D_SHARED["call__005"].name, D_SHARED["call__005"].tag, D_SHARED["call__005"].body, D_SHARED["call__005"].desc, "call__005", "shared")}${macro(D_SHARED["call__006"].name, D_SHARED["call__006"].tag, D_SHARED["call__006"].body, D_SHARED["call__006"].desc, "call__006", "shared")}</div>
-  <div class="grp-h" id="c_basic_2">2. 사전/사후 대기</div>
+  ${caution(`고객 말씀 후 상황에 맞는 호응 필수 (단답 '네'는 부적절 / "네, 많이 불편하셨을 것 같습니다" 같은 공감 표현은 적절)`)}
+  <div class="grid2">${macro(D_SHARED["call__010"].name, D_SHARED["call__010"].tag, D_SHARED["call__010"].body, D_SHARED["call__010"].desc, "call__010", "shared")}${macro(D_SHARED["call__011"].name, D_SHARED["call__011"].tag, D_SHARED["call__011"].body, D_SHARED["call__011"].desc, "call__011", "shared")}</div>
+  <div class="grp-h" id="c_basic_2">2. 상황별 진행 스킬</div>
+  ${guide(D_SHARED["call__057"].body)}
   ${caution(`★ 대기 요청 후 자동 종료 경고 멘트가 나가지 않도록 [종료대기] 설정 필수`)}
   <div class="grid2">${macro(D_SHARED["call__007"].name, D_SHARED["call__007"].tag, D_SHARED["call__007"].body, D_SHARED["call__007"].desc, "call__007", "shared")}${macro(D_SHARED["call__008"].name, D_SHARED["call__008"].tag, D_SHARED["call__008"].body, D_SHARED["call__008"].desc, "call__008", "shared")}</div>
   ${macro(D_SHARED["call__009"].name, D_SHARED["call__009"].tag, D_SHARED["call__009"].body, D_SHARED["call__009"].desc, "call__009", "shared")}
-  <div class="grp-h" id="c_basic_3">3. 호응 표현</div>
-  ${caution(`고객 말씀 후 상황에 맞는 호응 필수 (단답 '네'는 부적절 / "네, 많이 불편하셨을 것 같습니다" 같은 공감 표현은 적절)`)}
-  <div class="grid2">${macro(D_SHARED["call__010"].name, D_SHARED["call__010"].tag, D_SHARED["call__010"].body, D_SHARED["call__010"].desc, "call__010", "shared")}${macro(D_SHARED["call__011"].name, D_SHARED["call__011"].tag, D_SHARED["call__011"].body, D_SHARED["call__011"].desc, "call__011", "shared")}</div>
-  <div class="grp-h" id="c_basic_4">4. 추가 문의</div>
   ${macro(D_SHARED["call__012"].name, D_SHARED["call__012"].tag, D_SHARED["call__012"].body, D_SHARED["call__012"].desc, "call__012", "shared")}
-  <div class="grp-h" id="c_warn">🚨 상담 종료 경고</div>
+  <div class="grp-h" id="c_basic_3">3. 클레임·불만 응대</div>
+  ${guide(D_SHARED["call__058"].body)}
   ${caution(`고객 욕설·반말·폭언·성희롱 (1회) — 담당 관리자 보고 필수`)}
   <div class="grid2">${macro(D_SHARED["call__013"].name, D_SHARED["call__013"].tag, D_SHARED["call__013"].body, D_SHARED["call__013"].desc, "call__013", "shared")}${macro(D_SHARED["call__014"].name, D_SHARED["call__014"].tag, D_SHARED["call__014"].body, D_SHARED["call__014"].desc, "call__014", "shared")}</div>
+  <div class="grp-h" id="c_basic_4">4. 유선 금지·주의</div>
+  ${guide(D_SHARED["call__059"].body)}
 
   ${secTitle("🔄","주문 변경",null,"c_order")}
   <div class="grp-h" id="c_order_1">1. 취소 후 배송</div>
@@ -300,6 +304,25 @@ const CALL_SLOOMCB = `<div class="no-copy">
       <div class="sub">유형별 접수 처리 표준 · 공통 처리 원칙 + 유형별 프로세스</div>
   <div class="quote-box"><b>콜백 티켓은 고객이 유선(IVR)을 통해 인입, 문의 유형에 따른 필수 정보를 남기면 담당자가 접수 내용을 확인하여 후속 처리하는 방식입니다.
 모든 콜백 티켓에 유선 OB를 진행하는 것은 아니며, 유형별 가이드에 따라 처리 후 알림톡·문자로 안내하거나 필요한 경우에만 유선 OB를 진행합니다. <span style="color:#ea2261;font-weight:800">(단, 전화 주문은 유선 OB 필수)</span></b></div>
+
+  ${secTitle("🧭","슬룸 유선 운영·유형별 라우팅",null,"c_sloomcb_route")}
+  ${caution(`아래 표는 현재 채널톡에 등록되어 실제로 작동 중인 전화 태스크(자동 응대) 기준입니다. 태스크가 처리하지 못하는 문의는 상담사에게 연결됩니다. 슬룸은 콜백 티켓만 쓰는 게 아니라, 유형에 따라 상담사 연결·문자 자가처리·콜백 티켓 세 가지로 나뉩니다.`)}
+  ${cmpTable(
+    [{label:"처리 방식"},{label:"최종 처리"}],
+    [
+      {label:"주문 취소 (자사몰)", values:["자사몰 주문 조회 → 취소 가능 여부 확인","🟦 상담사 연결"]},
+      {label:"배송 정보 변경 (자사몰)", values:["자사몰 주문 조회 → 변경 가능 여부 확인 (송장 마감 전만 가능)","🟦 상담사 연결"]},
+      {label:"배송 일정·오배송·미배송", values:["정상 배송 건은 자동 안내로 종료, 미수령·오배송 클레임 건만 연결 (당일 주문은 출고 전이라 자동 종료)","🟦 상담사 연결"]},
+      {label:"교환 신청 (신규)", values:["사유 확인 후 문자로 자가처리 링크 발송 (단순변심 · 불량/AS · 100%환불 등)","⬜ 자동 종료 (문자)"]},
+      {label:"반품 신청 (신규)", values:["사유 확인 후 문자로 자가처리 링크 발송","⬜ 자동 종료 (문자)"]},
+      {label:"반품·교환 진행상황 문의", values:["접수 상태별 자동 안내 (반품비 입금·A/S 접수·수거 예정 등), 정보 확인이 필요한 경우에만 분기","🟨 안내 종료 또는 상담사 연결"]},
+      {label:"회수 재접수·정보 변경", values:["단순 재접수(정보 변경 없음)는 콜백 티켓(승인 요청)으로 접수, 주소·이름·연락처 변경이 동반되면 연결","🟨 콜백 티켓 또는 상담사 연결"]},
+      {label:"전화 주문", values:["콜백 티켓 접수 → 상담사 OB 진행","⬛ 콜백 티켓 → OB"]},
+      {label:"(공통) 외부몰 주문 건", values:["자사몰 조회 불가 → 판매처 고객센터·주문내역에서 접수 안내","⬜ 안내 후 종료"]}
+    ]
+  )}
+  ${guide(`💡 아래 「콜백 티켓 처리 프로세스」는 위 라우팅 중 실제로 콜백 티켓으로 접수되는 유형(전화 주문·재회수 등)의 세부 처리 기준입니다.`)}
+
   <div class="grp-h" id="c_sloomcb_0">🧭 공통 처리 플로우</div>
   <div class="flow-diagram"><div class="fd-box">1. 고객 IVR 콜백 티켓 접수</div><div class="fd-arrow">▶</div><div class="fd-box">2. 문의 유형별 팀챗 알림 확인</div><div class="fd-arrow">▶</div><div class="fd-box">3. 처리 담당자 ✅ 표시<br>(중복 처리 방지)</div><div class="fd-arrow">▶</div><div class="fd-box">4. 신규 건 URL 클릭 후<br>우측 사이드바 상담 내역 확인</div></div>
   <div style="text-align:center;color:var(--trust-blue);font-weight:800;font-size:14px;margin:-6px 0">▼</div>
@@ -815,7 +838,34 @@ const CALL_SLOOMCB = `<div class="no-copy">
   </tbody></table></div>
 </div>`;
 
+/* 슬룸외 브랜드(자동화된 전화 태스크 없음) 유선 운영 원칙 — 2026-09 신규 */
+const CALL_OTHERBRAND = `<div class="no-copy">
+  <h1>🧭 슬룸외 유선 운영 원칙</h1>
+  <div class="sub">심플리케어 · 얼라인랩 · 빌바 · 셀올로지 · 코코다움 · 닥터맨즈 · 와이브닝 · 닥터아망</div>
 
+  ${secTitle("📋","유선 운영 원칙",null,"co_ops")}
+  ${caution(`슬룸과 달리 자동화된 전화 태스크(봇)가 없어, 아래 4개 유형만 상담사가 직접 실시간으로 응대합니다. 그 외 문의는 접수 없이 채팅 상담으로 안내합니다.`)}
+  <div class="grid2">${col("blue","🟦 상담사 연결 (4종)",
+    `1. 전화 주문<br>2. 주문 취소<br>3. 무통장 입금 확인<br>4. 배송 이슈 (배송사고·지연·오배송)`
+  )}${col("pink","🚫 채팅 안내 대상 (접수 X)",
+    `배송 정보 변경 · 교환/반품 신청·진행상황·재회수 · AS·불량(증빙 필요) · 100% 환불 이벤트 접수`
+  )}</div>
+  <div class="warn-note">🚫 마넬 · 12 o'clock : 대표번호가 없어 유선 상담 자체를 운영하지 않습니다. 전화 문의가 잘못 연결된 경우 채팅 상담으로 안내해 주세요.</div>
+  ${guide(`📞 전화 주문 시 유의사항(무통장·카드결제 진행, 브랜드별 안내 멘트)은 [전브랜드 공통] › 유선 표준 응대 › 📞 전화 주문 유의사항 섹션을 그대로 사용합니다.`)}
+
+  ${secTitle("📝","브랜드별 처리 차이",null,"co_diff")}
+  ${caution(`⚠️ [정리 필요] 브랜드마다 전화 주문 배송비·결제수단 등 세부 운영 기준에 차이가 있어 확인 후 채워야 합니다. 확인되는 대로 이 표를 업데이트해 주세요.`)}
+  <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">비고</th></tr></thead><tbody>
+  <tr><td class="cmp-row-label">심플리케어</td><td>[정리 필요]</td></tr>
+  <tr><td class="cmp-row-label">얼라인랩</td><td>[정리 필요]</td></tr>
+  <tr><td class="cmp-row-label">빌바</td><td>[정리 필요]</td></tr>
+  <tr><td class="cmp-row-label">셀올로지</td><td>[정리 필요]</td></tr>
+  <tr><td class="cmp-row-label">코코다움</td><td>[정리 필요]</td></tr>
+  <tr><td class="cmp-row-label">닥터맨즈</td><td>[정리 필요]</td></tr>
+  <tr><td class="cmp-row-label">와이브닝</td><td>[정리 필요]</td></tr>
+  <tr><td class="cmp-row-label">닥터아망</td><td>[정리 필요]</td></tr>
+  </tbody></table></div>
+</div>`;
 
 const DASH_HOME = `
   <h1>🏠 올릿 CS 응대 템플릿</h1>

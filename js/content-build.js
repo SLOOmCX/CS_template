@@ -16,7 +16,7 @@ const CONTENT = {
   "slm_simplemerge":SLM_MERGE_TEMPLATE,
   "slm_side":REF_SIDE, "simplicare_side":SIMPLICARE_SIDE, "alignlab_side":ALIGNLAB_SIDE, "bilba_side":BILBA_SIDE, "cellology_side":CELLOLOGY_SIDE, "cocodaum_side":COCODAUM_SIDE, "oclock_side":OCLOCK_SIDE, "drmans_side":DRMANS_SIDE, "yvening_side":YVENING_SIDE, "marnell_side":MARNELL_SIDE, "dramang_side":DRAMANG_SIDE,
   "cmn_all":COMMON_ALL, "ib":COMMON_IB, "ob":COMMON_OB, "board":BOARD_ALL,
-  "call_all":CALL_ALL, "call_sloomcb":CALL_SLOOMCB
+  "call_all":CALL_ALL, "call_sloomcb":CALL_SLOOMCB, "call_other":CALL_OTHERBRAND
 };
 
 CONTENT["simplicare_refund"]=SIMPLICARE_REFUND; CONTENT["simplicare_exchange"]=SIMPLICARE_EXCHANGE;
@@ -69,12 +69,11 @@ const COMMON_TREE = {
 const CALL_TREE = {
   "유선 표준 응대":{__content:"call_all", __sections:[
     {group:true, label:"📋 유선 상담 운영 기준", anchor:"c_ops"},
-    {group:true, label:"💡 공통 기본", anchor:"c_basic"},
-    {label:"1. 인사말", anchor:"c_basic_1"},
-    {label:"2. 사전/사후 대기", anchor:"c_basic_2"},
-    {label:"3. 호응 표현", anchor:"c_basic_3"},
-    {label:"4. 추가 문의", anchor:"c_basic_4"},
-    {label:"🚨 상담 종료 경고", anchor:"c_warn"},
+    {group:true, label:"🎓 기본 유선 응대 지침", anchor:"c_basic"},
+    {label:"1. 기본 태도·자세", anchor:"c_basic_1"},
+    {label:"2. 상황별 진행 스킬", anchor:"c_basic_2"},
+    {label:"3. 클레임·불만 응대", anchor:"c_basic_3"},
+    {label:"4. 유선 금지·주의", anchor:"c_basic_4"},
     {group:true, label:"🔄 주문 변경", anchor:"c_order"},
     {label:"1. 취소 후 배송", anchor:"c_order_1"},
     {label:"2. 배송 정보 변경", anchor:"c_order_2"},
@@ -93,6 +92,7 @@ const CALL_TREE = {
 const CALL_BRAND_TREE = {
   "슬룸":{
     "🎫 콜백 티켓 처리 프로세스":{__content:"call_sloomcb", __sections:[
+      {label:"🧭 슬룸 유선 운영·유형별 라우팅", anchor:"c_sloomcb_route"},
       {label:"🧭 공통 처리 플로우", anchor:"c_sloomcb_0"},
       {label:"📌 공통 처리 원칙", anchor:"c_sloomcb_principle"},
       {group:true, label:"📌 유형별 처리 프로세스", anchor:"c_sloomcb_types"},
@@ -104,6 +104,12 @@ const CALL_BRAND_TREE = {
       {sub:true, label:"6. 전화주문", anchor:"c_sloomcb_6"},
       {sub:true, label:"7. 주문취소 요청", anchor:"c_sloomcb_7"},
       {sub:true, label:"8. 취소 후 배송·회수", anchor:"c_sloomcb_8"}
+    ]}
+  },
+  "슬룸외":{
+    "🧭 슬룸외 유선 운영 원칙":{__content:"call_other", __sections:[
+      {label:"📋 유선 운영 원칙", anchor:"co_ops"},
+      {label:"📝 브랜드별 처리 차이", anchor:"co_diff"}
     ]}
   }
 };
