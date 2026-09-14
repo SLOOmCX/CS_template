@@ -258,10 +258,11 @@ const CELLOLOGY_SIDE = `
   <div class="grp-h grp-major">🔹 a. 고객 서류 미수긍 시</div>
   ${guide(`👉🏻 고객 증빙 서류 미수긍 시 예외적으로 전액 환불 처리 안내`)}
   ${macro(D_CELLOLOGY["cellology_side__003"].name, D_CELLOLOGY["cellology_side__003"].tag, D_CELLOLOGY["cellology_side__003"].body, D_CELLOLOGY["cellology_side__003"].desc, "cellology_side__003", "cellology")}
+  ${guide(`👉🏻 아래 <a class="jump-link" href="#sec_pack" onclick="return jumpTo('sec_pack')">3. 포장 및 회수 안내</a> → <a class="jump-link" href="#sec_refund" onclick="return jumpTo('sec_refund')">4. 결제수단별 환불 안내</a> 순으로 진행`)}
   <div class="grp-h grp-major">🔹 b. 고객 서류 수긍 시</div>
   ${macro(D_CELLOLOGY["cellology_side__004"].name, D_CELLOLOGY["cellology_side__004"].tag, D_CELLOLOGY["cellology_side__004"].body, D_CELLOLOGY["cellology_side__004"].desc, "cellology_side__004", "cellology")}
   ${macro(D_CELLOLOGY["cellology_side__005"].name, D_CELLOLOGY["cellology_side__005"].tag, D_CELLOLOGY["cellology_side__005"].body, D_CELLOLOGY["cellology_side__005"].desc, "cellology_side__005", "cellology")}
-  <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">👉🏻 이후 공통 : 아래 [3. 포장 및 회수 안내] → [4. 결제수단별 환불 안내] 순으로 진행</div>
+  ${guide(`👉🏻 이후 공통 : 아래 <a class="jump-link" href="#sec_pack" onclick="return jumpTo('sec_pack')">3. 포장 및 회수 안내</a> → <a class="jump-link" href="#sec_refund" onclick="return jumpTo('sec_refund')">4. 결제수단별 환불 안내</a> 순으로 진행`)}
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_CELLOLOGY["cellology_side__006"].name, D_CELLOLOGY["cellology_side__006"].tag, D_CELLOLOGY["cellology_side__006"].body, D_CELLOLOGY["cellology_side__006"].desc, "cellology_side__006", "cellology")}
   ${subcard(D_CELLOLOGY["cellology_side__007"].name, D_CELLOLOGY["cellology_side__007"].tag, D_CELLOLOGY["cellology_side__007"].body, D_CELLOLOGY["cellology_side__007"].desc, "cellology_side__007", "cellology")}
