@@ -15,7 +15,7 @@ const CONTENT = {
   "slm_exchange":SLOOM_EXCHANGE,
   "slm_simplemerge":SLM_MERGE_TEMPLATE,
   "slm_side":REF_SIDE, "simplicare_side":SIMPLICARE_SIDE, "alignlab_side":ALIGNLAB_SIDE, "bilba_side":BILBA_SIDE, "cellology_side":CELLOLOGY_SIDE, "cocodaum_side":COCODAUM_SIDE, "oclock_side":OCLOCK_SIDE, "drmans_side":DRMANS_SIDE, "yvening_side":YVENING_SIDE, "marnell_side":MARNELL_SIDE, "dramang_side":DRAMANG_SIDE,
-  "cmn_all":COMMON_ALL, "ib":COMMON_IB, "ob":COMMON_OB, "board":BOARD_ALL,
+  "cmn_all":COMMON_ALL, "hol_temp":HOL_OPS_TEMP, /* ▲ [임시] 연휴 안내 — 연휴 지나면 이 항목도 함께 삭제 */ "ib":COMMON_IB, "ob":COMMON_OB, "board":BOARD_ALL,
   "call_all":CALL_ALL, "call_sloomcb":CALL_SLOOMCB
 };
 
@@ -63,7 +63,16 @@ const COMMON_TREE = {
     {group:true, label:"👤 멤버십·회원정보", anchor:"c_member"},
     {group:true, label:"📣 마케팅·제휴", anchor:"c_mkt"},
     {group:true, label:"🛒 채팅 주문", anchor:"c_chat"}
+  ]},
+
+  /* ▼▼▼ [임시] 연휴 배송·회수 운영 안내 — 연휴 지나면 이 키 전체를 삭제 (내용은 HOL_OPS_TEMP, js/core/shared-templates.js 참고) ▼▼▼ */
+  "추석 연휴 배송·회수 안내 (임시)":{__content:"hol_temp", __sections:[
+    {label:"📅 물류센터 공유 일정표", anchor:"cs_sched"},
+    {label:"① 배송 일정 문의", anchor:"cs_1"},
+    {label:"② 회수 지연 양해 안내", anchor:"cs_2"},
+    {label:"③ 불량 교환 재출고 지연 안내", anchor:"cs_3"}
   ]}
+  /* ▲▲▲ 임시 섹션 끝 ▲▲▲ */
 };
 
 const CALL_TREE = {
