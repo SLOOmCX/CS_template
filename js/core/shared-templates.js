@@ -234,12 +234,16 @@ const HOL_OPS_TEMP = (function(){
     else { lead = `<td class="cmp-row-label">${r.sub}</td>`; }
     return `<tr>${lead}${r.values.map(cell).join("")}</tr>`;
   }
+  function hd(v,i){
+    return HOL_BAND[i]
+      ? `<th style="background:#fde3e3;color:#c81e3a;font-weight:800">${v}</th>`
+      : `<th class="cmp-blue">${v}</th>`;
+  }
   const scheduleTable = `<div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed">
   <colgroup><col style="width:76px"><col style="width:96px">${HOL_DATES.map(()=>"<col>").join("")}</colgroup>
   <thead>
-  <tr><th class="cmp-corner" colspan="2"></th>${HOL_BAND.map(b=>`<th style="background:${b?"#fbdce6":"#fff"};color:${b?"#9b2249":"#0d253d"};font-size:11px;font-weight:800">${b||""}</th>`).join("")}</tr>
-  <tr><th class="cmp-corner" colspan="2">요일</th>${HOL_DAYS.map(d=>`<th class="cmp-blue">${d}</th>`).join("")}</tr>
-  <tr><th class="cmp-corner" colspan="2">26년 9월</th>${HOL_DATES.map(d=>`<th class="cmp-blue">${d}</th>`).join("")}</tr>
+  <tr><th class="cmp-corner" colspan="2">요일</th>${HOL_DAYS.map(hd).join("")}</tr>
+  <tr><th class="cmp-corner" colspan="2">26년 9월</th>${HOL_DATES.map(hd).join("")}</tr>
   </thead>
   <tbody>${HOL_ROWS.map(row).join("")}</tbody>
   </table></div>`;
