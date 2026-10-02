@@ -66,11 +66,10 @@ const COMMON_TREE = {
   ]},
 
   /* ▼▼▼ [임시] 연휴 배송·회수 운영 안내 — 연휴 지나면 이 키 전체를 삭제 (내용은 HOL_OPS_TEMP, js/core/shared-templates.js 참고) ▼▼▼ */
-  "추석 연휴 배송·회수 안내 (임시)":{__content:"hol_temp", __sections:[
+  "10월 연휴 배송·회수 안내 (임시)":{__content:"hol_temp", __sections:[
     {label:"📅 물류센터 공유 일정표", anchor:"cs_sched"},
-    {label:"① 배송 일정 문의", anchor:"cs_1"},
-    {label:"② 회수 지연 양해 안내", anchor:"cs_2"},
-    {label:"③ 불량 교환 재출고 지연 안내", anchor:"cs_3"}
+    {label:"① 배송 일정 소요 안내", anchor:"cs_1"},
+    {label:"② 회수(수거) 추가 소요 안내", anchor:"cs_2"}
   ]}
   /* ▲▲▲ 임시 섹션 끝 ▲▲▲ */
 };

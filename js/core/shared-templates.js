@@ -194,40 +194,52 @@ subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["c
 `;
 
 /* ============================================================
-   🎑 [임시] 연휴 배송·회수 운영 안내 (2026-09 추석)
-   - 공통 트리 "채팅 표준 응대" 바로 다음 항목("추석 연휴 배송·회수 안내 (임시)")으로 노출
+   🍂 [임시] 연휴·공휴일 배송·회수 운영 안내 (2026-10 개천절·대체공휴일·한글날)
+   - 공통 트리 "채팅 표준 응대" 바로 다음 항목("10월 연휴 배송·회수 안내 (임시)")으로 노출
    - 연휴 종료 후 삭제 방법
-     1) js/content-build.js : COMMON_TREE의 "추석 연휴 배송·회수 안내 (임시)" 키 삭제
+     1) js/content-build.js : COMMON_TREE의 "10월 연휴 배송·회수 안내 (임시)" 키 삭제
      2) js/content-build.js : CONTENT["hol_temp"]=HOL_OPS_TEMP 등록 부분 삭제
      3) js/core/shared-templates.js : 아래 HOL_OPS_TEMP 상수 전체(이 주석 포함) 삭제
-   - 다음 연휴(예: 10월)에 재사용할 경우
-     : 아래 IIFE 안의 HOL_DATES / HOL_DAYS / HOL_BAND / HOL_ROWS, summaryTable의 rows,
-       그리고 macro() 본문 텍스트(날짜·요일)만 새 일정에 맞게 교체하면 됨.
+   - 다음 연휴에 재사용할 경우
+     : 아래 IIFE 안의 HOL_DATES / HOL_DAYS / HOL_BAND / HOL_ROWS,
+       체크리스트·macro() 본문 텍스트만 새 일정에 맞게 교체하면 됨.
        트리 라벨·anchor·구조는 그대로 두고 문구만 바꿔도 무방.
+   - 이전 버전은 git 이력에 남아있음(필요 시 참고)
+     : 2026-09 추석 버전 / 2026-10 1차(품고·CJ대한통운 단독) / 2차(정석로지스 단독) 버전
+   - 2026-10-02 기준: 정석로지스·품고·CJ대한통운·네이버 일정을 하나로 합친
+     "10월 연휴 물류 운영 일정" 통합표로 전면 교체 (물류팀 최종 공유본)
    ============================================================ */
 const HOL_OPS_TEMP = (function(){
-  const HOL_DATES=["21","22","23","24","25","26","27","28","29"];
-  const HOL_DAYS=["월","화","수","목","금","토","일","월","화"];
-  const HOL_BAND=[null,null,null,"추석연휴","추석","추석연휴",null,null,null];
+  const HOL_DATES=["10/1","10/2","10/3","10/4","10/5","10/6","10/7","10/8","10/9","10/10","10/11"];
+  const HOL_DAYS=["목","금","토","일","월","화","수","목","금","토","일"];
+  const HOL_BAND=[null,null,"개천절",null,"대체공휴일",null,null,null,"한글날",null,null];
+  const TINT={
+    jeongseok:{bg:"#FBEBD9",fg:"#9a5b1e"},
+    poomgo:{bg:"var(--skyblue-soft)",fg:"var(--trust-blue)"},
+    cj:{bg:"#E6DFF5",fg:"#5b3fa0"},
+    naver:{bg:"#EAF4F0",fg:"#3E8B7B"}
+  };
   const HOL_ROWS=[
-    {label:"LMD 당일배송", colspan2:true, values:[true,true,true,false,false,true,true,true,true]},
-    {label:"네이버 당일배송 예상 노출일", colspan2:true, tint:"naver", values:["9/21","9/22","9/23",false,false,"9/26","9/27","9/28","9/29"]},
-    {group:"CJ대한통운", sub:"집하", first:true, rowspan:3, values:[true,true,false,false,false,true,true,true,true]},
-    {group:"CJ대한통운", sub:"배송", values:[true,true,true,false,false,false,true,true,true]},
-    {group:"CJ대한통운", sub:"제주, 도서", values:[true,false,false,false,false,true,true,true,true]},
-    {label:"네이버 N배송 예상 노출일", colspan2:true, tint:"naver", values:["9/22","9/23","9/27~28","9/27~28","9/27~28","9/27~28","9/28~29","9/29~30","9/30"]},
-    {group:"품고", sub:"입고", first:true, rowspan:3, tint:"poomgo", values:[true,true,true,false,false,false,true,true,true]},
-    {group:"품고", sub:"B2B", values:[true,true,true,false,false,false,true,true,true]},
-    {group:"품고", sub:"B2C", values:[true,true,"limited",false,false,true,true,true,true]}
+    {group:"정석로지스", sub:"출고·일반", first:true, rowspan:3, tint:"jeongseok", values:[true,true,true,true,true,true,true,true,true,true,true]},
+    {group:"정석로지스", sub:"출고-내륙(읍면리)", values:[true,false,false,false,true,true,true,false,true,false,true]},
+    {group:"정석로지스", sub:"출고-제주(읍면리)", values:[false,false,false,false,true,true,false,false,false,false,true]},
+    {group:"품고", sub:"B2C 출고", first:true, rowspan:2, tint:"poomgo", values:[true,true,true,true,{limited:"23시 조기마감"},true,true,true,{limited:"23시 조기마감"},true,true]},
+    {group:"품고", sub:"B2B", values:[true,true,false,false,false,true,true,true,false,false,false]},
+    {group:"CJ대한통운", sub:"집하(일반)", first:true, rowspan:4, tint:"cj", values:[true,true,true,true,true,true,true,true,true,true,true]},
+    {group:"CJ대한통운", sub:"배송", values:[true,true,{limited:"읍면리배송X"},{limited:"읍면리배송X"},{limited:"읍면리배송X"},true,true,true,{limited:"읍면리배송X"},true,{limited:"읍면리배송X"}]},
+    {group:"CJ대한통운", sub:"제주, 도서", values:[false,false,false,false,true,true,true,false,true,false,true]},
+    {group:"CJ대한통운", sub:"반품 회수", values:[true,true,false,false,false,true,true,true,false,true,false]},
+    {label:"N배송 예상 노출일", colspan2:true, tint:"naver", values:["10/2","10/3~6","10/4~6","10/5~6","10/6~7","10/7","10/8","10/9","10/10~12","10/11~12","10/12~13"]}
   ];
   function cell(v){
     if(v===true) return `<td style="text-align:center;padding:9px 6px;font-size:12.5px"><b style="color:#234A86">O</b></td>`;
     if(v===false) return `<td style="text-align:center;padding:9px 6px;font-size:12.5px"><b style="color:#ea2261">X</b></td>`;
-    if(v==="limited") return `<td style="text-align:center;padding:9px 6px;font-size:12.5px;line-height:1.4"><b style="color:#234A86">O</b><br><span style="font-size:10px;color:var(--ink-soft);white-space:nowrap">(네이버 당일배송만)</span></td>`;
+    if(v && typeof v==="object" && v.limited) return `<td style="text-align:center;padding:9px 6px;font-size:12.5px;line-height:1.4"><b style="color:#234A86">O</b><br><span style="font-size:10px;color:var(--ink-soft);white-space:nowrap">(${v.limited})</span></td>`;
     return `<td style="text-align:center;padding:9px 6px;font-size:12px;color:var(--ink)">${v}</td>`;
   }
+  function tintStyle(key){ const t=TINT[key]; return t?`background:${t.bg};color:${t.fg};`:""; }
   function row(r){
-    const tintBg = r.tint==="naver" ? "background:#EAF4F0;color:#3E8B7B;" : r.tint==="poomgo" ? "background:var(--skyblue-soft);color:var(--trust-blue);" : "";
+    const tintBg = r.tint ? tintStyle(r.tint) : "";
     let lead;
     if(r.colspan2){ lead = `<td class="cmp-row-label" colspan="2" style="${tintBg}">${r.label}</td>`; }
     else if(r.first){ lead = `<td class="cmp-row-label" rowspan="${r.rowspan}" style="vertical-align:middle;${tintBg}">${r.group}</td><td class="cmp-row-label">${r.sub}</td>`; }
@@ -240,80 +252,41 @@ const HOL_OPS_TEMP = (function(){
       : `<th class="cmp-blue">${v}</th>`;
   }
   const scheduleTable = `<div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed">
-  <colgroup><col style="width:76px"><col style="width:96px">${HOL_DATES.map(()=>"<col>").join("")}</colgroup>
+  <colgroup><col style="width:88px"><col style="width:110px">${HOL_DATES.map(()=>"<col>").join("")}</colgroup>
   <thead>
+  <tr><th class="cmp-corner" colspan="2"></th>${HOL_BAND.map(b=>`<th style="background:${b?"#fde3e3":"#fff"};color:${b?"#c81e3a":"#0d253d"};font-size:11px;font-weight:800">${b||""}</th>`).join("")}</tr>
   <tr><th class="cmp-corner" colspan="2">요일</th>${HOL_DAYS.map(hd).join("")}</tr>
-  <tr><th class="cmp-corner" colspan="2">26년 9월</th>${HOL_DATES.map(hd).join("")}</tr>
+  <tr><th class="cmp-corner" colspan="2">날짜</th>${HOL_DATES.map(hd).join("")}</tr>
   </thead>
   <tbody>${HOL_ROWS.map(row).join("")}</tbody>
   </table></div>`;
 
-  const ok=`<b style="color:#234A86">정상 운영</b>`;
-  const no=`<b style="color:#ea2261">운영 ❌</b>`;
-  const limited=(t)=>`<b style="color:#b5641e">제한 운영</b><br><span style="font-size:11px;color:var(--ink-soft)">${t}</span>`;
-  const summaryTable = cmpTable(
-    [{label:"9/23(수)",cls:"blue"},{label:"9/24(목)·25(금)",cls:"blue"},{label:"9/26(토)",cls:"blue"},{label:"9/27(일)",cls:"blue"}],
-    [
-      {label:"입고", values:[ok, no, no, ok]},
-      {label:"B2B", values:[limited("※ 차량 출차 건만 가능"), no, no, ok]},
-      {label:"네이버 당일배송", values:[ok, no, ok, ok]},
-      {label:"품고 출고 (B2C)", values:[limited("※ 네이버 당일배송 주문 건만 출고"), no, ok, ok]},
-      {label:"택배 집하", values:[no, no, ok, ok]},
-      {label:"택배 배송", values:[ok, no, no, ok]}
-    ]
-  );
-
   return `
-  <h1>🎑 추석 연휴 배송·회수 운영 안내 <span class="sec-badge common" style="margin-left:4px">임시 · 추석 후 삭제 예정</span></h1>
-  <div class="sub">2026년 9월 추석 연휴 · 전 브랜드 공통 · 물류센터 공유 기준</div>
+  <h1>🍂 10월 연휴·공휴일 배송·회수 운영 안내 <span class="sec-badge common" style="margin-left:4px">임시 · 연휴 후 삭제 예정</span></h1>
+  <div class="sub">2026년 10월 개천절·대체공휴일·한글날 · 전 브랜드 공통 · 정석로지스·품고·CJ대한통운 공유 일정 기준</div>
 
   ${secTitle("📅","물류센터 공유 배송·회수 일정표","전 브랜드 공통","cs_sched")}
   ${scheduleTable}
-  ${caution(`※ 연휴 전·후 택배사 물량 증가로 배송이 1~2일 지연될 수 있습니다.
-※ N배송 예상 노출일은 연휴 및 택배사 운영 상황을 반영한 예상 노출일로, 실제 배송 완료일·도착보장일과 상이할 수 있습니다.
-※ 9/23(수) 품고 B2C는 네이버 당일배송 주문 건만 출고 / CJ대한통운 집하 미운영
-※ 제주·도서산간은 권역에 따라 집하 조기 마감 및 배송 중지·지연 가능`)}
+  ${caution(`※ 연휴 전·후 택배사 물량 증가로 인해 배송이 지연될 수 있습니다.
+※ 네이버 N배송 예상 노출일은 연휴 및 택배사 운영 상황을 반영한 예상 노출일로, 실제 배송 완료일·도착보장일과 상이할 수 있습니다.
+※ 일부 지역은 택배사 운영 일정에 따라 배송이 일시 중지·지연될 수 있습니다.
+※ 연휴 기간 동안 반품 회수 일정은 권역에 따라 다를 수 있습니다.`)}
 
-  <div class="grp-h">📋 날짜별 운영 요약 (내부 참고 · 위 일정표 재정리)</div>
-  ${summaryTable}
-  ${caution(`⚠️ 카페24·G마켓·토스쇼핑 등 타 판매처 도착보장 운영사는 9/23·24·25 플랫폼에 출고 미운영 등록 확인 바랍니다.`)}
+  <div class="grp-h">✅ 지금 꼭 확인해 주세요</div>
+  ${caution(`<b>재고 및 사은품 재고 확인</b>
+→ 연휴 전 재고를 반드시 확인해 주세요.
+→ 사은품 재고 부족으로 인한 미출고 발생에 특히 유의 부탁드립니다.
+
+<b>물류센터별 일정 차이</b>
+→ 정석로지스·품고·CJ대한통운 일정이 서로 다르니, 문의 유형에 맞는 행을 위 표에서 확인해 안내해 주세요.`)}
 
   ${secTitle("📨","고객 응대 템플릿",null,"cs_tpl")}
-  ${caution(`📌 아래 ①·② 템플릿은 <b>네이버 당일배송·N배송 주문 건은 제외</b>하고 사용 (해당 채널은 네이버 플랫폼에서 예상 노출일이 별도 자동 안내되므로 중복 안내 불필요) · 자사몰·쿠팡 등 일반 채널 문의에 적용`)}
 
-  <div class="grp-h" id="cs_1">① 배송 일정 문의</div>
-  ${macro("", "배송일정문의_추석연휴", `🚚 추석 연휴 배송 일정 안내
+  <div class="grp-h" id="cs_1">① 배송 일정 소요 안내</div>
+  ${macro("", "배송_출고_10월연휴", `10월 연휴 및 공휴일 전후 택배 물량 증가 및 지역별 배송 일정에 따라 배송이 평소보다 지연될 수 있는 점 양해 부탁드립니다. 🙇`, `배송 일정 소요 안내 시 사용`)}
 
-9/21(화) 2시까지 주문건은 당일 출고되며, 이후 결제 건은 9/28(월)부터 순차적으로 출고됩니다.
-
-다만, 연휴 전후 물량 증가로 인해 기존 배송 소요일보다 영업일 기준 2~3일 추가 소요될 수 있는 점 양해 부탁드립니다. 🙇‍♀️`, `9/21(화) 2시 이후 결제 건부터~ ※ 단, 문의 시점에 이미 정상 출고 및 배송 흐름 확인되는 경우 각 송장 흐름에 따라 기존 배송 템플릿으로 안내`)}
-
-  <div class="grp-h" id="cs_2">② 회수 지연 양해 안내</div>
-  ${macro("", "포장회수_지연양해_추석연휴", `📦 추석 연휴로 배송 진행한 택배사(CJ대한통운) 수거 방문이 기존보다 며칠 더 지연될 수 있는 점 양해 부탁드립니다.`, `접수 유형별 포장회수 안내 후, 해당 멘트 추가 송출`)}
-
-  <div class="grp-h" id="cs_3">③ 불량 교환 제품 재출고 지연</div>
-  ${macro("", "변심교환_검수재출고_추석연휴", `📦 교환 진행 일정 안내드리겠습니다.
-
-· 검수 및 재출고 : 제품 입고 후 영업일 기준 6~8일 소요
-· 배송 : 재출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-연휴 이후 물류 및 검수 물량 증가로 인해 기존보다 영업일 기준 2~3일 추가 소요될 수 있는 점 양해 부탁드립니다.🙇‍♀️`)}
-  <div class="grid2">${macro("", "불량AS_재출고_추석연휴", `🚚 교환 제품 재출고 일정 안내드리겠습니다.
-
-· 출고 : <b>9/28(월)부터 순차출고</b>
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-연휴 전후 물량 증가로 인해 기존 배송 소요일보다 영업일 기준 2~3일 추가 소요될 수 있는 점 양해 부탁드립니다.🙇‍♀️`)}${macro("", "유상AS_재출고_추석연휴", `💳 입금이 정상적으로 확인되어 새 제품 출고를 진행해 드리겠습니다.
-
-· 출고 : <b>9/28(월)부터 순차출고</b>
-· 배송 : 출고일로부터 영업일 기준 2~3일 소요
-· 택배사 : CJ대한통운
-
-연휴 이후 물류 및 검수 물량 증가로 인해 기존보다 영업일 기준 2~3일 추가 소요될 수 있는 점 양해 부탁드립니다.🙇‍♀️
-
-※ 제품의 안전한 사용을 위해 동봉된 사용설명서와 정격 전압 어댑터 + 전용 케이블 사용을 꼭 안내드립니다.`)}</div>
+  <div class="grp-h" id="cs_2">② 회수(수거) 추가 소요 안내</div>
+  ${macro("", "포장회수_10월연휴", `📦 10월 연휴 및 공휴일 전후로 택배사(CJ대한통운) 수거 방문이 기존보다 며칠 더 지연될 수 있는 점 양해 부탁드립니다.`, `회수(수거) 추가 소요 안내 시 사용`)}
 `;
 })();
 const CALL_ALL = `<div class="no-copy">
