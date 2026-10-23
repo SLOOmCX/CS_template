@@ -249,6 +249,9 @@ const REF_AS = `
   <div class="h2lvl" id="exNoEvid">✨ [예외] 증빙 미제출</div>
   <div class="lvl2-body"><div class="quote-box"><b>✔️ 사진/영상 확인 시, 정상 제품으로 확인되거나 사용법 문제로 확인될 경우 → 증상별 올바른 사용법 재안내 후 재사용 시도 유도</b>\n⚠️ 아래 flow는 사진/영상 촬영 지속 미수긍으로 회수 후 검수 예외 처리 진행에 동의한 경우에만 이어서 안내</div><div class="h3lvl">❌ 검수 결과 — 불량 확인</div><div class="lvl3-body">${guide(`※ 채널톡 이전 상담 내역에 교환/반품 처리 방안 확인`)}<div class="grp-h">A. 고객 반품 요청 · 반품 안내 유저챗 발송</div><div class="grid2">${macro(D_SLOOM["slm_as__079"].name, D_SLOOM["slm_as__079"].tag, D_SLOOM["slm_as__079"].body, D_SLOOM["slm_as__079"].desc, "slm_as__079", "sloom")}${macro(D_SLOOM["slm_as__080"].name, D_SLOOM["slm_as__080"].tag, D_SLOOM["slm_as__080"].body, D_SLOOM["slm_as__080"].desc, "slm_as__080", "sloom")}</div><div class="grp-h">B. 고객 교환 요청 · 재출고 안내 유저챗 발송</div>${macro(D_SLOOM["slm_as__081"].name, D_SLOOM["slm_as__081"].tag, D_SLOOM["slm_as__081"].body, D_SLOOM["slm_as__081"].desc, "slm_as__081", "sloom")}</div><div class="h3lvl">⭕ 검수 결과 — 정상 제품</div><div class="lvl3-body">${macro(D_SLOOM["slm_as__082"].name, D_SLOOM["slm_as__082"].tag, D_SLOOM["slm_as__082"].body, D_SLOOM["slm_as__082"].desc, "slm_as__082", "sloom")}</div></div>
 
+  <div class="h2lvl" id="exArbReturn">✨ [예외] 네이버페이 임의반송</div>
+  <div class="lvl2-body">${macro(D_SLOOM["slm_simplemerge__020"].name, D_SLOOM["slm_simplemerge__020"].tag, D_SLOOM["slm_simplemerge__020"].body, D_SLOOM["slm_simplemerge__020"].desc, "slm_simplemerge__020", "sloom")}</div>
+
   <div class="h2lvl" id="autoPickup">🍏 [외부몰] 자동수거 : 쿠팡, 스마트스토어 등</div>
   <div class="lvl2-body"><div class="quote-box"><b>⚠️ 고객이 처리방안(교환 또는 반품)을 선택 후, 자동수거 진행되고 있는 건이므로 아래 flow 대로 진행</b></div><div class="grp-h">A. 고객 반품 요청</div><div class="grid2">${macro(D_SLOOM["slm_as__083"].name, D_SLOOM["slm_as__083"].tag, D_SLOOM["slm_as__083"].body, D_SLOOM["slm_as__083"].desc, "slm_as__083", "sloom")}${guide(`▶ 쿠팡 or 네이버 스마트스토어 주문내역 조회 \n→ 반품/교환 자동 수거 여부 확인\n\n단, 자동수거 물류센터 회수 내역 조회는 입고 완료 후에만 조회됨 \n회수중 상태에서는 물류센터(품고 또는 정석)에서 조회되지 않음`)}</div>${macro(D_SLOOM["slm_as__084"].name, D_SLOOM["slm_as__084"].tag, D_SLOOM["slm_as__084"].body, D_SLOOM["slm_as__084"].desc, "slm_as__084", "sloom")}<div class="grid2">${macro(D_SLOOM["slm_as__085"].name, D_SLOOM["slm_as__085"].tag, D_SLOOM["slm_as__085"].body, D_SLOOM["slm_as__085"].desc, "slm_as__085", "sloom")}${guide(`물류센터(품고 또는 정석) 별도반출&불량 검수 시트에 취합 후 검수 결과에 따라 \n✔️ '정상'일 경우 → 고객 주소로 반송\n✔️ '불량'일 경우 → '반품' 처리 \n\n※ 쿠팡 건은 검수 결과 확인 전 쿠팡 자체적으로 기한 내 반품 완료 처리되는 경우가 대부분\n→ 고객 별도 안내 불필요, 시스템만 인지하고 이해하기!\n\n👉🏻 물류센터별 시트 바로가기\n① <a href="https://docs.google.com/spreadsheets/d/1ZgqMOaFfBW60cln1V6oVRRSmjEeNjZSJrlf1ytdM5V4/edit?pli=1&amp;gid=1560630591#gid=1560630591" target="_blank">[품고/올릿] 별도반출&불량 검수</a>\n② <a href="https://docs.google.com/spreadsheets/d/1X7-VBL7xA8UWJtdHh5elOtYrDaA-qwtrrvc0qrM5_eU/edit?gid=0#gid=0" target="_blank">[정석/올릿] 별도반출&불량 검수</a>`)}</div><div class="grp-h">B. 고객 교환 요청</div><div class="grid2">${macro(D_SLOOM["slm_as__086"].name, D_SLOOM["slm_as__086"].tag, D_SLOOM["slm_as__086"].body, D_SLOOM["slm_as__086"].desc, "slm_as__086", "sloom")}${guide(`▶ 쿠팡 or 네이버 스마트스토어 주문내역 조회 \n→ 반품/교환 자동 수거 여부 확인\n\n단, 자동수거건 물류센터 회수 내역 조회는 입고 완료 후에만 조회됨 \n회수중 상태에서는 조회되지 않음`)}</div><div class="grid2">${macro(D_SLOOM["slm_as__087"].name, D_SLOOM["slm_as__087"].tag, D_SLOOM["slm_as__087"].body, D_SLOOM["slm_as__087"].desc, "slm_as__087", "sloom")}${guide(`※ 교환은 고객께 불량 증상 확인되면 즉시 재출고 접수 진행`)}</div></div>
 
@@ -381,6 +384,9 @@ const SLM_MERGE_TEMPLATE = `
       + subcard(D_SLOOM["slm_simplemerge__019"].name, D_SLOOM["slm_simplemerge__019"].tag, D_SLOOM["slm_simplemerge__019"].body, D_SLOOM["slm_simplemerge__019"].desc, "slm_simplemerge__019", "sloom")
     )}
   </div>
+
+  ${secTitle("✨","[예외] 네이버페이 임의반송",null,"exArbReturn")}
+  ${macro(D_SLOOM["slm_simplemerge__020"].name, D_SLOOM["slm_simplemerge__020"].tag, D_SLOOM["slm_simplemerge__020"].body, D_SLOOM["slm_simplemerge__020"].desc, "slm_simplemerge__020", "sloom")}
 `;
 
 const REF_SIDE = `

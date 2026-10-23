@@ -211,6 +211,7 @@ BRAND_TREE["슬룸"]["불량 AS 교환/반품"]={
     {sub:true, label:"② 품질보증기간(1년) 경과", anchor:"edgeOut"},
     {label:"📸 증빙 제출 불만에 따른 대응", anchor:"secProof"},
     {label:"✨ [예외] 증빙 미제출", anchor:"exNoEvid"},
+    {label:"✨ [예외] 네이버페이 임의반송", anchor:"exArbReturn"},
     {group:true, label:"🍏 [외부몰] 자동수거", anchor:"autoPickup"},
     {group:true, label:"🚀 쿠팡 판매자로켓 AS", anchor:"crRocket"}
   ]
@@ -678,7 +679,8 @@ BRAND_TREE["심플리케어"]["100%환불이벤트"]={
           {label:"2. 전체/부분 방식 안내", anchor:"sec2"},
           {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
           {label:"4. 포장 및 회수 안내", anchor:"sec4"},
-          {label:"5. 교환/반품 안내", anchor:"step5"}
+          {label:"5. 교환/반품 안내", anchor:"step5"},
+          {label:"✨ [예외] 네이버페이 임의반송", anchor:"exArbReturn"}
         ]
       };
     } else if (k === "단순변심 반품") {
