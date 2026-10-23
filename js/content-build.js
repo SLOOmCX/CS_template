@@ -125,6 +125,7 @@ const BOARD_TREE = {
     {group:true, label:"📄 문의 유형별 템플릿", anchor:"b_type"},
     {label:"[슬룸] 불량·교환·AS", anchor:"b_type_1"},
     {label:"[슬룸] 네이버페이 환불", anchor:"b_type_2"},
+    {label:"[슬룸] 네이버페이 임의반송", anchor:"b_type_2a"},
     {label:"[슬룸] 100% 환불 이벤트", anchor:"b_type_3"},
     {label:"[전브랜드] 교환/반품 사유", anchor:"b_type_4"},
     {group:true, label:"📦 [슬룸] 외부몰 유형별 템플릿", anchor:"b_ext"},

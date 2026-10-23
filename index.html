@@ -324,7 +324,7 @@
   }
   .macro:hover{box-shadow:0 8px 22px rgba(0,55,112,.07);border-color:#dbe3ef;}
   .macro-head{
-    display:flex;align-items:center;gap:8px;padding:14px 20px;background:#fff;
+    display:flex;align-items:center;gap:8px;padding:14px 20px;background:#F7F9FC;
     border-bottom:1px solid var(--line);
   }
   .macro-head.plain{background:#F2F5F9;}
@@ -453,7 +453,7 @@
   /* a·b·c 서브카드 */
   .subcard{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,55,112,.03);transition:box-shadow .16s ease;margin:0 0 var(--space-content);}
   .subcard:hover{box-shadow:0 6px 16px rgba(0,55,112,.06);}
-  .subcard-h{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-bottom:1px solid var(--line);}
+  .subcard-h{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#F7F9FC;border-bottom:1px solid var(--line);}
   .sc-label{font-weight:700;font-size:13.5px;color:var(--ink);}
   .sc-desc{margin:9px 14px 2px;padding:7px 12px;background:#fff6da;border:1px solid #f0e2b8;border-radius:var(--radius-md);font-size:12px;color:#2f3a6b;line-height:1.6;white-space:pre-line;}
   .sc-desc:before{content:"💡 ";color:#c98a00;font-weight:800;}
@@ -516,6 +516,8 @@
   .hidden{display:none;}
   /* 매크로명(#태그) 재노출 — 매크로명 정리 완료(2026-08) */
   .macro-head .tag,.subcard-h .tag,.col-h .ct-tag{display:inline-block;}
+  /* 카드 헤더 배경(#F7F9FC)과 태그 배경(skyblue-soft)이 비슷해 묻히지 않도록 태그를 흰 바탕+옅은 테두리로 (2026-10-23) */
+  .macro-head .tag,.subcard-h .tag{background:#fff;box-shadow:inset 0 0 0 1px #DCE6F3;}
   .astbl{border-collapse:separate;border-spacing:0;width:100%;margin:0 0 var(--space-content);font-size:12.5px;border:1px solid #d9d9d9;border-radius:var(--radius-lg);overflow:hidden;}
   .astbl th{background:#9BBB59;color:#fff;font-weight:700;padding:9px 12px;text-align:left;border-bottom:1px solid #d9d9d9;}
   .astbl th:not(:last-child){border-right:1px solid #d9d9d9;}
