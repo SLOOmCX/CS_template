@@ -52,6 +52,7 @@ function describeFile(f) {
   if (f === "js/core/editor.js") return "웹 편집기";
   if (f === "js/core/changelog-view.js") return "업데이트 내역 화면";
   if (f === "js/core/rules-view.js") return "작성 규칙";
+  if (f === "js/core/router.js") return "링크 주소(화면별 URL)";
   if (f === "index.html") return "사이트 레이아웃·디자인";
   if (f.startsWith(".github/") || f.startsWith("tools/")) return "배포 자동화";
   if (f === "js/data/changelog.js") return null; // 자기 자신은 제외
