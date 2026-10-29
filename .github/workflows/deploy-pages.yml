@@ -1,0 +1,42 @@
+# main 에 커밋이 올라갈 때마다(웹편집기 커밋 포함)
+# 1) 업데이트 내역(js/data/changelog.js)을 git 히스토리로 새로 만들고
+# 2) 사이트 전체를 GitHub Pages 로 배포함
+# ※ 최초 1회: 저장소 Settings → Pages → Build and deployment → Source 를 "GitHub Actions" 로 변경해야 동작
+name: Deploy site (with update history)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 전체 히스토리 필요
+
+      - name: Build update history
+        run: node tools/build-changelog.js
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

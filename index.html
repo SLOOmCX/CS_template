@@ -624,6 +624,8 @@ body.olit-edit-mode .page [data-content-key]:hover:after{
       <button class="rail-btn" data-rail="board" title="게시판">📝</button>
       <div class="rail-div"></div>
       <button class="rail-btn" data-rail="bm" title="북마크 (북마크)">🔖</button>
+      <div style="margin-top:auto"></div>
+      <button class="rail-btn" data-rail="log" title="업데이트 내역">🕘</button>
     </nav>
 
     <!-- 2) 2차 트리 메뉴 -->
@@ -674,5 +676,7 @@ body.olit-edit-mode .page [data-content-key]:hover:after{
 <script src="js/brands/dramang.js"></script>
 <script src="js/content-build.js"></script>
 <script src="js/core/editor.js"></script>
+<script src="js/data/changelog.js" onerror="window.CHANGELOG_MISSING=true"></script>
+<script src="js/core/changelog-view.js"></script>
 </body>
 </html>
