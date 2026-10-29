@@ -26,7 +26,7 @@ const CELLOLOGY_100 = `
 • 신청 방법 : 별도 신청 페이지 없이 <b>채널톡 채팅 상담</b>으로 접수</div></div>
   ${secTitle("1", "기간 전 응대",null,"secBefore")}
   ${macro(D_CELLOLOGY["cellology_100refund__001"].name, D_CELLOLOGY["cellology_100refund__001"].tag, D_CELLOLOGY["cellology_100refund__001"].body, D_CELLOLOGY["cellology_100refund__001"].desc, "cellology_100refund__001", "cellology")}
-  ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(정석)·배송 택배사(CJ대한통운) 등을 통해 배송완료일자 확인`)}
+  ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(정석)·배송 택배사(CJ대한통운·로젠택배) 등을 통해 배송완료일자 확인`)}
   ${macro(D_CELLOLOGY["cellology_100refund__002"].name, D_CELLOLOGY["cellology_100refund__002"].tag, D_CELLOLOGY["cellology_100refund__002"].body, D_CELLOLOGY["cellology_100refund__002"].desc, "cellology_100refund__002", "cellology")}
   ${macro(D_CELLOLOGY["cellology_100refund__003"].name, D_CELLOLOGY["cellology_100refund__003"].tag, D_CELLOLOGY["cellology_100refund__003"].body, D_CELLOLOGY["cellology_100refund__003"].desc, "cellology_100refund__003", "cellology")}
   <div class="grp-h">b. 고객 2차 미수긍 — 아래 두 유형 중 선택</div>
@@ -37,7 +37,7 @@ const CELLOLOGY_100 = `
   ${macro(D_CELLOLOGY["cellology_100refund__008"].name, D_CELLOLOGY["cellology_100refund__008"].tag, D_CELLOLOGY["cellology_100refund__008"].body, D_CELLOLOGY["cellology_100refund__008"].desc, "cellology_100refund__008", "cellology")}
   ${secTitle("3", "기간 내 응대",null,"secWithin")}
   ${macro(D_CELLOLOGY["cellology_100refund__009"].name, D_CELLOLOGY["cellology_100refund__009"].tag, D_CELLOLOGY["cellology_100refund__009"].body, D_CELLOLOGY["cellology_100refund__009"].desc, "cellology_100refund__009", "cellology")}
-  ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(정석)·배송 택배사(CJ대한통운) 등을 통해 배송완료일자 확인`)}
+  ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(정석)·배송 택배사(CJ대한통운·로젠택배) 등을 통해 배송완료일자 확인`)}
   ${macro(D_CELLOLOGY["cellology_100refund__010"].name, D_CELLOLOGY["cellology_100refund__010"].tag, D_CELLOLOGY["cellology_100refund__010"].body, D_CELLOLOGY["cellology_100refund__010"].desc, "cellology_100refund__010", "cellology")}
   ${secMajor("💯","100%환불이벤트 접수","자사몰 ONLY","secAccept")}
   ${secTitle("🟢","유형별 기준","자사몰 ONLY","secRef")}

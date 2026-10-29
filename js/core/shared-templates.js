@@ -131,7 +131,7 @@ const COMMON_ALL = `
   <div class="grid2">${macro(D_SHARED["cmn_all__029"].name, D_SHARED["cmn_all__029"].tag, D_SHARED["cmn_all__029"].body, D_SHARED["cmn_all__029"].desc, "cmn_all__029", "shared")}${macro(D_SHARED["cmn_all__030"].name, D_SHARED["cmn_all__030"].tag, D_SHARED["cmn_all__030"].body, D_SHARED["cmn_all__030"].desc, "cmn_all__030", "shared")}</div>
   ${macro(D_SHARED["cmn_all__031"].name, D_SHARED["cmn_all__031"].tag, D_SHARED["cmn_all__031"].body, D_SHARED["cmn_all__031"].desc, "cmn_all__031", "shared")}
   <div class="grp-h" id="c_ship_2">2. 미배송 / 오배송 문의</div>
-  ${guide(`자사몰·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 주문내역에서 송장번호 확인 → CJ대한통운 송장 조회로 배송 상태·흐름 확인<br><br>💡 배송 흐름 정상 여부에 따라 분기 : <b>사과 표현</b> 템플릿 공통 사용 후, <b>정상 흐름</b>이면 '배송완료 상태 안내', <b>비정상 흐름</b>이면 '물류사 확인 안내' 템플릿 사용`)}
+  ${guide(`자사몰·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석) 주문내역에서 송장번호 확인 → 해당 택배사(CJ대한통운·로젠택배) 송장 조회로 배송 상태·흐름 확인<br><br>💡 배송 흐름 정상 여부에 따라 분기 : <b>사과 표현</b> 템플릿 공통 사용 후, <b>정상 흐름</b>이면 '배송완료 상태 안내', <b>비정상 흐름</b>이면 '물류사 확인 안내' 템플릿 사용`)}
   <div class="grid2">${macro(D_SHARED["cmn_all__032"].name, D_SHARED["cmn_all__032"].tag, D_SHARED["cmn_all__032"].body, D_SHARED["cmn_all__032"].desc, "cmn_all__032", "shared")}${macro(D_SHARED["cmn_all__033"].name, D_SHARED["cmn_all__033"].tag, D_SHARED["cmn_all__033"].body, D_SHARED["cmn_all__033"].desc, "cmn_all__033", "shared")}</div>
   <div class="grid2">${macro(D_SHARED["cmn_all__064"].name, D_SHARED["cmn_all__064"].tag, D_SHARED["cmn_all__064"].body, D_SHARED["cmn_all__064"].desc, "cmn_all__064", "shared")}</div>
   <div class="grp-h" id="c_ship_3">3. 분리배송 안내</div>
@@ -351,7 +351,7 @@ subcard(D_SHARED["call__024"].name, D_SHARED["call__024"].tag, D_SHARED["call__0
 
 ▶ 운송장번호 : (기재)
 ▶ 배송사원 : (성함/연락처)
-▶ CJ대한통운 고객센터 : 1588-1255
+▶ 택배사 고객센터 : (CJ대한통운 1588-1255 / 로젠택배 1588-9988 중 기재)
 
 감사합니다.`)}
 
@@ -535,7 +535,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 ▶ 운송장번호 : (기재)
 ▶ 배송사원 : (성함/연락처)
-▶ CJ대한통운 콜센터 : 1588-1255
+▶ 택배사 고객센터 : (CJ대한통운 1588-1255 / 로젠택배 1588-9988 중 기재)
 
 해당 내용 참고를 부탁드리며, 이 외의 자세한 배송 문의는 위 택배사측으로 문의를 부탁드립니다.
 감사합니다.`)}</td></tr>
@@ -689,7 +689,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 ▶ 운송장번호 : (기재)
 ▶ 배송사원 : (성함/연락처)
-▶ CJ대한통운 콜센터 : 1588-1255
+▶ 택배사 고객센터 : (CJ대한통운 1588-1255 / 로젠택배 1588-9988 중 기재)
 
 번거로우시겠지만 해당 정보로 택배사 측에 기사 과실에 따른 주소 오배송·분실 여부 문의 부탁드립니다.`)}</td></tr>
   </tbody></table></div>
