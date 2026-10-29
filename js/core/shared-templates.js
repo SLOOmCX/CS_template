@@ -962,6 +962,7 @@ const RAIL = {
   board:{title:"게시판", desc:"📝 비실시간 1:1·FAQ·게시판 응대 템플릿", type:"tree"},
   bm:{title:"북마크", desc:"⭐ 자주 보는 페이지 · 🔖 멘트 (내 브라우저 저장)", type:"bm"},
   log:{title:"업데이트 내역", desc:"🕘 배포된 수정 이력 · 일자별", type:"log"},
+  rules:{title:"작성 규칙", desc:"📘 매크로명·타이포그래피·수정 절차", type:"rules"},
 };
 
 const CHAT_BRANDS=['슬룸','심플리케어','얼라인랩','빌바','셀올로지','코코다움',"12 o'clock",'닥터맨즈','와이브닝','마넬','닥터아망'];

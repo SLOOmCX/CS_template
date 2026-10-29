@@ -1078,6 +1078,7 @@ function renderTree(){
   if(cfg.type==="dash"){ tree.innerHTML=""; setCrumb("홈"); render(DASH_HOME); return; }
   if(cfg.type==="bm"){ renderBookmarks(); return; }
   if(cfg.type==="log"){ if(typeof renderChangelog==="function") renderChangelog(); return; }
+  if(cfg.type==="rules"){ if(typeof renderRules==="function") renderRules(); return; }
   if(cfg.type==="brand"){
     tree.innerHTML=`<div class="group-label">공통</div>`
       +buildTree(COMMON_TREE,"")
@@ -1487,6 +1488,7 @@ document.querySelectorAll(".rail-btn").forEach(b=>{
     if(curRail==="dash"){ commitView(); }
     else if(curRail==="bm"){ commitView(); }
     else if(curRail==="log"){ commitView(); }
+    else if(curRail==="rules"){ commitView(); }
     else if(curRail==="home"){ openHomeDefault(); commitView(); }
     else if(curRail==="call"){ openCallDefault(); commitView(); }
     else if(first){ first.click(); }
