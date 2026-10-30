@@ -1000,7 +1000,8 @@ function buildSearchIndex(){
       if(el.classList.contains("macro")||el.classList.contains("subcard")){
         var nm=el.querySelector(".mname, .sc-label"); var name=nm?nm.textContent.trim():"";
         var bd=el.querySelector(".macro-body, .subcard-body"); var body=bd?bd.textContent.trim():"";
-        SEARCH_INDEX.push({cid:cid, card:idxMap.get(el), path:fullPath+(lastHead?" › "+lastHead:""), name:name, text:(name+" "+body).trim()});
+        var tg=el.querySelector(".tag"); var tag=tg?tg.textContent.trim():"";   /* 매크로명(#태그)도 검색 대상 */
+        SEARCH_INDEX.push({cid:cid, card:idxMap.get(el), path:fullPath+(lastHead?" › "+lastHead:""), name:name, tag:tag, text:(name+" "+tag+" "+body).trim()});
       } else {
         lastHead=el.textContent.replace(/\s+/g," ").trim();
       }
@@ -1205,7 +1206,7 @@ function renderSearch(query){
       if(li<0){ snip=t.slice(0,90); }
       else { const st=Math.max(0,li-30); snip=(st>0?"… ":"")+t.slice(st,li+q.length+60)+" …"; }
       return `<div class="sr-item" onclick="goResult('${r.cid}',${(typeof r.card==="number")?r.card:-1})">
-      <div class="sr-path">${pathHtml(r.path)}${r.name?(" › <b>"+r.name.replace(/</g,"&lt;")+"</b>"):""}</div>
+      <div class="sr-path">${pathHtml(r.path)}${r.name?(" › <b>"+r.name.replace(/</g,"&lt;")+"</b>"):""}${r.tag?(" <span class=\"tag\">"+hl(r.tag,q)+"</span>"):""}</div>
       <div class="sr-snip">${hl(snip,q)}</div>
     </div>`;}).join("");
   }

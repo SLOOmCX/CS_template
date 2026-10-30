@@ -117,7 +117,11 @@ const RULES_SECTIONS = [
 <li>챕터 제목은 항상 정해진 제목 도구(<code>secTitle()</code> / <code>secMajor()</code>)로만 만듦. 손으로 흉내 낸 제목은 규칙이 바뀔 때 혼자 남아서 어긋남.</li>
 <li>번호 배지(파란 동그라미)는 숫자만 넣음. 이모지 말머리(💡 💯 등)는 배지 없이 글자처럼 표시됨.</li>
 <li>표는 정해진 표 스타일(<code>astbl</code> / <code>gridtbl</code>)만 씀. 엑셀에서 복사한 서식을 그대로 붙여넣지 않음.</li>
-<li>상담 내용 안에는 웹 기본 제목 태그(h2~h6)를 쓰지 않음.</li></ul>`},
+<li>상담 내용 안에는 웹 기본 제목 태그(h2~h6)를 쓰지 않음.</li></ul>
+<div class="grp-h">4. 문장 표기</div>
+<table class="astbl"><thead><tr><th>규칙</th><th>❌ 틀림</th><th>⭕ 맞음</th></tr></thead><tbody>
+<tr><td>문장부호(<code>.</code> <code>?</code> <code>!</code>) 뒤의 이모지는 한 칸 띄움</td><td>죄송합니다.🙏<br>좋을까요?😊</td><td>죄송합니다. 🙏<br>좋을까요? 😊</td></tr>
+</tbody></table>`},
 
 { key:"process", label:"수정 절차", title:"🛠️ 수정 절차", html:`
 <p>웹 템플릿을 먼저 고치고, 같은 내용을 채널톡 매크로에 반영함. 두 곳은 자동으로 연동되지 않아서 사람이 양쪽을 모두 고쳐야 함.</p>
@@ -131,7 +135,8 @@ const RULES_SECTIONS = [
 <li>이름만 보고 어떤 상황인지 알 수 있는가</li>
 <li>같은 브랜드에 본문이 다른데 이름이 같은 매크로가 없는가</li>
 <li>시점이 들어가면 시점 표기 규칙을 따랐는가</li>
-<li>카드 글자 크기를 따로 지정하지 않았는가</li></ul>`}
+<li>카드 글자 크기를 따로 지정하지 않았는가</li>
+<li>문장부호 뒤 이모지를 한 칸 띄웠는가</li></ul>`}
 ];
 
 let RULES_CUR = "overview";
