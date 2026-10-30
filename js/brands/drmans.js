@@ -232,11 +232,9 @@ const DRMANS_REFUND = `
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_DRMANS["drmans_refund__007"].name, D_DRMANS["drmans_refund__007"].tag, D_DRMANS["drmans_refund__007"].body, D_DRMANS["drmans_refund__007"].desc, "drmans_refund__007", "drmans")
-      + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
       subcard(D_DRMANS["drmans_refund__008"].name, D_DRMANS["drmans_refund__008"].tag, D_DRMANS["drmans_refund__008"].body, D_DRMANS["drmans_refund__008"].desc, "drmans_refund__008", "drmans")
-      + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
@@ -298,10 +296,10 @@ subcard(D_DRMANS["drmans_exchange__004"].name, D_DRMANS["drmans_exchange__004"].
   ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_DRMANS["drmans_exchange__006"].name, D_DRMANS["drmans_exchange__006"].tag, D_DRMANS["drmans_exchange__006"].body, D_DRMANS["drmans_exchange__006"].desc, "drmans_exchange__006", "drmans") + caution(`🎁 증정품 회수 O`)
+subcard(D_DRMANS["drmans_exchange__006"].name, D_DRMANS["drmans_exchange__006"].tag, D_DRMANS["drmans_exchange__006"].body, D_DRMANS["drmans_exchange__006"].desc, "drmans_exchange__006", "drmans")
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_DRMANS["drmans_exchange__007"].name, D_DRMANS["drmans_exchange__007"].tag, D_DRMANS["drmans_exchange__007"].body, D_DRMANS["drmans_exchange__007"].desc, "drmans_exchange__007", "drmans") + caution(`🎁 증정품 회수 X`)
+subcard(D_DRMANS["drmans_exchange__007"].name, D_DRMANS["drmans_exchange__007"].tag, D_DRMANS["drmans_exchange__007"].body, D_DRMANS["drmans_exchange__007"].desc, "drmans_exchange__007", "drmans")
 )}
 </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
@@ -419,11 +417,9 @@ const DRMANS_MERGE_TEMPLATE = `
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_DRMANS["drmans_refund__007"].name, D_DRMANS["drmans_refund__007"].tag, D_DRMANS["drmans_refund__007"].body, D_DRMANS["drmans_refund__007"].desc, "drmans_refund__007", "drmans")
-      + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
       subcard(D_DRMANS["drmans_refund__008"].name, D_DRMANS["drmans_refund__008"].tag, D_DRMANS["drmans_refund__008"].body, D_DRMANS["drmans_refund__008"].desc, "drmans_refund__008", "drmans")
-      + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
@@ -432,10 +428,10 @@ const DRMANS_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 교환</div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard(D_DRMANS["drmans_exchange__006"].name, D_DRMANS["drmans_exchange__006"].tag, D_DRMANS["drmans_exchange__006"].body, D_DRMANS["drmans_exchange__006"].desc, "drmans_exchange__006", "drmans") + caution(`🎁 증정품 회수 O`)
+      subcard(D_DRMANS["drmans_exchange__006"].name, D_DRMANS["drmans_exchange__006"].tag, D_DRMANS["drmans_exchange__006"].body, D_DRMANS["drmans_exchange__006"].desc, "drmans_exchange__006", "drmans")
     )}
     ${col("pink","🔹 부분 교환",
-      subcard(D_DRMANS["drmans_exchange__007"].name, D_DRMANS["drmans_exchange__007"].tag, D_DRMANS["drmans_exchange__007"].body, D_DRMANS["drmans_exchange__007"].desc, "drmans_exchange__007", "drmans") + caution(`🎁 증정품 회수 X`)
+      subcard(D_DRMANS["drmans_exchange__007"].name, D_DRMANS["drmans_exchange__007"].tag, D_DRMANS["drmans_exchange__007"].body, D_DRMANS["drmans_exchange__007"].desc, "drmans_exchange__007", "drmans")
     )}
   </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
