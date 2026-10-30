@@ -138,8 +138,8 @@ const BILBA_SIDE = `
 번거로우시겠지만, 상세한 확인을 위해 아래 몇 가지 사항에 대해 답변을 부탁드려도 될까요?
 
 💡 제품 사용 환경 및 상황
-사용 당시의 구체적인 상황(사용 시간, 사용 방법 등)을 자세히 공유해 주시면 감사하겠습니다.
-혹시 상해 부위와 제품 사용 상황을 확인할 수 있는 사진이 있다면 함께 첨부해 주세요.
+사용 당시의 구체적인 상황(사용 시간, 사용 방법 등)을 자세히 공유해주시면 감사하겠습니다.
+혹시 상해 부위와 제품 사용 상황을 확인할 수 있는 사진이 있다면 함께 첨부해주세요.
 
 고객님의 소중한 답변을 바탕으로 안전하고 신속하게 조치를 취할 수 있도록 최선을 다하겠습니다. 🙏🏻</div>
     <div class="sc-desc" style="margin-top:10px">상황이나 증상에 따라 사용 환경 등은 생략<br>단, 부작용·상해 부위 증빙 사진은 탐색 필수</div>
@@ -228,7 +228,7 @@ const BILBA_REFUND = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)}
-    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    ${colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
   </div>
@@ -270,11 +270,6 @@ const BILBA_REFUND = `
     ${col("pink","🔹 부분 반품",
       subcard(D_BILBA["bilba_refund__008"].name, D_BILBA["bilba_refund__008"].tag, D_BILBA["bilba_refund__008"].body, D_BILBA["bilba_refund__008"].desc, "bilba_refund__008", "bilba")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_BILBA["bilba_refund__009"].name, D_BILBA["bilba_refund__009"].tag, D_BILBA["bilba_refund__009"].body, D_BILBA["bilba_refund__009"].desc, "bilba_refund__009", "bilba")
     )}
   </div>
   <div class="grid2">
@@ -379,7 +374,7 @@ const BILBA_MERGE_TEMPLATE = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)
-    + colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    + colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
   )}</div>
@@ -461,11 +456,6 @@ const BILBA_MERGE_TEMPLATE = `
     ${col("pink","🔹 부분 반품",
       subcard(D_BILBA["bilba_refund__008"].name, D_BILBA["bilba_refund__008"].tag, D_BILBA["bilba_refund__008"].body, D_BILBA["bilba_refund__008"].desc, "bilba_refund__008", "bilba")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_BILBA["bilba_refund__009"].name, D_BILBA["bilba_refund__009"].tag, D_BILBA["bilba_refund__009"].body, D_BILBA["bilba_refund__009"].desc, "bilba_refund__009", "bilba")
     )}
   </div>
   <div class="grid2">

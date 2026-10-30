@@ -18,13 +18,13 @@ const DRAMANG_100 = `
   ]
 )}
 <div class="grid2"><div class="quote-box"><b>📌 닥터아망 100% 환불 이벤트 조건</b>
-• 닥터아망 공식 자사몰 구매 건에 한해 이용 가능 (외부몰 대상 아님)
-• 첫 구매 체험 서비스로 단 1회, 상품 1종 1개에 한해 신청 가능
-• 세트 또는 동일 상품 1개 이상 구매 시, 체험 1개 외에는 미개봉·손상 없이 보관된 경우에만 전액 환불
-• 왕복 배송비 6,000원 고객 부담 · 2022년 12월 19일 이후 구매자부터 적용</div><div class="quote-box"><b>카테고리별 사용 기준</b>
-• 식품 : 배송 완료 후 40일 이내 신청 / 수령 후 <b>30일 동안 꾸준히 섭취</b>
-• 화장품 : 배송 완료 후 40일 이내 신청 / 수령 후 <b>30일 이내, 2/3 사용</b>
-• 신청 방법 : 별도 신청 페이지 없이 <b>채널톡 채팅 상담</b></div></div>
+· 닥터아망 공식 자사몰 구매 건에 한해 이용 가능 (외부몰 대상 아님)
+· 첫 구매 체험 서비스로 단 1회, 상품 1종 1개에 한해 신청 가능
+· 세트 또는 동일 상품 1개 이상 구매 시, 체험 1개 외에는 미개봉·손상 없이 보관된 경우에만 전액 환불
+· 왕복 배송비 6,000원 고객 부담 · 2022년 12월 19일 이후 구매자부터 적용</div><div class="quote-box"><b>카테고리별 사용 기준</b>
+· 식품 : 배송 완료 후 40일 이내 신청 / 수령 후 <b>30일 동안 꾸준히 섭취</b>
+· 화장품 : 배송 완료 후 40일 이내 신청 / 수령 후 <b>30일 이내, 2/3 사용</b>
+· 신청 방법 : 별도 신청 페이지 없이 <b>채널톡 채팅 상담</b></div></div>
   ${secTitle("1", "기간 전 응대",null,"secBefore")}
   ${macro(D_DRAMANG["dramang_100refund__001"].name, D_DRAMANG["dramang_100refund__001"].tag, D_DRAMANG["dramang_100refund__001"].body, D_DRAMANG["dramang_100refund__001"].desc, "dramang_100refund__001", "dramang")}
   ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(<a href="https://seller.poomgo.com/login?redirect=%2F" target="_blank">품고</a> 또는 정석)·배송 택배사(CJ대한통운·로젠택배) 등을 통해 배송완료일자 확인`)}
@@ -230,6 +230,7 @@ subcard(D_DRAMANG["dramang_as__012"].name, D_DRAMANG["dramang_as__012"].tag, D_D
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_DRAMANG["dramang_as__013"].name, D_DRAMANG["dramang_as__013"].tag, D_DRAMANG["dramang_as__013"].body, D_DRAMANG["dramang_as__013"].desc, "dramang_as__013", "dramang")}
+  <div class="stack">${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)", subcard(D_DRAMANG["dramang_refund__009"].name, D_DRAMANG["dramang_refund__009"].tag, D_DRAMANG["dramang_refund__009"].body, D_DRAMANG["dramang_refund__009"].desc, "dramang_refund__009", "dramang"))}</div>
   ${caution(`📝 [통합판] 용품류 카테고리 문구 그대로 적용.`)}
 
   ${secTitle("4","교환/반품 안내",null,"sec_refund")}
@@ -282,7 +283,7 @@ const DRAMANG_REFUND = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)}
-    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    ${colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
   </div>
@@ -324,11 +325,6 @@ const DRAMANG_REFUND = `
     ${col("pink","🔹 부분 반품",
       subcard(D_DRAMANG["dramang_refund__008"].name, D_DRAMANG["dramang_refund__008"].tag, D_DRAMANG["dramang_refund__008"].body, D_DRAMANG["dramang_refund__008"].desc, "dramang_refund__008", "dramang")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_DRAMANG["dramang_refund__009"].name, D_DRAMANG["dramang_refund__009"].tag, D_DRAMANG["dramang_refund__009"].body, D_DRAMANG["dramang_refund__009"].desc, "dramang_refund__009", "dramang")
     )}
   </div>
   <div class="grid2">
@@ -436,7 +432,7 @@ const DRAMANG_MERGE_TEMPLATE = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)
-    + colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    + colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
   )}</div>
@@ -521,11 +517,6 @@ const DRAMANG_MERGE_TEMPLATE = `
     ${col("pink","🔹 부분 반품",
       subcard(D_DRAMANG["dramang_refund__008"].name, D_DRAMANG["dramang_refund__008"].tag, D_DRAMANG["dramang_refund__008"].body, D_DRAMANG["dramang_refund__008"].desc, "dramang_refund__008", "dramang")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_DRAMANG["dramang_refund__009"].name, D_DRAMANG["dramang_refund__009"].tag, D_DRAMANG["dramang_refund__009"].body, D_DRAMANG["dramang_refund__009"].desc, "dramang_refund__009", "dramang")
     )}
   </div>
   <div class="grid2">

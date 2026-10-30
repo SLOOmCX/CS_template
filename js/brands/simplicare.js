@@ -18,12 +18,12 @@ const SIMPLICARE_100 = `
   ]
 )}
 <div class="grid2"><div class="quote-box"><b>📌 심플리케어 100% 환불 이벤트 조건</b>
-• 심플리케어 공식 자사몰 구매 건에 한해 이용 가능 (외부몰 대상 아님)
-• 첫 구매 체험 서비스로 단 1회, 상품 1종 1개에 한해 신청 가능
-• 세트 또는 동일 상품 1개 이상 구매 시, 체험 1개 외에는 미개봉·손상 없이 보관된 경우에만 전액 환불
-• 왕복 배송비 6,000원 고객 부담 · 2022년 12월 19일 이후 구매자부터 적용</div><div class="quote-box"><b>카테고리별 사용 기준</b>
-• 화장품 : 40일 이내 신청 / 수령 후 <b>30일 이내, 2/3 사용</b>
-• 식품 : 제품 유형별 상이 (아래 표 참고) · 신청 방법 <b>채널톡 채팅 상담</b></div></div>
+· 심플리케어 공식 자사몰 구매 건에 한해 이용 가능 (외부몰 대상 아님)
+· 첫 구매 체험 서비스로 단 1회, 상품 1종 1개에 한해 신청 가능
+· 세트 또는 동일 상품 1개 이상 구매 시, 체험 1개 외에는 미개봉·손상 없이 보관된 경우에만 전액 환불
+· 왕복 배송비 6,000원 고객 부담 · 2022년 12월 19일 이후 구매자부터 적용</div><div class="quote-box"><b>카테고리별 사용 기준</b>
+· 화장품 : 40일 이내 신청 / 수령 후 <b>30일 이내, 2/3 사용</b>
+· 식품 : 제품 유형별 상이 (아래 표 참고) · 신청 방법 <b>채널톡 채팅 상담</b></div></div>
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">식품 유형</th><th class="cmp-blue">환불 신청 기간</th><th class="cmp-blue">섭취 기간</th></tr></thead><tbody><tr><td class="cmp-row-label">15포</td><td>25일</td><td>15일</td></tr><tr><td class="cmp-row-label">30포</td><td>40일</td><td>30일</td></tr><tr><td class="cmp-row-label">환·정</td><td>40일</td><td>30일</td></tr></tbody></table></div>
   ${secTitle("1", "기간 전 응대",null,"secBefore")}
   ${macro(D_SIMPLICARE["simplicare_100refund__001"].name, D_SIMPLICARE["simplicare_100refund__001"].tag, D_SIMPLICARE["simplicare_100refund__001"].body, D_SIMPLICARE["simplicare_100refund__001"].desc, "simplicare_100refund__001", "simplicare")}
@@ -236,6 +236,7 @@ subcard(D_SIMPLICARE["simplicare_as__012"].name, D_SIMPLICARE["simplicare_as__01
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_SIMPLICARE["simplicare_as__013"].name, D_SIMPLICARE["simplicare_as__013"].tag, D_SIMPLICARE["simplicare_as__013"].body, D_SIMPLICARE["simplicare_as__013"].desc, "simplicare_as__013", "simplicare")}
+  <div class="stack">${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)", subcard(D_SIMPLICARE["simplicare_refund__009"].name, D_SIMPLICARE["simplicare_refund__009"].tag, D_SIMPLICARE["simplicare_refund__009"].body, D_SIMPLICARE["simplicare_refund__009"].desc, "simplicare_refund__009", "simplicare"))}</div>
   ${caution(`📝 [통합판] 식품류 카테고리 문구 그대로 적용(형태 구분 없이 '제품 전체'로 통일).`)}
 
   ${secTitle("4","교환/반품 안내",null,"sec_refund")}
@@ -289,7 +290,7 @@ const SIMPLICARE_REFUND = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)}
-    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    ${colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
   </div>
@@ -331,11 +332,6 @@ const SIMPLICARE_REFUND = `
     ${col("pink","🔹 부분 반품",
       subcard(D_SIMPLICARE["simplicare_refund__008"].name, D_SIMPLICARE["simplicare_refund__008"].tag, D_SIMPLICARE["simplicare_refund__008"].body, D_SIMPLICARE["simplicare_refund__008"].desc, "simplicare_refund__008", "simplicare")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_SIMPLICARE["simplicare_refund__009"].name, D_SIMPLICARE["simplicare_refund__009"].tag, D_SIMPLICARE["simplicare_refund__009"].body, D_SIMPLICARE["simplicare_refund__009"].desc, "simplicare_refund__009", "simplicare")
     )}
   </div>
   <div class="grid2">
@@ -438,7 +434,7 @@ const SIMPLICARE_MERGE_TEMPLATE = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)
-    + colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    + colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
   )}</div>
@@ -522,11 +518,6 @@ const SIMPLICARE_MERGE_TEMPLATE = `
     ${col("pink","🔹 부분 반품",
       subcard(D_SIMPLICARE["simplicare_refund__008"].name, D_SIMPLICARE["simplicare_refund__008"].tag, D_SIMPLICARE["simplicare_refund__008"].body, D_SIMPLICARE["simplicare_refund__008"].desc, "simplicare_refund__008", "simplicare")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_SIMPLICARE["simplicare_refund__009"].name, D_SIMPLICARE["simplicare_refund__009"].tag, D_SIMPLICARE["simplicare_refund__009"].body, D_SIMPLICARE["simplicare_refund__009"].desc, "simplicare_refund__009", "simplicare")
     )}
   </div>
   <div class="grid2">

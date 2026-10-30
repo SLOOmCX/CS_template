@@ -183,9 +183,9 @@ subcard(D_SHARED["cmn_all__043"].name, D_SHARED["cmn_all__043"].tag, D_SHARED["c
   <div class="grid2">${macro(D_SHARED["cmn_all__057"].name, D_SHARED["cmn_all__057"].tag, D_SHARED["cmn_all__057"].body, D_SHARED["cmn_all__057"].desc, "cmn_all__057", "shared")}${macro(D_SHARED["cmn_all__058"].name, D_SHARED["cmn_all__058"].tag, D_SHARED["cmn_all__058"].body, D_SHARED["cmn_all__058"].desc, "cmn_all__058", "shared")}</div>
   ${secTitle("🛒","채팅 주문",null,"c_chat")}
   <div class="grp-h">브랜드별 채팅 주문 유의사항 멘트</div>
-  <div class="quote-box"><b>• 배송비는 브랜드별 금액 기준만 상이 (슬룸 제외)
-• 무통장 입금으로만 결제 가능, 자사몰 회원 혜택 미제공은 동일
-• 채팅 주문은 카드 결제(페이업) 불가 — 개인정보 이슈</b></div>
+  <div class="quote-box"><b>· 배송비는 브랜드별 금액 기준만 상이 (슬룸 제외)
+· 무통장 입금으로만 결제 가능, 자사몰 회원 혜택 미제공은 동일
+· 채팅 주문은 카드 결제(페이업) 불가 — 개인정보 이슈</b></div>
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">채팅 주문 유의사항 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__sloom" data-content-brand="shared">${D_SHARED["cmp_chatorder__sloom"].body}</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__simplicare" data-content-brand="shared">${D_SHARED["cmp_chatorder__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__alignlab" data-content-brand="shared">${D_SHARED["cmp_chatorder__alignlab"].body}</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__bilba" data-content-brand="shared">${D_SHARED["cmp_chatorder__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__cellology" data-content-brand="shared">${D_SHARED["cmp_chatorder__cellology"].body}</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__cocodaum" data-content-brand="shared">${D_SHARED["cmp_chatorder__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__drmans" data-content-brand="shared">${D_SHARED["cmp_chatorder__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__yvening" data-content-brand="shared">${D_SHARED["cmp_chatorder__yvening"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_chatorder__dramang" data-content-brand="shared">${D_SHARED["cmp_chatorder__dramang"].body}</div></td></tr></tbody></table></div>
   ${guide(`12 o'clock · 마넬 : 배송비 기준 미확인 → 확인 후 반영 예정`)}
   <div class="grid2">${macro(D_SHARED["cmn_all__059"].name, D_SHARED["cmn_all__059"].tag, D_SHARED["cmn_all__059"].body, D_SHARED["cmn_all__059"].desc, "cmn_all__059", "shared")}${macro(D_SHARED["cmn_all__060"].name, D_SHARED["cmn_all__060"].tag, D_SHARED["cmn_all__060"].body, D_SHARED["cmn_all__060"].desc, "cmn_all__060", "shared")}</div>
@@ -274,13 +274,13 @@ const HOL_OPS_TEMP = (function(){
 ※ 일부 지역은 택배사 운영 일정에 따라 배송이 일시 중지·지연될 수 있습니다.
 ※ 연휴 기간 동안 반품 회수 일정은 권역에 따라 다를 수 있습니다.`)}
 
-  <div class="grp-h">✅ 지금 꼭 확인해 주세요</div>
+  <div class="grp-h">✅ 지금 꼭 확인해주세요</div>
   ${caution(`<b>재고 및 사은품 재고 확인</b>
-→ 연휴 전 재고를 반드시 확인해 주세요.
+→ 연휴 전 재고를 반드시 확인해주세요.
 → 사은품 재고 부족으로 인한 미출고 발생에 특히 유의 부탁드립니다.
 
 <b>물류센터별 일정 차이</b>
-→ 정석로지스·품고·CJ대한통운 일정이 서로 다르니, 문의 유형에 맞는 행을 위 표에서 확인해 안내해 주세요.`)}
+→ 정석로지스·품고·CJ대한통운 일정이 서로 다르니, 문의 유형에 맞는 행을 위 표에서 확인해 안내해주세요.`)}
 
   ${secTitle("📨","고객 응대 템플릿",null,"cs_tpl")}
 
@@ -301,7 +301,7 @@ const CALL_ALL = `<div class="no-copy">
 대표번호 고객센터 연결 → 문의 유형 확인 → 유형별로 ① 상담사 즉시 연결 ② 문자 자가처리 링크 발송 ③ 콜백 티켓 접수(OB) 중 하나로 분기
 👉 슬룸 유형별 상세 라우팅은 좌측 트리 [슬룸] › 🧭 슬룸 유선 운영·유형별 라우팅 참고. 슬룸 외 브랜드는 위 표가 곧 전체 기준입니다 (별도 예외 프로세스 없음)</div>
   <div class="cmp-table-wrap"><table class="cmp-table" style="table-layout:fixed"><colgroup><col style="width:190px"><col></colgroup><thead><tr><th class="cmp-corner" style="white-space:nowrap">항목</th><th class="cmp-blue">내용</th></tr></thead><tbody><tr><td class="cmp-row-label" style="white-space:nowrap">AS 유선 요청 시</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__as" data-content-brand="shared">${D_SHARED["cmp_callops__as"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">브랜드별 유선 운영 방식</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__opmode" data-content-brand="shared">${D_SHARED["cmp_callops__opmode"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">콜백 티켓 접수 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__cbtypes" data-content-brand="shared">${D_SHARED["cmp_callops__cbtypes"].body}</td></tr><tr><td class="cmp-row-label" style="white-space:nowrap">실시간 상담 연결 유형</td><td style="white-space:pre-line;text-align:left;padding:10px 14px;line-height:1.7" data-content-key="cmp_callops__livetypes" data-content-brand="shared">${D_SHARED["cmp_callops__livetypes"].body}</td></tr></tbody></table></div>
-  ${caution(`🚫 마넬 · 12 o'clock : 대표번호가 없어 유선 상담 자체를 운영하지 않습니다. 전화 문의가 들어올 경우 채팅 상담으로 안내해 주세요.`)}
+  ${caution(`🚫 마넬 · 12 o'clock : 대표번호가 없어 유선 상담 자체를 운영하지 않습니다. 전화 문의가 들어올 경우 채팅 상담으로 안내해주세요.`)}
   <div class="grid2">${col("blue","🟦 [슬룸 외] 상담사 연결 (4종)",
     `1. 전화 주문<br>2. 주문 취소<br>3. 무통장 입금 확인<br>4. 배송 이슈 (배송사고·지연·오배송)`
   )}${col("pink","🚫 [슬룸 외] 채팅 안내 대상 (접수 X)",
@@ -474,7 +474,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 요청하신 교환·반품 철회가 완료되었습니다.
 
-다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁 드립니다.
+다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -499,7 +499,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 접수된 주문자 정보로 교환·반품 접수 이력이 확인되지 않습니다.
 
-교환·반품 접수 접수는 슬룸 채팅 상담으로 문의 부탁 드립니다.
+교환·반품 접수 접수는 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
@@ -548,7 +548,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 접수된 주문자 정보로 교환·반품 접수 이력이 확인되지 않습니다.
 
-교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁 드립니다.
+교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -585,7 +585,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
-※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해 주세요.
+※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [채팅방 메뉴] 클릭 &gt; [고객센터] 클릭`)}</td></tr>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">AS 접수 필요</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_AS접수안내`, `UE_4473`,
 `안녕하세요 고객님, 슬룸 고객센터입니다.
@@ -600,7 +600,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 2. 제품 회수 전에는 직접 확인이 어려운 온라인 판매 특성 상, 사용 미숙으로 인한 작동의 어려움이 있을 수 있습니다.
 2-1. 특히, 정상품의 경우 다시 반송되기에 불필요하게 제품을 사용하지 못하는 번거로움이 발생할 수 있기에 정확한 안내를 위해 불량 증상 영상이나 사진을 꼭 함께 전달 부탁드립니다.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.`)}</td></tr>
   <tr><td style="white-space:pre-line;padding:14px 16px;line-height:1.9">배송비 입금 필요</td><td style="padding:12px">${cbTpl(`[CS] 슬룸_반품배송비 안내`, `UE_4475`,
@@ -614,7 +614,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 - 예금주 : 주식회사 올릿리테일
 * 입금은 영업일 기준 1일 내 확인되며, 확인 후 반품 접수 및 수거가 순차적으로 진행됩니다.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -629,7 +629,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 - 무통장/가상 계좌 결제: 영업일 기준 1~2일 이내 환불 처리됩니다.
 - 유효기간이 남아있는 쿠폰 및 적립금은 자동으로 환급됩니다.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -642,7 +642,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 최대한 신속하게 처리해드릴 수 있도록 노력하겠습니다.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -655,7 +655,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 접수된 주문자 정보로 교환·반품 접수 이력이 확인되지 않습니다.
 
-교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁 드립니다.
+교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -721,7 +721,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 접수된 주문자 정보로 배송 문제로 접수 가능한 주문건이 확인되지 않습니다.
 
-다른 문의가 있으시다면, 슬룸 채팅 상담으로 문의 부탁 드립니다.
+다른 문의가 있으시다면, 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -757,7 +757,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 3. 수거 후, 반품 완료까지는 영업일 기준 약 5일 소요될 수 있습니다.
 4. 수거 후, 교환 제품 재출고는 영업일 기준 약 5일 소요될 수 있습니다.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -778,7 +778,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 3. 수거 후, 반품 완료까지는 영업일 기준 약 5일 소요될 수 있습니다.
 4. 수거 후, 교환 제품 재출고는 영업일 기준 약 5일 소요될 수 있습니다.
 
-번거롭게 해드려 대단히 죄송합니다. 관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+번거롭게 해드려 대단히 죄송합니다. 관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -791,7 +791,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 접수된 주문자 정보로 교환·반품 접수 이력이 확인되지 않습니다.
 
-교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁 드립니다.
+교환·반품 접수는 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -825,7 +825,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 전화 주문 문의주셨으나 온라인 주문이력이 확인되어 문자 발송드립니다.
 
-다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁 드립니다.
+다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -859,7 +859,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 - 무통장/가상 계좌 결제: 영업일 기준 1~2일 이내 환불 처리됩니다.
 - 유효기간이 남아있는 쿠폰 및 적립금은 자동으로 환급됩니다.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -876,7 +876,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 ■ 불가 사유 : 출고 완료
 ※ 출고가 완료된 이후 취소 요청 시, 제품 수령 후 '단순변심'으로 반품 접수가 필요하며 왕복 택배비 6,000원이 발생합니다.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -889,7 +889,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 접수된 주문자 정보로 주문 취소 접수가 가능한 주문 건이 확인되지 않습니다.
 
-다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁 드립니다.
+다른 문의 사항이 있으실 경우 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -919,9 +919,9 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 현재 시스템상 취소 처리는 완료되었으나, 제품 회수가 필요한 상황입니다.
 
-번거로우시겠지만, 제품 수령 후 택배 포장 그대로 보관해 주시고, 회수 예정 택배기사님 연락 시 문 앞 보관 또는 제품 전달을 부탁드립니다.
+번거로우시겠지만, 제품 수령 후 택배 포장 그대로 보관해주시고, 회수 예정 택배기사님 연락 시 문 앞 보관 또는 제품 전달을 부탁드립니다.
 
-관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁 드립니다.
+관련해서 추가 문의 사항이 있으실 경우 슬룸 고객센터로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
@@ -934,7 +934,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
 접수된 주문자 정보로 주문 취소 후 배송 진행 이력이 확인되지 않습니다.
 
-다른 문의가 있으시다면, 슬룸 채팅 상담으로 문의 부탁 드립니다.
+다른 문의가 있으시다면, 슬룸 채팅 상담으로 문의 부탁드립니다.
 
 ※ 슬룸은 채팅 상담을 카카오톡으로 진행하지 않습니다. 사칭 채널에 유의해주세요.
 → 대화창 내 [혜택 보기] > [고객센터] 클릭`)}</td></tr>
