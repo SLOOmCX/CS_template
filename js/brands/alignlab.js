@@ -204,7 +204,7 @@ const ALIGNLAB_REFUND = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)}
-    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    ${colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
   </div>
@@ -246,11 +246,6 @@ const ALIGNLAB_REFUND = `
     ${col("pink","🔹 부분 반품",
       subcard(D_ALIGNLAB["alignlab_refund__008"].name, D_ALIGNLAB["alignlab_refund__008"].tag, D_ALIGNLAB["alignlab_refund__008"].body, D_ALIGNLAB["alignlab_refund__008"].desc, "alignlab_refund__008", "alignlab")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_ALIGNLAB["alignlab_refund__009"].name, D_ALIGNLAB["alignlab_refund__009"].tag, D_ALIGNLAB["alignlab_refund__009"].body, D_ALIGNLAB["alignlab_refund__009"].desc, "alignlab_refund__009", "alignlab")
     )}
   </div>
   <div class="grid2">
@@ -355,7 +350,7 @@ const ALIGNLAB_MERGE_TEMPLATE = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)
-    + colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    + colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
   )}</div>
@@ -437,11 +432,6 @@ const ALIGNLAB_MERGE_TEMPLATE = `
     ${col("pink","🔹 부분 반품",
       subcard(D_ALIGNLAB["alignlab_refund__008"].name, D_ALIGNLAB["alignlab_refund__008"].tag, D_ALIGNLAB["alignlab_refund__008"].body, D_ALIGNLAB["alignlab_refund__008"].desc, "alignlab_refund__008", "alignlab")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_ALIGNLAB["alignlab_refund__009"].name, D_ALIGNLAB["alignlab_refund__009"].tag, D_ALIGNLAB["alignlab_refund__009"].body, D_ALIGNLAB["alignlab_refund__009"].desc, "alignlab_refund__009", "alignlab")
     )}
   </div>
   <div class="grid2">

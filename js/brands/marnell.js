@@ -166,6 +166,7 @@ subcard(D_MARNELL["marnell_as__021"].name, D_MARNELL["marnell_as__021"].tag, D_M
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_MARNELL["marnell_as__022"].name, D_MARNELL["marnell_as__022"].tag, D_MARNELL["marnell_as__022"].body, D_MARNELL["marnell_as__022"].desc, "marnell_as__022", "marnell")}
+  <div class="stack">${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)", subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc, "marnell_refund__009", "marnell"))}</div>
   ${caution(`📝 [통합판] 화장품류 카테고리 문구 + 세트 구성 상품(리무빙컬) 예외 한 줄 추가. 속눈썹영양제·주름패치(품절)도 동일 화장품류 문구 적용.`)}
 
   ${secTitle("4","교환/반품 안내",null,"sec_refund")}
@@ -219,7 +220,7 @@ const MARNELL_REFUND = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)}
-    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    ${colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
   </div>
@@ -261,11 +262,6 @@ const MARNELL_REFUND = `
     ${col("pink","🔹 부분 반품",
       subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc, "marnell_refund__008", "marnell")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc, "marnell_refund__009", "marnell")
     )}
   </div>
   <div class="grid2">
@@ -373,7 +369,7 @@ const MARNELL_MERGE_TEMPLATE = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)
-    + colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    + colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
   )}</div>
@@ -455,11 +451,6 @@ const MARNELL_MERGE_TEMPLATE = `
     ${col("pink","🔹 부분 반품",
       subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc, "marnell_refund__008", "marnell")
       + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc, "marnell_refund__009", "marnell")
     )}
   </div>
   <div class="grid2">

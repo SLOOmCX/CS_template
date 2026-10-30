@@ -331,8 +331,9 @@
   .macro-head.plain .mname{color:var(--trust-blue);font-weight:800;}
   .macro-head .gdot{width:10px;height:10px;border-radius:50%;background:#234A86;flex-shrink:0;}
   .macro-head .mname{font-weight:700;font-size:13.5px;color:var(--ink);}
-  .macro-head .tag{
-    font-size:11px;color:var(--trust-blue);background:var(--skyblue-soft);
+  /* 매크로명(#태그) 뱃지 공통 규칙 — macro-head / subcard-h / cmp-ment 3곳이 이 1벌만 공유. 개별 복제 규칙 신설 금지 (2026-10-30 통일) */
+  .macro-head .tag,.subcard-h .tag,.cmp-ment .tag{
+    display:inline-block;font-size:11px;color:var(--trust-blue);background:#fff;box-shadow:inset 0 0 0 1px #DCE6F3;
     padding:2px 8px;border-radius:var(--radius-pill);font-weight:600;
   }
   .macro-head .spacer{flex:1;}
@@ -352,10 +353,6 @@
   .macro:has(.mname:empty) .macro-body{padding-top:42px;}
   .macro:has(.mname:empty) .sc-desc + .macro-body{padding-top:20px;}
   .cmp-ment{position:relative;text-align:left !important;padding:12px 78px 12px 14px !important;vertical-align:top;}
-  .cmp-ment .tag{
-    display:inline-block;font-size:11px;color:var(--trust-blue);background:var(--skyblue-soft);
-    padding:2px 8px;border-radius:var(--radius-pill);font-weight:600;
-  }
   .cmp-ment-body{white-space:pre-line;line-height:1.7;font-size:12.5px;color:var(--ink);margin-top:14px;}
   .cmp-ment .copy-btn{position:absolute;top:8px;right:46px;color:var(--ink-soft);}
   .cmp-ment .bm-star{position:absolute;top:8px;right:12px;padding:0;margin:0;}
@@ -457,7 +454,6 @@
   .sc-label{font-weight:700;font-size:13.5px;color:var(--ink);}
   .sc-desc{margin:9px 14px 2px;padding:7px 12px;background:#fff6da;border:1px solid #f0e2b8;border-radius:var(--radius-md);font-size:12px;color:#2f3a6b;line-height:1.6;white-space:pre-line;}
   .sc-desc:before{content:"💡 ";color:#c98a00;font-weight:800;}
-  .subcard-h .tag{font-size:11px;color:var(--trust-blue);background:var(--skyblue-soft);padding:2px 7px;border-radius:var(--radius-pill);font-weight:600;}
   .subcard-h .spacer{flex:1;}
   .subcard-body{padding:16px;font-size:12.5px;line-height:1.75;color:var(--ink);white-space:pre-wrap;}
   /* 노트 박스 */
@@ -515,9 +511,8 @@
     .refund-guide-grid>div:last-child{padding-left:0 !important;border-left:none !important;border-top:1px dashed #C7DAF2;padding-top:14px;margin-top:14px;}}
   .hidden{display:none;}
   /* 매크로명(#태그) 재노출 — 매크로명 정리 완료(2026-08) */
-  .macro-head .tag,.subcard-h .tag,.col-h .ct-tag{display:inline-block;}
-  /* 카드 헤더 배경(#F7F9FC)과 태그 배경(skyblue-soft)이 비슷해 묻히지 않도록 태그를 흰 바탕+옅은 테두리로 (2026-10-23) */
-  .macro-head .tag,.subcard-h .tag{background:#fff;box-shadow:inset 0 0 0 1px #DCE6F3;}
+  .col-h .ct-tag{display:inline-block;}
+  /* (2026-10-23) 카드 헤더 배경과 태그 배경이 비슷해 묻히지 않도록 흰 바탕+옅은 테두리 적용 → 2026-10-30 위 공통 규칙(.macro-head .tag 블록)으로 흡수, 여기 개별 override 두지 않음 */
   .astbl{border-collapse:separate;border-spacing:0;width:100%;margin:0 0 var(--space-content);font-size:12.5px;border:1px solid #d9d9d9;border-radius:var(--radius-lg);overflow:hidden;}
   .astbl th{background:#9BBB59;color:#fff;font-weight:700;padding:9px 12px;text-align:left;border-bottom:1px solid #d9d9d9;}
   .astbl th:not(:last-child){border-right:1px solid #d9d9d9;}

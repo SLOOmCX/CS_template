@@ -18,12 +18,12 @@ const REF_100REFUND = `
   ]
 )}
   <div class="grid2"><div class="quote-box"><b>📌 100% 환불 이벤트 운영 기준</b>
-• 슬룸 100% 환불 이벤트는 원칙적으로 고객이 '100% 환불 이벤트 신청 페이지'를 통해 직접 신청하도록 운영
-• 신청 페이지는 자사몰 공지사항, 채널톡 ALF 등에서 안내 중
-• 신청이 완료된 건은 「100% 환불 이벤트 신청건」 시트에 자동 취합되며, 해당 리스트를 기준으로 데일리 처리</div><div class="quote-box"><b>예외 응대 기준</b>
-• 이벤트 기간 내 채팅으로 직접 신청 문의한 경우
+· 슬룸 100% 환불 이벤트는 원칙적으로 고객이 '100% 환불 이벤트 신청 페이지'를 통해 직접 신청하도록 운영
+· 신청 페이지는 자사몰 공지사항, 채널톡 ALF 등에서 안내 중
+· 신청이 완료된 건은 「100% 환불 이벤트 신청건」 시트에 자동 취합되며, 해당 리스트를 기준으로 데일리 처리</div><div class="quote-box"><b>예외 응대 기준</b>
+· 이벤트 기간 내 채팅으로 직접 신청 문의한 경우
    └ 신청 페이지를 별도 안내하지 않고 자사몰 주문 내역 및 중복 참여 여부 확인 후 채팅에서 바로 접수
-• 이벤트 기간 전 문의한 경우
+· 이벤트 기간 전 문의한 경우
    └ 이벤트 신청 기간에 신청 페이지를 통해 접수할 수 있도록 안내</div></div>
   ${secTitle("1", "기간 전 응대",null,"secBefore")}
   ${macro(D_SLOOM["slm_100refund__001"].name, D_SLOOM["slm_100refund__001"].tag, D_SLOOM["slm_100refund__001"].body, D_SLOOM["slm_100refund__001"].desc, "slm_100refund__001", "sloom")}
@@ -501,151 +501,4 @@ ${col("pink","🔹 보상금 요청할 경우",
 ⚠️ 팀 리드 공유 필수
 📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>의 Critical Issue(EDGE Case) 보상금 flex 워크플로우 작성법 참고하여 등록`)}
   
-`;
-
-
-
-
-
-const SLOOM_REFUND = `
-  <h1>🔄 단순변심 반품</h1>
-  <div class="sub">고객 변심에 의한 반품 · 유형별 응대</div>
-
-  ${secTitle("💡","기준 및 조건",null,"secGuide")}
-  ${cmpTable(
-    [{cls:"blue",label:"🔹 전체 반품"},{cls:"pink",label:"🔹 부분 반품"}],
-    [
-      {label:"조건", values:[D_SLOOM["slm_cond__001"].body, D_SLOOM["slm_cond__002"].body], keys:["slm_cond__001","slm_cond__002"]},
-      {label:"반품 배송비", values:[D_SLOOM["slm_cond__003"].body, D_SLOOM["slm_cond__004"].body], keys:["slm_cond__003","slm_cond__004"]},
-      {label:"회수 품목", values:[D_SLOOM["slm_cond__005"].body, D_SLOOM["slm_cond__006"].body], keys:["slm_cond__005","slm_cond__006"]}
-    ],
-    "sloom"
-  )}
-  <div class="grp-h">🧭 상담 플로우</div>
-  <div class="flow-diagram"><div class="fd-box">1. 7일 경과 여부 및 사유 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 결제수단별 환불 안내</div></div>
-  ${notice([
-    "<b>전자제품은 어댑터 연결·작동을 한 번이라도 했다면 '사용 제품'으로 간주되어 단순변심 반품 불가.</b>",
-    "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
-    `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`
-  ])}
-
-  ${secTitle("1", "7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
-  <div class="grid2">
-    ${colTag("gray",D_SLOOM["slm_cond__013"].name,"반품교환_7일이내_사유확인",D_SLOOM["slm_cond__013"].body,"slm_cond__013","sloom")}
-    ${colTag("gray",D_SLOOM["slm_cond__014"].name,"단순반품_7일경과_사유확인",D_SLOOM["slm_cond__014"].body,"slm_cond__014","sloom")}
-  </div>
-  <div class="branch-box">
-    <div class="branch-h">💡 고객이 말씀하신 사유·증상에 따라 알맞은 유형으로 이동하여 응대</div>
-    <table class="branch-tbl"><tbody>
-    <tr><td class="cond">수령일 7일 이내 · <b>미사용</b></td><td class="ar">→</td><td><span class="bdg b-blue">단순변심</span></td></tr>
-    <tr><td class="cond">수령일 7일 이내 · <b>사용</b></td><td class="ar">→</td><td><span class="bdg b-amber">100% 환불 이벤트</span></td></tr>
-    <tr><td class="cond">수령일 7일 경과 · <b>미사용</b></td><td class="ar">→</td><td><span class="bdg b-amber">100% 환불 이벤트</span></td></tr>
-    <tr><td class="cond">제품 <b>불량</b> (사용·수령일 무관)</td><td class="ar">→</td><td><span class="bdg b-pink">불량 AS 교환/반품</span></td></tr>
-    </tbody></table>
-    <div class="branch-note">※ 100% 환불 이벤트는 신청 이력이 없는 경우에만 가능합니다.</div>
-  </div>
-
-  ${secTitle("2", "반품 배송비 안내",null,"sec2")}
-  <div class="grid2">
-    ${col("blue","🔹 전체 반품",
-      subcard(D_SLOOM["slm_refund__001"].name, D_SLOOM["slm_refund__001"].tag, D_SLOOM["slm_refund__001"].body, D_SLOOM["slm_refund__001"].desc, "slm_refund__001", "sloom")
-      + subcard(D_SLOOM["slm_refund__002"].name, D_SLOOM["slm_refund__002"].tag, D_SLOOM["slm_refund__002"].body, D_SLOOM["slm_refund__002"].desc, "slm_refund__002", "sloom")
-      + subcard(D_SLOOM["slm_refund__003"].name, D_SLOOM["slm_refund__003"].tag, D_SLOOM["slm_refund__003"].body, D_SLOOM["slm_refund__003"].desc, "slm_refund__003", "sloom")
-    )}
-    ${col("pink","🔹 부분 반품",
-      subcard(D_SLOOM["slm_refund__004"].name, D_SLOOM["slm_refund__004"].tag, D_SLOOM["slm_refund__004"].body, D_SLOOM["slm_refund__004"].desc, "slm_refund__004", "sloom")
-      + subcard(D_SLOOM["slm_refund__005"].name, D_SLOOM["slm_refund__005"].tag, D_SLOOM["slm_refund__005"].body, D_SLOOM["slm_refund__005"].desc, "slm_refund__005", "sloom")
-      + subcard(D_SLOOM["slm_refund__006"].name, D_SLOOM["slm_refund__006"].tag, D_SLOOM["slm_refund__006"].body, D_SLOOM["slm_refund__006"].desc, "slm_refund__006", "sloom")
-      + starNote(D_SLOOM["slm_cond__015"].name,D_SLOOM["slm_cond__015"].body,"slm_cond__015","sloom")
-    )}
-  </div>
-
-  ${secTitle("3", "포장 및 회수 안내",null,"sec3")}
-  <div class="grid2">
-    ${col("blue","🔹 전체 반품",
-      subcard(D_SLOOM["slm_refund__007"].name, D_SLOOM["slm_refund__007"].tag, D_SLOOM["slm_refund__007"].body, D_SLOOM["slm_refund__007"].desc, "slm_refund__007", "sloom")
-      + caution(`🎁 증정품 회수 O`)
-    )}
-    ${col("pink","🔹 부분 반품",
-      subcard(D_SLOOM["slm_refund__008"].name, D_SLOOM["slm_refund__008"].tag, D_SLOOM["slm_refund__008"].body, D_SLOOM["slm_refund__008"].desc, "slm_refund__008", "sloom")
-      + caution(`🎁 증정품 회수 X`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_SLOOM["slm_refund__009"].name, D_SLOOM["slm_refund__009"].tag, D_SLOOM["slm_refund__009"].body, D_SLOOM["slm_refund__009"].desc, "slm_refund__009", "sloom")
-    )}
-  </div>
-  <div class="grid2">
-    ${subcard(D_SLOOM["slm_refund__010"].name, D_SLOOM["slm_refund__010"].tag, D_SLOOM["slm_refund__010"].body, D_SLOOM["slm_refund__010"].desc, "slm_refund__010", "sloom")}
-    ${subcard(D_SLOOM["slm_refund__011"].name, D_SLOOM["slm_refund__011"].tag, D_SLOOM["slm_refund__011"].body, D_SLOOM["slm_refund__011"].desc, "slm_refund__011", "sloom")}
-  </div>
-
-  ${secTitle("4", "결제수단별 환불 안내","전체·부분 공통","sec4")}
-  <div class="grid2">
-    ${col("blue","🔹 카드결제",
-      subcard(D_SLOOM["slm_refund__012"].name, D_SLOOM["slm_refund__012"].tag, D_SLOOM["slm_refund__012"].body, D_SLOOM["slm_refund__012"].desc, "slm_refund__012", "sloom")
-    )}
-    ${col("blue","🔹 계좌 환불",
-      subcard(D_SLOOM["slm_refund__013"].name, D_SLOOM["slm_refund__013"].tag, D_SLOOM["slm_refund__013"].body, D_SLOOM["slm_refund__013"].desc, "slm_refund__013", "sloom")
-      + subcard(D_SLOOM["slm_refund__014"].name, D_SLOOM["slm_refund__014"].tag, D_SLOOM["slm_refund__014"].body, D_SLOOM["slm_refund__014"].desc, "slm_refund__014", "sloom")
-    )}
-  </div>
-`;
-
-const SLOOM_EXCHANGE = `
-
-  <h1>🔁 단순변심 교환</h1>
-    <div class="sub">고객 변심에 의한 교환 · 유형별 응대 (자사몰/외부몰)</div>
-
-  ${secTitle("💡","기준 및 조건",null,"secGuideX")}
-  ${caution(`※ 미개봉 또는 개봉은 했으나 미사용한 경우에만 교환 가능 (예: 뜯어만 보고 사용 안 함)`)}
-  ${cmpTable(
-  [{cls:"blue",label:"🔹 전체 교환"},{cls:"pink",label:"🔹 부분 교환"}],
-  [
-   {label:"대상", values:[D_SLOOM["slm_cond__007"].body, D_SLOOM["slm_cond__008"].body], keys:["slm_cond__007","slm_cond__008"]},
-   {label:"교환 배송비", values:[D_SLOOM["slm_cond__009"].body, D_SLOOM["slm_cond__010"].body], keys:["slm_cond__009","slm_cond__010"]},
-   {label:"증정품 회수", values:[D_SLOOM["slm_cond__011"].body, D_SLOOM["slm_cond__012"].body], keys:["slm_cond__011","slm_cond__012"]}
-  ],
-  "sloom"
-)}
-  <div class="grp-h">🧭 상담 플로우</div>
-  <div class="flow-diagram"><div class="fd-box">1. 교환 방식 안내 (전체 / 부분)</div><div class="fd-arrow">▶</div><div class="fd-box">2. 교환 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">③ 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 검수 및 재출고 안내</div></div>
-  ${notice(["미개봉 또는 개봉했으나 미사용한 경우에만 교환 가능","교환 제품 금액이 더 높은 경우 <b>차액 결제</b> 필요","교환은 회수 → 입고 → 검수 → 재출고 방식으로 <b>영업일 기준 6~8일</b> 소요"])}
-  ${secTitle("1", "교환 방식 안내","전체·부분","sec1")}
-  <div class="grid2">
-${col("blue","🔹 전체 교환",
-subcard(D_SLOOM["slm_exchange__001"].name, D_SLOOM["slm_exchange__001"].tag, D_SLOOM["slm_exchange__001"].body, D_SLOOM["slm_exchange__001"].desc, "slm_exchange__001", "sloom")
-)}
-${col("pink","🔹 부분 교환",
-subcard(D_SLOOM["slm_exchange__002"].name, D_SLOOM["slm_exchange__002"].tag, D_SLOOM["slm_exchange__002"].body, D_SLOOM["slm_exchange__002"].desc, "slm_exchange__002", "sloom")
-)}
-</div>
-  ${caution(`▶ (전체 교환) 고객이 반품 희망 시 → '단순변심 반품' 페이지로 이동하여 안내
-▶ 교환 희망 시 → ②부터 진행`)}
-  ${secTitle("2", "교환 배송비 안내","전체·부분","sec2")}
-  <div class="grid2">
-${col("blue","🔹 전체 교환",
-subcard(D_SLOOM["slm_exchange__003"].name, D_SLOOM["slm_exchange__003"].tag, D_SLOOM["slm_exchange__003"].body, D_SLOOM["slm_exchange__003"].desc, "slm_exchange__003", "sloom")
-)}
-${col("pink","🔹 부분 교환",
-subcard(D_SLOOM["slm_exchange__004"].name, D_SLOOM["slm_exchange__004"].tag, D_SLOOM["slm_exchange__004"].body, D_SLOOM["slm_exchange__004"].desc, "slm_exchange__004", "sloom") + subcard(D_SLOOM["slm_exchange__005"].name, D_SLOOM["slm_exchange__005"].tag, D_SLOOM["slm_exchange__005"].body, D_SLOOM["slm_exchange__005"].desc, "slm_exchange__005", "sloom")
-)}
-</div>
-  ${guide(`→ 입금자명·입금금액 확인 후 IBK 기업은행 계좌 조회
-🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
-  ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
-  <div class="grid2">
-${col("blue","🔹 전체 교환",
-subcard(D_SLOOM["slm_exchange__006"].name, D_SLOOM["slm_exchange__006"].tag, D_SLOOM["slm_exchange__006"].body, D_SLOOM["slm_exchange__006"].desc, "slm_exchange__006", "sloom") + caution(`🎁 증정품 회수 O`)
-)}
-${col("pink","🔹 부분 교환",
-subcard(D_SLOOM["slm_exchange__007"].name, D_SLOOM["slm_exchange__007"].tag, D_SLOOM["slm_exchange__007"].body, D_SLOOM["slm_exchange__007"].desc, "slm_exchange__007", "sloom") + caution(`🎁 증정품 회수 X`)
-)}
-</div>
-  ${subcard(D_SLOOM["slm_exchange__008"].name, D_SLOOM["slm_exchange__008"].tag, D_SLOOM["slm_exchange__008"].body, D_SLOOM["slm_exchange__008"].desc, "slm_exchange__008", "sloom")}
-  <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
-  ${secTitle("4", "검수 및 재출고 안내","전체·부분 공통","sec4")}
-  ${macro(D_SLOOM["slm_exchange__009"].name, D_SLOOM["slm_exchange__009"].tag, D_SLOOM["slm_exchange__009"].body, D_SLOOM["slm_exchange__009"].desc, "slm_exchange__009", "sloom")}
-  ${guide(`▶ 상품 수거·검수 후 이상 없을 시 <a href="https://docs.google.com/spreadsheets/d/1Bj5stx8hXMoPL8L91EYu6e5TA7pqEAjges4Cejs1wjo/edit?gid=388846546#gid=388846546" target="_blank">SCM-CX/CS팀 수기 시트</a>에 재출고 요청`)}
 `;

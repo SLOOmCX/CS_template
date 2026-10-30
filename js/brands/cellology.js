@@ -18,12 +18,12 @@ const CELLOLOGY_100 = `
   ]
 )}
   <div class="grid2"><div class="quote-box"><b>📌 셀올로지 100% 환불 이벤트 조건</b>
-• 셀올로지 공식 자사몰 구매 건에 한해 이용 가능 (외부몰 대상 아님)
-• 첫 구매 체험 서비스로 단 1회, 상품 1종 1개에 한해 신청 가능
-• 세트 또는 동일 상품 1개 이상 구매 시, 체험 1개 외에는 미개봉·손상 없이 보관된 경우에만 전액 환불 (개봉·손상 상품은 수량만큼 정가 차감)</div><div class="quote-box"><b>카테고리별 사용 기준</b>
-• 디바이스 : 배송 완료 후 40일 이내 신청 / 수령 후 <b>30일 동안 꾸준히 사용</b>
-• 화장품 : 배송 완료 후 40일 이내 신청 / 수령 후 <b>30일 이내, 2/3 사용</b>
-• 신청 방법 : 별도 신청 페이지 없이 <b>채널톡 채팅 상담</b>으로 접수</div></div>
+· 셀올로지 공식 자사몰 구매 건에 한해 이용 가능 (외부몰 대상 아님)
+· 첫 구매 체험 서비스로 단 1회, 상품 1종 1개에 한해 신청 가능
+· 세트 또는 동일 상품 1개 이상 구매 시, 체험 1개 외에는 미개봉·손상 없이 보관된 경우에만 전액 환불 (개봉·손상 상품은 수량만큼 정가 차감)</div><div class="quote-box"><b>카테고리별 사용 기준</b>
+· 디바이스 : 배송 완료 후 40일 이내 신청 / 수령 후 <b>30일 동안 꾸준히 사용</b>
+· 화장품 : 배송 완료 후 40일 이내 신청 / 수령 후 <b>30일 이내, 2/3 사용</b>
+· 신청 방법 : 별도 신청 페이지 없이 <b>채널톡 채팅 상담</b>으로 접수</div></div>
   ${secTitle("1", "기간 전 응대",null,"secBefore")}
   ${macro(D_CELLOLOGY["cellology_100refund__001"].name, D_CELLOLOGY["cellology_100refund__001"].tag, D_CELLOLOGY["cellology_100refund__001"].body, D_CELLOLOGY["cellology_100refund__001"].desc, "cellology_100refund__001", "cellology")}
   ${guide(`① 어드민 메모·상담이력·<a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=607872003#gid=607872003" target="_blank">[전브랜드] 100% 환불 이벤트 이용 LIST</a> 등을 통해 100% 환불 이벤트 신청 이력 확인<br>② 카페24·물류센터(정석)·배송 택배사(CJ대한통운·로젠택배) 등을 통해 배송완료일자 확인`)}
@@ -324,7 +324,7 @@ const CELLOLOGY_REFUND = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)}
-    ${colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    ${colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)}
   </div>
@@ -370,11 +370,6 @@ const CELLOLOGY_REFUND = `
       + caution(`🎁 증정품 회수 X
 
 📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_CELLOLOGY["cellology_refund__009"].name, D_CELLOLOGY["cellology_refund__009"].tag, D_CELLOLOGY["cellology_refund__009"].body, D_CELLOLOGY["cellology_refund__009"].desc, "cellology_refund__009", "cellology")
     )}
   </div>
   <div class="grid2">
@@ -483,7 +478,7 @@ const CELLOLOGY_MERGE_TEMPLATE = `
 `반품을 원하시는 사유가 어떻게 되실까요? :)
 개봉 후 사용하지 않은 제품은 반품 가능하지만, 사용한 제품은 반품이 어려운 점 참고 부탁드립니다.
 제품 사용 여부도 함께 확인 부탁드립니다.`)
-    + colTag("gray","수령일로부터 7일 경과","단순반품_7일경과_사유확인",
+    + colTag("gray","수령일로부터 7일 경과","변심반품_7일경과_사유확인",
 `단순 변심에 의한 반품·교환은 배송 완료일로부터 7일 이내에만 신청이 가능합니다.
 현재는 신청 가능 기간이 경과되어 도움드리기 어려운 점 양해 부탁드립니다.`)
   )}</div>
@@ -572,11 +567,6 @@ const CELLOLOGY_MERGE_TEMPLATE = `
       + caution(`🎁 증정품 회수 X
 
 📌 디바이스 외 제품(화장품 등)은 구성품(케이블·설명서 등) 문구 제외 안내`)
-    )}
-  </div>
-  <div class="stack">
-    ${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)",
-      subcard(D_CELLOLOGY["cellology_refund__009"].name, D_CELLOLOGY["cellology_refund__009"].tag, D_CELLOLOGY["cellology_refund__009"].body, D_CELLOLOGY["cellology_refund__009"].desc, "cellology_refund__009", "cellology")
     )}
   </div>
   <div class="grid2">

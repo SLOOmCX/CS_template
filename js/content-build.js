@@ -5,14 +5,12 @@ const CONTENT = {
   "yvening_as":YVENING_DEFECT,
   "marnell_as":MARNELL_DEFECT,
   "dramang_as":DRAMANG_DEFECT,
-  "slm_refund":SLOOM_REFUND,
   "slm_100refund":REF_100REFUND, "cellology_100refund":CELLOLOGY_100, "dramang_100refund":DRAMANG_100, "yvening_100refund":YVENING_100, "cocodaum_100refund":COCODAUM_100, "simplicare_100refund":SIMPLICARE_100,
   "slm_as":REF_AS,
   "cel_as":REF_CEL,
   "align_as":REF_ALIGN,
   "bilba_as":REF_BILBA,
   "oclock_as":REF_OCLOCK,
-  "slm_exchange":SLOOM_EXCHANGE,
   "slm_simplemerge":SLM_MERGE_TEMPLATE,
   "slm_side":REF_SIDE, "simplicare_side":SIMPLICARE_SIDE, "alignlab_side":ALIGNLAB_SIDE, "bilba_side":BILBA_SIDE, "cellology_side":CELLOLOGY_SIDE, "cocodaum_side":COCODAUM_SIDE, "oclock_side":OCLOCK_SIDE, "drmans_side":DRMANS_SIDE, "yvening_side":YVENING_SIDE, "marnell_side":MARNELL_SIDE, "dramang_side":DRAMANG_SIDE,
   "cmn_all":COMMON_ALL, "hol_temp":HOL_OPS_TEMP, /* ▲ [임시] 연휴 안내 — 연휴 지나면 이 항목도 함께 삭제 */ "ib":COMMON_IB, "ob":COMMON_OB, "board":BOARD_ALL,
@@ -148,18 +146,6 @@ BRAND_LIST.forEach(b=>{
   INQUIRY_TYPES.forEach(t=>{ sub[t]={}; });   // 기본은 빈 leaf(등록 전)
   BRAND_TREE[b]=sub;
 });
-/* 슬룸 › 단순변심 반품 = 단계별 콘텐츠 연결 (데모) */
-BRAND_TREE["슬룸"]["단순변심 반품"]={
-  __content:"slm_refund",
-  __sections:[
-    {label:"💡 기준 및 조건",anchor:"secGuide"},
-    {label:"1. 7일 경과 여부 및 사유 확인",anchor:"sec1"},
-    {label:"2. 반품 배송비 안내",anchor:"sec2"},
-    {label:"3. 포장 및 회수 안내",anchor:"sec3"},
-    {label:"4. 결제수단별 환불 안내",anchor:"sec4"}
-  ]
-};
-
 BRAND_TREE["슬룸"]["100%환불이벤트"]={
   __content:"slm_100refund",
   __sections:[
@@ -339,17 +325,6 @@ BRAND_TREE["12 o'clock"]["불량 AS 교환/반품"]={
     {sub:true, label:"② 품질보증기간(1년) 경과", anchor:"edgeOut"},
     {label:"📸 증빙 제출 불만에 따른 대응", anchor:"secProof"},
     {label:"✨ [예외] 증빙 미제출", anchor:"exNoEvid"}
-  ]
-};
-
-BRAND_TREE["슬룸"]["단순변심 교환"]={
-  __content:"slm_exchange",
-  __sections:[
-    {label:"💡 기준 및 조건", anchor:"secGuideX"},
-    {label:"1. 교환 방식 안내", anchor:"sec1"},
-    {label:"2. 교환 배송비 안내", anchor:"sec2"},
-    {label:"3. 포장 및 회수 안내", anchor:"sec3"},
-    {label:"4. 검수 및 재출고 안내", anchor:"sec4"}
   ]
 };
 
