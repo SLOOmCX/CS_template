@@ -334,11 +334,9 @@ const YVENING_REFUND = `
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_YVENING["yvening_refund__007"].name, D_YVENING["yvening_refund__007"].tag, D_YVENING["yvening_refund__007"].body, D_YVENING["yvening_refund__007"].desc, "yvening_refund__007", "yvening")
-      + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
       subcard(D_YVENING["yvening_refund__008"].name, D_YVENING["yvening_refund__008"].tag, D_YVENING["yvening_refund__008"].body, D_YVENING["yvening_refund__008"].desc, "yvening_refund__008", "yvening")
-      + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
@@ -400,10 +398,10 @@ subcard(D_YVENING["yvening_exchange__004"].name, D_YVENING["yvening_exchange__00
   ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_YVENING["yvening_exchange__006"].name, D_YVENING["yvening_exchange__006"].tag, D_YVENING["yvening_exchange__006"].body, D_YVENING["yvening_exchange__006"].desc, "yvening_exchange__006", "yvening") + caution(`🎁 증정품 회수 O`)
+subcard(D_YVENING["yvening_exchange__006"].name, D_YVENING["yvening_exchange__006"].tag, D_YVENING["yvening_exchange__006"].body, D_YVENING["yvening_exchange__006"].desc, "yvening_exchange__006", "yvening")
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_YVENING["yvening_exchange__007"].name, D_YVENING["yvening_exchange__007"].tag, D_YVENING["yvening_exchange__007"].body, D_YVENING["yvening_exchange__007"].desc, "yvening_exchange__007", "yvening") + caution(`🎁 증정품 회수 X`)
+subcard(D_YVENING["yvening_exchange__007"].name, D_YVENING["yvening_exchange__007"].tag, D_YVENING["yvening_exchange__007"].body, D_YVENING["yvening_exchange__007"].desc, "yvening_exchange__007", "yvening")
 )}
 </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
@@ -524,11 +522,9 @@ const YVENING_MERGE_TEMPLATE = `
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_YVENING["yvening_refund__007"].name, D_YVENING["yvening_refund__007"].tag, D_YVENING["yvening_refund__007"].body, D_YVENING["yvening_refund__007"].desc, "yvening_refund__007", "yvening")
-      + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
       subcard(D_YVENING["yvening_refund__008"].name, D_YVENING["yvening_refund__008"].tag, D_YVENING["yvening_refund__008"].body, D_YVENING["yvening_refund__008"].desc, "yvening_refund__008", "yvening")
-      + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
@@ -537,10 +533,10 @@ const YVENING_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 교환</div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard(D_YVENING["yvening_exchange__006"].name, D_YVENING["yvening_exchange__006"].tag, D_YVENING["yvening_exchange__006"].body, D_YVENING["yvening_exchange__006"].desc, "yvening_exchange__006", "yvening") + caution(`🎁 증정품 회수 O`)
+      subcard(D_YVENING["yvening_exchange__006"].name, D_YVENING["yvening_exchange__006"].tag, D_YVENING["yvening_exchange__006"].body, D_YVENING["yvening_exchange__006"].desc, "yvening_exchange__006", "yvening")
     )}
     ${col("pink","🔹 부분 교환",
-      subcard(D_YVENING["yvening_exchange__007"].name, D_YVENING["yvening_exchange__007"].tag, D_YVENING["yvening_exchange__007"].body, D_YVENING["yvening_exchange__007"].desc, "yvening_exchange__007", "yvening") + caution(`🎁 증정품 회수 X`)
+      subcard(D_YVENING["yvening_exchange__007"].name, D_YVENING["yvening_exchange__007"].tag, D_YVENING["yvening_exchange__007"].body, D_YVENING["yvening_exchange__007"].desc, "yvening_exchange__007", "yvening")
     )}
   </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>

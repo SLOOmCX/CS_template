@@ -67,10 +67,15 @@ function clBullets(c){
   const cs = c.commits||[];
   const lines = b => (b||"").split(/\r?\n/).map(s=>s.replace(/^\s*[-*·•]\s*/,"").trim()).filter(Boolean);
   if (cs.length===1) lines(cs[0].body).forEach(s=>items.push(`<li>${clEsc(s)}</li>`));
-  else cs.forEach(k=>{
-    const sub = lines(k.body).map(s=>`<li>${clEsc(s)}</li>`).join("");
-    items.push(`<li>${clEsc(k.subject)} <span class="cl-who">${clEsc(clName(k.author))}</span>${sub?`<ul>${sub}</ul>`:""}</li>`);
-  });
+  else {
+    // 작성자가 전부 같은 사람이면 헤더(clWho)와 중복이라 본문 이름 생략, 여러 사람이 섞인 배포일 때만 표시 (2026-10-30)
+    const multi = new Set(cs.map(k=>clName(k.author))).size > 1;
+    cs.forEach(k=>{
+      const sub = lines(k.body).map(s=>`<li>${clEsc(s)}</li>`).join("");
+      const who = multi ? ` <span class="cl-who">${clEsc(clName(k.author))}</span>` : "";
+      items.push(`<li>${clEsc(k.subject)}${who}${sub?`<ul>${sub}</ul>`:""}</li>`);
+    });
+  }
   // 2) 카드 변경: 브랜드 › 섹션 › 변경 종류별로 묶어서
   const groups = {};
   (c.changes||[]).forEach(x=>{

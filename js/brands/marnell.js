@@ -257,11 +257,9 @@ const MARNELL_REFUND = `
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_MARNELL["marnell_refund__007"].name, D_MARNELL["marnell_refund__007"].tag, D_MARNELL["marnell_refund__007"].body, D_MARNELL["marnell_refund__007"].desc, "marnell_refund__007", "marnell")
-      + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
       subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc, "marnell_refund__008", "marnell")
-      + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
@@ -323,10 +321,10 @@ subcard(D_MARNELL["marnell_exchange__004"].name, D_MARNELL["marnell_exchange__00
   ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc, "marnell_exchange__006", "marnell") + caution(`🎁 증정품 회수 O`)
+subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc, "marnell_exchange__006", "marnell")
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc, "marnell_exchange__007", "marnell") + caution(`🎁 증정품 회수 X`)
+subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc, "marnell_exchange__007", "marnell")
 )}
 </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
@@ -446,11 +444,9 @@ const MARNELL_MERGE_TEMPLATE = `
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_MARNELL["marnell_refund__007"].name, D_MARNELL["marnell_refund__007"].tag, D_MARNELL["marnell_refund__007"].body, D_MARNELL["marnell_refund__007"].desc, "marnell_refund__007", "marnell")
-      + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
       subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc, "marnell_refund__008", "marnell")
-      + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
@@ -459,10 +455,10 @@ const MARNELL_MERGE_TEMPLATE = `
   <div class="grp-h">🔹 교환</div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc, "marnell_exchange__006", "marnell") + caution(`🎁 증정품 회수 O`)
+      subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc, "marnell_exchange__006", "marnell")
     )}
     ${col("pink","🔹 부분 교환",
-      subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc, "marnell_exchange__007", "marnell") + caution(`🎁 증정품 회수 X`)
+      subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc, "marnell_exchange__007", "marnell")
     )}
   </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>

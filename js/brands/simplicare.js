@@ -121,7 +121,7 @@ const SIMPLICARE_SIDE = `
   ${macro(D_SIMPLICARE["simplicare_side__005"].name, D_SIMPLICARE["simplicare_side__005"].tag, D_SIMPLICARE["simplicare_side__005"].body, D_SIMPLICARE["simplicare_side__005"].desc, "simplicare_side__005", "simplicare")}
   <div class="grid2">
 ${col("blue","🔹 전체 반품",
-subcard(D_SIMPLICARE["simplicare_side__006"].name, D_SIMPLICARE["simplicare_side__006"].tag, D_SIMPLICARE["simplicare_side__006"].body, D_SIMPLICARE["simplicare_side__006"].desc, "simplicare_side__006", "simplicare") + caution(`🎁 증정품 회수 O`)
+subcard(D_SIMPLICARE["simplicare_side__006"].name, D_SIMPLICARE["simplicare_side__006"].tag, D_SIMPLICARE["simplicare_side__006"].body, D_SIMPLICARE["simplicare_side__006"].desc, "simplicare_side__006", "simplicare") + caution(`🎁 증정품 회수 X`)
 )}
 ${col("pink","🔹 부분 반품",
 subcard(D_SIMPLICARE["simplicare_side__007"].name, D_SIMPLICARE["simplicare_side__007"].tag, D_SIMPLICARE["simplicare_side__007"].body, D_SIMPLICARE["simplicare_side__007"].desc, "simplicare_side__007", "simplicare") + caution(`🎁 증정품 회수 X`)
@@ -327,11 +327,9 @@ const SIMPLICARE_REFUND = `
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_SIMPLICARE["simplicare_refund__007"].name, D_SIMPLICARE["simplicare_refund__007"].tag, D_SIMPLICARE["simplicare_refund__007"].body, D_SIMPLICARE["simplicare_refund__007"].desc, "simplicare_refund__007", "simplicare")
-      + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
       subcard(D_SIMPLICARE["simplicare_refund__008"].name, D_SIMPLICARE["simplicare_refund__008"].tag, D_SIMPLICARE["simplicare_refund__008"].body, D_SIMPLICARE["simplicare_refund__008"].desc, "simplicare_refund__008", "simplicare")
-      + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
@@ -393,10 +391,10 @@ subcard(D_SIMPLICARE["simplicare_exchange__004"].name, D_SIMPLICARE["simplicare_
   ${secTitle("3", "포장 및 회수 안내","전체·부분","sec3")}
   <div class="grid2">
 ${col("blue","🔹 전체 교환",
-subcard(D_SIMPLICARE["simplicare_exchange__006"].name, D_SIMPLICARE["simplicare_exchange__006"].tag, D_SIMPLICARE["simplicare_exchange__006"].body, D_SIMPLICARE["simplicare_exchange__006"].desc, "simplicare_exchange__006", "simplicare") + caution(`🎁 증정품 회수 O`)
+subcard(D_SIMPLICARE["simplicare_exchange__006"].name, D_SIMPLICARE["simplicare_exchange__006"].tag, D_SIMPLICARE["simplicare_exchange__006"].body, D_SIMPLICARE["simplicare_exchange__006"].desc, "simplicare_exchange__006", "simplicare")
 )}
 ${col("pink","🔹 부분 교환",
-subcard(D_SIMPLICARE["simplicare_exchange__007"].name, D_SIMPLICARE["simplicare_exchange__007"].tag, D_SIMPLICARE["simplicare_exchange__007"].body, D_SIMPLICARE["simplicare_exchange__007"].desc, "simplicare_exchange__007", "simplicare") + caution(`🎁 증정품 회수 X`)
+subcard(D_SIMPLICARE["simplicare_exchange__007"].name, D_SIMPLICARE["simplicare_exchange__007"].tag, D_SIMPLICARE["simplicare_exchange__007"].body, D_SIMPLICARE["simplicare_exchange__007"].desc, "simplicare_exchange__007", "simplicare")
 )}
 </div>
   <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
@@ -513,11 +511,9 @@ const SIMPLICARE_MERGE_TEMPLATE = `
   <div class="grid2">
     ${col("blue","🔹 전체 반품",
       subcard(D_SIMPLICARE["simplicare_refund__007"].name, D_SIMPLICARE["simplicare_refund__007"].tag, D_SIMPLICARE["simplicare_refund__007"].body, D_SIMPLICARE["simplicare_refund__007"].desc, "simplicare_refund__007", "simplicare")
-      + caution(`🎁 증정품 회수 O`)
     )}
     ${col("pink","🔹 부분 반품",
       subcard(D_SIMPLICARE["simplicare_refund__008"].name, D_SIMPLICARE["simplicare_refund__008"].tag, D_SIMPLICARE["simplicare_refund__008"].body, D_SIMPLICARE["simplicare_refund__008"].desc, "simplicare_refund__008", "simplicare")
-      + caution(`🎁 증정품 회수 X`)
     )}
   </div>
   <div class="grid2">
@@ -527,10 +523,10 @@ const SIMPLICARE_MERGE_TEMPLATE = `
   <div class="quote-box" style="margin-top:18px"><b>🔄 교환 시 추가 확인</b></div>
   <div class="grid2">
     ${col("blue","🔹 전체 교환",
-      subcard(D_SIMPLICARE["simplicare_exchange__006"].name, D_SIMPLICARE["simplicare_exchange__006"].tag, D_SIMPLICARE["simplicare_exchange__006"].body, D_SIMPLICARE["simplicare_exchange__006"].desc, "simplicare_exchange__006", "simplicare") + caution(`🎁 증정품 회수 O`)
+      subcard(D_SIMPLICARE["simplicare_exchange__006"].name, D_SIMPLICARE["simplicare_exchange__006"].tag, D_SIMPLICARE["simplicare_exchange__006"].body, D_SIMPLICARE["simplicare_exchange__006"].desc, "simplicare_exchange__006", "simplicare")
     )}
     ${col("pink","🔹 부분 교환",
-      subcard(D_SIMPLICARE["simplicare_exchange__007"].name, D_SIMPLICARE["simplicare_exchange__007"].tag, D_SIMPLICARE["simplicare_exchange__007"].body, D_SIMPLICARE["simplicare_exchange__007"].desc, "simplicare_exchange__007", "simplicare") + caution(`🎁 증정품 회수 X`)
+      subcard(D_SIMPLICARE["simplicare_exchange__007"].name, D_SIMPLICARE["simplicare_exchange__007"].tag, D_SIMPLICARE["simplicare_exchange__007"].body, D_SIMPLICARE["simplicare_exchange__007"].desc, "simplicare_exchange__007", "simplicare")
     )}
   </div>
   <div class="warn-note" style="margin-top:12px">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
