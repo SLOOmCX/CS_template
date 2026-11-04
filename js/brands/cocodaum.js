@@ -227,6 +227,10 @@ subcard(D_COCODAUM["cocodaum_as__012"].name, D_COCODAUM["cocodaum_as__012"].tag,
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_COCODAUM["cocodaum_as__013"].name, D_COCODAUM["cocodaum_as__013"].tag, D_COCODAUM["cocodaum_as__013"].body, D_COCODAUM["cocodaum_as__013"].desc, "cocodaum_as__013", "cocodaum")}
+  <div class="grid2">
+    ${col("blue","🔹 반품 시 회수지 확인",subcard(D_COCODAUM["cocodaum_100refund__029"].name, D_COCODAUM["cocodaum_100refund__029"].tag, D_COCODAUM["cocodaum_100refund__029"].body, D_COCODAUM["cocodaum_100refund__029"].desc, "cocodaum_100refund__029", "cocodaum"))}
+    ${col("pink","🔹 교환 시 회수지 확인",subcard(D_COCODAUM["cocodaum_exchange__010"].name, D_COCODAUM["cocodaum_exchange__010"].tag, D_COCODAUM["cocodaum_exchange__010"].body, D_COCODAUM["cocodaum_exchange__010"].desc, "cocodaum_exchange__010", "cocodaum"))}
+  </div>
   <div class="stack">${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)", subcard(D_COCODAUM["cocodaum_refund__009"].name, D_COCODAUM["cocodaum_refund__009"].tag, D_COCODAUM["cocodaum_refund__009"].body, D_COCODAUM["cocodaum_refund__009"].desc, "cocodaum_refund__009", "cocodaum"))}</div>
   ${caution(`📝 [통합판] 브랜드 내에서도 식품류·용품류 두 카테고리에 걸쳐 있어, 카테고리 라벨만 구분해 표기(브랜드별 세부 문구 아님).`)}
 
@@ -501,28 +505,19 @@ subcard(D_COCODAUM["cocodaum_exchange__004"].name, D_COCODAUM["cocodaum_exchange
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
 
   ${secTitle("4", "포장 및 회수 안내",null,"sec4")}
-  <div class="grp-h">🔹 반품</div>
-  <div class="grid2">
-    ${col("blue","🔹 전체 반품",
+  <div class="stack">
+    ${col("blue","🔹 반품·교환 공통 (전체·부분 동일)",
       subcard(D_COCODAUM["cocodaum_refund__007"].name, D_COCODAUM["cocodaum_refund__007"].tag, D_COCODAUM["cocodaum_refund__007"].body, D_COCODAUM["cocodaum_refund__007"].desc, "cocodaum_refund__007", "cocodaum")
     )}
-    ${col("pink","🔹 부분 반품",
-      subcard(D_COCODAUM["cocodaum_refund__008"].name, D_COCODAUM["cocodaum_refund__008"].tag, D_COCODAUM["cocodaum_refund__008"].body, D_COCODAUM["cocodaum_refund__008"].desc, "cocodaum_refund__008", "cocodaum")
-    )}
+  </div>
+  <div class="grid2">
+    ${col("blue","🔹 반품 시 회수지 확인",subcard(D_COCODAUM["cocodaum_100refund__029"].name, D_COCODAUM["cocodaum_100refund__029"].tag, D_COCODAUM["cocodaum_100refund__029"].body, D_COCODAUM["cocodaum_100refund__029"].desc, "cocodaum_100refund__029", "cocodaum"))}
+    ${col("pink","🔹 교환 시 회수지 확인",subcard(D_COCODAUM["cocodaum_exchange__010"].name, D_COCODAUM["cocodaum_exchange__010"].tag, D_COCODAUM["cocodaum_exchange__010"].body, D_COCODAUM["cocodaum_exchange__010"].desc, "cocodaum_exchange__010", "cocodaum"))}
   </div>
   <div class="grid2">
     ${subcard(D_COCODAUM["cocodaum_refund__011"].name, D_COCODAUM["cocodaum_refund__011"].tag, D_COCODAUM["cocodaum_refund__011"].body, D_COCODAUM["cocodaum_refund__011"].desc, "cocodaum_refund__011", "cocodaum")}
   </div>
-  <div class="grp-h">🔹 교환</div>
-  <div class="grid2">
-${col("blue","🔹 전체 교환",
-subcard(D_COCODAUM["cocodaum_exchange__006"].name, D_COCODAUM["cocodaum_exchange__006"].tag, D_COCODAUM["cocodaum_exchange__006"].body, D_COCODAUM["cocodaum_exchange__006"].desc, "cocodaum_exchange__006", "cocodaum")
-)}
-${col("pink","🔹 부분 교환",
-subcard(D_COCODAUM["cocodaum_exchange__007"].name, D_COCODAUM["cocodaum_exchange__007"].tag, D_COCODAUM["cocodaum_exchange__007"].body, D_COCODAUM["cocodaum_exchange__007"].desc, "cocodaum_exchange__007", "cocodaum")
-)}
-  </div>
-  <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
+  <div class="warn-note">⚠️ 교환은 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
   ${secTitle("5", "교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","재출고 안내","exchangeFlow")}

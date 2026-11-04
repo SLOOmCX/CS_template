@@ -166,6 +166,10 @@ subcard(D_MARNELL["marnell_as__021"].name, D_MARNELL["marnell_as__021"].tag, D_M
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_MARNELL["marnell_as__022"].name, D_MARNELL["marnell_as__022"].tag, D_MARNELL["marnell_as__022"].body, D_MARNELL["marnell_as__022"].desc, "marnell_as__022", "marnell")}
+  <div class="grid2">
+    ${col("blue","🔹 반품 시 회수지 확인",subcard(D_MARNELL["marnell_side__007"].name, D_MARNELL["marnell_side__007"].tag, D_MARNELL["marnell_side__007"].body, D_MARNELL["marnell_side__007"].desc, "marnell_side__007", "marnell"))}
+    ${col("pink","🔹 교환 시 회수지 확인",subcard(D_MARNELL["marnell_exchange__010"].name, D_MARNELL["marnell_exchange__010"].tag, D_MARNELL["marnell_exchange__010"].body, D_MARNELL["marnell_exchange__010"].desc, "marnell_exchange__010", "marnell"))}
+  </div>
   <div class="stack">${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)", subcard(D_MARNELL["marnell_refund__009"].name, D_MARNELL["marnell_refund__009"].tag, D_MARNELL["marnell_refund__009"].body, D_MARNELL["marnell_refund__009"].desc, "marnell_refund__009", "marnell"))}</div>
   ${caution(`📝 [통합판] 화장품류 카테고리 문구 + 세트 구성 상품(리무빙컬) 예외 한 줄 추가. 속눈썹영양제·주름패치(품절)도 동일 화장품류 문구 적용.`)}
 
@@ -440,28 +444,19 @@ const MARNELL_MERGE_TEMPLATE = `
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
 
   ${secTitle("4", "포장 및 회수 안내",null,"sec4")}
-  <div class="grp-h">🔹 반품</div>
-  <div class="grid2">
-    ${col("blue","🔹 전체 반품",
+  <div class="stack">
+    ${col("blue","🔹 반품·교환 공통 (전체·부분 동일)",
       subcard(D_MARNELL["marnell_refund__007"].name, D_MARNELL["marnell_refund__007"].tag, D_MARNELL["marnell_refund__007"].body, D_MARNELL["marnell_refund__007"].desc, "marnell_refund__007", "marnell")
     )}
-    ${col("pink","🔹 부분 반품",
-      subcard(D_MARNELL["marnell_refund__008"].name, D_MARNELL["marnell_refund__008"].tag, D_MARNELL["marnell_refund__008"].body, D_MARNELL["marnell_refund__008"].desc, "marnell_refund__008", "marnell")
-    )}
+  </div>
+  <div class="grid2">
+    ${col("blue","🔹 반품 시 회수지 확인",subcard(D_MARNELL["marnell_side__007"].name, D_MARNELL["marnell_side__007"].tag, D_MARNELL["marnell_side__007"].body, D_MARNELL["marnell_side__007"].desc, "marnell_side__007", "marnell"))}
+    ${col("pink","🔹 교환 시 회수지 확인",subcard(D_MARNELL["marnell_exchange__010"].name, D_MARNELL["marnell_exchange__010"].tag, D_MARNELL["marnell_exchange__010"].body, D_MARNELL["marnell_exchange__010"].desc, "marnell_exchange__010", "marnell"))}
   </div>
   <div class="grid2">
     ${subcard(D_MARNELL["marnell_refund__011"].name, D_MARNELL["marnell_refund__011"].tag, D_MARNELL["marnell_refund__011"].body, D_MARNELL["marnell_refund__011"].desc, "marnell_refund__011", "marnell")}
   </div>
-  <div class="grp-h">🔹 교환</div>
-  <div class="grid2">
-    ${col("blue","🔹 전체 교환",
-      subcard(D_MARNELL["marnell_exchange__006"].name, D_MARNELL["marnell_exchange__006"].tag, D_MARNELL["marnell_exchange__006"].body, D_MARNELL["marnell_exchange__006"].desc, "marnell_exchange__006", "marnell")
-    )}
-    ${col("pink","🔹 부분 교환",
-      subcard(D_MARNELL["marnell_exchange__007"].name, D_MARNELL["marnell_exchange__007"].tag, D_MARNELL["marnell_exchange__007"].body, D_MARNELL["marnell_exchange__007"].desc, "marnell_exchange__007", "marnell")
-    )}
-  </div>
-  <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
+  <div class="warn-note">⚠️ 교환은 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
   ${secTitle("5", "교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","검수 및 재출고 안내","exchangeFlow")}

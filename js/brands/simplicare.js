@@ -236,6 +236,10 @@ subcard(D_SIMPLICARE["simplicare_as__012"].name, D_SIMPLICARE["simplicare_as__01
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_SIMPLICARE["simplicare_as__013"].name, D_SIMPLICARE["simplicare_as__013"].tag, D_SIMPLICARE["simplicare_as__013"].body, D_SIMPLICARE["simplicare_as__013"].desc, "simplicare_as__013", "simplicare")}
+  <div class="grid2">
+    ${col("blue","🔹 반품 시 회수지 확인",subcard(D_SIMPLICARE["simplicare_100refund__029"].name, D_SIMPLICARE["simplicare_100refund__029"].tag, D_SIMPLICARE["simplicare_100refund__029"].body, D_SIMPLICARE["simplicare_100refund__029"].desc, "simplicare_100refund__029", "simplicare"))}
+    ${col("pink","🔹 교환 시 회수지 확인",subcard(D_SIMPLICARE["simplicare_exchange__010"].name, D_SIMPLICARE["simplicare_exchange__010"].tag, D_SIMPLICARE["simplicare_exchange__010"].body, D_SIMPLICARE["simplicare_exchange__010"].desc, "simplicare_exchange__010", "simplicare"))}
+  </div>
   <div class="stack">${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)", subcard(D_SIMPLICARE["simplicare_refund__009"].name, D_SIMPLICARE["simplicare_refund__009"].tag, D_SIMPLICARE["simplicare_refund__009"].body, D_SIMPLICARE["simplicare_refund__009"].desc, "simplicare_refund__009", "simplicare"))}</div>
   ${caution(`📝 [통합판] 식품류 카테고리 문구 그대로 적용(형태 구분 없이 '제품 전체'로 통일).`)}
 
@@ -508,28 +512,19 @@ const SIMPLICARE_MERGE_TEMPLATE = `
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
 
   ${secTitle("4", "포장 및 회수 안내",null,"sec4")}
-  <div class="grid2">
-    ${col("blue","🔹 전체 반품",
+  <div class="stack">
+    ${col("blue","🔹 반품·교환 공통 (전체·부분 동일)",
       subcard(D_SIMPLICARE["simplicare_refund__007"].name, D_SIMPLICARE["simplicare_refund__007"].tag, D_SIMPLICARE["simplicare_refund__007"].body, D_SIMPLICARE["simplicare_refund__007"].desc, "simplicare_refund__007", "simplicare")
     )}
-    ${col("pink","🔹 부분 반품",
-      subcard(D_SIMPLICARE["simplicare_refund__008"].name, D_SIMPLICARE["simplicare_refund__008"].tag, D_SIMPLICARE["simplicare_refund__008"].body, D_SIMPLICARE["simplicare_refund__008"].desc, "simplicare_refund__008", "simplicare")
-    )}
+  </div>
+  <div class="grid2">
+    ${col("blue","🔹 반품 시 회수지 확인",subcard(D_SIMPLICARE["simplicare_100refund__029"].name, D_SIMPLICARE["simplicare_100refund__029"].tag, D_SIMPLICARE["simplicare_100refund__029"].body, D_SIMPLICARE["simplicare_100refund__029"].desc, "simplicare_100refund__029", "simplicare"))}
+    ${col("pink","🔹 교환 시 회수지 확인",subcard(D_SIMPLICARE["simplicare_exchange__010"].name, D_SIMPLICARE["simplicare_exchange__010"].tag, D_SIMPLICARE["simplicare_exchange__010"].body, D_SIMPLICARE["simplicare_exchange__010"].desc, "simplicare_exchange__010", "simplicare"))}
   </div>
   <div class="grid2">
     ${subcard(D_SIMPLICARE["simplicare_refund__011"].name, D_SIMPLICARE["simplicare_refund__011"].tag, D_SIMPLICARE["simplicare_refund__011"].body, D_SIMPLICARE["simplicare_refund__011"].desc, "simplicare_refund__011", "simplicare")}
   </div>
-
-  <div class="quote-box" style="margin-top:18px"><b>🔄 교환 시 추가 확인</b></div>
-  <div class="grid2">
-    ${col("blue","🔹 전체 교환",
-      subcard(D_SIMPLICARE["simplicare_exchange__006"].name, D_SIMPLICARE["simplicare_exchange__006"].tag, D_SIMPLICARE["simplicare_exchange__006"].body, D_SIMPLICARE["simplicare_exchange__006"].desc, "simplicare_exchange__006", "simplicare")
-    )}
-    ${col("pink","🔹 부분 교환",
-      subcard(D_SIMPLICARE["simplicare_exchange__007"].name, D_SIMPLICARE["simplicare_exchange__007"].tag, D_SIMPLICARE["simplicare_exchange__007"].body, D_SIMPLICARE["simplicare_exchange__007"].desc, "simplicare_exchange__007", "simplicare")
-    )}
-  </div>
-  <div class="warn-note" style="margin-top:12px">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
+  <div class="warn-note">⚠️ 교환은 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
   ${secTitle("5", "교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","재출고 안내","exchangeFlow")}
