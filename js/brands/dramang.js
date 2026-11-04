@@ -230,6 +230,10 @@ subcard(D_DRAMANG["dramang_as__012"].name, D_DRAMANG["dramang_as__012"].tag, D_D
 
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_DRAMANG["dramang_as__013"].name, D_DRAMANG["dramang_as__013"].tag, D_DRAMANG["dramang_as__013"].body, D_DRAMANG["dramang_as__013"].desc, "dramang_as__013", "dramang")}
+  <div class="grid2">
+    ${col("blue","🔹 반품 시 회수지 확인",subcard(D_DRAMANG["dramang_100refund__029"].name, D_DRAMANG["dramang_100refund__029"].tag, D_DRAMANG["dramang_100refund__029"].body, D_DRAMANG["dramang_100refund__029"].desc, "dramang_100refund__029", "dramang"))}
+    ${col("pink","🔹 교환 시 회수지 확인",subcard(D_DRAMANG["dramang_exchange__010"].name, D_DRAMANG["dramang_exchange__010"].tag, D_DRAMANG["dramang_exchange__010"].body, D_DRAMANG["dramang_exchange__010"].desc, "dramang_exchange__010", "dramang"))}
+  </div>
   <div class="stack">${col("gray","💡 복합 유형 (예: 불량 반품 + 단순변심 반품)", subcard(D_DRAMANG["dramang_refund__009"].name, D_DRAMANG["dramang_refund__009"].tag, D_DRAMANG["dramang_refund__009"].body, D_DRAMANG["dramang_refund__009"].desc, "dramang_refund__009", "dramang"))}</div>
   ${caution(`📝 [통합판] 용품류 카테고리 문구 그대로 적용.`)}
 
@@ -506,28 +510,19 @@ const DRAMANG_MERGE_TEMPLATE = `
 🔗 IBK기업은행 : https://www.ibk.co.kr/`)}
 
   ${secTitle("4", "포장 및 회수 안내",null,"sec4")}
-  <div class="grp-h">🔹 반품</div>
-  <div class="grid2">
-    ${col("blue","🔹 전체 반품",
+  <div class="stack">
+    ${col("blue","🔹 반품·교환 공통 (전체·부분 동일)",
       subcard(D_DRAMANG["dramang_refund__007"].name, D_DRAMANG["dramang_refund__007"].tag, D_DRAMANG["dramang_refund__007"].body, D_DRAMANG["dramang_refund__007"].desc, "dramang_refund__007", "dramang")
     )}
-    ${col("pink","🔹 부분 반품",
-      subcard(D_DRAMANG["dramang_refund__008"].name, D_DRAMANG["dramang_refund__008"].tag, D_DRAMANG["dramang_refund__008"].body, D_DRAMANG["dramang_refund__008"].desc, "dramang_refund__008", "dramang")
-    )}
+  </div>
+  <div class="grid2">
+    ${col("blue","🔹 반품 시 회수지 확인",subcard(D_DRAMANG["dramang_100refund__029"].name, D_DRAMANG["dramang_100refund__029"].tag, D_DRAMANG["dramang_100refund__029"].body, D_DRAMANG["dramang_100refund__029"].desc, "dramang_100refund__029", "dramang"))}
+    ${col("pink","🔹 교환 시 회수지 확인",subcard(D_DRAMANG["dramang_exchange__010"].name, D_DRAMANG["dramang_exchange__010"].tag, D_DRAMANG["dramang_exchange__010"].body, D_DRAMANG["dramang_exchange__010"].desc, "dramang_exchange__010", "dramang"))}
   </div>
   <div class="grid2">
     ${subcard(D_DRAMANG["dramang_refund__011"].name, D_DRAMANG["dramang_refund__011"].tag, D_DRAMANG["dramang_refund__011"].body, D_DRAMANG["dramang_refund__011"].desc, "dramang_refund__011", "dramang")}
   </div>
-  <div class="grp-h">🔹 교환</div>
-  <div class="grid2">
-    ${col("blue","🔹 전체 교환",
-      subcard(D_DRAMANG["dramang_exchange__006"].name, D_DRAMANG["dramang_exchange__006"].tag, D_DRAMANG["dramang_exchange__006"].body, D_DRAMANG["dramang_exchange__006"].desc, "dramang_exchange__006", "dramang")
-    )}
-    ${col("pink","🔹 부분 교환",
-      subcard(D_DRAMANG["dramang_exchange__007"].name, D_DRAMANG["dramang_exchange__007"].tag, D_DRAMANG["dramang_exchange__007"].body, D_DRAMANG["dramang_exchange__007"].desc, "dramang_exchange__007", "dramang")
-    )}
-  </div>
-  <div class="warn-note">⚠️ 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
+  <div class="warn-note">⚠️ 교환은 고객 동의 / 교환 배송비 입금 완료 후 진행</div>
 
   ${secTitle("5", "교환/반품 안내",null,"step5")}
   ${secTitle("🔄","교환 시","검수 및 재출고 안내","exchangeFlow")}
