@@ -45,8 +45,8 @@ const SIMPLICARE_100 = `
   ${notice([
  "대외민원(소보원 등), 언론·SNS 제보 등 크리티컬 키워드 언급 및 불량·부작용 건과 복합 케이스 등 엣지 케이스가 아닌 경우, 100% 환불 이벤트 기간 전 선적용은 원칙적으로 <b>불가</b>",
  "100% 환불 이벤트 중복 참여는 어떠한 경우에도 <b>불가</b> (예외 적용 불가)",
- "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정이 불가하므로, 고객이 직접 반품 접수한 경우에만 배송비 차감 가능",
- "네이버페이 구매확정 건은 아임웹에서 즉시 취소가 불가하므로, [자사/외부몰] 통합 교환·반품 관리 시트에 취합 후 네이버 어드민에서 직접 취소"
+ "NPay·스마트스토어는 어드민에서 반품 배송비 차감 설정이 불가하므로, 고객이 직접 반품 접수한 경우에만 배송비 차감 가능",
+ "NPay 구매확정 건은 아임웹에서 즉시 취소가 불가하므로, [자사/외부몰] 통합 교환·반품 관리 시트에 취합 후 네이버 어드민에서 직접 취소"
 ])}
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">구분</th><th>세부</th><th class="cmp-blue">상세 조건</th><th class="cmp-pink">예시</th></tr></thead><tbody><tr><td class="cmp-row-label">① 상품 1개 단품</td><td>–</td><td>· 100%환불이벤트 기준 부합 시 적용 가능</td><td>심플리커 1</td></tr><tr><td class="cmp-row-label" rowspan="2">② 동일 상품 2개 이상</td><td>a. 체험 1개만 사용</td><td>· 미사용(미작동) 제품도 환불 요청 시 전체 환불 가능</td><td>심플리커 1+1 → 2개 모두 미개봉 &amp; 미사용</td></tr><tr><td>b. 체험 외 추가 사용</td><td>· 무료 체험은 1개만 적용 가능<br>· 나머지 사용(작동) 제품은 환불 불가<br>· 개봉/손상 상품은 상품 수만큼 차감 후 환불<br>※ 차감 기준 : 자사몰 1개 정가</td><td>심플리커 1+1 → 1개 100%환불 신청 → 그 외 1개 추가 개봉·사용</td></tr><tr><td class="cmp-row-label">③ 세트 상품</td><td>–</td><td>· 각 상품 모두 개봉 시에도 전액 환불 가능</td><td>심플리위 1 + 심플리위 1 → 개봉·사용 여부 무관</td></tr><tr><td class="cmp-row-label" rowspan="2">④ 기타 유형</td><td>a. 여러 주문번호로 각각 구매</td><td>· 세트 구성이 아닌 개별 주문 건, 주문 1건에만 적용</td><td>4/12 심플리커 1 · 4/13 심플리위 1 (각각 주문)</td></tr><tr><td>b. 동일 주문번호이나 세트구성 아님</td><td>· 개별 구성 주문건, 체험 상품 1개에만 적용<br>※ 그 외 제품 미개봉·무손상 시 단순변심 반품 가능</td><td>한 주문번호에 심플리위1 + 심플리위1 각각 담아 결제</td></tr></tbody></table></div>
   ${secTitle("1","상품 1개 단품",null,"secSingle")}
@@ -89,14 +89,14 @@ subcard(D_SIMPLICARE["simplicare_100refund__028"].name, D_SIMPLICARE["simplicare
   ${secTitle("💳","[공통] 환불 안내","모든 구성 공통","secCommon")}
   ${macro(D_SIMPLICARE["simplicare_100refund__029"].name, D_SIMPLICARE["simplicare_100refund__029"].tag, D_SIMPLICARE["simplicare_100refund__029"].body, D_SIMPLICARE["simplicare_100refund__029"].desc, "simplicare_100refund__029", "simplicare")}
   <div class="grid2">
-${col("blue","환불 안내 (카드 · 삼성페이 · 네이버페이)",
+${col("blue","환불 안내 (카드 · 삼성페이 · NPay)",
 `<div class="stack">`+subcard(D_SIMPLICARE["simplicare_100refund__030"].name, D_SIMPLICARE["simplicare_100refund__030"].tag, D_SIMPLICARE["simplicare_100refund__030"].body, D_SIMPLICARE["simplicare_100refund__030"].desc, "simplicare_100refund__030", "simplicare")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌 · 무통장/가상계좌)",
 subcard(D_SIMPLICARE["simplicare_100refund__031"].name, D_SIMPLICARE["simplicare_100refund__031"].tag, D_SIMPLICARE["simplicare_100refund__031"].body, D_SIMPLICARE["simplicare_100refund__031"].desc, "simplicare_100refund__031", "simplicare") + subcard(D_SIMPLICARE["simplicare_100refund__032"].name, D_SIMPLICARE["simplicare_100refund__032"].tag, D_SIMPLICARE["simplicare_100refund__032"].body, D_SIMPLICARE["simplicare_100refund__032"].desc, "simplicare_100refund__032", "simplicare")
 )}
 </div>
-  ${guide(`※ '네이버페이-구매확정' 건은 아임웹에서 반품 접수로 변경 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 내역과 관리자메모 확인 후 처리
+  ${guide(`※ 'NPay-구매확정' 건은 아임웹에서 반품 접수로 변경 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 내역과 관리자메모 확인 후 처리
 b. 계좌 환불 : flex - 워크플로우 - 지출결의서 사업자별 등록`)}
 `;
 
@@ -134,7 +134,7 @@ subcard(D_SIMPLICARE["simplicare_side__007"].name, D_SIMPLICARE["simplicare_side
   ${macro(D_SIMPLICARE["simplicare_side__010"].name, D_SIMPLICARE["simplicare_side__010"].tag, D_SIMPLICARE["simplicare_side__010"].body, D_SIMPLICARE["simplicare_side__010"].desc, "simplicare_side__010", "simplicare")}
   ${secTitle("6","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 `<div class="stack">`+subcard(D_SIMPLICARE["simplicare_side__011"].name, D_SIMPLICARE["simplicare_side__011"].tag, D_SIMPLICARE["simplicare_side__011"].body, D_SIMPLICARE["simplicare_side__011"].desc, "simplicare_side__011", "simplicare")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
@@ -284,8 +284,8 @@ const SIMPLICARE_REFUND = `
   <div class="flow-diagram"><div class="fd-box">1. 7일 경과 여부 및 사유 확인</div><div class="fd-arrow">▶</div><div class="fd-box">2. 반품 배송비 안내</div><div class="fd-arrow">▶</div><div class="fd-box">3. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 결제수단별 환불 안내</div></div>
   ${notice([
     "<b>개봉 후 섭취한 제품은 '사용 제품'으로 간주되어 단순변심 반품 불가.</b>",
-    "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
-    `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`
+    "NPay·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
+    `NPay-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`
   ])}
 
   ${secTitle("1", "7일 경과 여부 및 사유 확인","전체·부분 공통","sec1")}
@@ -414,8 +414,8 @@ const SIMPLICARE_MERGE_TEMPLATE = `
 
   ${notice([
     "<b>개봉 후 섭취한 제품은 '사용 제품'으로 간주되어 단순변심 반품 불가.</b>",
-    "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
-    `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`,
+    "NPay·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
+    `NPay-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`,
     "미개봉 또는 개봉했으나 미사용한 경우에만 교환 가능",
     "교환 제품 금액이 더 높은 경우 <b>차액 결제</b> 필요",
     "교환은 회수 → 입고 → 검수 → 재출고 방식으로 <b>영업일 기준 6~8일</b> 소요"

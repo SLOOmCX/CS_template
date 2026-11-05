@@ -121,12 +121,15 @@ const BOARD_TREE = {
     {label:"[전브랜드] 채팅 상담 유도", anchor:"b_form_2"},
     {label:"[전브랜드] 고객센터 안내", anchor:"b_form_3"},
     {group:true, label:"📄 문의 유형별 템플릿", anchor:"b_type"},
-    {label:"[슬룸] 네이버페이 불량 상담 유도", anchor:"b_type_1"},
-    {label:"[슬룸] 네이버페이 배송비 입금 안내", anchor:"b_type_2"},
-    {label:"[슬룸] 네이버페이 임의반송 시 정보요청", anchor:"b_type_2a"},
+    {label:"[슬룸] NPay 불량 상담 유도", anchor:"b_type_1"},
+    {label:"[슬룸] NPay 배송비 입금 안내", anchor:"b_type_2"},
+    {label:"[슬룸] NPay 입금 후 수거 안내", anchor:"b_type_2b"},
+    {label:"[슬룸] NPay 반품 완료 후 환불 안내", anchor:"b_type_2c"},
+    {label:"[슬룸] NPay 임의반송 시 정보요청", anchor:"b_type_2a"},
     {label:"[슬룸] 100% 환불 이벤트 참여 안내", anchor:"b_type_3"},
+    {label:"[슬룸] 100% 환불 무료반품 오인 재안내", anchor:"b_type_3c"},
     {label:"[슬룸] 단순 배송일정 안내", anchor:"b_type_3a"},
-    {label:"[슬룸] 네이버페이 증정품 누락여부 문의", anchor:"b_type_3b"},
+    {label:"[슬룸] NPay 증정품 누락여부 문의", anchor:"b_type_3b"},
     {label:"[전브랜드] 교환/반품 사유 확인 필요 시", anchor:"b_type_4"},
     {group:true, label:"📦 [슬룸] 외부몰 유형별 템플릿", anchor:"b_ext"},
     {label:"1. 일반 문의", anchor:"b_ext_1"},
@@ -199,7 +202,7 @@ BRAND_TREE["슬룸"]["불량 AS 교환/반품"]={
     {sub:true, label:"② 품질보증기간(1년) 경과", anchor:"edgeOut"},
     {label:"📸 증빙 제출 불만에 따른 대응", anchor:"secProof"},
     {label:"✨ [예외] 증빙 미제출", anchor:"exNoEvid"},
-    {label:"✨ [예외] 네이버페이 임의반송", anchor:"exArbReturn"},
+    {label:"✨ [예외] NPay 임의반송", anchor:"exArbReturn"},
     {group:true, label:"🍏 [외부몰] 자동수거", anchor:"autoPickup"},
     {group:true, label:"🚀 쿠팡 판매자로켓 AS", anchor:"crRocket"}
   ]
@@ -657,7 +660,7 @@ BRAND_TREE["심플리케어"]["100%환불이벤트"]={
           {label:"3. 교환/반품 배송비 안내", anchor:"sec3"},
           {label:"4. 포장 및 회수 안내", anchor:"sec4"},
           {label:"5. 교환/반품 안내", anchor:"step5"},
-          {label:"✨ [예외] 네이버페이 임의반송", anchor:"exArbReturn"}
+          {label:"✨ [예외] NPay 임의반송", anchor:"exArbReturn"}
         ]
       };
     } else if (k === "단순변심 반품") {

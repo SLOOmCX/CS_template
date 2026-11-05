@@ -33,20 +33,23 @@ const BOARD_ALL = `
   ${caution(`문자·1:1 문의에 고객센터를 안내할 경우 아래 양식으로 일괄 통일`)}
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">브랜드</th><th class="cmp-blue">고객센터 안내 멘트</th></tr></thead><tbody><tr><td class="cmp-row-label">슬룸</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__sloom" data-content-brand="shared">${D_SHARED["cmp_csinfo__sloom"].body}</div></td></tr><tr><td class="cmp-row-label">심플리케어</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__simplicare" data-content-brand="shared">${D_SHARED["cmp_csinfo__simplicare"].body}</div></td></tr><tr><td class="cmp-row-label">얼라인랩</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__alignlab" data-content-brand="shared">${D_SHARED["cmp_csinfo__alignlab"].body}</div></td></tr><tr><td class="cmp-row-label">빌바</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__bilba" data-content-brand="shared">${D_SHARED["cmp_csinfo__bilba"].body}</div></td></tr><tr><td class="cmp-row-label">셀올로지</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__cellology" data-content-brand="shared">${D_SHARED["cmp_csinfo__cellology"].body}</div></td></tr><tr><td class="cmp-row-label">코코다움</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__cocodaum" data-content-brand="shared">${D_SHARED["cmp_csinfo__cocodaum"].body}</div></td></tr><tr><td class="cmp-row-label">12 o'clock</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__oclock" data-content-brand="shared">${D_SHARED["cmp_csinfo__oclock"].body}</div></td></tr><tr><td class="cmp-row-label">닥터맨즈</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__drmans" data-content-brand="shared">${D_SHARED["cmp_csinfo__drmans"].body}</div></td></tr><tr><td class="cmp-row-label">와이브닝</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__yvening" data-content-brand="shared">${D_SHARED["cmp_csinfo__yvening"].body}</div></td></tr><tr><td class="cmp-row-label">마넬</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__marnell" data-content-brand="shared">${D_SHARED["cmp_csinfo__marnell"].body}</div></td></tr><tr><td class="cmp-row-label">닥터아망</td><td class="cmp-ment"><button class="copy-btn" onclick="copyMacro(this)" title="복사">📋</button><div class="cmp-ment-body" data-content-key="cmp_csinfo__dramang" data-content-brand="shared">${D_SHARED["cmp_csinfo__dramang"].body}</div></td></tr></tbody></table></div>
   ${secTitle("📄","문의 유형별 템플릿","자사몰·커머스","b_type")}
-  <div class="grp-h" id="b_type_1">[슬룸] 네이버페이 불량 상담 유도</div>
+  <div class="grp-h" id="b_type_1">[슬룸] NPay 불량 상담 유도</div>
   ${macro(D_SHARED["board__002"].name, null, D_SHARED["board__002"].body, D_SHARED["board__002"].desc, "board__002", "shared")}
-  <div class="grp-h" id="b_type_2">[슬룸] 네이버페이 배송비 입금 안내</div>
+  <div class="grp-h" id="b_type_2">[슬룸] NPay 배송비 입금 안내</div>
   ${macro(D_SHARED["board__003"].name, null, D_SHARED["board__003"].body, D_SHARED["board__003"].desc, "board__003", "shared")}
+  <div class="grp-h" id="b_type_2b">[슬룸] NPay 입금 후 수거 안내</div>
   ${macro(D_SHARED["board__038"].name, null, D_SHARED["board__038"].body, D_SHARED["board__038"].desc, "board__038", "shared")}
+  <div class="grp-h" id="b_type_2c">[슬룸] NPay 반품 완료 후 환불 안내</div>
   ${macro(D_SHARED["board__039"].name, null, D_SHARED["board__039"].body, D_SHARED["board__039"].desc, "board__039", "shared")}
-  <div class="grp-h" id="b_type_2a">[슬룸] 네이버페이 임의반송 시 정보요청</div>
+  <div class="grp-h" id="b_type_2a">[슬룸] NPay 임의반송 시 정보요청</div>
   ${macro(D_SHARED["board__037"].name, null, D_SHARED["board__037"].body, D_SHARED["board__037"].desc, "board__037", "shared")}
   <div class="grp-h" id="b_type_3">[슬룸] 100% 환불 이벤트 참여 안내</div>
   ${macro(D_SHARED["board__004"].name, null, D_SHARED["board__004"].body, D_SHARED["board__004"].desc, "board__004", "shared")}
+  <div class="grp-h" id="b_type_3c">[슬룸] 100% 환불 무료반품 오인 재안내</div>
   ${macro(D_SHARED["board__040"].name, null, D_SHARED["board__040"].body, D_SHARED["board__040"].desc, "board__040", "shared")}
   <div class="grp-h" id="b_type_3a">[슬룸] 단순 배송일정 안내</div>
   ${macro(D_SHARED["board__041"].name, null, D_SHARED["board__041"].body, D_SHARED["board__041"].desc, "board__041", "shared")}
-  <div class="grp-h" id="b_type_3b">[슬룸] 네이버페이 증정품 누락여부 문의</div>
+  <div class="grp-h" id="b_type_3b">[슬룸] NPay 증정품 누락여부 문의</div>
   ${macro(D_SHARED["board__042"].name, null, D_SHARED["board__042"].body, D_SHARED["board__042"].desc, "board__042", "shared")}
   <div class="grp-h" id="b_type_4">[전브랜드] 교환/반품 사유 확인 필요 시</div>
   ${caution(`반품·교환 사유 확인 등 절차가 필요해 채팅 상담으로 접수 유도할 경우 사용`)}

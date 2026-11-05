@@ -45,8 +45,8 @@ const REF_100REFUND = `
   ${notice([
  "대외민원(소보원 등), 언론·SNS 제보 등 크리티컬 키워드 언급 및 불량·부작용 건과 복합 케이스 등 엣지 케이스가 아닌 경우, 100% 환불 이벤트 기간 전 선적용은 원칙적으로 <b>불가</b>",
  "100% 환불 이벤트 중복 참여는 어떠한 경우에도 <b>불가</b> (예외 적용 불가)",
- "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정이 불가하므로, 고객이 직접 반품 접수한 경우에만 배송비 차감 가능",
- "네이버페이 구매확정 건은 아임웹에서 즉시 취소가 불가하므로, [자사/외부몰] 통합 교환·반품 관리 시트에 취합 후 네이버 어드민에서 직접 취소"
+ "NPay·스마트스토어는 어드민에서 반품 배송비 차감 설정이 불가하므로, 고객이 직접 반품 접수한 경우에만 배송비 차감 가능",
+ "NPay 구매확정 건은 아임웹에서 즉시 취소가 불가하므로, [자사/외부몰] 통합 교환·반품 관리 시트에 취합 후 네이버 어드민에서 직접 취소"
 ])}
   <div class="cmp-table-wrap"><table class="cmp-table"><thead><tr><th class="cmp-corner">구분</th><th>세부</th><th class="cmp-blue">상세 조건</th><th class="cmp-pink">예시</th></tr></thead><tbody><tr><td class="cmp-row-label">① 상품 1개 단품</td><td>–</td><td>· 100%환불이벤트 기준 부합 시 적용 가능</td><td>목편한케어 1</td></tr><tr><td class="cmp-row-label" rowspan="2">② 동일 상품 2개 이상</td><td>a. 체험 1개만 사용</td><td>· 미사용(미작동) 제품도 환불 요청 시 전체 환불 가능</td><td>목편한케어 1+1 → 2개 모두 미개봉 &amp; 미사용</td></tr><tr><td>b. 체험 외 추가 사용</td><td>· 무료 체험은 1개만 적용 가능<br>· 나머지 사용(작동) 제품은 환불 불가<br>· 개봉/손상 상품은 상품 수만큼 차감 후 환불<br>※ 차감 기준 : 자사몰 1개 정가</td><td>목편한케어 1+1 → 1개 100%환불 신청 → 그 외 1개 추가 개봉·사용</td></tr><tr><td class="cmp-row-label">③ 세트 상품</td><td>–</td><td>· 각 상품 모두 개봉 시에도 전액 환불 가능</td><td>목베개 프로 1 + 허리베개 1 → 개봉·사용 여부 무관</td></tr><tr><td class="cmp-row-label" rowspan="2">④ 기타 유형</td><td>a. 여러 주문번호로 각각 구매</td><td>· 세트 구성이 아닌 개별 주문 건, 주문 1건에만 적용</td><td>4/12 목편한케어 1 · 4/13 목베개 1 (각각 주문)</td></tr><tr><td>b. 동일 주문번호이나 세트구성 아님</td><td>· 개별 구성 주문건, 체험 상품 1개에만 적용<br>※ 그 외 제품 미개봉·무손상 시 단순변심 반품 가능</td><td>한 주문번호에 목베개 프로1 + 허리베개1 각각 담아 결제</td></tr></tbody></table></div>
   ${secTitle("1","상품 1개 단품",null,"secSingle")}
@@ -89,14 +89,14 @@ subcard(D_SLOOM["slm_100refund__028"].name, D_SLOOM["slm_100refund__028"].tag, D
   ${secTitle("💳","[공통] 환불 안내","모든 구성 공통","secCommon")}
   ${macro(D_SLOOM["slm_100refund__029"].name, D_SLOOM["slm_100refund__029"].tag, D_SLOOM["slm_100refund__029"].body, D_SLOOM["slm_100refund__029"].desc, "slm_100refund__029", "sloom")}
   <div class="grid2">
-${col("blue","환불 안내 (카드 · 삼성페이 · 네이버페이)",
+${col("blue","환불 안내 (카드 · 삼성페이 · NPay)",
 subcard(D_SLOOM["slm_100refund__030"].name, D_SLOOM["slm_100refund__030"].tag, D_SLOOM["slm_100refund__030"].body, D_SLOOM["slm_100refund__030"].desc, "slm_100refund__030", "sloom")
 )}
 ${col("blue","환불 안내 (계좌 · 무통장/가상계좌)",
 subcard(D_SLOOM["slm_100refund__031"].name, D_SLOOM["slm_100refund__031"].tag, D_SLOOM["slm_100refund__031"].body, D_SLOOM["slm_100refund__031"].desc, "slm_100refund__031", "sloom") + subcard(D_SLOOM["slm_100refund__032"].name, D_SLOOM["slm_100refund__032"].tag, D_SLOOM["slm_100refund__032"].body, D_SLOOM["slm_100refund__032"].desc, "slm_100refund__032", "sloom")
 )}
 </div>
-  ${guide(`※ '네이버페이-구매확정' 건은 아임웹에서 반품 접수로 변경 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 내역과 관리자메모 확인 후 처리
+  ${guide(`※ 'NPay-구매확정' 건은 아임웹에서 반품 접수로 변경 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 내역과 관리자메모 확인 후 처리
 b. 계좌 환불 : flex - 워크플로우 - 지출결의서 사업자별 등록`)}
 `;
 
@@ -249,7 +249,7 @@ const REF_AS = `
   <div class="h2lvl" id="exNoEvid">✨ [예외] 증빙 미제출</div>
   <div class="lvl2-body"><div class="quote-box"><b>✔️ 사진/영상 확인 시, 정상 제품으로 확인되거나 사용법 문제로 확인될 경우 → 증상별 올바른 사용법 재안내 후 재사용 시도 유도</b>\n⚠️ 아래 flow는 사진/영상 촬영 지속 미수긍으로 회수 후 검수 예외 처리 진행에 동의한 경우에만 이어서 안내</div><div class="h3lvl">❌ 검수 결과 — 불량 확인</div><div class="lvl3-body">${guide(`※ 채널톡 이전 상담 내역에 교환/반품 처리 방안 확인`)}<div class="grp-h">A. 고객 반품 요청 · 반품 안내 유저챗 발송</div><div class="grid2">${macro(D_SLOOM["slm_as__079"].name, D_SLOOM["slm_as__079"].tag, D_SLOOM["slm_as__079"].body, D_SLOOM["slm_as__079"].desc, "slm_as__079", "sloom")}${macro(D_SLOOM["slm_as__080"].name, D_SLOOM["slm_as__080"].tag, D_SLOOM["slm_as__080"].body, D_SLOOM["slm_as__080"].desc, "slm_as__080", "sloom")}</div><div class="grp-h">B. 고객 교환 요청 · 재출고 안내 유저챗 발송</div>${macro(D_SLOOM["slm_as__081"].name, D_SLOOM["slm_as__081"].tag, D_SLOOM["slm_as__081"].body, D_SLOOM["slm_as__081"].desc, "slm_as__081", "sloom")}</div><div class="h3lvl">⭕ 검수 결과 — 정상 제품</div><div class="lvl3-body">${macro(D_SLOOM["slm_as__082"].name, D_SLOOM["slm_as__082"].tag, D_SLOOM["slm_as__082"].body, D_SLOOM["slm_as__082"].desc, "slm_as__082", "sloom")}</div></div>
 
-  <div class="h2lvl" id="exArbReturn">✨ [예외] 네이버페이 임의반송</div>
+  <div class="h2lvl" id="exArbReturn">✨ [예외] NPay 임의반송</div>
   <div class="lvl2-body">${macro(D_SLOOM["slm_simplemerge__020"].name, D_SLOOM["slm_simplemerge__020"].tag, D_SLOOM["slm_simplemerge__020"].body, D_SLOOM["slm_simplemerge__020"].desc, "slm_simplemerge__020", "sloom")}</div>
 
   <div class="h2lvl" id="autoPickup">🍏 [외부몰] 자동수거 : 쿠팡, 스마트스토어 등</div>
@@ -266,8 +266,8 @@ const SLM_MERGE_TEMPLATE = `
 
   ${notice([
     "<b>전자제품은 어댑터 연결·작동을 한 번이라도 했다면 '사용 제품'으로 간주되어 단순변심 반품 불가.</b>",
-    "네이버페이·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
-    `네이버페이-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`,
+    "NPay·스마트스토어는 어드민에서 반품 배송비 차감 설정 <b>불가</b> → 고객이 직접 반품 접수 시에만 차감 가능",
+    `NPay-구매확정 건은 아임웹에서 즉시 취소 불가 → <a href="https://docs.google.com/spreadsheets/d/1t7Oa-rKPY2aYgphNugE5K5gMCP7Hn3joaJYp-bbh7Jw/edit?gid=1012913860#gid=1012913860" target="_blank">[자사/외부몰] 통합 교환/반품 관리</a> 시트에 취합 후 네이버 어드민에서 직접 취소`,
     "미개봉 또는 개봉했으나 미사용한 경우에만 교환 가능",
     "교환 제품 금액이 더 높은 경우 <b>차액 결제</b> 필요",
     "교환은 회수 → 입고 → 검수 → 재출고 방식으로 <b>영업일 기준 6~8일</b> 소요"
@@ -381,7 +381,7 @@ const SLM_MERGE_TEMPLATE = `
     )}
   </div>
 
-  ${secTitle("✨","[예외] 네이버페이 임의반송",null,"exArbReturn")}
+  ${secTitle("✨","[예외] NPay 임의반송",null,"exArbReturn")}
   ${macro(D_SLOOM["slm_simplemerge__020"].name, D_SLOOM["slm_simplemerge__020"].tag, D_SLOOM["slm_simplemerge__020"].body, D_SLOOM["slm_simplemerge__020"].desc, "slm_simplemerge__020", "sloom")}
 `;
 
@@ -418,7 +418,7 @@ subcard(D_SLOOM["slm_side__004"].name, D_SLOOM["slm_side__004"].tag, D_SLOOM["sl
 </div>
   ${secTitle("3","결제수단별 환불 안내",null,null)}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 subcard(D_SLOOM["slm_side__005"].name, D_SLOOM["slm_side__005"].tag, D_SLOOM["slm_side__005"].body, D_SLOOM["slm_side__005"].desc, "slm_side__005", "sloom")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
@@ -463,7 +463,7 @@ subcard(D_SLOOM["slm_side__015"].name, D_SLOOM["slm_side__015"].tag, D_SLOOM["sl
 </div>
   ${secTitle("3","결제수단별 환불 안내",null,null)}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 subcard(D_SLOOM["slm_side__016"].name, D_SLOOM["slm_side__016"].tag, D_SLOOM["slm_side__016"].body, D_SLOOM["slm_side__016"].desc, "slm_side__016", "sloom")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
