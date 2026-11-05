@@ -154,7 +154,7 @@ subcard(D_OCLOCK["oclock_side__004"].name, D_OCLOCK["oclock_side__004"].tag, D_O
   ${subcard(D_OCLOCK["oclock_side__005"].name, D_OCLOCK["oclock_side__005"].tag, D_OCLOCK["oclock_side__005"].body, D_OCLOCK["oclock_side__005"].desc, "oclock_side__005", "oclock")}
   ${secTitle("3","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 subcard(D_OCLOCK["oclock_side__006"].name, D_OCLOCK["oclock_side__006"].tag, D_OCLOCK["oclock_side__006"].body, D_OCLOCK["oclock_side__006"].desc, "oclock_side__006", "oclock")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",

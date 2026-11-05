@@ -156,7 +156,7 @@ subcard(D_BILBA["bilba_side__004"].name, D_BILBA["bilba_side__004"].tag, D_BILBA
   ${subcard(D_BILBA["bilba_side__005"].name, D_BILBA["bilba_side__005"].tag, D_BILBA["bilba_side__005"].body, D_BILBA["bilba_side__005"].desc, "bilba_side__005", "bilba")}
   ${secTitle("3","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 subcard(D_BILBA["bilba_side__006"].name, D_BILBA["bilba_side__006"].tag, D_BILBA["bilba_side__006"].body, D_BILBA["bilba_side__006"].desc, "bilba_side__006", "bilba")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",

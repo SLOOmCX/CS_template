@@ -147,7 +147,7 @@ const ALIGNLAB_SIDE = `
   ${subcard(D_ALIGNLAB["alignlab_side__007"].name, D_ALIGNLAB["alignlab_side__007"].tag, D_ALIGNLAB["alignlab_side__007"].body, D_ALIGNLAB["alignlab_side__007"].desc, "alignlab_side__007", "alignlab")}
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 subcard(D_ALIGNLAB["alignlab_side__008"].name, D_ALIGNLAB["alignlab_side__008"].tag, D_ALIGNLAB["alignlab_side__008"].body, D_ALIGNLAB["alignlab_side__008"].desc, "alignlab_side__008", "alignlab")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",

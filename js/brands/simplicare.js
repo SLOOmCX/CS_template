@@ -89,7 +89,7 @@ subcard(D_SIMPLICARE["simplicare_100refund__028"].name, D_SIMPLICARE["simplicare
   ${secTitle("💳","[공통] 환불 안내","모든 구성 공통","secCommon")}
   ${macro(D_SIMPLICARE["simplicare_100refund__029"].name, D_SIMPLICARE["simplicare_100refund__029"].tag, D_SIMPLICARE["simplicare_100refund__029"].body, D_SIMPLICARE["simplicare_100refund__029"].desc, "simplicare_100refund__029", "simplicare")}
   <div class="grid2">
-${col("blue","환불 안내 (카드 · 삼성페이 · 네이버페이)",
+${col("blue","환불 안내 (카드 · 삼성페이 · NPay)",
 `<div class="stack">`+subcard(D_SIMPLICARE["simplicare_100refund__030"].name, D_SIMPLICARE["simplicare_100refund__030"].tag, D_SIMPLICARE["simplicare_100refund__030"].body, D_SIMPLICARE["simplicare_100refund__030"].desc, "simplicare_100refund__030", "simplicare")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌 · 무통장/가상계좌)",
@@ -134,7 +134,7 @@ subcard(D_SIMPLICARE["simplicare_side__007"].name, D_SIMPLICARE["simplicare_side
   ${macro(D_SIMPLICARE["simplicare_side__010"].name, D_SIMPLICARE["simplicare_side__010"].tag, D_SIMPLICARE["simplicare_side__010"].body, D_SIMPLICARE["simplicare_side__010"].desc, "simplicare_side__010", "simplicare")}
   ${secTitle("6","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 `<div class="stack">`+subcard(D_SIMPLICARE["simplicare_side__011"].name, D_SIMPLICARE["simplicare_side__011"].tag, D_SIMPLICARE["simplicare_side__011"].body, D_SIMPLICARE["simplicare_side__011"].desc, "simplicare_side__011", "simplicare")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",

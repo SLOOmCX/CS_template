@@ -89,7 +89,7 @@ subcard(D_SLOOM["slm_100refund__028"].name, D_SLOOM["slm_100refund__028"].tag, D
   ${secTitle("💳","[공통] 환불 안내","모든 구성 공통","secCommon")}
   ${macro(D_SLOOM["slm_100refund__029"].name, D_SLOOM["slm_100refund__029"].tag, D_SLOOM["slm_100refund__029"].body, D_SLOOM["slm_100refund__029"].desc, "slm_100refund__029", "sloom")}
   <div class="grid2">
-${col("blue","환불 안내 (카드 · 삼성페이 · 네이버페이)",
+${col("blue","환불 안내 (카드 · 삼성페이 · NPay)",
 subcard(D_SLOOM["slm_100refund__030"].name, D_SLOOM["slm_100refund__030"].tag, D_SLOOM["slm_100refund__030"].body, D_SLOOM["slm_100refund__030"].desc, "slm_100refund__030", "sloom")
 )}
 ${col("blue","환불 안내 (계좌 · 무통장/가상계좌)",
@@ -249,7 +249,7 @@ const REF_AS = `
   <div class="h2lvl" id="exNoEvid">✨ [예외] 증빙 미제출</div>
   <div class="lvl2-body"><div class="quote-box"><b>✔️ 사진/영상 확인 시, 정상 제품으로 확인되거나 사용법 문제로 확인될 경우 → 증상별 올바른 사용법 재안내 후 재사용 시도 유도</b>\n⚠️ 아래 flow는 사진/영상 촬영 지속 미수긍으로 회수 후 검수 예외 처리 진행에 동의한 경우에만 이어서 안내</div><div class="h3lvl">❌ 검수 결과 — 불량 확인</div><div class="lvl3-body">${guide(`※ 채널톡 이전 상담 내역에 교환/반품 처리 방안 확인`)}<div class="grp-h">A. 고객 반품 요청 · 반품 안내 유저챗 발송</div><div class="grid2">${macro(D_SLOOM["slm_as__079"].name, D_SLOOM["slm_as__079"].tag, D_SLOOM["slm_as__079"].body, D_SLOOM["slm_as__079"].desc, "slm_as__079", "sloom")}${macro(D_SLOOM["slm_as__080"].name, D_SLOOM["slm_as__080"].tag, D_SLOOM["slm_as__080"].body, D_SLOOM["slm_as__080"].desc, "slm_as__080", "sloom")}</div><div class="grp-h">B. 고객 교환 요청 · 재출고 안내 유저챗 발송</div>${macro(D_SLOOM["slm_as__081"].name, D_SLOOM["slm_as__081"].tag, D_SLOOM["slm_as__081"].body, D_SLOOM["slm_as__081"].desc, "slm_as__081", "sloom")}</div><div class="h3lvl">⭕ 검수 결과 — 정상 제품</div><div class="lvl3-body">${macro(D_SLOOM["slm_as__082"].name, D_SLOOM["slm_as__082"].tag, D_SLOOM["slm_as__082"].body, D_SLOOM["slm_as__082"].desc, "slm_as__082", "sloom")}</div></div>
 
-  <div class="h2lvl" id="exArbReturn">✨ [예외] 네이버페이 임의반송</div>
+  <div class="h2lvl" id="exArbReturn">✨ [예외] NPay 임의반송</div>
   <div class="lvl2-body">${macro(D_SLOOM["slm_simplemerge__020"].name, D_SLOOM["slm_simplemerge__020"].tag, D_SLOOM["slm_simplemerge__020"].body, D_SLOOM["slm_simplemerge__020"].desc, "slm_simplemerge__020", "sloom")}</div>
 
   <div class="h2lvl" id="autoPickup">🍏 [외부몰] 자동수거 : 쿠팡, 스마트스토어 등</div>
@@ -381,7 +381,7 @@ const SLM_MERGE_TEMPLATE = `
     )}
   </div>
 
-  ${secTitle("✨","[예외] 네이버페이 임의반송",null,"exArbReturn")}
+  ${secTitle("✨","[예외] NPay 임의반송",null,"exArbReturn")}
   ${macro(D_SLOOM["slm_simplemerge__020"].name, D_SLOOM["slm_simplemerge__020"].tag, D_SLOOM["slm_simplemerge__020"].body, D_SLOOM["slm_simplemerge__020"].desc, "slm_simplemerge__020", "sloom")}
 `;
 
@@ -418,7 +418,7 @@ subcard(D_SLOOM["slm_side__004"].name, D_SLOOM["slm_side__004"].tag, D_SLOOM["sl
 </div>
   ${secTitle("3","결제수단별 환불 안내",null,null)}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 subcard(D_SLOOM["slm_side__005"].name, D_SLOOM["slm_side__005"].tag, D_SLOOM["slm_side__005"].body, D_SLOOM["slm_side__005"].desc, "slm_side__005", "sloom")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
@@ -463,7 +463,7 @@ subcard(D_SLOOM["slm_side__015"].name, D_SLOOM["slm_side__015"].tag, D_SLOOM["sl
 </div>
   ${secTitle("3","결제수단별 환불 안내",null,null)}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 subcard(D_SLOOM["slm_side__016"].name, D_SLOOM["slm_side__016"].tag, D_SLOOM["slm_side__016"].body, D_SLOOM["slm_side__016"].desc, "slm_side__016", "sloom")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",

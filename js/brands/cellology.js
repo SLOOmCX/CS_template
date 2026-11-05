@@ -98,7 +98,7 @@ subcard(D_CELLOLOGY["cellology_100refund__028"].name, D_CELLOLOGY["cellology_100
   ${secTitle("💳","[공통] 환불 안내","모든 구성 공통","secCommon")}
   ${macro(D_CELLOLOGY["cellology_100refund__029"].name, D_CELLOLOGY["cellology_100refund__029"].tag, D_CELLOLOGY["cellology_100refund__029"].body, D_CELLOLOGY["cellology_100refund__029"].desc, "cellology_100refund__029", "cellology")}
   <div class="grid2">
-${col("blue","환불 안내 (카드 · 삼성페이 · 네이버페이)",
+${col("blue","환불 안내 (카드 · 삼성페이 · NPay)",
 subcard(D_CELLOLOGY["cellology_100refund__030"].name, D_CELLOLOGY["cellology_100refund__030"].tag, D_CELLOLOGY["cellology_100refund__030"].body, D_CELLOLOGY["cellology_100refund__030"].desc, "cellology_100refund__030", "cellology")
 )}
 ${col("blue","환불 안내 (계좌 · 무통장/가상계좌)",
@@ -268,7 +268,7 @@ const CELLOLOGY_SIDE = `
   ${subcard(D_CELLOLOGY["cellology_side__007"].name, D_CELLOLOGY["cellology_side__007"].tag, D_CELLOLOGY["cellology_side__007"].body, D_CELLOLOGY["cellology_side__007"].desc, "cellology_side__007", "cellology")}
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 subcard(D_CELLOLOGY["cellology_side__008"].name, D_CELLOLOGY["cellology_side__008"].tag, D_CELLOLOGY["cellology_side__008"].body, D_CELLOLOGY["cellology_side__008"].desc, "cellology_side__008", "cellology")
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",

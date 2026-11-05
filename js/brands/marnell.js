@@ -29,7 +29,7 @@ const MARNELL_SIDE = `
   ${subcard(D_MARNELL["marnell_side__007"].name, D_MARNELL["marnell_side__007"].tag, D_MARNELL["marnell_side__007"].body, D_MARNELL["marnell_side__007"].desc, "marnell_side__007", "marnell")}
   ${secTitle("4","결제수단별 환불 안내",null,"sec_refund")}
   <div class="grid2">
-${col("blue","환불 안내 (카드·삼성페이·네이버페이)",
+${col("blue","환불 안내 (카드·삼성페이·NPay)",
 `<div class="stack">`+subcard(D_MARNELL["marnell_side__008"].name, D_MARNELL["marnell_side__008"].tag, D_MARNELL["marnell_side__008"].body, D_MARNELL["marnell_side__008"].desc, "marnell_side__008", "marnell")+subcard(D_SHARED["cmn_all__065"].name, D_SHARED["cmn_all__065"].tag, D_SHARED["cmn_all__065"].body, D_SHARED["cmn_all__065"].desc, "cmn_all__065", "shared")+`</div>`
 )}
 ${col("blue","환불 안내 (계좌·무통장/가상계좌)",
