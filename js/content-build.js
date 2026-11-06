@@ -1496,7 +1496,7 @@ function restoreView(){
   if(!sb||!rz) return;
   /* 최소/최대 너비는 CSS(.sidebar min-width/max-width)가 단일 기준 — 여기에 숫자 중복 정의 금지 */
   const _cs=getComputedStyle(sb);
-  const MIN=parseInt(_cs.minWidth,10)||248, MAX=parseInt(_cs.maxWidth,10)||520;
+  const MIN=parseInt(_cs.minWidth,10)||300, MAX=parseInt(_cs.maxWidth,10)||520;
   try{ const w=parseInt(localStorage.getItem("olit_sidebar_w"),10);
        if(w>=MIN&&w<=MAX) sb.style.width=w+"px"; }catch(e){}
   let dragging=false;
