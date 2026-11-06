@@ -1494,7 +1494,9 @@ function restoreView(){
   const sb=document.querySelector(".sidebar");
   const rz=document.getElementById("sidebarResizer");
   if(!sb||!rz) return;
-  const MIN=160,MAX=520;
+  /* 최소/최대 너비는 CSS(.sidebar min-width/max-width)가 단일 기준 — 여기에 숫자 중복 정의 금지 */
+  const _cs=getComputedStyle(sb);
+  const MIN=parseInt(_cs.minWidth,10)||248, MAX=parseInt(_cs.maxWidth,10)||520;
   try{ const w=parseInt(localStorage.getItem("olit_sidebar_w"),10);
        if(w>=MIN&&w<=MAX) sb.style.width=w+"px"; }catch(e){}
   let dragging=false;
@@ -1511,6 +1513,13 @@ function restoreView(){
     if(!dragging) return;
     dragging=false; document.body.classList.remove("col-resizing"); rz.classList.remove("dragging");
     try{ localStorage.setItem("olit_sidebar_w", parseInt(sb.style.width,10)); }catch(e){}
+  });
+  /* 말줄임(…)으로 잘린 메뉴 제목은 마우스를 올릴 때 전체 제목을 툴팁으로 표시 */
+  const tr=document.getElementById("tree");
+  if(tr) tr.addEventListener("mouseover",e=>{
+    const t=e.target.closest&&e.target.closest(".leaf,.node-toggle");
+    if(!t||t.title) return;
+    if(t.scrollWidth>t.clientWidth) t.title=t.textContent.trim();
   });
 })();
 
