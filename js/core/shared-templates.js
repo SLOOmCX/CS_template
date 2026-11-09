@@ -739,6 +739,7 @@ const CALL_SLOOMCB = `<div class="no-copy">
 
   <div class="h1lvl" id="c_sloomcb_5"><span class="num">5</span>재회수 접수</div>
   <div class="quote-box"><b>☑️ 기존 교환·반품 접수 건의 재회수(재수거) 요청</b></div>
+  <div class="star-note"><div class="star-h"><b>팀챗 알림 및 내부대화 안내</b><span class="spacer"></span></div><div class="star-body">고객이 정보 변경 없이 재회수를 요청하면 담당자가 확인할 수 있도록 팀챗에 알림이 오고, 유저챗 내부대화에 <b>[승인] / [거부]</b> 버튼이 표시됩니다. 두 버튼은 ALF 태스크를 종료합니다. 실제 재회수는 담당자가 통화 내용에 있는 전화번호로 후처리 시트를 조회한 뒤, 아래 기준에 따라 별도로 접수합니다.</div></div>
   <div class="grid2">
   <div class="star-note"><div class="star-h"><b>🔎 확인 기준</b><span class="spacer"></span></div><div class="star-body">후처리 시트의 교환/반품 접수 이력을 확인하여 접수 일자를 기준으로 분기합니다.</div></div>
   <div class="branch-box">
