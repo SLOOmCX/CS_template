@@ -10,6 +10,7 @@ const CL_AUTHOR_NAMES = {
   "hjpark929": "박혜정",
   "hjkim-olit": "김현지",
   "kypark511": "박근영",
+  "huhyunsun": "허윤선",
   "SLOOmCX": "기업계정",
 };
 const CL_LIST_MAX = 8;   // 한 묶음에서 카드 이름을 몇 개까지 나열할지 (초과분은 "외 N건")
@@ -65,7 +66,17 @@ function clBullets(c){
   const items = [];
   // 1) 이번 배포에 포함된 커밋 메시지 (여러 건이면 제목 + 하위에 본문 줄)
   const cs = c.commits||[];
-  const lines = b => (b||"").split(/\r?\n/).map(s=>s.replace(/^\s*[-*·•]\s*/,"").trim()).filter(Boolean);
+  // 커밋 본문이 줄 폭에 맞춰 줄바꿈된 경우(들여쓰기로 시작하고 글머리표 없는 줄) 앞 항목에 이어 붙임 (2026-11-12)
+  const lines = b => (b||"").split(/\r?\n/).reduce((acc, raw)=>{
+    const isCont = /^\s+\S/.test(raw) && !/^\s*[-*·•]\s/.test(raw);
+    const s = raw.replace(/^\s*[-*·•]\s*/,"").trim();
+    if (!s) return acc;
+    if (isCont && acc.length){
+      const prev = acc[acc.length-1];
+      acc[acc.length-1] = prev + (/[·(\/\[]$/.test(prev) ? "" : " ") + s;
+    } else acc.push(s);
+    return acc;
+  }, []);
   if (cs.length===1) lines(cs[0].body).forEach(s=>items.push(`<li>${clEsc(s)}</li>`));
   else {
     // 작성자가 전부 같은 사람이면 헤더(clWho)와 중복이라 본문 이름 생략, 여러 사람이 섞인 배포일 때만 표시 (2026-10-30)

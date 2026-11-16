@@ -115,18 +115,20 @@ const COMMON_ALL = `
   <div class="grid2">${macro(D_SHARED["cmn_all__007"].name, D_SHARED["cmn_all__007"].tag, D_SHARED["cmn_all__007"].body, D_SHARED["cmn_all__007"].desc, "cmn_all__007", "shared")}${macro(D_SHARED["cmn_all__008"].name, D_SHARED["cmn_all__008"].tag, D_SHARED["cmn_all__008"].body, D_SHARED["cmn_all__008"].desc, "cmn_all__008", "shared")}</div>
   <div class="grid2">${macro(D_SHARED["cmn_all__009"].name, D_SHARED["cmn_all__009"].tag, D_SHARED["cmn_all__009"].body, D_SHARED["cmn_all__009"].desc, "cmn_all__009", "shared")}${macro(D_SHARED["cmn_all__010"].name, D_SHARED["cmn_all__010"].tag, D_SHARED["cmn_all__010"].body, D_SHARED["cmn_all__010"].desc, "cmn_all__010", "shared")}</div>
   ${macro(D_SHARED["cmn_all__011"].name, D_SHARED["cmn_all__011"].tag, D_SHARED["cmn_all__011"].body, D_SHARED["cmn_all__011"].desc, "cmn_all__011", "shared")}
-  <div class="grp-h" id="c_basic_2">2. 사전/사후 대기</div>
+  <div class="grp-h" id="c_basic_2">2. 주문내역 확인불가 시</div>
+  ${macro(D_SHARED["cmn_all__066"].name, D_SHARED["cmn_all__066"].tag, D_SHARED["cmn_all__066"].body, D_SHARED["cmn_all__066"].desc, "cmn_all__066", "shared")}
+  <div class="grp-h" id="c_basic_3">3. 사전/사후 대기</div>
   ${caution(`★ 고객에게 대기 요청 후 자동 종료 경고 멘트가 나가지 않도록 [종료대기] 설정 필수`)}
   <div class="grid2">${macro(D_SHARED["cmn_all__012"].name, D_SHARED["cmn_all__012"].tag, D_SHARED["cmn_all__012"].body, D_SHARED["cmn_all__012"].desc, "cmn_all__012", "shared")}${macro(D_SHARED["cmn_all__013"].name, D_SHARED["cmn_all__013"].tag, D_SHARED["cmn_all__013"].body, D_SHARED["cmn_all__013"].desc, "cmn_all__013", "shared")}</div>
   ${macro(D_SHARED["cmn_all__014"].name, D_SHARED["cmn_all__014"].tag, D_SHARED["cmn_all__014"].body, D_SHARED["cmn_all__014"].desc, "cmn_all__014", "shared")}
-  <div class="grp-h" id="c_basic_3">3. 호응 표현</div>
+  <div class="grp-h" id="c_basic_4">4. 호응 표현</div>
   ${caution(`고객 말씀 후 상황에 맞는 호응 필수 (단답 '네'는 부적절 / "네, 많이 불편하셨을 것 같습니다" 같은 공감 표현은 적절)`)}
   <div class="grid2">${macro(D_SHARED["cmn_all__015"].name, D_SHARED["cmn_all__015"].tag, D_SHARED["cmn_all__015"].body, D_SHARED["cmn_all__015"].desc, "cmn_all__015", "shared")}${macro(D_SHARED["cmn_all__016"].name, D_SHARED["cmn_all__016"].tag, D_SHARED["cmn_all__016"].body, D_SHARED["cmn_all__016"].desc, "cmn_all__016", "shared")}</div>
-  <div class="grp-h" id="c_basic_4">4. 채팅 중 유선(O/B) 요청</div>
+  <div class="grp-h" id="c_basic_5">5. 채팅 중 유선(O/B) 요청</div>
   ${caution(`고객이 채팅 인입 후 전화 요청 시 우선 채팅 상담 권유 (불필요한 O/B 감소 목적)`)}
   ${macro(D_SHARED["cmn_all__017"].name, D_SHARED["cmn_all__017"].tag, D_SHARED["cmn_all__017"].body, D_SHARED["cmn_all__017"].desc, "cmn_all__017", "shared")}
   <div class="grid2">${macro(D_SHARED["cmn_all__018"].name, D_SHARED["cmn_all__018"].tag, D_SHARED["cmn_all__018"].body, D_SHARED["cmn_all__018"].desc, "cmn_all__018", "shared")}${macro(D_SHARED["cmn_all__019"].name, D_SHARED["cmn_all__019"].tag, D_SHARED["cmn_all__019"].body, D_SHARED["cmn_all__019"].desc, "cmn_all__019", "shared")}</div>
-  <div class="grp-h" id="c_basic_5">5. 추가 문의 / 점심시간</div>
+  <div class="grp-h" id="c_basic_6">6. 추가 문의 / 점심시간</div>
   <div class="grid2">${macro(D_SHARED["cmn_all__020"].name, D_SHARED["cmn_all__020"].tag, D_SHARED["cmn_all__020"].body, D_SHARED["cmn_all__020"].desc, "cmn_all__020", "shared")}${macro(D_SHARED["cmn_all__021"].name, D_SHARED["cmn_all__021"].tag, D_SHARED["cmn_all__021"].body, D_SHARED["cmn_all__021"].desc, "cmn_all__021", "shared")}</div>
   <div class="grp-h" id="c_basic_7">🚨 상담 종료 경고</div>
   ${caution(`고객 욕설·반말·폭언·성희롱 (1회) — 담당 관리자 보고 필수`)}
@@ -988,7 +990,7 @@ const CHAT_HOME = `
   </div>
 
   <div class="grp-h">🧩 공통 — 채팅 표준 응대</div>
-  <div style="font-size:13px;color:var(--text);line-height:1.9;margin:-2px 0 6px">인사말 · 사전/사후 대기 · 호응 표현 · 채팅 중 유선 요청 · 추가 문의/점심 · 상담 종료 경고<br>제품 문의 · 배송·출고(배송 일정 / 미배송·오배송 / 분리배송) · 주문 변경(취소 / 배송 정보 변경) · 결제 · 멤버십·회원정보 · 마케팅·제휴 · 채팅 주문</div>
+  <div style="font-size:13px;color:var(--text);line-height:1.9;margin:-2px 0 6px">인사말 · 주문내역 확인불가 · 사전/사후 대기 · 호응 표현 · 채팅 중 유선 요청 · 추가 문의/점심 · 상담 종료 경고<br>제품 문의 · 배송·출고(배송 일정 / 미배송·오배송 / 분리배송) · 주문 변경(취소 / 배송 정보 변경) · 결제 · 멤버십·회원정보 · 마케팅·제휴 · 채팅 주문</div>
   ${guide(`좌측 목차 상단 <b>공통 › 채팅 표준 응대</b>에서 위 항목을 소제목별로 바로 찾을 수 있습니다.`)}
 
   <div class="grp-h" style="margin-top:22px">🏷️ 브랜드 바로가기</div>
