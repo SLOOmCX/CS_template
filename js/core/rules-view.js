@@ -123,6 +123,7 @@ const RULES_SECTIONS = [
 <div class="grp-h">4. 문장 표기</div>
 <table class="astbl"><thead><tr><th>규칙</th><th>❌ 틀림</th><th>⭕ 맞음</th></tr></thead><tbody>
 <tr><td>문장부호(<code>.</code> <code>?</code> <code>!</code>) 뒤의 이모지는 한 칸 띄움</td><td>죄송합니다.🙏<br>좋을까요?😊</td><td>죄송합니다. 🙏<br>좋을까요? 😊</td></tr>
+<tr><td>보조용언 &lsquo;주다·드리다&rsquo;는 앞말에 붙여 씀 (&lsquo;문의 주세요&rsquo;처럼 명사 뒤 본동사는 띄움)</td><td>확인해 주세요<br>접수해 드리겠습니다</td><td>확인해주세요<br>접수해드리겠습니다</td></tr>
 </tbody></table>`},
 
 { key:"process", label:"수정 절차", title:"🛠️ 수정 절차", html:`
@@ -138,7 +139,8 @@ const RULES_SECTIONS = [
 <li>같은 브랜드에 본문이 다른데 이름이 같은 매크로가 없는가</li>
 <li>시점이 들어가면 시점 표기 규칙을 따랐는가</li>
 <li>카드 글자 크기를 따로 지정하지 않았는가</li>
-<li>문장부호 뒤 이모지를 한 칸 띄웠는가</li></ul>`}
+<li>문장부호 뒤 이모지를 한 칸 띄웠는가</li>
+<li>&lsquo;해 주세요&rsquo;·&lsquo;해 드리&rsquo;를 붙여 썼는가</li></ul>`}
 ];
 
 let RULES_CUR = "overview";

@@ -35,6 +35,8 @@ const BOARD_ALL = `
   ${secTitle("📄","문의 유형별 템플릿","자사몰·커머스","b_type")}
   <div class="grp-h" id="b_type_1">[슬룸] NPay 불량 상담 유도</div>
   ${macro(D_SHARED["board__002"].name, null, D_SHARED["board__002"].body, D_SHARED["board__002"].desc, "board__002", "shared")}
+  <div class="grp-h" id="b_type_1a">[슬룸] 개봉·사용 여부 미확인 반품 안내</div>
+  ${macro(D_SHARED["board__045"].name, null, D_SHARED["board__045"].body, D_SHARED["board__045"].desc, "board__045", "shared")}
   <div class="grp-h" id="b_type_2">[슬룸] NPay 배송비 입금 안내</div>
   ${macro(D_SHARED["board__003"].name, null, D_SHARED["board__003"].body, D_SHARED["board__003"].desc, "board__003", "shared")}
   <div class="grp-h" id="b_type_2b">[슬룸] NPay 입금 후 수거 안내</div>
