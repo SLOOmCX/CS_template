@@ -120,12 +120,12 @@ const YVENING_SIDE = `
   ${caution(`⚠️ 단, 고객 최초부터 강하게 항의/민원 제기 or 크리티컬한 단어 언급 등으로 Risk 등급 높을 경우 → 기존 Critical Issue 처리에 따라 예외적 반품 처리 진행`)}
   ${macro(D_YVENING["yvening_side__002"].name, D_YVENING["yvening_side__002"].tag, D_YVENING["yvening_side__002"].body, D_YVENING["yvening_side__002"].desc, "yvening_side__002", "yvening")}
   <div class="grp-h grp-major">🔹 a. 고객 서류 미수긍 시</div>
-  ${guide(`👉🏻 고객 증빙 서류 미수긍 시 예외적으로 전액 환불 처리 안내`)}
+  ${guide(`👉 고객 증빙 서류 미수긍 시 예외적으로 전액 환불 처리 안내`)}
   ${macro(D_YVENING["yvening_side__003"].name, D_YVENING["yvening_side__003"].tag, D_YVENING["yvening_side__003"].body, D_YVENING["yvening_side__003"].desc, "yvening_side__003", "yvening")}
   <div class="grp-h grp-major">🔹 b. 고객 서류 수긍 시</div>
   ${macro(D_YVENING["yvening_side__004"].name, D_YVENING["yvening_side__004"].tag, D_YVENING["yvening_side__004"].body, D_YVENING["yvening_side__004"].desc, "yvening_side__004", "yvening")}
   ${macro(D_YVENING["yvening_side__005"].name, D_YVENING["yvening_side__005"].tag, D_YVENING["yvening_side__005"].body, D_YVENING["yvening_side__005"].desc, "yvening_side__005", "yvening")}
-  <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">👉🏻 이후 공통 : 아래 [3. 포장 및 회수 안내] → [4. 결제수단별 환불 안내] 순으로 진행</div>
+  <div style="margin:8px 0 4px 2px;font-size:12px;color:#8a6d1a">👉 이후 공통 : 아래 [3. 포장 및 회수 안내] → [4. 결제수단별 환불 안내] 순으로 진행</div>
   ${secTitle("3","포장 및 회수 안내",null,"sec_pack")}
   ${macro(D_YVENING["yvening_side__006"].name, D_YVENING["yvening_side__006"].tag, D_YVENING["yvening_side__006"].body, D_YVENING["yvening_side__006"].desc, "yvening_side__006", "yvening")}
   ${subcard(D_YVENING["yvening_side__007"].name, D_YVENING["yvening_side__007"].tag, D_YVENING["yvening_side__007"].body, D_YVENING["yvening_side__007"].desc, "yvening_side__007", "yvening")}

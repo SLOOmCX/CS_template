@@ -110,8 +110,8 @@ const SIMPLICARE_SIDE = `
   ${secTitle("🧭","상담 플로우",null,"secFlow")}
   ${caution(`🚨 보상금 요구 여부에 따라 Edge Case로 분류되므로, [📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>]를 참고하여 진행`)}
   <div class="grp-h">공통 플로우 (보상금 요구 여부 무관)</div>
-  <div class="flow-diagram"><div class="fd-box">1. 선제적 사과 멘트</div><div class="fd-arrow">▶</div><div class="fd-box">2. 사용 환경 확인</div><div class="fd-arrow">▶</div><div class="fd-box">3. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 병원 내원 및 치료 안내</div><div class="fd-arrow">▶</div><div class="fd-box">5. 진료비 보상 서류 안내<br>+ 🔗 채팅 링크 안내</div><div class="fd-arrow">▶</div><div class="fd-box">6. 결제수단별 환불 안내</div><div class="fd-arrow">▶</div><div class="fd-box">👉🏻 증빙 서류 기반으로 건보 급여 항목 전액 보상</div></div>
-  <div class="fork"><div class="fork-branch"><span class="fork-label">보상금 요구 없을 경우</span><div class="flow-diagram"><div class="fd-box">상담 종료 유도</div><div class="fd-arrow">▶</div><div class="fd-box">VOC 종결</div></div></div><div class="fork-branch b2"><span class="fork-label">보상금 요청할 경우</span><div class="flow-diagram"><div class="fd-box">고객 치료비 + 보상금 추가 요구</div><div class="fd-arrow">▶</div><div class="fd-box">👉🏻 내부 VOC·Issue 프로세스 확인·컨펌</div><div class="fd-arrow">▶</div><div class="fd-box">VOC 종결</div></div></div></div>
+  <div class="flow-diagram"><div class="fd-box">1. 선제적 사과 멘트</div><div class="fd-arrow">▶</div><div class="fd-box">2. 사용 환경 확인</div><div class="fd-arrow">▶</div><div class="fd-box">3. 포장 및 회수 안내</div><div class="fd-arrow">▶</div><div class="fd-box">4. 병원 내원 및 치료 안내</div><div class="fd-arrow">▶</div><div class="fd-box">5. 진료비 보상 서류 안내<br>+ 🔗 채팅 링크 안내</div><div class="fd-arrow">▶</div><div class="fd-box">6. 결제수단별 환불 안내</div><div class="fd-arrow">▶</div><div class="fd-box">👉 증빙 서류 기반으로 건보 급여 항목 전액 보상</div></div>
+  <div class="fork"><div class="fork-branch"><span class="fork-label">보상금 요구 없을 경우</span><div class="flow-diagram"><div class="fd-box">상담 종료 유도</div><div class="fd-arrow">▶</div><div class="fd-box">VOC 종결</div></div></div><div class="fork-branch b2"><span class="fork-label">보상금 요청할 경우</span><div class="flow-diagram"><div class="fd-box">고객 치료비 + 보상금 추가 요구</div><div class="fd-arrow">▶</div><div class="fd-box">👉 내부 VOC·Issue 프로세스 확인·컨펌</div><div class="fd-arrow">▶</div><div class="fd-box">VOC 종결</div></div></div></div>
   ${secTitle("1","선제적 사과 멘트",null,"sec_apology")}
   ${macro(D_SIMPLICARE["simplicare_side__001"].name, D_SIMPLICARE["simplicare_side__001"].tag, D_SIMPLICARE["simplicare_side__001"].body, D_SIMPLICARE["simplicare_side__001"].desc, "simplicare_side__001", "simplicare")}
   ${secTitle("2","상품 안내 및 재확인",null,"sec_env")}
@@ -150,7 +150,7 @@ ${col("blue","🔹 보상금 요구 없을 경우",
 subcard(D_SIMPLICARE["simplicare_side__014"].name, D_SIMPLICARE["simplicare_side__014"].tag, D_SIMPLICARE["simplicare_side__014"].body, D_SIMPLICARE["simplicare_side__014"].desc, "simplicare_side__014", "simplicare")
 )}
 ${col("pink","🔹 보상금 요청할 경우",
-`<div class="subcard"><div class="subcard-h"><span class="sc-label">🚨 고객 치료비 + 보상금 추가 요구 시</span></div><div class="subcard-body">👉🏻 내부 VOC·Issue 프로세스 기준에 따라 내부 확인 및 컨펌 진행
+`<div class="subcard"><div class="subcard-h"><span class="sc-label">🚨 고객 치료비 + 보상금 추가 요구 시</span></div><div class="subcard-body">👉 내부 VOC·Issue 프로세스 기준에 따라 내부 확인 및 컨펌 진행
 📌 <a href="https://docs.google.com/spreadsheets/d/1a-hNnO4f-TUJ0n4maDUh3xxmzwBW9XwJW-Z5OKZU0r8/edit?pli=1&amp;gid=1968732770#gid=1968732770" target="_blank">고객 보상&Critical Issue 처리 Process 시트</a>, 올릿 Risk ISSUE 관리 Process(2026) PDF 6P 참고</div></div>`
 )}
 </div>
