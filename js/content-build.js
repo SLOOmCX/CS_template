@@ -131,6 +131,7 @@ const BOARD_TREE = {
     {label:"[슬룸] 100% 환불 이벤트 참여 안내", anchor:"b_type_3"},
     {label:"[슬룸] 100% 환불 무료반품 오인 재안내", anchor:"b_type_3c"},
     {label:"[슬룸] 단순 배송일정 안내", anchor:"b_type_3a"},
+    {label:"[슬룸] 배송완료 미수령 문의 시", anchor:"b_type_3d"},
     {label:"[슬룸] NPay 증정품 누락여부 문의", anchor:"b_type_3b"},
     {label:"[전브랜드] 교환/반품 사유 확인 필요 시", anchor:"b_type_4"},
     {group:true, label:"📦 [슬룸] 외부몰 유형별 템플릿", anchor:"b_ext"},

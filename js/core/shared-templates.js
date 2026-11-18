@@ -51,6 +51,8 @@ const BOARD_ALL = `
   ${macro(D_SHARED["board__040"].name, null, D_SHARED["board__040"].body, D_SHARED["board__040"].desc, "board__040", "shared")}
   <div class="grp-h" id="b_type_3a">[슬룸] 단순 배송일정 안내</div>
   ${macro(D_SHARED["board__041"].name, null, D_SHARED["board__041"].body, D_SHARED["board__041"].desc, "board__041", "shared")}
+  <div class="grp-h" id="b_type_3d">[슬룸] 배송완료 미수령 문의 시</div>
+  ${macro(D_SHARED["board__044"].name, null, D_SHARED["board__044"].body, D_SHARED["board__044"].desc, "board__044", "shared")}
   <div class="grp-h" id="b_type_3b">[슬룸] NPay 증정품 누락여부 문의</div>
   ${macro(D_SHARED["board__042"].name, null, D_SHARED["board__042"].body, D_SHARED["board__042"].desc, "board__042", "shared")}
   <div class="grp-h" id="b_type_4">[전브랜드] 교환/반품 사유 확인 필요 시</div>
