@@ -126,6 +126,7 @@ const BOARD_TREE = {
     {label:"[슬룸] NPay 배송비 입금 안내", anchor:"b_type_2"},
     {label:"[슬룸] NPay 입금 후 수거 안내", anchor:"b_type_2b"},
     {label:"[슬룸] NPay 반품 완료 후 환불 안내", anchor:"b_type_2c"},
+    {label:"[슬룸] NPay 환불일정 문의 시", anchor:"b_type_2d"},
     {label:"[슬룸] NPay 임의반송 시 정보요청", anchor:"b_type_2a"},
     {label:"[슬룸] 100% 환불 이벤트 참여 안내", anchor:"b_type_3"},
     {label:"[슬룸] 100% 환불 무료반품 오인 재안내", anchor:"b_type_3c"},
