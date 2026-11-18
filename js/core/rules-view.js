@@ -124,6 +124,11 @@ const RULES_SECTIONS = [
 <table class="astbl"><thead><tr><th>규칙</th><th>❌ 틀림</th><th>⭕ 맞음</th></tr></thead><tbody>
 <tr><td>문장부호(<code>.</code> <code>?</code> <code>!</code>) 뒤의 이모지는 한 칸 띄움</td><td>죄송합니다.🙏<br>좋을까요?😊</td><td>죄송합니다. 🙏<br>좋을까요? 😊</td></tr>
 <tr><td>보조용언 &lsquo;주다·드리다&rsquo;는 앞말에 붙여 씀 (&lsquo;문의 주세요&rsquo;처럼 명사 뒤 본동사는 띄움)</td><td>확인해 주세요<br>접수해 드리겠습니다</td><td>확인해주세요<br>접수해드리겠습니다</td></tr>
+<tr><td>상담사가 직접 채울 빈칸은 <code>{ }</code>로 표시</td><td>운송장번호 : (기재)<br>배송조회 : 택배사 링크</td><td>운송장번호 : {운송장번호}<br>배송조회 : {택배사 링크}</td></tr>
+<tr><td>가운뎃점(<code>·</code>) 앞뒤는 띄우지 않음</td><td>미개봉 · 미사용</td><td>미개봉·미사용</td></tr>
+<tr><td>&lsquo;사은품&rsquo; 대신 &lsquo;증정품&rsquo;으로 씀</td><td>사은품이 제공되지 않는</td><td>증정품이 제공되지 않는</td></tr>
+<tr><td>네이버페이 표기: 상담사가 보는 곳(사이드바·제목·카드 이름·설명·가이드)은 <b>NPay</b>, 고객에게 나가는 본문·알림톡은 <b>네이버페이</b></td><td>(사이드바) [슬룸] 네이버페이 배송비 입금 안내<br>(본문) NPay로 결제하신 경우</td><td>(사이드바) [슬룸] NPay 배송비 입금 안내<br>(본문) 네이버페이로 결제하신 경우</td></tr>
+<tr><td>게시판 답변 첫인사는 정해진 양식 그대로 (브랜드 문구는 첫인사 표 참고)</td><td>안녕하세요, 고객님.</td><td>안녕하세요 고객님,<br>프리미엄 헬스테크 브랜드, 슬룸입니다. 💜</td></tr>
 </tbody></table>`},
 
 { key:"process", label:"수정 절차", title:"🛠️ 수정 절차", html:`
@@ -140,7 +145,11 @@ const RULES_SECTIONS = [
 <li>시점이 들어가면 시점 표기 규칙을 따랐는가</li>
 <li>카드 글자 크기를 따로 지정하지 않았는가</li>
 <li>문장부호 뒤 이모지를 한 칸 띄웠는가</li>
-<li>&lsquo;해 주세요&rsquo;·&lsquo;해 드리&rsquo;를 붙여 썼는가</li></ul>`}
+<li>&lsquo;해 주세요&rsquo;·&lsquo;해 드리&rsquo;를 붙여 썼는가</li>
+<li>빈칸을 <code>{ }</code>로 표시했는가</li>
+<li>&lsquo;사은품&rsquo; 대신 &lsquo;증정품&rsquo;을 썼는가</li>
+<li>상담사용 표기는 NPay, 고객 본문은 네이버페이로 구분했는가</li>
+<li>게시판 카드는 카드 1개당 사이드바 항목 1개로 만들었는가</li></ul>`}
 ];
 
 let RULES_CUR = "overview";
