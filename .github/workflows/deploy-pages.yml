@@ -19,11 +19,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  # 업로드(build)와 배포(deploy)를 별도 job으로 분리
+  # 이유: 같은 job에서 업로드 직후 바로 배포하면 GitHub 쪽 지연으로
+  #       "No artifacts named github-pages" 오류가 간헐 발생 (actions/deploy-pages#451, 2026-11-24 대응)
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,5 +38,12 @@ jobs:
         with:
           path: .
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4
